@@ -24,7 +24,7 @@ export function renderComingSoonPage(dept) {
     <h2 class="h3 fw-bold">Module Under Development</h2>
     <p class="text-secondary mb-4">The ${dept.name} service hub is being built by the open-source community. You can help by contributing data, translations, or code.</p>
     <div class="d-flex justify-content-center gap-2 flex-wrap">
-      <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-primary">
+      <a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener" class="btn btn-primary">
         <i class="bi bi-github me-1"></i>Contribute on GitHub
       </a>
       <a href="#/" class="btn btn-outline-secondary">

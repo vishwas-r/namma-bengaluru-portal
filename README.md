@@ -2,9 +2,9 @@
 ### Open-Source Citizen Services Portal for Bengaluru
 **`nammabengaluru.online`** · Free · Community-Powered · AI-Synced Daily
 
-[![Deploy to GitHub Pages](https://github.com/nammabengaluru/portal/actions/workflows/daily-sync.yml/badge.svg)](https://github.com/nammabengaluru/portal/actions)
+[![Deploy to GitHub Pages](https://github.com/vishwas-r/namma-bengaluru-portal/actions/workflows/daily-sync.yml/badge.svg)](https://github.com/vishwas-r/namma-bengaluru-portal/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)](https://github.com)
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-red)](https://github.com/vishwas-r/namma-bengaluru-portal)
 
 ---
 
@@ -69,8 +69,8 @@ Contributors can donate Gemini keys for server-side PDF analysis. Contact the ma
 
 ```bash
 # Clone the repository
-git clone https://github.com/nammabengaluru/portal.git
-cd portal
+git clone https://github.com/vishwas-r/namma-bengaluru-portal.git
+cd namma-bengaluru-portal
 
 # Install dependencies
 npm install
@@ -90,7 +90,7 @@ This project deploys automatically to **GitHub Pages** on every push to `main`.
 
 ### Custom Domain Setup:
 1. Purchase `nammabengaluru.online` from any domain registrar
-2. Add CNAME records pointing to `<your-github-username>.github.io`
+2. Add CNAME records pointing to `vishwas-r.github.io`
 3. The `public/CNAME` file is already configured
 
 ### GitHub Pages Configuration:

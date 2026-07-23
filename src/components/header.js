@@ -75,7 +75,7 @@ export function renderHeader(state, lang) {
           </div>
         </div>
 
-        <a href="https://github.com" target="_blank" rel="noopener" class="nb-dropdown-toggle text-decoration-none">
+        <a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener" class="nb-dropdown-toggle text-decoration-none">
           <i class="bi bi-github"></i> Contribute
         </a>
       </nav>

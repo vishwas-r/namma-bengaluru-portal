@@ -1,9 +1,14 @@
 {
-  "name": "namma-bengaluru",
+  "name": "namma-bengaluru-portal",
   "version": "1.0.0",
   "description": "Open-source citizen services portal for Bengaluru — BWSSB, BESCOM, BBMP and more",
   "private": true,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishwas-r/namma-bengaluru-portal.git"
+  },
+  "homepage": "https://nammabengaluru.online",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

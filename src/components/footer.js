@@ -46,7 +46,7 @@ export function renderFooter() {
         <div class="col-lg-3 col-md-6 text-start">
           <div class="fw-bold mb-3 display-font" style="font-size:0.9rem; letter-spacing:0.02em;">Open Source</div>
           <ul class="nb-footer-links">
-            <li><a href="https://github.com" target="_blank" rel="noopener"><i class="bi bi-github me-2"></i>GitHub Repository</a></li>
+            <li><a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener"><i class="bi bi-github me-2"></i>GitHub Repository</a></li>
             <li><a href="https://rti.karnataka.gov.in" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text me-2"></i>Karnataka RTI Portal</a></li>
             <li><a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener"><i class="bi bi-key-fill me-2 text-warning"></i>Get Free AI Key</a></li>
             <li><a href="https://bwssb.karnataka.gov.in" target="_blank" rel="noopener"><i class="bi bi-globe me-2 text-primary"></i>Official BWSSB Portal</a></li>
