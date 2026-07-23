@@ -50,7 +50,7 @@ const I18N = {
       complaint: { icon: 'bi-life-preserver', label: 'Complaint Guide' },
       ai: { icon: 'bi-robot', label: 'Ask NammaBengaluru AI' },
     },
-    sync: 'AI-synced daily at 3 AM IST',
+    sync: 'AI-synced daily at 10 AM IST',
     langToggle: 'ಕನ್ನಡ',
   },
   kn: {
@@ -64,7 +64,7 @@ const I18N = {
       complaint: { icon: 'bi-life-preserver', label: 'ದೂರು ಮಾರ್ಗದರ್ಶಿ' },
       ai: { icon: 'bi-robot', label: 'AI ಕೇಳಿ' },
     },
-    sync: 'ಪ್ರತಿ ರಾತ್ರಿ 3 ಗಂಟೆಗೆ AI ಮೂಲಕ ಅಪ್‌ಡೇಟ್',
+    sync: 'ಪ್ರತಿ ದಿನ ಬೆಳಗ್ಗೆ 10 ಗಂಟೆಗೆ AI ಮೂಲಕ ಅಪ್‌ಡೇಟ್',
     langToggle: 'English',
   },
 };

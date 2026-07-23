@@ -2,8 +2,8 @@ name: 🌆 Namma Bengaluru — Daily AI Sync & Deploy
 
 on:
   schedule:
-    # Every day at 21:30 UTC = 3:00 AM IST
-    - cron: '30 21 * * *'
+    # Every day at 04:30 UTC = 10:00 AM IST (Government office working hours)
+    - cron: '30 4 * * *'
   
   # Allow manual trigger from GitHub Actions UI
   workflow_dispatch:
