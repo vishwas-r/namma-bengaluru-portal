@@ -1,0 +1,1137 @@
+/* ============================================================
+   NAMMA BENGALURU — ELEVATE GLASSMORPHIC DESIGN SYSTEM
+   Primary Accent: #3451b8 | Dark Theme: #171c35 | Glassmorphism & SVG Pattern
+   ============================================================ */
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* ── 1. CSS Custom Properties ── */
+:root {
+  /* Typography */
+  --nb-font-display: 'Outfit', 'Poppins', system-ui, -apple-system, sans-serif;
+  --nb-font-body: 'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
+
+  /* Elevate Brand Palette */
+  --nb-primary: #3451b8;
+  --nb-primary-dark: #273c8a;
+  --nb-primary-glow: rgba(52, 81, 184, 0.22);
+  --nb-accent: #0ea5e9;
+  --nb-emerald: #10b981;
+  --nb-amber: #f59e0b;
+  --nb-rose: #ef4444;
+
+  /* Bootstrap Variable Overrides */
+  --bs-primary: #3451b8;
+  --bs-primary-rgb: 52, 81, 184;
+  --bs-link-color: #3451b8;
+
+  /* Shape & Radii */
+  --nb-radius-card: 16px;
+  --nb-radius-badge: 50px;
+
+  /* Light Theme Glass & Elevation */
+  --nb-glass-bg: rgba(255, 255, 255, 0.85);
+  --nb-glass-header-bg: rgba(248, 250, 252, 0.9);
+  --nb-glass-border: rgba(52, 81, 184, 0.14);
+  --nb-glass-blur: blur(16px) saturate(180%);
+  --nb-shadow-card: 0 8px 30px -4px rgba(52, 81, 184, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --nb-shadow-hover: 0 16px 40px -4px rgba(52, 81, 184, 0.22), 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark Theme Overrides (#171c35 Background & Navy Glass Palette) */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #171c35;
+  --bs-body-color: #f1f5f9;
+  --bs-tertiary-bg: #1f2748;
+  --bs-tertiary-bg-rgb: 31, 39, 72;
+  --bs-secondary-bg: #1b213e;
+  --bs-secondary-bg-rgb: 27, 33, 62;
+  --bs-border-color: rgba(255, 255, 255, 0.12);
+
+  --nb-glass-bg: rgba(27, 33, 62, 0.85);
+  --nb-glass-header-bg: rgba(31, 39, 72, 0.92);
+  --nb-glass-border: rgba(255, 255, 255, 0.12);
+  --nb-primary-glow: rgba(52, 81, 184, 0.35);
+
+  --nb-shadow-card: 0 10px 32px -4px rgba(0, 0, 0, 0.45);
+  --nb-shadow-hover: 0 20px 48px -4px rgba(52, 81, 184, 0.32), 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* Force Bootstrap components in dark mode to use navy surface colors */
+[data-bs-theme="dark"] .bg-body-tertiary,
+[data-bs-theme="dark"] .bg-tertiary {
+  background-color: #1f2748 !important;
+  color: #f1f5f9 !important;
+}
+[data-bs-theme="dark"] .bg-body-secondary {
+  background-color: #1b213e !important;
+  color: #f1f5f9 !important;
+}
+[data-bs-theme="dark"] .table-light,
+[data-bs-theme="dark"] .table-light th {
+  background-color: #1f2748 !important;
+  color: #f1f5f9 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select,
+[data-bs-theme="dark"] .input-group-text {
+  background-color: #1b213e !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #f1f5f9 !important;
+}
+[data-bs-theme="dark"] .form-select option {
+  background-color: #171c35 !important;
+  color: #f1f5f9 !important;
+}
+
+/* ── 2. Base & SVG Grid Pattern Overlay ── */
+body {
+  font-family: var(--nb-font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 0.9375rem;
+  background-color: var(--bs-body-bg);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Modern SVG Pattern & Glowing Orbs Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 12% 15%, rgba(52, 81, 184, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 88% 85%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233451b8' fill-opacity='0.06' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6,
+.sitename,
+.hero-title,
+.section-title h2,
+.display-font {
+  font-family: var(--nb-font-display);
+  letter-spacing: -0.018em;
+}
+
+/* ── 3. Buttons & Badges — 100% Design Uniformity (Pill Capsule Shape) ── */
+.btn,
+.btn-sm,
+.btn-lg,
+.btn-primary,
+.btn-outline-primary,
+.btn-secondary,
+.btn-outline-secondary,
+.btn-danger,
+.btn-outline-danger,
+.btn-warning,
+.btn-outline-warning,
+.btn-info,
+.btn-outline-info,
+.btn-success,
+.btn-outline-success,
+button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
+  border-radius: 9999px !important;
+  font-family: var(--nb-font-body);
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover,
+.btn-sm:hover,
+.btn-lg:hover {
+  transform: translateY(-1.5px);
+}
+
+.btn-primary {
+  --bs-btn-bg: #3451b8;
+  --bs-btn-border-color: #3451b8;
+  --bs-btn-hover-bg: #273c8a;
+  --bs-btn-hover-border-color: #273c8a;
+  --bs-btn-focus-shadow-rgb: 52, 81, 184;
+  padding: 0.65rem 1.45rem;
+  box-shadow: 0 4px 16px rgba(52, 81, 184, 0.35);
+}
+.btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(52, 81, 184, 0.5);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #3451b8;
+  --bs-btn-border-color: #3451b8;
+  --bs-btn-hover-bg: #3451b8;
+  --bs-btn-hover-border-color: #3451b8;
+  --bs-btn-focus-shadow-rgb: 52, 81, 184;
+  padding: 0.65rem 1.45rem;
+}
+.btn-outline-primary:hover {
+  box-shadow: 0 6px 20px rgba(52, 81, 184, 0.35);
+}
+
+/* Badges & Pills Uniformity */
+.badge,
+.nb-live-badge,
+.nb-category-pill {
+  border-radius: 9999px !important;
+  padding: 0.35em 0.85em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Input Group Seamless Corner Alignment */
+.input-group .form-control {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.input-group .btn {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* Equal Width Action Buttons for Tables */
+.table td .btn,
+.nb-tbl-btn {
+  min-width: 125px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.text-primary { color: #3451b8 !important; }
+.bg-primary { background-color: #3451b8 !important; }
+.border-primary { border-color: #3451b8 !important; }
+
+/* ── 4. Emergency SOS Bar ── */
+.nb-sos-bar {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 50%, #991b1b 100%);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.45rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(220, 38, 38, 0.3);
+}
+.nb-sos-bar .nb-sos-link {
+  color: #fef08a;
+  text-decoration: none;
+  font-weight: 700;
+}
+.nb-sos-bar .nb-sos-link:hover { color: #fff; text-decoration: underline; }
+.nb-sos-bar .nb-sos-sep { opacity: 0.35; margin: 0 0.5rem; }
+
+/* ── 5. Glassmorphic Navigation Header ── */
+.nb-header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border-bottom: 1px solid var(--nb-glass-border);
+  transition: background 0.3s;
+}
+[data-bs-theme="dark"] .nb-header {
+  background: rgba(23, 28, 53, 0.88) !important;
+}
+[data-bs-theme="light"] .nb-header {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+.nb-logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3451b8 0%, #6366f1 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.4);
+  flex-shrink: 0;
+}
+
+.nb-header-nav .nav-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  color: var(--bs-secondary-color);
+  transition: all 0.2s ease;
+}
+.nb-header-nav .nav-link:hover {
+  color: #3451b8;
+  background: var(--nb-primary-glow);
+}
+.nb-header-nav .nav-link.active,
+.nb-header-nav .nb-tab-btn.is-active {
+  color: #3451b8 !important;
+  background: var(--nb-primary-glow) !important;
+  font-weight: 600;
+}
+
+/* Dropdown Menu */
+.nb-dropdown { position: relative; }
+.nb-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--bs-secondary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.nb-dropdown-toggle:hover { color: var(--bs-body-color); background: var(--bs-tertiary-bg); }
+.nb-dropdown.open .nb-dropdown-toggle { color: #3451b8; background: var(--nb-primary-glow); }
+
+.nb-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 360px;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  z-index: 2000;
+  display: none;
+  animation: nb-dropdown-in 0.2s ease-out;
+}
+.nb-dropdown.open .nb-dropdown-menu { display: block; }
+
+@keyframes nb-dropdown-in {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.nb-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  padding: 0.65rem 0.85rem !important;
+  border-radius: 10px !important;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--bs-body-color);
+  transition: all 0.15s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left !important;
+}
+.nb-dropdown-item:hover { background: var(--bs-tertiary-bg); transform: translateX(3px); }
+
+.nb-dropdown-item-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+.nb-dropdown-item-info {
+  flex: 1;
+  text-align: left !important;
+  min-width: 0;
+}
+.nb-dropdown-item-name {
+  font-weight: 600;
+  font-size: 0.86rem;
+  color: var(--bs-body-color);
+  line-height: 1.3;
+}
+.nb-dropdown-item-desc {
+  font-size: 0.75rem;
+  color: var(--bs-secondary-color);
+  white-space: normal;
+  line-height: 1.35;
+}
+.nb-dropdown-item-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25em 0.65em;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* ── 6. Glassmorphic Hero Section ── */
+.nb-hero {
+  padding: 4.75rem 0 3.75rem;
+  position: relative;
+  overflow: hidden;
+}
+.nb-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3451b8;
+  background: var(--nb-primary-glow);
+  border: 1px solid rgba(52, 81, 184, 0.35);
+  border-radius: var(--nb-radius-badge);
+  padding: 0.4rem 1.1rem;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(8px);
+}
+[data-bs-theme="dark"] .nb-hero-badge { color: #818cf8; }
+
+.nb-hero-title {
+  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.1rem;
+}
+
+.nb-hero-desc {
+  font-size: 1.05rem;
+  color: var(--bs-secondary-color);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  max-width: 580px;
+}
+
+/* Checklist Items */
+.nb-feature-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+.nb-feature-checklist .check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.nb-feature-checklist .check-item i {
+  color: #3451b8;
+  font-size: 1.15rem;
+}
+[data-bs-theme="dark"] .nb-feature-checklist .check-item i { color: #818cf8; }
+
+/* Floating Cards (Elevate Visuals) */
+.nb-floating-card {
+  background: var(--nb-glass-bg);
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border: 1px solid var(--nb-glass-border);
+  border-radius: var(--nb-radius-card);
+  padding: 1.1rem 1.35rem;
+  box-shadow: var(--nb-shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: all 0.25s ease;
+}
+.nb-floating-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--nb-shadow-hover);
+}
+.nb-floating-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--nb-primary-glow);
+  color: #3451b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+[data-bs-theme="dark"] .nb-floating-card-icon { color: #818cf8; }
+
+/* ── 7. Glassmorphic Department Cards ── */
+.nb-dept-card {
+  border-radius: var(--nb-radius-card);
+  background: var(--nb-glass-bg);
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border: 1.5px solid var(--nb-glass-border);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--nb-shadow-card);
+  height: 100%;
+}
+.nb-dept-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--nb-shadow-hover);
+  border-color: var(--dept-color, #3451b8);
+}
+.nb-dept-card.is-active {
+  border-color: var(--dept-color, #3451b8);
+  box-shadow: 0 0 0 3px rgba(52, 81, 184, 0.25), var(--nb-shadow-hover);
+}
+.nb-dept-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* ── 8. Cards — Elevate Glassmorphic Styling ── */
+.nb-card {
+  border-radius: var(--nb-radius-card);
+  background: var(--nb-glass-bg);
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border: 1px solid var(--nb-glass-border);
+  box-shadow: var(--nb-shadow-card);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+.nb-card-header {
+  padding: 1.15rem 1.35rem;
+  border-bottom: 1px solid var(--nb-glass-border);
+  background: var(--nb-glass-header-bg);
+  font-family: var(--nb-font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nb-card-body { padding: 1.35rem; }
+.nb-card-footer {
+  padding: 0.85rem 1.35rem;
+  border-top: 1px solid var(--nb-glass-border);
+  background: var(--nb-glass-header-bg);
+  font-size: 0.8rem;
+  color: var(--bs-secondary-color);
+}
+
+/* ── 9. Bill Total Display ── */
+.nb-bill-total-card {
+  border-radius: var(--nb-radius-card);
+  background: linear-gradient(135deg, rgba(52, 81, 184, 0.16) 0%, rgba(99, 102, 241, 0.08) 100%);
+  border: 1.5px solid rgba(52, 81, 184, 0.35);
+  padding: 1.85rem;
+  text-align: center;
+  box-shadow: 0 10px 30px -4px rgba(52, 81, 184, 0.18);
+  backdrop-filter: var(--nb-glass-blur);
+}
+.nb-bill-amount {
+  font-family: var(--nb-font-display);
+  font-size: clamp(2.5rem, 5vw, 3.4rem);
+  font-weight: 800;
+  color: #3451b8;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+[data-bs-theme="dark"] .nb-bill-amount { color: #818cf8; }
+
+/* ── 10. Tab Navigation ── */
+.nb-tab-nav {
+  display: flex;
+  background: var(--nb-glass-header-bg);
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border: 1px solid var(--nb-glass-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-wrap: nowrap;
+  box-shadow: var(--nb-shadow-card);
+}
+.nb-tab-btn {
+  flex-shrink: 0;
+  padding: 0.6rem 1.35rem;
+  border: none;
+  background: transparent;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--bs-secondary-color);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  font-family: var(--nb-font-body);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.nb-tab-btn:hover { color: var(--bs-body-color); background: var(--bs-secondary-bg); }
+.nb-tab-btn.is-active {
+  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.4);
+}
+
+/* ── 11. Complaint Guide Buttons ── */
+.nb-complaint-btn {
+  border-radius: 12px !important;
+  transition: all 0.2s ease;
+}
+.nb-complaint-btn.is-selected {
+  border-color: #3451b8 !important;
+  background-color: var(--nb-primary-glow) !important;
+  color: #3451b8 !important;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.18);
+}
+[data-bs-theme="dark"] .nb-complaint-btn.is-selected {
+  background-color: rgba(52, 81, 184, 0.28) !important;
+  color: #818cf8 !important;
+  border-color: rgba(129, 140, 248, 0.45) !important;
+}
+
+/* ── 12. Vertical Timeline Component ── */
+.nb-timeline {
+  position: relative;
+  padding-left: 0.5rem;
+}
+.nb-timeline-item {
+  position: relative;
+  padding-left: 2.75rem;
+  padding-bottom: 1.75rem;
+}
+.nb-timeline-item.is-last {
+  padding-bottom: 0.25rem;
+}
+.nb-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  bottom: 0;
+  width: 2px;
+  background: var(--bs-border-color);
+}
+.nb-timeline-item.is-last::before {
+  display: none;
+}
+.nb-timeline-badge {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+  z-index: 2;
+}
+.nb-timeline-content {
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--nb-shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nb-timeline-content:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--nb-shadow-hover);
+}
+.nb-slab-bar {
+  height: 11px;
+  border-radius: var(--nb-radius-badge);
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  overflow: hidden;
+  display: flex;
+}
+.nb-slab-segment {
+  height: 100%;
+  transition: width 0.45s cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+.nb-slab-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  margin-right: 6px;
+}
+
+/* ── 12. Notice Cards ── */
+.nb-notice-card {
+  border-radius: var(--nb-radius-card);
+  background: var(--nb-glass-bg);
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border: 1px solid var(--nb-glass-border);
+  box-shadow: var(--nb-shadow-card);
+  margin-bottom: 1.1rem;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nb-notice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--nb-shadow-hover);
+}
+.nb-notice-card .nb-notice-accent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  border-radius: 5px 0 0 5px;
+}
+.nb-notice-body { padding: 1.2rem 1.35rem 1.2rem 1.6rem; }
+
+.nb-category-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.24rem 0.7rem;
+  border-radius: var(--nb-radius-badge);
+  margin-bottom: 0.5rem;
+}
+.cat-tariff-pill     { background: rgba(245,158,11,0.15); color: #d97706; }
+.cat-maintenance-pill{ background: rgba(239,68,68,0.14); color: #dc2626; }
+.cat-policy-pill     { background: rgba(124,58,237,0.14); color: #7c3aed; }
+.cat-service-pill    { background: rgba(16,185,129,0.14); color: #059669; }
+.cat-quality-pill    { background: rgba(52,81,184,0.14); color: #3451b8; }
+
+.cat-tariff-accent     { background: #f59e0b; }
+.cat-maintenance-accent{ background: #ef4444; }
+.cat-policy-accent     { background: #7c3aed; }
+.cat-service-accent    { background: #10b981; }
+.cat-quality-accent    { background: #3451b8; }
+
+.nb-ai-summary-box {
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-left: 3.5px solid #3451b8;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.86rem;
+  color: var(--bs-body-color);
+  line-height: 1.65;
+  margin: 0.75rem 0;
+}
+
+/* ── 13. Complaint Steps ── */
+.nb-step-line {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  margin-bottom: 1.35rem;
+}
+.nb-step-line::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 32px;
+  bottom: -14px;
+  width: 2px;
+  background: var(--bs-border-color);
+}
+.nb-step-line:last-child::before { display: none; }
+.nb-step-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(52, 81, 184, 0.4);
+}
+
+/* ── 14. Glassmorphic AI Chat ── */
+.nb-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 510px;
+  border-radius: var(--nb-radius-card);
+  background: var(--nb-glass-bg);
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border: 1px solid var(--nb-glass-border);
+  box-shadow: var(--nb-shadow-card);
+  overflow: hidden;
+}
+.nb-chat-header {
+  padding: 1rem 1.35rem;
+  border-bottom: 1px solid var(--nb-glass-border);
+  background: var(--nb-glass-header-bg);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.nb-chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3451b8, #6366f1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+}
+.nb-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  scrollbar-width: thin;
+}
+.nb-chat-bubble {
+  max-width: 85%;
+  padding: 0.8rem 1.1rem;
+  border-radius: 16px;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.nb-chat-bubble.bot {
+  background: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color);
+  border-bottom-left-radius: 4px;
+}
+.nb-chat-bubble.user {
+  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+}
+.nb-chat-footer {
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--nb-glass-border);
+  background: var(--nb-glass-header-bg);
+}
+.nb-chat-input {
+  flex: 1;
+  border-radius: var(--nb-radius-badge);
+  border: 1px solid var(--bs-border-color);
+  padding: 0.55rem 1.15rem;
+  font-size: 0.88rem;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+.nb-chat-input:focus {
+  outline: none;
+  border-color: #3451b8;
+  box-shadow: 0 0 0 3px rgba(52, 81, 184, 0.25);
+}
+.nb-chat-send {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #3451b8;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+  transition: all 0.2s ease;
+}
+.nb-chat-send:hover {
+  transform: scale(1.06);
+  background: #273c8a;
+}
+
+/* ── 15. Official Gazette Link Buttons ── */
+.nb-btn-official {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #3451b8;
+  background: var(--nb-primary-glow);
+  border: 1px solid rgba(52, 81, 184, 0.3);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--nb-radius-badge);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.nb-btn-official:hover {
+  color: #fff;
+  background: #3451b8;
+  border-color: #3451b8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.3);
+}
+[data-bs-theme="dark"] .nb-btn-official { color: #818cf8; }
+[data-bs-theme="dark"] .nb-btn-official:hover { color: #fff; }
+
+/* ── 16. Elevate Footer ── */
+.nb-footer {
+  background: var(--nb-glass-header-bg);
+  backdrop-filter: var(--nb-glass-blur);
+  -webkit-backdrop-filter: var(--nb-glass-blur);
+  border-top: 1px solid var(--nb-glass-border);
+  font-size: 0.85rem;
+}
+.nb-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nb-footer-links li a {
+  color: var(--bs-secondary-color);
+  text-decoration: none;
+  transition: color 0.18s ease, transform 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+}
+.nb-footer-links li a:hover {
+  color: #3451b8;
+  transform: translateX(4px);
+}
+[data-bs-theme="dark"] .nb-footer-links li a:hover { color: #818cf8; }
+
+.nb-footer-bottom {
+  background: var(--bs-secondary-bg);
+  border-top: 1px solid var(--nb-glass-border);
+}
+
+/* ── 18. Glassmorphic Modal Styling ── */
+.nb-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: nb-fade-in 0.2s ease-out;
+}
+
+@keyframes nb-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.nb-modal {
+  width: 100%;
+  max-width: 540px;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--nb-radius-card);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: nb-modal-pop 0.22s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@keyframes nb-modal-pop {
+  from { opacity: 0; transform: scale(0.94) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.nb-modal-header {
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--nb-glass-border);
+  background: var(--nb-glass-header-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nb-modal-body {
+  padding: 1.4rem;
+  text-align: left;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .nb-sos-bar {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.75rem;
+    text-align: center;
+  }
+  .nb-hero { padding: 3rem 0 2rem; }
+}
+
+/* ── 19. Complaint & Notice Filter Buttons ── */
+.nb-filter-btn {
+  border: 1.5px solid rgba(52, 81, 184, 0.4) !important;
+  color: #3451b8 !important;
+  background: transparent !important;
+  font-weight: 600;
+  border-radius: 9999px !important;
+  transition: all 0.2s ease !important;
+}
+.nb-filter-btn:hover {
+  background: var(--nb-primary-glow) !important;
+  border-color: #3451b8 !important;
+  color: #3451b8 !important;
+  transform: translateY(-1px);
+}
+.nb-filter-btn.is-active,
+.nb-filter-btn.active {
+  background: #3451b8 !important;
+  border-color: #3451b8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.35) !important;
+}
+
+[data-bs-theme="dark"] .nb-filter-btn {
+  border-color: rgba(129, 140, 248, 0.4) !important;
+  color: #818cf8 !important;
+}
+[data-bs-theme="dark"] .nb-filter-btn:hover {
+  background: rgba(52, 81, 184, 0.25) !important;
+  color: #818cf8 !important;
+}
+[data-bs-theme="dark"] .nb-filter-btn.is-active,
+[data-bs-theme="dark"] .nb-filter-btn.active {
+  background: #3451b8 !important;
+  border-color: #3451b8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.5) !important;
+}
+
+.nb-complaint-btn {
+  border: 1.5px solid rgba(52, 81, 184, 0.35) !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+}
+.nb-complaint-btn:hover {
+  background: var(--nb-primary-glow) !important;
+  border-color: #3451b8 !important;
+  transform: translateX(3px);
+}
+.nb-complaint-btn.is-selected {
+  background: #3451b8 !important;
+  border-color: #3451b8 !important;
+  box-shadow: 0 4px 16px rgba(52, 81, 184, 0.4) !important;
+}
+.nb-complaint-btn.is-selected,
+.nb-complaint-btn.is-selected *,
+.nb-complaint-btn.is-selected .text-secondary,
+.nb-complaint-btn.is-selected .text-primary,
+.nb-complaint-btn.is-selected i,
+.nb-complaint-btn.is-selected div {
+  color: #ffffff !important;
+}
+[data-bs-theme="dark"] .nb-complaint-btn {
+  border-color: rgba(129, 140, 248, 0.35) !important;
+}
+[data-bs-theme="dark"] .nb-complaint-btn.is-selected {
+  background: #3451b8 !important;
+  border-color: #3451b8 !important;
+  box-shadow: 0 4px 16px rgba(52, 81, 184, 0.55) !important;
+}
+
+/* ── 20. Print Stylesheet for Bill Estimate ── */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide all non-essential UI Chrome */
+  .nb-sos-bar,
+  .nb-header,
+  .nb-dept-hero,
+  .nb-tab-nav,
+  .nb-footer,
+  .nb-chat-box,
+  .nb-modal-backdrop,
+  button,
+  .btn,
+  .form-range,
+  .nb-btn-official,
+  a {
+    display: none !important;
+  }
+
+  /* Show ONLY the printable calculator section */
+  #app {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #printableCalc {
+    display: flex !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+  }
+
+  #printableCalc .col-lg-5,
+  #printableCalc .col-lg-7 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #printableCalc .nb-card {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    break-inside: avoid;
+  }
+
+  #printableCalc .nb-bill-banner {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+
+  #printableCalc .table,
+  #printableCalc .table td,
+  #printableCalc .table th {
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  #printableCalc input,
+  #printableCalc select {
+    border: 1px solid #cbd5e1 !important;
+    background: #f8fafc !important;
+    color: #0f172a !important;
+  }
+}

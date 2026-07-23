@@ -1,0 +1,164 @@
+name: 🌆 Namma Bengaluru — Daily AI Sync & Deploy
+
+on:
+  schedule:
+    # Every day at 21:30 UTC = 3:00 AM IST
+    - cron: '30 21 * * *'
+  
+  # Allow manual trigger from GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      force_tariff_check:
+        description: 'Force tariff analysis even if no new circular detected'
+        required: false
+        default: 'false'
+
+  # Auto-deploy on every push to main
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # ── Job 1: Daily Sync ──────────────────────────────────────
+  daily-sync:
+    name: 🔄 Sync Official BWSSB Data
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    
+    outputs:
+      tariff_change_detected: ${{ steps.sync.outputs.tariff_change }}
+      new_notices_count: ${{ steps.sync.outputs.new_notices }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run daily sync
+        id: sync
+        run: |
+          node scripts/dailySync.js
+          EXIT_CODE=$?
+          if [ $EXIT_CODE -eq 2 ]; then
+            echo "tariff_change=true" >> $GITHUB_OUTPUT
+            echo "⚡ Tariff change detected — will create moderated PR"
+          elif [ $EXIT_CODE -eq 0 ]; then
+            echo "tariff_change=false" >> $GITHUB_OUTPUT
+          else
+            echo "Sync failed with exit code $EXIT_CODE" && exit 1
+          fi
+        continue-on-error: true
+
+      - name: Commit updated notices
+        run: |
+          git config --local user.email "bot@nammabengaluru.online"
+          git config --local user.name "Namma Bengaluru Bot"
+          git add src/data/ public/docs/ || true
+          git diff --staged --quiet || git commit -m "🤖 [Auto-sync] Updated BWSSB notices — $(date '+%Y-%m-%d %H:%M IST' -d '+5:30 hours')"
+          git push || echo "Nothing to push"
+
+  # ── Job 2: AI Tariff Analysis & PR ────────────────────────
+  tariff-pr:
+    name: 🧠 AI Tariff Analysis — Create Moderated PR
+    runs-on: ubuntu-latest
+    needs: daily-sync
+    if: needs.daily-sync.outputs.tariff_change_detected == 'true' || github.event.inputs.force_tariff_check == 'true'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run AI tariff parser
+        id: ai_parse
+        env:
+          # Key pool for GitHub Actions — add these as GitHub Repository Secrets
+          # Contributors can donate their Gemini keys by opening an issue or contacting maintainers
+          GEMINI_KEY_1: ${{ secrets.GEMINI_KEY_1 }}
+          GEMINI_KEY_2: ${{ secrets.GEMINI_KEY_2 }}
+          GEMINI_KEY_3: ${{ secrets.GEMINI_KEY_3 }}
+          GEMINI_KEY_4: ${{ secrets.GEMINI_KEY_4 }}
+          GEMINI_KEY_5: ${{ secrets.GEMINI_KEY_5 }}
+        run: |
+          node scripts/aiTariffParser.js
+          echo "pr_body_file=scripts/.pr_body.md" >> $GITHUB_OUTPUT
+
+      - name: Create tariff revision Pull Request
+        if: success()
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: '🤖 [AI-Detected] BWSSB Tariff Revision — Please Review & Approve'
+          body-path: scripts/.pr_body.md
+          branch: 'bot/tariff-update-${{ github.run_id }}'
+          labels: |
+            tariff-update
+            needs-review
+            automated
+          draft: false
+          delete-branch: true
+          commit-message: '🤖 AI-detected BWSSB tariff revision — awaiting maintainer approval'
+
+  # ── Job 3: Build & Deploy to GitHub Pages ─────────────────
+  deploy:
+    name: 🚀 Build & Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: []  # Runs independently on push to main
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

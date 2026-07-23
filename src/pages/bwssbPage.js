@@ -1,0 +1,621 @@
+import { renderBreadcrumb } from './comingSoonPage.js';
+import tariffData from '../data/bwssb/tariffs.json';
+import noticesData from '../data/bwssb/notices.json';
+import complaintsData from '../data/bwssb/complaints.json';
+import { calcDomesticBill, calcApartmentBill, calcCommercialBill, projectFutureBill } from '../services/bwssbCalculator.js';
+import { queryGemini, getKeyPool } from '../services/keyPool.js';
+import CanvasJSModule from '@canvasjs/charts';
+const CanvasJS = CanvasJSModule.CanvasJS || CanvasJSModule.default || CanvasJSModule;
+
+export function renderBWSSBPage(dept, state, lang) {
+  const tabs = lang.tabs;
+  return `
+  <!-- Department Hero -->
+  <div class="nb-dept-hero" style="--dept-hero-glow:${dept.color}20;">
+    <div class="container nb-dept-hero-content text-start">
+      ${renderBreadcrumb(dept)}
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <div class="nb-dept-hero-icon mb-0" style="background:${dept.color}18; color:${dept.color};">
+          <i class="bi ${dept.icon}"></i>
+        </div>
+        <div>
+          <h1 class="fw-bold mb-0" style="font-size:1.85rem; letter-spacing:-0.02em;">${dept.fullName}</h1>
+          <p class="text-secondary mb-0 mt-1" style="font-size:0.9rem;">${dept.description}</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-3 flex-wrap mt-3">
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-success-subtle text-success border border-success-subtle fw-semibold" style="font-size:0.78rem;">
+          <i class="bi bi-robot text-success"></i>
+          <span class="nb-pulse bg-success"></span>
+          <span>${lang.sync}</span>
+        </div>
+        <a href="tel:${dept.helpline}" class="nb-btn-official"><i class="bi bi-telephone"></i> Helpline: ${dept.helpline}</a>
+        <a href="${dept.website}" target="_blank" rel="noopener" class="nb-btn-official"><i class="bi bi-globe"></i> Official Site</a>
+        <a href="https://cms.bwssb.gov.in" target="_blank" rel="noopener" class="nb-btn-official"><i class="bi bi-file-earmark-text"></i> CMS Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="container py-4">
+    <!-- Tab Navigation -->
+    <div class="nb-tab-nav rounded-pill p-2 gap-2 mb-4" role="tablist">
+      ${Object.entries(tabs).map(([id, t]) => `
+        <button class="nb-tab-btn rounded-pill ${state.activeTab === id ? 'is-active' : ''}"
+          onclick="window.__tab('${id}')" role="tab" aria-selected="${state.activeTab === id}">
+          <i class="bi ${t.icon}"></i>${t.label}
+        </button>`).join('')}
+    </div>
+    <div id="tabContent">${renderTab(state, lang)}</div>
+  </div>`;
+}
+
+export function renderTab(state, lang) {
+  switch (state.activeTab) {
+    case 'calculator': return renderCalc(state);
+    case 'tariff': return renderTariff();
+    case 'notices': return renderNotices(state);
+    case 'complaint': return renderComplaint(state);
+    case 'ai': return renderAI(state);
+    default: return renderCalc(state);
+  }
+}
+
+// ── CALCULATOR ─────────────────────────────────────────────
+export function renderCalc(state) {
+  const f = state.calcForm;
+  return `
+  <div class="row g-4 align-items-start nb-printable-calc" id="printableCalc">
+    <div class="col-lg-5">
+      <div class="nb-card h-100 text-start">
+        <div class="nb-card-header"><i class="bi bi-sliders text-primary me-2"></i> Connection Details</div>
+        <div class="nb-card-body p-4">
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="connType">Connection Type</label>
+            <select class="form-select py-2.5 px-3" id="connType" onchange="window.__calc('type', this.value)" style="border-radius:12px;">
+              <option value="domestic"   ${f.type === 'domestic' ? 'selected' : ''}>Domestic (Individual House)</option>
+              <option value="apartment"  ${f.type === 'apartment' ? 'selected' : ''}>Apartment / Bulk Domestic</option>
+              <option value="commercial" ${f.type === 'commercial' ? 'selected' : ''}>Non-Domestic / Commercial</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="consumptionInput">Monthly Consumption (1 KL = 1 m³)</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control py-2.5 px-3" id="consumptionInput"
+                min="0" max="500" step="0.5" value="${f.consumption}" style="border-top-left-radius:12px; border-bottom-left-radius:12px;"
+                oninput="window.__calc('consumption', parseFloat(this.value)||0)" />
+              <span class="input-group-text fw-bold px-3 bg-body-tertiary" style="font-size:0.85rem; border-top-right-radius:12px; border-bottom-right-radius:12px;">KL (m³)</span>
+            </div>
+
+            <div class="p-3 bg-body-tertiary border rounded-3">
+              <div class="d-flex justify-content-between align-items-center mb-2" style="font-size:0.8rem;">
+                <span class="text-secondary">Quick Slider</span>
+                <span class="fw-bold text-primary">${f.consumption} KL (${f.consumption} m³)</span>
+              </div>
+              <input type="range" class="form-range mb-0" id="consumptionRange"
+                min="0" max="100" step="1" value="${Math.min(f.consumption, 100)}"
+                oninput="window.__calcSlider(this.value)" />
+            </div>
+          </div>
+
+          ${f.type === 'apartment' ? `
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="numFlats">Number of Flats / Units</label>
+            <input type="number" class="form-control py-2.5 px-3" id="numFlats" min="1" max="1000" value="${f.numFlats}" style="border-radius:12px;"
+              onchange="window.__calc('numFlats', parseInt(this.value)||1)" />
+            <div class="form-text mt-1" style="font-size:0.78rem;">Total flats sharing this bulk connection.</div>
+          </div>` : ''}
+
+          ${f.type === 'domestic' ? `
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="meterSize">Water Meter Size</label>
+            <select class="form-select py-2.5 px-3" id="meterSize" onchange="window.__calc('meterSize', this.value)" style="border-radius:12px;">
+              ${tariffData.domestic.meterFixedCharges.map(m => `
+                <option value="${m.size}" ${f.meterSize === m.size ? 'selected' : ''}>${m.label} — ₹${m.charge}/month</option>`).join('')}
+            </select>
+          </div>` : ''}
+
+          <div class="d-flex flex-column gap-2 mb-4">
+            ${f.type !== 'apartment' ? `
+            <div class="p-3 bg-body-tertiary border rounded-3 d-flex align-items-center justify-content-between">
+              <div class="form-check form-switch mb-0">
+                <input class="form-check-input" type="checkbox" role="switch" id="borewellChk"
+                  ${f.hasBorewell ? 'checked' : ''} onchange="window.__calc('hasBorewell', this.checked)" />
+                <label class="form-check-label ms-2 fw-medium" for="borewellChk" style="font-size:0.86rem;">
+                  Registered borewell
+                </label>
+              </div>
+              <span class="badge bg-secondary-subtle text-secondary">+₹${tariffData.domestic.borewellCharge.fixed}/mo</span>
+            </div>` : ''}
+
+            <div class="p-3 bg-body-tertiary border rounded-3 d-flex align-items-center justify-content-between">
+              <div class="form-check form-switch mb-0">
+                <input class="form-check-input" type="checkbox" role="switch" id="rwhChk"
+                  ${f.rwhNonCompliant ? 'checked' : ''} onchange="window.__calc('rwhNonCompliant', this.checked)" />
+                <label class="form-check-label ms-2 fw-medium" for="rwhChk" style="font-size:0.86rem;">
+                  Plot > 1,200 sq.m (No RWH)
+                </label>
+              </div>
+              <span class="badge bg-danger-subtle text-danger">+50% penalty</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary w-100 py-2.5 mb-4 fw-semibold" onclick="window.__downloadPDF()" style="font-size:0.88rem;">
+            <i class="bi bi-file-earmark-pdf-fill me-2"></i> Save Estimate as PDF
+          </button>
+
+          <!-- Subtle Footer Tariff Gazette Note -->
+          <div class="mt-3 pt-3 border-top d-flex justify-content-between align-items-center flex-wrap gap-2 text-secondary" style="font-size:0.78rem;">
+            <span><i class="bi bi-shield-check me-1 text-primary"></i>BWSSB Tariff (1 April 2026)</span>
+            <div class="d-flex align-items-center gap-2">
+              <a href="https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf" target="_blank" rel="noopener" class="nb-btn-official" style="font-size:0.72rem; padding:0.25rem 0.65rem;">
+                <i class="bi bi-globe me-1"></i>Gazette PDF
+              </a>
+              <a href="/docs/bwssb/WaterTariff-2025.pdf" target="_blank" rel="noopener" class="text-secondary opacity-75" title="Archived Local PDF Backup" style="font-size:1.1rem; text-decoration:none;" onmouseover="this.classList.remove('opacity-75')" onmouseout="this.classList.add('opacity-75')">
+                <i class="bi bi-file-earmark-arrow-down-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7 d-flex flex-column gap-4">
+      <div class="nb-bill-total-card">
+        <div class="d-inline-flex align-items-center gap-1.5 px-3 py-1 rounded-pill bg-primary-subtle text-primary border border-primary-subtle mb-3 fw-bold" style="font-size:0.72rem; letter-spacing:0.08em;">
+          <i class="bi bi-currency-rupee me-1"></i>ESTIMATED MONTHLY BILL
+        </div>
+        <div class="nb-bill-amount" id="billAmt">₹0</div>
+        <div id="billMeta" class="mt-2" style="font-size:0.84rem; color:var(--bs-secondary-color);"></div>
+      </div>
+
+      <div class="nb-card flex-grow-1 text-start" id="billBreakdown">
+        <div class="d-flex align-items-center justify-content-center text-secondary py-5" style="font-size:0.88rem; min-height:220px;">
+          <div class="text-center">
+            <i class="bi bi-calculator mb-2 d-block" style="font-size:2.2rem; opacity:0.3;"></i>
+            Enter your consumption details to see the itemized breakdown.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+export function recalcBill(state) {
+  const amtEl = document.getElementById('billAmt');
+  const metaEl = document.getElementById('billMeta');
+  const bdEl = document.getElementById('billBreakdown');
+  if (!amtEl) return;
+
+  const f = state.calcForm;
+  const emptyMsg = `<div class="d-flex align-items-center justify-content-center text-secondary py-5" style="font-size:0.88rem; min-height:220px;"><div class="text-center"><i class="bi bi-calculator mb-2 d-block" style="font-size:2.2rem; opacity:0.3;"></i>Enter your consumption details to see the itemized breakdown.</div></div>`;
+
+  if (!f.consumption || f.consumption <= 0) {
+    amtEl.textContent = '₹0';
+    if (metaEl) metaEl.textContent = '';
+    if (bdEl) bdEl.innerHTML = emptyMsg;
+    return;
+  }
+  try {
+    let r;
+    if (f.type === 'apartment') r = calcApartmentBill({ totalConsumption: f.consumption, numFlats: f.numFlats || 1, hasBorewell: f.hasBorewell, rwhNonCompliant: f.rwhNonCompliant });
+    else if (f.type === 'commercial') r = calcCommercialBill({ consumption: f.consumption, rwhNonCompliant: f.rwhNonCompliant });
+    else r = calcDomesticBill({ consumption: f.consumption, meterSize: f.meterSize, hasBorewell: f.hasBorewell, rwhNonCompliant: f.rwhNonCompliant });
+
+    if (f.type === 'apartment') {
+      amtEl.innerHTML = `
+        <div class="d-flex align-items-baseline justify-content-between flex-wrap gap-2 text-start">
+          <div>
+            <span style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; display:block;" class="text-secondary mb-1">Per Flat Price</span>
+            <span class="text-primary fw-bold fs-2">₹${r.perFlatTotal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
+            <span class="text-secondary" style="font-size:0.85rem; font-weight:normal;"> / flat</span>
+          </div>
+          <div class="text-end">
+            <span style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; display:block;" class="text-secondary mb-1">Total Building (${r.numFlats} Flats)</span>
+            <span class="fw-bold fs-4">₹${r.total.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</span>
+          </div>
+        </div>`;
+      if (metaEl) metaEl.textContent = `Per-flat usage: ${r.perFlatConsumption?.toFixed(2)} KL (${r.perFlatConsumption?.toFixed(2)} m³)  ·  Total Bulk: ${f.consumption} KL (${f.consumption} m³)`;
+    } else {
+      amtEl.textContent = `₹${r.total.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+      const effRate = r.effectiveRate || (r.total / f.consumption);
+      if (metaEl) metaEl.textContent = `Effective rate: ₹${effRate?.toFixed(2)} / KL (m³)  ·  Next year: ₹${projectFutureBill(r.total, 1).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+    }
+
+    const slabs = r.slabBreakdown || r.perFlatBreakdown?.slabBreakdown || [];
+    const totalKL = f.type === 'apartment' ? r.perFlatConsumption : f.consumption;
+    const bar = slabs.filter(s => s.usage > 0).map(s => {
+      const pct = Math.min(100, Math.max(0, (s.usage / totalKL) * 100));
+      return `<div class="nb-slab-segment" style="width:${pct}%; background:${s.color};" title="${s.label}: ${s.usage.toFixed(2)} KL (m³)"></div>`;
+    }).join('');
+
+    const items = f.type === 'apartment'
+      ? [
+        ...(r.perFlatBreakdown?.slabBreakdown?.filter(s => s.usage > 0).map(s => ({
+          label: `Water Charge (${s.label})`,
+          amount: parseFloat((s.charge * r.numFlats).toFixed(2)),
+          note: `${r.numFlats} flats × ${s.usage.toFixed(2)} KL @ ₹${s.rate}/KL (₹${s.charge.toFixed(2)}/flat)`,
+          color: s.color
+        })) || []),
+        r.totalSanitary && { label: `Sanitary Charge (${r.numFlats} flats)`, amount: r.totalSanitary, note: `25% of water charge (₹${r.perFlatBreakdown?.sanitaryCharge?.toFixed(2)}/flat)` },
+        r.borewellCharge && { label: 'Borewell Charge', amount: r.borewellCharge },
+        r.rwhPenalty && { label: 'RWH Non-Compliance Surcharge', amount: r.rwhPenalty, note: '50% surcharge', warn: true },
+      ].filter(Boolean)
+      : [
+        ...(r.slabBreakdown?.filter(s => s.usage > 0).map(s => ({
+          label: `Water Charge (${s.label})`,
+          amount: s.charge,
+          note: `${s.usage.toFixed(2)} KL (m³) × ₹${s.rate}/KL`,
+          color: s.color
+        })) || []),
+        r.sanitaryCharge && { label: 'Sanitary / Sewerage Charge', amount: r.sanitaryCharge, note: '25% of water charge (min ₹100)' },
+        r.meterFixed && { label: 'Meter Fixed Charge', amount: r.meterFixed },
+        r.borewellCharge && { label: 'Borewell Charge', amount: r.borewellCharge },
+        r.rwhPenalty && { label: 'RWH Non-Compliance Surcharge', amount: r.rwhPenalty, note: '50% surcharge', warn: true },
+      ].filter(Boolean);
+
+    if (bdEl) bdEl.innerHTML = `
+      <div class="nb-card-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-list-check text-primary me-2"></i>Itemized Breakdown</span>
+        <div class="d-flex align-items-center gap-2">
+          <a href="https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf" target="_blank" rel="noopener" class="nb-btn-official" style="font-size:0.72rem;">
+            <i class="bi bi-globe me-1"></i>Gazette PDF
+          </a>
+          <a href="/docs/bwssb/WaterTariff-2025.pdf" target="_blank" rel="noopener" class="text-secondary opacity-75" title="Archived Local PDF Backup" style="font-size:1.05rem; text-decoration:none;" onmouseover="this.classList.remove('opacity-75')" onmouseout="this.classList.add('opacity-75')">
+            <i class="bi bi-file-earmark-arrow-down-fill"></i>
+          </a>
+        </div>
+      </div>
+      <div class="nb-card-body p-4">
+        <div class="p-3 bg-body-tertiary border rounded-3 mb-4">
+          <div class="d-flex justify-content-between mb-2" style="font-size:0.78rem; font-weight:600; color:var(--bs-secondary-color);">
+            <span>0 KL (0 m³)</span>
+            <span class="text-primary">${totalKL?.toFixed(1)} KL (${totalKL?.toFixed(1)} m³) ${f.type === 'apartment' ? 'per flat' : ''} consumed</span>
+          </div>
+          <div class="nb-slab-bar" style="height:12px;">${bar || '<div style="width:100%; background:var(--bs-secondary-bg);"></div>'}</div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table align-middle mb-0" style="font-size:0.86rem;">
+            <thead><tr style="border-bottom:2px solid var(--bs-border-color);">
+              <th class="py-2.5" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Charge Item</th>
+              <th class="py-2.5" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Details</th>
+              <th class="py-2.5 text-end" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Amount</th>
+            </tr></thead>
+            <tbody>
+              ${items.map(item => `
+              <tr style="border-bottom:1px solid var(--bs-border-color); ${item.warn ? 'color:#d97706;' : ''}">
+                <td class="py-3 fw-medium">${item.color ? `<span class="nb-slab-dot me-2" style="background:${item.color}; width:10px; height:10px; display:inline-block; border-radius:50%;"></span>` : ''}${item.label}</td>
+                <td class="py-3 text-secondary" style="font-size:0.8rem;">${item.note || '—'}</td>
+                <td class="py-3 text-end fw-bold">₹${item.amount?.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+              </tr>`).join('')}
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2" class="fw-bold pt-3.5 pb-2 fs-6">Total Monthly Bill</td>
+                <td class="text-end fw-bold pt-3.5 pb-2 text-primary fs-5">₹${r.total?.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>`;
+  } catch (e) { console.error('Calc error:', e); }
+}
+
+// ── TARIFF TABLE & COMPARISON CHART ─────────────────────────
+export function renderTariff() {
+  const types = [
+    { data: tariffData.domestic },
+    { data: tariffData.nonDomestic },
+    { data: tariffData.industrial }
+  ].filter(t => t.data && t.data.slabs);
+
+  return `<div class="d-flex flex-column gap-4 text-start">
+    ${types.map(({ data }) => `
+    <div class="nb-card">
+      <div class="nb-card-header justify-content-between flex-wrap gap-2">
+        <div>
+          <div style="font-weight:800; font-size:1rem;">${data.label}</div>
+          <div class="text-secondary" style="font-size:0.76rem; font-weight:normal;">${data.description || data.notes || ''}</div>
+        </div>
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Effective 1 April 2026</span>
+      </div>
+      <div class="nb-card-body p-0">
+        <div class="table-responsive">
+          <table class="table align-middle mb-0" style="font-size:0.85rem;">
+            <thead class="table-light">
+              <tr style="border-bottom:2px solid var(--bs-border-color);">
+                <th class="ps-4 py-3" style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em;">Consumption Slab</th>
+                <th class="py-3" style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em;">KL Range (m³)</th>
+                <th class="pe-4 text-end py-3" style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em;">Rate per KL</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${data.slabs.map(s => {
+                const rangeStr = s.from !== undefined
+                  ? (s.to !== null && s.to !== undefined ? `${s.from} – ${s.to} KL (m³)` : `Above ${s.from} KL (m³)`)
+                  : (s.label || '—');
+                return `
+              <tr style="border-bottom:1px solid var(--bs-border-color);">
+                <td class="ps-4 py-3 fw-semibold"><span class="nb-slab-dot me-2" style="background:${s.color || '#3451b8'}; width:10px; height:10px; display:inline-block; border-radius:50%;"></span>${s.label}</td>
+                <td class="py-3 text-secondary font-mono">${rangeStr}</td>
+                <td class="pe-4 text-end py-3 font-mono fw-bold text-primary">₹${s.rate?.toFixed(2)} / KL</td>
+              </tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>`).join('')}
+
+    <!-- Tariff Comparison Chart Card -->
+    <div class="nb-card">
+      <div class="nb-card-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-bar-chart-line text-primary me-2"></i>Tariff Rate Comparison Visualizer</span>
+        <span class="text-secondary" style="font-size:0.78rem;">Domestic vs Non-Domestic / Commercial</span>
+      </div>
+      <div class="nb-card-body p-4">
+        <div id="tariffChartContainer" style="height:360px; width:100%;"></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+export function renderTariffChart() {
+  const container = document.getElementById('tariffChartContainer');
+  if (!container) return;
+
+  const d = tariffData.domestic?.slabs || [];
+  const c = tariffData.nonDomestic?.slabs || [];
+  const isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+
+  try {
+    const chart = new CanvasJS.Chart('tariffChartContainer', {
+      animationEnabled: true,
+      theme: isDark ? 'dark2' : 'light2',
+      backgroundColor: 'transparent',
+      title: { text: '', fontStyle: 'normal' },
+      toolTip: {
+        shared: true
+      },
+      axisX: {
+        title: 'Consumption Slabs',
+        labelFontSize: 11,
+        labelFontColor: isDark ? '#94a3b8' : '#64748b',
+        titleFontColor: isDark ? '#cbd5e1' : '#475569'
+      },
+      axisY: {
+        title: 'Rate per KL (₹)',
+        prefix: '₹',
+        labelFontSize: 11,
+        labelFontColor: isDark ? '#94a3b8' : '#64748b',
+        titleFontColor: isDark ? '#cbd5e1' : '#475569',
+        gridColor: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)'
+      },
+      legend: {
+        fontSize: 12,
+        cursor: 'pointer',
+        fontColor: isDark ? '#f1f5f9' : '#1e293b'
+      },
+      data: [
+        {
+          type: 'column',
+          name: 'Domestic (Individual)',
+          showInLegend: true,
+          color: '#3451b8',
+          dataPoints: d.map(s => ({ label: s.label, y: s.rate }))
+        },
+        {
+          type: 'column',
+          name: 'Non-Domestic / Commercial',
+          showInLegend: true,
+          color: '#f59e0b',
+          dataPoints: c.map((s, idx) => ({ label: d[idx]?.label || s.label, y: s.rate }))
+        }
+      ]
+    });
+    chart.render();
+  } catch (err) {
+    console.error('CanvasJS chart render error:', err);
+  }
+}
+
+// ── NOTICES ────────────────────────────────────────────────
+function fmtDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d)) return dateStr;
+  return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+export function renderNotices(state) {
+  const f = state.noticeFilter;
+  const list = noticesData
+    .filter(n => f === 'all' || n.category === f)
+    .sort((a, b) => new Date(b.date || b.syncedAt || 0) - new Date(a.date || a.syncedAt || 0));
+  const categories = [
+    { id: 'all', label: 'All Notices' },
+    { id: 'tariff', label: 'Tariff Revisions' },
+    { id: 'maintenance', label: 'Maintenance' },
+    { id: 'policy', label: 'Policy Directives' },
+    { id: 'service', label: 'Service Upgrades' },
+    { id: 'quality', label: 'Water Quality' },
+  ];
+  return `
+  <div>
+    <!-- Category Filter Bar -->
+    <div class="d-flex gap-2 mb-4 overflow-x-auto pb-1" style="scrollbar-width:none;">
+      ${categories.map(c => `
+        <button class="btn btn-sm ${f === c.id ? 'nb-filter-btn is-active' : 'nb-filter-btn'} flex-shrink-0"
+          onclick="window.__filter('${c.id}')" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+          ${c.label}
+        </button>`).join('')}
+    </div>
+
+    <!-- Notice Cards Container -->
+    <div id="noticeList" class="d-flex flex-column gap-3 text-start">
+      ${list.length === 0
+      ? '<div class="text-center text-secondary py-5">No notices found for this category.</div>'
+      : list.map(n => renderNoticeCard(n)).join('')}
+    </div>
+  </div>`;
+}
+
+export function renderNoticeCard(notice) {
+  const catMap = {
+    tariff: 'Tariff Revision',
+    maintenance: 'Maintenance',
+    policy: 'Policy Directive',
+    service: 'Service Upgrade',
+    quality: 'Water Quality'
+  };
+  const categoryLabel = notice.categoryLabel || catMap[notice.category] || notice.category || 'Official Notice';
+  const refNo = notice.referenceNo || notice.id || (notice.checksum ? notice.checksum.slice(0, 12) : 'BWSSB-2026');
+  const officialPdf = notice.officialPdfUrl || notice.officialLink;
+  const localPdf = notice.pdfUrl || notice.localBackup;
+
+  return `
+  <div class="nb-notice-card">
+    <div class="nb-notice-accent cat-${notice.category}-accent"></div>
+    <div class="nb-notice-body">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <span class="nb-category-pill cat-${notice.category}-pill">${categoryLabel}</span>
+        <span class="text-secondary" style="font-size:0.76rem;"><i class="bi bi-calendar3 me-1"></i>${fmtDate(notice.date || notice.syncedAt)}</span>
+      </div>
+      <h3 class="fw-bold mb-2" style="font-size:1.02rem; letter-spacing:-0.01em;">${notice.title}</h3>
+      <p class="text-secondary mb-2" style="font-size:0.86rem; line-height:1.6;">${notice.summary || notice.fullContent || ''}</p>
+      <div class="nb-ai-summary-box">
+        <div class="fw-semibold mb-1 text-primary" style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em;">
+          <i class="bi bi-robot me-1"></i>AI Summary & Citizen Action
+        </div>
+        <div>${notice.aiSummary || notice.citizenImpact || 'Review official document for details.'}</div>
+      </div>
+      <div class="d-flex align-items-center justify-content-between pt-2 flex-wrap gap-2" style="font-size:0.78rem;">
+        <span class="text-secondary font-mono">Ref: ${refNo}</span>
+        <div class="d-flex align-items-center gap-2">
+          ${officialPdf ? `
+          <a href="${officialPdf}" target="_blank" rel="noopener" class="nb-btn-official">
+            <i class="bi bi-globe me-1"></i>Official Gazette PDF
+          </a>` : ''}
+          ${localPdf ? `
+          <a href="${localPdf}" target="_blank" rel="noopener" class="text-secondary opacity-75" title="Archived Local PDF Backup" style="font-size:1.1rem; text-decoration:none;" onmouseover="this.classList.remove('opacity-75')" onmouseout="this.classList.add('opacity-75')">
+            <i class="bi bi-file-earmark-arrow-down-fill"></i>
+          </a>` : ''}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── COMPLAINT GUIDE ────────────────────────────────────────
+export function renderComplaint(state) {
+  const defaultId = complaintsData.complaintTypes[0]?.id || 'no-water';
+  const selectedId = state.selectedComplaintType || defaultId;
+  const selectedType = complaintsData.complaintTypes.find(c => c.id === selectedId) || complaintsData.complaintTypes[0];
+  return `
+  <div class="row g-4 text-start">
+    <div class="col-lg-4">
+      <div class="nb-card h-100">
+        <div class="nb-card-header"><i class="bi bi-shield-exclamation text-primary me-2"></i>Select Issue Type</div>
+        <div class="nb-card-body p-3 d-flex flex-column gap-2">
+          ${complaintsData.complaintTypes.map(c => `
+          <button class="btn btn-outline-primary text-start p-3 ${c.id === selectedId ? 'is-selected' : ''} nb-complaint-btn"
+            onclick="window.__complaint('${c.id}')" style="font-size:0.86rem;">
+            <div class="fw-bold d-flex align-items-center gap-2">
+              <i class="bi ${c.icon || 'bi-exclamation-circle'} text-primary"></i>
+              ${c.label}
+            </div>
+            ${c.description ? `<div class="text-secondary mt-1" style="font-size:0.76rem;">${c.description}</div>` : ''}
+          </button>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 d-flex flex-column gap-4">
+      <div class="nb-card">
+        <div class="nb-card-header" id="stepsHeading">
+          <i class="bi bi-list-ol text-primary me-2"></i> Steps: ${selectedType?.label || ''}
+        </div>
+        <div class="nb-card-body p-4" id="stepsBox">
+          ${renderSteps(selectedType)}
+        </div>
+      </div>
+
+      <!-- RTI Generator -->
+      <div class="nb-card">
+        <div class="nb-card-header d-flex justify-content-between align-items-center">
+          <span><i class="bi bi-file-earmark-text text-primary me-2"></i>Karnataka RTI Generator (Section 6(1))</span>
+          <button class="btn btn-sm btn-primary" onclick="window.__copyRti()"><i class="bi bi-clipboard me-1"></i>Copy Template</button>
+        </div>
+        <div class="nb-card-body p-4">
+          <div class="row g-3 mb-3">
+            <div class="col-md-4">
+              <label class="form-label fw-semibold" style="font-size:0.8rem;">Your Name</label>
+              <input type="text" class="form-control py-2" id="rtiName" placeholder="Rahul Sharma" oninput="window.__rti()" />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label fw-semibold" style="font-size:0.8rem;">Complaint Ref ID</label>
+              <input type="text" class="form-control py-2" id="rtiCid" placeholder="BWSSB-2026-89412" oninput="window.__rti()" />
+            </div>
+            <div class="col-md-4">
+              <label class="form-label fw-semibold" style="font-size:0.8rem;">Issue Description</label>
+              <input type="text" class="form-control py-2" id="rtiIssue" placeholder="Contaminated water supply in Sector 4" oninput="window.__rti()" />
+            </div>
+          </div>
+          <pre class="nb-rti-box mb-0" id="rtiOut">${complaintsData.rtiTemplate.template}</pre>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+export function renderSteps(typeObj) {
+  const steps = typeObj?.steps || [];
+  return `
+  <div class="nb-timeline pt-1">
+    ${steps.map((s, idx) => `
+    <div class="nb-timeline-item ${idx === steps.length - 1 ? 'is-last' : ''}">
+      <div class="nb-timeline-badge">${s.step}</div>
+      <div class="nb-timeline-content text-start">
+        <div class="fw-bold" style="font-size:0.95rem;">${s.action || s.title || ''}</div>
+        ${s.sla ? `<div class="text-secondary mt-1" style="font-size:0.82rem;"><i class="bi bi-clock me-1 text-primary"></i>SLA: <strong>${s.sla}</strong></div>` : ''}
+        ${s.details ? `<div class="text-secondary mt-1" style="font-size:0.84rem; line-height:1.6;">${s.details}</div>` : ''}
+        ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary mt-2 py-1 px-3" style="font-size:0.78rem;"><i class="bi bi-box-arrow-up-right me-1.5"></i>Take Action</a>` : ''}
+      </div>
+    </div>`).join('')}
+  </div>`;
+}
+
+// ── ASK NAMMA AI ───────────────────────────────────────────
+export function renderAI(state) {
+  const pool = getKeyPool();
+  const activeCount = pool.filter(k => k.status !== 'exhausted' && k.status !== 'invalid').length;
+  return `
+  <div class="nb-chat-container text-start">
+    <div class="nb-chat-header">
+      <div class="nb-chat-avatar"><i class="bi bi-robot"></i></div>
+      <div class="flex-fill">
+        <div class="fw-bold" style="font-size:0.9rem;">Ask NammaBengaluru AI</div>
+        <div style="font-size:0.72rem; color:var(--nb-emerald);">Online — ${activeCount} active keys in crowd pool</div>
+      </div>
+      <button class="btn btn-sm btn-outline-secondary" onclick="window.__modal()"><i class="bi bi-key-fill me-1"></i>Manage Keys</button>
+    </div>
+
+    <div class="nb-chat-messages" id="chatMsgs">
+      ${state.chatHistory.map(m => `
+        <div class="d-flex gap-2 ${m.role === 'user' ? 'justify-content-end' : ''}">
+          ${m.role === 'bot' ? '<div class="nb-chat-avatar flex-shrink-0" style="width:32px;height:32px;font-size:0.9rem;"><i class="bi bi-robot"></i></div>' : ''}
+          <div class="nb-chat-bubble ${m.role}">${m.content}</div>
+        </div>`).join('')}
+    </div>
+
+    <div class="nb-chat-footer">
+      <div class="d-flex gap-2">
+        <input type="text" class="nb-chat-input" id="chatIn" placeholder="Ask about BWSSB water bill, tariff slabs, complaints..." onkeydown="if(event.key==='Enter')window.__send()" />
+        <button class="nb-chat-send" id="chatSendBtn" onclick="window.__send()"><i class="bi bi-send-fill"></i></button>
+      </div>
+    </div>
+  </div>`;
+}

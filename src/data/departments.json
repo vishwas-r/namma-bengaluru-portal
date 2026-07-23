@@ -1,0 +1,67 @@
+[
+  {
+    "id": "bwssb",
+    "name": "BWSSB",
+    "fullName": "Bangalore Water Supply and Sewerage Board",
+    "kannada": "ಬೆಂಗಳೂರು ನೀರು ಸರಬರಾಜು ಮತ್ತು ಒಳಚರಂಡಿ ಮಂಡಳಿ",
+    "description": "Water supply, sewerage, and wastewater services for Bengaluru",
+    "icon": "bi-droplet-half",
+    "color": "#0ea5e9",
+    "helpline": "1916",
+    "website": "https://bwssb.karnataka.gov.in",
+    "status": "live",
+    "features": ["Bill Calculator", "Tariff Table", "Notices", "Complaint Guide", "RTI Helper", "AI Assistant"]
+  },
+  {
+    "id": "bescom",
+    "name": "BESCOM",
+    "fullName": "Bangalore Electricity Supply Company",
+    "kannada": "ಬೆಂಗಳೂರು ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿ",
+    "description": "Electricity supply and distribution for Bengaluru and surrounding districts",
+    "icon": "bi-lightning-charge",
+    "color": "#f59e0b",
+    "helpline": "1912",
+    "website": "https://bescom.karnataka.gov.in",
+    "status": "coming-soon",
+    "features": ["Bill Calculator", "Tariff Table", "Outage Alerts", "Complaint Guide"]
+  },
+  {
+    "id": "bbmp",
+    "name": "BBMP / GBA",
+    "fullName": "Greater Bengaluru Authority",
+    "kannada": "ಬೃಹತ್ ಬೆಂಗಳೂರು ಮಹಾನಗರ ಪಾಲಿಕೆ",
+    "description": "Civic services: roads, garbage, property tax, parks, drainage for Bengaluru",
+    "icon": "bi-building",
+    "color": "#10b981",
+    "helpline": "1533",
+    "website": "https://bbmp.gov.in",
+    "status": "coming-soon",
+    "features": ["Property Tax Calculator", "Complaint Guide", "Pothole Report"]
+  },
+  {
+    "id": "bmtc",
+    "name": "BMTC",
+    "fullName": "Bangalore Metropolitan Transport Corporation",
+    "kannada": "ಬೆಂಗಳೂರು ಮಹಾನಗರ ಸಾರಿಗೆ ನಿಗಮ",
+    "description": "Public bus transport services across Bengaluru metropolitan area",
+    "icon": "bi-bus-front",
+    "color": "#8b5cf6",
+    "helpline": "080-22253535",
+    "website": "https://mybmtc.karnataka.gov.in",
+    "status": "coming-soon",
+    "features": ["Route Finder", "Pass Guide", "Complaint Help"]
+  },
+  {
+    "id": "bda",
+    "name": "BDA",
+    "fullName": "Bangalore Development Authority",
+    "kannada": "ಬೆಂಗಳೂರು ಅಭಿವೃದ್ಧಿ ಪ್ರಾಧಿಕಾರ",
+    "description": "Urban planning, layouts, housing schemes, and development approvals",
+    "icon": "bi-map",
+    "color": "#f43f5e",
+    "helpline": "080-23520131",
+    "website": "https://bdabangalore.org",
+    "status": "coming-soon",
+    "features": ["OC/CC Checker", "Layout Guide", "Application Status"]
+  }
+]

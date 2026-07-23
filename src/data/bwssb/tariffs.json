@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "effectiveFrom": "2026-04-01",
+    "lastUpdated": "2026-07-01",
+    "source": "BWSSB Official Gazette Notification",
+    "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+    "annualEscalation": 3,
+    "currency": "INR",
+    "unit": "KL"
+  },
+  "domestic": {
+    "label": "Domestic (Individual)",
+    "description": "For individual residential connections",
+    "slabs": [
+      {
+        "id": "d1",
+        "from": 0,
+        "to": 8,
+        "rate": 9.53,
+        "label": "0 – 8 KL",
+        "color": "#22c55e"
+      },
+      {
+        "id": "d2",
+        "from": 8,
+        "to": 25,
+        "rate": 14.97,
+        "label": "8 – 25 KL",
+        "color": "#eab308"
+      },
+      {
+        "id": "d3",
+        "from": 25,
+        "to": 50,
+        "rate": 35.39,
+        "label": "25 – 50 KL",
+        "color": "#f97316"
+      },
+      {
+        "id": "d4",
+        "from": 50,
+        "to": null,
+        "rate": 61.25,
+        "label": "Above 50 KL",
+        "color": "#ef4444"
+      }
+    ],
+    "sanitaryCharge": {
+      "percentage": 25,
+      "minimumAmount": 100,
+      "description": "25% of water consumption charge (min ₹100/month)"
+    },
+    "meterFixedCharges": [
+      {
+        "size": "15mm",
+        "label": "15mm (Standard)",
+        "charge": 25
+      },
+      {
+        "size": "20mm",
+        "label": "20mm",
+        "charge": 50
+      },
+      {
+        "size": "25mm",
+        "label": "25mm",
+        "charge": 75
+      },
+      {
+        "size": "32mm",
+        "label": "32mm",
+        "charge": 100
+      },
+      {
+        "size": "40mm",
+        "label": "40mm",
+        "charge": 150
+      },
+      {
+        "size": "50mm",
+        "label": "50mm",
+        "charge": 200
+      }
+    ],
+    "borewellCharge": {
+      "fixed": 100,
+      "description": "Fixed monthly charge for registered domestic borewell"
+    },
+    "rwhPenalty": {
+      "description": "Non-compliance with Rainwater Harvesting mandate results in 50% surcharge on total water bill",
+      "surchargePercentage": 50,
+      "applicablePlotSizeInSqM": 1200
+    }
+  },
+  "bulkDomestic": {
+    "label": "Bulk Domestic (Apartments / Housing Complexes)",
+    "description": "For apartments and group housing complexes with a single bulk connection",
+    "note": "Bill is computed based on total consumption divided equally per flat, then individual slab rates applied per flat",
+    "slabs": [
+      {
+        "id": "bd1",
+        "from": 0,
+        "to": 8,
+        "rate": 9.53,
+        "label": "0 – 8 KL per flat",
+        "color": "#22c55e"
+      },
+      {
+        "id": "bd2",
+        "from": 8,
+        "to": 25,
+        "rate": 14.97,
+        "label": "8 – 25 KL per flat",
+        "color": "#eab308"
+      },
+      {
+        "id": "bd3",
+        "from": 25,
+        "to": 50,
+        "rate": 35.39,
+        "label": "25 – 50 KL per flat",
+        "color": "#f97316"
+      },
+      {
+        "id": "bd4",
+        "from": 50,
+        "to": null,
+        "rate": 61.25,
+        "label": "Above 50 KL per flat",
+        "color": "#ef4444"
+      }
+    ],
+    "sanitaryCharge": {
+      "percentage": 25,
+      "minimumAmount": 100
+    }
+  },
+  "nonDomestic": {
+    "label": "Non-Domestic / Commercial",
+    "description": "For shops, offices, hotels, institutions, and commercial establishments",
+    "slabs": [
+      {
+        "id": "nd1",
+        "from": 0,
+        "to": 10,
+        "rate": 35,
+        "label": "0 – 10 KL",
+        "color": "#3b82f6"
+      },
+      {
+        "id": "nd2",
+        "from": 10,
+        "to": 50,
+        "rate": 55,
+        "label": "10 – 50 KL",
+        "color": "#8b5cf6"
+      },
+      {
+        "id": "nd3",
+        "from": 50,
+        "to": null,
+        "rate": 85,
+        "label": "Above 50 KL",
+        "color": "#ec4899"
+      }
+    ],
+    "sanitaryCharge": {
+      "percentage": 50,
+      "minimumAmount": 200
+    },
+    "borewellCharge": {
+      "perHP": 500,
+      "description": "₹500 per HP per month for commercial borewells"
+    }
+  },
+  "industrial": {
+    "label": "Industrial",
+    "description": "For factories, manufacturing units, and industrial establishments",
+    "slabs": [
+      {
+        "id": "i1",
+        "from": 0,
+        "to": 100,
+        "rate": 60,
+        "label": "0 – 100 KL",
+        "color": "#06b6d4"
+      },
+      {
+        "id": "i2",
+        "from": 100,
+        "to": null,
+        "rate": 90,
+        "label": "Above 100 KL",
+        "color": "#0ea5e9"
+      }
+    ],
+    "sanitaryCharge": {
+      "percentage": 50,
+      "minimumAmount": 500
+    }
+  },
+  "historicalRates": [
+    {
+      "year": "2020-21",
+      "domesticFirstSlab": 8,
+      "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "localBackup": "/docs/bwssb/WaterTariff-2025.pdf"
+    },
+    {
+      "year": "2021-22",
+      "domesticFirstSlab": 8.24,
+      "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "localBackup": "/docs/bwssb/WaterTariff-2025.pdf"
+    },
+    {
+      "year": "2022-23",
+      "domesticFirstSlab": 8.49,
+      "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "localBackup": "/docs/bwssb/WaterTariff-2025.pdf"
+    },
+    {
+      "year": "2023-24",
+      "domesticFirstSlab": 8.74,
+      "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "localBackup": "/docs/bwssb/WaterTariff-2025.pdf"
+    },
+    {
+      "year": "2024-25",
+      "domesticFirstSlab": 9,
+      "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "localBackup": "/docs/bwssb/WaterTariff-2025.pdf"
+    },
+    {
+      "year": "2025-26",
+      "domesticFirstSlab": 9.27,
+      "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "localBackup": "/docs/bwssb/WaterTariff-2025.pdf"
+    },
+    {
+      "year": "2026-27",
+      "domesticFirstSlab": 9.53,
+      "officialLink": "https://bwssb.karnataka.gov.in/storage/pdf-files/WaterTariff-2025.pdf",
+      "localBackup": "/docs/bwssb/WaterTariff-2025.pdf"
+    }
+  ]
+}

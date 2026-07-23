@@ -1,0 +1,77 @@
+{
+  "helplines": [
+    { "label": "BWSSB 24/7 Helpline", "number": "1916", "type": "toll-free", "icon": "bi-telephone-fill", "description": "Water supply issues, leakages, billing complaints" },
+    { "label": "BWSSB WhatsApp", "number": "080-22238888", "type": "whatsapp", "icon": "bi-whatsapp", "description": "Complaint registration via WhatsApp" },
+    { "label": "BWSSB Email", "number": "helpdesk@bwssb.org", "type": "email", "icon": "bi-envelope-at", "description": "For formal complaints and RTI" }
+  ],
+  "onlinePortals": [
+    { "label": "BWSSB CMS Portal (Bills & Complaints)", "url": "https://cms.bwssb.gov.in", "purpose": "View bills, pay online, file complaints, track status" },
+    { "label": "BWSSB Official Website", "url": "https://bwssb.karnataka.gov.in", "purpose": "Circulars, notices, tariffs, forms" },
+    { "label": "Jala Doota App", "url": "https://play.google.com/store/apps/details?id=com.bwssb", "purpose": "Mobile app for water supply complaints" }
+  ],
+  "complaintTypes": [
+    {
+      "id": "no-water",
+      "label": "No Water Supply",
+      "icon": "bi-slash-circle-fill",
+      "steps": [
+        { "step": 1, "action": "Call 1916 immediately", "sla": "Response within 4 hours for complete outages", "link": "tel:1916" },
+        { "step": 2, "action": "Register complaint on CMS Portal with your RR Number", "sla": "Complaint registered instantly", "link": "https://cms.bwssb.gov.in" },
+        { "step": 3, "action": "If no response in 24 hours, escalate to Sub-Division Engineer", "sla": "Resolution within 48 hours" }
+      ]
+    },
+    {
+      "id": "billing-error",
+      "label": "Billing Error / Wrong Amount",
+      "icon": "bi-receipt",
+      "steps": [
+        { "step": 1, "action": "Verify meter reading matches your meter", "sla": "Self-check" },
+        { "step": 2, "action": "File complaint on CMS portal under 'Billing Grievance'", "sla": "Reviewed within 7 working days", "link": "https://cms.bwssb.gov.in" },
+        { "step": 3, "action": "Visit Sub-Division Office with physical bill and meter photos", "sla": "Correction within 15 working days" },
+        { "step": 4, "action": "Escalate to Executive Engineer if unresolved", "sla": "30 days statutory resolution" }
+      ]
+    },
+    {
+      "id": "pipe-leak",
+      "label": "Leaking / Burst Pipe (Public)",
+      "icon": "bi-tools",
+      "steps": [
+        { "step": 1, "action": "Call 1916 — emergency pipe burst gets priority", "sla": "Response within 2 hours", "link": "tel:1916" },
+        { "step": 2, "action": "Take photo and register on CMS portal", "sla": "Filed within minutes", "link": "https://cms.bwssb.gov.in" }
+      ]
+    },
+    {
+      "id": "meter-issue",
+      "label": "Faulty / Stuck Meter",
+      "icon": "bi-speedometer2",
+      "steps": [
+        { "step": 1, "action": "File meter replacement request on CMS portal", "sla": "Inspection within 7 working days", "link": "https://cms.bwssb.gov.in" },
+        { "step": 2, "action": "Meter replacement done free of cost if defective on BWSSB side", "sla": "Replacement within 15 working days" }
+      ]
+    },
+    {
+      "id": "low-pressure",
+      "label": "Low Water Pressure",
+      "icon": "bi-arrow-down-short",
+      "steps": [
+        { "step": 1, "action": "Register complaint on CMS portal under 'Water Pressure'", "sla": "Investigation within 7 working days", "link": "https://cms.bwssb.gov.in" },
+        { "step": 2, "action": "If area-wide issue, BWSSB may schedule booster pumping" }
+      ]
+    }
+  ],
+  "escalationLadder": [
+    { "level": 1, "role": "BWSSB Helpline", "contact": "1916", "sla": "24–48 hours" },
+    { "level": 2, "role": "Junior Engineer (JE)", "contact": "Visit Sub-Division Office", "sla": "7 working days" },
+    { "level": 3, "role": "Assistant Executive Engineer (AEE)", "contact": "Sub-Division Office", "sla": "15 working days" },
+    { "level": 4, "role": "Executive Engineer (EE)", "contact": "Division Office", "sla": "30 working days" },
+    { "level": 5, "role": "Chief Engineer / MD BWSSB", "contact": "Head Office: 080-22238888", "sla": "Statutory obligation" },
+    { "level": 6, "role": "Karnataka Consumer Disputes Redressal Commission", "contact": "https://confonet.nic.in", "sla": "Legal proceedings", "note": "For persistent unresolved issues. Filing fee waived for claims below ₹5 Lakh for senior citizens." }
+  ],
+  "rtiTemplate": {
+    "subject": "Status of Complaint / Information Request under RTI Act 2005",
+    "authority": "Public Information Officer, Bangalore Water Supply and Sewerage Board",
+    "address": "BWSSB Head Office, Cauvery Bhavan, K.G. Road, Bengaluru – 560 009",
+    "onlinePortal": "https://rtionline.karnataka.gov.in",
+    "template": "I, [YOUR NAME], son/daughter of [PARENT NAME], residing at [YOUR ADDRESS], Bengaluru – [PIN], wish to seek the following information under the Right to Information Act, 2005:\n\n1. Current status and action taken on complaint number [COMPLAINT ID] filed on [DATE] regarding [BRIEF DESCRIPTION OF ISSUE].\n2. Name and designation of the officer responsible for resolving this complaint.\n3. Expected resolution timeline.\n\nI am depositing ₹10/- as RTI fee [by IPO/court fee stamp/online].\n\nDate:\nPlace: Bengaluru\nSignature:\nName:\nAddress:\nContact Number:"
+  }
+}
