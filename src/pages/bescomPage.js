@@ -58,11 +58,19 @@ export function renderTab(state, lang) {
     case 'calculator': return renderCalc(state);
     case 'tariff': return renderTariff();
     case 'services': return renderServices(state);
+    case 'outages': return renderOutagesTab('bescom');
     case 'notices': return renderNotices(state);
     case 'complaint': return renderComplaint(state);
     case 'ai': return renderAI(state);
     default: return renderCalc(state);
   }
+}
+
+export function renderOutagesTab(dept = 'bescom') {
+  return `
+  <div class="d-flex flex-column gap-4">
+    ${renderOutageWidget(dept)}
+  </div>`;
 }
 
 // ── CALCULATOR ─────────────────────────────────────────────
@@ -396,9 +404,6 @@ export function renderNotices(state) {
     { id: 'policy', label: 'Policy Directives' },
   ];
   return `
-  <div class="mb-4">
-    ${renderOutageWidget('bescom')}
-  </div>
   <div class="row g-4 text-start">
     <!-- Left Column: Category Filter & Official Notices (col-lg-7) -->
     <div class="col-lg-7">

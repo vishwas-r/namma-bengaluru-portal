@@ -3,7 +3,15 @@
  * Manages verified citizen outage reports, rate limiting, and 2-hour TTL auto-decay.
  */
 
+import bescomOutages from '../data/bescom/outages.json';
+import bwssbOutages from '../data/bwssb/outages.json';
+
 const STORAGE_KEY_PREFIX = 'nb_outages_';
+
+const BASELINE_DATASETS = {
+  bescom: bescomOutages || [],
+  bwssb: bwssbOutages || []
+};
 
 export const NEIGHBORHOODS = [
   'HSR Layout',
@@ -25,7 +33,13 @@ export const NEIGHBORHOODS = [
 export function getOutageReports(dept = 'bescom') {
   try {
     const raw = localStorage.getItem(STORAGE_KEY_PREFIX + dept);
-    let reports = raw ? JSON.parse(raw) : [];
+    let reports = raw ? JSON.parse(raw) : (BASELINE_DATASETS[dept] || []);
+
+    // Purge legacy seed reports if cached in localStorage
+    if (raw && (raw.includes('rep_b1') || raw.includes('u101') || raw.includes('Ananya M.'))) {
+      localStorage.removeItem(STORAGE_KEY_PREFIX + dept);
+      reports = BASELINE_DATASETS[dept] || [];
+    }
 
     // Apply 2-Hour TTL Auto-Decay (filter out reports older than 2 hours)
     const twoHoursAgo = Date.now() - (2 * 60 * 60 * 1000);
@@ -37,7 +51,7 @@ export function getOutageReports(dept = 'bescom') {
 
     return validReports;
   } catch {
-    return [];
+    return BASELINE_DATASETS[dept] || [];
   }
 }
 
