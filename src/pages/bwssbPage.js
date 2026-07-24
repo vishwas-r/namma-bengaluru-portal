@@ -5,6 +5,7 @@ import complaintsData from '../data/bwssb/complaints.json';
 import servicesData from '../data/bwssb/services.json';
 import { calcDomesticBill, calcApartmentBill, calcCommercialBill, projectFutureBill } from '../services/bwssbCalculator.js';
 import { queryGemini, getKeyPool } from '../services/keyPool.js';
+import { renderOutageWidget } from '../components/outageWidget.js';
 import CanvasJSModule from '@canvasjs/charts';
 const CanvasJS = CanvasJSModule.CanvasJS || CanvasJSModule.default || CanvasJSModule;
 
@@ -450,6 +451,9 @@ export function renderNotices(state) {
     { id: 'quality', label: 'Water Quality' },
   ];
   return `
+  <div class="mb-4">
+    ${renderOutageWidget('bwssb')}
+  </div>
   <div class="row g-4 text-start">
     <!-- Left Column: Category Filter & Official Notices (col-lg-7) -->
     <div class="col-lg-7">

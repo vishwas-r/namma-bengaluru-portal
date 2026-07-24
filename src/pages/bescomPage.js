@@ -5,6 +5,7 @@ import complaintsData from '../data/bescom/complaints.json';
 import servicesData from '../data/bescom/services.json';
 import { calcDomesticElectricityBill, calcCommercialElectricityBill } from '../services/bescomCalculator.js';
 import { queryGemini, getKeyPool } from '../services/keyPool.js';
+import { renderOutageWidget } from '../components/outageWidget.js';
 import CanvasJSModule from '@canvasjs/charts';
 const CanvasJS = CanvasJSModule.CanvasJS || CanvasJSModule.default || CanvasJSModule;
 
@@ -395,6 +396,9 @@ export function renderNotices(state) {
     { id: 'policy', label: 'Policy Directives' },
   ];
   return `
+  <div class="mb-4">
+    ${renderOutageWidget('bescom')}
+  </div>
   <div class="row g-4 text-start">
     <!-- Left Column: Category Filter & Official Notices (col-lg-7) -->
     <div class="col-lg-7">
