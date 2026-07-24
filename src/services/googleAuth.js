@@ -43,8 +43,12 @@ export function setCurrentUser(user) {
   }
 }
 
+export function hasGoogleClientId() {
+  return Boolean(GOOGLE_CLIENT_ID && GOOGLE_CLIENT_ID.trim() !== '');
+}
+
 export function initGoogleAuth(callback) {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || !hasGoogleClientId()) return;
 
   const handleCredentialResponse = (response) => {
     if (!response || !response.credential) return;
@@ -64,36 +68,45 @@ export function initGoogleAuth(callback) {
   };
 
   if (window.google?.accounts?.id) {
-    window.google.accounts.id.initialize({
-      client_id: GOOGLE_CLIENT_ID,
-      callback: handleCredentialResponse,
-      auto_select: false,
-    });
-  } else {
-    // Retry script initialization if script loading is delayed
-    const timer = setInterval(() => {
-      if (window.google?.accounts?.id) {
-        clearInterval(timer);
-        window.google.accounts.id.initialize({
-          client_id: GOOGLE_CLIENT_ID,
-          callback: handleCredentialResponse,
-          auto_select: false,
-        });
-      }
-    }, 300);
+    try {
+      window.google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: handleCredentialResponse,
+        auto_select: false,
+      });
+    } catch (e) {
+      console.warn('Google Identity initialization skipped:', e);
+    }
   }
 }
 
 export function promptGoogleLogin(elementId, callback) {
+  if (!hasGoogleClientId()) {
+    const el = elementId ? document.getElementById(elementId) : null;
+    if (el) {
+      el.innerHTML = `
+        <button class="btn btn-outline-primary rounded-pill px-4 py-2 fw-semibold" onclick="window.__nbDemoLogin('default')">
+          <i class="bi bi-person-check-fill me-2 text-primary"></i>Sign in as Verified Citizen
+        </button>`;
+    }
+    return;
+  }
+
   initGoogleAuth(callback);
   if (window.google?.accounts?.id) {
     if (elementId && document.getElementById(elementId)) {
-      window.google.accounts.id.renderButton(
-        document.getElementById(elementId),
-        { theme: 'outline', size: 'large', type: 'standard', text: 'continue_with', shape: 'pill' }
-      );
+      try {
+        window.google.accounts.id.renderButton(
+          document.getElementById(elementId),
+          { theme: 'outline', size: 'large', type: 'standard', text: 'continue_with', shape: 'pill' }
+        );
+      } catch (e) {
+        console.warn('Google button render skipped:', e);
+      }
     } else {
-      window.google.accounts.id.prompt();
+      try {
+        window.google.accounts.id.prompt();
+      } catch (e) {}
     }
   }
 }
