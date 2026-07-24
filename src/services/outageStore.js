@@ -22,77 +22,10 @@ export const NEIGHBORHOODS = [
   'Banashankari'
 ];
 
-// Pre-populated seed reports to ensure rich initial community state
-const SEED_REPORTS = {
-  bescom: [
-    {
-      id: 'rep_b1',
-      dept: 'bescom',
-      area: 'HSR Layout',
-      outageType: 'Power Outage (Unscheduled)',
-      user: { sub: 'u101', name: 'Vishwas R.', givenName: 'Vishwas' },
-      timestamp: new Date(Date.now() - 14 * 60 * 1000).toISOString(),
-      verified: true
-    },
-    {
-      id: 'rep_b2',
-      dept: 'bescom',
-      area: 'HSR Layout',
-      outageType: 'Feeder Trip / Transformer Breakdown',
-      user: { sub: 'u102', name: 'Ananya M.', givenName: 'Ananya' },
-      timestamp: new Date(Date.now() - 22 * 60 * 1000).toISOString(),
-      verified: true
-    },
-    {
-      id: 'rep_b3',
-      dept: 'bescom',
-      area: 'HSR Layout',
-      outageType: 'Power Outage (Unscheduled)',
-      user: { sub: 'u103', name: 'Karthik S.', givenName: 'Karthik' },
-      timestamp: new Date(Date.now() - 28 * 60 * 1000).toISOString(),
-      verified: true
-    },
-    {
-      id: 'rep_b4',
-      dept: 'bescom',
-      area: 'Whitefield / ITPL',
-      outageType: 'Voltage Fluctuation / Phase Drop',
-      user: { sub: 'u104', name: 'Priya N.', givenName: 'Priya' },
-      timestamp: new Date(Date.now() - 45 * 60 * 1000).toISOString(),
-      verified: true
-    }
-  ],
-  bwssb: [
-    {
-      id: 'rep_w1',
-      dept: 'bwssb',
-      area: 'Bellandur / Sarjapur Road',
-      outageType: 'Water Supply Interruption',
-      user: { sub: 'u201', name: 'Rajesh K.', givenName: 'Rajesh' },
-      timestamp: new Date(Date.now() - 35 * 60 * 1000).toISOString(),
-      verified: true
-    },
-    {
-      id: 'rep_w2',
-      dept: 'bwssb',
-      area: 'Bellandur / Sarjapur Road',
-      outageType: 'Low Water Pressure',
-      user: { sub: 'u202', name: 'Sneha B.', givenName: 'Sneha' },
-      timestamp: new Date(Date.now() - 50 * 60 * 1000).toISOString(),
-      verified: true
-    }
-  ]
-};
-
 export function getOutageReports(dept = 'bescom') {
   try {
     const raw = localStorage.getItem(STORAGE_KEY_PREFIX + dept);
     let reports = raw ? JSON.parse(raw) : [];
-
-    if (!raw || reports.length === 0) {
-      reports = SEED_REPORTS[dept] || [];
-      localStorage.setItem(STORAGE_KEY_PREFIX + dept, JSON.stringify(reports));
-    }
 
     // Apply 2-Hour TTL Auto-Decay (filter out reports older than 2 hours)
     const twoHoursAgo = Date.now() - (2 * 60 * 60 * 1000);
@@ -104,7 +37,7 @@ export function getOutageReports(dept = 'bescom') {
 
     return validReports;
   } catch {
-    return SEED_REPORTS[dept] || [];
+    return [];
   }
 }
 
