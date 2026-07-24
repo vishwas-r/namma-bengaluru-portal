@@ -1,0 +1,2721 @@
+[
+  {
+    "id": "BESCOM-55c08f41",
+    "title": "ಕನ್ನಡ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕನ್ನಡ",
+    "aiSummary": "Official BESCOM notification regarding ಕನ್ನಡ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/319/planned-outages/kn",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:02.628Z"
+  },
+  {
+    "id": "BESCOM-f1eb44b3",
+    "title": "Customer Relations",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "Customer Relations",
+    "aiSummary": "Official BESCOM notification regarding Customer Relations. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/CR-Scheduled-Power-Outages/Power%20Interruptions%20of%20KPTCL%20Works%20from%2012-7-2021%20to%2031-7-2021.xlsx",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:02.628Z"
+  },
+  {
+    "id": "BESCOM-fcffcf81",
+    "title": "BESCOM Dictionary",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "BESCOM Dictionary",
+    "aiSummary": "Official BESCOM notification regarding BESCOM Dictionary. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Customer%20Relations/BESCOM-Dictionary.pdf",
+    "localBackup": "/docs/bescom/BESCOM-Dictionary.pdf",
+    "hasLocalBackup": true,
+    "checksum": "fc0ae5a3e1bf535e7fc53c9e07529ff867125d2864c2df7b1db5f51d07de8806",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:02.984Z"
+  },
+  {
+    "id": "BESCOM-7497bf79",
+    "title": "BESCOM Tariff",
+    "date": "2026-07-24",
+    "category": "tariff",
+    "summary": "BESCOM Tariff",
+    "aiSummary": "Official BESCOM notification regarding BESCOM Tariff. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/62/bescom-tariff/en",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "tariff",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:02.985Z"
+  },
+  {
+    "id": "BESCOM-165d46de",
+    "title": "GOK 1968 Order",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1968 Order",
+    "aiSummary": "Official BESCOM notification regarding GOK 1968 Order. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/1.pdf",
+    "localBackup": "/docs/bescom/1.pdf",
+    "hasLocalBackup": true,
+    "checksum": "ca47114ca56c7d744331de10a85dd3bc5c8fd7eebcb1c960147125e2af4a70ad",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:03.069Z"
+  },
+  {
+    "id": "BESCOM-3f9b9e2c",
+    "title": "GOK 1972 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1972 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1972 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/2.pdf",
+    "localBackup": "/docs/bescom/2.pdf",
+    "hasLocalBackup": true,
+    "checksum": "484dbc566224596a90d82617343f0eed28454607b943fa9dcb1d5608bcbbcf4b",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:03.249Z"
+  },
+  {
+    "id": "BESCOM-ca8adc2f",
+    "title": "GOK 1976 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1976 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1976 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/3.pdf",
+    "localBackup": "/docs/bescom/3.pdf",
+    "hasLocalBackup": true,
+    "checksum": "2d4408340ca71e65f3f93e061dc2e00a82b69b67a57e1e97f98d3181d82007a4",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:03.332Z"
+  },
+  {
+    "id": "BESCOM-a6e3c5be",
+    "title": "GOK 1980 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1980 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1980 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/5.pdf",
+    "localBackup": "/docs/bescom/5.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b9eb951847557d4d0ef8f1bebaa4a96de52bafddb867150f4a95ca0f553760a5",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:03.416Z"
+  },
+  {
+    "id": "BESCOM-b939dba0",
+    "title": "GOK Proceedings",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK Proceedings",
+    "aiSummary": "Official BESCOM notification regarding GOK Proceedings. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/14.pdf",
+    "localBackup": "/docs/bescom/14.pdf",
+    "hasLocalBackup": true,
+    "checksum": "40fdc7a49db2315a9bfffd0c3bc4959261f5324de86f50acf9da01071eb8cdf3",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:03.511Z"
+  },
+  {
+    "id": "BESCOM-c1d6f97c",
+    "title": "GOK 1982 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1982 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1982 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/6.pdf",
+    "localBackup": "/docs/bescom/6.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bc029e50aa8c6460b66c6fa5d9d98cdcaba9357ddcf22923c5419653caa29e54",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:04.989Z"
+  },
+  {
+    "id": "BESCOM-29a4817b",
+    "title": "GOK 1982-February circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1982-February circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1982-February circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/7.pdf",
+    "localBackup": "/docs/bescom/7.pdf",
+    "hasLocalBackup": true,
+    "checksum": "983dd27a1c934c26bfd711fc1807e516e305dcc08e559036acafa4b0c685053c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:05.431Z"
+  },
+  {
+    "id": "BESCOM-b939dba0",
+    "title": "GOK Proceedings",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK Proceedings",
+    "aiSummary": "Official BESCOM notification regarding GOK Proceedings. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/8.pdf",
+    "localBackup": "/docs/bescom/8.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b1870053a79a025247b331b1419dd9f2a998390447c5f5365cb79f9df132cf50",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:05.632Z"
+  },
+  {
+    "id": "BESCOM-a9b13579",
+    "title": "GOK 1990 OM",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1990 OM",
+    "aiSummary": "Official BESCOM notification regarding GOK 1990 OM. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/9.pdf",
+    "localBackup": "/docs/bescom/9.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0ddd1d04855da7cf8dec2a338e3961f03165ac464533e2c1473fa5ee15528d2c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:06.215Z"
+  },
+  {
+    "id": "BESCOM-440736c2",
+    "title": "GOK 1992 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1992 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1992 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/10.PDF",
+    "localBackup": "/docs/bescom/10.PDF",
+    "hasLocalBackup": true,
+    "checksum": "7fb7f4c9a80f96d2dc44bd78b8025a627ebee7f2280c60e35d86624577798740",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:13.697Z"
+  },
+  {
+    "id": "BESCOM-a1cad081",
+    "title": "GOK 2000 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2000 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 2000 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/12.pdf",
+    "localBackup": "/docs/bescom/12.pdf",
+    "hasLocalBackup": true,
+    "checksum": "20ff0f4a50a88077e9fd0971fe46e5aa8749278ad5f5335d22f3f80de92cf422",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:13.838Z"
+  },
+  {
+    "id": "BESCOM-1d15a86e",
+    "title": "GOK 2001 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2001 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 2001 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/13.pdf",
+    "localBackup": "/docs/bescom/13.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bb1e9c06abe947d652398264674380fc5cc99d8385ed85770aab38791709e40e",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:13.910Z"
+  },
+  {
+    "id": "BESCOM-41e72138",
+    "title": "GOK 1998 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1998 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1998 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/11.pdf",
+    "localBackup": "/docs/bescom/11.pdf",
+    "hasLocalBackup": true,
+    "checksum": "cef3169fedc010a1f10b68db781e73587cc222aff8f6a5f8b76c620724578829",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:15.383Z"
+  },
+  {
+    "id": "BESCOM-ece65869",
+    "title": "GOK 2002 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2002 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 2002 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/15.pdf",
+    "localBackup": "/docs/bescom/15.pdf",
+    "hasLocalBackup": true,
+    "checksum": "79285cab376f3de64cd9f824639c977e0b8c081fa948d29bca16f1ba94e8a6fb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:15.469Z"
+  },
+  {
+    "id": "BESCOM-b2f72363",
+    "title": "GOK 2002 circular- disciplinary action against employees who do not use Kannada language at workplace",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2002 circular- disciplinary action against employees who do not use Kannada language at workplace",
+    "aiSummary": "Official BESCOM notification regarding GOK 2002 circular- disciplinary action against employees who do not use Kannada language at workplace. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/16.pdf",
+    "localBackup": "/docs/bescom/16.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9bdd3f7b549ac83bf10066992b68334cdd8e6158d98620aae03684d0a2f8b125",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:15.629Z"
+  },
+  {
+    "id": "BESCOM-f422ea0d",
+    "title": "Power Purchase Agreement Abstract",
+    "date": "2026-07-24",
+    "category": "maintenance",
+    "summary": "Power Purchase Agreement Abstract",
+    "aiSummary": "Official BESCOM notification regarding Power Purchase Agreement Abstract. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Power%20Purchase/Abstract%20in%20English.pdf",
+    "localBackup": "/docs/bescom/Abstract in English.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bdf618fb065bab1eb90fe04e5c4f293a3f6c5e3f17356f546d7d4e9d4e6c003f",
+    "tags": [
+      "maintenance",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:15.715Z"
+  },
+  {
+    "id": "BESCOM-da8e3443",
+    "title": "Manual for Maintenance of Distribution Infrastructure in BESCOM",
+    "date": "2026-07-24",
+    "category": "maintenance",
+    "summary": "Manual for Maintenance of Distribution Infrastructure in BESCOM",
+    "aiSummary": "Official BESCOM notification regarding Manual for Maintenance of Distribution Infrastructure in BESCOM. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1760523194.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1760523194.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9b4b613096e69dd111c3ea7f673921b244d3a112af996a0fd7146c14d3a5152f",
+    "tags": [
+      "maintenance",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:16.330Z"
+  },
+  {
+    "id": "BESCOM-8519541e",
+    "title": "Energy Saving Booklet",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "Energy Saving Booklet",
+    "aiSummary": "Official BESCOM notification regarding Energy Saving Booklet. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/DSM/BescomEsaving.pdf",
+    "localBackup": "/docs/bescom/BescomEsaving.pdf",
+    "hasLocalBackup": true,
+    "checksum": "4ffac6e38aed4657152664ec1c7ea425257c5013b5aaaeb2855ac7a0f9014c39",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:19.728Z"
+  },
+  {
+    "id": "BESCOM-b443708d",
+    "title": "Planned Outages",
+    "date": "2026-07-24",
+    "category": "maintenance",
+    "summary": "Planned Outages",
+    "aiSummary": "Official BESCOM notification regarding Planned Outages. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/319/planned-outages/en",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "maintenance",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:19.728Z"
+  },
+  {
+    "id": "BESCOM-f1eb44b3",
+    "title": "Customer Relations",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "Customer Relations",
+    "aiSummary": "Official BESCOM notification regarding Customer Relations. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/CR-Scheduled-Power-Outages/Power%20Interruptions%20of%20KPTCL%20Works%20from%2012-7-2021%20to%2031-7-2021.xlsx",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:19.728Z"
+  },
+  {
+    "id": "BESCOM-fcffcf81",
+    "title": "BESCOM Dictionary",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "BESCOM Dictionary",
+    "aiSummary": "Official BESCOM notification regarding BESCOM Dictionary. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Customer%20Relations/BESCOM-Dictionary.pdf",
+    "localBackup": "/docs/bescom/BESCOM-Dictionary.pdf",
+    "hasLocalBackup": true,
+    "checksum": "fc0ae5a3e1bf535e7fc53c9e07529ff867125d2864c2df7b1db5f51d07de8806",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:20.075Z"
+  },
+  {
+    "id": "BESCOM-7497bf79",
+    "title": "BESCOM Tariff",
+    "date": "2026-07-24",
+    "category": "tariff",
+    "summary": "BESCOM Tariff",
+    "aiSummary": "Official BESCOM notification regarding BESCOM Tariff. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/62/bescom-tariff/en",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "tariff",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:20.075Z"
+  },
+  {
+    "id": "BESCOM-165d46de",
+    "title": "GOK 1968 Order",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1968 Order",
+    "aiSummary": "Official BESCOM notification regarding GOK 1968 Order. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/1.pdf",
+    "localBackup": "/docs/bescom/1.pdf",
+    "hasLocalBackup": true,
+    "checksum": "ca47114ca56c7d744331de10a85dd3bc5c8fd7eebcb1c960147125e2af4a70ad",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:20.141Z"
+  },
+  {
+    "id": "BESCOM-3f9b9e2c",
+    "title": "GOK 1972 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1972 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1972 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/2.pdf",
+    "localBackup": "/docs/bescom/2.pdf",
+    "hasLocalBackup": true,
+    "checksum": "484dbc566224596a90d82617343f0eed28454607b943fa9dcb1d5608bcbbcf4b",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:20.216Z"
+  },
+  {
+    "id": "BESCOM-ca8adc2f",
+    "title": "GOK 1976 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1976 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1976 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/3.pdf",
+    "localBackup": "/docs/bescom/3.pdf",
+    "hasLocalBackup": true,
+    "checksum": "2d4408340ca71e65f3f93e061dc2e00a82b69b67a57e1e97f98d3181d82007a4",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:20.371Z"
+  },
+  {
+    "id": "BESCOM-a6e3c5be",
+    "title": "GOK 1980 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1980 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1980 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/5.pdf",
+    "localBackup": "/docs/bescom/5.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b9eb951847557d4d0ef8f1bebaa4a96de52bafddb867150f4a95ca0f553760a5",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:20.548Z"
+  },
+  {
+    "id": "BESCOM-b939dba0",
+    "title": "GOK Proceedings",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK Proceedings",
+    "aiSummary": "Official BESCOM notification regarding GOK Proceedings. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/14.pdf",
+    "localBackup": "/docs/bescom/14.pdf",
+    "hasLocalBackup": true,
+    "checksum": "40fdc7a49db2315a9bfffd0c3bc4959261f5324de86f50acf9da01071eb8cdf3",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:21.126Z"
+  },
+  {
+    "id": "BESCOM-c1d6f97c",
+    "title": "GOK 1982 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1982 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1982 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/6.pdf",
+    "localBackup": "/docs/bescom/6.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bc029e50aa8c6460b66c6fa5d9d98cdcaba9357ddcf22923c5419653caa29e54",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:21.398Z"
+  },
+  {
+    "id": "BESCOM-29a4817b",
+    "title": "GOK 1982-February circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1982-February circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1982-February circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/7.pdf",
+    "localBackup": "/docs/bescom/7.pdf",
+    "hasLocalBackup": true,
+    "checksum": "983dd27a1c934c26bfd711fc1807e516e305dcc08e559036acafa4b0c685053c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:21.698Z"
+  },
+  {
+    "id": "BESCOM-b939dba0",
+    "title": "GOK Proceedings",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK Proceedings",
+    "aiSummary": "Official BESCOM notification regarding GOK Proceedings. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/8.pdf",
+    "localBackup": "/docs/bescom/8.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b1870053a79a025247b331b1419dd9f2a998390447c5f5365cb79f9df132cf50",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:21.878Z"
+  },
+  {
+    "id": "BESCOM-a9b13579",
+    "title": "GOK 1990 OM",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1990 OM",
+    "aiSummary": "Official BESCOM notification regarding GOK 1990 OM. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/9.pdf",
+    "localBackup": "/docs/bescom/9.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0ddd1d04855da7cf8dec2a338e3961f03165ac464533e2c1473fa5ee15528d2c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:22.028Z"
+  },
+  {
+    "id": "BESCOM-440736c2",
+    "title": "GOK 1992 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1992 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1992 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/10.PDF",
+    "localBackup": "/docs/bescom/10.PDF",
+    "hasLocalBackup": true,
+    "checksum": "7fb7f4c9a80f96d2dc44bd78b8025a627ebee7f2280c60e35d86624577798740",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:36.328Z"
+  },
+  {
+    "id": "BESCOM-a1cad081",
+    "title": "GOK 2000 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2000 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 2000 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/12.pdf",
+    "localBackup": "/docs/bescom/12.pdf",
+    "hasLocalBackup": true,
+    "checksum": "20ff0f4a50a88077e9fd0971fe46e5aa8749278ad5f5335d22f3f80de92cf422",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:36.481Z"
+  },
+  {
+    "id": "BESCOM-1d15a86e",
+    "title": "GOK 2001 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2001 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 2001 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/13.pdf",
+    "localBackup": "/docs/bescom/13.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bb1e9c06abe947d652398264674380fc5cc99d8385ed85770aab38791709e40e",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:36.734Z"
+  },
+  {
+    "id": "BESCOM-41e72138",
+    "title": "GOK 1998 circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 1998 circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 1998 circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/11.pdf",
+    "localBackup": "/docs/bescom/11.pdf",
+    "hasLocalBackup": true,
+    "checksum": "cef3169fedc010a1f10b68db781e73587cc222aff8f6a5f8b76c620724578829",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:39.907Z"
+  },
+  {
+    "id": "BESCOM-ece65869",
+    "title": "GOK 2002 Circular",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2002 Circular",
+    "aiSummary": "Official BESCOM notification regarding GOK 2002 Circular. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/15.pdf",
+    "localBackup": "/docs/bescom/15.pdf",
+    "hasLocalBackup": true,
+    "checksum": "79285cab376f3de64cd9f824639c977e0b8c081fa948d29bca16f1ba94e8a6fb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:40.115Z"
+  },
+  {
+    "id": "BESCOM-b2f72363",
+    "title": "GOK 2002 circular- disciplinary action against employees who do not use Kannada language at workplace",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "GOK 2002 circular- disciplinary action against employees who do not use Kannada language at workplace",
+    "aiSummary": "Official BESCOM notification regarding GOK 2002 circular- disciplinary action against employees who do not use Kannada language at workplace. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/16.pdf",
+    "localBackup": "/docs/bescom/16.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9bdd3f7b549ac83bf10066992b68334cdd8e6158d98620aae03684d0a2f8b125",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:40.284Z"
+  },
+  {
+    "id": "BESCOM-f422ea0d",
+    "title": "Power Purchase Agreement Abstract",
+    "date": "2026-07-24",
+    "category": "maintenance",
+    "summary": "Power Purchase Agreement Abstract",
+    "aiSummary": "Official BESCOM notification regarding Power Purchase Agreement Abstract. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Power%20Purchase/Abstract%20in%20English.pdf",
+    "localBackup": "/docs/bescom/Abstract in English.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bdf618fb065bab1eb90fe04e5c4f293a3f6c5e3f17356f546d7d4e9d4e6c003f",
+    "tags": [
+      "maintenance",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:40.366Z"
+  },
+  {
+    "id": "BESCOM-da8e3443",
+    "title": "Manual for Maintenance of Distribution Infrastructure in BESCOM",
+    "date": "2026-07-24",
+    "category": "maintenance",
+    "summary": "Manual for Maintenance of Distribution Infrastructure in BESCOM",
+    "aiSummary": "Official BESCOM notification regarding Manual for Maintenance of Distribution Infrastructure in BESCOM. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1760523194.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1760523194.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9b4b613096e69dd111c3ea7f673921b244d3a112af996a0fd7146c14d3a5152f",
+    "tags": [
+      "maintenance",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:42.179Z"
+  },
+  {
+    "id": "BESCOM-8519541e",
+    "title": "Energy Saving Booklet",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "Energy Saving Booklet",
+    "aiSummary": "Official BESCOM notification regarding Energy Saving Booklet. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/DSM/BescomEsaving.pdf",
+    "localBackup": "/docs/bescom/BescomEsaving.pdf",
+    "hasLocalBackup": true,
+    "checksum": "4ffac6e38aed4657152664ec1c7ea425257c5013b5aaaeb2855ac7a0f9014c39",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:48.570Z"
+  },
+  {
+    "id": "BESCOM-b443708d",
+    "title": "Planned Outages",
+    "date": "2026-07-24",
+    "category": "maintenance",
+    "summary": "Planned Outages",
+    "aiSummary": "Official BESCOM notification regarding Planned Outages. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/319/planned-outages/en",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "maintenance",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:48.570Z"
+  },
+  {
+    "id": "BESCOM-37252c7c",
+    "title": "ಗ್ರಾಹಕ ಸಂಬಂಧ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಗ್ರಾಹಕ ಸಂಬಂಧ",
+    "aiSummary": "Official BESCOM notification regarding ಗ್ರಾಹಕ ಸಂಬಂಧ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/CR-Scheduled-Power-Outages/Power%20Interruptions%20of%20KPTCL%20Works%20from%2012-7-2021%20to%2031-7-2021.xlsx",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:54.079Z"
+  },
+  {
+    "id": "BESCOM-be3d50c9",
+    "title": "ಬೆವಿಕಂ  ನಿಘಂಟು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಬೆವಿಕಂ  ನಿಘಂಟು",
+    "aiSummary": "Official BESCOM notification regarding ಬೆವಿಕಂ  ನಿಘಂಟು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Customer%20Relations/BESCOM-Dictionary.pdf",
+    "localBackup": "/docs/bescom/BESCOM-Dictionary.pdf",
+    "hasLocalBackup": true,
+    "checksum": "fc0ae5a3e1bf535e7fc53c9e07529ff867125d2864c2df7b1db5f51d07de8806",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:54.778Z"
+  },
+  {
+    "id": "BESCOM-226ab71c",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1968 ಆದೇಶ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1968 ಆದೇಶ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1968 ಆದೇಶ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/1.pdf",
+    "localBackup": "/docs/bescom/1.pdf",
+    "hasLocalBackup": true,
+    "checksum": "ca47114ca56c7d744331de10a85dd3bc5c8fd7eebcb1c960147125e2af4a70ad",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:54.863Z"
+  },
+  {
+    "id": "BESCOM-f3e9f0c8",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1972 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1972 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1972 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/2.pdf",
+    "localBackup": "/docs/bescom/2.pdf",
+    "hasLocalBackup": true,
+    "checksum": "484dbc566224596a90d82617343f0eed28454607b943fa9dcb1d5608bcbbcf4b",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:55.060Z"
+  },
+  {
+    "id": "BESCOM-5aef7567",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1976 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1976 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1976 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/3.pdf",
+    "localBackup": "/docs/bescom/3.pdf",
+    "hasLocalBackup": true,
+    "checksum": "2d4408340ca71e65f3f93e061dc2e00a82b69b67a57e1e97f98d3181d82007a4",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:55.159Z"
+  },
+  {
+    "id": "BESCOM-29a99592",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1980 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1980 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1980 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/5.pdf",
+    "localBackup": "/docs/bescom/5.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b9eb951847557d4d0ef8f1bebaa4a96de52bafddb867150f4a95ca0f553760a5",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:55.239Z"
+  },
+  {
+    "id": "BESCOM-888f9416",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡವಳಿಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡವಳಿಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡವಳಿಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/14.pdf",
+    "localBackup": "/docs/bescom/14.pdf",
+    "hasLocalBackup": true,
+    "checksum": "40fdc7a49db2315a9bfffd0c3bc4959261f5324de86f50acf9da01071eb8cdf3",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:55.472Z"
+  },
+  {
+    "id": "BESCOM-1c62cb88",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/6.pdf",
+    "localBackup": "/docs/bescom/6.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bc029e50aa8c6460b66c6fa5d9d98cdcaba9357ddcf22923c5419653caa29e54",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:55.574Z"
+  },
+  {
+    "id": "BESCOM-dd281a7b",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982- ಫೆಬ್ರವರಿ ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982- ಫೆಬ್ರವರಿ ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982- ಫೆಬ್ರವರಿ ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/7.pdf",
+    "localBackup": "/docs/bescom/7.pdf",
+    "hasLocalBackup": true,
+    "checksum": "983dd27a1c934c26bfd711fc1807e516e305dcc08e559036acafa4b0c685053c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:55.826Z"
+  },
+  {
+    "id": "BESCOM-955b92ae",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡೆವಳಿಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡೆವಳಿಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡೆವಳಿಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/8.pdf",
+    "localBackup": "/docs/bescom/8.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b1870053a79a025247b331b1419dd9f2a998390447c5f5365cb79f9df132cf50",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:56.181Z"
+  },
+  {
+    "id": "BESCOM-cbe2b791",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1990 ಅಧಿಕೃತ ಜ್ಞಾಪನಾ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1990 ಅಧಿಕೃತ ಜ್ಞಾಪನಾ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1990 ಅಧಿಕೃತ ಜ್ಞಾಪನಾ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/9.pdf",
+    "localBackup": "/docs/bescom/9.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0ddd1d04855da7cf8dec2a338e3961f03165ac464533e2c1473fa5ee15528d2c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:07:56.502Z"
+  },
+  {
+    "id": "BESCOM-e6cf65e2",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1992 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1992 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1992 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/10.PDF",
+    "localBackup": "/docs/bescom/10.PDF",
+    "hasLocalBackup": true,
+    "checksum": "7fb7f4c9a80f96d2dc44bd78b8025a627ebee7f2280c60e35d86624577798740",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:04.725Z"
+  },
+  {
+    "id": "BESCOM-c71f403b",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2000 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2000 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2000 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/12.pdf",
+    "localBackup": "/docs/bescom/12.pdf",
+    "hasLocalBackup": true,
+    "checksum": "20ff0f4a50a88077e9fd0971fe46e5aa8749278ad5f5335d22f3f80de92cf422",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:04.874Z"
+  },
+  {
+    "id": "BESCOM-a192bdff",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2001 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2001 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2001 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/13.pdf",
+    "localBackup": "/docs/bescom/13.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bb1e9c06abe947d652398264674380fc5cc99d8385ed85770aab38791709e40e",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:05.097Z"
+  },
+  {
+    "id": "BESCOM-aad94a96",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1998 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1998 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1998 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/11.pdf",
+    "localBackup": "/docs/bescom/11.pdf",
+    "hasLocalBackup": true,
+    "checksum": "cef3169fedc010a1f10b68db781e73587cc222aff8f6a5f8b76c620724578829",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:07.547Z"
+  },
+  {
+    "id": "BESCOM-b3e3c2c1",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/15.pdf",
+    "localBackup": "/docs/bescom/15.pdf",
+    "hasLocalBackup": true,
+    "checksum": "79285cab376f3de64cd9f824639c977e0b8c081fa948d29bca16f1ba94e8a6fb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:07.644Z"
+  },
+  {
+    "id": "BESCOM-6baba968",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ- ಕನ್ನಡ ಬಳಸದೇ ಇರುವ ಸಿಬ್ಬಂದಿ ವಿರುದ್ಧ ಶಿಸ್ತು ಕ್ರಮ ಕೈಗೊಳ್ಳುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ- ಕನ್ನಡ ಬಳಸದೇ ಇರುವ ಸಿಬ್ಬಂದಿ ವಿರುದ್ಧ ಶಿಸ್ತು ಕ್ರಮ ಕೈಗೊಳ್ಳುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ- ಕನ್ನಡ ಬಳಸದೇ ಇರುವ ಸಿಬ್ಬಂದಿ ವಿರುದ್ಧ ಶಿಸ್ತು ಕ್ರಮ ಕೈಗೊಳ್ಳುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/16.pdf",
+    "localBackup": "/docs/bescom/16.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9bdd3f7b549ac83bf10066992b68334cdd8e6158d98620aae03684d0a2f8b125",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:07.778Z"
+  },
+  {
+    "id": "BESCOM-a7bfb4b3",
+    "title": "ವಿದ್ಯುತ್ ಖರೀದಿ ಒಪ್ಪಂದಗಳ ಸಾರಾಂಶ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ವಿದ್ಯುತ್ ಖರೀದಿ ಒಪ್ಪಂದಗಳ ಸಾರಾಂಶ",
+    "aiSummary": "Official BESCOM notification regarding ವಿದ್ಯುತ್ ಖರೀದಿ ಒಪ್ಪಂದಗಳ ಸಾರಾಂಶ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Power%20Purchase/Abstract%20in%20Kannada.pdf",
+    "localBackup": "/docs/bescom/Abstract in Kannada.pdf",
+    "hasLocalBackup": true,
+    "checksum": "98b9edd257f32fb6c113a78c98dcec5104b1be87b6b9e09087ef4bcca57bbaac",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:07.964Z"
+  },
+  {
+    "id": "BESCOM-59519bf8",
+    "title": "ಬೆವಿಕಂ ನಲ್ಲಿ ವಿತರಣಾ ಮೂಲಸೌಕರ್ಯದ ನಿರ್ವಹಣೆಗೆ ಕೈಪಿಡಿ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಬೆವಿಕಂ ನಲ್ಲಿ ವಿತರಣಾ ಮೂಲಸೌಕರ್ಯದ ನಿರ್ವಹಣೆಗೆ ಕೈಪಿಡಿ",
+    "aiSummary": "Official BESCOM notification regarding ಬೆವಿಕಂ ನಲ್ಲಿ ವಿತರಣಾ ಮೂಲಸೌಕರ್ಯದ ನಿರ್ವಹಣೆಗೆ ಕೈಪಿಡಿ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1760523194.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1760523194.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9b4b613096e69dd111c3ea7f673921b244d3a112af996a0fd7146c14d3a5152f",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:08.670Z"
+  },
+  {
+    "id": "BESCOM-075f9b70",
+    "title": "ಇಂಧನ ಉಳಿತಾಯ ಕಿರು ಪುಸ್ತಕ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಇಂಧನ ಉಳಿತಾಯ ಕಿರು ಪುಸ್ತಕ",
+    "aiSummary": "Official BESCOM notification regarding ಇಂಧನ ಉಳಿತಾಯ ಕಿರು ಪುಸ್ತಕ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/DSM/BescomEsaving.pdf",
+    "localBackup": "/docs/bescom/BescomEsaving.pdf",
+    "hasLocalBackup": true,
+    "checksum": "4ffac6e38aed4657152664ec1c7ea425257c5013b5aaaeb2855ac7a0f9014c39",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:13.755Z"
+  },
+  {
+    "id": "BESCOM-330a7775",
+    "title": "ಯೋಜಿತ ನಿಲುಗಡೆಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಯೋಜಿತ ನಿಲುಗಡೆಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಯೋಜಿತ ನಿಲುಗಡೆಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/319/planned-outages/kn",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:13.755Z"
+  },
+  {
+    "id": "BESCOM-37252c7c",
+    "title": "ಗ್ರಾಹಕ ಸಂಬಂಧ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಗ್ರಾಹಕ ಸಂಬಂಧ",
+    "aiSummary": "Official BESCOM notification regarding ಗ್ರಾಹಕ ಸಂಬಂಧ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/CR-Scheduled-Power-Outages/Power%20Interruptions%20of%20KPTCL%20Works%20from%2012-7-2021%20to%2031-7-2021.xlsx",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:13.755Z"
+  },
+  {
+    "id": "BESCOM-be3d50c9",
+    "title": "ಬೆವಿಕಂ  ನಿಘಂಟು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಬೆವಿಕಂ  ನಿಘಂಟು",
+    "aiSummary": "Official BESCOM notification regarding ಬೆವಿಕಂ  ನಿಘಂಟು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Customer%20Relations/BESCOM-Dictionary.pdf",
+    "localBackup": "/docs/bescom/BESCOM-Dictionary.pdf",
+    "hasLocalBackup": true,
+    "checksum": "fc0ae5a3e1bf535e7fc53c9e07529ff867125d2864c2df7b1db5f51d07de8806",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:14.371Z"
+  },
+  {
+    "id": "BESCOM-226ab71c",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1968 ಆದೇಶ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1968 ಆದೇಶ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1968 ಆದೇಶ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/1.pdf",
+    "localBackup": "/docs/bescom/1.pdf",
+    "hasLocalBackup": true,
+    "checksum": "ca47114ca56c7d744331de10a85dd3bc5c8fd7eebcb1c960147125e2af4a70ad",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:14.574Z"
+  },
+  {
+    "id": "BESCOM-f3e9f0c8",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1972 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1972 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1972 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/2.pdf",
+    "localBackup": "/docs/bescom/2.pdf",
+    "hasLocalBackup": true,
+    "checksum": "484dbc566224596a90d82617343f0eed28454607b943fa9dcb1d5608bcbbcf4b",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:14.678Z"
+  },
+  {
+    "id": "BESCOM-5aef7567",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1976 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1976 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1976 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/3.pdf",
+    "localBackup": "/docs/bescom/3.pdf",
+    "hasLocalBackup": true,
+    "checksum": "2d4408340ca71e65f3f93e061dc2e00a82b69b67a57e1e97f98d3181d82007a4",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:14.758Z"
+  },
+  {
+    "id": "BESCOM-29a99592",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1980 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1980 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1980 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/5.pdf",
+    "localBackup": "/docs/bescom/5.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b9eb951847557d4d0ef8f1bebaa4a96de52bafddb867150f4a95ca0f553760a5",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:14.825Z"
+  },
+  {
+    "id": "BESCOM-888f9416",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡವಳಿಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡವಳಿಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡವಳಿಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/14.pdf",
+    "localBackup": "/docs/bescom/14.pdf",
+    "hasLocalBackup": true,
+    "checksum": "40fdc7a49db2315a9bfffd0c3bc4959261f5324de86f50acf9da01071eb8cdf3",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:14.944Z"
+  },
+  {
+    "id": "BESCOM-1c62cb88",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/6.pdf",
+    "localBackup": "/docs/bescom/6.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bc029e50aa8c6460b66c6fa5d9d98cdcaba9357ddcf22923c5419653caa29e54",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:15.125Z"
+  },
+  {
+    "id": "BESCOM-dd281a7b",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982- ಫೆಬ್ರವರಿ ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982- ಫೆಬ್ರವರಿ ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1982- ಫೆಬ್ರವರಿ ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/7.pdf",
+    "localBackup": "/docs/bescom/7.pdf",
+    "hasLocalBackup": true,
+    "checksum": "983dd27a1c934c26bfd711fc1807e516e305dcc08e559036acafa4b0c685053c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:15.224Z"
+  },
+  {
+    "id": "BESCOM-955b92ae",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡೆವಳಿಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡೆವಳಿಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ ನಡೆವಳಿಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/8.pdf",
+    "localBackup": "/docs/bescom/8.pdf",
+    "hasLocalBackup": true,
+    "checksum": "b1870053a79a025247b331b1419dd9f2a998390447c5f5365cb79f9df132cf50",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:15.288Z"
+  },
+  {
+    "id": "BESCOM-cbe2b791",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1990 ಅಧಿಕೃತ ಜ್ಞಾಪನಾ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1990 ಅಧಿಕೃತ ಜ್ಞಾಪನಾ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1990 ಅಧಿಕೃತ ಜ್ಞಾಪನಾ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/9.pdf",
+    "localBackup": "/docs/bescom/9.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0ddd1d04855da7cf8dec2a338e3961f03165ac464533e2c1473fa5ee15528d2c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:15.349Z"
+  },
+  {
+    "id": "BESCOM-e6cf65e2",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1992 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1992 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1992 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/10.PDF",
+    "localBackup": "/docs/bescom/10.PDF",
+    "hasLocalBackup": true,
+    "checksum": "7fb7f4c9a80f96d2dc44bd78b8025a627ebee7f2280c60e35d86624577798740",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:21.874Z"
+  },
+  {
+    "id": "BESCOM-c71f403b",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2000 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2000 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2000 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/12.pdf",
+    "localBackup": "/docs/bescom/12.pdf",
+    "hasLocalBackup": true,
+    "checksum": "20ff0f4a50a88077e9fd0971fe46e5aa8749278ad5f5335d22f3f80de92cf422",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:22.277Z"
+  },
+  {
+    "id": "BESCOM-a192bdff",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2001 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2001 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2001 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/13.pdf",
+    "localBackup": "/docs/bescom/13.pdf",
+    "hasLocalBackup": true,
+    "checksum": "bb1e9c06abe947d652398264674380fc5cc99d8385ed85770aab38791709e40e",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:22.421Z"
+  },
+  {
+    "id": "BESCOM-aad94a96",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1998 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1998 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 1998 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/11.pdf",
+    "localBackup": "/docs/bescom/11.pdf",
+    "hasLocalBackup": true,
+    "checksum": "cef3169fedc010a1f10b68db781e73587cc222aff8f6a5f8b76c620724578829",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:24.247Z"
+  },
+  {
+    "id": "BESCOM-b3e3c2c1",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/15.pdf",
+    "localBackup": "/docs/bescom/15.pdf",
+    "hasLocalBackup": true,
+    "checksum": "79285cab376f3de64cd9f824639c977e0b8c081fa948d29bca16f1ba94e8a6fb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:24.369Z"
+  },
+  {
+    "id": "BESCOM-6baba968",
+    "title": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ- ಕನ್ನಡ ಬಳಸದೇ ಇರುವ ಸಿಬ್ಬಂದಿ ವಿರುದ್ಧ ಶಿಸ್ತು ಕ್ರಮ ಕೈಗೊಳ್ಳುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ- ಕನ್ನಡ ಬಳಸದೇ ಇರುವ ಸಿಬ್ಬಂದಿ ವಿರುದ್ಧ ಶಿಸ್ತು ಕ್ರಮ ಕೈಗೊಳ್ಳುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕರ್ನಾಟಕ ಸರ್ಕಾರದ 2002 ಸುತ್ತೋಲೆ- ಕನ್ನಡ ಬಳಸದೇ ಇರುವ ಸಿಬ್ಬಂದಿ ವಿರುದ್ಧ ಶಿಸ್ತು ಕ್ರಮ ಕೈಗೊಳ್ಳುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/16.pdf",
+    "localBackup": "/docs/bescom/16.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9bdd3f7b549ac83bf10066992b68334cdd8e6158d98620aae03684d0a2f8b125",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:25.626Z"
+  },
+  {
+    "id": "BESCOM-a7bfb4b3",
+    "title": "ವಿದ್ಯುತ್ ಖರೀದಿ ಒಪ್ಪಂದಗಳ ಸಾರಾಂಶ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ವಿದ್ಯುತ್ ಖರೀದಿ ಒಪ್ಪಂದಗಳ ಸಾರಾಂಶ",
+    "aiSummary": "Official BESCOM notification regarding ವಿದ್ಯುತ್ ಖರೀದಿ ಒಪ್ಪಂದಗಳ ಸಾರಾಂಶ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Power%20Purchase/Abstract%20in%20Kannada.pdf",
+    "localBackup": "/docs/bescom/Abstract in Kannada.pdf",
+    "hasLocalBackup": true,
+    "checksum": "98b9edd257f32fb6c113a78c98dcec5104b1be87b6b9e09087ef4bcca57bbaac",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:25.821Z"
+  },
+  {
+    "id": "BESCOM-59519bf8",
+    "title": "ಬೆವಿಕಂ ನಲ್ಲಿ ವಿತರಣಾ ಮೂಲಸೌಕರ್ಯದ ನಿರ್ವಹಣೆಗೆ ಕೈಪಿಡಿ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಬೆವಿಕಂ ನಲ್ಲಿ ವಿತರಣಾ ಮೂಲಸೌಕರ್ಯದ ನಿರ್ವಹಣೆಗೆ ಕೈಪಿಡಿ",
+    "aiSummary": "Official BESCOM notification regarding ಬೆವಿಕಂ ನಲ್ಲಿ ವಿತರಣಾ ಮೂಲಸೌಕರ್ಯದ ನಿರ್ವಹಣೆಗೆ ಕೈಪಿಡಿ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1760523194.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1760523194.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9b4b613096e69dd111c3ea7f673921b244d3a112af996a0fd7146c14d3a5152f",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:27.925Z"
+  },
+  {
+    "id": "BESCOM-075f9b70",
+    "title": "ಇಂಧನ ಉಳಿತಾಯ ಕಿರು ಪುಸ್ತಕ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಇಂಧನ ಉಳಿತಾಯ ಕಿರು ಪುಸ್ತಕ",
+    "aiSummary": "Official BESCOM notification regarding ಇಂಧನ ಉಳಿತಾಯ ಕಿರು ಪುಸ್ತಕ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/DSM/BescomEsaving.pdf",
+    "localBackup": "/docs/bescom/BescomEsaving.pdf",
+    "hasLocalBackup": true,
+    "checksum": "4ffac6e38aed4657152664ec1c7ea425257c5013b5aaaeb2855ac7a0f9014c39",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:36.249Z"
+  },
+  {
+    "id": "BESCOM-330a7775",
+    "title": "ಯೋಜಿತ ನಿಲುಗಡೆಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಯೋಜಿತ ನಿಲುಗಡೆಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಯೋಜಿತ ನಿಲುಗಡೆಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/319/planned-outages/kn",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:36.249Z"
+  },
+  {
+    "id": "BESCOM-3f3ce880",
+    "title": "2 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಸೇರ್ಪಡೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "2 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಸೇರ್ಪಡೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding 2 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಸೇರ್ಪಡೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1753357477.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1753357477.pdf",
+    "hasLocalBackup": true,
+    "checksum": "94d18142e57c560ee678eec051f9fc43132efdcb8c7e099effc95cf5e1fa7150",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:36.768Z"
+  },
+  {
+    "id": "BESCOM-a37c043b",
+    "title": "4 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 “ಬೆ.ವಿ.ಕಂನಲ್ಲಿ ಇ-ಸ್ಟ್ಯಾಂಪಿಂಗ್ ಹಾಗು ಇ-ಸೈನ್‌ ಸೇವೆಗಳನ್ನು ಒದಗಿಸಲು ಆಸಕ್ತಿಯ ಅಭಿವ್ಯಕ್ತಿ (Expression of Interest)”",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "4 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 “ಬೆ.ವಿ.ಕಂನಲ್ಲಿ ಇ-ಸ್ಟ್ಯಾಂಪಿಂಗ್ ಹಾಗು ಇ-ಸೈನ್‌ ಸೇವೆಗಳನ್ನು ಒದಗಿಸಲು ಆಸಕ್ತಿಯ ಅಭಿವ್ಯಕ್ತಿ (Expression of Interest)”",
+    "aiSummary": "Official BESCOM notification regarding 4 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 “ಬೆ.ವಿ.ಕಂನಲ್ಲಿ ಇ-ಸ್ಟ್ಯಾಂಪಿಂಗ್ ಹಾಗು ಇ-ಸೈನ್‌ ಸೇವೆಗಳನ್ನು ಒದಗಿಸಲು ಆಸಕ್ತಿಯ ಅಭಿವ್ಯಕ್ತಿ (Expression of Interest)”. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1748415886.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1748415886.pdf",
+    "hasLocalBackup": true,
+    "checksum": "7a6739fd3c9894776c46ee79f8745889849c4979918df4b0c77c4a865bfaf821",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:37.540Z"
+  },
+  {
+    "id": "BESCOM-202fe041",
+    "title": "6 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ಹುದ್ದೆಗಳು)",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "6 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ಹುದ್ದೆಗಳು)",
+    "aiSummary": "Official BESCOM notification regarding 6 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ಹುದ್ದೆಗಳು). Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_KK_DetailedNotification.pdf",
+    "localBackup": "/docs/bescom/44953_KK_DetailedNotification.pdf",
+    "hasLocalBackup": true,
+    "checksum": "1a2e47227ce91da30440e67a54bf4d3b2fa10991fa2a9f5d1699957fa27ddd97",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:39.976Z"
+  },
+  {
+    "id": "BESCOM-5cef252f",
+    "title": "7 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಯ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ ನಡೆಸುವ ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವಿಳಾಸ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "7 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಯ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ ನಡೆಸುವ ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವಿಳಾಸ",
+    "aiSummary": "Official BESCOM notification regarding 7 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಯ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ ನಡೆಸುವ ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವಿಳಾಸ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1753265008.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1753265008.pdf",
+    "hasLocalBackup": true,
+    "checksum": "cec236778fa71eeb733edbd517b89e7c49792a5e0c7ae39e9dcd695d4e7b8893",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:40.524Z"
+  },
+  {
+    "id": "BESCOM-de1af128",
+    "title": "8 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "8 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding 8 \r\n                                  \r\n                               \r\n                                \r\n                                    12 months ago                                \r\n                            \r\n                                 ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1752816698.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1752816698.pdf",
+    "hasLocalBackup": true,
+    "checksum": "85e7254536ffcee6d8e4f8a826c08a9bf74986e7f5d829a75baf4a4c727ede3a",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:45.643Z"
+  },
+  {
+    "id": "BESCOM-1a06642d",
+    "title": "9 \r\n                                  \r\n                               \r\n                                \r\n                                    11 months ago                                \r\n                            \r\n                                 ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ನಿಮ್ಹಾನ್ಸ್ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "9 \r\n                                  \r\n                               \r\n                                \r\n                                    11 months ago                                \r\n                            \r\n                                 ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ನಿಮ್ಹಾನ್ಸ್ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding 9 \r\n                                  \r\n                               \r\n                                \r\n                                    11 months ago                                \r\n                            \r\n                                 ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ನಿಮ್ಹಾನ್ಸ್ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1755689862.pdf",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:45.646Z"
+  },
+  {
+    "id": "BESCOM-d0d0f161",
+    "title": "10 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 RP-08/2025 Notification - ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "10 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 RP-08/2025 Notification - ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "aiSummary": "Official BESCOM notification regarding 10 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 RP-08/2025 Notification - ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1757299214.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1757299214.pdf",
+    "hasLocalBackup": true,
+    "checksum": "d8fd0a3940a58e5de74fbd4608795f10233554242403a37dfe1d803eeb1397b7",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:46.130Z"
+  },
+  {
+    "id": "BESCOM-bbf8e30a",
+    "title": "12 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 RP-08/2025 ಾಅರ್ಜಿ ಪ್ರತಿ- ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "12 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 RP-08/2025 ಾಅರ್ಜಿ ಪ್ರತಿ- ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "aiSummary": "Official BESCOM notification regarding 12 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 RP-08/2025 ಾಅರ್ಜಿ ಪ್ರತಿ- ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1757417228.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1757417228.pdf",
+    "hasLocalBackup": true,
+    "checksum": "652946666adf073d9654cb22990515e8d40c307d5809458b8b29e2f792373bfb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:57.277Z"
+  },
+  {
+    "id": "BESCOM-68e1460c",
+    "title": "14 \r\n                                  \r\n                               \r\n                                \r\n                                    9 months ago                                \r\n                            \r\n                                 ಪರಿಶೀಲನಾ ಅರ್ಜಿ ಸಂ:RP-08/2025 ರ ಸಂಬಂಧ ಸಾರ್ವಜನಿಕ ವಿಚಾರಣೆಯ ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "14 \r\n                                  \r\n                               \r\n                                \r\n                                    9 months ago                                \r\n                            \r\n                                 ಪರಿಶೀಲನಾ ಅರ್ಜಿ ಸಂ:RP-08/2025 ರ ಸಂಬಂಧ ಸಾರ್ವಜನಿಕ ವಿಚಾರಣೆಯ ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ",
+    "aiSummary": "Official BESCOM notification regarding 14 \r\n                                  \r\n                               \r\n                                \r\n                                    9 months ago                                \r\n                            \r\n                                 ಪರಿಶೀಲನಾ ಅರ್ಜಿ ಸಂ:RP-08/2025 ರ ಸಂಬಂಧ ಸಾರ್ವಜನಿಕ ವಿಚಾರಣೆಯ ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1762235901.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1762235901.pdf",
+    "hasLocalBackup": true,
+    "checksum": "6c8f1e71ff670dbbc03196581e0577cd592c7951d720a471f876f91589964a83",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:08:58.747Z"
+  },
+  {
+    "id": "BESCOM-4d744c73",
+    "title": "18 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 ವಾರ್ಷಿಕ ಆರೋಗ್ಯ ತಪಾಸಣೆ ಸೌಲಭ್ಯ ಆದೇಶ -2025",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "18 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 ವಾರ್ಷಿಕ ಆರೋಗ್ಯ ತಪಾಸಣೆ ಸೌಲಭ್ಯ ಆದೇಶ -2025",
+    "aiSummary": "Official BESCOM notification regarding 18 \r\n                                  \r\n                               \r\n                                \r\n                                    10 months ago                                \r\n                            \r\n                                 ವಾರ್ಷಿಕ ಆರೋಗ್ಯ ತಪಾಸಣೆ ಸೌಲಭ್ಯ ಆದೇಶ -2025. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1758108412.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1758108412.pdf",
+    "hasLocalBackup": true,
+    "checksum": "07da19ed437879206a5953d8af69ce03ccb7c42885d00ce9837319102ac0e1f6",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:01.421Z"
+  },
+  {
+    "id": "BESCOM-6fbe6080",
+    "title": "19 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ವೈಯಕ್ತಿಕ ಅಪಘಾತ ವಿಮಾ ಯೋಜನೆಯ Expression of Interest ಕುರಿತು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "19 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ವೈಯಕ್ತಿಕ ಅಪಘಾತ ವಿಮಾ ಯೋಜನೆಯ Expression of Interest ಕುರಿತು",
+    "aiSummary": "Official BESCOM notification regarding 19 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ವೈಯಕ್ತಿಕ ಅಪಘಾತ ವಿಮಾ ಯೋಜನೆಯ Expression of Interest ಕುರಿತು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/Exprn_of_Int_GPA_05-10-2023.pdf",
+    "localBackup": "/docs/bescom/Exprn_of_Int_GPA_05-10-2023.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0fc61e2a515c2fec5493b6474696d0705252810b04db083c1d69a8736b52eee2",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:02.194Z"
+  },
+  {
+    "id": "BESCOM-d5130e37",
+    "title": "20 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 \"ಸ್ಮಾರ್ಟ್ ಮೀಟರ್‌ಗಳಿಗಾಗಿ ಮಾರಾಟಗಾರರ ಅನುಮೋದನೆಗಾಗಿ ಕಾರ್ಯವಿಧಾನದ - OM\"",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "20 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 \"ಸ್ಮಾರ್ಟ್ ಮೀಟರ್‌ಗಳಿಗಾಗಿ ಮಾರಾಟಗಾರರ ಅನುಮೋದನೆಗಾಗಿ ಕಾರ್ಯವಿಧಾನದ - OM\"",
+    "aiSummary": "Official BESCOM notification regarding 20 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 \"ಸ್ಮಾರ್ಟ್ ಮೀಟರ್‌ಗಳಿಗಾಗಿ ಮಾರಾಟಗಾರರ ಅನುಮೋದನೆಗಾಗಿ ಕಾರ್ಯವಿಧಾನದ - OM\". Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/MandC/OMCys-07-12-6-24.pdf",
+    "localBackup": "/docs/bescom/OMCys-07-12-6-24.pdf",
+    "hasLocalBackup": true,
+    "checksum": "ee3f0c5d28687e800d95e9d115fff6300a197c181a46b133ad854c776ac5c5f8",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:02.622Z"
+  },
+  {
+    "id": "BESCOM-a89db245",
+    "title": "21 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಬೆವಿಕಂನ ಬೆಂ.ಮ.ಕ್ಷೇತ್ರ ವಲಯ ಪ್ರದೇಶದಲ್ಲಿ ಪ್ರತಿ ಕಿ.ಮೀ /ತಿಂಗಳಿಗೆ ಯುಜಿ ಓಎಫ್‍ಸಿ ಫೈಬರ್/ಡಕ್ಟ್ ಗಳ ದರಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಆಸಕ್ತಿ ವ್ಯಕ್ತಪಡಿಸುವಿಕೆಯನ್ನು ಆಹ್ವಾನಿಸಲಾಗಿದೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "21 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಬೆವಿಕಂನ ಬೆಂ.ಮ.ಕ್ಷೇತ್ರ ವಲಯ ಪ್ರದೇಶದಲ್ಲಿ ಪ್ರತಿ ಕಿ.ಮೀ /ತಿಂಗಳಿಗೆ ಯುಜಿ ಓಎಫ್‍ಸಿ ಫೈಬರ್/ಡಕ್ಟ್ ಗಳ ದರಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಆಸಕ್ತಿ ವ್ಯಕ್ತಪಡಿಸುವಿಕೆಯನ್ನು ಆಹ್ವಾನಿಸಲಾಗಿದೆ",
+    "aiSummary": "Official BESCOM notification regarding 21 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಬೆವಿಕಂನ ಬೆಂ.ಮ.ಕ್ಷೇತ್ರ ವಲಯ ಪ್ರದೇಶದಲ್ಲಿ ಪ್ರತಿ ಕಿ.ಮೀ /ತಿಂಗಳಿಗೆ ಯುಜಿ ಓಎಫ್‍ಸಿ ಫೈಬರ್/ಡಕ್ಟ್ ಗಳ ದರಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಆಸಕ್ತಿ ವ್ಯಕ್ತಪಡಿಸುವಿಕೆಯನ್ನು ಆಹ್ವಾನಿಸಲಾಗಿದೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Projects/EOI5_20240705111719.pdf",
+    "localBackup": "/docs/bescom/EOI5_20240705111719.pdf",
+    "hasLocalBackup": true,
+    "checksum": "04e3bb70b6e76e6ccf84af0b0380807a6ee0fcf04bb5e7bf74b249507fe46863",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:03.571Z"
+  },
+  {
+    "id": "BESCOM-e655bc8c",
+    "title": "22 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಬೆವಿಕಂನಲ್ಲಿ ವಿಚಾರಣಾಧಿಕಾರಿಗಳಾಗಿ ಎಂಪ್ಯಾನಲ್‌ಗೊಳ್ಳಲು ಅರ್ಜಿಗಳನ್ನು ಆಹ್ವಾನಿಸಿದೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "22 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಬೆವಿಕಂನಲ್ಲಿ ವಿಚಾರಣಾಧಿಕಾರಿಗಳಾಗಿ ಎಂಪ್ಯಾನಲ್‌ಗೊಳ್ಳಲು ಅರ್ಜಿಗಳನ್ನು ಆಹ್ವಾನಿಸಿದೆ",
+    "aiSummary": "Official BESCOM notification regarding 22 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಬೆವಿಕಂನಲ್ಲಿ ವಿಚಾರಣಾಧಿಕಾರಿಗಳಾಗಿ ಎಂಪ್ಯಾನಲ್‌ಗೊಳ್ಳಲು ಅರ್ಜಿಗಳನ್ನು ಆಹ್ವಾನಿಸಿದೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/CGM-CA-RTI/Applictionforenquiryofficer.pdf",
+    "localBackup": "/docs/bescom/Applictionforenquiryofficer.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9b1c1522f2c8d01fee3ac4b27ed39cb1af7a6e1dd747dfdf9d7711e0fcd9e5b3",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:03.883Z"
+  },
+  {
+    "id": "BESCOM-44ff9f78",
+    "title": "23 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿಸ್ಟೇಪರಿಚಾರಕ ಮತ್ತು ಕಿಪಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕೇತರ ಹುದ್ದೆಗಳು)",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "23 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿಸ್ಟೇಪರಿಚಾರಕ ಮತ್ತು ಕಿಪಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕೇತರ ಹುದ್ದೆಗಳು)",
+    "aiSummary": "Official BESCOM notification regarding 23 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿಸ್ಟೇಪರಿಚಾರಕ ಮತ್ತು ಕಿಪಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕೇತರ ಹುದ್ದೆಗಳು). Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_NKK_DetailedNotification.pdf",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:03.884Z"
+  },
+  {
+    "id": "BESCOM-6e552df8",
+    "title": "24 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಆ.ವ-26 ರಿಂದ ಆ.ವ-28 ರ ವಿದ್ಯುತ್‌ ದರಗಳ ಪರಿಷ್ಕರಣೆ ಅನುಮೋದನೆಗಾಗಿ ಅರ್ಜಿಯ ವಾರ್ತಾ ಪತ್ರಿಕೆಯ ಪ್ರತಿ. ( ಅರ್ಜಿಯ ವಿರುದ್ಧ ಆಕ್ಷೇಪಣೆಯನ್ನು ಸಲ್ಲಿಸಲು ಕೊನೆಯ ದಿನಾಂಕ 09.02.2025)",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "24 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಆ.ವ-26 ರಿಂದ ಆ.ವ-28 ರ ವಿದ್ಯುತ್‌ ದರಗಳ ಪರಿಷ್ಕರಣೆ ಅನುಮೋದನೆಗಾಗಿ ಅರ್ಜಿಯ ವಾರ್ತಾ ಪತ್ರಿಕೆಯ ಪ್ರತಿ. ( ಅರ್ಜಿಯ ವಿರುದ್ಧ ಆಕ್ಷೇಪಣೆಯನ್ನು ಸಲ್ಲಿಸಲು ಕೊನೆಯ ದಿನಾಂಕ 09.02.2025)",
+    "aiSummary": "Official BESCOM notification regarding 24 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಆ.ವ-26 ರಿಂದ ಆ.ವ-28 ರ ವಿದ್ಯುತ್‌ ದರಗಳ ಪರಿಷ್ಕರಣೆ ಅನುಮೋದನೆಗಾಗಿ ಅರ್ಜಿಯ ವಾರ್ತಾ ಪತ್ರಿಕೆಯ ಪ್ರತಿ. ( ಅರ್ಜಿಯ ವಿರುದ್ಧ ಆಕ್ಷೇಪಣೆಯನ್ನು ಸಲ್ಲಿಸಲು ಕೊನೆಯ ದಿನಾಂಕ 09.02.2025). Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/RA%20section/1680_TariffRate_Kan-Final.pdf",
+    "localBackup": "/docs/bescom/1680_TariffRate_Kan-Final.pdf",
+    "hasLocalBackup": true,
+    "checksum": "7660a3bb34469ff14d48794dc31bd61462888f9b204cfbbc996c407c0e8db510",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:04.428Z"
+  },
+  {
+    "id": "BESCOM-49384f95",
+    "title": "25 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಆನ್-ಲೈನ್ ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಲು ಸೂಚನೆಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "25 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಆನ್-ಲೈನ್ ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಲು ಸೂಚನೆಗಳು",
+    "aiSummary": "Official BESCOM notification regarding 25 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಆನ್-ಲೈನ್ ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಲು ಸೂಚನೆಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_Instructions_to_Candidates_JSA_JPM_19_10_2024.pdf",
+    "localBackup": "/docs/bescom/44953_Instructions_to_Candidates_JSA_JPM_19_10_2024.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0367a27e37fbb68e7b8ff96b9d475a76e3fb1d681b79cf72a20b4b63cdc1ce6e",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:05.519Z"
+  },
+  {
+    "id": "BESCOM-c1b4743b",
+    "title": "27 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಿಂದ ನಡೆಸಲಾಗುತ್ತಿರುವ ನೇಮಕಾತಿಗಳಲ್ಲಿ ಉದ್ಯೋಗ ಭರವಸೆ ನೀಡುತ್ತಿರುವ ವಂಚಕರ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "27 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಿಂದ ನಡೆಸಲಾಗುತ್ತಿರುವ ನೇಮಕಾತಿಗಳಲ್ಲಿ ಉದ್ಯೋಗ ಭರವಸೆ ನೀಡುತ್ತಿರುವ ವಂಚಕರ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆ",
+    "aiSummary": "Official BESCOM notification regarding 27 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಿಂದ ನಡೆಸಲಾಗುತ್ತಿರುವ ನೇಮಕಾತಿಗಳಲ್ಲಿ ಉದ್ಯೋಗ ಭರವಸೆ ನೀಡುತ್ತಿರುವ ವಂಚಕರ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/CautionNotice_Kan.pdf",
+    "localBackup": "/docs/bescom/CautionNotice_Kan.pdf",
+    "hasLocalBackup": true,
+    "checksum": "ce02367a71e82a9dcb9f873b96ea0038640c9c2fedb664e37486b56558b0b27c",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:05.608Z"
+  },
+  {
+    "id": "BESCOM-c9b59621",
+    "title": "28 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 e-sign ಪ್ರಕ್ರಿಯೆ, ಅಂಚೆ ಚಲನ್ ಡೌನ್‍ಲೋಡ್ ಮತ್ತು ಅರ್ಜಿ ಶುಲ್ಕ ಪಾವತಿ ದಿನಾಂಕ ವಿಸ್ತರಣೆ ಬಗ್ಗೆ.",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "28 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 e-sign ಪ್ರಕ್ರಿಯೆ, ಅಂಚೆ ಚಲನ್ ಡೌನ್‍ಲೋಡ್ ಮತ್ತು ಅರ್ಜಿ ಶುಲ್ಕ ಪಾವತಿ ದಿನಾಂಕ ವಿಸ್ತರಣೆ ಬಗ್ಗೆ.",
+    "aiSummary": "Official BESCOM notification regarding 28 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 e-sign ಪ್ರಕ್ರಿಯೆ, ಅಂಚೆ ಚಲನ್ ಡೌನ್‍ಲೋಡ್ ಮತ್ತು ಅರ್ಜಿ ಶುಲ್ಕ ಪಾವತಿ ದಿನಾಂಕ ವಿಸ್ತರಣೆ ಬಗ್ಗೆ.. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953-ExtensionofTime_e-sign_Feepayment.pdf",
+    "localBackup": "/docs/bescom/44953-ExtensionofTime_e-sign_Feepayment.pdf",
+    "hasLocalBackup": true,
+    "checksum": "5fd0e1f25c41ce0283ab94c6c7aacdf35dc6d4ba08f113e38d15e2886f664abb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:05.684Z"
+  },
+  {
+    "id": "BESCOM-77e34b5c",
+    "title": "29 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಲ್ಲಿ ಕೈಗೊಳ್ಳಲಾಗಿರುವ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿ – e-sign ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣಗೊಳಿಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "29 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಲ್ಲಿ ಕೈಗೊಳ್ಳಲಾಗಿರುವ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿ – e-sign ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣಗೊಳಿಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding 29 \r\n                                  \r\n                               \r\n                                \r\n                                    One year ago                                \r\n                            \r\n                                 ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಲ್ಲಿ ಕೈಗೊಳ್ಳಲಾಗಿರುವ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿ – e-sign ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣಗೊಳಿಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_Completionofe-sign_Reg.pdf",
+    "localBackup": "/docs/bescom/44953_Completionofe-sign_Reg.pdf",
+    "hasLocalBackup": true,
+    "checksum": "1241f0cd75d52940e62e03ee3e809b83682e9beb536c1e4a6f22b5ae5df3d68f",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:05.761Z"
+  },
+  {
+    "id": "BESCOM-4ee2248b",
+    "title": "ಸೇರ್ಪಡೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಸೇರ್ಪಡೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding ಸೇರ್ಪಡೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1753357477.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1753357477.pdf",
+    "hasLocalBackup": true,
+    "checksum": "94d18142e57c560ee678eec051f9fc43132efdcb8c7e099effc95cf5e1fa7150",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:06.064Z"
+  },
+  {
+    "id": "BESCOM-466ce8f7",
+    "title": "“ಬೆ.ವಿ.ಕಂನಲ್ಲಿ ಇ-ಸ್ಟ್ಯಾಂಪಿಂಗ್ ಹಾಗು ಇ-ಸೈನ್‌ ಸೇವೆಗಳನ್ನು ಒದಗಿಸಲು ಆಸಕ್ತಿಯ ಅಭಿವ್ಯಕ್ತಿ (Expression of Interest)”",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "“ಬೆ.ವಿ.ಕಂನಲ್ಲಿ ಇ-ಸ್ಟ್ಯಾಂಪಿಂಗ್ ಹಾಗು ಇ-ಸೈನ್‌ ಸೇವೆಗಳನ್ನು ಒದಗಿಸಲು ಆಸಕ್ತಿಯ ಅಭಿವ್ಯಕ್ತಿ (Expression of Interest)”",
+    "aiSummary": "Official BESCOM notification regarding “ಬೆ.ವಿ.ಕಂನಲ್ಲಿ ಇ-ಸ್ಟ್ಯಾಂಪಿಂಗ್ ಹಾಗು ಇ-ಸೈನ್‌ ಸೇವೆಗಳನ್ನು ಒದಗಿಸಲು ಆಸಕ್ತಿಯ ಅಭಿವ್ಯಕ್ತಿ (Expression of Interest)”. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1748415886.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1748415886.pdf",
+    "hasLocalBackup": true,
+    "checksum": "7a6739fd3c9894776c46ee79f8745889849c4979918df4b0c77c4a865bfaf821",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:06.524Z"
+  },
+  {
+    "id": "BESCOM-f4256314",
+    "title": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ಹುದ್ದೆಗಳು)",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ಹುದ್ದೆಗಳು)",
+    "aiSummary": "Official BESCOM notification regarding ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ಹುದ್ದೆಗಳು). Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_KK_DetailedNotification.pdf",
+    "localBackup": "/docs/bescom/44953_KK_DetailedNotification.pdf",
+    "hasLocalBackup": true,
+    "checksum": "1a2e47227ce91da30440e67a54bf4d3b2fa10991fa2a9f5d1699957fa27ddd97",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:06.988Z"
+  },
+  {
+    "id": "BESCOM-ff591431",
+    "title": "ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಯ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ ನಡೆಸುವ ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವಿಳಾಸ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಯ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ ನಡೆಸುವ ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವಿಳಾಸ",
+    "aiSummary": "Official BESCOM notification regarding ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಯ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳಿಗೆ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ ನಡೆಸುವ ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವಿಳಾಸ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1753265008.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1753265008.pdf",
+    "hasLocalBackup": true,
+    "checksum": "cec236778fa71eeb733edbd517b89e7c49792a5e0c7ae39e9dcd695d4e7b8893",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:07.112Z"
+  },
+  {
+    "id": "BESCOM-2654b27f",
+    "title": "ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1752816698.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1752816698.pdf",
+    "hasLocalBackup": true,
+    "checksum": "85e7254536ffcee6d8e4f8a826c08a9bf74986e7f5d829a75baf4a4c727ede3a",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:09.719Z"
+  },
+  {
+    "id": "BESCOM-95d24157",
+    "title": "ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ನಿಮ್ಹಾನ್ಸ್ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ನಿಮ್ಹಾನ್ಸ್ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding ಅಧಿಸೂಚನೆ- ಬೆವಿಕಂನಲ್ಲಿ ಕಿರಿಯ ಪವರ್ ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ, ನಿಮ್ಹಾನ್ಸ್ ಆಸ್ಪತ್ರೆಯ ವೈದ್ಯಕೀಯ ಮಂಡಳಿಯಿಂದ ಅಂಗವಿಕಲ ಅಭ್ಯರ್ಥಿಗಳ ವೈದ್ಯಕೀಯ ಪರೀಕ್ಷೆ /ತಪಾಸಣೆ ನಡೆಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1755689862.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1755689862.pdf",
+    "hasLocalBackup": true,
+    "checksum": "d887941dea092fff082f7bb4a50a655f05eae0674027bcc2cdb303f63d5d799a",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:12.124Z"
+  },
+  {
+    "id": "BESCOM-1950f0ce",
+    "title": "RP-08/2025 Notification - ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "RP-08/2025 Notification - ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "aiSummary": "Official BESCOM notification regarding RP-08/2025 Notification - ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1757299214.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1757299214.pdf",
+    "hasLocalBackup": true,
+    "checksum": "d8fd0a3940a58e5de74fbd4608795f10233554242403a37dfe1d803eeb1397b7",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:12.463Z"
+  },
+  {
+    "id": "BESCOM-47bc490e",
+    "title": "RP-08/2025 ಾಅರ್ಜಿ ಪ್ರತಿ- ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "RP-08/2025 ಾಅರ್ಜಿ ಪ್ರತಿ- ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ",
+    "aiSummary": "Official BESCOM notification regarding RP-08/2025 ಾಅರ್ಜಿ ಪ್ರತಿ- ನೀರಾವರಿ ಪಂಪ್ ಸೆಟ್ ಗಳು, ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ ಜಕಾತಿ ವರ್ಗಗಳ ಬದಲಾವಣೆಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಕೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1757417228.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1757417228.pdf",
+    "hasLocalBackup": true,
+    "checksum": "652946666adf073d9654cb22990515e8d40c307d5809458b8b29e2f792373bfb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:20.310Z"
+  },
+  {
+    "id": "BESCOM-9319f87c",
+    "title": "ಪರಿಶೀಲನಾ ಅರ್ಜಿ ಸಂ:RP-08/2025 ರ ಸಂಬಂಧ ಸಾರ್ವಜನಿಕ ವಿಚಾರಣೆಯ ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಪರಿಶೀಲನಾ ಅರ್ಜಿ ಸಂ:RP-08/2025 ರ ಸಂಬಂಧ ಸಾರ್ವಜನಿಕ ವಿಚಾರಣೆಯ ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ",
+    "aiSummary": "Official BESCOM notification regarding ಪರಿಶೀಲನಾ ಅರ್ಜಿ ಸಂ:RP-08/2025 ರ ಸಂಬಂಧ ಸಾರ್ವಜನಿಕ ವಿಚಾರಣೆಯ ಪತ್ರಿಕಾ ಪ್ರಕಟಣೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1762235901.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1762235901.pdf",
+    "hasLocalBackup": true,
+    "checksum": "6c8f1e71ff670dbbc03196581e0577cd592c7951d720a471f876f91589964a83",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:21.771Z"
+  },
+  {
+    "id": "BESCOM-8ee56b32",
+    "title": "ವಾರ್ಷಿಕ ಆರೋಗ್ಯ ತಪಾಸಣೆ ಸೌಲಭ್ಯ ಆದೇಶ -2025",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ವಾರ್ಷಿಕ ಆರೋಗ್ಯ ತಪಾಸಣೆ ಸೌಲಭ್ಯ ಆದೇಶ -2025",
+    "aiSummary": "Official BESCOM notification regarding ವಾರ್ಷಿಕ ಆರೋಗ್ಯ ತಪಾಸಣೆ ಸೌಲಭ್ಯ ಆದೇಶ -2025. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/uploads/media_to_upload1758108412.pdf",
+    "localBackup": "/docs/bescom/media_to_upload1758108412.pdf",
+    "hasLocalBackup": true,
+    "checksum": "07da19ed437879206a5953d8af69ce03ccb7c42885d00ce9837319102ac0e1f6",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:23.356Z"
+  },
+  {
+    "id": "BESCOM-eb9fd6aa",
+    "title": "ವೈಯಕ್ತಿಕ ಅಪಘಾತ ವಿಮಾ ಯೋಜನೆಯ Expression of Interest ಕುರಿತು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ವೈಯಕ್ತಿಕ ಅಪಘಾತ ವಿಮಾ ಯೋಜನೆಯ Expression of Interest ಕುರಿತು",
+    "aiSummary": "Official BESCOM notification regarding ವೈಯಕ್ತಿಕ ಅಪಘಾತ ವಿಮಾ ಯೋಜನೆಯ Expression of Interest ಕುರಿತು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/Exprn_of_Int_GPA_05-10-2023.pdf",
+    "localBackup": "/docs/bescom/Exprn_of_Int_GPA_05-10-2023.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0fc61e2a515c2fec5493b6474696d0705252810b04db083c1d69a8736b52eee2",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:24.085Z"
+  },
+  {
+    "id": "BESCOM-a1ad96d3",
+    "title": "\"ಸ್ಮಾರ್ಟ್ ಮೀಟರ್‌ಗಳಿಗಾಗಿ ಮಾರಾಟಗಾರರ ಅನುಮೋದನೆಗಾಗಿ ಕಾರ್ಯವಿಧಾನದ - OM\"",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "\"ಸ್ಮಾರ್ಟ್ ಮೀಟರ್‌ಗಳಿಗಾಗಿ ಮಾರಾಟಗಾರರ ಅನುಮೋದನೆಗಾಗಿ ಕಾರ್ಯವಿಧಾನದ - OM\"",
+    "aiSummary": "Official BESCOM notification regarding \"ಸ್ಮಾರ್ಟ್ ಮೀಟರ್‌ಗಳಿಗಾಗಿ ಮಾರಾಟಗಾರರ ಅನುಮೋದನೆಗಾಗಿ ಕಾರ್ಯವಿಧಾನದ - OM\". Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/MandC/OMCys-07-12-6-24.pdf",
+    "localBackup": "/docs/bescom/OMCys-07-12-6-24.pdf",
+    "hasLocalBackup": true,
+    "checksum": "ee3f0c5d28687e800d95e9d115fff6300a197c181a46b133ad854c776ac5c5f8",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:24.872Z"
+  },
+  {
+    "id": "BESCOM-b0648a3f",
+    "title": "ಬೆವಿಕಂನ ಬೆಂ.ಮ.ಕ್ಷೇತ್ರ ವಲಯ ಪ್ರದೇಶದಲ್ಲಿ ಪ್ರತಿ ಕಿ.ಮೀ /ತಿಂಗಳಿಗೆ ಯುಜಿ ಓಎಫ್‍ಸಿ ಫೈಬರ್/ಡಕ್ಟ್ ಗಳ ದರಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಆಸಕ್ತಿ ವ್ಯಕ್ತಪಡಿಸುವಿಕೆಯನ್ನು ಆಹ್ವಾನಿಸಲಾಗಿದೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಬೆವಿಕಂನ ಬೆಂ.ಮ.ಕ್ಷೇತ್ರ ವಲಯ ಪ್ರದೇಶದಲ್ಲಿ ಪ್ರತಿ ಕಿ.ಮೀ /ತಿಂಗಳಿಗೆ ಯುಜಿ ಓಎಫ್‍ಸಿ ಫೈಬರ್/ಡಕ್ಟ್ ಗಳ ದರಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಆಸಕ್ತಿ ವ್ಯಕ್ತಪಡಿಸುವಿಕೆಯನ್ನು ಆಹ್ವಾನಿಸಲಾಗಿದೆ",
+    "aiSummary": "Official BESCOM notification regarding ಬೆವಿಕಂನ ಬೆಂ.ಮ.ಕ್ಷೇತ್ರ ವಲಯ ಪ್ರದೇಶದಲ್ಲಿ ಪ್ರತಿ ಕಿ.ಮೀ /ತಿಂಗಳಿಗೆ ಯುಜಿ ಓಎಫ್‍ಸಿ ಫೈಬರ್/ಡಕ್ಟ್ ಗಳ ದರಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಆಸಕ್ತಿ ವ್ಯಕ್ತಪಡಿಸುವಿಕೆಯನ್ನು ಆಹ್ವಾನಿಸಲಾಗಿದೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Projects/EOI5_20240705111719.pdf",
+    "localBackup": "/docs/bescom/EOI5_20240705111719.pdf",
+    "hasLocalBackup": true,
+    "checksum": "04e3bb70b6e76e6ccf84af0b0380807a6ee0fcf04bb5e7bf74b249507fe46863",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:25.291Z"
+  },
+  {
+    "id": "BESCOM-55afde42",
+    "title": "ಬೆವಿಕಂನಲ್ಲಿ ವಿಚಾರಣಾಧಿಕಾರಿಗಳಾಗಿ ಎಂಪ್ಯಾನಲ್‌ಗೊಳ್ಳಲು ಅರ್ಜಿಗಳನ್ನು ಆಹ್ವಾನಿಸಿದೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಬೆವಿಕಂನಲ್ಲಿ ವಿಚಾರಣಾಧಿಕಾರಿಗಳಾಗಿ ಎಂಪ್ಯಾನಲ್‌ಗೊಳ್ಳಲು ಅರ್ಜಿಗಳನ್ನು ಆಹ್ವಾನಿಸಿದೆ",
+    "aiSummary": "Official BESCOM notification regarding ಬೆವಿಕಂನಲ್ಲಿ ವಿಚಾರಣಾಧಿಕಾರಿಗಳಾಗಿ ಎಂಪ್ಯಾನಲ್‌ಗೊಳ್ಳಲು ಅರ್ಜಿಗಳನ್ನು ಆಹ್ವಾನಿಸಿದೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/CGM-CA-RTI/Applictionforenquiryofficer.pdf",
+    "localBackup": "/docs/bescom/Applictionforenquiryofficer.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9b1c1522f2c8d01fee3ac4b27ed39cb1af7a6e1dd747dfdf9d7711e0fcd9e5b3",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:25.690Z"
+  },
+  {
+    "id": "BESCOM-d86d80df",
+    "title": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿಸ್ಟೇಪರಿಚಾರಕ ಮತ್ತು ಕಿಪಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕೇತರ ಹುದ್ದೆಗಳು)",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿಸ್ಟೇಪರಿಚಾರಕ ಮತ್ತು ಕಿಪಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕೇತರ ಹುದ್ದೆಗಳು)",
+    "aiSummary": "Official BESCOM notification regarding ಕವಿಪ್ರನಿನಿ ಮತ್ತು ವಿವಿಧ ವಿದ್ಯುತ್ ಸರಬರಾಜು ಕಂಪನಿಗಳಲ್ಲಿ ಕಿಸ್ಟೇಪರಿಚಾರಕ ಮತ್ತು ಕಿಪಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿಗಾಗಿ ವಿಸ್ತೃತ ಉದ್ಯೋಗ ಪ್ರಕಟಣೆ (ಕಲ್ಯಾಣ ಕರ್ನಾಟಕೇತರ ಹುದ್ದೆಗಳು). Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_NKK_DetailedNotification.pdf",
+    "localBackup": "/docs/bescom/44953_NKK_DetailedNotification.pdf",
+    "hasLocalBackup": true,
+    "checksum": "9cb8af82c6cb0db359c624fae9ad44a861e21e8377a72e3ec723c9f6e7b0eff7",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:26.377Z"
+  },
+  {
+    "id": "BESCOM-f3c70376",
+    "title": "ಆ.ವ-26 ರಿಂದ ಆ.ವ-28 ರ ವಿದ್ಯುತ್‌ ದರಗಳ ಪರಿಷ್ಕರಣೆ ಅನುಮೋದನೆಗಾಗಿ ಅರ್ಜಿಯ ವಾರ್ತಾ ಪತ್ರಿಕೆಯ ಪ್ರತಿ. ( ಅರ್ಜಿಯ ವಿರುದ್ಧ ಆಕ್ಷೇಪಣೆಯನ್ನು ಸಲ್ಲಿಸಲು ಕೊನೆಯ ದಿನಾಂಕ 09.02.2025)",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಆ.ವ-26 ರಿಂದ ಆ.ವ-28 ರ ವಿದ್ಯುತ್‌ ದರಗಳ ಪರಿಷ್ಕರಣೆ ಅನುಮೋದನೆಗಾಗಿ ಅರ್ಜಿಯ ವಾರ್ತಾ ಪತ್ರಿಕೆಯ ಪ್ರತಿ. ( ಅರ್ಜಿಯ ವಿರುದ್ಧ ಆಕ್ಷೇಪಣೆಯನ್ನು ಸಲ್ಲಿಸಲು ಕೊನೆಯ ದಿನಾಂಕ 09.02.2025)",
+    "aiSummary": "Official BESCOM notification regarding ಆ.ವ-26 ರಿಂದ ಆ.ವ-28 ರ ವಿದ್ಯುತ್‌ ದರಗಳ ಪರಿಷ್ಕರಣೆ ಅನುಮೋದನೆಗಾಗಿ ಅರ್ಜಿಯ ವಾರ್ತಾ ಪತ್ರಿಕೆಯ ಪ್ರತಿ. ( ಅರ್ಜಿಯ ವಿರುದ್ಧ ಆಕ್ಷೇಪಣೆಯನ್ನು ಸಲ್ಲಿಸಲು ಕೊನೆಯ ದಿನಾಂಕ 09.02.2025). Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/RA%20section/1680_TariffRate_Kan-Final.pdf",
+    "localBackup": "/docs/bescom/1680_TariffRate_Kan-Final.pdf",
+    "hasLocalBackup": true,
+    "checksum": "7660a3bb34469ff14d48794dc31bd61462888f9b204cfbbc996c407c0e8db510",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:26.683Z"
+  },
+  {
+    "id": "BESCOM-9d3e7ef2",
+    "title": "ಆನ್-ಲೈನ್ ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಲು ಸೂಚನೆಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಆನ್-ಲೈನ್ ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಲು ಸೂಚನೆಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಆನ್-ಲೈನ್ ಅರ್ಜಿಯನ್ನು ಸಲ್ಲಿಸಲು ಸೂಚನೆಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_Instructions_to_Candidates_JSA_JPM_19_10_2024.pdf",
+    "localBackup": "/docs/bescom/44953_Instructions_to_Candidates_JSA_JPM_19_10_2024.pdf",
+    "hasLocalBackup": true,
+    "checksum": "0367a27e37fbb68e7b8ff96b9d475a76e3fb1d681b79cf72a20b4b63cdc1ce6e",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:29.039Z"
+  },
+  {
+    "id": "BESCOM-40c4bf4e",
+    "title": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಿಂದ ನಡೆಸಲಾಗುತ್ತಿರುವ ನೇಮಕಾತಿಗಳಲ್ಲಿ ಉದ್ಯೋಗ ಭರವಸೆ ನೀಡುತ್ತಿರುವ ವಂಚಕರ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಿಂದ ನಡೆಸಲಾಗುತ್ತಿರುವ ನೇಮಕಾತಿಗಳಲ್ಲಿ ಉದ್ಯೋಗ ಭರವಸೆ ನೀಡುತ್ತಿರುವ ವಂಚಕರ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಿಂದ ನಡೆಸಲಾಗುತ್ತಿರುವ ನೇಮಕಾತಿಗಳಲ್ಲಿ ಉದ್ಯೋಗ ಭರವಸೆ ನೀಡುತ್ತಿರುವ ವಂಚಕರ ಬಗ್ಗೆ ಎಚ್ಚರಿಕೆಯ ಸೂಚನೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/CautionNotice_Kan.pdf",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null,
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:29.041Z"
+  },
+  {
+    "id": "BESCOM-1f233b12",
+    "title": "e-sign ಪ್ರಕ್ರಿಯೆ, ಅಂಚೆ ಚಲನ್ ಡೌನ್‍ಲೋಡ್ ಮತ್ತು ಅರ್ಜಿ ಶುಲ್ಕ ಪಾವತಿ ದಿನಾಂಕ ವಿಸ್ತರಣೆ ಬಗ್ಗೆ.",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "e-sign ಪ್ರಕ್ರಿಯೆ, ಅಂಚೆ ಚಲನ್ ಡೌನ್‍ಲೋಡ್ ಮತ್ತು ಅರ್ಜಿ ಶುಲ್ಕ ಪಾವತಿ ದಿನಾಂಕ ವಿಸ್ತರಣೆ ಬಗ್ಗೆ.",
+    "aiSummary": "Official BESCOM notification regarding e-sign ಪ್ರಕ್ರಿಯೆ, ಅಂಚೆ ಚಲನ್ ಡೌನ್‍ಲೋಡ್ ಮತ್ತು ಅರ್ಜಿ ಶುಲ್ಕ ಪಾವತಿ ದಿನಾಂಕ ವಿಸ್ತರಣೆ ಬಗ್ಗೆ.. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953-ExtensionofTime_e-sign_Feepayment.pdf",
+    "localBackup": "/docs/bescom/44953-ExtensionofTime_e-sign_Feepayment.pdf",
+    "hasLocalBackup": true,
+    "checksum": "5fd0e1f25c41ce0283ab94c6c7aacdf35dc6d4ba08f113e38d15e2886f664abb",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:29.767Z"
+  },
+  {
+    "id": "BESCOM-1507d7d8",
+    "title": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಲ್ಲಿ ಕೈಗೊಳ್ಳಲಾಗಿರುವ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿ – e-sign ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣಗೊಳಿಸುವ ಬಗ್ಗೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಲ್ಲಿ ಕೈಗೊಳ್ಳಲಾಗಿರುವ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿ – e-sign ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣಗೊಳಿಸುವ ಬಗ್ಗೆ",
+    "aiSummary": "Official BESCOM notification regarding ಕವಿಪ್ರನಿನಿ ಮತ್ತು ಎಸ್ಕಾಂಗಳಲ್ಲಿ ಕೈಗೊಳ್ಳಲಾಗಿರುವ ಕಿರಿಯ ಸ್ಟೇಷನ್ ಪರಿಚಾರಕ ಮತ್ತು ಕಿರಿಯ ಪವರ್ಮ್ಯಾನ್ ಹುದ್ದೆಗಳ ನೇಮಕಾತಿ – e-sign ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣಗೊಳಿಸುವ ಬಗ್ಗೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Personnel/44953_Completionofe-sign_Reg.pdf",
+    "localBackup": "/docs/bescom/44953_Completionofe-sign_Reg.pdf",
+    "hasLocalBackup": true,
+    "checksum": "1241f0cd75d52940e62e03ee3e809b83682e9beb536c1e4a6f22b5ae5df3d68f",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:29.894Z"
+  },
+  {
+    "id": "BESCOM-76568ca4",
+    "title": "ಹೆಚ್ ಟಿ ಗ್ರಾಹಕರಿಗೆ ಯೋಜನೆಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಹೆಚ್ ಟಿ ಗ್ರಾಹಕರಿಗೆ ಯೋಜನೆಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಹೆಚ್ ಟಿ ಗ್ರಾಹಕರಿಗೆ ಯೋಜನೆಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/RA%20section/DERS-SchemesforHTConsumers.pdf",
+    "localBackup": "/docs/bescom/DERS-SchemesforHTConsumers.pdf",
+    "hasLocalBackup": true,
+    "checksum": "7b5a71dd30893e7a039cf7246fe2e72d0876c5462e33410a78a6903c612e3bb2",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:30.069Z"
+  },
+  {
+    "id": "BESCOM-e3c800d4",
+    "title": "ಹೊಸ ಸಂಪರ್ಕಕ್ಕಾಗಿ ಸಲ್ಲಿಸಬಹುದಾದ ದಾಖಲಾತಿಗಳು ಮತ್ತು ಶುಲ್ಕದ ವಿವರಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಹೊಸ ಸಂಪರ್ಕಕ್ಕಾಗಿ ಸಲ್ಲಿಸಬಹುದಾದ ದಾಖಲಾತಿಗಳು ಮತ್ತು ಶುಲ್ಕದ ವಿವರಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಹೊಸ ಸಂಪರ್ಕಕ್ಕಾಗಿ ಸಲ್ಲಿಸಬಹುದಾದ ದಾಖಲಾತಿಗಳು ಮತ್ತು ಶುಲ್ಕದ ವಿವರಗಳು. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/ICT%20and%20MIS/ListofDocuments&ScheduleofChargesforNewconnection.pdf",
+    "localBackup": "/docs/bescom/ListofDocuments&ScheduleofChargesforNewconnection.pdf",
+    "hasLocalBackup": true,
+    "checksum": "92a9ccb738928aca6be0eb16942959c48c9181ecf1f99f4551110db823d88fab",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:30.806Z"
+  },
+  {
+    "id": "BESCOM-28fe9d2a",
+    "title": "Bescom Collateral-Guidelines",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "Bescom Collateral-Guidelines",
+    "aiSummary": "Official BESCOM notification regarding Bescom Collateral-Guidelines. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/Bescom%20Officers%20and%20Staff/bescom-guidelines.pdf",
+    "localBackup": "/docs/bescom/bescom-guidelines.pdf",
+    "hasLocalBackup": true,
+    "checksum": "c03b695960fd6bd53279ed4c00f981bea549dd322f9e01462428f3c59a4be41a",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:32.006Z"
+  },
+  {
+    "id": "BESCOM-ec2adaae",
+    "title": "ಸುರಕ್ಷತೆ ಬಗೆಗಿನ ಭಾರತೀಯ ವಿದ್ಯುತ್ ನಿಯಮಗಳು 1956",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಸುರಕ್ಷತೆ ಬಗೆಗಿನ ಭಾರತೀಯ ವಿದ್ಯುತ್ ನಿಯಮಗಳು 1956",
+    "aiSummary": "Official BESCOM notification regarding ಸುರಕ್ಷತೆ ಬಗೆಗಿನ ಭಾರತೀಯ ವಿದ್ಯುತ್ ನಿಯಮಗಳು 1956. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/IE-rules.pdf",
+    "localBackup": "/docs/bescom/IE-rules.pdf",
+    "hasLocalBackup": true,
+    "checksum": "c7870d543dd6029ddeb8c6d842d145adf885c418a0aec130f65c46f8b42ffd50",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:33.756Z"
+  },
+  {
+    "id": "BESCOM-8fbe2b36",
+    "title": "ಸುರಕ್ಷತೆಯ ಕೈಪಿಡಿ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಸುರಕ್ಷತೆಯ ಕೈಪಿಡಿ",
+    "aiSummary": "Official BESCOM notification regarding ಸುರಕ್ಷತೆಯ ಕೈಪಿಡಿ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/safety-manual.pdf",
+    "localBackup": "/docs/bescom/safety-manual.pdf",
+    "hasLocalBackup": true,
+    "checksum": "4d1e3c4ea8d2ca13add2e13e268ccdb3dfc9df9f9babf620d035ab9bc1dc77f6",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:39.267Z"
+  },
+  {
+    "id": "BESCOM-1b587bfc",
+    "title": "ಬೆವಿಕಂನ ದತ್ತಾಂಶ ಹಂಚಿಕೆ ನೀತಿ - ಆವೃತ್ತಿ ೨ ಮತ್ತುNon-Disclosure Agreement (NDA) ನಮೂನೆ",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಬೆವಿಕಂನ ದತ್ತಾಂಶ ಹಂಚಿಕೆ ನೀತಿ - ಆವೃತ್ತಿ ೨ ಮತ್ತುNon-Disclosure Agreement (NDA) ನಮೂನೆ",
+    "aiSummary": "Official BESCOM notification regarding ಬೆವಿಕಂನ ದತ್ತಾಂಶ ಹಂಚಿಕೆ ನೀತಿ - ಆವೃತ್ತಿ ೨ ಮತ್ತುNon-Disclosure Agreement (NDA) ನಮೂನೆ. Check the official link for complete details.",
+    "officialLink": "https://bescom.karnataka.gov.in/storage/pdf-files/TIC/BESCOM%20Data%20Sharing%20Policy_V2_03_07_2020_Final.pdf",
+    "localBackup": "/docs/bescom/BESCOM Data Sharing Policy_V2_03_07_2020_Final.pdf",
+    "hasLocalBackup": true,
+    "checksum": "622cc1ac02cedeab3a31fa7f01ca4e0dafb0e9af0bdd0a50a7ce078fb1b7d278",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:40.548Z"
+  },
+  {
+    "id": "BESCOM-158cb907",
+    "title": "ಸಾರ್ವತ್ರಿಕ ರಜೆಗಳು",
+    "date": "2026-07-24",
+    "category": "policy",
+    "summary": "ಸಾರ್ವತ್ರಿಕ ರಜೆಗಳು",
+    "aiSummary": "Official BESCOM notification regarding ಸಾರ್ವತ್ರಿಕ ರಜೆಗಳು. Check the official link for complete details.",
+    "officialLink": "https://ceg.karnataka.gov.in/frontend/opt1/pdfs/HOLIDAYSLIST2024.pdf",
+    "localBackup": "/docs/bescom/HOLIDAYSLIST2024.pdf",
+    "hasLocalBackup": true,
+    "checksum": "2fc499503bfc727439b311ac2bbdac238b11c82b626c6fe9fbea5e7910e6534b",
+    "tags": [
+      "policy",
+      "auto-synced"
+    ],
+    "affectsCitizen": true,
+    "citizenImpact": "Review official BESCOM portal link for direct details.",
+    "autoSynced": true,
+    "syncedAt": "2026-07-24T03:09:49.944Z"
+  },
+  {
+    "id": "BESCOM-2026-001",
+    "title": "Revision of Retail Supply Tariff for FY 2026-27",
+    "date": "2026-03-15",
+    "category": "tariff",
+    "summary": "KERC has approved the revision of electricity tariffs for all ESCOMs including BESCOM, with an average increase of 30 paise per unit. Fixed charges have been increased by ₹10 per kW.",
+    "aiSummary": "The electricity rates have gone up slightly starting this April. You will pay ₹10 more per month for your meter's fixed charge, and about 30 paise more for every unit of electricity you use.",
+    "citizenImpact": "Expect your monthly bill to increase by ₹30 to ₹60 on average.",
+    "officialLink": "https://bescom.karnataka.gov.in/info-4/RETAIL+SUPPLY+TARIFF+FY-2026/en",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null
+  },
+  {
+    "id": "BESCOM-2026-002",
+    "title": "Scheduled Power Outage in Jayanagar Subdivision",
+    "date": "2026-07-20",
+    "category": "maintenance",
+    "summary": "Quarterly maintenance of the 66kV substation at Jayanagar will result in power interruptions between 10:00 AM and 4:00 PM on July 25th.",
+    "aiSummary": "If you live in Jayanagar or JP Nagar, there will be no power on July 25th from 10 AM to 4 PM due to maintenance.",
+    "citizenImpact": "Plan your work accordingly. Water pumps and lifts will not operate during these hours.",
+    "officialLink": "https://bescom.karnataka.gov.in/319/planned-outages/en",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null
+  },
+  {
+    "id": "BESCOM-2026-003",
+    "title": "Online Transfer of Electricity Connection (e-Katha Owner Name Change)",
+    "date": "2026-06-10",
+    "category": "policy",
+    "summary": "BESCOM has digitized the connection transfer process on bescom.co.in. Property buyers can now submit electricity meter name change applications online in 2-3 steps using BBMP e-Katha.",
+    "aiSummary": "Bought a new home or property? You can now transfer the BESCOM connection to your name completely online via bescom.co.in using your BBMP e-Katha.",
+    "citizenImpact": "No need to visit BESCOM office or pay middlemen. Process completed online with updated name on next bill.",
+    "officialLink": "https://bescom.co.in",
+    "localBackup": null,
+    "hasLocalBackup": false,
+    "checksum": null
+  }
+]

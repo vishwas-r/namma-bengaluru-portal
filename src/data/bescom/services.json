@@ -1,0 +1,191 @@
+{
+  "services": [
+    {
+      "id": "name-change",
+      "title": "Owner Name Change (e-Katha Instant Online Transfer)",
+      "category": "ownership",
+      "badge": "e-Katha Fast Track",
+      "sla": "Instant / Next Billing Cycle",
+      "onlineLink": "https://bescom.co.in",
+      "officialPortalName": "BESCOM Official Portal (bescom.co.in)",
+      "description": "Transfer your BESCOM electricity connection online in just 2-3 steps using your BBMP e-Katha! Log into bescom.co.in, input your Account Number & e-Katha details to auto-fetch owner info, pay fees & eSign documents digitally without visiting any office.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Login / Register on bescom.co.in",
+          "details": "Go to bescom.co.in, log in or create an account, and enter your 10-digit BESCOM Account Number.",
+          "link": "https://bescom.co.in"
+        },
+        {
+          "step": 2,
+          "title": "Select Name Change & Provide e-Katha Details",
+          "details": "Select 'Name Change Service' and enter your BBMP e-Katha details. The system automatically fetches and verifies current property owner information.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Pay Name Change Fee (₹100)",
+          "details": "Pay the ₹100/- name change processing fee online via UPI, Netbanking, or Debit Card.",
+          "link": null
+        },
+        {
+          "step": 4,
+          "title": "Digital eSign & Stamp Duty Payment",
+          "details": "Perform Aadhaar eSign and pay online: ₹603/- for e-Stamp & eSign for Power Supply Agreement, and ₹591/- for e-Stamp & eSign for Indemnity Bond.",
+          "link": null
+        },
+        {
+          "step": 5,
+          "title": "Completion & Automatic Bill Update",
+          "details": "Application complete! Your name change is processed digitally, and your updated name will reflect on your bill from the very next billing cycle.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "BBMP e-Katha Number / Details", "required": true, "note": "Used for instant online property owner auto-fetch" },
+        { "name": "10-digit BESCOM Account ID", "required": true, "note": "Found on your monthly electricity bill" },
+        { "name": "Aadhaar Card (for digital eSign)", "required": true, "note": "Mobile number linked with Aadhaar required for OTP eSign" }
+      ],
+      "fees": [
+        { "item": "Name Change Processing Fee", "amount": "₹100" },
+        { "item": "Power Supply Agreement (e-Stamp & eSign)", "amount": "₹603" },
+        { "item": "Indemnity Bond (e-Stamp & eSign)", "amount": "₹591" },
+        { "item": "Total Digital Application Cost", "amount": "₹1,294 (100% digital e-Katha fast-track)" }
+      ]
+    },
+    {
+      "id": "new-connection",
+      "title": "New LT Electricity Connection (Domestic / Commercial)",
+      "category": "connection",
+      "badge": "Digital Application",
+      "sla": "15 Working Days",
+      "onlineLink": "https://bescom.karnataka.gov.in",
+      "officialPortalName": "BESCOM Portal & Seva Sindhu",
+      "description": "Apply for a new low-tension electricity supply line for a newly constructed residential house, flat, shop, or commercial establishment.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Apply Online / Submit Form W",
+          "details": "Submit Form W online via BESCOM portal or Seva Sindhu with sanctioned building plan and wiring completion certificate.",
+          "link": "https://bescom.karnataka.gov.in"
+        },
+        {
+          "step": 2,
+          "title": "Wiring Inspection by Licensed Electrician",
+          "details": "Get internal wiring certified by a Class-1 Licensed Electrical Contractor (LEC).",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Power Sanction & Demand Note",
+          "details": "BESCOM issues a demand note detailing Initial Security Deposit (ISD) and Service Line Charges.",
+          "link": null
+        },
+        {
+          "step": 4,
+          "title": "Meter Installation & Service Line Hookup",
+          "details": "BESCOM meter reader installs smart meter and powers the connection.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Ownership Proof / Possession Certificate / Allotment Letter", "required": true, "note": "Sale Deed, BBMP Khata, or Sanctioned Plan" },
+        { "name": "Wiring Completion Certificate", "required": true, "note": "Issued by Licensed Electrical Contractor" },
+        { "name": "Occupancy Certificate (OC) / Building Plan Sanction", "required": true, "note": "For buildings above ground + 2 floors" },
+        { "name": "Applicant Passport Photo & ID Proof", "required": true, "note": "Aadhaar Card or Voter ID" }
+      ],
+      "fees": [
+        { "item": "Application Fee", "amount": "₹50" },
+        { "item": "Initial Security Deposit (ISD)", "amount": "₹1,200 per kW (Domestic) / ₹2,000 per kW (Commercial)" },
+        { "item": "Service Line & Meter Cost", "amount": "As per demand note estimates" }
+      ]
+    },
+    {
+      "id": "load-alteration",
+      "title": "Sanctioned Load Enhancement or Reduction",
+      "category": "meter",
+      "badge": "Online Portal",
+      "sla": "7 Working Days",
+      "onlineLink": "https://sevasindhuservices.karnataka.gov.in",
+      "officialPortalName": "Seva Sindhu Portal",
+      "description": "Increase load for new appliances (Air Conditioners, EV Chargers, Heavy Machinery) or reduce sanctioned load to avoid high monthly fixed charges.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Submit Load Revision Request",
+          "details": "Apply online on Seva Sindhu with existing Account ID and requested load in kW.",
+          "link": "https://sevasindhuservices.karnataka.gov.in"
+        },
+        {
+          "step": 2,
+          "title": "Pay Additional Security Deposit (for Load Increase)",
+          "details": "Pay incremental Initial Security Deposit (ISD) of ₹1,200/kW for extra capacity.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Technical Feasibility Check",
+          "details": "BESCOM line inspector checks transformer capacity in your area.",
+          "link": null
+        },
+        {
+          "step": 4,
+          "title": "Load Update Approval",
+          "details": "Sanctioned load is updated in billing server.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Latest Paid BESCOM Bill", "required": true, "note": "No arrears pending" },
+        { "name": "Test Report by Licensed Contractor (for load > 5 kW)", "required": true, "note": "Safety verification" },
+        { "name": "Identity Proof of Account Holder", "required": true, "note": "Aadhaar or PAN" }
+      ],
+      "fees": [
+        { "item": "Processing Fee", "amount": "₹100" },
+        { "item": "Additional ISD (Load Increase)", "amount": "₹1,200 per additional kW" }
+      ]
+    },
+    {
+      "id": "meter-testing",
+      "title": "Faulty / Fast Meter Testing & Replacement",
+      "category": "meter",
+      "badge": "Complaint Portal",
+      "sla": "3-5 Working Days",
+      "onlineLink": "https://bescom.karnataka.gov.in",
+      "officialPortalName": "BESCOM Mithra App / Helpline 1912",
+      "description": "If your electricity bill suddenly doubled without increased usage, request official meter testing at BESCOM laboratory or replacement of damaged meter.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Raise Meter Challenge Request",
+          "details": "Call 1912 or lodge request on BESCOM Mithra App / web portal.",
+          "link": "https://bescom.karnataka.gov.in"
+        },
+        {
+          "step": 2,
+          "title": "Check Meter Installation",
+          "details": "BESCOM technician installs a secondary reference check-meter alongside existing meter for 7 days.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Lab Test Report & Bill Adjustment",
+          "details": "If meter is found fast (+/- 2% error), meter is replaced free of cost and excess billed amount is refunded in future bills.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Latest Electricity Bill", "required": true, "note": "Copy of abnormal bill" },
+        { "name": "Written Challenge Application", "required": true, "note": "Can be generated in portal" }
+      ],
+      "fees": [
+        { "item": "Meter Test Deposit", "amount": "₹100 (Refunded if meter found faulty)" },
+        { "item": "Faulty Meter Replacement", "amount": "FREE (if damaged naturally or faulty)" }
+      ]
+    }
+  ]
+}

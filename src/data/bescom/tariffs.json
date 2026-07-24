@@ -1,0 +1,60 @@
+{
+  "domestic": {
+    "label": "Domestic (LT-2(a))",
+    "description": "Applicable to individual households for residential purposes.",
+    "fixedCharges": [
+      { "label": "Up to 1 kW", "charge": 110 },
+      { "label": "For every additional kW", "charge": 110 }
+    ],
+    "slabs": [
+      {
+        "label": "Lifeline Slab",
+        "from": 0,
+        "to": 50,
+        "rate": 4.75,
+        "color": "#10b981"
+      },
+      {
+        "label": "Standard Slab",
+        "from": 51,
+        "to": 100,
+        "rate": 6.25,
+        "color": "#f59e0b"
+      },
+      {
+        "label": "High Usage Slab",
+        "from": 100,
+        "to": null,
+        "rate": 7.80,
+        "color": "#ef4444"
+      }
+    ],
+    "fuelAdjustmentCharge": 1.15,
+    "electricityDutyPercent": 9.0
+  },
+  "commercial": {
+    "label": "Commercial (LT-3)",
+    "description": "Applicable for shops, offices, clinics, and small businesses.",
+    "fixedCharges": [
+      { "label": "Per kW per month", "charge": 150 }
+    ],
+    "slabs": [
+      {
+        "label": "Base Slab",
+        "from": 0,
+        "to": 50,
+        "rate": 8.50,
+        "color": "#3b82f6"
+      },
+      {
+        "label": "High Slab",
+        "from": 50,
+        "to": null,
+        "rate": 9.50,
+        "color": "#8b5cf6"
+      }
+    ],
+    "fuelAdjustmentCharge": 1.15,
+    "electricityDutyPercent": 9.0
+  }
+}

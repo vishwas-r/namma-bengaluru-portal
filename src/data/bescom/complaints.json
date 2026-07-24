@@ -1,0 +1,63 @@
+{
+  "complaintTypes": [
+    {
+      "id": "power-outage",
+      "label": "No Power / Supply Outage",
+      "icon": "bi-lightning-charge",
+      "description": "Report a power cut, broken line, or transformer spark",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Check Outage Schedule",
+          "details": "Verify if your area is undergoing scheduled maintenance.",
+          "link": "https://bescom.karnataka.gov.in/outages"
+        },
+        {
+          "step": 2,
+          "title": "Call 1912 Helpline",
+          "details": "Call the 24x7 BESCOM helpline at 1912. Provide your RR Number or Account ID.",
+          "sla": "2 - 4 Hours"
+        },
+        {
+          "step": 3,
+          "title": "WhatsApp BESCOM",
+          "details": "Send a message to 9483191212 / 9483191222 with your location.",
+          "link": "https://wa.me/919483191212"
+        },
+        {
+          "step": 4,
+          "title": "Escalate to AEE",
+          "details": "If unresolved, contact your sub-division Assistant Executive Engineer (AEE)."
+        }
+      ]
+    },
+    {
+      "id": "billing-issue",
+      "label": "Billing / Meter Error",
+      "icon": "bi-receipt",
+      "description": "Incorrect bill amount or faulty meter reading",
+      "steps": [
+        {
+          "step": 1,
+          "title": "Raise via BESCOM Mithra App",
+          "details": "Download the official app, link your account, and raise a billing dispute ticket.",
+          "link": "https://play.google.com/store/apps/details?id=com.bescom.mithra"
+        },
+        {
+          "step": 2,
+          "title": "Visit Subdivision Office",
+          "details": "Take a copy of your current bill and the previous month's bill to your local BESCOM office.",
+          "sla": "7 Working Days"
+        },
+        {
+          "step": 3,
+          "title": "Escalate to CGRF",
+          "details": "If the sub-division rejects your claim, file a petition with the Consumer Grievance Redressal Forum (CGRF)."
+        }
+      ]
+    }
+  ],
+  "rtiTemplate": {
+    "template": "To,\nThe Public Information Officer (PIO)\nBESCOM Corporate Office, K.R. Circle\nBengaluru - 560001\n\nSubject: Application under RTI Act 2005 regarding complaint status.\n\nRespected Sir/Madam,\nI, {NAME}, kindly request you to provide the status and action taken report for my complaint ID: {COMPLAINT_ID} regarding {ISSUE_DESCRIPTION}.\n\nPlease provide copies of the file notings related to this complaint.\n\nRegards,\n{NAME}"
+  }
+}
