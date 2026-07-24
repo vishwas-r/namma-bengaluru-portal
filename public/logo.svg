@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Dark Navy Metallic Badge Background -->
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171d33"/>
+      <stop offset="50%" stop-color="#0e1324"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </linearGradient>
+
+    <!-- Glass Tile Backdrops -->
+    <linearGradient id="glassTile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.09)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)"/>
+    </linearGradient>
+
+    <!-- Accent Neon Gradients -->
+    <!-- BWSSB Cyan -->
+    <linearGradient id="waterNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- BESCOM Gold -->
+    <linearGradient id="powerNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- BBMP Emerald -->
+    <linearGradient id="civicNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Transit Violet -->
+    <linearGradient id="transitNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+
+    <!-- Neon Glow Filters -->
+    <filter id="glowWater" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowPower" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowCivic" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowTransit" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Main 1:1 Outer Glassmorphic Badge -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#badgeBg)" stroke="rgba(255, 255, 255, 0.14)" stroke-width="5"/>
+  <rect x="22" y="22" width="468" height="468" rx="102" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="2"/>
+
+  <!-- Subtle Ambient Glow Orbs -->
+  <circle cx="160" cy="160" r="110" fill="#0284c7" opacity="0.12" filter="blur(30px)"/>
+  <circle cx="352" cy="160" r="110" fill="#d97706" opacity="0.12" filter="blur(30px)"/>
+  <circle cx="160" cy="352" r="110" fill="#059669" opacity="0.12" filter="blur(30px)"/>
+  <circle cx="352" cy="352" r="110" fill="#7c3aed" opacity="0.12" filter="blur(30px)"/>
+
+  <!-- 2x2 INTERLOCKING GLASS TILES -->
+
+  <!-- Tile 1: BWSSB Water (Top-Left) -->
+  <g>
+    <rect x="76" y="76" width="164" height="164" rx="36" fill="url(#glassTile)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="2.5"/>
+    <path d="M158 116 C158 116, 122 162, 122 184 C122 203.8 138.1 220 158 220 C177.9 220 194 203.8 194 184 C194 162, 158 116, 158 116 Z" 
+          fill="none" stroke="url(#waterNeon)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowWater)"/>
+    <circle cx="158" cy="188" r="8" fill="#38bdf8"/>
+  </g>
+
+  <!-- Tile 2: BESCOM Power (Top-Right) -->
+  <g>
+    <rect x="272" y="76" width="164" height="164" rx="36" fill="url(#glassTile)" stroke="rgba(251, 191, 36, 0.3)" stroke-width="2.5"/>
+    <path d="M364 110 L314 174 H354 L324 230 L394 158 H354 Z" 
+          fill="none" stroke="url(#powerNeon)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowPower)"/>
+  </g>
+
+  <!-- Tile 3: BBMP Civic Infrastructure (Bottom-Left) -->
+  <g>
+    <rect x="76" y="272" width="164" height="164" rx="36" fill="url(#glassTile)" stroke="rgba(52, 211, 153, 0.3)" stroke-width="2.5"/>
+    <!-- Architectural Civic Arch & Pillars -->
+    <path d="M108 400 V340 C108 315, 128 296, 158 296 C188 296, 208 315, 208 340 V400" 
+          fill="none" stroke="url(#civicNeon)" stroke-width="9" stroke-linecap="round" filter="url(#glowCivic)"/>
+    <path d="M138 400 V346 C138 335, 147 326, 158 326 C169 326, 178 335, 178 346 V400" 
+          fill="none" stroke="url(#civicNeon)" stroke-width="7" stroke-linecap="round"/>
+    <line x1="96" y1="400" x2="220" y2="400" stroke="url(#civicNeon)" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- Tile 4: BMTC & Metro Public Transit (Bottom-Right) -->
+  <g>
+    <rect x="272" y="272" width="164" height="164" rx="36" fill="url(#glassTile)" stroke="rgba(192, 132, 252, 0.3)" stroke-width="2.5"/>
+    <!-- Metro Loop & Front Motion -->
+    <rect x="312" y="310" width="84" height="78" rx="20" 
+          fill="none" stroke="url(#transitNeon)" stroke-width="9" stroke-linecap="round" filter="url(#glowTransit)"/>
+    <line x1="324" y1="346" x2="384" y2="346" stroke="url(#transitNeon)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="334" cy="368" r="6" fill="#c084fc"/>
+    <circle cx="374" cy="368" r="6" fill="#c084fc"/>
+    <path d="M334 388 L320 404 M374 388 L388 404" stroke="url(#transitNeon)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Central Diamond Hub Emblem (Connecting 4 Departments) -->
+  <g>
+    <polygon points="256,236 276,256 256,276 236,256" fill="#171d33" stroke="rgba(255, 255, 255, 0.4)" stroke-width="3"/>
+    <circle cx="256" cy="256" r="5" fill="#ffffff" filter="blur(1px)"/>
+  </g>
+</svg>

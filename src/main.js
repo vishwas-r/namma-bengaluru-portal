@@ -5,11 +5,14 @@ import { renderFooter } from './components/footer.js';
 import { renderModal } from './components/modal.js';
 import { renderHomePage } from './pages/homePage.js';
 import { renderComingSoonPage } from './pages/comingSoonPage.js';
-import { renderBWSSBPage, renderTab, renderCalc, recalcBill, renderTariffChart, renderNoticeCard, renderSteps } from './pages/bwssbPage.js';
+import { renderBWSSBPage, renderTab as renderBWSSBTab, renderCalc as renderBWSSBCalc, recalcBill as recalcBWSSBBill, renderTariffChart as renderBWSSBTariffChart, renderNoticeCard as renderBWSSBNoticeCard, renderSteps as renderBWSSBSteps } from './pages/bwssbPage.js';
+import { renderBESCOMPage, renderTab as renderBESCOMTab, renderCalc as renderBESCOMCalc, recalcBill as recalcBESCOMBill, renderTariffChart as renderBESCOMTariffChart, renderNoticeCard as renderBESCOMNoticeCard, renderSteps as renderBESCOMSteps } from './pages/bescomPage.js';
 import { getKeyPool, addKey, removeKey, markKeyStatus, testKey, cleanKey, queryGemini } from './services/keyPool.js';
 import { downloadBillPDF } from './services/pdfExporter.js';
-import noticesData from './data/bwssb/notices.json';
-import complaintsData from './data/bwssb/complaints.json';
+import bwssbNoticesData from './data/bwssb/notices.json';
+import bwssbComplaintsData from './data/bwssb/complaints.json';
+import bescomNoticesData from './data/bescom/notices.json';
+import bescomComplaintsData from './data/bescom/complaints.json';
 
 // ── Application State ──────────────────────────────────────
 const state = {
@@ -31,9 +34,10 @@ const state = {
   mobileMenuOpen: false,
   noticeFilter: 'all',
   selectedComplaintType: 'no-water',
+  selectedServiceId: 'name-change',
   chatHistory: [{
     role: 'bot',
-    content: 'Namaskara! I am <strong>Ask NammaBengaluru AI</strong>, your citizen assistant for Bengaluru. Ask me anything about BWSSB water tariffs, apartment bulk calculation, filing complaints, or Gazette circulars.'
+    content: 'Namaskara! I am <strong>Ask NammaBengaluru AI</strong>, your citizen assistant for Bengaluru. Ask me anything about BWSSB water tariffs, BESCOM electricity bill, owner name change online, filing complaints, or Gazette circulars.'
   }],
 };
 
@@ -41,11 +45,12 @@ const state = {
 const I18N = {
   en: {
     heroTitle: 'Your Rights. Your City.<br>One Place.',
-    heroSub: 'Access bill calculators, official circulars, complaint guides, and emergency helplines across all Bengaluru civic departments — 100% free.',
+    heroSub: 'Access bill calculators, official circulars, complaint guides, online service wizards, and emergency helplines across all Bengaluru civic departments — 100% free.',
     placeholder: 'Search notices, tariffs, complaint guides...',
     tabs: {
       calculator: { icon: 'bi-calculator', label: 'Bill Calculator' },
       tariff: { icon: 'bi-table', label: 'Tariff & Rates' },
+      services: { icon: 'bi-file-earmark-check', label: 'Services & Applications' },
       notices: { icon: 'bi-newspaper', label: 'Notices' },
       complaint: { icon: 'bi-life-preserver', label: 'Complaint Guide' },
       ai: { icon: 'bi-robot', label: 'Ask NammaBengaluru AI' },
@@ -60,6 +65,7 @@ const I18N = {
     tabs: {
       calculator: { icon: 'bi-calculator', label: 'ಬಿಲ್ ಕ್ಯಾಲ್ಕುಲೇಟರ್' },
       tariff: { icon: 'bi-table', label: 'ದರ ಪಟ್ಟಿ' },
+      services: { icon: 'bi-file-earmark-check', label: 'ಸೇವೆಗಳು ಮತ್ತು ಅರ್ಜಿಗಳು' },
       notices: { icon: 'bi-newspaper', label: 'ಸುತ್ತೋಲೆಗಳು' },
       complaint: { icon: 'bi-life-preserver', label: 'ದೂರು ಮಾರ್ಗದರ್ಶಿ' },
       ai: { icon: 'bi-robot', label: 'AI ಕೇಳಿ' },
@@ -98,6 +104,34 @@ function applyTheme(theme) {
     ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
 }
 
+// ── Department Theme ───────────────────────────────────────
+function applyDeptTheme(deptId) {
+  const root = document.documentElement;
+  if (!deptId) {
+    document.body.classList.remove('is-dept-page');
+    root.style.setProperty('--nb-dept-primary', '#4f46e5');
+    root.style.setProperty('--nb-dept-dark', '#3730a3');
+    root.style.setProperty('--nb-dept-rgb', '79, 70, 229');
+    return;
+  }
+  document.body.classList.add('is-dept-page');
+  const dept = deptData.find(d => d.id === deptId);
+  if (dept && dept.color) {
+    const hex = dept.color;
+    const r = parseInt(hex.slice(1,3), 16);
+    const g = parseInt(hex.slice(3,5), 16);
+    const b = parseInt(hex.slice(5,7), 16);
+    const darkR = Math.max(0, r - 35);
+    const darkG = Math.max(0, g - 35);
+    const darkB = Math.max(0, b - 35);
+    const darkHex = '#' + [darkR, darkG, darkB].map(x => x.toString(16).padStart(2, '0')).join('');
+    
+    root.style.setProperty('--nb-dept-primary', hex);
+    root.style.setProperty('--nb-dept-dark', darkHex);
+    root.style.setProperty('--nb-dept-rgb', `${r}, ${g}, ${b}`);
+  }
+}
+
 // ── Toast Notifications ────────────────────────────────────
 function toast(msg, type = 'info', ms = 3500) {
   const c = document.getElementById('toastContainer');
@@ -117,6 +151,7 @@ function renderDeptPage() {
   if (!dept) return '<div class="container py-5 text-center text-secondary">Department not found.</div>';
   if (dept.status !== 'live') return renderComingSoonPage(dept);
   if (state.deptId === 'bwssb') return renderBWSSBPage(dept, state, getLang());
+  if (state.deptId === 'bescom') return renderBESCOMPage(dept, state, getLang());
   return renderComingSoonPage(dept);
 }
 
@@ -133,9 +168,15 @@ function renderApp(skipScroll = false) {
   `;
   bindAll();
   applyTheme(state.theme);
-  if (state.route === 'dept' && state.deptId === 'bwssb') {
-    if (state.activeTab === 'calculator') recalcBill(state);
-    if (state.activeTab === 'tariff') setTimeout(renderTariffChart, 60);
+  applyDeptTheme(state.route === 'dept' ? state.deptId : null);
+  if (state.route === 'dept') {
+    if (state.deptId === 'bwssb') {
+      if (state.activeTab === 'calculator') recalcBWSSBBill(state);
+      if (state.activeTab === 'tariff') setTimeout(renderBWSSBTariffChart, 60);
+    } else if (state.deptId === 'bescom') {
+      if (state.activeTab === 'calculator') recalcBESCOMBill(state);
+      if (state.activeTab === 'tariff') setTimeout(renderBESCOMTariffChart, 60);
+    }
   }
   if (!skipScroll && !state.modalOpen) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -153,12 +194,22 @@ function bindAll() {
   window.__tab = (tabId) => {
     state.activeTab = tabId;
     const c = document.getElementById('tabContent');
-    if (c) c.innerHTML = renderTab(state, getLang());
+    if (c) {
+      if (state.deptId === 'bwssb') c.innerHTML = renderBWSSBTab(state, getLang());
+      else if (state.deptId === 'bescom') c.innerHTML = renderBESCOMTab(state, getLang());
+    }
     document.querySelectorAll('.nb-tab-btn').forEach(b => {
       b.classList.toggle('is-active', b.getAttribute('onclick')?.includes(`'${tabId}'`));
     });
-    if (tabId === 'calculator') recalcBill(state);
-    if (tabId === 'tariff') setTimeout(renderTariffChart, 60);
+    
+    if (tabId === 'calculator') {
+      if (state.deptId === 'bwssb') recalcBWSSBBill(state);
+      else if (state.deptId === 'bescom') recalcBESCOMBill(state);
+    }
+    if (tabId === 'tariff') {
+      if (state.deptId === 'bwssb') setTimeout(renderBWSSBTariffChart, 60);
+      else if (state.deptId === 'bescom') setTimeout(renderBESCOMTariffChart, 60);
+    }
   };
 
   window.__lang = () => {
@@ -199,13 +250,19 @@ function bindAll() {
   window.__filter = (f) => {
     state.noticeFilter = f;
     const el = document.getElementById('noticeList');
-    const list = noticesData
+    const sourceData = state.deptId === 'bescom' ? bescomNoticesData : bwssbNoticesData;
+    const list = sourceData
       .filter(n => f === 'all' || n.category === f)
       .sort((a, b) => new Date(b.date || b.syncedAt || 0) - new Date(a.date || a.syncedAt || 0));
 
-    if (el) el.innerHTML = list.length === 0
-      ? '<div class="text-center text-secondary py-5">No notices found for this category.</div>'
-      : list.map(n => renderNoticeCard(n)).join('');
+    if (el) {
+      if (list.length === 0) {
+        el.innerHTML = '<div class="text-center text-secondary py-5">No notices found for this category.</div>';
+      } else {
+        const renderCard = state.deptId === 'bescom' ? renderBESCOMNoticeCard : renderBWSSBNoticeCard;
+        el.innerHTML = list.map(n => renderCard(n)).join('');
+      }
+    }
 
     document.querySelectorAll('[onclick*="__filter"]').forEach(btn => {
       const isSelected = btn.getAttribute('onclick')?.includes(`'${f}'`);
@@ -217,25 +274,50 @@ function bindAll() {
     state.selectedComplaintType = id;
     const box = document.getElementById('stepsBox');
     const hd = document.getElementById('stepsHeading');
-    const ct = complaintsData.complaintTypes.find(c => c.id === id);
-    if (box) box.innerHTML = renderSteps(ct);
+    const sourceData = state.deptId === 'bescom' ? bescomComplaintsData : bwssbComplaintsData;
+    const ct = sourceData.complaintTypes.find(c => c.id === id);
+    if (box) {
+      if (state.deptId === 'bescom') box.innerHTML = renderBESCOMSteps(ct);
+      else box.innerHTML = renderBWSSBSteps(ct);
+    }
     if (hd) hd.innerHTML = `<i class="bi bi-list-ol text-primary me-2"></i> Steps: ${ct?.label || ''}`;
     document.querySelectorAll('.nb-complaint-btn').forEach(btn => {
       btn.classList.toggle('is-selected', btn.getAttribute('onclick')?.includes(`'${id}'`));
     });
   };
 
+  window.__service = (id) => {
+    state.selectedServiceId = id;
+    const c = document.getElementById('tabContent');
+    if (c) {
+      if (state.deptId === 'bwssb') c.innerHTML = renderBWSSBTab(state, getLang());
+      else if (state.deptId === 'bescom') c.innerHTML = renderBESCOMTab(state, getLang());
+    }
+  };
+
+  window.__toggleDoc = (chk) => {
+    const label = chk.closest('.form-check')?.querySelector('.form-check-label');
+    if (label) {
+      label.style.textDecoration = chk.checked ? 'line-through' : 'none';
+      label.style.opacity = chk.checked ? '0.65' : '1';
+    }
+  };
+
   window.__calc = (field, val) => {
     state.calcForm[field] = val;
     if (field === 'type') {
       const c = document.getElementById('tabContent');
-      if (c) c.innerHTML = renderCalc(state);
+      if (c) {
+        if (state.deptId === 'bwssb') c.innerHTML = renderBWSSBCalc(state);
+        else if (state.deptId === 'bescom') c.innerHTML = renderBESCOMCalc(state);
+      }
     }
     if (field === 'consumption') {
       const rng = document.getElementById('consumptionRange');
-      if (rng) rng.value = Math.min(val, 100);
+      if (rng) rng.value = Math.min(val, state.deptId === 'bescom' ? 500 : 100);
     }
-    recalcBill(state);
+    if (state.deptId === 'bwssb') recalcBWSSBBill(state);
+    else if (state.deptId === 'bescom') recalcBESCOMBill(state);
   };
 
   window.__calcSlider = (val) => {
@@ -243,7 +325,8 @@ function bindAll() {
     state.calcForm.consumption = v;
     const inp = document.getElementById('consumptionInput');
     if (inp) inp.value = v;
-    recalcBill(state);
+    if (state.deptId === 'bwssb') recalcBWSSBBill(state);
+    else if (state.deptId === 'bescom') recalcBESCOMBill(state);
   };
 
   window.__downloadPDF = () => {
@@ -294,7 +377,7 @@ function bindAll() {
     state.chatHistory.push({ role: 'user', content: msg });
     appendMsg('user', msg);
 
-    const SYSTEM = `You are "Ask NammaBengaluru AI", the official AI guide for Bengaluru public utilities. Provide clear, accurate answers about BWSSB water tariffs (2026-27 telescopic slabs: 0-8 KL @ ₹9.53, 8-25 KL @ ₹14.97, 25-50 KL @ ₹35.39, >50 KL @ ₹51.64), apartment bulk billing (divide total meter consumption by number of flats, apply domestic slabs per flat, then multiply by flats), RWH non-compliance surcharge (+50%), borewell charges (+₹100/month), helpline (1916), and RTI filing. Keep responses professional, helpful, concise, and formatted in HTML (use <strong>, <ul>, <li>, <br> tags instead of raw markdown).`;
+    const SYSTEM = `You are "Ask NammaBengaluru AI", the official AI guide for Bengaluru public utilities. Provide clear, accurate answers about BWSSB water tariffs (2026-27 telescopic slabs: 0-8 KL @ ₹9.53, 8-25 KL @ ₹14.97, 25-50 KL @ ₹35.39, >50 KL @ ₹51.64), BESCOM electricity tariffs (LT-2a: 0-50 units @ ₹4.75, 51-100 units @ ₹6.25, >100 units @ ₹7.80, with Gruha Jyothi free up to 200 units), apartment bulk billing, RWH non-compliance surcharge (+50%), borewell charges (+₹100/month), helplines (BWSSB: 1916, BESCOM: 1912), and RTI filing. Keep responses professional, helpful, concise, and formatted in HTML (use <strong>, <ul>, <li>, <br> tags instead of raw markdown).`;
 
     const typing = document.createElement('div');
     typing.className = 'd-flex gap-2';

@@ -1,30 +1,34 @@
 /* ============================================================
    NAMMA BENGALURU — ELEVATE GLASSMORPHIC DESIGN SYSTEM
-   Primary Accent: #3451b8 | Dark Theme: #171c35 | Glassmorphism & SVG Pattern
+   Primary Accent: var(--nb-dept-primary) | Dark Theme: #171c35 | Glassmorphism & SVG Pattern
    ============================================================ */
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /* ── 1. CSS Custom Properties ── */
+/* ── 1. CSS Custom Properties ── */
 :root {
+  --nb-dept-primary: #4f46e5;
+  --nb-dept-dark: #3730a3;
+  --nb-dept-rgb: 79, 70, 229;
   /* Typography */
   --nb-font-display: 'Outfit', 'Poppins', system-ui, -apple-system, sans-serif;
   --nb-font-body: 'Inter', 'Roboto', system-ui, -apple-system, sans-serif;
 
   /* Elevate Brand Palette */
-  --nb-primary: #3451b8;
-  --nb-primary-dark: #273c8a;
-  --nb-primary-glow: rgba(52, 81, 184, 0.22);
+  --nb-primary: var(--nb-dept-primary);
+  --nb-primary-dark: var(--nb-dept-dark);
+  --nb-primary-glow: rgba(var(--nb-dept-rgb), 0.22);
   --nb-accent: #0ea5e9;
   --nb-emerald: #10b981;
   --nb-amber: #f59e0b;
   --nb-rose: #ef4444;
 
   /* Bootstrap Variable Overrides */
-  --bs-primary: #3451b8;
-  --bs-primary-rgb: 52, 81, 184;
-  --bs-link-color: #3451b8;
+  --bs-primary: var(--nb-dept-primary);
+  --bs-primary-rgb: var(--nb-dept-rgb);
+  --bs-link-color: var(--nb-dept-primary);
 
   /* Shape & Radii */
   --nb-radius-card: 16px;
@@ -33,10 +37,10 @@
   /* Light Theme Glass & Elevation */
   --nb-glass-bg: rgba(255, 255, 255, 0.85);
   --nb-glass-header-bg: rgba(248, 250, 252, 0.9);
-  --nb-glass-border: rgba(52, 81, 184, 0.14);
+  --nb-glass-border: rgba(var(--nb-dept-rgb), 0.14);
   --nb-glass-blur: blur(16px) saturate(180%);
-  --nb-shadow-card: 0 8px 30px -4px rgba(52, 81, 184, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-  --nb-shadow-hover: 0 16px 40px -4px rgba(52, 81, 184, 0.22), 0 4px 14px rgba(0, 0, 0, 0.08);
+  --nb-shadow-card: 0 8px 30px -4px rgba(var(--nb-dept-rgb), 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --nb-shadow-hover: 0 16px 40px -4px rgba(var(--nb-dept-rgb), 0.22), 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 /* Dark Theme Overrides (#171c35 Background & Navy Glass Palette) */
@@ -51,11 +55,11 @@
 
   --nb-glass-bg: rgba(27, 33, 62, 0.85);
   --nb-glass-header-bg: rgba(31, 39, 72, 0.92);
-  --nb-glass-border: rgba(255, 255, 255, 0.12);
-  --nb-primary-glow: rgba(52, 81, 184, 0.35);
+  --nb-glass-border: rgba(255, 255, 255, 0.14);
+  --nb-primary-glow: rgba(var(--nb-dept-rgb), 0.35);
 
   --nb-shadow-card: 0 10px 32px -4px rgba(0, 0, 0, 0.45);
-  --nb-shadow-hover: 0 20px 48px -4px rgba(52, 81, 184, 0.32), 0 6px 18px rgba(0, 0, 0, 0.5);
+  --nb-shadow-hover: 0 20px 48px -4px rgba(var(--nb-dept-rgb), 0.32), 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 /* Force Bootstrap components in dark mode to use navy surface colors */
@@ -86,7 +90,7 @@
   color: #f1f5f9 !important;
 }
 
-/* ── 2. Base & SVG Grid Pattern Overlay ── */
+/* ── 2. Base & Theme Backgrounds ── */
 body {
   font-family: var(--nb-font-body);
   -webkit-font-smoothing: antialiased;
@@ -97,17 +101,49 @@ body {
   position: relative;
 }
 
-/* Modern SVG Pattern & Glowing Orbs Overlay */
-body::before {
+/* Header & Hero Section Gradient & SVG Grid Pattern Background */
+.nb-header,
+.nb-hero {
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(var(--nb-dept-rgb), 0.2) 0%, transparent 45%),
+    radial-gradient(circle at 90% 88%, rgba(14, 165, 233, 0.14) 0%, transparent 50%),
+    radial-gradient(circle at 50% 40%, rgba(168, 85, 247, 0.08) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234f46e5' fill-opacity='0.07' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  transition: background-image 0.3s ease;
+}
+
+/* Dark Theme Header & Hero Background — Luminous Radial Orbs & Lighter SVG Grid */
+[data-bs-theme="dark"] .nb-header,
+[data-bs-theme="dark"] .nb-hero {
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(var(--nb-dept-rgb), 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.22) 0%, transparent 55%),
+    radial-gradient(circle at 50% 25%, rgba(168, 85, 247, 0.18) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23818cf8' fill-opacity='0.14' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Department Pages: Full Viewport Ambient Gradient Mesh & SVG Pattern Overlay */
+body.is-dept-page::before {
   content: '';
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 12% 15%, rgba(52, 81, 184, 0.25) 0%, transparent 45%),
-    radial-gradient(circle at 88% 85%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233451b8' fill-opacity='0.06' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+    radial-gradient(circle at 12% 15%, rgba(var(--nb-dept-rgb), 0.25) 0%, transparent 48%),
+    radial-gradient(circle at 88% 85%, rgba(14, 165, 233, 0.16) 0%, transparent 52%),
+    radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234f46e5' fill-opacity='0.08' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
   z-index: -1;
+  transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] body.is-dept-page::before {
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(var(--nb-dept-rgb), 0.42) 0%, transparent 55%),
+    radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.26) 0%, transparent 60%),
+    radial-gradient(circle at 50% 30%, rgba(168, 85, 247, 0.2) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23818cf8' fill-opacity='0.16' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -149,28 +185,28 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 }
 
 .btn-primary {
-  --bs-btn-bg: #3451b8;
-  --bs-btn-border-color: #3451b8;
-  --bs-btn-hover-bg: #273c8a;
-  --bs-btn-hover-border-color: #273c8a;
-  --bs-btn-focus-shadow-rgb: 52, 81, 184;
+  --bs-btn-bg: var(--nb-dept-primary);
+  --bs-btn-border-color: var(--nb-dept-primary);
+  --bs-btn-hover-bg: var(--nb-dept-dark);
+  --bs-btn-hover-border-color: var(--nb-dept-dark);
+  --bs-btn-focus-shadow-rgb: var(--nb-dept-rgb);
   padding: 0.65rem 1.45rem;
-  box-shadow: 0 4px 16px rgba(52, 81, 184, 0.35);
+  box-shadow: 0 4px 16px rgba(var(--nb-dept-rgb), 0.35);
 }
 .btn-primary:hover {
-  box-shadow: 0 8px 24px rgba(52, 81, 184, 0.5);
+  box-shadow: 0 8px 24px rgba(var(--nb-dept-rgb), 0.5);
 }
 
 .btn-outline-primary {
-  --bs-btn-color: #3451b8;
-  --bs-btn-border-color: #3451b8;
-  --bs-btn-hover-bg: #3451b8;
-  --bs-btn-hover-border-color: #3451b8;
-  --bs-btn-focus-shadow-rgb: 52, 81, 184;
+  --bs-btn-color: var(--nb-dept-primary);
+  --bs-btn-border-color: var(--nb-dept-primary);
+  --bs-btn-hover-bg: var(--nb-dept-primary);
+  --bs-btn-hover-border-color: var(--nb-dept-primary);
+  --bs-btn-focus-shadow-rgb: var(--nb-dept-rgb);
   padding: 0.65rem 1.45rem;
 }
 .btn-outline-primary:hover {
-  box-shadow: 0 6px 20px rgba(52, 81, 184, 0.35);
+  box-shadow: 0 6px 20px rgba(var(--nb-dept-rgb), 0.35);
 }
 
 /* Badges & Pills Uniformity */
@@ -207,9 +243,9 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   text-align: center !important;
 }
 
-.text-primary { color: #3451b8 !important; }
-.bg-primary { background-color: #3451b8 !important; }
-.border-primary { border-color: #3451b8 !important; }
+.text-primary { color: var(--nb-dept-primary) !important; }
+.bg-primary { background-color: var(--nb-dept-primary) !important; }
+.border-primary { border-color: var(--nb-dept-primary) !important; }
 
 /* ── 4. Emergency SOS Bar ── */
 .nb-sos-bar {
@@ -248,14 +284,14 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 .nb-logo-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #3451b8 0%, #6366f1 100%);
+  background: linear-gradient(135deg, var(--nb-dept-primary) 0%, #6366f1 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 1.15rem;
-  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.4);
+  box-shadow: 0 4px 14px rgba(var(--nb-dept-rgb), 0.4);
   flex-shrink: 0;
 }
 
@@ -268,12 +304,12 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   transition: all 0.2s ease;
 }
 .nb-header-nav .nav-link:hover {
-  color: #3451b8;
+  color: var(--nb-dept-primary);
   background: var(--nb-primary-glow);
 }
 .nb-header-nav .nav-link.active,
 .nb-header-nav .nb-tab-btn.is-active {
-  color: #3451b8 !important;
+  color: var(--nb-dept-primary) !important;
   background: var(--nb-primary-glow) !important;
   font-weight: 600;
 }
@@ -295,7 +331,7 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   transition: all 0.2s ease;
 }
 .nb-dropdown-toggle:hover { color: var(--bs-body-color); background: var(--bs-tertiary-bg); }
-.nb-dropdown.open .nb-dropdown-toggle { color: #3451b8; background: var(--nb-primary-glow); }
+.nb-dropdown.open .nb-dropdown-toggle { color: var(--nb-dept-primary); background: var(--nb-primary-glow); }
 
 .nb-dropdown-menu {
   position: absolute;
@@ -376,6 +412,18 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   position: relative;
   overflow: hidden;
 }
+
+.nb-gradient-text {
+  background: linear-gradient(135deg, var(--nb-dept-primary) 0%, #0ea5e9 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-bs-theme="dark"] .nb-gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #38bdf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .nb-hero-badge {
   display: inline-flex;
   align-items: center;
@@ -384,9 +432,9 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #3451b8;
+  color: var(--nb-dept-primary);
   background: var(--nb-primary-glow);
-  border: 1px solid rgba(52, 81, 184, 0.35);
+  border: 1px solid rgba(var(--nb-dept-rgb), 0.35);
   border-radius: var(--nb-radius-badge);
   padding: 0.4rem 1.1rem;
   margin-bottom: 1.25rem;
@@ -410,6 +458,39 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   max-width: 580px;
 }
 
+.nb-stat-pill {
+  padding: 0.65rem 1.2rem;
+  background: var(--nb-glass-bg);
+  border: 1px solid var(--nb-glass-border);
+  border-radius: 16px;
+  backdrop-filter: var(--nb-glass-blur);
+  transition: all 0.2s ease;
+  min-width: 100px;
+  text-align: center;
+}
+.nb-stat-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--nb-dept-primary);
+}
+.nb-stat-num {
+  font-family: var(--nb-font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--nb-dept-primary);
+  line-height: 1.1;
+}
+[data-bs-theme="dark"] .nb-stat-num {
+  color: #818cf8;
+}
+.nb-stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bs-secondary-color);
+  margin-top: 0.2rem;
+}
+
 /* Checklist Items */
 .nb-feature-checklist {
   display: flex;
@@ -425,7 +506,7 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   font-weight: 500;
 }
 .nb-feature-checklist .check-item i {
-  color: #3451b8;
+  color: var(--nb-dept-primary);
   font-size: 1.15rem;
 }
 [data-bs-theme="dark"] .nb-feature-checklist .check-item i { color: #818cf8; }
@@ -453,7 +534,7 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   height: 46px;
   border-radius: 12px;
   background: var(--nb-primary-glow);
-  color: #3451b8;
+  color: var(--nb-dept-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -478,11 +559,11 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 .nb-dept-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--nb-shadow-hover);
-  border-color: var(--dept-color, #3451b8);
+  border-color: var(--dept-color, var(--nb-dept-primary));
 }
 .nb-dept-card.is-active {
-  border-color: var(--dept-color, #3451b8);
-  box-shadow: 0 0 0 3px rgba(52, 81, 184, 0.25), var(--nb-shadow-hover);
+  border-color: var(--dept-color, var(--nb-dept-primary));
+  box-shadow: 0 0 0 3px rgba(var(--nb-dept-rgb), 0.25), var(--nb-shadow-hover);
 }
 .nb-dept-icon {
   width: 52px;
@@ -531,18 +612,18 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 /* ── 9. Bill Total Display ── */
 .nb-bill-total-card {
   border-radius: var(--nb-radius-card);
-  background: linear-gradient(135deg, rgba(52, 81, 184, 0.16) 0%, rgba(99, 102, 241, 0.08) 100%);
-  border: 1.5px solid rgba(52, 81, 184, 0.35);
+  background: linear-gradient(135deg, rgba(var(--nb-dept-rgb), 0.16) 0%, rgba(99, 102, 241, 0.08) 100%);
+  border: 1.5px solid rgba(var(--nb-dept-rgb), 0.35);
   padding: 1.85rem;
   text-align: center;
-  box-shadow: 0 10px 30px -4px rgba(52, 81, 184, 0.18);
+  box-shadow: 0 10px 30px -4px rgba(var(--nb-dept-rgb), 0.18);
   backdrop-filter: var(--nb-glass-blur);
 }
 .nb-bill-amount {
   font-family: var(--nb-font-display);
   font-size: clamp(2.5rem, 5vw, 3.4rem);
   font-weight: 800;
-  color: #3451b8;
+  color: var(--nb-dept-primary);
   line-height: 1;
   letter-spacing: -0.03em;
 }
@@ -578,10 +659,10 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 }
 .nb-tab-btn:hover { color: var(--bs-body-color); background: var(--bs-secondary-bg); }
 .nb-tab-btn.is-active {
-  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  background: linear-gradient(135deg, var(--nb-dept-primary) 0%, var(--nb-dept-dark) 100%);
   color: #fff !important;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.4);
+  box-shadow: 0 4px 14px rgba(var(--nb-dept-rgb), 0.4);
 }
 
 /* ── 11. Complaint Guide Buttons ── */
@@ -590,14 +671,14 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   transition: all 0.2s ease;
 }
 .nb-complaint-btn.is-selected {
-  border-color: #3451b8 !important;
+  border-color: var(--nb-dept-primary) !important;
   background-color: var(--nb-primary-glow) !important;
-  color: #3451b8 !important;
+  color: var(--nb-dept-primary) !important;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.18);
+  box-shadow: 0 4px 14px rgba(var(--nb-dept-rgb), 0.18);
 }
 [data-bs-theme="dark"] .nb-complaint-btn.is-selected {
-  background-color: rgba(52, 81, 184, 0.28) !important;
+  background-color: rgba(var(--nb-dept-rgb), 0.28) !important;
   color: #818cf8 !important;
   border-color: rgba(129, 140, 248, 0.45) !important;
 }
@@ -634,14 +715,14 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  background: linear-gradient(135deg, var(--nb-dept-primary) 0%, var(--nb-dept-dark) 100%);
   color: #ffffff;
   font-weight: 700;
   font-size: 0.88rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+  box-shadow: 0 4px 12px rgba(var(--nb-dept-rgb), 0.35);
   z-index: 2;
 }
 .nb-timeline-content {
@@ -716,18 +797,18 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 .cat-maintenance-pill{ background: rgba(239,68,68,0.14); color: #dc2626; }
 .cat-policy-pill     { background: rgba(124,58,237,0.14); color: #7c3aed; }
 .cat-service-pill    { background: rgba(16,185,129,0.14); color: #059669; }
-.cat-quality-pill    { background: rgba(52,81,184,0.14); color: #3451b8; }
+.cat-quality-pill    { background: rgba(var(--nb-dept-rgb),0.14); color: var(--nb-dept-primary); }
 
 .cat-tariff-accent     { background: #f59e0b; }
 .cat-maintenance-accent{ background: #ef4444; }
 .cat-policy-accent     { background: #7c3aed; }
 .cat-service-accent    { background: #10b981; }
-.cat-quality-accent    { background: #3451b8; }
+.cat-quality-accent    { background: var(--nb-dept-primary); }
 
 .nb-ai-summary-box {
   background: var(--bs-tertiary-bg);
   border: 1px solid var(--bs-border-color);
-  border-left: 3.5px solid #3451b8;
+  border-left: 3.5px solid var(--nb-dept-primary);
   border-radius: 10px;
   padding: 0.85rem 1.1rem;
   font-size: 0.86rem;
@@ -757,7 +838,7 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  background: linear-gradient(135deg, var(--nb-dept-primary) 0%, var(--nb-dept-dark) 100%);
   color: #fff;
   font-size: 0.78rem;
   font-weight: 800;
@@ -765,7 +846,7 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 3px 10px rgba(52, 81, 184, 0.4);
+  box-shadow: 0 3px 10px rgba(var(--nb-dept-rgb), 0.4);
 }
 
 /* ── 14. Glassmorphic AI Chat ── */
@@ -793,14 +874,14 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3451b8, #6366f1);
+  background: linear-gradient(135deg, var(--nb-dept-primary), #6366f1);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 1.15rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+  box-shadow: 0 4px 12px rgba(var(--nb-dept-rgb), 0.35);
 }
 .nb-chat-messages {
   flex: 1;
@@ -824,10 +905,10 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   border-bottom-left-radius: 4px;
 }
 .nb-chat-bubble.user {
-  background: linear-gradient(135deg, #3451b8 0%, #273c8a 100%);
+  background: linear-gradient(135deg, var(--nb-dept-primary) 0%, var(--nb-dept-dark) 100%);
   color: #fff;
   border-bottom-right-radius: 4px;
-  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+  box-shadow: 0 4px 12px rgba(var(--nb-dept-rgb), 0.35);
 }
 .nb-chat-footer {
   padding: 0.85rem 1.25rem;
@@ -845,26 +926,26 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 }
 .nb-chat-input:focus {
   outline: none;
-  border-color: #3451b8;
-  box-shadow: 0 0 0 3px rgba(52, 81, 184, 0.25);
+  border-color: var(--nb-dept-primary);
+  box-shadow: 0 0 0 3px rgba(var(--nb-dept-rgb), 0.25);
 }
 .nb-chat-send {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: #3451b8;
+  background: var(--nb-dept-primary);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.35);
+  box-shadow: 0 4px 12px rgba(var(--nb-dept-rgb), 0.35);
   transition: all 0.2s ease;
 }
 .nb-chat-send:hover {
   transform: scale(1.06);
-  background: #273c8a;
+  background: var(--nb-dept-dark);
 }
 
 /* ── 15. Official Gazette Link Buttons ── */
@@ -874,9 +955,9 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   gap: 0.35rem;
   font-size: 0.76rem;
   font-weight: 600;
-  color: #3451b8;
+  color: var(--nb-dept-primary);
   background: var(--nb-primary-glow);
-  border: 1px solid rgba(52, 81, 184, 0.3);
+  border: 1px solid rgba(var(--nb-dept-rgb), 0.3);
   padding: 0.3rem 0.75rem;
   border-radius: var(--nb-radius-badge);
   text-decoration: none;
@@ -884,10 +965,10 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 }
 .nb-btn-official:hover {
   color: #fff;
-  background: #3451b8;
-  border-color: #3451b8;
+  background: var(--nb-dept-primary);
+  border-color: var(--nb-dept-primary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(52, 81, 184, 0.3);
+  box-shadow: 0 4px 12px rgba(var(--nb-dept-rgb), 0.3);
 }
 [data-bs-theme="dark"] .nb-btn-official { color: #818cf8; }
 [data-bs-theme="dark"] .nb-btn-official:hover { color: #fff; }
@@ -916,7 +997,7 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   align-items: center;
 }
 .nb-footer-links li a:hover {
-  color: #3451b8;
+  color: var(--nb-dept-primary);
   transform: translateX(4px);
 }
 [data-bs-theme="dark"] .nb-footer-links li a:hover { color: #818cf8; }
@@ -988,8 +1069,8 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 
 /* ── 19. Complaint & Notice Filter Buttons ── */
 .nb-filter-btn {
-  border: 1.5px solid rgba(52, 81, 184, 0.4) !important;
-  color: #3451b8 !important;
+  border: 1.5px solid rgba(var(--nb-dept-rgb), 0.4) !important;
+  color: var(--nb-dept-primary) !important;
   background: transparent !important;
   font-weight: 600;
   border-radius: 9999px !important;
@@ -997,16 +1078,16 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 }
 .nb-filter-btn:hover {
   background: var(--nb-primary-glow) !important;
-  border-color: #3451b8 !important;
-  color: #3451b8 !important;
+  border-color: var(--nb-dept-primary) !important;
+  color: var(--nb-dept-primary) !important;
   transform: translateY(-1px);
 }
 .nb-filter-btn.is-active,
 .nb-filter-btn.active {
-  background: #3451b8 !important;
-  border-color: #3451b8 !important;
+  background: var(--nb-dept-primary) !important;
+  border-color: var(--nb-dept-primary) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(var(--nb-dept-rgb), 0.35) !important;
 }
 
 [data-bs-theme="dark"] .nb-filter-btn {
@@ -1014,31 +1095,31 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   color: #818cf8 !important;
 }
 [data-bs-theme="dark"] .nb-filter-btn:hover {
-  background: rgba(52, 81, 184, 0.25) !important;
+  background: rgba(var(--nb-dept-rgb), 0.25) !important;
   color: #818cf8 !important;
 }
 [data-bs-theme="dark"] .nb-filter-btn.is-active,
 [data-bs-theme="dark"] .nb-filter-btn.active {
-  background: #3451b8 !important;
-  border-color: #3451b8 !important;
+  background: var(--nb-dept-primary) !important;
+  border-color: var(--nb-dept-primary) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(52, 81, 184, 0.5) !important;
+  box-shadow: 0 4px 14px rgba(var(--nb-dept-rgb), 0.5) !important;
 }
 
 .nb-complaint-btn {
-  border: 1.5px solid rgba(52, 81, 184, 0.35) !important;
+  border: 1.5px solid rgba(var(--nb-dept-rgb), 0.35) !important;
   background: transparent !important;
   transition: all 0.2s ease !important;
 }
 .nb-complaint-btn:hover {
   background: var(--nb-primary-glow) !important;
-  border-color: #3451b8 !important;
+  border-color: var(--nb-dept-primary) !important;
   transform: translateX(3px);
 }
 .nb-complaint-btn.is-selected {
-  background: #3451b8 !important;
-  border-color: #3451b8 !important;
-  box-shadow: 0 4px 16px rgba(52, 81, 184, 0.4) !important;
+  background: var(--nb-dept-primary) !important;
+  border-color: var(--nb-dept-primary) !important;
+  box-shadow: 0 4px 16px rgba(var(--nb-dept-rgb), 0.4) !important;
 }
 .nb-complaint-btn.is-selected,
 .nb-complaint-btn.is-selected *,
@@ -1052,9 +1133,9 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   border-color: rgba(129, 140, 248, 0.35) !important;
 }
 [data-bs-theme="dark"] .nb-complaint-btn.is-selected {
-  background: #3451b8 !important;
-  border-color: #3451b8 !important;
-  box-shadow: 0 4px 16px rgba(52, 81, 184, 0.55) !important;
+  background: var(--nb-dept-primary) !important;
+  border-color: var(--nb-dept-primary) !important;
+  box-shadow: 0 4px 16px rgba(var(--nb-dept-rgb), 0.55) !important;
 }
 
 /* ── 20. Print Stylesheet for Bill Estimate ── */

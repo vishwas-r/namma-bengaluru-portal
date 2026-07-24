@@ -1,7 +1,7 @@
 /**
- * Daily Sync Script — Namma Bengaluru
- * Scrapes official BWSSB portal for circulars/notices and archives PDFs cleanly,
- * preserving original official filenames.
+ * Daily Sync Script — Namma Bengaluru Portal
+ * Automatically scrapes official BWSSB & BESCOM portals for circulars, notices, and planned outages.
+ * Ensures officialLink ALWAYS points to the specific direct document/webpage URL.
  */
 
 import https from 'https';
@@ -13,29 +13,45 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
-const NOTICES_FILE = path.join(ROOT, 'src/data/bwssb/notices.json');
-const DOCS_DIR = path.join(ROOT, 'public/docs/bwssb');
 
-const SOURCES = [
+const DEPARTMENTS = [
   {
-    name: 'BWSSB Official Notifications',
-    url: 'https://bwssb.karnataka.gov.in',
-    type: 'scrape',
+    deptId: 'bwssb',
+    name: 'BWSSB',
+    noticesFile: path.join(ROOT, 'src/data/bwssb/notices.json'),
+    docsDir: path.join(ROOT, 'public/docs/bwssb'),
+    sources: [
+      {
+        name: 'BWSSB Official Notifications',
+        url: 'https://bwssb.karnataka.gov.in',
+      }
+    ]
   },
+  {
+    deptId: 'bescom',
+    name: 'BESCOM',
+    noticesFile: path.join(ROOT, 'src/data/bescom/notices.json'),
+    docsDir: path.join(ROOT, 'public/docs/bescom'),
+    sources: [
+      {
+        name: 'BESCOM Planned Outages Page',
+        url: 'https://bescom.karnataka.gov.in/319/planned-outages/en',
+      },
+      {
+        name: 'BESCOM Official Portal Notifications',
+        url: 'https://bescom.karnataka.gov.in',
+      }
+    ]
+  }
 ];
 
 function log(msg) { console.log(`[${new Date().toISOString()}] ${msg}`); }
 
-/**
- * Extracts a clean original filename from an official URL.
- * e.g. "https://bwssb.karnataka.gov.in/storage/pdf-files/documents/adalath.pdf" -> "adalath.pdf"
- */
 function getOriginalFilenameFromUrl(url) {
   try {
     const parsed = new URL(url);
     let base = path.basename(parsed.pathname);
     base = decodeURIComponent(base).trim();
-    // Sanitize illegal Windows/Linux filename characters
     base = base.replace(/[/\\?%*:|"<>]/g, '_');
     if (!base.toLowerCase().endsWith('.pdf')) {
       base += '.pdf';
@@ -77,7 +93,7 @@ function fetchBuffer(url, maxRedirects = 5) {
   });
 }
 
-async function downloadPDF(url, preferredFilename) {
+async function downloadPDF(url, docsDir, deptId, preferredFilename) {
   try {
     const { buffer, contentType, status, finalUrl } = await fetchBuffer(url);
     if (status !== 200) {
@@ -91,13 +107,13 @@ async function downloadPDF(url, preferredFilename) {
     }
 
     const filename = preferredFilename || getOriginalFilenameFromUrl(finalUrl || url);
-    const localPath = path.join(DOCS_DIR, filename);
-    fs.mkdirSync(DOCS_DIR, { recursive: true });
+    const localPath = path.join(docsDir, filename);
+    fs.mkdirSync(docsDir, { recursive: true });
     fs.writeFileSync(localPath, buffer);
 
     const checksum = crypto.createHash('sha256').update(buffer).digest('hex');
-    log(`✅ Archived PDF with official filename: ${filename} (${buffer.length} bytes, SHA256: ${checksum.slice(0, 16)}...)`);
-    return { localPath: `/docs/bwssb/${filename}`, checksum, directUrl: finalUrl || url };
+    log(`✅ Archived PDF for ${deptId}: ${filename} (${buffer.length} bytes, SHA256: ${checksum.slice(0, 16)}...)`);
+    return { localPath: `/docs/${deptId}/${filename}`, checksum, directUrl: finalUrl || url };
   } catch (err) {
     log(`❌ Failed to download PDF ${url}: ${err.message}`);
     return null;
@@ -106,121 +122,132 @@ async function downloadPDF(url, preferredFilename) {
 
 function extractNoticesFromHTML(html, baseURL) {
   const notices = [];
-  const linkPattern = /<a[^>]+href=["']([^"']*\.pdf[^"']*)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  const linkPattern = /<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
 
   let match;
   while ((match = linkPattern.exec(html)) !== null) {
     const rawHref = match[1].trim();
     const rawTitle = match[2].replace(/<[^>]+>/g, '').trim();
 
-    try {
-      const fullPdfUrl = new URL(rawHref, baseURL).toString();
-      if (rawTitle.length > 3) {
-        notices.push({ rawTitle, pdfURL: fullPdfUrl });
-      }
-    } catch (e) {}
+    if (rawTitle.length < 4 || rawHref.startsWith('javascript:') || rawHref.startsWith('#')) continue;
+
+    const isPdf = rawHref.toLowerCase().includes('.pdf');
+    const isOutage = rawHref.toLowerCase().includes('outage') || rawTitle.toLowerCase().includes('outage');
+    const isTariff = rawTitle.toLowerCase().includes('tariff') || rawTitle.toLowerCase().includes('kerc');
+
+    if (isPdf || isOutage || isTariff) {
+      try {
+        const fullUrl = new URL(rawHref, baseURL).toString();
+        notices.push({ rawTitle, directURL: fullUrl, isPdf });
+      } catch (e) {}
+    }
   }
   return notices;
 }
 
 function categorizeNotice(title) {
   const lower = title.toLowerCase();
-  if (/tariff|rate|price|charge|fee|revision|escalation/.test(lower)) return 'tariff';
-  if (/water supply|maintenance|shutdown|interruption|repair/.test(lower)) return 'maintenance';
+  if (/tariff|rate|price|charge|fee|revision|escalation|kerc/.test(lower)) return 'tariff';
+  if (/water supply|power|outage|maintenance|shutdown|interruption|repair/.test(lower)) return 'maintenance';
   if (/quality|test|report|safe|contamination/.test(lower)) return 'quality';
-  if (/new connection|application|service|digital|portal|online/.test(lower)) return 'service';
+  if (/new connection|application|service|digital|portal|online|name change|e-katha/.test(lower)) return 'service';
   return 'policy';
 }
 
 function isTariffRevision(title, text = '') {
   const lower = (title + ' ' + text).toLowerCase();
-  return /tariff revision|rate revision|new tariff|price hike|escalation|per kl|per kilolitre/.test(lower);
+  return /tariff revision|rate revision|new tariff|price hike|escalation|per kl|per unit/.test(lower);
 }
 
 async function runSync() {
-  log('🚀 Starting Namma Bengaluru daily sync...');
-  
-  let existingNotices = [];
-  try {
-    existingNotices = JSON.parse(fs.readFileSync(NOTICES_FILE, 'utf-8'));
-  } catch { log('⚠️ Could not read existing notices, starting fresh.'); }
+  log('🚀 Starting Namma Bengaluru daily automated sync (10:00 AM IST)...');
+  let tariffFlagged = [];
 
-  const existingIds = new Set(existingNotices.map(n => n.id));
-  const newNotices = [];
-  const tariffFlaggedNotices = [];
-
-  for (const source of SOURCES) {
+  for (const dept of DEPARTMENTS) {
+    log(`\n🏢 Syncing Department: ${dept.name}`);
+    let existingNotices = [];
     try {
-      log(`📡 Fetching from: ${source.url}`);
-      const { buffer, status } = await fetchBuffer(source.url);
-      if (status !== 200) { log(`⚠️ HTTP ${status} from ${source.url}`); continue; }
+      existingNotices = JSON.parse(fs.readFileSync(dept.noticesFile, 'utf-8'));
+    } catch {
+      log(`⚠️ Could not read ${dept.noticesFile}, starting fresh.`);
+    }
 
-      const html = buffer.toString('utf-8');
-      const rawNotices = extractNoticesFromHTML(html, source.url);
-      log(`📋 Found ${rawNotices.length} notice PDF links from ${source.name}`);
+    const existingIds = new Set(existingNotices.map(n => n.id));
+    const newNotices = [];
 
-      for (const raw of rawNotices) {
-        const stableId = 'sync_' + crypto.createHash('md5').update(raw.rawTitle).digest('hex').slice(0, 8);
-        if (existingIds.has(stableId)) continue;
+    for (const source of dept.sources) {
+      try {
+        log(`📡 Fetching from: ${source.url}`);
+        const { buffer, status } = await fetchBuffer(source.url);
+        if (status !== 200) { log(`⚠️ HTTP ${status} from ${source.url}`); continue; }
 
-        let localBackup = null;
-        let checksum = null;
-        let directUrl = raw.pdfURL;
+        const html = buffer.toString('utf-8');
+        const rawNotices = extractNoticesFromHTML(html, source.url);
+        log(`📋 Found ${rawNotices.length} candidate notice links from ${source.name}`);
 
-        if (raw.pdfURL) {
-          const originalFilename = getOriginalFilenameFromUrl(raw.pdfURL);
-          const result = await downloadPDF(raw.pdfURL, originalFilename);
-          if (result) {
-            localBackup = result.localPath;
-            checksum = result.checksum;
-            directUrl = result.directUrl || raw.pdfURL;
+        for (const raw of rawNotices) {
+          const stableId = dept.deptId.toUpperCase() + '-' + crypto.createHash('md5').update(raw.rawTitle).digest('hex').slice(0, 8);
+          if (existingIds.has(stableId)) continue;
+
+          let localBackup = null;
+          let checksum = null;
+          let directUrl = raw.directURL;
+
+          if (raw.isPdf) {
+            const originalFilename = getOriginalFilenameFromUrl(raw.directURL);
+            const result = await downloadPDF(raw.directURL, dept.docsDir, dept.deptId, originalFilename);
+            if (result) {
+              localBackup = result.localPath;
+              checksum = result.checksum;
+              directUrl = result.directUrl || raw.directURL;
+            }
+          }
+
+          const category = categorizeNotice(raw.rawTitle);
+          const notice = {
+            id: stableId,
+            title: raw.rawTitle,
+            date: new Date().toISOString().split('T')[0],
+            category,
+            summary: raw.rawTitle,
+            aiSummary: `Official ${dept.name} notification regarding ${raw.rawTitle}. Check the official link for complete details.`,
+            officialLink: directUrl,
+            localBackup,
+            hasLocalBackup: !!localBackup,
+            checksum,
+            tags: [category, 'auto-synced'],
+            affectsCitizen: true,
+            citizenImpact: `Review official ${dept.name} portal link for direct details.`,
+            autoSynced: true,
+            syncedAt: new Date().toISOString(),
+          };
+
+          newNotices.push(notice);
+
+          if (isTariffRevision(raw.rawTitle)) {
+            tariffFlagged.push({ dept: dept.deptId, notice });
+            log(`⚡ Tariff revision detected for ${dept.name}: "${raw.rawTitle}"`);
           }
         }
-
-        const category = categorizeNotice(raw.rawTitle);
-        const notice = {
-          id: stableId,
-          title: raw.rawTitle,
-          date: new Date().toISOString().split('T')[0],
-          category,
-          summary: raw.rawTitle,
-          aiSummary: `Official BWSSB notice regarding ${raw.rawTitle}. Download the archived PDF or check the official source for full document details.`,
-          officialLink: directUrl || source.url,
-          localBackup,
-          hasLocalBackup: !!localBackup,
-          checksum,
-          tags: [category, 'auto-synced'],
-          affectsCitizen: true,
-          citizenImpact: 'Check official PDF document for full details.',
-          autoSynced: true,
-          syncedAt: new Date().toISOString(),
-        };
-
-        newNotices.push(notice);
-
-        if (isTariffRevision(raw.rawTitle)) {
-          tariffFlaggedNotices.push({ notice, pdfURL: raw.pdfURL });
-          log(`⚡ Tariff revision detected: "${raw.rawTitle}"`);
-        }
+      } catch (err) {
+        log(`❌ Error processing ${source.url}: ${err.message}`);
       }
-    } catch (err) {
-      log(`❌ Error processing ${source.url}: ${err.message}`);
     }
+
+    const updatedNotices = [...newNotices, ...existingNotices];
+    fs.writeFileSync(dept.noticesFile, JSON.stringify(updatedNotices, null, 2));
+    log(`✅ Updated ${dept.noticesFile}: ${newNotices.length} new notices added.`);
   }
 
-  const updatedNotices = [...newNotices, ...existingNotices];
-  fs.writeFileSync(NOTICES_FILE, JSON.stringify(updatedNotices, null, 2));
-  log(`✅ notices.json updated: ${newNotices.length} new notices added.`);
-
-  if (tariffFlaggedNotices.length > 0) {
+  if (tariffFlagged.length > 0) {
     fs.writeFileSync(
       path.join(ROOT, 'scripts/.tariff_flagged.json'),
-      JSON.stringify(tariffFlaggedNotices, null, 2)
+      JSON.stringify(tariffFlagged, null, 2)
     );
     process.exit(2);
   }
 
-  log('🎉 Daily sync complete.');
+  log('\n🎉 Namma Bengaluru daily automated sync complete.');
   process.exit(0);
 }
 

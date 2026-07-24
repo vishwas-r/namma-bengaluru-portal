@@ -2,6 +2,7 @@ import { renderBreadcrumb } from './comingSoonPage.js';
 import tariffData from '../data/bwssb/tariffs.json';
 import noticesData from '../data/bwssb/notices.json';
 import complaintsData from '../data/bwssb/complaints.json';
+import servicesData from '../data/bwssb/services.json';
 import { calcDomesticBill, calcApartmentBill, calcCommercialBill, projectFutureBill } from '../services/bwssbCalculator.js';
 import { queryGemini, getKeyPool } from '../services/keyPool.js';
 import CanvasJSModule from '@canvasjs/charts';
@@ -54,6 +55,7 @@ export function renderTab(state, lang) {
   switch (state.activeTab) {
     case 'calculator': return renderCalc(state);
     case 'tariff': return renderTariff();
+    case 'services': return renderServices(state);
     case 'notices': return renderNotices(state);
     case 'complaint': return renderComplaint(state);
     case 'ai': return renderAI(state);
@@ -431,6 +433,10 @@ function fmtDate(dateStr) {
 }
 
 export function renderNotices(state) {
+  setTimeout(() => {
+    if (window.twttr?.widgets) window.twttr.widgets.load();
+  }, 120);
+
   const f = state.noticeFilter;
   const list = noticesData
     .filter(n => f === 'all' || n.category === f)
@@ -444,21 +450,39 @@ export function renderNotices(state) {
     { id: 'quality', label: 'Water Quality' },
   ];
   return `
-  <div>
-    <!-- Category Filter Bar -->
-    <div class="d-flex gap-2 mb-4 overflow-x-auto pb-1" style="scrollbar-width:none;">
-      ${categories.map(c => `
-        <button class="btn btn-sm ${f === c.id ? 'nb-filter-btn is-active' : 'nb-filter-btn'} flex-shrink-0"
-          onclick="window.__filter('${c.id}')" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
-          ${c.label}
-        </button>`).join('')}
+  <div class="row g-4 text-start">
+    <!-- Left Column: Category Filter & Official Notices (col-lg-7) -->
+    <div class="col-lg-7">
+      <!-- Category Filter Bar -->
+      <div class="d-flex gap-2 mb-3 overflow-x-auto pb-1" style="scrollbar-width:none;">
+        ${categories.map(c => `
+          <button class="btn btn-sm ${f === c.id ? 'nb-filter-btn is-active' : 'nb-filter-btn'} flex-shrink-0"
+            onclick="window.__filter('${c.id}')" style="font-size:0.8rem; padding:0.4rem 0.9rem;">
+            ${c.label}
+          </button>`).join('')}
+      </div>
+
+      <!-- Notice Cards Container -->
+      <div id="noticeList" class="d-flex flex-column gap-3 text-start">
+        ${list.length === 0
+        ? '<div class="text-center text-secondary py-5">No notices found for this category.</div>'
+        : list.map(n => renderNoticeCard(n)).join('')}
+      </div>
     </div>
 
-    <!-- Notice Cards Container -->
-    <div id="noticeList" class="d-flex flex-column gap-3 text-start">
-      ${list.length === 0
-      ? '<div class="text-center text-secondary py-5">No notices found for this category.</div>'
-      : list.map(n => renderNoticeCard(n)).join('')}
+    <!-- Right Column: Live Tweets (@BWSSB_OFFICIAL) (col-lg-5) -->
+    <div class="col-lg-5">
+      <div class="nb-card h-100">
+        <div class="nb-card-header d-flex justify-content-between align-items-center">
+          <span><i class="bi bi-twitter-x me-2 text-primary"></i>Live Tweets (@BWSSB_OFFICIAL)</span>
+          <a href="https://x.com/BWSSB_OFFICIAL" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary py-1 px-2.5" style="font-size:0.76rem;">
+            <i class="bi bi-box-arrow-up-right me-1"></i>Open X
+          </a>
+        </div>
+        <div class="nb-card-body p-3 overflow-y-auto" style="max-height:560px;">
+          <a class="twitter-timeline" data-height="520" data-theme="auto" href="https://twitter.com/BWSSB_OFFICIAL?ref_src=twsrc%5Etfw">Loading official tweets by @BWSSB_OFFICIAL...</a>
+        </div>
+      </div>
     </div>
   </div>`;
 }
@@ -474,7 +498,10 @@ export function renderNoticeCard(notice) {
   const categoryLabel = notice.categoryLabel || catMap[notice.category] || notice.category || 'Official Notice';
   const refNo = notice.referenceNo || notice.id || (notice.checksum ? notice.checksum.slice(0, 12) : 'BWSSB-2026');
   const officialPdf = notice.officialPdfUrl || notice.officialLink;
-  const localPdf = notice.pdfUrl || notice.localBackup;
+  let localPdf = (notice.hasLocalBackup !== false) ? (notice.pdfUrl || notice.localBackup) : null;
+  if (localPdf && localPdf.startsWith('/docs/')) {
+    localPdf = '.' + localPdf;
+  }
 
   return `
   <div class="nb-notice-card">
@@ -500,9 +527,119 @@ export function renderNoticeCard(notice) {
             <i class="bi bi-globe me-1"></i>Official Gazette PDF
           </a>` : ''}
           ${localPdf ? `
-          <a href="${localPdf}" target="_blank" rel="noopener" class="text-secondary opacity-75" title="Archived Local PDF Backup" style="font-size:1.1rem; text-decoration:none;" onmouseover="this.classList.remove('opacity-75')" onmouseout="this.classList.add('opacity-75')">
-            <i class="bi bi-file-earmark-arrow-down-fill"></i>
+          <a href="${localPdf}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary py-1 px-2 d-inline-flex align-items-center gap-1" title="Archived Local PDF Backup" style="font-size:0.76rem;">
+            <i class="bi bi-file-earmark-arrow-down-fill text-primary"></i> Local PDF
           </a>` : ''}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── SERVICES & APPLICATIONS ────────────────────────────────
+export function renderServices(state) {
+  const list = servicesData.services || [];
+  const selectedId = state.selectedServiceId || list[0]?.id || 'new-water-connection';
+  const selected = list.find(s => s.id === selectedId) || list[0];
+
+  return `
+  <div class="row g-4 text-start">
+    <div class="col-lg-4">
+      <div class="nb-card h-100">
+        <div class="nb-card-header"><i class="bi bi-file-earmark-check text-primary me-2"></i>Select Service / Application</div>
+        <div class="nb-card-body p-3 d-flex flex-column gap-2">
+          ${list.map(s => `
+          <button class="btn btn-outline-primary text-start p-3 ${s.id === selectedId ? 'is-selected' : ''} nb-complaint-btn"
+            onclick="window.__service('${s.id}')" style="font-size:0.86rem;">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="fw-bold text-body">${s.title}</span>
+              ${s.badge ? `<span class="badge bg-success-subtle text-success border border-success-subtle ms-2 flex-shrink-0" style="font-size:0.68rem;">${s.badge}</span>` : ''}
+            </div>
+            <div class="text-secondary" style="font-size:0.76rem;">SLA: <strong>${s.sla}</strong></div>
+          </button>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 d-flex flex-column gap-4">
+      <!-- Service Detail Card -->
+      <div class="nb-card">
+        <div class="nb-card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div class="fw-bold" style="font-size:1.05rem;"><i class="bi bi-shield-check text-primary me-2"></i>${selected.title}</div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle"><i class="bi bi-clock me-1"></i>SLA: ${selected.sla}</span>
+            ${selected.onlineLink ? `
+            <a href="${selected.onlineLink}" target="_blank" rel="noopener" class="btn btn-sm btn-primary fw-semibold px-3 py-1.5" style="font-size:0.8rem;">
+              <i class="bi bi-box-arrow-up-right me-1.5"></i>Apply Online (${selected.officialPortalName || 'BWSSB CMS'})
+            </a>` : ''}
+          </div>
+        </div>
+        <div class="nb-card-body p-4">
+          <p class="text-secondary mb-4" style="font-size:0.9rem; line-height:1.6;">${selected.description}</p>
+
+          <!-- Interactive Document Checklist -->
+          <div class="mb-4">
+            <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
+              <i class="bi bi-card-checklist text-primary me-1.5"></i>Required Documents Checklist (Check items you have ready)
+            </h6>
+            <div class="d-flex flex-column gap-2">
+              ${(selected.documents || []).map((doc, idx) => `
+              <div class="p-3 bg-body-tertiary border rounded-3 d-flex align-items-start justify-content-between gap-2">
+                <div class="form-check mb-0">
+                  <input class="form-check-input" type="checkbox" id="doc_bwssb_${idx}" onchange="window.__toggleDoc(this)" />
+                  <label class="form-check-label ms-2 fw-medium" for="doc_bwssb_${idx}" style="font-size:0.86rem; cursor:pointer;">
+                    ${doc.name} ${doc.required ? '<span class="text-danger">*</span>' : ''}
+                  </label>
+                  ${doc.note ? `<div class="text-secondary ms-2 mt-0.5" style="font-size:0.76rem;">${doc.note}</div>` : ''}
+                </div>
+                ${doc.required ? '<span class="badge bg-danger-subtle text-danger flex-shrink-0" style="font-size:0.68rem;">Mandatory</span>' : '<span class="badge bg-secondary-subtle text-secondary flex-shrink-0" style="font-size:0.68rem;">Optional</span>'}
+              </div>`).join('')}
+            </div>
+          </div>
+
+          <!-- Step-by-Step Procedure Timeline -->
+          <div class="mb-4">
+            <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
+              <i class="bi bi-diagram-3 text-primary me-1.5"></i>Step-by-Step Application Process
+            </h6>
+            <div class="nb-timeline pt-1">
+              ${(selected.steps || []).map((st, idx) => `
+              <div class="nb-timeline-item ${idx === selected.steps.length - 1 ? 'is-last' : ''}">
+                <div class="nb-timeline-badge">${st.step}</div>
+                <div class="nb-timeline-content text-start">
+                  <div class="fw-bold" style="font-size:0.92rem;">${st.title}</div>
+                  <div class="text-secondary mt-1" style="font-size:0.84rem; line-height:1.6;">${st.details}</div>
+                  ${st.link ? `<a href="${st.link}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary mt-2 py-1 px-3" style="font-size:0.76rem;"><i class="bi bi-box-arrow-up-right me-1"></i>Open Direct Portal</a>` : ''}
+                </div>
+              </div>`).join('')}
+            </div>
+          </div>
+
+          <!-- Fee Structure Table -->
+          ${selected.fees && selected.fees.length > 0 ? `
+          <div>
+            <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
+              <i class="bi bi-receipt text-primary me-1.5"></i>Official Fee Breakdown
+            </h6>
+            <div class="table-responsive border rounded-3">
+              <table class="table align-middle mb-0" style="font-size:0.85rem;">
+                <thead class="table-light">
+                  <tr>
+                    <th class="py-2.5 ps-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Fee Head</th>
+                    <th class="py-2.5 pe-3 text-end" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Amount / Tariff Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${selected.fees.map(f => `
+                  <tr style="border-bottom:1px solid var(--bs-border-color);">
+                    <td class="py-2.5 ps-3 fw-medium">${f.item}</td>
+                    <td class="py-2.5 pe-3 text-end font-mono fw-bold text-primary">${f.amount}</td>
+                  </tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>` : ''}
+
         </div>
       </div>
     </div>

@@ -1,0 +1,139 @@
+{
+  "services": [
+    {
+      "id": "new-water-connection",
+      "title": "New Water & Sanitary Connection (Aadhaar eKYC)",
+      "category": "connection",
+      "badge": "Digital Connection",
+      "sla": "15 Working Days",
+      "onlineLink": "https://cms.bwssb.gov.in",
+      "officialPortalName": "BWSSB CMS Online Portal",
+      "description": "Apply for new domestic or commercial drinking water and sewerage connection using Aadhaar eKYC. No physical office visit required for initial application.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Aadhaar eKYC Registration",
+          "details": "Visit cms.bwssb.gov.in and verify applicant identity via Aadhaar OTP.",
+          "link": "https://cms.bwssb.gov.in"
+        },
+        {
+          "step": 2,
+          "title": "Upload Property Documents",
+          "details": "Upload BBMP Khata certificate, Sanctioned Building Plan, and Property Tax receipt.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Site Inspection by Assistant Engineer (AE)",
+          "details": "BWSSB AE conducts feasibility study for water main pipeline tapping point.",
+          "link": null
+        },
+        {
+          "step": 4,
+          "title": "Pay Pro-Rata & Connection Charges",
+          "details": "Pay pro-rata infrastructure fee and meter installation charges online.",
+          "link": null
+        },
+        {
+          "step": 5,
+          "title": "Pipeline Tapping & Meter Fitting",
+          "details": "Licensed plumber connects main pipe and seals official water meter.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "BBMP Khata Certificate (A-Khata / B-Khata)", "required": true, "note": "Latest Khata extract" },
+        { "name": "Sanctioned Building Plan", "required": true, "note": "Approved by BBMP / BDA" },
+        { "name": "Property Tax Paid Receipt (Latest Year)", "required": true, "note": "BBMP tax clearance" },
+        { "name": "Aadhaar Card of Property Owner", "required": true, "note": "Used for OTP verification" },
+        { "name": "Rainwater Harvesting (RWH) Proof", "required": true, "note": "Mandatory for plots > 1,200 sq.m" }
+      ],
+      "fees": [
+        { "item": "Application Fee", "amount": "₹250" },
+        { "item": "Meter & Tapping Charges", "amount": "As per pipe diameter (15mm / 20mm)" },
+        { "item": "Pro-Rata Charges", "amount": "Based on total built-up floor area (sq.m)" }
+      ]
+    },
+    {
+      "id": "bwssb-name-transfer",
+      "title": "BWSSB Connection Name Transfer",
+      "category": "ownership",
+      "badge": "Online Available",
+      "sla": "10 Working Days",
+      "onlineLink": "https://cms.bwssb.gov.in",
+      "officialPortalName": "BWSSB CMS Portal",
+      "description": "Change the name on your BWSSB water bill to reflect new property ownership after purchase or inheritance.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Lodge Transfer Request on CMS",
+          "details": "Log in to cms.bwssb.gov.in with existing RR Number (Water Account No).",
+          "link": "https://cms.bwssb.gov.in"
+        },
+        {
+          "step": 2,
+          "title": "Upload Sale Deed & Tax Receipt",
+          "details": "Attach registered Sale Deed, BBMP Khata, and ID proof.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Verification & Fee Payment",
+          "details": "Pay transfer fee of ₹200 online upon AE clearance.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Registered Sale Deed", "required": true, "note": "Ownership transfer document" },
+        { "name": "Latest Paid Water Bill", "required": true, "note": "Zero pending dues" },
+        { "name": "BBMP Khata Certificate in New Owner Name", "required": true, "note": "Updated Khata" },
+        { "name": "ID Proof (Aadhaar / Passport / PAN)", "required": true, "note": "New owner identity" }
+      ],
+      "fees": [
+        { "item": "Name Transfer Fee", "amount": "₹200" },
+        { "item": "Sanitary Security Deposit Top-up", "amount": "If meter size upgraded" }
+      ]
+    },
+    {
+      "id": "meter-replacement",
+      "title": "Water Meter Testing & Fault Replacement",
+      "category": "meter",
+      "badge": "Online Portal",
+      "sla": "5 Working Days",
+      "onlineLink": "https://cms.bwssb.gov.in",
+      "officialPortalName": "BWSSB 1916 / CMS Portal",
+      "description": "Request replacement for stolen, broken, or inaccurate water meter.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Report Damaged / Faulty Meter",
+          "details": "File request on cms.bwssb.gov.in or call 1916.",
+          "link": "https://cms.bwssb.gov.in"
+        },
+        {
+          "step": 2,
+          "title": "Purchase AMR/Class-B Meter or Request BWSSB Meter",
+          "details": "Install BWSSB-approved magnetic drive meter.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Sealing & Calibration",
+          "details": "BWSSB meter inspector tests calibration and seals meter.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Latest Water Bill Copy", "required": true, "note": "RR Number verification" },
+        { "name": "Police FIR (if meter stolen)", "required": false, "note": "Only required for stolen meter claims" }
+      ],
+      "fees": [
+        { "item": "Meter Testing Fee", "amount": "₹150" },
+        { "item": "Meter Sealing Charge", "amount": "₹50" }
+      ]
+    }
+  ]
+}

@@ -3,91 +3,100 @@ import deptData from '../data/departments.json';
 export function renderHomePage(lang) {
   const l = lang;
   return `
-  <!-- Elevate Inspired 2-Column Hero -->
+  <!-- Elevate Inspired Hero -->
   <section class="nb-hero">
     <div class="container position-relative">
       <div class="row align-items-center g-5">
         <div class="col-lg-7 text-start">
-          <div class="nb-hero-badge">
-            <i class="bi bi-lightning-fill text-warning"></i>
-            <span>Official Bengaluru Citizen Services Hub</span>
+            <div class="nb-hero-badge">
+              <i class="bi bi-lightning-fill text-warning"></i>
+              <span>Official Bengaluru Citizen Services Hub</span>
+            </div>
+
+            <h1 class="nb-hero-title">${l.heroTitle}</h1>
+
+            <p class="nb-hero-desc">
+              ${l.heroSub} Access accurate BWSSB water bill estimates, BESCOM electricity bill calculations, official gazettes, and instant AI guidance.
+            </p>
+
+            <div class="nb-feature-checklist mb-4">
+              <div class="check-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Verified 2026-27 BWSSB & BESCOM Tariff Slabs</span>
+              </div>
+              <div class="check-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Apartment Per-Flat Consumption Breakdown</span>
+              </div>
+              <div class="check-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Official Gazette PDF Links & 24x7 Helplines</span>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
+              <a href="#/dept/bwssb" class="btn btn-primary btn-lg">
+                <span>Calculate Water Bill</span>
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+              <a href="#/dept/bescom" class="btn btn-outline-primary btn-lg">
+                <span>BESCOM Electricity Hub</span>
+                <i class="bi bi-lightning-charge ms-2"></i>
+              </a>
+            </div>
+
+            <div class="d-flex align-items-center gap-3 flex-wrap pt-2">
+              ${[['6', 'Departments'], ['₹0', 'Cost to Use'], ['10 AM', 'Daily AI Sync']].map(([n, lbl]) => `
+              <div class="nb-stat-pill">
+                <div class="nb-stat-num">${n}</div>
+                <div class="nb-stat-label">${lbl}</div>
+              </div>`).join('')}
+            </div>
           </div>
 
-          <h1 class="nb-hero-title">${l.heroTitle}</h1>
+          <div class="col-lg-5">
+            <div class="d-flex flex-column gap-3">
+              <div class="nb-floating-card">
+                <div class="nb-floating-card-icon" style="background:rgba(14,165,233,0.12); color:#0ea5e9;">
+                  <i class="bi bi-droplet-half fs-2"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.92rem;">BWSSB Water Slabs</div>
+                  <div class="text-secondary" style="font-size:0.78rem;">Verified 2026-27 Slabs & Apartment Bulk Rates</div>
+                </div>
+              </div>
 
-          <p class="nb-hero-desc">
-            ${l.heroSub} Access accurate BWSSB water bill estimates, apartment bulk calculations, official gazettes, and instant AI guidance.
-          </p>
+              <div class="nb-floating-card">
+                <div class="nb-floating-card-icon" style="background:rgba(245,158,11,0.12); color:#f59e0b;">
+                  <i class="bi bi-lightning-charge-fill fs-2"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.92rem;">BESCOM Electricity</div>
+                  <div class="text-secondary" style="font-size:0.78rem;">Bill Estimator & e-Katha Online Name Change</div>
+                </div>
+              </div>
 
-          <div class="nb-feature-checklist mb-4">
-            <div class="check-item">
-              <i class="bi bi-check-circle-fill"></i>
-              <span>Verified 2026-27 BWSSB Telescopic Tariff Slabs</span>
+              <div class="nb-floating-card">
+                <div class="nb-floating-card-icon" style="background:rgba(124,58,237,0.12); color:#7c3aed;">
+                  <i class="bi bi-train-front fs-2"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.92rem;">Namma Metro & Transit</div>
+                  <div class="text-secondary" style="font-size:0.78rem;">Route Maps, Fares & BMTC Pass Guides</div>
+                </div>
+              </div>
+
+              <div class="nb-floating-card">
+                <div class="nb-floating-card-icon" style="background:rgba(239,68,68,0.12); color:#ef4444;">
+                  <i class="bi bi-headset fs-2"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.92rem;">24x7 Helpline Directory</div>
+                  <div class="text-secondary" style="font-size:0.78rem;">BWSSB 1916 · BESCOM 1912 · Metro 1800-425-12345</div>
+              </div>
             </div>
-            <div class="check-item">
-              <i class="bi bi-check-circle-fill"></i>
-              <span>Apartment Per-Flat Consumption Breakdown</span>
-            </div>
-            <div class="check-item">
-              <i class="bi bi-check-circle-fill"></i>
-              <span>Official Gazette PDF Links & 24x7 Helpline 1916</span>
-            </div>
-          </div>
-
-          <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
-            <a href="#/dept/bwssb" class="btn btn-primary btn-lg">
-              <span>Calculate Water Bill</span>
-              <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-            <button onclick="window.__navDept('bwssb'); setTimeout(()=>window.__tab('ai'), 50);" class="btn btn-outline-primary btn-lg">
-              <i class="bi bi-robot me-1"></i>
-              <span>Ask AI Guide</span>
-            </button>
-          </div>
-
-          <div class="d-flex align-items-center gap-4 flex-wrap pt-2">
-            ${[['5', 'Departments'], ['₹0', 'Cost to Use'], ['3 AM', 'Daily AI Sync'], ['2', 'Languages']].map(([n, lbl]) => `
-            <div>
-              <div class="nb-stat-num">${n}</div>
-              <div class="nb-stat-label">${lbl}</div>
-            </div>`).join('')}
           </div>
         </div>
-
-        <div class="col-lg-5">
-          <div class="d-flex flex-column gap-3">
-            <div class="nb-floating-card">
-              <div class="nb-floating-card-icon" style="background:rgba(16,185,129,0.12); color:#10b981;">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <div>
-                <div class="fw-bold" style="font-size:0.92rem;">BWSSB 2026-27 Slabs</div>
-                <div class="text-secondary" style="font-size:0.78rem;">100% Accurate & Gazette Verified</div>
-              </div>
-            </div>
-
-            <div class="nb-floating-card">
-              <div class="nb-floating-card-icon" style="color:#3451b8;">
-                <i class="bi bi-droplet-half fs-2"></i>
-              </div>
-              <div>
-                <div class="fw-bold" style="font-size:0.92rem;">Apartment Bulk Rates</div>
-                <div class="text-secondary" style="font-size:0.78rem;">Fair Per-Flat Progressive Slabs</div>
-              </div>
-            </div>
-
-            <div class="nb-floating-card">
-              <div class="nb-floating-card-icon" style="background:rgba(124,58,237,0.12); color:#7c3aed;">
-                <i class="bi bi-headset"></i>
-              </div>
-              <div>
-                <div class="fw-bold" style="font-size:0.92rem;">1916 Helpline Directory</div>
-                <div class="text-secondary" style="font-size:0.78rem;">24x7 Water & Sewerage Support</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -136,7 +145,7 @@ export function renderHomePage(lang) {
     <!-- Info Strip -->
     <div class="row g-3 mt-4 mb-4">
       ${[
-      { icon: 'bi-robot', title: 'AI-Powered Daily Sync', desc: 'Official circulars scraped at 3 AM IST, PDFs archived locally with SHA-256 verification.' },
+      { icon: 'bi-robot', title: 'Daily Automated Sync', desc: 'Official circulars scraped daily at 10 AM IST, linking directly to official government portals and PDFs with SHA-256 verification.' },
       { icon: 'bi-key', title: 'Crowd-Sourced AI Keys', desc: 'Bring your free Gemini API key. Auto-rotates across donated keys when quota is exhausted.' },
       { icon: 'bi-github', title: 'Open Source on GitHub', desc: 'Anyone can contribute data updates, translations, or new department modules. MIT licensed.' },
     ].map(item => `
@@ -199,6 +208,12 @@ export function renderHomePage(lang) {
                 <td class="py-3"><span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2 py-1 fs-6">1912</span></td>
                 <td class="py-3 text-secondary" style="font-size:0.8rem;">Power Outages & Billing</td>
                 <td class="pe-4 text-end py-3"><a href="tel:1912" class="btn btn-sm btn-outline-secondary nb-tbl-btn py-1 px-3" style="font-size:0.78rem;">Call 1912</a></td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--bs-border-color);">
+                <td class="ps-4 py-3 fw-bold"><i class="bi bi-train-front-fill text-purple me-2" style="color:#7c3aed;"></i>Namma Metro (BMRCL) Rapid Transit</td>
+                <td class="py-3"><span class="badge bg-purple-subtle text-purple border px-2 py-1 fs-6" style="background:rgba(124,58,237,0.12); color:#7c3aed; border-color:rgba(124,58,237,0.25)!important;">1800-425-12345</span></td>
+                <td class="py-3 text-secondary font-mono" style="font-size:0.8rem;">080-25501234 (Metro Toll-Free)</td>
+                <td class="pe-4 text-end py-3"><a href="tel:180042512345" class="btn btn-sm btn-outline-primary nb-tbl-btn py-1 px-3" style="font-size:0.78rem; border-color:#7c3aed; color:#7c3aed;">Call Metro</a></td>
               </tr>
               <tr>
                 <td class="ps-4 py-3 fw-bold"><i class="bi bi-building-fill text-success me-2"></i>GBA / BBMP Civic Services</td>

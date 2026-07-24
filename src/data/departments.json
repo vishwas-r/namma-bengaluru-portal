@@ -22,7 +22,7 @@
     "color": "#f59e0b",
     "helpline": "1912",
     "website": "https://bescom.karnataka.gov.in",
-    "status": "coming-soon",
+    "status": "live",
     "features": ["Bill Calculator", "Tariff Table", "Outage Alerts", "Complaint Guide"]
   },
   {
@@ -50,6 +50,19 @@
     "website": "https://mybmtc.karnataka.gov.in",
     "status": "coming-soon",
     "features": ["Route Finder", "Pass Guide", "Complaint Help"]
+  },
+  {
+    "id": "bmrcl",
+    "name": "Namma Metro",
+    "fullName": "Bangalore Metro Rail Corporation (BMRCL)",
+    "kannada": "ನಮ್ಮ ಮೆಟ್ರೋ (ಬಿಎಮ್‌ಆರ್‌ಸಿಎಲ್)",
+    "description": "Rapid transit metro rail network serving major Bengaluru corridors",
+    "icon": "bi-train-front",
+    "color": "#7c3aed",
+    "helpline": "1800-425-12345",
+    "website": "https://english.bmrc.co.in",
+    "status": "coming-soon",
+    "features": ["Fare Calculator", "Station Route Guide", "Smart Card & QR Tickets"]
   },
   {
     "id": "bda",
