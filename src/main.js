@@ -41,7 +41,7 @@ const state = {
   selectedServiceId: 'name-change',
   chatHistory: [{
     role: 'bot',
-    content: 'Namaskara! I am <strong>Ask NammaBengaluru AI</strong>, your citizen assistant for Bengaluru. Ask me anything about BWSSB water tariffs, BESCOM electricity bill, owner name change online, filing complaints, or Gazette circulars.'
+    content: 'Namaskara! I am <strong>NammaBengaluru AI</strong>, your citizen assistant for Bengaluru. Ask me anything about BWSSB water tariffs, BESCOM electricity bill, owner name change online, filing complaints, or Gazette circulars.'
   }],
 };
 
@@ -58,7 +58,7 @@ const I18N = {
       outages: { icon: 'bi-broadcast-pin', label: 'Outage Tracker' },
       notices: { icon: 'bi-newspaper', label: 'Notices' },
       complaint: { icon: 'bi-life-preserver', label: 'Complaint Guide' },
-      ai: { icon: 'bi-robot', label: 'Ask NammaBengaluru AI' },
+      ai: { icon: 'bi-robot', label: 'NammaBengaluru AI' },
     },
     sync: 'AI-synced daily at 10 AM IST',
     langToggle: 'ಕನ್ನಡ',
@@ -108,6 +108,8 @@ function applyTheme(theme) {
   const btn = document.getElementById('themeBtn');
   if (btn) btn.innerHTML = theme === 'dark'
     ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
+  const logo = document.getElementById('nbAppLogo');
+  if (logo) logo.src = theme === 'dark' ? './logo.svg' : './logo-light.svg';
 }
 
 // ── Department Theme ───────────────────────────────────────
@@ -399,7 +401,7 @@ function bindAll() {
     state.chatHistory.push({ role: 'user', content: msg });
     appendMsg('user', msg);
 
-    const SYSTEM = `You are "Ask NammaBengaluru AI", the official AI guide for Bengaluru public utilities. Provide clear, accurate answers about BWSSB water tariffs (2026-27 telescopic slabs: 0-8 KL @ ₹9.53, 8-25 KL @ ₹14.97, 25-50 KL @ ₹35.39, >50 KL @ ₹51.64), BESCOM electricity tariffs (LT-2a: 0-50 units @ ₹4.75, 51-100 units @ ₹6.25, >100 units @ ₹7.80, with Gruha Jyothi free up to 200 units), apartment bulk billing, RWH non-compliance surcharge (+50%), borewell charges (+₹100/month), helplines (BWSSB: 1916, BESCOM: 1912), and RTI filing. Keep responses professional, helpful, concise, and formatted in HTML (use <strong>, <ul>, <li>, <br> tags instead of raw markdown).`;
+    const SYSTEM = `You are "NammaBengaluru AI", the official AI guide for Bengaluru public utilities. Provide clear, accurate answers about BWSSB water tariffs (2026-27 telescopic slabs: 0-8 KL @ ₹9.53, 8-25 KL @ ₹14.97, 25-50 KL @ ₹35.39, >50 KL @ ₹51.64), BESCOM electricity tariffs (LT-2a: 0-50 units @ ₹4.75, 51-100 units @ ₹6.25, >100 units @ ₹7.80, with Gruha Jyothi free up to 200 units), apartment bulk billing, RWH non-compliance surcharge (+50%), borewell charges (+₹100/month), helplines (BWSSB: 1916, BESCOM: 1912), and RTI filing. Keep responses professional, helpful, concise, and formatted in HTML (use <strong>, <ul>, <li>, <br> tags instead of raw markdown).`;
 
     const typing = document.createElement('div');
     typing.className = 'd-flex gap-2';

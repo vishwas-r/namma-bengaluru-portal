@@ -30,8 +30,8 @@ export function renderHeader(state, lang) {
     <div class="container d-flex align-items-center py-2 gap-2">
 
       <!-- Logo — always links to home -->
-      <a href="#/" class="d-flex align-items-center gap-2.5 text-decoration-none flex-shrink-0">
-        <img src="./logo.svg" alt="Namma Bengaluru Logo" width="34" height="34" style="border-radius:9px; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.3));" />
+      <a href="#/" class="d-flex align-items-center text-decoration-none flex-shrink-0">
+        <img id="nbAppLogo" src="${state.theme === 'dark' ? './logo.svg' : './logo-light.svg'}" alt="Namma Bengaluru Logo" width="50" height="50" class="me-2" style="border-radius:12px; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.18));" />
         <div class="lh-sm">
           <div class="fw-bold display-font" style="font-size:0.95rem; color:var(--bs-body-color);">Namma Bengaluru</div>
           <div class="nb-logo-subtitle" style="font-size:0.67rem; color:var(--bs-secondary-color); font-weight:500;">Citizen Services Portal</div>

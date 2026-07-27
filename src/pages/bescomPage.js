@@ -701,7 +701,7 @@ export function renderAI(state) {
     <div class="nb-chat-header">
       <div class="nb-chat-avatar"><i class="bi bi-robot"></i></div>
       <div class="flex-fill">
-        <div class="fw-bold" style="font-size:0.9rem;">Ask NammaBengaluru AI</div>
+        <div class="fw-bold" style="font-size:0.9rem;">NammaBengaluru AI</div>
         <div style="font-size:0.72rem; color:var(--nb-dept-primary);">Online — ${activeCount} active keys in crowd pool</div>
       </div>
       <button class="btn btn-sm btn-outline-secondary" onclick="window.__modal()"><i class="bi bi-key-fill me-1"></i>Manage Keys</button>

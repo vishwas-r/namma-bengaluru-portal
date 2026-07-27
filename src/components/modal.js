@@ -21,8 +21,8 @@ export function renderModal() {
         <div class="p-3 bg-body-tertiary border rounded-3 mb-4 d-flex gap-3 align-items-start" style="border-left:4px solid #3451b8 !important;">
           <i class="bi bi-shield-check text-primary fs-5 mt-0.5 flex-shrink-0"></i>
           <div style="font-size:0.83rem; line-height:1.6;">
-            <strong class="text-body d-block mb-1">Crowd-Sourced Key Pool</strong>
-            Ask NammaBengaluru AI auto-rotates across community-donated keys. Keys are stored <em>locally in your browser</em> and sent directly to Google Gemini API servers.
+            <strong class="text-body d-block mb-1">100% Private & Free Community AI</strong>
+            NammaBengaluru AI auto-rotates across community-donated keys to keep the platform 100% free for everyone. Any keys you add are stored <strong>only locally in your browser</strong> and sent directly to Google Gemini API servers — they are <strong>never saved on our servers</strong> or shared with anyone else.
           </div>
         </div>
 
