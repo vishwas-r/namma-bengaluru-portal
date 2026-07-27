@@ -118,6 +118,8 @@ function applyDeptTheme(deptId) {
     root.style.setProperty('--nb-dept-primary', '#4f46e5');
     root.style.setProperty('--nb-dept-dark', '#3730a3');
     root.style.setProperty('--nb-dept-rgb', '79, 70, 229');
+    root.style.removeProperty('--nb-dept-secondary');
+    root.style.removeProperty('--nb-dept-gradient');
     return;
   }
   document.body.classList.add('is-dept-page');
@@ -135,6 +137,13 @@ function applyDeptTheme(deptId) {
     root.style.setProperty('--nb-dept-primary', hex);
     root.style.setProperty('--nb-dept-dark', darkHex);
     root.style.setProperty('--nb-dept-rgb', `${r}, ${g}, ${b}`);
+    
+    if (dept.colorSecondary) {
+      root.style.setProperty('--nb-dept-secondary', dept.colorSecondary);
+    }
+    if (dept.colorGradient) {
+      root.style.setProperty('--nb-dept-gradient', dept.colorGradient);
+    }
   }
 }
 

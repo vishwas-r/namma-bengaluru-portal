@@ -138,6 +138,46 @@ body.is-dept-page::before {
   transition: all 0.3s ease;
 }
 
+/* Department Hero Banner */
+.nb-dept-hero {
+  color: white;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nb-dept-hero-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.nb-dept-hero h1, .nb-dept-hero p, .nb-dept-hero .text-secondary {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+/* Ensure badges/buttons inside the dark hero have high contrast */
+.nb-dept-hero .nb-btn-official {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+.nb-dept-hero .nb-btn-official:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: white !important;
+}
+.nb-dept-hero .bg-success-subtle {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #6ee7b7 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+.nb-dept-hero .text-success, .nb-dept-hero .bi-robot {
+  color: #6ee7b7 !important;
+}
+
 [data-bs-theme="dark"] body.is-dept-page::before {
   background-image: 
     radial-gradient(circle at 15% 15%, rgba(var(--nb-dept-rgb), 0.42) 0%, transparent 55%),
@@ -186,12 +226,15 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
 
 .btn-primary {
   --bs-btn-bg: var(--nb-dept-primary);
+  background: var(--nb-dept-gradient, var(--nb-dept-primary));
   --bs-btn-border-color: var(--nb-dept-primary);
-  --bs-btn-hover-bg: var(--nb-dept-dark);
-  --bs-btn-hover-border-color: var(--nb-dept-dark);
+  --bs-btn-hover-bg: var(--nb-dept-secondary, var(--nb-dept-dark));
+  --bs-btn-hover-border-color: var(--nb-dept-secondary, var(--nb-dept-dark));
   --bs-btn-focus-shadow-rgb: var(--nb-dept-rgb);
   padding: 0.65rem 1.45rem;
   box-shadow: 0 4px 16px rgba(var(--nb-dept-rgb), 0.35);
+  color: white !important;
+  border: none;
 }
 .btn-primary:hover {
   box-shadow: 0 8px 24px rgba(var(--nb-dept-rgb), 0.5);
@@ -1215,4 +1258,26 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
     background: #f8fafc !important;
     color: #0f172a !important;
   }
+}
+
+/* ── 22. Map Ripple Effect ── */
+.nb-ripple-marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid white;
+}
+.nb-ripple-marker::after {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 50%;
+  background: inherit;
+  animation: nb-map-ripple 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+@keyframes nb-map-ripple {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(3.5); opacity: 0; }
 }

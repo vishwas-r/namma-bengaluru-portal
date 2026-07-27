@@ -73,13 +73,18 @@ export function renderOutageWidget(dept = 'bescom') {
               <span class="badge bg-primary-subtle text-primary border border-primary-subtle" id="poCountBadge">${bescomPlannedOutages.length || 0} scheduled</span>
           </div>
           
-          <div class="row g-3 mb-3">
-            <div class="col-sm-7 position-relative">
+          <div class="row g-2 mb-3">
+            <div class="col-md-6 position-relative">
               <input type="text" class="form-control" id="poSearchInput" placeholder="Search by Area or Feeder..." oninput="window.__nbFilterPlannedOutages()" style="padding-right: 2.5rem;">
               <i class="bi bi-search text-secondary position-absolute top-50 translate-middle-y" style="right: 1.25rem;"></i>
             </div>
-            <div class="col-sm-5">
-              <input type="date" class="form-control text-secondary" id="poDateInput" onchange="window.__nbFilterPlannedOutages()" title="Filter by Date">
+            <div class="col-md-4">
+              <input type="date" class="form-control text-secondary" id="poDateInput" onchange="window.__nbFilterPlannedOutages()" onclick="try{this.showPicker();}catch(e){}" title="Click to open calendar">
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-outline-secondary w-100 fw-semibold" onclick="window.__nbResetPlannedFilters()" title="Clear search & date filters" style="font-size:0.85rem;">
+                <i class="bi bi-arrow-counterclockwise me-1"></i>Reset
+              </button>
             </div>
           </div>
           
@@ -311,11 +316,10 @@ if (typeof window !== 'undefined') {
         return po.areas.split(',')[0].trim();
       }))].filter(a => a.length > 2 && a.toLowerCase() !== 'nil' && a.toLowerCase() !== 'none');
       
-      // Plot top 15 areas using the safe Photon geocoder
+      // Plot all areas using the safe Photon geocoder
       (async () => {
-        const topAreas = uniqueAreas.slice(0, 15);
-        for (let i = 0; i < topAreas.length; i++) {
-            const areaName = topAreas[i];
+        for (let i = 0; i < uniqueAreas.length; i++) {
+            const areaName = uniqueAreas[i];
             
             // Tiny delay just to be polite to the Photon API
             if (i > 0) await new Promise(r => setTimeout(r, 100)); 
@@ -323,19 +327,41 @@ if (typeof window !== 'undefined') {
             const results = await searchAreas(areaName);
             if (results && results.length > 0) {
                 const match = results[0];
-                const color = '#f59e0b'; // Amber for planned maintenance
-                
-                const circle = L.circleMarker([parseFloat(match.lat), parseFloat(match.lon)], {
-                    radius: 10,
-                    fillColor: color,
-                    color: color,
-                    weight: 1,
-                    opacity: 0.8,
-                    fillOpacity: 0.6
-                }).addTo(outageMap);
-                
                 const matchedOutages = bescomPlannedOutages.filter(po => po.areas.includes(areaName));
-                circle.bindPopup(`<b>${areaName}</b><br>${matchedOutages.length} scheduled outage(s)`);
+                const count = matchedOutages.length;
+                
+                let color = '#fcd34d';
+                if(count > 1) color = '#fbbf24';
+                if(count > 3) color = '#f59e0b';
+                if(count > 5) color = '#d97706';
+                
+                const outageDatesTimes = matchedOutages.slice(0, 3).map(o => `
+                  <div style="font-size:0.75rem;" class="mt-1">
+                    <span class="fw-bold text-danger">🗓️ ${o.date}</span> (${o.fromTime} - ${o.toTime})
+                    <div class="text-secondary text-truncate" style="max-width:180px;">${o.reason || 'Maintenance work'}</div>
+                  </div>
+                `).join('');
+
+                const popupContent = `
+                  <div style="font-family:var(--nb-font-body); min-width: 180px;">
+                    <div class="fw-bold mb-1" style="font-size:0.85rem;">${areaName}</div>
+                    <div class="badge bg-warning-subtle text-warning border border-warning-subtle mb-1" style="font-size:0.7rem;">${count} Scheduled Outage(s)</div>
+                    ${outageDatesTimes}
+                    ${matchedOutages.length > 3 ? `<div class="text-secondary text-center" style="font-size:0.7rem;">+ ${matchedOutages.length - 3} more</div>` : ''}
+                  </div>
+                `;
+
+                const icon = L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div class="nb-ripple-marker" style="background:${color}; box-shadow: 0 0 12px ${color}" title="Click to filter: ${areaName}"></div>`,
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10]
+                });
+                const marker = L.marker([parseFloat(match.lat), parseFloat(match.lon)], { icon }).addTo(outageMap);
+                marker.bindPopup(popupContent);
+                marker.on('click', () => {
+                  window.__nbFilterByArea(areaName);
+                });
             }
         }
       })();
@@ -355,19 +381,29 @@ if (typeof window !== 'undefined') {
             const results = await searchAreas(areaName);
             if (results && results.length > 0) {
                 const match = results[0];
-                const color = dept === 'bescom' ? '#ef4444' : '#3b82f6';
-                
-                const circle = L.circleMarker([parseFloat(match.lat), parseFloat(match.lon)], {
-                    radius: 14,
-                    fillColor: color,
-                    color: color,
-                    weight: 1,
-                    opacity: 0.8,
-                    fillOpacity: 0.5
-                }).addTo(outageMap);
-                
                 const count = reports.filter(r => r.area === areaName).length;
-                circle.bindPopup(`<b>${areaName}</b><br>${count} verified report(s)`);
+                
+                let color;
+                if (dept === 'bescom') {
+                  color = '#fca5a5';
+                  if(count > 1) color = '#f87171';
+                  if(count > 3) color = '#ef4444';
+                  if(count > 5) color = '#b91c1c';
+                } else {
+                  color = '#93c5fd';
+                  if(count > 1) color = '#60a5fa';
+                  if(count > 3) color = '#3b82f6';
+                  if(count > 5) color = '#1d4ed8';
+                }
+                
+                const icon = L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div class="nb-ripple-marker" style="background:${color}; box-shadow: 0 0 12px ${color}"></div>`,
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10]
+                });
+                const marker = L.marker([parseFloat(match.lat), parseFloat(match.lon)], { icon }).addTo(outageMap);
+                marker.bindPopup(`<b>${areaName}</b><br>${count} verified report(s)`);
             }
         }
       })();
@@ -540,5 +576,25 @@ if (typeof window !== 'undefined') {
     if (countBadge) {
        countBadge.textContent = `${visibleCount} scheduled`;
     }
+  };
+
+  window.__nbFilterByArea = (areaName) => {
+    const input = document.getElementById('poSearchInput');
+    if (input) {
+      input.value = areaName;
+      window.__nbFilterPlannedOutages();
+      const el = document.getElementById('poSearchInput');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  };
+
+  window.__nbResetPlannedFilters = () => {
+    const searchInput = document.getElementById('poSearchInput');
+    const dateInput = document.getElementById('poDateInput');
+    if (searchInput) searchInput.value = '';
+    if (dateInput) dateInput.value = '';
+    window.__nbFilterPlannedOutages();
   };
 }

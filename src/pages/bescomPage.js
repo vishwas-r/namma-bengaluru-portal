@@ -12,12 +12,11 @@ const CanvasJS = CanvasJSModule.CanvasJS || CanvasJSModule.default || CanvasJSMo
 export function renderBESCOMPage(dept, state, lang) {
   const tabs = lang.tabs;
   return `
-  <!-- Department Hero -->
-  <div class="nb-dept-hero" style="--dept-hero-glow:${dept.color}20;">
+  <div class="nb-dept-hero" style="--dept-hero-glow:var(--nb-dept-glow, rgba(var(--nb-dept-rgb), 0.1)); background:var(--nb-dept-gradient, var(--nb-dept-primary));">
     <div class="container nb-dept-hero-content text-start">
       ${renderBreadcrumb(dept)}
       <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
-        <div class="nb-dept-hero-icon mb-0" style="background:${dept.color}18; color:${dept.color};">
+        <div class="nb-dept-hero-icon mb-0" style="background:var(--nb-glass-bg); color:var(--nb-dept-primary); box-shadow:0 4px 15px rgba(0,0,0,0.1);">
           <i class="bi ${dept.icon}"></i>
         </div>
         <div>
