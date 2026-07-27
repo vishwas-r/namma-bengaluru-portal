@@ -1,4 +1,8 @@
 import './style.css';
+import * as bootstrap from 'bootstrap';
+window.bootstrap = bootstrap;
+import { subscribeToOutageReports } from './services/outageStore.js';
+
 import deptData from './data/departments.json';
 import { renderSOSBar, renderHeader } from './components/header.js';
 import { renderFooter } from './components/footer.js';
@@ -175,9 +179,11 @@ function renderApp(skipScroll = false) {
     if (state.deptId === 'bwssb') {
       if (state.activeTab === 'calculator') recalcBWSSBBill(state);
       if (state.activeTab === 'tariff') setTimeout(renderBWSSBTariffChart, 60);
+      if (state.activeTab === 'outages') setTimeout(() => { if(window.__nbInitOutageMap) window.__nbInitOutageMap('bwssb'); }, 100);
     } else if (state.deptId === 'bescom') {
       if (state.activeTab === 'calculator') recalcBESCOMBill(state);
       if (state.activeTab === 'tariff') setTimeout(renderBESCOMTariffChart, 60);
+      if (state.activeTab === 'outages') setTimeout(() => { if(window.__nbInitOutageMap) window.__nbInitOutageMap('bescom'); }, 100);
     }
   }
   if (!skipScroll && !state.modalOpen) {
@@ -211,6 +217,11 @@ function bindAll() {
     if (tabId === 'tariff') {
       if (state.deptId === 'bwssb') setTimeout(renderBWSSBTariffChart, 60);
       else if (state.deptId === 'bescom') setTimeout(renderBESCOMTariffChart, 60);
+    }
+    if (tabId === 'outages') {
+      setTimeout(() => {
+        if (window.__nbInitOutageMap) window.__nbInitOutageMap(state.deptId);
+      }, 100);
     }
   };
 
@@ -417,5 +428,29 @@ function appendMsg(role, content) {
 function scrollChat() { const c = document.getElementById('chatMsgs'); if (c) c.scrollTop = c.scrollHeight; }
 
 // ── Boot ───────────────────────────────────────────────────
+
+subscribeToOutageReports('bescom', () => {
+    // Re-render if widget is active
+    if (window.__nbCurrentOutageTab === 'reports') router();
+});
+subscribeToOutageReports('bwssb', () => {
+    if (window.__nbCurrentOutageTab === 'reports') router();
+});
+
 window.addEventListener('hashchange', router);
+window.addEventListener('nb_auth_changed', () => {
+  // Re-render the current route on login/logout
+  router();
+  
+  // Try to preserve the active tab if we're on the outage widget
+  if (window.__nbCurrentOutageTab === 'reports') {
+      setTimeout(() => { if(window.__nbSwitchOutageTab) window.__nbSwitchOutageTab('reports'); }, 50);
+  }
+});
+window.addEventListener('nb_outage_added', () => {
+  // Re-render when an outage is successfully reported
+  router();
+  setTimeout(() => { if(window.__nbSwitchOutageTab) window.__nbSwitchOutageTab('reports'); }, 100);
+});
+
 router();

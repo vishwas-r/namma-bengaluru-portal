@@ -3,15 +3,51 @@
  * Manages verified citizen outage reports, rate limiting, and 2-hour TTL auto-decay.
  */
 
+import { collection, addDoc, query, where, orderBy, onSnapshot } from 'firebase/firestore';
+import { db } from './firebaseSetup.js';
 import bescomOutages from '../data/bescom/outages.json';
 import bwssbOutages from '../data/bwssb/outages.json';
-
-const STORAGE_KEY_PREFIX = 'nb_outages_';
 
 const BASELINE_DATASETS = {
   bescom: bescomOutages || [],
   bwssb: bwssbOutages || []
 };
+
+// In-memory cache for synchronous reads by the UI
+let cachedReports = {
+  bescom: [],
+  bwssb: []
+};
+
+let unsubscribes = {};
+
+export function subscribeToOutageReports(dept = 'bescom', callback) {
+  if (unsubscribes[dept]) {
+    unsubscribes[dept]();
+  }
+
+  const twoHoursAgoString = new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString();
+
+  const q = query(
+    collection(db, 'outages_' + dept),
+    where('timestamp', '>', twoHoursAgoString),
+    orderBy('timestamp', 'desc')
+  );
+
+  unsubscribes[dept] = onSnapshot(q, (snapshot) => {
+    const reports = snapshot.docs.map(doc => {
+      const data = doc.data();
+      return { id: doc.id, ...data };
+    });
+    
+    cachedReports[dept] = reports;
+    if (callback) callback(reports);
+  }, (error) => {
+    console.warn("Firestore subscription error:", error);
+    // Fallback to baseline if firestore fails
+    if(cachedReports[dept].length === 0) cachedReports[dept] = BASELINE_DATASETS[dept];
+  });
+}
 
 export const NEIGHBORHOODS = [
   'HSR Layout',
@@ -31,28 +67,7 @@ export const NEIGHBORHOODS = [
 ];
 
 export function getOutageReports(dept = 'bescom') {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY_PREFIX + dept);
-    let reports = raw ? JSON.parse(raw) : (BASELINE_DATASETS[dept] || []);
-
-    // Purge legacy seed reports if cached in localStorage
-    if (raw && (raw.includes('rep_b1') || raw.includes('u101') || raw.includes('Ananya M.'))) {
-      localStorage.removeItem(STORAGE_KEY_PREFIX + dept);
-      reports = BASELINE_DATASETS[dept] || [];
-    }
-
-    // Apply 2-Hour TTL Auto-Decay (filter out reports older than 2 hours)
-    const twoHoursAgo = Date.now() - (2 * 60 * 60 * 1000);
-    const validReports = reports.filter(r => new Date(r.timestamp).getTime() > twoHoursAgo);
-
-    if (validReports.length !== reports.length) {
-      localStorage.setItem(STORAGE_KEY_PREFIX + dept, JSON.stringify(validReports));
-    }
-
-    return validReports;
-  } catch {
-    return BASELINE_DATASETS[dept] || [];
-  }
+  return cachedReports[dept] || [];
 }
 
 export function canUserReport(user, dept = 'bescom') {
@@ -76,15 +91,13 @@ export function canUserReport(user, dept = 'bescom') {
   return { allowed: true };
 }
 
-export function submitOutageReport(user, dept, area, outageType) {
+export async function submitOutageReport(user, dept, area, outageType) {
   const check = canUserReport(user, dept);
   if (!check.allowed) {
     throw new Error(check.reason);
   }
 
-  const reports = getOutageReports(dept);
   const newReport = {
-    id: 'rep_' + Math.random().toString(36).slice(2, 9),
     dept,
     area,
     outageType: outageType || (dept === 'bescom' ? 'Power Outage (Unscheduled)' : 'Water Supply Interruption'),
@@ -98,9 +111,13 @@ export function submitOutageReport(user, dept, area, outageType) {
     verified: true
   };
 
-  const updated = [newReport, ...reports];
-  localStorage.setItem(STORAGE_KEY_PREFIX + dept, JSON.stringify(updated));
-  return newReport;
+  try {
+    const docRef = await addDoc(collection(db, 'outages_' + dept), newReport);
+    return { id: docRef.id, ...newReport };
+  } catch (error) {
+    console.error("Error adding document: ", error);
+    throw new Error("Failed to save report. Please check your connection.");
+  }
 }
 
 export function getNeighborhoodStats(dept = 'bescom') {
