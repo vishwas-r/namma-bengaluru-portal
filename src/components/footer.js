@@ -57,7 +57,7 @@ export function renderFooter() {
 
     <div class="nb-footer-bottom py-3">
       <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2 text-secondary" style="font-size:0.78rem;">
-        <div>© 2026 Namma Bengaluru. Unofficial community project. Not affiliated with any government department.</div>
+        <div>© 2026 Namma Bengaluru. Built with <i class="bi bi-heart-fill text-danger mx-0.5" style="font-size:0.7rem;"></i> by the open-source community · Started by <a href="https://vishwas.me/" target="_blank" rel="noopener" class="text-primary fw-bold text-decoration-underline">VR</a>.</div>
         <div class="d-flex gap-3">
           <a href="https://bwssb.karnataka.gov.in" target="_blank" rel="noopener" class="text-secondary text-decoration-none">BWSSB</a>
           <a href="https://bescom.karnataka.gov.in" target="_blank" rel="noopener" class="text-secondary text-decoration-none">BESCOM</a>
