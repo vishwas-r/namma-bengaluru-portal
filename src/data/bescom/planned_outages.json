@@ -1,0 +1,1146 @@
+[
+  {
+    "date": "08 Jul 2026",
+    "areas": "Haralur",
+    "fromTime": "10:00 AM",
+    "toTime": "1:00 PM",
+    "feeder": "220k BIAL-Hoody Line and 220kV Devanahalli-Haralur Muddenahalli Line 1 and 2",
+    "reason": "Capex works"
+  },
+  {
+    "date": "08 Jul 2026",
+    "areas": "Haralur",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "220/66/11kV Haralur Muddenahalli Receiving Station",
+    "reason": "Capex works"
+  },
+  {
+    "date": "11 Jul 2026",
+    "areas": "220kV R/S Malur, Railway traction-1&2,  Kembodi, Tamaka, Sugutur, Vemgal, Vemagal Industrial Area, Talagunda, Narsapura, Vokkaleri, Kolar urban and rural areas",
+    "fromTime": "9:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220 kV R/S Kolar",
+    "reason": "First quarterly maintenance works for FY 2026-27 \n LC Required for \n1) Carrying out 1st quarterly maintanencve works at 220kV Kolar R/S & downstream stations.\n2) Strengthening of existing 220kV Kolar HVDC (PGCIL) - Kolar D/ C line using HPC conductor- present status is stub concreting completed for 05 no's of towers & tower erection need to be takenup. Hence LC required.\n3) 220kv Railway traction line tower erection work need to be taken up.\n4) To attend the observations made during condition monitoring of 2nd cycle."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Nayandanahalli, Deepanjali Nagara, Byatarayapura, Gangondanahalli, Aziz Sait industrial area, Bapuji Nagara, Mutachari Industrial area, Muneshwara block, Ranganatha Colony.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV REMCO GIS station",
+    "reason": "Quarterly maintenance"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Challaghatta, Nagasandra, Control tower & BWSSB.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV K & C Valley MUSS",
+    "reason": "1st Quarterly Maintenance of 66kV Bus,Isolators,11kV Banks & Related Feeders."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Load change over can be done. However, some portions of Indiranagara, J.B nagar, dommlur, sanjayanagara, bheema nagara areas load will be affected.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11KV HAL R/S",
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "(A) Chintamani 220KV Stations and it's downstream stations.  66KV Chintamani, Shettimadamanagala, Masthenahalli KIADB,Talagawra, Cheemangala, Y.Hunasenahalli, K Raguttahalli, Bommepalli cross, Yenigadale,  Shidlagatta, Melur, Nandhiganahalli, G.Kodihalli   Iragampalli, M.Gollahallli,  Ganjigunte, Burudugunte, Pallicherlu,  & Dibburahalli Substations & RTSS Chintamani. Solar IPPs: (1). ACME Solar IPP-20MW at 66/11kV Pallicherlu. (2). AFTL 5MW Solar IPP- 66/11kV Iragampalli. (3). Sharada & Rekha each 1MW at 66/11KV MUSS Y.Hunasenahalli. (4). MEIL Solar Pvt Ltd at 66/11KV MUSS Bommepalli cross. (B) Srinivasapura 220KV Station and it's downstream Stations and Solar IPP's  (1). TATA Power solar-20MW at 66/11kV Somayajalahalli",
+    "fromTime": "9:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220KV RS Chintamani",
+    "reason": "220KV PGCIL Kolar-Chintamani Line-1 & 220KV PGCIL Kolar-Chintamani Line-2 To carryout 1st quarterly maintenance work in  2026-27"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Areas feeding from 66/11kV Kengeri Sateelite Town S/s",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV Kengeri satellite Town station",
+    "reason": "Quarterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Sunkadakatte, Kamakshipalya, Malathahalli, Niligiri thopu, Hegganahalli, Annapoorneshwarinagara, Pattegarpalya, Kottigepalya, Kengunte.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV Srigandhakaval MUSS",
+    "reason": "Quarterly maintenance work of 66kV Lines,Bus and 11kV Bus bar  isolator at 66/11kV Srigandhakaval station."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Nayandanahalli, Deepanjali Nagara, Byatarayapura, Gangondanahalli, Aziz Sait industrial area, Bapuji Nagara, Mutachari Industrial area, Muneshwara block, Ranganatha Colony.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV REMCO GIS station",
+    "reason": "Quarterly maintenance"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "City Market, Avenue road, BVK iyengar road, RT street, CT street, Chikkapet, Nagarathpet, SP road, Town hall, JC road, Minerva Circle, KG road, Gandhi nagar, Masidi, Mysore road police quarters, Gori palya, Binny pet, New tharagu pet, Chamarajpet, AM road, Kalasipalya, Victoria Hospital, KIMS, Shankarpuram, Dental college RMU, SJ park RMU",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "66/11 kV Victoria Station",
+    "reason": "Quarterly maintenance work of 66kV Line, Bus and 11kV Bus bar and to attend hot spot in 66kV Transformer 2 isolator at 66/11kV Victoria Station."
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Sunkadakatte Industrial Area, Bairaveshwara Nedikerrappa Industrial Area, D -Group Layout, Andrahalli, Tunganagar",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kv Byadarahalli",
+    "reason": "Quarterly Maintenance work and attending hotspots"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F8-GM palya, F11-vignayan nagar, F13- Ayappanagar",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Bagmane Tech Muss",
+    "reason": "Quarterly maintenance of 31.5MVA T-1&2 & I/c Bay,  Bus GOS, 11KV Switchgears  maintenance."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Challaghatta, Nagasandra, Control tower & BWSSB.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV K & C Valley MUSS",
+    "reason": "1st Quarterly Maintenance of 66kV Bus,Isolators,11kV Banks & Related Feeders."
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Dental College road & Purva Reviera, CKB Layout, Vivekandanagar, Marathahalli Bridge, Chroma Road, Meghana layout, Sapthagiri layout, Vagdevi laouyt, Vasanthanagara, Panathur Dinne, Railway track road.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV Kadubisanahalli MUSS",
+    "reason": "1st Quarterly Maintenance of 66kV Bus, Isolators,11kV Bus,11kV Banks & Related Feeders."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Load change over can be done. However, some portions of Indiranagara, J.B nagar, dommlur, sanjayanagara, bheema nagara areas load will be affected.",
+    "fromTime": "9:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11KV HAL R/S",
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Load change over can be done. However, some portions of malleshpalya, ADA, LIC colony, doddanekundi areas load will be affected.",
+    "fromTime": "9:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11KV HAL R/S",
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-2 & related feeders and painting of transformer"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Nil",
+    "fromTime": "9:30 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66kV Adu-Line 1 & Adu-Line 2, 2x20MVA power transformers at 66/11kV Leelaventure station",
+    "reason": "Station 1st quarterly maintenance for the FY 26-27,CMR Test on all 66kV CB  & to Attend hotspot, 66kV Bus maintemance and 11kV switchgear maintenance."
+  },
+  {
+    "date": "21 Jul 2026",
+    "areas": "Prestige falcon city apartment",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV Prestige Falcon City Substation",
+    "reason": "Periodical  maintenance work"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "DLF Apartment",
+    "fromTime": "10:00 Hrs",
+    "toTime": "16:00 Hrs",
+    "feeder": "66/11kV DLF(Annabel)",
+    "reason": "Periodical  maintenance work"
+  },
+  {
+    "date": "28 Jul 2026",
+    "areas": "Kaveri Nagar, Hulimavu, Akshaya Nagar, Hongasandra, BTS layout,Kodichikkanahalli, Vijaya Bank layour, Vishwapriya layout surrounding Area",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11KV BTM",
+    "reason": "Periodical  maintenance work"
+  },
+  {
+    "date": "24 Jul 2026",
+    "areas": "Provident Sunworth apartment",
+    "fromTime": "10:00 Hrs",
+    "toTime": "16:00 Hrs",
+    "feeder": "66/11kV Provident",
+    "reason": "Periodical  maintenance work"
+  },
+  {
+    "date": "21 Jul 2026",
+    "areas": "Elita Promenade Appartments, K.R layout, Sharadanagar, chunchughatta and area surronding sub-station.",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kv Elita Promonade muss",
+    "reason": "Periodical maintenance work"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "Manthri apartment, Thalaghattapura, Raghuvanagalli, Gublala, kuvempu nagar, VV nagar; VV layout, Balaji Layout, Royal form",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV ISKCON",
+    "reason": "Periodical maintenance work"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "Byrohalli, Ramohalli, Kengeri Town, Bidadi Rural, Devikiran, Deccan Herrald, KAIDB 1st phase,KAIDB 2nd phase, Geruplaya industrial area, ISRO, Gonipura,BGS, Kengeri,Brigade ponorama,Srirama badavane, Kanminike,Sandeep thota, Chalghatta, MLC compound.",
+    "fromTime": "10:00 Hrs",
+    "toTime": "16:00 Hrs",
+    "feeder": "66/11kV Kumbalagodu",
+    "reason": "Periodical  maintenance work"
+  },
+  {
+    "date": "21 Jul 2026",
+    "areas": "Konanakunte, Thalaghattapura, Doddakallasandra, Shreenidhi layout, Avalahalli.",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "220 Khodays glass factory station",
+    "reason": "Periodical  maintenance work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "NIL",
+    "fromTime": "10:00 Hrs",
+    "toTime": "15:00 Hrs",
+    "feeder": "220kV Somanahalli-Khodays line bay at 220/66/11kV R/S Somanahalli",
+    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. Load of 220kV Subramanyapura & 220kV Khodays may be changed over to 220kV Peenya. No load will be affected."
+  },
+  {
+    "date": "20 Jul 2026",
+    "areas": "Nil",
+    "fromTime": "10:00 Hrs",
+    "toTime": "15:00 Hrs",
+    "feeder": "220kV Somanahalli-Bidadi line 2 bay at 220/66/11kV R/S Somanahalli",
+    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. No load will be affected as 220kV Somanahalli- Bidadi line-1&2 are in parallel."
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "NIL",
+    "fromTime": "10:00 Hrs",
+    "toTime": "15:00 Hrs",
+    "feeder": "220kV Somanahalli-Mylasandra line 2 bay at 220/66/11kV R/S  Somanahalli",
+    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. No load will be affected as both are source end stations."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Bommanahalli, HSR Layout, Kudulu, Jakkasandra, Kaikondanahalli, Somasundarapalya, Hosapalya, Koramanagala",
+    "fromTime": "10:00 Hrs",
+    "toTime": "17:00 Hrs",
+    "feeder": "220/66/11kV HSR Layout R/s\n (66/11kV side only)",
+    "reason": "2th Quarterly  maintenance work of 31.5MVA Transformer-2\nPower Transformer"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Bommanahalli, HSR Layout, Kudulu, Jakkasandra, Kaikondanahalli, Somasundarapalya, Hosapalya, Koramanagala",
+    "fromTime": "10:00 Hrs",
+    "toTime": "15:00 Hrs",
+    "feeder": "220/66/11kV HSR Layout R/s\n (66/11kV side only)",
+    "reason": "2th Quarterly  maintenance work of \n220kV Mylasandra Line 1"
+  },
+  {
+    "date": "31 Jul 2026",
+    "areas": "Devarabisanahalli,Adarsha,Sai Shrustii,Sterling Ascentia,Samvi J V Hotel",
+    "fromTime": "10:00 Hrs",
+    "toTime": "15:00 Hrs",
+    "feeder": "66/11kV GTP S/s",
+    "reason": "1st Quarterely Maintenance work of 66/11kV Transformers, 66kV Breakers,66kV CT's & PT's.\n2)11kV Breaker Switch Gear maintenance"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Bellandur,RMZ,Devarabisanahalli,Kariyammanapalya,Akme projects,Anupama,Total Mall,Shobha IRIS",
+    "fromTime": "10:00 Hrs",
+    "toTime": "17:00 Hrs",
+    "feeder": "66/11kV Devarabisanahalli S/s",
+    "reason": "1st Quarterely Maintenance work of 66/11kV Transformers, 66kV Breakers,66kV CT's & PT's.\n2)11kV Breaker Switch Gear maintenance  \n2.31.5MVA Y & B 11kV Bushing replacement work.\n3.Tr-2 NCT Replacement work"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Madhura garments,Novel,Kudlu,Mico Bosch, Electronic city,AECS ''B'' BLOCK,Muneshwara Layout.Balaji L/O,Doddanagamangala,Chikka Thougur,Parappana Agrahara,Metro shop,Robert Bosch Automation India Pvt Ltd, Purvankara Apartment, Bellandur-2\",Klassic Landmark,Naganathapura,Shobha apartment , Huskur,HP digital,,CK nagar,Singasandra,Kasavanahalli,AECS A layout, Hongasandra, Ozone tech park, Mahaveer ranches, central jail,CK Nagar- Hosa Road, Singasandra, Hongasandra,",
+    "fromTime": "10:00 Hrs",
+    "toTime": "17:00 Hrs",
+    "feeder": "220/66/11KV RS Naganathapura",
+    "reason": "For carrying out testing on CT and busbar protection relays by RT wing on 220KV lines, 220KV Bus and 150MVA transformers.\nQuarterly Maintenance of 220KV Bus, 66KV Bus & Bus Isolators."
+  },
+  {
+    "date": "21 Jul 2026",
+    "areas": "Shakambari Nagara, Pipe line road, Ragavendra swamy matta, JP nagar 1st phase, 14th cross, Salarpuria Appt, nagarjuna Appt, Puttenahalli area, Jayangara 8th Block, Jayanagara 5Th Block , Jayangara 7th Block , ITI layout,  SBI colony, Near RV dental, college surroundings, 24th main, Behined LIC office , LIC colony, K R Layout, Venkatadri Layout, JP nagar 5th Phase, Sai narsary Road, JP nagar 6th phase, 15th cross, 16th & 12th cross ,Adarsha residency apt,Adarsha garden,Sindhura convention hall & surround,JP nagar Metro and surrounding,Indira Gandhi circle,Aster hospital,15th cross underpass road,Actor Sudeep house surrounding,24th main Nandini hotel signal junction,Green city hospital.Central mall, KR layout,Venkatadri layout,Kalyani Magnum road,",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV Sarakki Sub-Station",
+    "reason": "1st Quarterly maintenance work of 66kV Bays, 66kV PT, 66kV Main BUS,31.5MVA Transformer-1 & 3, 20MVA Transformer-2 and Maintenance of 11kV Switchgears"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "No areas affected",
+    "fromTime": "10:00 Hrs",
+    "toTime": "13:00 Hrs",
+    "feeder": "220/66/kV Keonics Out door GIS stations",
+    "reason": "2th Quarterly  maintenance work of \n220kV Mylasandra to Keonics line\n\n220 Keoncis- Yarandanahalli Line"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "No areas affected",
+    "fromTime": "10:00 Hrs",
+    "toTime": "13:00 Hrs",
+    "feeder": "220/66/kV Keonics Out door GIS stations",
+    "reason": "2th Quarterly  maintenance work of \n 220kV Somanahalli - Keonics Line\n 220kV Keonics - Shobha dreams line"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Electronic City Ph-1, Doddathagur, Bommanahalli, NJR Layout, Chikkthogur, Hongsandra, Konnappana Agrahara.",
+    "fromTime": "10:00 Hrs",
+    "toTime": "16:00 Hrs",
+    "feeder": "66/11kV Electronic City Ph-2 Sec-1 (Velankani) S/s",
+    "reason": "* Attending Hotline Observations of 66kV Bus\n* Quarterly Maintenance of Bus Isolators \n* Quarterly maintenance of 66kV Velankani, Keonics Bay & Transformer Bays"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Brenton Road, Shobha pearl, ICICI bank, Embassy heights, Abharan jewells, Herban life, RMZ, Ashok nagar, Garudamall, Air Force Hosp. ,Dommaluru, Austin Town, Vivek nagar, Trinity Church, Vijaj bank, Hotel Taj,Victoria layout, Museum Road, Albert street, king street, Museum cross road, Lavelle road, St. mark road, Y.G.Palya, KSRP, ITC hotel, Richmond road, Vannerpet, Life Style, M.G.Road, Hayes Road, Convent Road, S.L.Apartment, Richmond Town,",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV Austin Town S/s",
+    "reason": "1. Periodical Maintenance work( 2nd Quarterly) of 66kV lines, 3x20MVA Tr's, Bus GOS, line GOS, 66kV Breakers, 66kV CT's and 66kV PT's.\n2. Periodical Maintenance work of 11kV switchgears\n3. Attending hot line observations"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "S1-Nimhans, KIDWAI, Rajiv Gandhi, Sanjay Gandhi, Indira Gandhi, Jayanagar-1st,2nd,3rd,4th ,9th T block Someshwaranagar\n S2- Wilson Garden\n S16-Accenture IBC Tech park, Bannerghatta road\n W2- RV road, MNK park, Gandhi bazar",
+    "fromTime": "9:00 AM",
+    "toTime": "1:00 PM",
+    "feeder": "220/66/11kV NIMHANS R/s",
+    "reason": "1.66kV Jayadeva line CT replacement work\n2. Quarterly-2 maintenance work of 220kV lines, 150MVA Transformers, 66kV Lines and 20MVA Transformers 66kV PT, 66kV Main BUS and 66kV Isolators and 11kV Bus & 11kV Switchgear.\n3. Attending Hot line observations\nPeriodical 2nd Quarterly maintenance work."
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "IAS colony,KAS colony,NS palya industrial area, Jhanvi enclave,Ananth layout Bilekahalli village,Bilekahalli main road,4th T block Jaynagar,9th block Jayngar,East end ABCD road,BHEL layout,SRK gardens,NAL layout,Tilak nagar,9th block Jayanagar,partial 4th T block,Shanthi park and apartment,Jayadeva hospital,Ranka colony road",
+    "fromTime": "9:00 AM",
+    "toTime": "1:00 PM",
+    "feeder": "66/11kV Jayadeva S/s",
+    "reason": "1. 66kV NIMHANS line CT replacement work \nQuarterely Maintenance work of 66/11kV Transformers, 66kV I/C and O/G lines ,66kV CT's & PT's."
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "K.R.Road, Vijaya enclave, KSP RMU, Serviour street, national college local, IBM, Uttharadhi mutta, Gandhibazar, Shankarapura Police station area, Shankar cancer Hospital.",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV National College GIS",
+    "reason": "1.Connecting Fish plates for new switchgear\n2.Periodical Maintenance work (2nd Quarterly)  2x31.5MVA Tr's and 11kV switchgear"
+  },
+  {
+    "date": "23 Jul 2026",
+    "areas": "Global mall, Sobha Indraprastha Apartment",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV Shoba Indra prastha Station",
+    "reason": "Quarterly Maintenance works of  station equipments at 66/11kV Sobha Indraprastha Substation"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Areas fed from 66/11kV A Station like parts of Vasanthnagar,Crescent Road, Kumara Park West,Okalipuram, Prakashnagar,Kaveri Bhavan area, Vikasa Soudha, Lok Bhavan, Kanteerava Stadium area, M.D. Block, Cubbonpete, Bannappa Park, Mantri mall. Mantri green Apts, Thulasi Thota, Railway Quarters, Majestic Bus stand area, Madhavanagar, Cottonpete, Upparapete police station, Sheshadripuram, Malleshwaram, Gandhinagar, City Market, Avenue road, BVK Iyengar road, RT street,  Chikkapet, K.R. Circle and surrounding areas.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV 'A' Station",
+    "reason": "To carry out quarterly maintenance  work of attending hotspots at 66/11kV A Station"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "City Market, Avenue road, BVK iyengar road, RT street, CT street, Chikkapet, Nagarathpet, SP road, Town hall, JC road, Minerva Circle, KG road, Gandhi nagar, Masidi, Mysore road police quarters, Gori palya, Binny pet, New tharagu pet, Chamarajpet, AM road, Kalasipalya, Victoria Hospital, KIMS, Shankarpuram, Dental college RMU, SJ park RMU",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "66/11 kV Victoria Station",
+    "reason": "Quarterly maintenance work of 66kV Line, Bus and 11kV Bus bar and to attend hot spot in 66kV Transformer 2 isolator at 66/11kV Victoria Station."
+  },
+  {
+    "date": "20 Jul 2026",
+    "areas": "L&T Phase-1,2&3,L&T Tech Park, Spark One Mall, Parvathamma Layout, Telecom Layout, Century, Madhvana Enterprises",
+    "fromTime": "11:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11kV Byatarayanapura",
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance.\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "--",
+    "fromTime": "10:00 AM",
+    "toTime": "6:00 PM",
+    "feeder": "220/66/11kV Manyatha Tech Park GIS Station. (220kV bus Shutdown for condition monitoring work.)",
+    "reason": "1. To carry out Maintenance work of 220kV module condition monitoring work, ( 220kV Incoming line, Outgoing line, Transformer Bays, and 220kV bus 1&2), 11kV bus and breaker maintenance. \n2. To carryout Condition monitoring work of all 66kV Modules. \n3. To carryout CRM Test \n4. To carryout Breaker Timing test. 5. To carryout SF6 Purity test. \n6. For carrying out IR test of all equipments like CT's, PT's, LA's, Transformers, 66kV Breakers, 11kV Breakers and 11kV Bus."
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Vidhana Soudha, Ganesh Temple R.M.U,Miller Road.,Jaymahal, M.K Street., Cunningham Road,Kemp Road,Benson Town,Spencer Road, S.G.Road, R.M.Z. Millenia,B& LC Hospital, Chikkabazar Road, Geneva House, Thimmaiah Road, Tasker town, P.G Halli, Hains Road, Chandraia, Muneshwara nagar, shivajinagar.",
+    "fromTime": "10:00 AM",
+    "toTime": "6:00 PM",
+    "feeder": "66/11kV C station",
+    "reason": "1. Oil leakage arresting of transformer -2\n  2. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. \n  2. To attend Hotspots"
+  },
+  {
+    "date": "21 Jul 2026",
+    "areas": "Annad Nagar, outer ring road , cholanagar, Guddappa reddy layout ,millers road ,nandhi durga layout ,Mei block , Axis Bank JC nagar and jayamahal 1st main road  RT Nagar ,Fun World Benson down  ,fun world ,TV tower , Hebbal, Munareddypalya , Ramanth Nagar  ,Ganaga nagar ,chamudhi nagar , Dinnur  and Dinnur main road ,P&T colony  ,EX service men colony RT nagar 2nd block Nruppa layout ,MLA layout, Ganganagar extension ,RBI colony ,HMT layout ,Pillappa block and vasanthappa block",
+    "fromTime": "11:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "220/66/11kv Hebbal",
+    "reason": "1. To carry out quaterely maintenance work and Attending hot spot of 2*20mva tr and 1*31.5mva Transformers\n2. Carry out the work of replacement of flashed over 66kV ITI-1 Line breaker"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "Maruthi Sevanagar, Jai Bharath nagar, Frazer Town , Cox Town, Benson town, Richards town, Davis Road, Mosque Road, Biyappana Halli, Nagena Palya, Lingaraj Puram, Halsoor, Jeevana halli, R K Road, Coles Road Tanery Road, and ITC, etc..",
+    "fromTime": "11:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV Pottery Road MUSS",
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+  },
+  {
+    "date": "23 Jul 2026",
+    "areas": "Bharathiyacity,Nagenahalli, Bhairathayi bande, area feed by E9 & E13 and  bharathiyacity",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11kV Bharathiyacity",
+    "reason": "To carry out Maintenance work of  Transformer Bays,11kV bus and breaker maintenance."
+  },
+  {
+    "date": "24 Jul 2026",
+    "areas": "Vidyaranyapura,DurgaTemple Vidyaranyapura, KMF,Yelahanka new town, Maruthi Nagar, M.S.Palaya,GKVK,NFBC, Purvankara Block-1,2,3,4, RMZ ,L&T Rain Tree Bouleyard",
+    "fromTime": "11:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11kV Attur Yelahanka sub station",
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. 2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+  },
+  {
+    "date": "27 Jul 2026",
+    "areas": "Yelahanka old Town, Yelahanka Newtown, Yelahanka Industrial Layout, Yelahanka 4th& 5th Phase, chikka bommasandra, Anantha pura, Puttenahalli, Ramagondanahalli, Kempanahalli etc",
+    "fromTime": "11:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "66/11Kv KHB Colony s/s",
+    "reason": "1. To carry out Maintenance work of incoming line, outgoing line, Transformer Bays, 66kV bus Gos,11kV bus and breaker maintenance. \n  2. For attending Hotspot works. \n  3. For carrying out IR test of all equipements like CT's, PT's, LA's, Transformers, 66kV Breakers, 11kV Breakers, Wall entry bushings and 11kV Bus."
+  },
+  {
+    "date": "28 Jul 2026",
+    "areas": "Purvankara apartment, gavigudi, kalkere road, poorna pragnya, maragondanahalli, halehalli, byrathi village, byrathi bande,kanakashree layout, kyalasanahalli",
+    "fromTime": "11:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV PURVANKARA MUSS",
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+  },
+  {
+    "date": "29 Jul 2026",
+    "areas": "Embassy hub,vinayak nagar,Dwaraka nagar,North gate,Airforce BSF,Manipal universcity.",
+    "fromTime": "11:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV KATIGENAHALLI GIS",
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Reliance, Raghavendra layout, Professional clothing,BFW, BrigadeTwin tower, Brigade Deccan heights, Platinumcity appartment",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV Platinumcity",
+    "reason": "66kV Tr2 breaker overhauling work and second quarterly/Half/Yearly maintenance work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "BELEHT,HMT EHT, Gangamma circle, Ramachandrapura,BEL colony, HMT industries, Prestige appartment, Dodda bommasandra,MTRDC,Mathikere Flyover",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "66/11KV Gokula",
+    "reason": "Second quarter/Half year/yearly maintenance work , attending of Hot spot"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Grujalkshmi Appartment, Peenya 3rd stage,\n  Dynamatic, Narayanapura, Rajgopal nagar, \n Vidhana Soudha, ISRO, GoraguntePalya\n  (Related Feeders F4,11,16,18,19,20,21,&31)",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "220/66/11kV \n SRS Peenya",
+    "reason": "LC request for 31.5MAV Tr-4 ,Bank-4 and respective feeders. WTI Meter replacement, for carry out 2nd Quaterly/Half yearly and general maintenace and attend the HOT Spot in Bank-4. (Related Feeders F4,11,16,18,19,20,21,&31)"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Peenya 4th cross, \n  TVS cross, yeshwanthpur,Vaishnavi,\n  f14, F8,F10,F13,F6,F26,F25",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "220/66/11kV \n SRS Peenya",
+    "reason": "LC request for 31.5MAV Tr-2 ,Bank-2 and \n  respective feeders. 66kV CTs replacement work ,\n  2nd Quaterly/Half yearly and general maintenace and attend the HOT Spot maintenance works for \n  attending maintenance\n (Related Feedar F14,8,10,13,6,26,25,29)"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Fdr 2:Raghavendra Layout   \t\nFdr 4: Abbigere Ind. Area    \t\nFdr 5: Singapura                    \t\nFdr 7: Abbigere village    \t\nFdr 13: Simhadri Layout    \t\nFdr 6: ICTS Shivakote          \t\nFdr 9: Kuvempunagara       \t\nFdr 10:Kanshi Ramanagara \t\nFdr 11: Varadarajanagara  \t\nFdr 12:MEDI AGRAHARA",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kv Abbigere",
+    "reason": "2th quarterly maintennace work"
+  },
+  {
+    "date": "20 Jul 2026",
+    "areas": "Grujalkshmi Appartment, Ramesh road, Dasarahalli, shettihalli, garrision, ayyapa temple, welcast factory, peenya 1st stage, wipro, ksrtc",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV \n MUSS Welcast",
+    "reason": "LC request for quarterly maintenance work"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "Siddarth nagar, bmtc ev charging, shobh ruby, nelagedaranahalli, abhimani nagar, BELMAR layout, andarahalli, nandagokula, tigalarapalya, karihobanahalli, reema conductors, KAP Ltd,nagasandra, tippenahalli, kempaiah garden",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV \n MUSS Nelagedaranahalli",
+    "reason": "LC request for quarterly maintenance work"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Nil",
+    "fromTime": "10:00 AM",
+    "toTime": "1:00 PM",
+    "feeder": "31.5MVA power transformer -01 of 220/66/11kV ITI GIS station",
+    "reason": "For carrying quarterly maintenance work."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Nil",
+    "fromTime": "1:00 PM",
+    "toTime": "5:00 PM",
+    "feeder": "31.5MVA power transformer -02 of 220/66/11kV ITI GIS station",
+    "reason": "For carrying quarterly maintenance work."
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Nil",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "31.5MVA power transformer -03 of 220/66/11kV ITI GIS station",
+    "reason": "For carrying quarterly maintenance work."
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F8-GM palya, F11-vignayan nagar, F13- Ayappanagar",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Bagmane Tech Muss",
+    "reason": "Quarterly maintenance of 31.5MVA T-1&2 & I/c Bay,  Bus GOS, 11KV Switchgears  maintenance."
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Load change over can be done. However, some portions of Indiranagara, J.B nagar, dommlur, sanjayanagara, bheema nagara areas load will be affected.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11KV HAL R/S",
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Load change over can be done. However, some portions of malleshpalya, ADA, LIC colony, doddanekundi areas load will be affected.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11KV HAL R/S",
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-2 & related feeders and painting of transformer"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Nil",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "66kV Adu-Line 1 & Adu-Line 2, 2x20MVA power transformers at 66/11kV Leelaventure station",
+    "reason": "Station 1st quarterly maintenance for the FY 26-27,CMR Test on all 66kV CB  & to Attend hotspot, 66kV Bus maintemance and 11kV switchgear maintenance."
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Brenton Road, Shobha pearl, ICICI bank, Embassy heights, Abharan jewells, Herban life, RMZ, Ashok nagar, Garudamall, Air Force Hosp. ,Dommaluru, Austin Town, Vivek nagar, Trinity Church, Vijaj bank, Hotel Taj,Victoria layout, Museum Road, Albert street, king street, Museum cross road, Lavelle road, St. mark road, Y.G.Palya, KSRP, ITC hotel, Richmond road, Vannerpet, Life Style, M.G.Road, Hayes Road, Convent Road, S.L.Apartment, Richmond Town, Najappa circle, Stain garden, Richmond Park, Longford Road, Braight street, Foodworld road, Johnson market, BWSSB water supply, longford road, Ashoknagar, Shopper stop, Markam road, brigade road, commerce college, , Richmond circle, Vittal malya road, Siddaiah road, wood street, castle strreet, Neelasandra, Anepalya, BMRCL.",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "66/11kV Austin Town S/s",
+    "reason": "1. Periodical Maintenance work( 2nd Quarterly) of 66kV lines, 3x20MVA Tr's, Bus GOS, line GOS, 66kV Breakers, 66kV CT's and 66kV PT's.\n2. Periodical Maintenance work of 11kV switchgears\n3. Attending hot line observations"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "1. 220kV R/s Gowribidanur and connected stations  (220kV RVNL Someshwara EHT, AFTL IPP, 66kV ACC EHT)   \n2. 6611kV S/s Thondebhavi     \n3. 66/11kV S/s Manchenahalli  \n4. 66/11kV S/s Gundlukottur  \n5. 66/11kV S/s Gudibande    \n6. 66/11kV S/s D palya  \n7. 66/11kV S/s Vidhurashwatha(Greenergy solar & AFTL IPP)     \n8. 66/11kV S/s Ramapura  \n9. 66/11kV S/s Alipura     \n10. 66/11kV S/s Kudumulakunte(A1 steel EHT)\n11.66/11kV S/s Vatadahosahalli. \n12. 66/11kV Kodigenahalli\n13. 66/11kV S/s Theriyur",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11kV R/s Gowribidanur",
+    "reason": "For 1st Quarterly Maintenance"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "1. 220Kv R/s Mittemari & connected stations  :-\n2.66/11kV S/s Somanathapura\n3.66/11kV S/s Peresandra\n4.66/11kV S/s Somenahalli (AFTL IPP)\n5.66/11kV S/s Sadali\n6. 66/11kV S/s Julpalya\n7.66/11kV S/s Chelur( 3 Nos of IPPs)\n8.66/11kV S/s Chakavelu\n9.66/11kV S/s Pathapalya\n10.66/11kV S/s Thimmampalli\n11.66/11kV S/s Bagepalli           \n12. 66/11kV S/s Gulur \n13. 66/11kV S/s Mandikal",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11kV R/s Mittemari",
+    "reason": "For 1st Quarterly Maintenance"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "Kunuru, Harobele, Hukunda, Kodihalli, Bijjahalli & Hunasanahalli Limits",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "Line : 66kV Kanakapura-Kunuru Line\nSubstations: 66/11kV Kunuru, 66/11kV Harobele, 66/11kV Hukunda, 66/11kV Kodihalli, 66/11kV Bijjahalli, 66/11kV Hunasanahalli",
+    "reason": "2nd Quarterly Maintenance"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "KIADB-Harohalli Industrial Area Phase-1 & 2, & Sanjeevayyanadoddi Limits",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "Line : 66kV Somanahalli - Sanjeevayyanadoddi \nLine : 66kV Somanahalli- Orchid-2 - KIADB Harohalli Line\nSubstations: 66/11kV Sanjeevayyanadoddi \nEHT Consumer : \n1. Orchid Laminates Pvt Limited-1 & 2\n2. AO Smith\n3. Bhoruka Gas\n4. Saint Gobin\n5. Stove Kraft",
+    "reason": "2nd Quarterly Maintenance"
+  },
+  {
+    "date": "28 Jul 2026",
+    "areas": "Chikkenahalli & Allimaranahalli Limits",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "Line : 66kV Kanakapura - Chikkenahalli  Line\nSubstations: 66/11kV Chikkenahalli & 66/11kV Allimaranahalli",
+    "reason": "2nd Quarterly Maintenance"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Chikkenahalli & Allimaranahalli Limits",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "Substations: 66/11kV Kanakapura",
+    "reason": "2nd Quarterly Maintenance"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Ranganadoddi Limits,  KIAD Industrial Area, Harohalli Town",
+    "fromTime": "10:00 AM",
+    "toTime": "4:30 PM",
+    "feeder": "Line: 66kV KIADB Harohalli - Sanjeevayyanadoddi \nSubstations: Ranganadoddi 66/11kV",
+    "reason": "2nd Quarterly Maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Dabaspete, Lakkuru, Devarahosahalli,Halenijagal, Honnenahalli, Veerasagara, Kamalapura, Beeragondanahalli, Kengal Kempohalli, Hosahalli, Kerekathiganuru, Melekathiganuru, lakshmipura, Narasipura, Agakuppe,",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11kV Dabaspete",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "BARADI PANCHAYATH LIMITSPEPSI FACTORY AND SURROUNDING AREASKEMWELL  RISHI FORM, PARSHWANATH FILAMENTACE DESIGNERS FACTORYKIRLOSKAR FACORY AND SURROUNDING AREASHASIRUVALLY AND SURROUNDING AREASBARDI, MANDIGERE HASARUVALLI, KODIPALYA AND SURROUNDINGSGEDDALAHALLI FARM HOUSES AND SURROUNDINGS HASIRUVALLY AND SURROUNDING AREAS",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV T.Begur",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "66kV Doddabele railways and All 11kV Feeders catering from 66/11kV Thyamagondlyu  substation.",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV Thyamagondlu",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Shivagange, Kambalu, Machanahalli, Gottigere, Narayanapura, Shivanandagara, Koothghatta, Qavverahalli, Bargenehalli, Yennehole, Veerasagara, Honnenahalli Thandya, Thimmasandra, Honnarayanahalli, Govindpura, Halkuru, Mahimapura, Lakkasandra, Byadarahalli, Pallarahalli,",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV Averahalli",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "SIDEDAHALLY, THAMMENAHALLY, THOTADAGUDAHALLY AND SURROUNDING AREAS GANGONDANAHALLY, LAKSHMIPURA AND SURROUNDING AREAS THOTADAGUDDAHALLY AND SURRPUDING AREAS NELAMANGALA TOWN",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "66/11kV Alur",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "31 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Kudur substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Kudur",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "31 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Srigiripura substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Srigiripura",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Mathikere substation",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11KV Mathikere(Yeligehalli) substation",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Dodderi substation",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11KV Dodderi substation",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Chandrappa circle substation",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11KV Chandrappa circle",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Magadi substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Magadi substation",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "All 66KV downstream Substations and 11KV feeders feedings from 220kv R/s Magadi",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11KV Tobinakere (Magadi) R/s",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv TG Halli substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV T G Halli",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Gudemaranahalli substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Gudemaranahalli",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Kitthanhalli, Ravuthanahalli, Jaddi Siddanahalli, Devanayakanapalya, Shivanapura, BDA villa, Sondekoppa, Gayathrinagara, Kannuvanahalli, Banasaawadi, Thandya, Soladevanahalli, Chikka Thandya, Dodda Thandya, Avverahalli Manchenahalli, Mallasandra etc",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Tavarekere",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Kodigehalli substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV kodigehalli",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "All Feeders feeding from 66/11KV VG doddi Substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV VG Doddi",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Hosapalya circle substation",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV Hosapalya circle",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "All Feeders feeding from 66/11kv Agalkote substation",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11KV Agalkote",
+    "reason": "To carry out 2nd Quartely maintenace work"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "Ramanagara Town, Hunsenahalli Village, Bilagumba Village, Janapadaloka, Basavanapura, K.P.Doddi, Vaderahalli Villages",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66KV Ramanagara",
+    "reason": "To carry out 2nd quarterly maintenance works"
+  },
+  {
+    "date": "24 Jul 2026",
+    "areas": "Harisandra, Thimmasandra, Ankanahalli, Madarasabaradoddi, Lakksandra, Padarahalli,Rampura, Lakshmipura, Sugganahalli, Gungarahalli.",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66kV Melehalli",
+    "reason": "To carry out 2nd quarterly maintenance works"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "WONDERALLA, HEJJALLA, BANNIKUPPE, GOMTHI, KADUMANE, MANCHANAYAKANAHALLI, HOSSADODDI, AVAREGERE, KHB HAMPAPURA",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66kV Hejjala",
+    "reason": "To carry out 2nd quarterly maintenance works"
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Shyanamangala, Gollarapalya, Karenahalli, Banandooru, Ittamdu, Abbanakuppe, Bidadi Industrial Area sector 1 & 2, Bidadi Town areas, Medanahalli, Byramangala, Kenchugaranahalli, Chowkahalli, Hosuru and sourrounding areas.",
+    "fromTime": "10:00 AM",
+    "toTime": "6:00 PM",
+    "feeder": "220kV Bidadi\n(2X31.5MVA+1X20MVA and related 11kV Feeders)",
+    "reason": "To carry out 2nd quarterly maintenance works"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "B.D.Colony, Yarabnagara, Senapathi White Lay, Kothipura",
+    "fromTime": "10:00 AM",
+    "toTime": "2:00 PM",
+    "feeder": "220kV Kothipura\n(12.5MVA Power Transformer and Related 11kV feeders)",
+    "reason": "To carry out 2nd quarterly maintenance works"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Dommasandra, Attibele, surrounding areas of Sarjapura,",
+    "fromTime": "9:00 AM",
+    "toTime": "16:.00",
+    "feeder": "220/66/11KV R/s Sarjapura",
+    "reason": "1. Quarterly mainteance works on all power Transformers.\n2. Attending hotline observations.\n3.General maintanance of Power transfomers and other equipments.\n4. maintenance of 11KV switchgears\n5. alignment of 220KV Bus 1 GOS of 100MVA Tr-1\n6. Fixing of WTI meter OTI instrument meters to 100MVA Tr-1"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Attibele, Attibele Industrial area, Yaduvinahalli, Maisandra and Attibele surrounding area",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "66/11 kV S/S Attibele",
+    "reason": "For carrying out 1st  quarterly maintenance work in 66/11 kV Attibele sattion."
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Bommasandra",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "Bommasandra I/A",
+    "reason": "Quarterly Maintenance works"
+  },
+  {
+    "date": "18 Jul 2026",
+    "areas": "Surrounding areas of Dommasandra",
+    "fromTime": "9:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV S/s Dommasandra",
+    "reason": "1.  To carryout quarterly maintenance works of all 66KV Bays  and Equipments at Dommasandra                                                           2. To carryout maintenance works of 11KV switchgears                                                             3. 66kV GOS overhauling"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "Maranayakanahalli, Rachamana halli, Gudnahalli, Gandhinagar, Halehalli, Kodlipura Bhakthipura and Samanduru sarounding area.",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "66/11 kV Samanduru",
+    "reason": "for Periodical maintenance work."
+  },
+  {
+    "date": "25 Jul 2026",
+    "areas": "Chandapura, Hale Chandapura, Hennagara, Kerthi Layout,Vakil Layout, Muthanalluru and Surrounidng area feeding fro m Chandaura Station, Mahendra Homes,",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "66/11kVChandapura",
+    "reason": "For Periodical Maintenance work"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Suryanagar and sorrounding area",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "66/11kV Suryanagar",
+    "reason": "For Periodical Maintenance work"
+  },
+  {
+    "date": "22 Jul 2026",
+    "areas": "66kV Attibele Line, 66kV Samandur line, Areas feeding from Anekal S/S such as Anekal Town and its surrounding rural areas",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "66/11 kV S/S Anekal",
+    "reason": "For station 1st quarterly maintenance works,  and other scheduled works"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "Yarandanahalli and surrounding area",
+    "fromTime": "10:00 AM",
+    "toTime": "4:00 PM",
+    "feeder": "220/66/11KV R/s Yarandanahalli",
+    "reason": "For station 1st quarterly maintenance works,  and other scheduled works"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Areas feeding from Bagganadoddi S/S such as Indlawadi, Bagganadoddi, Kadujakkanahalli and  its surrounding areas",
+    "fromTime": "10:00 AM",
+    "toTime": "3:00 PM",
+    "feeder": "66/11 kV S/S Bagganadoddi",
+    "reason": "For station 1st quarterly maintenance works,  and other scheduled works"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Ankasandra panchyat limits\nF1- Gangayanapalya,F2-Kuntaramanahalli,F3-Nirantara Jyothi,F4-Idle,F5-Kallugudi,F6-Ankasandra,F7-Ranganahally,F8- Byadarahally\nF9- Devarahally,F10- Sarigepalya,F11- Yarabally",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kv S/S Ankasandra",
+    "reason": "Quarterly Maintenance"
+  },
+  {
+    "date": "24 Jul 2026",
+    "areas": "F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F12, F13",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "110/11kV Somalapura",
+    "reason": "Quarterly Maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Bank-I and II &F6-HANUMANTHANAHALLY\n F7- BHIMANAKUNTE F8-HOSADURGA  F9- DODDAHALLY  F10-S.N. HALLY F11-HOSADURGA NJY\n F1-THIPAGANAHALLY F2- Y N HOSAKOTE\n F3- G T HALLY  F4- JALOD  F5- STATION AUXLARY\n F12- BHIMANAKUNTE NJY F-17 H V Stone crusher",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV MUSS Y N Hosakote",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F-1 Hussenpura F-2 Kodamodagu  F-3 Water Supply\n F-4 S.R Pura  INTEROCEAN 3MW  PGP 1MW\n PVP 1MW  F-5 Hosahalli  F-6 B.K Hally  F-7 THIRUMANI  F-9 Bhupur  F-10 Valluru\n F-11 Ryapte F-12 kodamodugu",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV MUSS Nagalamadike",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "66KV Lines MIDEGESHI   PAVAGADA L-1 PAVAGADA L-2 NAGALAMADIKE  Y N HOSAKOTE  SHYLAPURA\n NAGALAMADIKE -1  NAGALAMADIKE -2 \n Downstream stations:\n 1.Shylapura 66KV  2.Y N Hosakote 66KV\n 3.Nagalamadike 66KV  4.Lingadahalli 66KV\n 5. Mangalawada 66KV  6.Pavadgada 66kv \n 7.Venkatapura 66Kv  8.Theriyur 66KV\n 9.12.5 MVA Tr -1 & 2",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66/11 KV MUSS Pavagada",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Bank-I and II &  F1-K.T. HALLY\n F2- DEVALAKERE F4- VADANAKAL\n F5- C. H. PALYA F6-KOTAGUDDA\n F7- MARIDASANAHALLY F8- BUDIBETTA\n F9-BELLIBATLU F10- B.HOSAHALLY\n F11- YETTINAHALLY F12- GUJJANADU",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV MUSS Shylapura",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F-4 Bommathanahalli F-5 Neelammanahalli\n F-6 Chikkanayakanahalli  F-7 Palavalli\n F-8 Byrapura  F-9 Byadnur\n F-10 Buddareddyhalli F-11 Ponnasamudra\n F-12 KHB Colony F-1 Pavagada\n F-2 C.K.Pura F-3 Gangasagara",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 KV MUSS Pavagada",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-k k hally\n F2-Harasikere\n F4 Manglawada\n F5-Marur\n F6-Kirarlahalli\n F7-Kannamadi\n F8-Hanumasagara",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 KV MUSS Mangalwada",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "BANK-I \n F1-RANGASAMUDRA\n F2- S R PALYA \n F3- SASALAKUNTE \n F4- MALLAMMANAHALLY\n F9- GOVARDANAGIRI NJY \n F10-NIDAGAL NJY\n F5-NIDAGAL \n F7- MUDDAGANAHALLI\n F8- LINGADAHALLI \n F11- KENCHAMMANAHALLI",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 kV MUSS Lingadahalli",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Bank-I and related feedersF-1 Krishnapura\n F-2 Kanivenahalli\n F-3 Dommathamari\n F-4 Gummagatta\n F-5 Madhurayapalya\n F-6 Gowdetti\n F-7 Virupasamudra",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 KV MUSS Venkatapura",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Bank-I and related feedersF02-DAVADABETTA\n F04- KRISHNAGIRI \n F06-KANNAMEDI\n F07-KILARLAHALLI \n F08- KURUBARA PALYA",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11 KV MUSS Kilarlahalli",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Bank - 1 \n F-1 Chikkabanagere.\n F-2 Hulikunte.\n F-3 Kotti.\n F-4 Karehalli.\n F-10 Lakkanahalli.\n F-11 Gandihalli.[NJF]\n F-12 Dwaranakunte\n F-13 Harogere\n F-15 Naragondanahalli(NJY)\n F-16 Beranahalli\n F-17 Ram Tharanga Solution PVT LTD 6.5MW \n Bank - 2 \n F-5 V.B.Halli.\n F-6 Devagiri[NJF]\n F-7 Baraguru.\n F-8 Agrahara.\n F-9 K.R.Halli.\n F-14 solar",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11KV MUSS CB Gere",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "F1 Siddapura \nF2 Singonahalli \nF3 Industrial \nF4 Kad shettihalli \nF5 HPCL Solar Import \nF6 RCCL Solar Import",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV Thippuru",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1 Siddalingeshwara\nF2 Hattilakkamma\nF3 NJY-2 Doddamadure\nF4 Manavalli\nF9 M Hurliborsandra\nF5 Kachenahalli\nF6 Nagasandra\nF7 CT Palya\nF8 Tippur\nF10 NJY-1 Hemavathi\nF11 Chikkamadhure",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV Yedeyuru",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Byadagere NJY \nF2-Yadavani NJY \nF3-Ungra \nF4-Arjunahalli \nF5-Pallerayanahalli \nF6-Bettahalli \nF7-Benavara \nF8-Hanchipura \nF9-Kumbarpalya",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV Yadavani",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "Kunigal, Anchepalya-2, Huliyurdurga, B.G.Nagar, T.G.Hally, Anchepalya-1, Amruthur, Vijayaa Steels, Kempanahally, Hebbur, CNNL Gottikere",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/66kV R/S ANCHEPALYA",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Shettibeedu, F2-Bommadigere, F3-M S Palya, F4-Hosur, F5-B T Palya NJY, F6-Jiddigere, F7-D.Kannasandra, F8-Hulivana Urban, F9-Kantanahalli",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV JIDDIGERE",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Boralinganapalya, F2-Kenkere, F3-Kunigal o&m-2, F4-Rayappa Marga(Urban), F5-WaterSupply TMC, F6-Kalasipalya, F13-Bilidevalaya NJY, F7-Jhanagere, F8-Bhaktharahalli, F9-Heruru, F10-Kunigal Maddur Road o&m-1, F11-Bidanegere (urban)",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV KUNIGAL",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "31 Jul 2026",
+    "areas": "F1-Kallupalya\nF2-Teredakuppe\nF3-Gangammannagudde\nF4-Kamanahally\nF5-Bannimarada Katte.NJY\nF6-Bhaktharahalli NJY\nF7-Gidadhapalya\nF8-Chikkamalavadi\nF9-Kodihalli palya\nF10-Vanigere IP\nF11.Bagenahalli NJY",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV BHAKTHARAHALI",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Vanasagere, F2-Sirivara IP, F3-C S Pura, F7-Nagavalli, F10-Sirivara NJY, F11-R M Halli, F4-D G Halli NJY, F5-Thondagere, F6-Chikkannaswamy, F8- Begur, F9-D G Halli IP, F12-Bommanahalli IP, F13-Begur NJY, F14-Kanakuppe, F15-Thondagere NJY, F16-Hebbur, F17-Rayapura",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV HEBBURU",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "23 Jul 2026",
+    "areas": "F1 F1(A)Bidarakatte F2 F2(A)Siddappanapalya \nF2(B)Menasandra  F3 F3(A)Dommanakuppe\nF3(B) Pannasandra IP F4 Mallappanahalli NJY\nF10 Sopanahalli IP F11 Godrej\nF12 Thimmasandra NJY F5 Karadagere\nF6 F6(A)Ariyur F6(B) Mahimanapalya\nF7 Risala F8 Lakkenahalli IP\nF9 Gangonahalli NJY F13 Nagavalli\nF14 Tumkur University",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV THIMMASANDRA",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "30 Jul 2026",
+    "areas": "F1 F1(A)Odeyarapura\nF1(B)Odeyarapura New\nF2 Honnenahalli\nF3 Niduvalalu\nF4 Dasarahalli NJY\nBank -II \nF5 Huliyapura\nF6 Honasagere\nF7 Karenahalli\nF8 Kodipalya",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV HONNENAHALLI",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Kudur Express, F2-Kudur Rural, F3-Yeliyur, F4-Begur, F5-Station Aux, F7-Somadevarapalya, F8-Industrial, F9-Kempasagara, F10-Halavagilu, F11-Rasthepalya, F12- Kapanipalya, F13 -Hosalli, F14-Shettigere, F15-220kV Aux, F16-Universal Product, F17-Ecovinol, F18-Reitzel India, F19Helthium Medtech, F20-Jhonson, F21--Weiner Berger",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV ANCHEPALYA",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "26 Jul 2026",
+    "areas": "F1-Kuppe, F2-Halagere, F3-Korati IP, F4-K.H Halli Town",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV SANABAGHATTA",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Magadi Road, F2-Yadavani, F3-Madappanahalli, F4-Huliyurdurga, F5-Ujjani, F6-Nidasale, F7-Bandihalli NJY, F8-Kodavathi, F9-Hosahalli, F10-Rajendrapura NJY, F11-Halevooru NJY, F12-Sugganahalli IP",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV HULIYURUDURGA",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Doddamavathuru, F2-Santhemavathur(New), F3-Modur, F4-Borasandra, F10-S.Kempanahally NJY, F5-T.Hosahalli NJY, F6-Tharikere, F7-Kithnamangala, F8-Gujjenahalli, F9-Hittalahalli",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV SANTHEMAVATTUR",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "19 Jul 2026",
+    "areas": "F1-Neelasandra, F2-Akkimarapaly, F3-Tavarekere, F4-Hangarahalli, F5-Chowdanakuppe Town, F6-T Bommanahalli, F7-R Byadartahalli NJY, F8-M.H.Palya",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "66/11kV CHOWDANAKUPPE",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "23 Jul 2026",
+    "areas": "F2 Venkatapura, F3 Haridasanahalli, F4 N Manchenahalli, F5 NJY Neeragunda, F6 Bugudanahalli",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "110/ 11kv, HARIDASANAHALLI",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "21 Jul 2026",
+    "areas": "F1 Siddapura, F2 Adavanahalli,F3 Girenahalli, F4 Dunda, F6 Haridasanahalli, F8 Gundikaval, F9 Banasandra, F11 Ammasndra NJY, F12 Guddadaiahna palya, F13 Honnenahalli, F14 Heggere, F15 Ballekatte, F16 NJY D N Shivara, F17 NJY Appasandra, F18 NJY Marasandra, F19 Ranganahatti",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "110/ 11kv, Ammasandra",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "27 Jul 2026",
+    "areas": "F1-BYALADAHALLI,F2-THUMBEPURA,F3-MUTTUGADAHALLI,F4-HEDDANAKATTE,,F5-VADAVANAGATTA,F6-BOMMENAHALLI,F7-MALLIGERE,F8-ANADAGU,F9-MANICHENDUR,F10-ITTIGEHALLI NJY,F11-YARADAHALLIF11-YARADAHALLI",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "110/11 KV Mayasandra",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "29 Jul 2026",
+    "areas": "F1 - Mangikuppe,F2 - Thalakere,F3 -Kurubarahalli,F4 - Donkihalli,F5- DoddagoragattaF6 - D.Kalkere (NJY)",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "110/11 KV Thalakere",
+    "reason": "Quaterly maintenance"
+  },
+  {
+    "date": "21 Jul 2026",
+    "areas": "110kV Tiptur, Turuvekere, Mayasandra, Ammasandra,Chikkanayakanahalli, Handanakere, Thimmanahalli line, 20MVA Transformer-1, 10MVA Transformer-2",
+    "fromTime": "10:00 AM",
+    "toTime": "5:00 PM",
+    "feeder": "220/110/11 kV R/s KB Cross",
+    "reason": "Quaterly maintenance"
+  }
+]
