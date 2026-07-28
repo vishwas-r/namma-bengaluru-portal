@@ -1,68 +1,320 @@
 import { renderBreadcrumb } from './comingSoonPage.js';
+import { renderSocialFeed } from './bwssbPage.js';
 import tariffData from '../data/bescom/tariffs.json';
 import noticesData from '../data/bescom/notices.json';
 import complaintsData from '../data/bescom/complaints.json';
 import servicesData from '../data/bescom/services.json';
+import bescomPlannedOutages from '../data/bescom/planned_outages.json';
 import { calcDomesticElectricityBill, calcCommercialElectricityBill } from '../services/bescomCalculator.js';
 import { queryGemini, getKeyPool } from '../services/keyPool.js';
-import { renderOutageWidget } from '../components/outageWidget.js';
+import { renderOutageWidget, renderPlannedOutagesWidget, renderCrowdReportsWidget } from '../components/outageWidget.js';
+import { getOutageReports } from '../services/outageStore.js';
 import CanvasJSModule from '@canvasjs/charts';
 const CanvasJS = CanvasJSModule.CanvasJS || CanvasJSModule.default || CanvasJSModule;
 
 export function renderBESCOMPage(dept, state, lang) {
   const tabs = lang.tabs;
+  const tabTitles = {
+    overview: 'Overview',
+    calculator: 'Bill Calculator',
+    tariff: 'Tariff & Rates',
+    'planned-outages': 'Planned Outages',
+    'crowd-reports': 'Crowd Reports',
+    services: 'All Services',
+    complaint: 'Complaint Guide',
+    escalation: 'Escalation Matrix',
+    notices: 'Regulations & Policies'
+  };
+  const activeTabName = tabTitles[state.activeTab] || 'Overview';
+
   return `
-  <div class="nb-dept-hero" style="--dept-hero-glow:var(--nb-dept-glow, rgba(var(--nb-dept-rgb), 0.1)); background:var(--nb-dept-gradient, var(--nb-dept-primary));">
-    <div class="container nb-dept-hero-content text-start">
-      ${renderBreadcrumb(dept)}
-      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
-        <div class="nb-dept-hero-icon mb-0" style="background:var(--nb-glass-bg); color:var(--nb-dept-primary); box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-          <i class="bi ${dept.icon}"></i>
+  <div class="nb-dept-hero nb-dept-hero-bescom">
+    <div class="container nb-dept-hero-content text-start position-relative z-1">
+      <div class="mb-2">
+        <a href="#/" class="text-white-50 text-decoration-none" style="font-size:0.8rem;"><i class="bi bi-house me-1"></i>Home</a>
+        <span class="text-white-50 mx-2">/</span>
+        <span class="text-white fw-medium" style="font-size:0.8rem;">${dept.name}</span>
+      </div>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3 mt-1">
+        <div class="nb-dept-hero-icon mb-0 d-flex align-items-center justify-content-center bg-white shadow-sm" style="width:64px; height:64px; border-radius:12px; color:var(--nb-dept-primary);">
+          <i class="bi ${dept.icon}" style="font-size:2.2rem;"></i>
         </div>
         <div>
-          <h1 class="fw-bold mb-0" style="font-size:1.85rem; letter-spacing:-0.02em;">${dept.fullName}</h1>
-          <p class="text-secondary mb-0 mt-1" style="font-size:0.9rem;">${dept.description}</p>
+          <div class="d-flex align-items-center gap-2">
+            <h1 class="fw-bold text-white mb-0" style="font-size:2rem; letter-spacing:-0.02em;">${dept.fullName}</h1>
+            <i class="bi bi-patch-check-fill text-primary fs-4" title="Verified Official Source"></i>
+          </div>
+          <p class="text-white-50 mb-0 mt-1" style="font-size:0.95rem;">Official source for electricity tariff, outages, and services in Bengaluru.</p>
         </div>
       </div>
-      <div class="d-flex align-items-center gap-3 flex-wrap mt-3">
-        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-success-subtle text-success border border-success-subtle fw-semibold" style="font-size:0.78rem;">
-          <i class="bi bi-robot text-success"></i>
-          <span class="nb-pulse bg-success"></span>
-          <span>${lang.sync}</span>
-        </div>
-        <a href="tel:${dept.helpline}" class="nb-btn-official"><i class="bi bi-telephone"></i> Helpline: ${dept.helpline}</a>
-        <a href="https://bescom.co.in" target="_blank" rel="noopener" class="nb-btn-official"><i class="bi bi-globe"></i> bescom.co.in Portal</a>
-        <a href="https://bescom.karnataka.gov.in/319/planned-outages/en" target="_blank" rel="noopener" class="nb-btn-official"><i class="bi bi-calendar-event text-warning me-1"></i>Planned Outages Schedule</a>
-        <a href="https://bescom.co.in" target="_blank" rel="noopener" class="nb-btn-official"><i class="bi bi-file-earmark-check"></i> e-Katha Name Change</a>
+      <div class="d-flex align-items-center gap-2 flex-wrap mt-4">
+        <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary shadow-sm rounded-pill px-3 py-2 fw-medium d-inline-flex d-lg-none align-items-center gap-2" style="font-size:0.8rem;" title="Toggle Sidebar Navigation">
+          <i class="bi bi-list fs-5"></i> <span>${dept.name} Menu</span>
+        </button>
+        <a href="https://bescom.co.in" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
+          <i class="bi bi-globe me-1"></i> Official Website
+        </a>
+        <a href="tel:1912" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
+          <i class="bi bi-telephone me-1 text-success"></i> Customer Care (1912)
+        </a>
+        <a href="https://twitter.com/NammaBESCOM" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+        <a href="#" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+          <i class="bi bi-facebook" style="color:#1877F2;"></i>
+        </a>
+        <a href="#" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+          <i class="bi bi-youtube" style="color:#FF0000;"></i>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Tab Content -->
-  <div class="container py-4">
-    <!-- Tab Navigation -->
-    <div class="nb-tab-nav rounded-pill p-2 gap-2 mb-4" role="tablist">
-      ${Object.entries(tabs).map(([id, t]) => `
-        <button class="nb-tab-btn rounded-pill ${state.activeTab === id ? 'is-active' : ''}"
-          onclick="window.__tab('${id}')" role="tab" aria-selected="${state.activeTab === id}">
-          <i class="bi ${t.icon}"></i>${t.label}
-        </button>`).join('')}
+  <!-- Sticky Mobile Department Bar (Visible on Mobile/Tablet only) -->
+  <div class="d-lg-none bg-body border-bottom py-2 px-3 shadow-2xs sticky-top" style="top: 56px; z-index: 1010;">
+    <div class="d-flex align-items-center justify-content-between gap-2">
+      <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary fw-semibold rounded-pill px-3 py-1.5 d-inline-flex align-items-center gap-2" style="font-size:0.82rem;">
+        <i class="bi bi-list fs-5"></i>
+        <span>${dept.name} Menu</span>
+      </button>
+      <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5" style="font-size:0.75rem;">
+        <i class="bi bi-folder2-open me-1"></i>${activeTabName}
+      </span>
     </div>
-    <div id="tabContent">${renderTab(state, lang)}</div>
+  </div>
+
+  <!-- Department Main Dashboard Layout -->
+  <div class="container py-4">
+    <div class="row g-4">
+      <main class="col-12">
+        <div id="tabContent">${renderTab(state, lang, dept)}</div>
+      </main>
+    </div>
   </div>`;
 }
 
-export function renderTab(state, lang) {
+export function renderTab(state, lang, dept) {
   switch (state.activeTab) {
+    case 'overview': return renderOverview(state, lang, dept);
     case 'calculator': return renderCalc(state);
     case 'tariff': return renderTariff();
     case 'services': return renderServices(state);
-    case 'outages': return renderOutagesTab('bescom');
+    case 'outages':
+    case 'planned-outages':
+      return renderPlannedOutagesWidget('bescom');
+    case 'crowd-reports':
+      return renderCrowdReportsWidget('bescom');
     case 'notices': return renderNotices(state);
+    case 'social': return renderSocialFeed('bescom');
     case 'complaint': return renderComplaint(state);
     case 'ai': return renderAI(state);
-    default: return renderCalc(state);
+    default: return renderOverview(state, lang, dept);
   }
+}
+
+export function renderOverview(state, lang, dept) {
+  const firstSlab = tariffData?.domestic?.slabs?.[0] || { rate: 4.75, from: 0, to: 50, label: 'Slab 1' };
+  const bescomReports = getOutageReports('bescom') || [];
+  const plannedCount = Array.isArray(bescomPlannedOutages) ? bescomPlannedOutages.length : 0;
+  const crowdCount = bescomReports.length;
+
+  return `
+  <div class="d-flex flex-column gap-4">
+    <!-- Top Row: Quick Stats Cards (4 Columns) -->
+    <div class="row g-3">
+      <!-- Calculator Card -->
+      <div class="col-lg-3 col-md-6">
+        <div class="nb-card h-100 p-3 text-start hover-shadow-sm border border-primary-subtle bg-primary-subtle bg-opacity-10" style="cursor:pointer;" onclick="window.__tab('calculator')">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="rounded-circle bg-white shadow-sm d-flex align-items-center justify-content-center text-primary" style="width:36px; height:36px;"><i class="bi bi-calculator"></i></div>
+            <div class="fw-bold" style="font-size:0.85rem;">Bill Calculator</div>
+          </div>
+          <p class="text-secondary mb-3 mt-1" style="font-size:0.75rem; line-height:1.4;">Calculate your estimated electricity bill.</p>
+          <div class="text-primary fw-semibold mt-auto" style="font-size:0.75rem;">Calculate Now &rarr;</div>
+        </div>
+      </div>
+      <!-- Tariff Card -->
+      <div class="col-lg-3 col-md-6">
+        <div class="nb-card h-100 p-3 text-start hover-shadow-sm" style="cursor:pointer;" onclick="window.__tab('tariff')">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="bi bi-currency-rupee"></i></div>
+            <div class="fw-bold" style="font-size:0.85rem;">Current Tariff</div>
+          </div>
+          <div class="fs-5 fw-bold text-body">₹${firstSlab.rate.toFixed(2)} <span class="text-secondary fw-normal fs-6">/Unit</span></div>
+          <p class="text-secondary mb-2" style="font-size:0.7rem;">${firstSlab.from}-${firstSlab.to || '50'} Units (${firstSlab.label})</p>
+          <div class="text-primary fw-semibold mt-auto" style="font-size:0.75rem;">View All Tariffs &rarr;</div>
+        </div>
+      </div>
+      <!-- Planned Outages Card -->
+      <div class="col-lg-3 col-md-6">
+        <div class="nb-card h-100 p-3 text-start hover-shadow-sm" style="cursor:pointer;" onclick="window.__tab('planned-outages')">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="rounded-circle bg-warning-subtle text-warning d-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="bi bi-calendar-event"></i></div>
+            <div class="fw-bold" style="font-size:0.85rem;">Planned Outages</div>
+          </div>
+          <div class="fs-5 fw-bold text-body">${plannedCount}</div>
+          <p class="text-secondary mb-2" style="font-size:0.7rem;">Active scheduled maintenance</p>
+          <div class="text-primary fw-semibold mt-auto" style="font-size:0.75rem;">View All Planned &rarr;</div>
+        </div>
+      </div>
+      <!-- Crowd Reports Card -->
+      <div class="col-lg-3 col-md-6">
+        <div class="nb-card h-100 p-3 text-start hover-shadow-sm" style="cursor:pointer;" onclick="window.__tab('crowd-reports')">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="bi bi-people"></i></div>
+            <div class="fw-bold" style="font-size:0.85rem;">Crowd Reports</div>
+          </div>
+          <div class="fs-5 fw-bold text-body">${crowdCount}</div>
+          <p class="text-secondary mb-2" style="font-size:0.7rem;">Citizen reports in last 24 hrs</p>
+          <div class="text-primary fw-semibold mt-auto" style="font-size:0.75rem;">See Crowd Map &rarr;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 1: Services & Applications (col 4), Complaint Guide (col 4), Documents Required (col 4) -->
+    <div class="row g-4 text-start">
+      <!-- 1. Services & Applications -->
+      <div class="col-lg-4">
+        <div class="nb-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+            <div class="fw-bold text-body" style="font-size:0.95rem;">Services & Applications</div>
+            <div class="text-primary" style="font-size:0.75rem; cursor:pointer;" onclick="window.__tab('services')">View all &rarr;</div>
+          </div>
+          <div class="d-flex flex-column gap-2">
+            ${servicesData.services.slice(0, 5).map(s => `
+              <div class="d-flex justify-content-between align-items-center p-2 rounded-3 hover-bg-tertiary" style="cursor:pointer;" onclick="window.__tab('services'); setTimeout(() => window.__service('${s.id}'), 50);">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-file-earmark-text text-secondary"></i>
+                  <span style="font-size:0.85rem;" class="fw-medium text-body">${s.title}</span>
+                </div>
+                <i class="bi bi-chevron-right text-secondary" style="font-size:0.75rem;"></i>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Complaint Guide -->
+      <div class="col-lg-4">
+        <div class="nb-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+            <div class="fw-bold text-body" style="font-size:0.95rem;">Complaint Guide</div>
+            <div class="text-primary" style="font-size:0.75rem; cursor:pointer;" onclick="window.__tab('complaint')">View all &rarr;</div>
+          </div>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-3 align-items-center p-2 rounded-3 hover-bg-tertiary" style="cursor:pointer;" onclick="window.__tab('complaint')">
+              <div class="rounded-circle bg-danger-subtle text-danger d-flex align-items-center justify-content-center" style="width:36px; height:36px; flex-shrink:0;"><i class="bi bi-exclamation-triangle"></i></div>
+              <div>
+                <div class="fw-bold text-body" style="font-size:0.85rem;">Lodge a Complaint</div>
+                <div class="text-secondary" style="font-size:0.75rem;">File complaint online or via app</div>
+              </div>
+            </div>
+            <div class="d-flex gap-3 align-items-center p-2 rounded-3 hover-bg-tertiary" style="cursor:pointer;" onclick="window.__tab('complaint')">
+              <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center" style="width:36px; height:36px; flex-shrink:0;"><i class="bi bi-list-ol"></i></div>
+              <div>
+                <div class="fw-bold text-body" style="font-size:0.85rem;">Complaint Steps</div>
+                <div class="text-secondary" style="font-size:0.75rem;">Step-by-step guide</div>
+              </div>
+            </div>
+            <div class="d-flex gap-3 align-items-center p-2 rounded-3 hover-bg-tertiary" style="cursor:pointer;" onclick="window.__tab('complaint')">
+              <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center" style="width:36px; height:36px; flex-shrink:0;"><i class="bi bi-diagram-3"></i></div>
+              <div>
+                <div class="fw-bold text-body" style="font-size:0.85rem;">Escalation Matrix</div>
+                <div class="text-secondary" style="font-size:0.75rem;">Where to escalate if unresolved</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Documents Required -->
+      <div class="col-lg-4">
+        <div class="nb-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+            <div class="fw-bold text-body" style="font-size:0.95rem;">Documents Required</div>
+            <div class="text-primary" style="font-size:0.75rem; cursor:pointer;" onclick="window.__tab('services')">View all &rarr;</div>
+          </div>
+          <div class="row g-2 mb-3">
+            ${servicesData.services.slice(0, 4).map(s => `
+            <div class="col-6">
+              <div class="p-2 border rounded-3 bg-body-tertiary h-100 hover-shadow-sm" style="cursor:pointer;" onclick="window.__tab('services'); setTimeout(() => window.__service('${s.id}'), 50);">
+                <div class="fw-bold text-body mb-1" style="font-size:0.75rem;">${s.title}</div>
+                <div class="text-secondary mb-2 text-truncate" style="font-size:0.65rem;">${(s.documents||[]).map(d=>d.name).join(', ')}</div>
+                <div class="text-primary fw-semibold" style="font-size:0.7rem;">View Details &rarr;</div>
+              </div>
+            </div>
+            `).join('')}
+          </div>
+          <div class="p-3 bg-primary-subtle text-primary border border-primary-subtle rounded-3 d-flex justify-content-between align-items-center hover-shadow-sm" style="cursor:pointer;" onclick="window.__tab('services')">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-file-earmark-pdf fs-5"></i>
+              <span class="fw-bold" style="font-size:0.8rem;">All Forms & Templates</span>
+            </div>
+            <div class="btn btn-sm btn-light border-0 fw-semibold text-primary" style="font-size:0.75rem;">Browse Forms &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Social Feed (col 6) + News & Announcements (col 6) -->
+    <div class="row g-4 text-start mt-1">
+      <!-- 1. Social Feed -->
+      <div class="col-lg-6">
+        <div class="nb-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+            <div class="fw-bold text-body" style="font-size:0.95rem;">Social Feed</div>
+            <div class="text-primary" style="font-size:0.75rem; cursor:pointer;" onclick="window.__tab('social')">View all &rarr;</div>
+          </div>
+          <div class="d-flex flex-column gap-3">
+            <a href="https://x.com/NammaBESCOM" target="_blank" rel="noopener" class="d-flex gap-2 text-decoration-none text-body hover-bg-tertiary p-2 rounded-3 transition-all">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:28px;height:28px;"><i class="bi bi-twitter-x"></i></div>
+              <div>
+                <div class="fw-bold text-body mb-1" style="font-size:0.8rem;">BESCOM <i class="bi bi-patch-check-fill text-primary" style="font-size:0.7rem;"></i> <span class="text-secondary fw-normal">@NammaBESCOM</span></div>
+                <div class="text-secondary mb-2" style="font-size:0.75rem; line-height:1.4;">24x7 Helpline 1912 operational for reporting power failures, feeder trips & street light complaints.</div>
+                <div class="d-flex align-items-center justify-content-between text-secondary" style="font-size:0.7rem;">
+                  <span><i class="bi bi-arrow-repeat me-1"></i> Live Official Feed</span>
+                  <span class="text-primary fw-semibold">View on X &rarr;</span>
+                </div>
+              </div>
+            </a>
+            <div class="border-top pt-2">
+              <a href="https://www.facebook.com/bescomblr" target="_blank" rel="noopener" class="d-flex gap-2 text-decoration-none text-body hover-bg-tertiary p-2 rounded-3 transition-all">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:28px;height:28px;"><i class="bi bi-facebook"></i></div>
+                <div>
+                  <div class="fw-bold text-body mb-1" style="font-size:0.8rem;">BESCOM Official Page</div>
+                  <div class="text-secondary mb-2" style="font-size:0.75rem; line-height:1.4;">Check official announcements for solar rooftop subsidies and EV charging station tariffs.</div>
+                  <div class="text-primary fw-semibold" style="font-size:0.7rem;">View Page &rarr;</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. News & Announcements -->
+      <div class="col-lg-6">
+        <div class="nb-card h-100 p-4">
+          <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+            <div class="fw-bold text-body" style="font-size:0.95rem;">News & Announcements</div>
+            <div class="text-primary" style="font-size:0.75rem; cursor:pointer;" onclick="window.__tab('notices')">View all &rarr;</div>
+          </div>
+          <div class="d-flex flex-column gap-3">
+            ${noticesData.slice(0, 3).map(n => `
+            <div class="d-flex gap-3 align-items-start hover-bg-tertiary p-2 rounded-3" style="cursor:pointer;" onclick="window.__tab('notices')">
+              <div class="rounded-3 bg-secondary-subtle d-flex align-items-center justify-content-center flex-shrink-0" style="width:48px;height:48px; color:var(--bs-secondary-color);">
+                <i class="bi bi-megaphone fs-4"></i>
+              </div>
+              <div>
+                <div class="fw-bold text-body mb-1" style="font-size:0.8rem; line-height:1.4;">${n.title}</div>
+                <div class="text-secondary" style="font-size:0.7rem;">${new Date(n.date || n.syncedAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}</div>
+              </div>
+            </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
 }
 
 export function renderOutagesTab(dept = 'bescom') {
@@ -84,7 +336,7 @@ export function renderCalc(state) {
 
           <div class="mb-4">
             <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="connType">Connection Type</label>
-            <select class="form-select py-2.5 px-3" id="connType" onchange="window.__calc('type', this.value)" style="border-radius:12px;">
+            <select class="form-select py-2 px-3" id="connType" onchange="window.__calc('type', this.value)" style="border-radius:12px;">
               <option value="domestic"   ${f.type === 'domestic' ? 'selected' : ''}>Domestic (LT-2(a))</option>
               <option value="commercial" ${f.type === 'commercial' ? 'selected' : ''}>Commercial (LT-3)</option>
             </select>
@@ -93,7 +345,7 @@ export function renderCalc(state) {
           <div class="mb-4">
             <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="loadInput">Sanctioned Load (kW)</label>
             <div class="input-group mb-3">
-              <input type="number" class="form-control py-2.5 px-3" id="loadInput"
+              <input type="number" class="form-control py-2 px-3" id="loadInput"
                 min="1" max="100" step="1" value="${f.sanctionedLoad || 1}" style="border-top-left-radius:12px; border-bottom-left-radius:12px;"
                 oninput="window.__calc('sanctionedLoad', parseFloat(this.value)||1)" />
               <span class="input-group-text fw-bold px-3 bg-body-tertiary" style="font-size:0.85rem; border-top-right-radius:12px; border-bottom-right-radius:12px;">kW</span>
@@ -103,7 +355,7 @@ export function renderCalc(state) {
           <div class="mb-4">
             <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="consumptionInput">Monthly Consumption</label>
             <div class="input-group mb-3">
-              <input type="number" class="form-control py-2.5 px-3" id="consumptionInput"
+              <input type="number" class="form-control py-2 px-3" id="consumptionInput"
                 min="0" max="2000" step="1" value="${f.consumption}" style="border-top-left-radius:12px; border-bottom-left-radius:12px;"
                 oninput="window.__calc('consumption', parseFloat(this.value)||0)" />
               <span class="input-group-text fw-bold px-3 bg-body-tertiary" style="font-size:0.85rem; border-top-right-radius:12px; border-bottom-right-radius:12px;">Units (kWh)</span>
@@ -134,16 +386,19 @@ export function renderCalc(state) {
             </div>` : ''}
           </div>
 
-          <button class="btn btn-primary w-100 py-2.5 mb-4 fw-semibold" onclick="window.__downloadPDF()" style="font-size:0.88rem;">
+          <button class="btn btn-primary w-100 py-2 mb-2 fw-semibold" onclick="window.__downloadPDF()" style="font-size:0.88rem;">
             <i class="bi bi-file-earmark-pdf-fill me-2"></i> Save Estimate as PDF
           </button>
+          <a href="https://bescom.co.in/bescom/main/quick-payment" target="_blank" rel="noopener" class="btn btn-success w-100 py-2 fw-semibold" style="font-size:0.88rem;">
+            <i class="bi bi-lightning-charge-fill me-2"></i> Pay BESCOM Bill Online (Quick Payment)
+          </a>
         </div>
       </div>
     </div>
 
     <div class="col-lg-7 d-flex flex-column gap-4">
       <div class="nb-bill-total-card">
-        <div class="d-inline-flex align-items-center gap-1.5 px-3 py-1 rounded-pill bg-primary-subtle text-primary border border-primary-subtle mb-3 fw-bold" style="font-size:0.72rem; letter-spacing:0.08em;">
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-primary-subtle text-primary border border-primary-subtle mb-3 fw-bold" style="font-size:0.72rem; letter-spacing:0.08em;">
           <i class="bi bi-currency-rupee me-1"></i>ESTIMATED MONTHLY BILL
         </div>
         <div class="nb-bill-amount" id="billAmt">₹0</div>
@@ -177,7 +432,7 @@ export function recalcBill(state) {
     if (bdEl) bdEl.innerHTML = emptyMsg;
     return;
   }
-  
+
   try {
     let r;
     if (f.type === 'commercial') {
@@ -192,7 +447,7 @@ export function recalcBill(state) {
 
     const slabs = r.slabBreakdown || [];
     const totalUnits = f.consumption;
-    
+
     let bar = '';
     if (r.isGruhaJyothiApplied) {
       bar = `<div class="nb-slab-segment" style="width:100%; background:#10b981;" title="Gruha Jyothi: ${totalUnits} Units"></div>`;
@@ -232,9 +487,9 @@ export function recalcBill(state) {
         <div class="table-responsive">
           <table class="table align-middle mb-0" style="font-size:0.86rem;">
             <thead><tr style="border-bottom:2px solid var(--bs-border-color);">
-              <th class="py-2.5" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Charge Item</th>
-              <th class="py-2.5" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Details</th>
-              <th class="py-2.5 text-end" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Amount</th>
+              <th class="py-2" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Charge Item</th>
+              <th class="py-2" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Details</th>
+              <th class="py-2 text-end" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Amount</th>
             </tr></thead>
             <tbody>
               ${r.isGruhaJyothiApplied ? `
@@ -252,8 +507,8 @@ export function recalcBill(state) {
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="2" class="fw-bold pt-3.5 pb-2 fs-6">Total Monthly Bill</td>
-                <td class="text-end fw-bold pt-3.5 pb-2 text-primary fs-5">₹${r.total?.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
+                <td colspan="2" class="fw-bold pt-4 pb-2 fs-6">Total Monthly Bill</td>
+                <td class="text-end fw-bold pt-4 pb-2 text-primary fs-5">₹${r.total?.toLocaleString('en-IN', { minimumFractionDigits: 2 })}</td>
               </tr>
             </tfoot>
           </table>
@@ -291,16 +546,16 @@ export function renderTariff() {
             </thead>
             <tbody>
               ${data.slabs.map(s => {
-                const rangeStr = s.from !== undefined
-                  ? (s.to !== null && s.to !== undefined ? `${s.from} – ${s.to} Units` : `Above ${s.from} Units`)
-                  : (s.label || '—');
-                return `
+    const rangeStr = s.from !== undefined
+      ? (s.to !== null && s.to !== undefined ? `${s.from} – ${s.to} Units` : `Above ${s.from} Units`)
+      : (s.label || '—');
+    return `
               <tr style="border-bottom:1px solid var(--bs-border-color);">
                 <td class="ps-4 py-3 fw-semibold"><span class="nb-slab-dot me-2" style="background:${s.color || '#f59e0b'}; width:10px; height:10px; display:inline-block; border-radius:50%;"></span>${s.label}</td>
                 <td class="py-3 text-secondary font-mono">${rangeStr}</td>
                 <td class="pe-4 text-end py-3 font-mono fw-bold text-primary">₹${s.rate?.toFixed(2)} / Unit</td>
               </tr>`;
-              }).join('')}
+  }).join('')}
             </tbody>
           </table>
         </div>
@@ -362,14 +617,14 @@ export function renderTariffChart() {
           name: 'Domestic (LT-2a)',
           showInLegend: true,
           color: '#f59e0b',
-          dataPoints: d.map((s, i) => ({ label: `Slab ${i+1}`, y: s.rate }))
+          dataPoints: d.map((s, i) => ({ label: `Slab ${i + 1}`, y: s.rate }))
         },
         {
           type: 'column',
           name: 'Commercial (LT-3)',
           showInLegend: true,
           color: '#3b82f6',
-          dataPoints: c.map((s, i) => ({ label: `Slab ${i+1}`, y: s.rate }))
+          dataPoints: c.map((s, i) => ({ label: `Slab ${i + 1}`, y: s.rate }))
         }
       ]
     });
@@ -403,9 +658,8 @@ export function renderNotices(state) {
     { id: 'policy', label: 'Policy Directives' },
   ];
   return `
-  <div class="row g-4 text-start">
-    <!-- Left Column: Category Filter & Official Notices (col-lg-7) -->
-    <div class="col-lg-7">
+  <div class="row text-start">
+    <div class="col-12">
       <!-- Category Filter Bar -->
       <div class="d-flex gap-2 mb-3 overflow-x-auto pb-1" style="scrollbar-width:none;">
         ${categories.map(c => `
@@ -418,39 +672,8 @@ export function renderNotices(state) {
       <!-- Notice Cards Container -->
       <div id="noticeList" class="d-flex flex-column gap-3 text-start">
         ${list.length === 0
-        ? '<div class="text-center text-secondary py-5">No notices found for this category.</div>'
-        : list.map(n => renderNoticeCard(n)).join('')}
-      </div>
-    </div>
-
-    <!-- Right Column: Outage Schedule & Live Tweets (col-lg-5) -->
-    <div class="col-lg-5 d-flex flex-column gap-4">
-      <!-- Official Outage Page Card -->
-      <div class="nb-card border-warning" style="background:linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(234,179,8,0.04) 100%);">
-        <div class="nb-card-header d-flex justify-content-between align-items-center">
-          <span><i class="bi bi-calendar-event text-warning me-2"></i>Planned Power Outages</span>
-          <a href="https://bescom.karnataka.gov.in/319/planned-outages/en" target="_blank" rel="noopener" class="btn btn-sm btn-warning text-dark fw-semibold" style="font-size:0.76rem;">
-            <i class="bi bi-box-arrow-up-right me-1"></i>View Schedule
-          </a>
-        </div>
-        <div class="nb-card-body p-3">
-          <div class="text-secondary" style="font-size:0.84rem; line-height:1.5;">
-            BESCOM regularly publishes weekly ward-wise planned power outage schedules on their official portal.
-          </div>
-        </div>
-      </div>
-
-      <!-- Live Twitter Feed Card -->
-      <div class="nb-card flex-grow-1">
-        <div class="nb-card-header d-flex justify-content-between align-items-center">
-          <span><i class="bi bi-twitter-x me-2 text-primary"></i>Live Tweets (@NammaBESCOM)</span>
-          <a href="https://x.com/NammaBESCOM" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary py-1 px-2.5" style="font-size:0.76rem;">
-            <i class="bi bi-box-arrow-up-right me-1"></i>Open X
-          </a>
-        </div>
-        <div class="nb-card-body p-3 overflow-y-auto" style="max-height:480px;">
-          <a class="twitter-timeline" data-height="450" data-theme="auto" href="https://twitter.com/NammaBESCOM?ref_src=twsrc%5Etfw">Loading official tweets by @NammaBESCOM...</a>
-        </div>
+      ? '<div class="text-center text-secondary py-5">No notices found for this category.</div>'
+      : list.map(n => renderNoticeCard(n)).join('')}
       </div>
     </div>
   </div>`;
@@ -520,7 +743,9 @@ export function renderServices(state) {
             onclick="window.__service('${s.id}')" style="font-size:0.86rem;">
             <div class="d-flex justify-content-between align-items-center mb-1">
               <span class="fw-bold text-body">${s.title}</span>
-              ${s.badge ? `<span class="badge bg-success-subtle text-success border border-success-subtle ms-2 flex-shrink-0" style="font-size:0.68rem;">${s.badge}</span>` : ''}
+              ${s.isOnlineAvailable === false
+                ? `<span class="badge bg-warning-subtle text-warning border border-warning-subtle ms-2 flex-shrink-0" style="font-size:0.68rem;"><i class="bi bi-building me-1"></i>Offline SDO</span>`
+                : (s.badge ? `<span class="badge bg-success-subtle text-success border border-success-subtle ms-2 flex-shrink-0" style="font-size:0.68rem;">${s.badge}</span>` : '')}
             </div>
             <div class="text-secondary" style="font-size:0.76rem;">SLA: <strong>${s.sla}</strong></div>
           </button>`).join('')}
@@ -535,19 +760,81 @@ export function renderServices(state) {
           <div class="fw-bold" style="font-size:1.05rem;"><i class="bi bi-shield-check text-primary me-2"></i>${selected.title}</div>
           <div class="d-flex align-items-center gap-2">
             <span class="badge bg-primary-subtle text-primary border border-primary-subtle"><i class="bi bi-clock me-1"></i>SLA: ${selected.sla}</span>
-            ${selected.onlineLink ? `
-            <a href="${selected.onlineLink}" target="_blank" rel="noopener" class="btn btn-sm btn-primary fw-semibold px-3 py-1.5" style="font-size:0.8rem;">
-              <i class="bi bi-box-arrow-up-right me-1.5"></i>Apply Online (${selected.officialPortalName || 'Seva Sindhu'})
-            </a>` : ''}
+            ${selected.isOnlineAvailable === false
+              ? `<span class="badge bg-warning-subtle text-warning border border-warning-subtle px-3 py-2" style="font-size:0.78rem;"><i class="bi bi-building me-1"></i>Offline — Visit SDO Office</span>`
+              : (selected.onlineLink ? `
+            <a href="${selected.onlineLink}" target="_blank" rel="noopener" class="btn btn-sm btn-primary fw-semibold px-3 py-2" style="font-size:0.8rem;">
+              <i class="bi bi-box-arrow-up-right me-2"></i>Apply Online (${selected.officialPortalName || 'Seva Sindhu'})
+            </a>` : '')}
           </div>
         </div>
         <div class="nb-card-body p-4">
           <p class="text-secondary mb-4" style="font-size:0.9rem; line-height:1.6;">${selected.description}</p>
 
+          ${selected.isOnlineAvailable === false ? `
+          <!-- Offline SDO Callout -->
+          <div class="p-3 mb-4 rounded-3 bg-warning-subtle border border-warning-subtle text-start" style="font-size:0.82rem;">
+            <div class="fw-bold mb-1 d-flex align-items-center gap-2 text-warning-emphasis" style="font-size:0.9rem;">
+              <i class="bi bi-building-fill text-warning"></i>
+              <span>Physical Offline Process — Visit Your Nearest BESCOM SDO</span>
+            </div>
+            <div class="text-dark" style="line-height:1.55;">This service <strong>cannot be applied online</strong>. You must personally visit your concerned local <strong>BESCOM Sub-Division Office (SDO)</strong> with physical documents and original IDs for verification. Online submission is not accepted for this application type.</div>
+          </div>` : ''}
+
+          ${selected.eligibility && selected.eligibility.length > 0 ? `
+          <!-- Janasnehi Eligibility & Exclusions Grid -->
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-success-subtle text-success border border-success-subtle h-100">
+                <div class="fw-bold mb-2 d-flex align-items-center gap-2" style="font-size:0.84rem;">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Eligible Services (Janasnehi Fast Track)</span>
+                </div>
+                <ul class="mb-0 ps-3 text-start" style="font-size:0.78rem; line-height:1.55;">
+                  ${selected.eligibility.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 rounded-3 bg-danger-subtle text-danger border border-danger-subtle h-100">
+                <div class="fw-bold mb-2 d-flex align-items-center gap-2" style="font-size:0.84rem;">
+                  <i class="bi bi-x-circle-fill"></i>
+                  <span>Not Eligible Under Fast Track</span>
+                </div>
+                <ul class="mb-0 ps-3 text-start" style="font-size:0.78rem; line-height:1.55;">
+                  ${(selected.exclusions || []).map(item => `<li>${item}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>` : ''}
+
+          ${selected.complianceRules && selected.complianceRules.length > 0 ? `
+          <!-- Mandatory Compliance Rules -->
+          <div class="p-3 mb-4 rounded-3 bg-body-tertiary border text-start">
+            <div class="fw-bold text-body mb-2 d-flex align-items-center gap-2" style="font-size:0.84rem;">
+              <i class="bi bi-shield-lock-fill text-primary"></i>
+              <span>Mandatory Provisioning & Compliance Requirements</span>
+            </div>
+            <ul class="mb-0 ps-3 text-secondary" style="font-size:0.78rem; line-height:1.55;">
+              ${selected.complianceRules.map(r => `<li class="mb-1">${r}</li>`).join('')}
+            </ul>
+          </div>` : ''}
+
+          ${selected.refundPolicy ? `
+          <!-- Refund & Rejection Policy -->
+          <div class="p-3 mb-4 rounded-3 bg-warning-subtle text-dark border border-warning-subtle text-start" style="font-size:0.78rem; line-height:1.55;">
+            <div class="fw-bold mb-1 d-flex align-items-center gap-2 text-warning-emphasis" style="font-size:0.84rem;">
+              <i class="bi bi-info-circle-fill text-warning me-1"></i>
+              <span>Refund & Rejection Rules</span>
+            </div>
+            <div>${selected.refundPolicy}</div>
+          </div>` : ''}
+
           <!-- Interactive Document Checklist -->
           <div class="mb-4">
             <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
-              <i class="bi bi-card-checklist text-primary me-1.5"></i>Required Documents Checklist (Check items you have ready)
+              <i class="bi bi-card-checklist text-primary me-2"></i>Required Documents Checklist (Check items you have ready)
             </h6>
             <div class="d-flex flex-column gap-2">
               ${(selected.documents || []).map((doc, idx) => `
@@ -557,7 +844,7 @@ export function renderServices(state) {
                   <label class="form-check-label ms-2 fw-medium" for="doc_bescom_${idx}" style="font-size:0.86rem; cursor:pointer;">
                     ${doc.name} ${doc.required ? '<span class="text-danger">*</span>' : ''}
                   </label>
-                  ${doc.note ? `<div class="text-secondary ms-2 mt-0.5" style="font-size:0.76rem;">${doc.note}</div>` : ''}
+                  ${doc.note ? `<div class="text-secondary ms-2 mt-1" style="font-size:0.76rem;">${doc.note}</div>` : ''}
                 </div>
                 ${doc.required ? '<span class="badge bg-danger-subtle text-danger flex-shrink-0" style="font-size:0.68rem;">Mandatory</span>' : '<span class="badge bg-secondary-subtle text-secondary flex-shrink-0" style="font-size:0.68rem;">Optional</span>'}
               </div>`).join('')}
@@ -567,7 +854,7 @@ export function renderServices(state) {
           <!-- Step-by-Step Procedure Timeline -->
           <div class="mb-4">
             <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
-              <i class="bi bi-diagram-3 text-primary me-1.5"></i>Step-by-Step Application Process
+              <i class="bi bi-diagram-3 text-primary me-2"></i>Step-by-Step Application Process
             </h6>
             <div class="nb-timeline pt-1">
               ${(selected.steps || []).map((st, idx) => `
@@ -586,21 +873,21 @@ export function renderServices(state) {
           ${selected.fees && selected.fees.length > 0 ? `
           <div>
             <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
-              <i class="bi bi-receipt text-primary me-1.5"></i>Official Fee Breakdown
+              <i class="bi bi-receipt text-primary me-2"></i>Official Fee Breakdown
             </h6>
             <div class="table-responsive border rounded-3">
               <table class="table align-middle mb-0" style="font-size:0.85rem;">
                 <thead class="table-light">
                   <tr>
-                    <th class="py-2.5 ps-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Fee Head</th>
-                    <th class="py-2.5 pe-3 text-end" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Amount / Tariff Rate</th>
+                    <th class="py-2 ps-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Fee Head</th>
+                    <th class="py-2 pe-3 text-end" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Amount / Tariff Rate</th>
                   </tr>
                 </thead>
                 <tbody>
                   ${selected.fees.map(f => `
                   <tr style="border-bottom:1px solid var(--bs-border-color);">
-                    <td class="py-2.5 ps-3 fw-medium">${f.item}</td>
-                    <td class="py-2.5 pe-3 text-end font-mono fw-bold text-primary">${f.amount}</td>
+                    <td class="py-2 ps-3 fw-medium">${f.item}</td>
+                    <td class="py-2 pe-3 text-end font-mono fw-bold text-primary">${f.amount}</td>
                   </tr>`).join('')}
                 </tbody>
               </table>
@@ -686,7 +973,7 @@ export function renderSteps(typeObj) {
         <div class="fw-bold" style="font-size:0.95rem;">${s.title || ''}</div>
         ${s.sla ? `<div class="text-secondary mt-1" style="font-size:0.82rem;"><i class="bi bi-clock me-1 text-primary"></i>SLA: <strong>${s.sla}</strong></div>` : ''}
         ${s.details ? `<div class="text-secondary mt-1" style="font-size:0.84rem; line-height:1.6;">${s.details}</div>` : ''}
-        ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener" class="btn btn-sm mt-2 py-1 px-3 btn-outline-primary" style="font-size:0.78rem;"><i class="bi bi-box-arrow-up-right me-1.5"></i>Take Action</a>` : ''}
+        ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener" class="btn btn-sm mt-2 py-1 px-3 btn-outline-primary" style="font-size:0.78rem;"><i class="bi bi-box-arrow-up-right me-2"></i>Take Action</a>` : ''}
       </div>
     </div>`).join('')}
   </div>`;

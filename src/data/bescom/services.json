@@ -1,190 +1,383 @@
 {
   "services": [
     {
-      "id": "name-change",
-      "title": "Owner Name Change (e-Katha Instant Online Transfer)",
+      "id": "name-change-epid",
+      "title": "Name Change / Change of Ownership with EPID (GBA Area)",
       "category": "ownership",
-      "badge": "e-Katha Fast Track",
-      "sla": "Instant / Next Billing Cycle",
+      "badge": "24-Hr Janasnehi Fast Track",
+      "sla": "Within 24 Hours",
       "onlineLink": "https://bescom.co.in",
-      "officialPortalName": "BESCOM Official Portal (bescom.co.in)",
-      "description": "Transfer your BESCOM electricity connection online in just 2-3 steps using your BBMP e-Katha! Log into bescom.co.in, input your Account Number & e-Katha details to auto-fetch owner info, pay fees & eSign documents digitally without visiting any office.",
+      "officialPortalName": "BESCOM Portal (bescom.co.in)",
+      "description": "Fast-track instant ownership transfer for Greater Bengaluru Area (GBA) premises having a valid e-Katha Property Identification (EPID) number. Input Account ID & EPID to auto-verify owner info and eSign digitally.",
       "isOnlineAvailable": true,
       "steps": [
         {
           "step": 1,
-          "title": "Login / Register on bescom.co.in",
-          "details": "Go to bescom.co.in, log in or create an account, and enter your 10-digit BESCOM Account Number.",
+          "title": "Enter Account ID & EPID",
+          "details": "Log into bescom.co.in, select 'Name Change with EPID', and enter your 10-digit BESCOM Account ID and BBMP EPID number.",
           "link": "https://bescom.co.in"
         },
         {
           "step": 2,
-          "title": "Select Name Change & Provide e-Katha Details",
-          "details": "Select 'Name Change Service' and enter your BBMP e-Katha details. The system automatically fetches and verifies current property owner information.",
+          "title": "Auto-Fetch & Verify Owner Info",
+          "details": "System automatically cross-verifies EPID property owner record with BBMP database.",
           "link": null
         },
         {
           "step": 3,
-          "title": "Pay Name Change Fee (₹100)",
-          "details": "Pay the ₹100/- name change processing fee online via UPI, Netbanking, or Debit Card.",
+          "title": "Pay Fee & Perform Aadhaar eSign",
+          "details": "Pay ₹100 name change fee online and eSign Power Supply Agreement & Indemnity Bond.",
           "link": null
         },
         {
           "step": 4,
-          "title": "Digital eSign & Stamp Duty Payment",
-          "details": "Perform Aadhaar eSign and pay online: ₹603/- for e-Stamp & eSign for Power Supply Agreement, and ₹591/- for e-Stamp & eSign for Indemnity Bond.",
+          "title": "24-Hour Approval & Bill Update",
+          "details": "Application is approved within 24 hours. Updated owner name will reflect on the next bill.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "BBMP EPID (e-Katha Property Identification) Number", "required": true, "note": "Used for instant GBA owner auto-verification" },
+        { "name": "10-digit BESCOM Account ID", "required": true, "note": "Found on monthly electricity bill" },
+        { "name": "Aadhaar Card (linked with active mobile)", "required": true, "note": "Required for OTP eSign" }
+      ],
+      "fees": [
+        { "item": "Name Change Processing Fee", "amount": "₹100" },
+        { "item": "Power Supply Agreement & Indemnity e-Stamp", "amount": "₹1,194 (Digital eSign)" }
+      ]
+    },
+    {
+      "id": "name-change-no-epid",
+      "title": "Name Change / Change of Ownership without EPID (Offline SDO Submission)",
+      "category": "ownership",
+      "badge": "Offline SDO Application",
+      "sla": "3-5 Working Days",
+      "onlineLink": null,
+      "officialPortalName": "BESCOM Sub-Division Office (SDO)",
+      "description": "For non-EPID properties or premises outside GBA limits, applicants must visit their concerned local BESCOM Sub-Division Office (SDO) in person to submit physical copies of ownership documents, indemnity bond, and identity proof.",
+      "isOnlineAvailable": false,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Visit Local BESCOM Sub-Division Office (SDO)",
+          "details": "Obtain physical application form for 'Transfer of Installation (Name Change)' from your local SDO counter.",
+          "link": null
+        },
+        {
+          "step": 2,
+          "title": "Attach Physical Property & Indemnity Documents",
+          "details": "Attach photo copies of registered Sale Deed, Khata Certificate, latest paid electricity bill, and Annexure-9 Indemnity Bond on stamp paper.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Physical Verification by Sub-Divisional Officer / AE",
+          "details": "Present original documents for physical verification by Assistant Executive Engineer (AEE) at SDO.",
+          "link": null
+        },
+        {
+          "step": 4,
+          "title": "Pay Counter Fee & Collect Acknowledgement",
+          "details": "Pay ₹100 name change processing fee at cash counter and collect official acknowledgement receipt.",
           "link": null
         },
         {
           "step": 5,
-          "title": "Completion & Automatic Bill Update",
-          "details": "Application complete! Your name change is processed digitally, and your updated name will reflect on your bill from the very next billing cycle.",
+          "title": "Billing Record Transfer",
+          "details": "Name change is processed and updated name reflects on your bill in the subsequent billing cycle.",
           "link": null
         }
       ],
       "documents": [
-        { "name": "BBMP e-Katha Number / Details", "required": true, "note": "Used for instant online property owner auto-fetch" },
-        { "name": "10-digit BESCOM Account ID", "required": true, "note": "Found on your monthly electricity bill" },
-        { "name": "Aadhaar Card (for digital eSign)", "required": true, "note": "Mobile number linked with Aadhaar required for OTP eSign" }
+        { "name": "Registered Sale Deed / Khata Certificate / Tax Receipt", "required": true, "note": "Physical copy + original for SDO verification" },
+        { "name": "Latest Paid BESCOM Bill", "required": true, "note": "Zero pending dues required" },
+        { "name": "Annexure-9 Indemnity Bond on Stamp Paper", "required": true, "note": "Format for Transfer of Installation as per KERC CoS" },
+        { "name": "Applicant ID & Address Proof (Aadhaar / Voter ID / PAN)", "required": true, "note": "Photo copy self-attested" }
       ],
       "fees": [
-        { "item": "Name Change Processing Fee", "amount": "₹100" },
-        { "item": "Power Supply Agreement (e-Stamp & eSign)", "amount": "₹603" },
-        { "item": "Indemnity Bond (e-Stamp & eSign)", "amount": "₹591" },
-        { "item": "Total Digital Application Cost", "amount": "₹1,294 (100% digital e-Katha fast-track)" }
+        { "item": "Name Change Processing Fee", "amount": "₹100 (Paid at SDO Cash Counter)" },
+        { "item": "Indemnity Bond Stamp Duty", "amount": "As per KERC stamp duty rates" }
       ]
     },
     {
       "id": "new-connection",
-      "title": "New LT Electricity Connection (Domestic / Commercial)",
+      "title": "New Connection & Tapping Connection (<= 17.5 kW)",
       "category": "connection",
-      "badge": "Digital Application",
-      "sla": "15 Working Days",
+      "badge": "24-Hr Janasnehi Fast Track",
+      "sla": "24 Hours (after fee payment)",
       "onlineLink": "https://bescom.karnataka.gov.in",
       "officialPortalName": "BESCOM Portal & Seva Sindhu",
-      "description": "Apply for a new low-tension electricity supply line for a newly constructed residential house, flat, shop, or commercial establishment.",
+      "description": "Fast-track power supply (New Connection & Tapping Connection) within 24 hours after payment of requisite fees to Domestic (LT-1) and Commercial (LT-3) consumers where total load is <= 17.5 kW (18 kW max) and no electrical line extension is needed.",
       "isOnlineAvailable": true,
+      "eligibility": [
+        "LT-1 Domestic Tariff (loads <= 17.5 kW / 18 kW)",
+        "LT-3 Commercial Tariff (loads <= 17.5 kW / 18 kW)",
+        "New Connection (Single & Multiple)",
+        "Tapping Connection for existing building",
+        "No line extension or electrical network modification required"
+      ],
+      "exclusions": [
+        "Premises requiring line extension or electrical network modification",
+        "Buildings exceeding 15 meters height or total plinth area > 500 sq.mt",
+        "Premises requiring Occupancy Certificate (OC)",
+        "Buildings attracting Clause 9 Conditions of Power Supply",
+        "Connections in unauthorised, revenue, or abandoned layouts",
+        "HT (High Tension) Category applications",
+        "Incomplete internal wiring, meter board, or service main cable"
+      ],
+      "complianceRules": [
+        "Surrender temporary connection if previously availed",
+        "Pay pending arrears & additional demand charges ascertained during spot inspection",
+        "Payment of all applicable Deposits/charges as per Clause 4.03 of KERC Power Supply Regulations",
+        "Power supply Agreement execution as per Clause 32 of Conditions of Supply (CoS)",
+        "Contractor's Completion-cum-Test Report along with wiring diagram (Clause 4.03(ii)(d) of CoS)",
+        "Mandatory Undertaking for installing Solar Water Heating System for new residential buildings with built-up area of 600 sq.ft & above on sites measuring 1200 sq.ft & above"
+      ],
+      "refundPolicy": "If application is rejected due to non-compliance, registration fee & GST are forfeited, but MSD, AISD, SLC, and ASLC deposits will be refunded. If applicant voluntarily withdraws before agreement execution, 10% of total amount is deducted per KERC Clause 4.03 Note and balance is refunded.",
       "steps": [
         {
           "step": 1,
-          "title": "Apply Online / Submit Form W",
-          "details": "Submit Form W online via BESCOM portal or Seva Sindhu with sanctioned building plan and wiring completion certificate.",
+          "title": "Register Application Online or Offline at SDO",
+          "details": "Submit Janasnehi Fast Track application online via BESCOM / Seva Sindhu portal or offline at Sub-Division Office.",
           "link": "https://bescom.karnataka.gov.in"
         },
         {
           "step": 2,
-          "title": "Wiring Inspection by Licensed Electrician",
-          "details": "Get internal wiring certified by a Class-1 Licensed Electrical Contractor (LEC).",
+          "title": "Spot Inspection & Document Verification",
+          "details": "Field officer conducts spot inspection. Submit photo copies along with original documents prescribed under Clause 4.02(ii) KERC for verification.",
           "link": null
         },
         {
           "step": 3,
-          "title": "Power Sanction & Demand Note",
-          "details": "BESCOM issues a demand note detailing Initial Security Deposit (ISD) and Service Line Charges.",
+          "title": "Submit Contractor Test Report & Solar Undertaking",
+          "details": "Submit Licensed Electrical Contractor Test Report & wiring diagram (Clause 4.03(ii)(d)) and mandatory Solar Water Heating undertaking (for sites ≥ 1200 sq.ft).",
           "link": null
         },
         {
           "step": 4,
-          "title": "Meter Installation & Service Line Hookup",
-          "details": "BESCOM meter reader installs smart meter and powers the connection.",
+          "title": "Execute Agreement & Pay Requisite Fees",
+          "details": "Pay MSD, AISD, SLC, ASLC charges online or at SDO counter.",
+          "link": null
+        },
+        {
+          "step": 5,
+          "title": "24-Hour Connection & Meter Energization",
+          "details": "Power supply connection & meter energization completed within 24 hours of fee payment.",
           "link": null
         }
       ],
       "documents": [
-        { "name": "Ownership Proof / Possession Certificate / Allotment Letter", "required": true, "note": "Sale Deed, BBMP Khata, or Sanctioned Plan" },
-        { "name": "Wiring Completion Certificate", "required": true, "note": "Issued by Licensed Electrical Contractor" },
-        { "name": "Occupancy Certificate (OC) / Building Plan Sanction", "required": true, "note": "For buildings above ground + 2 floors" },
-        { "name": "Applicant Passport Photo & ID Proof", "required": true, "note": "Aadhaar Card or Voter ID" }
+        { "name": "Property Ownership Proof / Sale Deed / BBMP Khata", "required": true, "note": "Clause 4.02(ii) KERC Regulations (Original for spot verification)" },
+        { "name": "Contractor's Completion-cum-Test Report & Wiring Diagram", "required": true, "note": "Clause 4.03(ii)(d) of CoS issued by Licensed Electrical Contractor" },
+        { "name": "Applicant ID & Address Proof (Aadhaar / Voter ID)", "required": true, "note": "Verified by concerned SDO" },
+        { "name": "Solar Water Heating System Undertaking", "required": true, "note": "Mandatory for residential sites ≥ 1200 sq.ft with built-up area ≥ 600 sq.ft" },
+        { "name": "Surrender Certificate of Temporary Connection", "required": false, "note": "Mandatory if temporary connection was previously availed" }
       ],
       "fees": [
-        { "item": "Application Fee", "amount": "₹50" },
-        { "item": "Initial Security Deposit (ISD)", "amount": "₹1,200 per kW (Domestic) / ₹2,000 per kW (Commercial)" },
-        { "item": "Service Line & Meter Cost", "amount": "As per demand note estimates" }
+        { "item": "Application & Registration Fee", "amount": "₹50 + GST (Non-refundable upon rejection)" },
+        { "item": "Initial Security Deposit (MSD/AISD)", "amount": "₹1,200/kW (LT1 Domestic) / ₹2,000/kW (LT3 Commercial)" },
+        { "item": "Service Line & Meter Charges (SLC/ASLC)", "amount": "As per KERC Clause 4.03 demand note (100% Refundable if rejected)" },
+        { "item": "Voluntary Cancellation Fee", "amount": "10% deduction of total amount as per KERC Clause 4.03 Note" }
       ]
     },
     {
-      "id": "load-alteration",
-      "title": "Sanctioned Load Enhancement or Reduction",
-      "category": "meter",
-      "badge": "Online Portal",
-      "sla": "7 Working Days",
-      "onlineLink": "https://sevasindhuservices.karnataka.gov.in",
-      "officialPortalName": "Seva Sindhu Portal",
-      "description": "Increase load for new appliances (Air Conditioners, EV Chargers, Heavy Machinery) or reduce sanctioned load to avoid high monthly fixed charges.",
+      "id": "tariff-change",
+      "title": "Tariff Change (Monthly Tariff Schedule Reclassification)",
+      "category": "tariff",
+      "badge": "24-Hr Janasnehi Fast Track",
+      "sla": "Within 24 Hours",
+      "onlineLink": "https://bescom.co.in",
+      "officialPortalName": "BESCOM Portal & Seva Sindhu",
+      "description": "Reclassify your electricity tariff schedule (e.g. from Monthly LT1 Domestic to LT3 Commercial or vice versa) by providing your 10-digit BESCOM Account ID, specifying the nature of new activity & reason, and attaching identity & property proof.",
       "isOnlineAvailable": true,
       "steps": [
         {
           "step": 1,
-          "title": "Submit Load Revision Request",
-          "details": "Apply online on Seva Sindhu with existing Account ID and requested load in kW.",
-          "link": "https://sevasindhuservices.karnataka.gov.in"
+          "title": "Enter Account ID & Auto-Fetch Existing Tariff",
+          "details": "Enter your 10-digit Account ID (e.g. 1089688558). System auto-populates your current tariff schedule (e.g. Monthly LT1 domestic).",
+          "link": "https://bescom.co.in"
         },
         {
           "step": 2,
-          "title": "Pay Additional Security Deposit (for Load Increase)",
-          "details": "Pay incremental Initial Security Deposit (ISD) of ₹1,200/kW for extra capacity.",
+          "title": "Select Requested Tariff & Activity Details",
+          "details": "Select requested target tariff, enter Nature of New Activity (e.g., Shop, Office, EV Charging), and specify Reason for change.",
           "link": null
         },
         {
           "step": 3,
-          "title": "Technical Feasibility Check",
-          "details": "BESCOM line inspector checks transformer capacity in your area.",
+          "title": "Upload Mandatory Documents (Max 4MB / DigiLocker)",
+          "details": "Upload Identity Proof (Aadhaar via DigiLocker / PAN / Driving License / Passport / Voter ID) and Property Documents (Sale Deed / Khata / Tax Receipt).",
           "link": null
         },
         {
           "step": 4,
-          "title": "Load Update Approval",
-          "details": "Sanctioned load is updated in billing server.",
+          "title": "Upload Supporting Clearances & Annexure-9 Indemnity",
+          "details": "Attach local authority trade license / clearance (if applicable), Annexure-9 Indemnity Bond, and undertaking for prior dues.",
+          "link": null
+        },
+        {
+          "step": 5,
+          "title": "24-Hour Approval & Billing Reclassification",
+          "details": "BESCOM verifies documents and updates tariff schedule in billing server within 24 hours.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Identity Proof (Mandatory *)", "required": true, "note": "Aadhaar (DigiLocker direct integration) / PAN Card / Driving License / Passport / Voter ID" },
+        { "name": "Property Documents (Mandatory *)", "required": true, "note": "Photo copy of Sale Deed, Khata Certificate, or Tax Paid Certificate" },
+        { "name": "Local Authority License / Clearance", "required": false, "note": "BBMP / Local body clearance if required under statute for new commercial activity" },
+        { "name": "Annexure-9 Indemnity Bond Format", "required": false, "note": "As per Transfer of Installation format in KERC Conditions of Supply" },
+        { "name": "Undertaking for Prior Outstanding Dues", "required": false, "note": "Undertaking to pay any short claims or prior dues detected at later stage" }
+      ],
+      "fees": [
+        { "item": "Tariff Change Application Fee", "amount": "₹100" },
+        { "item": "Security Deposit Adjustment", "amount": "Differential ISD if upgrading to commercial tariff" },
+        { "item": "Upload Specs & Limits", "amount": "Max total size: 4MB (PDF / JPEG / PNG / GIF / BMP / TIFF; unencrypted for eSign)" }
+      ]
+    },
+    {
+      "id": "load-enhancement",
+      "title": "Load Enhancement (<= 17.5 kW)",
+      "category": "meter",
+      "badge": "24-Hr Janasnehi Fast Track",
+      "sla": "Within 24 Hours",
+      "onlineLink": "https://bescom.co.in",
+      "officialPortalName": "BESCOM Portal & Seva Sindhu",
+      "description": "Increase your sanctioned electricity load (up to 17.5 kW) within 24 hours to accommodate new Air Conditioners, EV Chargers, or commercial equipment.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Submit Load Enhancement Application",
+          "details": "Apply online with Account ID and additional requested load in kW.",
+          "link": "https://bescom.co.in"
+        },
+        {
+          "step": 2,
+          "title": "Pay Additional Security Deposit (ISD)",
+          "details": "Pay ₹1,200/kW (Domestic) or ₹2,000/kW (Commercial) for additional load online.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "24-Hour Load Sanction Update",
+          "details": "Sanctioned load updated on BESCOM central server within 24 hours.",
           "link": null
         }
       ],
       "documents": [
         { "name": "Latest Paid BESCOM Bill", "required": true, "note": "No arrears pending" },
-        { "name": "Test Report by Licensed Contractor (for load > 5 kW)", "required": true, "note": "Safety verification" },
-        { "name": "Identity Proof of Account Holder", "required": true, "note": "Aadhaar or PAN" }
+        { "name": "Contractor Test Report (for load > 5 kW)", "required": false, "note": "Required for total load above 5 kW" }
       ],
       "fees": [
-        { "item": "Processing Fee", "amount": "₹100" },
-        { "item": "Additional ISD (Load Increase)", "amount": "₹1,200 per additional kW" }
+        { "item": "Application Fee", "amount": "₹100" },
+        { "item": "Additional Initial Security Deposit", "amount": "₹1,200/kW (LT-1) / ₹2,000/kW (LT-3)" }
       ]
     },
     {
-      "id": "meter-testing",
-      "title": "Faulty / Fast Meter Testing & Replacement",
+      "id": "load-reduction",
+      "title": "Load Reduction (<= 17.5 kW)",
       "category": "meter",
-      "badge": "Complaint Portal",
-      "sla": "3-5 Working Days",
-      "onlineLink": "https://bescom.karnataka.gov.in",
-      "officialPortalName": "BESCOM Mithra App / Helpline 1912",
-      "description": "If your electricity bill suddenly doubled without increased usage, request official meter testing at BESCOM laboratory or replacement of damaged meter.",
+      "badge": "24-Hr Janasnehi Fast Track",
+      "sla": "Within 24 Hours",
+      "onlineLink": "https://bescom.co.in",
+      "officialPortalName": "BESCOM Portal",
+      "description": "Reduce your sanctioned load to lower monthly fixed demand charges when load requirements decrease.",
       "isOnlineAvailable": true,
       "steps": [
         {
           "step": 1,
-          "title": "Raise Meter Challenge Request",
-          "details": "Call 1912 or lodge request on BESCOM Mithra App / web portal.",
-          "link": "https://bescom.karnataka.gov.in"
+          "title": "Apply for Load Reduction",
+          "details": "Submit reduction request with revised kW capacity on BESCOM portal.",
+          "link": "https://bescom.co.in"
         },
         {
           "step": 2,
-          "title": "Check Meter Installation",
-          "details": "BESCOM technician installs a secondary reference check-meter alongside existing meter for 7 days.",
-          "link": null
-        },
-        {
-          "step": 3,
-          "title": "Lab Test Report & Bill Adjustment",
-          "details": "If meter is found fast (+/- 2% error), meter is replaced free of cost and excess billed amount is refunded in future bills.",
+          "title": "24-Hour Approval & Fixed Charge Adjustment",
+          "details": "Sanctioned load is reduced within 24 hours, reducing your monthly fixed charge on future bills.",
           "link": null
         }
       ],
       "documents": [
-        { "name": "Latest Electricity Bill", "required": true, "note": "Copy of abnormal bill" },
-        { "name": "Written Challenge Application", "required": true, "note": "Can be generated in portal" }
+        { "name": "Latest Electricity Bill", "required": true, "note": "Account must have zero pending dues" },
+        { "name": "Self Declaration / Reason for Reduction", "required": true, "note": "Specify reduced load requirement" }
       ],
       "fees": [
-        { "item": "Meter Test Deposit", "amount": "₹100 (Refunded if meter found faulty)" },
-        { "item": "Faulty Meter Replacement", "amount": "FREE (if damaged naturally or faulty)" }
+        { "item": "Processing Fee", "amount": "₹50" }
+      ]
+    },
+    {
+      "id": "smart-meter",
+      "title": "Normal To Smart Meter Conversion",
+      "category": "meter",
+      "badge": "Janasnehi Fast Track",
+      "sla": "Fast Track",
+      "onlineLink": "https://bescom.co.in",
+      "officialPortalName": "BESCOM Portal / Mithra App",
+      "description": "Upgrade your existing electromechanical or electronic meter to a digital Smart Meter with real-time remote reading, outage alerts, and prepaid functionality.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Submit Smart Meter Upgrade Request",
+          "details": "Apply online or via BESCOM Mithra App specifying your Account ID.",
+          "link": "https://bescom.co.in"
+        },
+        {
+          "step": 2,
+          "title": "Technician Visit & Replacement",
+          "details": "BESCOM meter technician replaces legacy meter with smart meter.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Smart Meter Activation",
+          "details": "Smart meter starts transmitting live consumption metrics to BESCOM Mithra App.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Latest BESCOM Bill", "required": true, "note": "Account verification" }
+      ],
+      "fees": [
+        { "item": "Smart Meter Replacement", "amount": "FREE (Under BESCOM Smart Grid Initiative)" }
+      ]
+    },
+    {
+      "id": "metering-mode-switch",
+      "title": "Postpaid To Prepaid / Prepaid To Postpaid",
+      "category": "meter",
+      "badge": "Janasnehi Fast Track",
+      "sla": "Fast Track",
+      "onlineLink": "https://bescom.co.in",
+      "officialPortalName": "BESCOM Portal & Mithra App",
+      "description": "Switch your electricity billing mode between Postpaid monthly billing and Prepaid recharge-based smart metering.",
+      "isOnlineAvailable": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Select Metering Mode Switch",
+          "details": "Choose Postpaid-to-Prepaid or Prepaid-to-Postpaid on BESCOM portal / Mithra App.",
+          "link": "https://bescom.co.in"
+        },
+        {
+          "step": 2,
+          "title": "Bill Settlement & Deposit Transfer",
+          "details": "Existing dues are cleared or security deposit is transferred to prepaid wallet.",
+          "link": null
+        },
+        {
+          "step": 3,
+          "title": "Mode Activation",
+          "details": "Smart meter configuration updated remotely within 24 hours.",
+          "link": null
+        }
+      ],
+      "documents": [
+        { "name": "Latest Paid Electricity Bill", "required": true, "note": "Clear final bill settlement" }
+      ],
+      "fees": [
+        { "item": "Mode Switch Charge", "amount": "FREE" }
       ]
     }
   ]

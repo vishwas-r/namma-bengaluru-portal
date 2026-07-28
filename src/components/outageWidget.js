@@ -7,18 +7,19 @@ import { getOutageReports, submitOutageReport, canUserReport } from '../services
 import { searchAreas } from '../services/areaService.js';
 // We also import the pre-fetched planned outages dataset
 import bescomPlannedOutages from '../data/bescom/planned_outages.json';
+import bwssbPlannedOutages from '../data/bwssb/planned_outages.json';
 
 // Keep track of leaflet map instance
 let outageMap = null;
 let currentMarkers = [];
 
-export function renderOutageWidget(dept = 'bescom') {
+export function renderPlannedOutagesWidget(dept = 'bescom') {
   const isBescom = dept === 'bescom';
-  const deptTitle = isBescom ? 'BESCOM Electricity Outage Tracker' : 'BWSSB Water Supply Disruption Tracker';
-  const deptIcon = isBescom ? 'bi-lightning-charge-fill text-warning' : 'bi-droplet-fill text-primary';
-  const user = getCurrentUser();
-  const reports = getOutageReports(dept);
-  const reportCheck = canUserReport(user, dept);
+  const deptTitle = isBescom ? 'BESCOM Planned Power Outages Schedule' : 'BWSSB Scheduled Water Maintenance';
+  const deptIcon = isBescom ? 'bi-calendar-event-fill text-warning' : 'bi-droplet-half text-primary';
+  const plannedData = isBescom ? bescomPlannedOutages : bwssbPlannedOutages;
+  const officialPortalUrl = isBescom ? 'https://bescom.karnataka.gov.in/info-4/Power+Outages/en' : 'https://bwssb.karnataka.gov.in/';
+  const rawFileUrl = `https://github.com/vishwas-r/namma-bengaluru-portal/tree/main/src/data/${dept}`;
 
   return `
   <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden" style="background:var(--bs-card-bg, rgba(27,33,62,0.6)); backdrop-filter:blur(12px); border:1px solid var(--bs-border-color)!important;">
@@ -30,47 +31,48 @@ export function renderOutageWidget(dept = 'bescom') {
         <div>
           <h3 class="h5 fw-bold mb-0">${deptTitle}</h3>
           <div class="text-secondary" style="font-size:0.78rem;">
-            <i class="bi bi-shield-check text-success me-1"></i>Verified Citizen Reports & Official Updates
+            <i class="bi bi-shield-check text-success me-1"></i>Official ${isBescom ? 'BESCOM Power Maintenance' : 'BWSSB Water Supply Disruption'} Schedule
           </div>
         </div>
       </div>
 
+      <div class="d-flex align-items-center gap-2">
+        <a href="${officialPortalUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-2 fw-semibold" style="font-size:0.8rem;">
+          <i class="bi bi-box-arrow-up-right me-2"></i>Official Govt Portal
+        </a>
+        <a href="${rawFileUrl}" target="_blank" rel="noopener" class="btn btn-sm bg-body-tertiary text-body border rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem;" title="Local dataset file: src/data/${dept}/planned_outages.json">
+          <i class="bi bi-filetype-json me-2 text-warning"></i>Data Folder
+        </a>
       </div>
     </div>
 
     <div class="card-body p-3 p-md-4">
-      
-      <!-- Tab Navigation -->
-      <ul class="nav nav-pills nav-fill bg-body-tertiary p-1 rounded-pill mb-4" style="font-size: 0.9rem; font-weight: 600;">
-        <li class="nav-item">
-          <a class="nav-link active rounded-pill text-nowrap" id="tab-planned" href="#" onclick="window.__nbSwitchOutageTab('planned'); return false;">
-            <i class="bi bi-calendar-event me-1"></i>Planned Outages
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link rounded-pill text-nowrap" id="tab-reports" href="#" onclick="window.__nbSwitchOutageTab('reports'); return false;">
-            <i class="bi bi-people-fill me-1"></i>Community Reports
-          </a>
-        </li>
-      </ul>
 
-      <!-- Live Interactive Leaflet Map (Shared across tabs) -->
+      <!-- Informative Source Disclaimer Banner -->
+      <div class="p-3 mb-4 rounded-3 border bg-body-tertiary d-flex align-items-start gap-3" style="border-left:4px solid #f59e0b !important;">
+        <i class="bi bi-info-circle-fill text-warning fs-5 flex-shrink-0 mt-0.5"></i>
+        <div style="font-size:0.83rem; line-height:1.5;">
+          <strong>Data Source Transparency:</strong>
+          ${isBescom ? 
+            'BESCOM planned power outage schedules are fetched from official KPTCL/BESCOM feeder maintenance bulletins.' : 
+            'BWSSB does not publish a daily automated public API for planned water shutdowns. Official emergency maintenance notices are issued via press releases on <a href="https://bwssb.karnataka.gov.in/" target="_blank" rel="noopener" class="fw-semibold text-primary">bwssb.karnataka.gov.in</a> and Twitter <a href="https://twitter.com/chairmanbwssb" target="_blank" rel="noopener" class="fw-semibold text-primary">@chairmanbwssb</a>. Unverified mock records have been removed.'}
+        </div>
+      </div>
+
+      <!-- Live Interactive Leaflet Map -->
       <div class="mb-4">
-        <div class="fw-bold text-uppercase mb-2" id="mapTitleLabel" style="font-size:0.75rem; letter-spacing:0.06em; color:var(--bs-secondary-color);">Planned Outages Map</div>
+        <div class="fw-bold text-uppercase mb-2" id="mapTitleLabel" style="font-size:0.75rem; letter-spacing:0.06em; color:var(--bs-secondary-color);">${isBescom ? 'Planned Power Outages Map' : 'Water Disruption & Maintenance Map'}</div>
         <div id="outageMapContainer" style="height: 400px; border-radius: 12px; overflow: hidden; border: 1px solid var(--bs-border-color); position: relative; z-index: 1;"></div>
       </div>
       
-      <!-- ============================================== -->
-      <!-- TAB 1: PLANNED OUTAGES                         -->
-      <!-- ============================================== -->
+      <!-- PLANNED OUTAGES CONTENT -->
       <div id="outageTabPlanned" class="d-block">
-        ${isBescom ? `
         <div class="mb-2">
           <div class="d-flex align-items-center justify-content-between mb-3">
               <div class="fw-bold text-uppercase" style="font-size:0.75rem; letter-spacing:0.06em; color:var(--bs-secondary-color);">
-                 Official Planned Power Outages (Auto-Synced Daily)
+                 Official Planned ${isBescom ? 'Power Outages' : 'Water Maintenance'} (Auto-Synced Daily)
               </div>
-              <span class="badge bg-primary-subtle text-primary border border-primary-subtle" id="poCountBadge">${bescomPlannedOutages.length || 0} scheduled</span>
+              <span class="badge bg-primary-subtle text-primary border border-primary-subtle" id="poCountBadge">${plannedData.length || 0} scheduled</span>
           </div>
           
           <div class="row g-2 mb-3">
@@ -98,7 +100,7 @@ export function renderOutageWidget(dept = 'bescom') {
                 </tr>
               </thead>
               <tbody id="plannedOutagesBody">
-                ${bescomPlannedOutages.length > 0 ? bescomPlannedOutages.map(po => {
+                ${plannedData.length > 0 ? plannedData.map(po => {
                   let isoDate = "";
                   try {
                     const d = new Date(po.date);
@@ -108,28 +110,60 @@ export function renderOutageWidget(dept = 'bescom') {
                   return `
                   <tr class="po-row" data-date="${isoDate}">
                     <td class="px-3 text-nowrap"><span class="fw-semibold text-danger">${po.date}</span><br><span class="text-secondary" style="font-size:0.75rem;">${po.fromTime} - ${po.toTime}</span></td>
-                    <td class="px-3 po-area"><div class="fw-medium">${po.areas}</div><div class="text-secondary" style="font-size:0.75rem;">Feeder: ${po.feeder}</div></td>
+                    <td class="px-3 po-area"><div class="fw-medium">${po.areas}</div><div class="text-secondary" style="font-size:0.75rem;">Pipeline/Feeder: ${po.feeder}</div></td>
                     <td class="px-3 text-secondary text-wrap" style="font-size:0.8rem;">${po.reason || '-'}</td>
                   </tr>
-                `}).join('') : `<tr id="poEmptyRow"><td colspan="3" class="text-center py-4 text-secondary">No planned outages found.</td></tr>`}
-                <tr id="poNoResultsRow" class="d-none"><td colspan="3" class="text-center py-4 text-secondary">No matching outages found for the selected filters.</td></tr>
+                `}).join('') : `<tr id="poEmptyRow"><td colspan="3" class="text-center py-4 text-secondary">No planned maintenance found.</td></tr>`}
+                <tr id="poNoResultsRow" class="d-none"><td colspan="3" class="text-center py-4 text-secondary">No matching records found for the selected filters.</td></tr>
               </tbody>
             </table>
           </div>
         </div>
-        ` : '<div class="text-secondary p-4 text-center border rounded-3 bg-body-tertiary">Planned outages are currently not available for BWSSB.</div>'}
+      </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+export function renderCrowdReportsWidget(dept = 'bescom') {
+  const isBescom = dept === 'bescom';
+  const deptTitle = isBescom ? 'BESCOM Crowd Outage Reports' : 'BWSSB Crowd Disruption Reports';
+  const deptIcon = isBescom ? 'bi-people-fill text-success' : 'bi-people-fill text-primary';
+  const user = getCurrentUser();
+  const reports = getOutageReports(dept);
+  const reportCheck = canUserReport(user, dept);
+
+  return `
+  <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden" style="background:var(--bs-card-bg, rgba(27,33,62,0.6)); backdrop-filter:blur(12px); border:1px solid var(--bs-border-color)!important;">
+    <div class="card-header bg-transparent border-bottom p-3 p-md-4 d-flex align-items-center justify-content-between flex-wrap gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <div class="p-2 rounded-3" style="background:rgba(var(--nb-dept-rgb),0.12);">
+          <i class="bi ${deptIcon} fs-4"></i>
+        </div>
+        <div>
+          <h3 class="h5 fw-bold mb-0">${deptTitle}</h3>
+          <div class="text-secondary" style="font-size:0.78rem;">
+            <i class="bi bi-shield-check text-success me-1"></i>Verified Citizen Reports & Real-Time Heatmap
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body p-3 p-md-4">
+      <!-- Live Interactive Leaflet Map -->
+      <div class="mb-4">
+        <div class="fw-bold text-uppercase mb-2" id="mapTitleLabel" style="font-size:0.75rem; letter-spacing:0.06em; color:var(--bs-secondary-color);">Citizen Outage Heatmap</div>
+        <div id="outageMapContainer" style="height: 400px; border-radius: 12px; overflow: hidden; border: 1px solid var(--bs-border-color); position: relative; z-index: 1;"></div>
       </div>
 
-      <!-- ============================================== -->
-      <!-- TAB 2: COMMUNITY REPORTS                       -->
-      <!-- ============================================== -->
-      <div id="outageTabReports" class="d-none">
+      <!-- COMMUNITY REPORTS CONTENT -->
+      <div id="outageTabReports" class="d-block">
         <!-- Top Action Bar -->
         <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-between gap-3 mb-4 p-3 p-md-4 rounded-4 shadow-sm" style="background:var(--bs-tertiary-bg); border:1px solid var(--bs-border-color);">
           <div class="flex-grow-1">
             <h6 class="fw-bold mb-2"><i class="bi bi-people-fill text-primary me-2"></i>Crowdsourced Reporting</h6>
             <p class="text-secondary mb-0" style="font-size:0.9rem; line-height:1.5;">
-              Help your neighbors by reporting power or water cuts in your area. Every report is backed by verified Google Sign-In to ensure 100% genuine data and prevent spam.
+              Help your neighbors by reporting power or water cuts in your area. Every report is backed by verified Google Sign-In to ensure 100% genuine data.
             </p>
           </div>
           
@@ -161,35 +195,40 @@ export function renderOutageWidget(dept = 'bescom') {
           </div>
         </div>
 
-        <!-- Live Verified Citizen Reports Feed -->
-        <div>
-          <div class="fw-bold text-uppercase mb-2" style="font-size:0.75rem; letter-spacing:0.06em; color:var(--bs-secondary-color);">Recent Verified Resident Reports</div>
-          <div class="d-flex flex-column gap-2">
-            ${reports.length > 0 ? reports.slice(0, 5).map(r => {
-              const timeAgoMins = Math.max(1, Math.floor((Date.now() - new Date(r.timestamp).getTime()) / 60000));
-              return `
-              <div class="p-2 rounded-3 border d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2" style="background:var(--bs-tertiary-bg); font-size:0.82rem;">
-                <div class="d-flex align-items-center gap-2">
-                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width:28px; height:28px; font-size:0.75rem;">
-                    ${r.user.picture ? `<img src="${r.user.picture}" class="rounded-circle" width="28" height="28">` : r.user.givenName[0]}
-                  </div>
-                  <div>
-                    <span class="fw-bold">${r.user.name}</span>
-                    <span class="badge bg-success-subtle text-success border border-success-subtle ms-1" style="font-size:0.65rem;"><i class="bi bi-patch-check-fill me-0.5"></i>Verified</span>
-                    <span class="text-secondary ms-1">reported in <strong class="text-body">${r.area}</strong></span>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-2 text-secondary" style="font-size:0.75rem;">
-                  <span>${r.outageType}</span>
-                  <span>·</span>
-                  <span><i class="bi bi-clock me-1"></i>${timeAgoMins}m ago</span>
-                </div>
-              </div>`;
-            }).join('') : `
-            <div class="text-center py-4 text-secondary border rounded-3 bg-body-tertiary" style="font-size:0.85rem;">
-               <i class="bi bi-check-circle text-success fs-3 d-block mb-2"></i> No active citizen reports in the last 2 hours.
-            </div>`}
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div class="fw-bold text-uppercase" style="font-size:0.75rem; letter-spacing:0.06em; color:var(--bs-secondary-color);">
+             Verified Community Reports (Last 2 Hours)
           </div>
+          <span class="badge bg-success-subtle text-success border border-success-subtle" id="reportsCountBadge">${reports.length} active</span>
+        </div>
+
+        <div id="outageReportsList">
+          ${reports.length === 0 ? `
+            <div class="text-center py-5 text-secondary border rounded-3 bg-body-tertiary">
+              <i class="bi bi-check-circle-fill text-success fs-1 mb-2 d-block"></i>
+              <div class="fw-bold fs-6 mb-1">No Citizen Outages Reported in Last 2 Hours</div>
+              <div style="font-size:0.85rem;">System is normal or all power cuts are restored.</div>
+            </div>
+          ` : `
+            <div class="list-group list-group-flush border rounded-3">
+              ${reports.map(r => `
+                <div class="list-group-item p-3 d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="p-2 rounded-circle bg-warning-subtle text-warning">
+                      <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold text-body" style="font-size:0.9rem;">${r.area}</div>
+                      <div class="text-secondary" style="font-size:0.78rem;">${r.outageType} &bull; Reported by ${r.user?.name || 'Citizen'}</div>
+                    </div>
+                  </div>
+                  <div class="text-end text-secondary" style="font-size:0.75rem;">
+                    ${new Date(r.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `}
         </div>
       </div>
     </div>
@@ -221,7 +260,7 @@ export function renderOutageWidget(dept = 'bescom') {
           <form id="outageReportForm" onsubmit="window.__nbSubmitReport(event, '${dept}'); return false;">
             <div class="mb-3">
               <label class="form-label fw-bold" style="font-size:0.85rem;">Reporter Profile</label>
-              <div class="p-2.5 rounded-3 bg-body-tertiary border d-flex align-items-center gap-2">
+              <div class="p-3 rounded-3 bg-body-tertiary border d-flex align-items-center gap-2">
                 ${user.picture ? `<img src="${user.picture}" class="rounded-circle" width="30" height="30">` : `<i class="bi bi-person-circle text-primary fs-5"></i>`}
                 <div>
                   <div class="fw-bold" style="font-size:0.85rem;">${user.name}</div>
@@ -264,7 +303,7 @@ export function renderOutageWidget(dept = 'bescom') {
             <div class="d-flex align-items-center justify-content-between pt-2 border-top">
               <button type="button" class="btn btn-outline-secondary rounded-pill px-3" data-bs-dismiss="modal">Cancel</button>
               <button type="submit" class="btn btn-primary rounded-pill px-4 fw-semibold">
-                <i class="bi bi-send-fill me-1.5"></i>Submit Outage Report
+                <i class="bi bi-send-fill me-2"></i>Submit Outage Report
               </button>
             </div>
           </form>`}
@@ -272,6 +311,10 @@ export function renderOutageWidget(dept = 'bescom') {
       </div>
     </div>
   </div>`;
+}
+
+export function renderOutageWidget(dept = 'bescom') {
+  return renderPlannedOutagesWidget(dept);
 }
 
 // Global Event Window Handlers for SPA Navigation
@@ -308,32 +351,33 @@ if (typeof window !== 'undefined') {
 
     const mapTitleLabel = document.getElementById('mapTitleLabel');
 
-    if (window.__nbCurrentOutageTab === 'planned' && dept === 'bescom') {
-      if(mapTitleLabel) mapTitleLabel.textContent = "Planned Outages Map";
+    const isPlannedTab = document.getElementById('outageTabPlanned') !== null || window.__nbCurrentOutageTab === 'planned';
+
+    if (isPlannedTab) {
+      const isBescom = dept === 'bescom';
+      const dataset = isBescom ? bescomPlannedOutages : bwssbPlannedOutages;
+      if(mapTitleLabel) mapTitleLabel.textContent = isBescom ? "BESCOM Planned Power Outages Map" : "BWSSB Water Maintenance Map";
       
-      // Plot Planned Outages dynamically via Photon API (fast, free, no strict rate limit)
-      const uniqueAreas = [...new Set(bescomPlannedOutages.map(po => {
+      // Plot Planned Outages dynamically via Photon API
+      const uniqueAreas = [...new Set(dataset.map(po => {
         return po.areas.split(',')[0].trim();
       }))].filter(a => a.length > 2 && a.toLowerCase() !== 'nil' && a.toLowerCase() !== 'none');
       
-      // Plot all areas using the safe Photon geocoder
       (async () => {
         for (let i = 0; i < uniqueAreas.length; i++) {
             const areaName = uniqueAreas[i];
-            
-            // Tiny delay just to be polite to the Photon API
             if (i > 0) await new Promise(r => setTimeout(r, 100)); 
             
             const results = await searchAreas(areaName);
             if (results && results.length > 0) {
                 const match = results[0];
-                const matchedOutages = bescomPlannedOutages.filter(po => po.areas.includes(areaName));
+                const matchedOutages = dataset.filter(po => po.areas.includes(areaName));
                 const count = matchedOutages.length;
                 
-                let color = '#fcd34d';
-                if(count > 1) color = '#fbbf24';
-                if(count > 3) color = '#f59e0b';
-                if(count > 5) color = '#d97706';
+                let color = isBescom ? '#fcd34d' : '#93c5fd';
+                if(count > 1) color = isBescom ? '#fbbf24' : '#60a5fa';
+                if(count > 3) color = isBescom ? '#f59e0b' : '#3b82f6';
+                if(count > 5) color = isBescom ? '#d97706' : '#1d4ed8';
                 
                 const outageDatesTimes = matchedOutages.slice(0, 3).map(o => `
                   <div style="font-size:0.75rem;" class="mt-1">

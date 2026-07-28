@@ -4,11 +4,13 @@ window.bootstrap = bootstrap;
 import { subscribeToOutageReports } from './services/outageStore.js';
 
 import deptData from './data/departments.json';
-import { renderSOSBar, renderHeader } from './components/header.js';
+import { renderSOSBar, renderHeader, renderGlobalSidebar } from './components/header.js';
 import { renderFooter } from './components/footer.js';
-import { renderModal } from './components/modal.js';
+import { renderModal, renderSearchModal, renderSearchResultsHTML } from './components/modal.js';
 import { renderHomePage } from './pages/homePage.js';
 import { renderComingSoonPage } from './pages/comingSoonPage.js';
+import { renderAboutPage } from './pages/aboutPage.js';
+import { renderDepartmentsPage } from './pages/departmentsPage.js';
 import { renderBWSSBPage, renderTab as renderBWSSBTab, renderCalc as renderBWSSBCalc, recalcBill as recalcBWSSBBill, renderTariffChart as renderBWSSBTariffChart, renderNoticeCard as renderBWSSBNoticeCard, renderSteps as renderBWSSBSteps } from './pages/bwssbPage.js';
 import { renderBESCOMPage, renderTab as renderBESCOMTab, renderCalc as renderBESCOMCalc, recalcBill as recalcBESCOMBill, renderTariffChart as renderBESCOMTariffChart, renderNoticeCard as renderBESCOMNoticeCard, renderSteps as renderBESCOMSteps } from './pages/bescomPage.js';
 import { getKeyPool, addKey, removeKey, markKeyStatus, testKey, cleanKey, queryGemini } from './services/keyPool.js';
@@ -34,8 +36,11 @@ const state = {
     rwhNonCompliant: false,
   },
   modalOpen: false,
+  searchModalOpen: false,
+  searchQuery: '',
   dropdownOpen: false,
   mobileMenuOpen: false,
+  deptSidebarOpen: window.innerWidth >= 992,
   noticeFilter: 'all',
   selectedComplaintType: 'no-water',
   selectedServiceId: 'name-change',
@@ -57,6 +62,7 @@ const I18N = {
       services: { icon: 'bi-file-earmark-check', label: 'Services & Applications' },
       outages: { icon: 'bi-broadcast-pin', label: 'Outage Tracker' },
       notices: { icon: 'bi-newspaper', label: 'Notices' },
+      social: { icon: 'bi-share', label: 'Social Feed' },
       complaint: { icon: 'bi-life-preserver', label: 'Complaint Guide' },
       ai: { icon: 'bi-robot', label: 'NammaBengaluru AI' },
     },
@@ -73,6 +79,7 @@ const I18N = {
       services: { icon: 'bi-file-earmark-check', label: 'ಸೇವೆಗಳು ಮತ್ತು ಅರ್ಜಿಗಳು' },
       outages: { icon: 'bi-broadcast-pin', label: 'ಅಡಚಣೆ ಟ್ರ್ಯಾಕರ್' },
       notices: { icon: 'bi-newspaper', label: 'ಸುತ್ತೋಲೆಗಳು' },
+      social: { icon: 'bi-share', label: 'ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ' },
       complaint: { icon: 'bi-life-preserver', label: 'ದೂರು ಮಾರ್ಗದರ್ಶಿ' },
       ai: { icon: 'bi-robot', label: 'AI ಕೇಳಿ' },
     },
@@ -86,12 +93,28 @@ const getLang = () => I18N[state.lang] || I18N.en;
 // ── Router ─────────────────────────────────────────────────
 function router() {
   const hash = window.location.hash || '#/';
-  if (hash.startsWith('#/dept/')) {
+  if (hash === '#/about') {
+    state.route = 'about';
+    state.deptId = null;
+    applyDeptTheme(null);
+  } else if (hash === '#/departments') {
+    state.route = 'departments';
+    state.deptId = null;
+    applyDeptTheme(null);
+  } else if (hash.startsWith('#/dept/')) {
+    const rawPath = hash.replace('#/dept/', '');
+    const parts = rawPath.split('/');
+    const newDept = parts[0];
+    const newTab = parts[1] || 'overview';
+
     state.route = 'dept';
-    state.deptId = hash.replace('#/dept/', '');
+    state.deptId = newDept;
+    state.activeTab = newTab;
+    applyDeptTheme(newDept);
   } else {
     state.route = 'home';
     state.deptId = null;
+    applyDeptTheme(null);
   }
   renderApp();
 }
@@ -174,27 +197,47 @@ function renderDeptPage() {
 
 // ── Root Render ────────────────────────────────────────────
 function renderApp(skipScroll = false) {
-  const page = state.route === 'dept' ? renderDeptPage() : renderHomePage(getLang());
+  let page = renderHomePage(getLang());
+  if (state.route === 'dept') {
+    page = renderDeptPage();
+  } else if (state.route === 'about') {
+    page = renderAboutPage();
+  } else if (state.route === 'departments') {
+    page = renderDepartmentsPage(getLang());
+  }
   document.getElementById('app').innerHTML = `
-    ${renderSOSBar()}
-    ${renderHeader(state, getLang())}
-    <main>${page}</main>
-    ${renderFooter()}
+    <!-- Top Header Stack: Full Width Edge-to-Edge -->
+    <div class="nb-top-header-stack sticky-top border-bottom bg-body" style="z-index:1040;">
+      ${renderSOSBar()}
+      ${renderHeader(state, getLang())}
+    </div>
+
+    <!-- Main Body Layout Container (Below Top Header) -->
+    <div class="nb-app-body-container position-relative">
+      ${renderGlobalSidebar(state, getLang())}
+      <div class="nb-app-main-content">
+        <main class="pb-3">${page}</main>
+        ${renderFooter()}
+      </div>
+    </div>
     ${state.modalOpen ? renderModal() : ''}
+    ${state.searchModalOpen ? renderSearchModal(state) : ''}
     <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" style="z-index:9999;"></div>
   `;
   bindAll();
   applyTheme(state.theme);
   applyDeptTheme(state.route === 'dept' ? state.deptId : null);
+  document.body.classList.toggle('nb-sidebar-open', Boolean(state.route === 'dept' && state.deptSidebarOpen));
   if (state.route === 'dept') {
+    reloadTwitterWidgets();
     if (state.deptId === 'bwssb') {
       if (state.activeTab === 'calculator') recalcBWSSBBill(state);
       if (state.activeTab === 'tariff') setTimeout(renderBWSSBTariffChart, 60);
-      if (state.activeTab === 'outages') setTimeout(() => { if(window.__nbInitOutageMap) window.__nbInitOutageMap('bwssb'); }, 100);
+      if (state.activeTab === 'outages' || state.activeTab === 'planned-outages' || state.activeTab === 'crowd-reports') setTimeout(() => { if(window.__nbInitOutageMap) window.__nbInitOutageMap('bwssb'); }, 100);
     } else if (state.deptId === 'bescom') {
       if (state.activeTab === 'calculator') recalcBESCOMBill(state);
       if (state.activeTab === 'tariff') setTimeout(renderBESCOMTariffChart, 60);
-      if (state.activeTab === 'outages') setTimeout(() => { if(window.__nbInitOutageMap) window.__nbInitOutageMap('bescom'); }, 100);
+      if (state.activeTab === 'outages' || state.activeTab === 'planned-outages' || state.activeTab === 'crowd-reports') setTimeout(() => { if(window.__nbInitOutageMap) window.__nbInitOutageMap('bescom'); }, 100);
     }
   }
   if (!skipScroll && !state.modalOpen) {
@@ -202,37 +245,68 @@ function renderApp(skipScroll = false) {
   }
 }
 
+function reloadTwitterWidgets() {
+  setTimeout(() => {
+    if (window.twttr && window.twttr.widgets) {
+      window.twttr.widgets.load();
+    }
+  }, 150);
+}
+
 // ── Event Handlers & Global Bindings ───────────────────────
 function bindAll() {
-  window.__navDept = (id) => {
+  window.__switchSocialFeed = (tab) => {
+    document.querySelectorAll('.nb-social-feed-pane').forEach(el => el.classList.add('d-none'));
+    document.querySelectorAll('.nb-social-subtab-btn').forEach(btn => {
+      btn.classList.remove('btn-primary');
+      btn.classList.add('btn-outline-secondary');
+    });
+    
+    const activePane = document.getElementById(`socialPane_${tab}`);
+    if (activePane) activePane.classList.remove('d-none');
+    
+    const activeBtn = document.getElementById(`socialTabBtn_${tab}`);
+    if (activeBtn) {
+      activeBtn.classList.remove('btn-outline-secondary');
+      activeBtn.classList.add('btn-primary');
+    }
+  };
+
+  window.__toggleMobileTabMenu = (e) => {
+    e.stopPropagation();
+    const menu = document.getElementById('mobileTabMenu');
+    if (menu) menu.classList.toggle('d-none');
+  };
+
+  window.__selectMobileTab = (id) => {
+    const menu = document.getElementById('mobileTabMenu');
+    if (menu) menu.classList.add('d-none');
+    window.__tab(id);
+  };
+
+  window.__navDept = (id, tab = 'overview') => {
     state.dropdownOpen = false;
-    state.activeTab = 'calculator';
-    navigate(`#/dept/${id}`);
+    if (window.innerWidth < 992 && window.__toggleSidebar) {
+      window.__toggleSidebar(false);
+    }
+    state.activeTab = tab;
+    navigate(`#/dept/${id}/${tab}`);
   };
 
   window.__tab = (tabId) => {
     state.activeTab = tabId;
-    const c = document.getElementById('tabContent');
-    if (c) {
-      if (state.deptId === 'bwssb') c.innerHTML = renderBWSSBTab(state, getLang());
-      else if (state.deptId === 'bescom') c.innerHTML = renderBESCOMTab(state, getLang());
+    if (window.innerWidth < 992 && window.__toggleSidebar) {
+      window.__toggleSidebar(false);
     }
-    document.querySelectorAll('.nb-tab-btn').forEach(b => {
-      b.classList.toggle('is-active', b.getAttribute('onclick')?.includes(`'${tabId}'`));
-    });
-    
-    if (tabId === 'calculator') {
-      if (state.deptId === 'bwssb') recalcBWSSBBill(state);
-      else if (state.deptId === 'bescom') recalcBESCOMBill(state);
-    }
-    if (tabId === 'tariff') {
-      if (state.deptId === 'bwssb') setTimeout(renderBWSSBTariffChart, 60);
-      else if (state.deptId === 'bescom') setTimeout(renderBESCOMTariffChart, 60);
-    }
-    if (tabId === 'outages') {
-      setTimeout(() => {
-        if (window.__nbInitOutageMap) window.__nbInitOutageMap(state.deptId);
-      }, 100);
+    if (state.route === 'dept' && state.deptId) {
+      const targetHash = `#/dept/${state.deptId}/${tabId}`;
+      if (window.location.hash !== targetHash) {
+        window.location.hash = targetHash;
+      } else {
+        renderApp(true);
+      }
+    } else {
+      renderApp(true);
     }
   };
 
@@ -264,10 +338,23 @@ function bindAll() {
     if (menu) menu.style.setProperty('display', 'none', 'important');
   };
 
+  window.__toggleSidebar = (forceState) => {
+    state.deptSidebarOpen = forceState !== undefined ? Boolean(forceState) : !state.deptSidebarOpen;
+    const sidebar = document.getElementById('nbDeptSidebar');
+    const backdrop = document.getElementById('nbDeptSidebarBackdrop');
+    if (sidebar) sidebar.classList.toggle('is-open', state.deptSidebarOpen);
+    if (backdrop) backdrop.classList.toggle('is-visible', state.deptSidebarOpen);
+    document.body.classList.toggle('nb-sidebar-open', Boolean(state.route === 'dept' && state.deptSidebarOpen));
+  };
+
   document.addEventListener('click', () => {
     if (state.dropdownOpen) {
       state.dropdownOpen = false;
       document.getElementById('deptDropdown')?.classList.remove('open');
+    }
+    const mobileTabMenu = document.getElementById('mobileTabMenu');
+    if (mobileTabMenu && !mobileTabMenu.classList.contains('d-none')) {
+      mobileTabMenu.classList.add('d-none');
     }
   });
 
@@ -308,6 +395,34 @@ function bindAll() {
     document.querySelectorAll('.nb-complaint-btn').forEach(btn => {
       btn.classList.toggle('is-selected', btn.getAttribute('onclick')?.includes(`'${id}'`));
     });
+  };
+
+  window.__toggleSidebarDepts = () => {
+    const sublist = document.getElementById('sidebarDeptSublist');
+    const chev = document.getElementById('sidebarDeptChevron');
+    if (sublist) {
+      const isHidden = window.getComputedStyle(sublist).display === 'none';
+      sublist.style.setProperty('display', isHidden ? 'flex' : 'none', 'important');
+      if (chev) chev.className = isHidden ? 'bi bi-chevron-down text-secondary' : 'bi bi-chevron-right text-secondary';
+    }
+  };
+
+  window.__handleHomeSearch = (e) => {
+    if (e.key === 'Enter') window.__triggerHomeSearch();
+  };
+
+  window.__triggerHomeSearch = () => {
+    const query = document.getElementById('homeSearchInput')?.value?.toLowerCase().trim();
+    if (!query) return;
+    if (query.includes('bescom') || query.includes('power') || query.includes('electricity') || query.includes('light')) {
+      navigate('#/dept/bescom');
+    } else if (query.includes('bwssb') || query.includes('water') || query.includes('sewerage')) {
+      navigate('#/dept/bwssb');
+    } else if (query.includes('metro') || query.includes('train') || query.includes('bmtc')) {
+      navigate('#/dept/bmtc');
+    } else {
+      navigate('#/dept/bescom');
+    }
   };
 
   window.__service = (id) => {
@@ -421,7 +536,52 @@ function bindAll() {
     } finally { if (btn) btn.disabled = false; }
   };
 
-  window.__search = (q) => { if (q.trim().length > 3) navigate('#/dept/bwssb'); };
+  window.__openSearchModal = (initialQuery = '') => {
+    state.searchModalOpen = true;
+    state.searchQuery = initialQuery;
+    renderApp(true);
+    setTimeout(() => {
+      const input = document.getElementById('modalSearchInput');
+      if (input) {
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+      }
+    }, 50);
+  };
+
+  window.__closeSearchModal = () => {
+    state.searchModalOpen = false;
+    renderApp(true);
+  };
+
+  window.__onSearchInput = (val) => {
+    state.searchQuery = val;
+    const container = document.getElementById('modalSearchResults');
+    if (container) {
+      container.innerHTML = renderSearchResultsHTML(val);
+    }
+  };
+
+  window.__handleHeaderSearch = (e) => {
+    const val = e.target?.value || '';
+    if (val.trim().length > 0) {
+      window.__openSearchModal(val);
+    }
+  };
+
+  window.__triggerHomeSearch = () => {
+    const input = document.getElementById('homeSearchInput');
+    const val = input?.value || '';
+    window.__openSearchModal(val);
+  };
+
+  window.__handleHomeSearch = (e) => {
+    if (e.key === 'Enter') {
+      window.__triggerHomeSearch();
+    } else if ((e.target?.value || '').trim().length > 1) {
+      window.__openSearchModal(e.target.value);
+    }
+  };
 }
 
 function appendMsg(role, content) {
@@ -437,6 +597,20 @@ function appendMsg(role, content) {
 }
 
 function scrollChat() { const c = document.getElementById('chatMsgs'); if (c) c.scrollTop = c.scrollHeight; }
+
+// ── Ctrl + K Keyboard Shortcut Listener ───────────────────────
+window.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    if (state.searchModalOpen) {
+      window.__closeSearchModal();
+    } else {
+      window.__openSearchModal('');
+    }
+  } else if (e.key === 'Escape' && state.searchModalOpen) {
+    window.__closeSearchModal();
+  }
+});
 
 // ── Boot ───────────────────────────────────────────────────
 

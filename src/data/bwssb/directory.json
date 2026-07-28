@@ -1,0 +1,1640 @@
+{
+  "serviceStationsOfficialUrl": "https://bwssb.karnataka.gov.in/7/service-station/en",
+  "otherOfficesOfficialUrl": "https://bwssb.karnataka.gov.in/10/other-offices/en",
+  "zones": [
+    {
+      "id": "central",
+      "name": "Central Zone",
+      "ee": {
+        "name": "Nagendra B",
+        "title": "Executive Engineer (EE)",
+        "address": "Millers Road, High Grounds, Bengaluru - 560052",
+        "officePhone": "080-22945187",
+        "mobile": "9845444078",
+        "email": "eec@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "C1",
+          "aee": {
+            "name": "Mahesh Kumar K.S",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "#17, Park Road, Tulasi Thota, Chikka lalbagh, Bengaluru-53",
+            "officePhone": "080-22945188",
+            "mobile": "7760990674",
+            "email": "aeec1@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "HGR",
+              "contact": "Mahesh Kumar K.S",
+              "address": "Millers road, Near Basava Bhavan, Bengaluru – 560052",
+              "officePhone": "080-22945191",
+              "mobile": "9900944041"
+            },
+            {
+              "name": "COLES PARK",
+              "contact": "Rajesh S D",
+              "address": "St. Johns Church road, Inside Coles Park, Bengaluru-560005",
+              "officePhone": "080-22945192",
+              "mobile": "9972962038"
+            }
+          ]
+        },
+        {
+          "code": "C2",
+          "aee": {
+            "name": "Vinay Kumar",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Nethaji Road, Frazer Town, Bengaluru - 560005",
+            "officePhone": "080-22945167",
+            "mobile": "9845444053",
+            "email": "aeec3@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "FRAZER TOWN",
+              "contact": "Rahul",
+              "address": "Nethaji Road, Frazer Town, Near Netaji Aatada Mydana, Bengaluru - 560005",
+              "officePhone": "080-22945167",
+              "mobile": "9916524936"
+            },
+            {
+              "name": "MACHALIBETTA",
+              "contact": "Mallappa Mali",
+              "address": "Opposite to Pre Owned Car Dealers, Banaswadi Main Road, Maruthi Seva Nagar, Bengaluru - 560033",
+              "officePhone": "080-22945167",
+              "mobile": "9591209312"
+            },
+            {
+              "name": "PILLANNA GARDEN 1 (DJ halli)",
+              "contact": "Rahul",
+              "address": "2nd Stage, Pillanna Garden, BSA Road, Muslim Colony, Bengaluru – 560045",
+              "officePhone": "080-22945167",
+              "mobile": "9916524936"
+            },
+            {
+              "name": "PILLANNA GARDEN 2 (KG halli)",
+              "contact": "Mallappa Mali",
+              "address": "Pillanna Garden 2 (KG halli), Bengaluru",
+              "officePhone": "080-22945167",
+              "mobile": "9591209312"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east-1",
+      "name": "East - 1 Zone",
+      "ee": {
+        "name": "Mirza Anwar",
+        "title": "Executive Engineer (EE)",
+        "address": "1st cross, 10th Main, 2nd Stage, Indiranagar Ground floor Bengaluru",
+        "officePhone": "080-22945158",
+        "mobile": "9741969945",
+        "email": "eee@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "E-11",
+          "aee": {
+            "name": "Hanumanth Ghanti",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "BEML Layout, Near ITPL Kundanahalli Main Road Bengaluru - 560066",
+            "officePhone": "080-22945115",
+            "mobile": "9740984161",
+            "email": "aeee2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Hoodi",
+              "contact": "Ravi Kumar",
+              "address": "Near Graphic Index, RXDX Hospital backside, Bengaluru - 560066",
+              "officePhone": "080-22945234",
+              "mobile": "7349543768"
+            },
+            {
+              "name": "AECS Layout-1",
+              "contact": "Manjunath / Sahanab begam",
+              "address": "BEML Layout, Near ITPL, Kundanahalli Main Road Bengaluru – 560066",
+              "officePhone": "080-22945234",
+              "mobile": "8431607550 / 8618792435"
+            },
+            {
+              "name": "AECS Layout-2",
+              "contact": "Latheef Saheb",
+              "address": "BEML Layout, Kundanahalli Mainroad, Bengaluru-560066",
+              "officePhone": "080-22945115",
+              "mobile": "8867388732"
+            }
+          ]
+        },
+        {
+          "code": "E-12",
+          "aee": {
+            "name": "Nanjundaiah",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "A Narayanapura, K.R.puram, Bengaluru-16",
+            "officePhone": "080-28510008",
+            "mobile": "8197382595",
+            "email": "aeee4@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Vignananagar",
+              "contact": "Mohammed Mudassir",
+              "address": "Doddanakundi / Vignan Nagar / A Narayanapura",
+              "officePhone": "080-28510008",
+              "mobile": "9845444051"
+            },
+            {
+              "name": "HAL Airport / Marathahalli / Doddanekundi",
+              "contact": "Meghachandra H R",
+              "address": "HAL Airport / Marathahalli / Doddanekundi",
+              "officePhone": "—",
+              "mobile": "7338413984"
+            }
+          ]
+        },
+        {
+          "code": "E-13",
+          "aee": {
+            "name": "Naveen kumar",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Kadugodi, Bengaluru",
+            "officePhone": "080-28510000",
+            "mobile": "9535544974",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Nagagondanahalli / Siddapura",
+              "contact": "Rangaswamy D",
+              "address": "Siddapura & Rangaswamy D. EV2(1-2)",
+              "officePhone": "—",
+              "mobile": "7892868185"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east-2",
+      "name": "East - 2 Zone",
+      "ee": {
+        "name": "Channabasavaiah",
+        "title": "Executive Engineer (EE)",
+        "address": "1st cross, 10th Main, 2nd Stage, Indiranagar Bengaluru",
+        "officePhone": "080-22945200",
+        "mobile": "9845444150",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "E-21",
+          "aee": {
+            "name": "Feroz Pasha",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "9th ‘D’ Main, Service road, 1st Block, HRBR Layout, Kalyan nagar, Bengaluru-43",
+            "officePhone": "080-22945170",
+            "mobile": "8217467686",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "HBR Layout",
+              "contact": "Daval sab Karnachi",
+              "address": "HBR Layout, Bengaluru",
+              "officePhone": "080-22945170",
+              "mobile": "9686566954"
+            },
+            {
+              "name": "HRBR Layout",
+              "contact": "Daval sab Karnachi",
+              "address": "HRBR Layout, Bengaluru",
+              "officePhone": "080-22945170",
+              "mobile": "9686566954"
+            }
+          ]
+        },
+        {
+          "code": "E-22",
+          "aee": {
+            "name": "Lokesh J",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "1st Main, Kasthuri nagar, Bengaluru-43",
+            "officePhone": "080-22945200",
+            "mobile": "9845444058",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Lingarajapuram",
+              "contact": "Rajini A",
+              "address": "Lingarajapuram, Bengaluru",
+              "officePhone": "080-22945200",
+              "mobile": "9844888239"
+            },
+            {
+              "name": "OMBR / Banaswadi",
+              "contact": "Manjunatha (JE)",
+              "address": "OMBR / Banaswadi, Bengaluru",
+              "officePhone": "080-22945200",
+              "mobile": "9590802503"
+            }
+          ]
+        },
+        {
+          "code": "E-23",
+          "aee": {
+            "name": "Naveen Kumar",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "NRI Layout Kalkere, T C Palya Main (Behind Shell Petrol Bunk)",
+            "officePhone": "080-25663688",
+            "mobile": "9535544974",
+            "email": "aeeev1@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Challakere / Horamavu / Kalkere / Kothanur-Byrathi",
+              "contact": "Anand (JE)",
+              "address": "Ramamurthinagar (Ward 51) / Vijinapura / Horamavu",
+              "officePhone": "—",
+              "mobile": "7090216187"
+            }
+          ]
+        },
+        {
+          "code": "E-24",
+          "aee": {
+            "name": "Venkataramanappa",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "9B-31, ITI colony, Dooravani nagar, Bengaluru-560016",
+            "officePhone": "080-25663688",
+            "mobile": "9972049588",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "RAMAMURTHYNAGAR",
+              "contact": "Anand (JE)",
+              "address": "Ramamurthynagar, Bengaluru",
+              "officePhone": "080-25663688",
+              "mobile": "7090216187"
+            },
+            {
+              "name": "Devasandra / K R Puram",
+              "contact": "Dinesh Ballu",
+              "address": "K R puram, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9844888150"
+            },
+            {
+              "name": "Vijinapura Service Station",
+              "contact": "Anand (JE)",
+              "address": "Vijinapura, Bengaluru",
+              "officePhone": "—",
+              "mobile": "7090216187"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west-1",
+      "name": "West - 1 Zone",
+      "ee": {
+        "name": "T Chandrashekar Prasad",
+        "title": "Executive Engineer (EE)",
+        "address": "Arkavati Bhavan, 9th cross, 5th Main, RPC Layout, Vijayanagar, Bengaluru",
+        "officePhone": "080-22945171",
+        "mobile": "9845443138",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "W-11",
+          "aee": {
+            "name": "Shivaram S G",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Ground Floor, Arkavati Bhavan, 9th cross, 5th Main, RPC Layout, Vijayanagar 2nd Stage, Bengaluru-40",
+            "officePhone": "080-23500013",
+            "mobile": "9845444069",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Mysore Road",
+              "contact": "Dinesh",
+              "address": "New Guddadahalli, Mysore road, near Girias showroom, Bengaluru - 560066",
+              "officePhone": "080-22945182",
+              "mobile": "9901343001"
+            },
+            {
+              "name": "Hosahalli",
+              "contact": "Swathi",
+              "address": "Hosahalli, Bengaluru",
+              "officePhone": "080-22945186",
+              "mobile": "7026298455"
+            },
+            {
+              "name": "MAGADI ROAD 1 & 2",
+              "contact": "Dinesh",
+              "address": "Magadi Road, Bengaluru",
+              "officePhone": "080-22945181",
+              "mobile": "9901343001"
+            }
+          ]
+        },
+        {
+          "code": "W-12",
+          "aee": {
+            "name": "Sowmya Rani M",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "8th Main, MC Layout, Vijayanagar water tank, Vijayanagar, Bengaluru-40",
+            "officePhone": "080-28611826",
+            "mobile": "9845546502",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Chandra Layout - 1",
+              "contact": "Ramegowda",
+              "address": "Chandra Layout - 1, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9739925888"
+            },
+            {
+              "name": "Chandra Layout - 2",
+              "contact": "Ramegowda",
+              "address": "Chandra Layout-2 / Moodalapalya",
+              "officePhone": "080-22945174",
+              "mobile": "9739925888"
+            },
+            {
+              "name": "Moodalapalya",
+              "contact": "Sathish T",
+              "address": "Moodalapalya, Bengaluru",
+              "officePhone": "080-22945174",
+              "mobile": "7892580073"
+            },
+            {
+              "name": "Vijayanagar OHT",
+              "contact": "Ramegowda B",
+              "address": "Vijayanagar OHT, Bengaluru",
+              "officePhone": "080-22945246",
+              "mobile": "9739925888"
+            }
+          ]
+        },
+        {
+          "code": "W-13",
+          "aee": {
+            "name": "Somanath",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "5th Block, Nagarabhavai, outer ring road, Bengaluru-72",
+            "officePhone": "080-22945184",
+            "mobile": "9845444073",
+            "email": "aeenw2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Agrahara Dasarahalli",
+              "contact": "Rajendra kumar",
+              "address": "Agrahara Dasarahalli, Bengaluru",
+              "officePhone": "080-22945185",
+              "mobile": "9845444076"
+            },
+            {
+              "name": "KAMALANAGAR / KAMAKSHI PALYA",
+              "contact": "Shivakumar",
+              "address": "Kamakshipalya, Bengaluru",
+              "officePhone": "080-23235755",
+              "mobile": "9845444074"
+            },
+            {
+              "name": "West of Chord 1 & 2",
+              "contact": "Rajendra kumar",
+              "address": "West of Chord 1 & 2 KamalaNagar / Kamakshipalya",
+              "officePhone": "080-23235755",
+              "mobile": "9845444076"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "west-2",
+      "name": "West - 2 Zone",
+      "ee": {
+        "name": "Mallikarjun NB",
+        "title": "Executive Engineer (EE)",
+        "address": "80feet road, vishweshwaraya 1st block, KHB Platinum Apartment, Bengaluru",
+        "officePhone": "—",
+        "mobile": "9740984165",
+        "email": "eenw@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "W-21",
+          "aee": {
+            "name": "Yashanth B",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "5th Stage, 1st main, BEML Layout, RR Nagar, Bengaluru-98",
+            "officePhone": "080-28611826",
+            "mobile": "9591987962",
+            "email": "aeew_2_1@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "R.R. Nagar",
+              "contact": "Kavya",
+              "address": "R.R. Nagar, Bengaluru",
+              "officePhone": "080-22945383",
+              "mobile": "8861938538"
+            },
+            {
+              "name": "Ideal Home",
+              "contact": "Rahul Rathod",
+              "address": "Ideal Home, Bengaluru",
+              "officePhone": "080-22945246",
+              "mobile": "7026266677"
+            },
+            {
+              "name": "Kengeri",
+              "contact": "Rahul Rathod",
+              "address": "Kengeri, Bengaluru",
+              "officePhone": "080-22945175",
+              "mobile": "7026266677"
+            },
+            {
+              "name": "Nagadevanahalli",
+              "contact": "Nagarathna",
+              "address": "Nagadevanahalli, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8050833940"
+            }
+          ]
+        },
+        {
+          "code": "W-22",
+          "aee": {
+            "name": "Keerthana",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "5th block, Nagarabhavi, Outer ring road, Bengaluru",
+            "officePhone": "080-23212181",
+            "mobile": "7259031533",
+            "email": "aeew_2_2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "NAGARBHAVI",
+              "contact": "Harsha V",
+              "address": "#5, Outer ring road, Nagarabhavi, Bengaluru – 560072",
+              "officePhone": "080-23183260",
+              "mobile": "9986555502"
+            },
+            {
+              "name": "Annapoorneswarinagar",
+              "contact": "Vishwanath",
+              "address": "5th Block, 2nd stage, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9900629915"
+            },
+            {
+              "name": "Sir M.V. Layout - 1",
+              "contact": "Deepa J",
+              "address": "#4, 1st cross, SMV Layout, Near 7.5 ML GLR Bengaluru - 560076",
+              "officePhone": "080-23183260",
+              "mobile": "9945953666"
+            },
+            {
+              "name": "Sir M.V. Layout - 2",
+              "contact": "Harsha V",
+              "address": "#4, 1st cross, SMV Layout, Near 7.5 ML GLR Bengaluru - 560076",
+              "officePhone": "080-23183260",
+              "mobile": "9986555502"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "north-1",
+      "name": "North - 1 Zone",
+      "ee": {
+        "name": "Jayaprakash",
+        "title": "Executive Engineer (EE)",
+        "address": "R T Nagar Office, Bengaluru",
+        "officePhone": "080-29565615",
+        "mobile": "7022227230",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "N-11",
+          "aee": {
+            "name": "Rajashekar Meti",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "8th MainRoad, 16thCross, D block, Opp Bsnl Office, Sahakaranagar, Bengaluru",
+            "officePhone": "080-28562829",
+            "mobile": "9845444123",
+            "email": "aeen1_jakkur@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Kempapura / Jakkur",
+              "contact": "Pradeep",
+              "address": "Kempapura / Jakkur, Bengaluru",
+              "officePhone": "—",
+              "mobile": "7019003410"
+            },
+            {
+              "name": "Sahakaranagar",
+              "contact": "Chinthana K",
+              "address": "Sahakaranagar, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8861547061"
+            }
+          ]
+        },
+        {
+          "code": "N-12",
+          "aee": {
+            "name": "Kalpana S",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "BWSSB 3rd Cross, P & T Colony, R T Nagar, Bengaluru – 560032",
+            "officePhone": "080-22945139",
+            "mobile": "9845444060",
+            "email": "aeene3@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "RT NAGAR",
+              "contact": "Kumar",
+              "address": "No.3, 2nd Main, 3rd Cross, P & T Colony, R.T.Nagar, Bengaluru-560032",
+              "officePhone": "080-22945142",
+              "mobile": "9482798909"
+            },
+            {
+              "name": "ANANDANAGAR",
+              "contact": "Kumar",
+              "address": "1st Cross, AGS Colony, Next to Atria College, Ananda Nagar, Bengaluru-560032",
+              "officePhone": "080-22945266",
+              "mobile": "9482798909"
+            },
+            {
+              "name": "GangaNagar",
+              "contact": "Kumar",
+              "address": "No.3, 2nd Main, 3rd Cross, P & T Colony, R.T.Nagar, Bengaluru-560032",
+              "officePhone": "080-22945142",
+              "mobile": "9482798909"
+            },
+            {
+              "name": "Manoraynapalya",
+              "contact": "Kumar",
+              "address": "No.3, 2nd Main, 3rd Cross, P & T Colony, R.T.Nagar, Bengaluru-560032",
+              "officePhone": "080-22945142",
+              "mobile": "9482798909"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "north-2",
+      "name": "North - 2 Zone",
+      "ee": {
+        "name": "Ramesh R",
+        "title": "Executive Engineer (EE)",
+        "address": "Pinakini Bhavan, Doddaballapura Main Road, Yelahanka Newtown, Bengaluru-64",
+        "officePhone": "080-22945130",
+        "mobile": "8431054449",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "N-21",
+          "aee": {
+            "name": "Vinayak K M",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "1st Floor, Pinakini bhavan, Doddaballapura Main Road, Yelahanka, Bengaluru-64",
+            "officePhone": "080-28562829",
+            "mobile": "9740984163",
+            "email": "aeen2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Yelahanka New Town",
+              "contact": "Manjunatha Hallur",
+              "address": "Yelahanka New Town, Bengaluru",
+              "officePhone": "080-22945140",
+              "mobile": "8971192116"
+            },
+            {
+              "name": "Yelahanka Old Town",
+              "contact": "Vinay kumar P B",
+              "address": "Yelahanka Old Town, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8184079109"
+            }
+          ]
+        },
+        {
+          "code": "N-22",
+          "aee": {
+            "name": "Vishwanatha K",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "BEL 5th Block, Thindlu Main Road, Bengaluru",
+            "officePhone": "080-23621888",
+            "mobile": "8618366506",
+            "email": "aeen3@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Vidyaranyapura",
+              "contact": "Dhanalakshmi M",
+              "address": "Vidyaranyapura, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9743070424"
+            },
+            {
+              "name": "Singapura (Ward 10)",
+              "contact": "Mujahid Basha",
+              "address": "Singapura, Bengaluru",
+              "officePhone": "—",
+              "mobile": "7022862456"
+            },
+            {
+              "name": "Singapura (Ward 11)",
+              "contact": "Shilpa",
+              "address": "Singapura, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8310871800"
+            }
+          ]
+        },
+        {
+          "code": "N-23",
+          "aee": {
+            "name": "Manjunath Hosamani",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "1st floor, Pinakini Bhavan, Doddaballapura Road, Major Unnikrishnan Road, Yelahanka Road",
+            "officePhone": "—",
+            "mobile": "9590595245",
+            "email": "aeenv2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Rachenahalli",
+              "contact": "Nandana C N",
+              "address": "Rachenahalli, Bengaluru",
+              "officePhone": "—",
+              "mobile": "7975232080"
+            },
+            {
+              "name": "GKVK",
+              "contact": "Manjunath H (Addl)",
+              "address": "GKVK, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8971192116"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "south-1",
+      "name": "South - 1 Zone",
+      "ee": {
+        "name": "Bharath Kumar S",
+        "title": "Executive Engineer (EE)",
+        "address": "Beside Jayanagar Shopping Complex, 4th Block Jayanagar, Bengaluru-41",
+        "officePhone": "080-22945143",
+        "mobile": "9036560649",
+        "email": "ees2@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "S-11",
+          "aee": {
+            "name": "Vinayak Datta Naik",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Jambusavari Dinnne, J.P.Nagar, 8th phase, Bengaluru-76",
+            "officePhone": "080-22945267",
+            "mobile": "7259304007",
+            "email": "aees2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Vijaya Bank Layout",
+              "contact": "Nagaraj S R",
+              "address": "Vijaya Bank Layout, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9901288556"
+            },
+            {
+              "name": "JP Nagar Phase 8",
+              "contact": "Akram",
+              "address": "Vijaya Bank Layout, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9880927106"
+            },
+            {
+              "name": "Arakere Layout",
+              "contact": "Akram",
+              "address": "Vijaya Bank Layout, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9880927106"
+            },
+            {
+              "name": "Kottanoor Dinne",
+              "contact": "Akshay C",
+              "address": "Kottanoor Dinne, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9845444038"
+            },
+            {
+              "name": "Jambu Savari Dinne",
+              "contact": "Akshay",
+              "address": "Vijaya Bank Layout, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9845444038"
+            }
+          ]
+        },
+        {
+          "code": "S-12",
+          "aee": {
+            "name": "Ramesh S B",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "100 feet Road, Second Stage, BTM layout, Bengaluru-76",
+            "officePhone": "080-40977432",
+            "mobile": "9845444037",
+            "email": "—"
+          },
+          "stations": []
+        },
+        {
+          "code": "S-13",
+          "aee": {
+            "name": "Dharshan",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "South-1 Division, Bengaluru",
+            "officePhone": "—",
+            "mobile": "9845411488",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Kodichikkanahalli",
+              "contact": "Vikas D S / Nagaraj S R",
+              "address": "HSR Layout / Kodichikkanahalli",
+              "officePhone": "080-22945154",
+              "mobile": "9845444039 / 9901288556"
+            },
+            {
+              "name": "Narayan Nagar & Gottigere",
+              "contact": "Santosh",
+              "address": "Gottigere, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8139905333"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "south-2",
+      "name": "South - 2 Zone",
+      "ee": {
+        "name": "Raghavendra C R",
+        "title": "Executive Engineer (EE)",
+        "address": "South-2 Division, Bengaluru",
+        "officePhone": "—",
+        "mobile": "9740984164",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "S-21",
+          "aee": {
+            "name": "Prathap Reddy C",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Kapila Bhavan, 1st floor, 4th ‘T’ Block, Jayanagar, Bengaluru-41",
+            "officePhone": "080-22945148",
+            "mobile": "8792293344",
+            "email": "aeesw4@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "JP Nagar Phase 1 & 3",
+              "contact": "Chandrashekar",
+              "address": "27th Cross, Jayanagar 4th Block Near BDA Shopping Complex Bengaluru-560011",
+              "officePhone": "080-22945152",
+              "mobile": "8317449494"
+            },
+            {
+              "name": "Jayanagar 4th T Block",
+              "contact": "Shreeja",
+              "address": "Jayanagar T Block, Bengaluru",
+              "officePhone": "080-22945150",
+              "mobile": "8951785741"
+            },
+            {
+              "name": "BYRASANDRA",
+              "contact": "Lakshmi",
+              "address": "Mountain road, 1st Block, Jayanagar, Near Mantri Apartment, Bengaluru – 560011",
+              "officePhone": "080-22945149",
+              "mobile": "6361835615"
+            },
+            {
+              "name": "HOMBEGOWDA NAGAR",
+              "contact": "Umesh",
+              "address": "10th cross Hombegowda Nagar play ground, Wilson garden, Bengaluru",
+              "officePhone": "080-22945380",
+              "mobile": "7483616663"
+            }
+          ]
+        },
+        {
+          "code": "S-22",
+          "aee": {
+            "name": "Vinay",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Central Jail road, Kudlu GLR, Kudlu, Bengaluru",
+            "officePhone": "—",
+            "mobile": "9845444090",
+            "email": "aeesv2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Kudlu",
+              "contact": "Satish (JEO)",
+              "address": "Kudlu, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9611344533"
+            },
+            {
+              "name": "Begur",
+              "contact": "Shivanand",
+              "address": "Begur, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8050923938"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "south-west-1",
+      "name": "South West - 1 Zone",
+      "ee": {
+        "name": "Sneha V",
+        "title": "Executive Engineer (EE)",
+        "address": "11th Main Road, 35th Cross, 4th ‘T’ block, Jayanagar, Kapila Bhavan, Near Head Post Office, Bengaluru-560041",
+        "officePhone": "080-22945196",
+        "mobile": "8762892000",
+        "email": "eesw1@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "S-W-1",
+          "aee": {
+            "name": "Channapaji",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Dwarkanath Road, V.V.Puram, Opp. National College, Bengaluru-04",
+            "officePhone": "080-22945193",
+            "mobile": "9845444081",
+            "email": "aeesw1@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "CHIKKALALBAGH 1 & 2",
+              "contact": "Seema",
+              "address": "Tulasi Thota, Chikka Lalbagh, Bengaluru - 560053",
+              "officePhone": "080-22945188",
+              "mobile": "6362695183"
+            },
+            {
+              "name": "LLR",
+              "contact": "Seema",
+              "address": "Opp to Taj West End Hotel, Race Course road, GandhiNagar, Bengaluru 560002",
+              "officePhone": "080-22945188",
+              "mobile": "6362695183"
+            },
+            {
+              "name": "BANNAPPA PARK / Sudhamanagar",
+              "contact": "Suhas",
+              "address": "Opp to KBH K.G., K.G.Road, Bengaluru - 560009",
+              "officePhone": "080-22945188",
+              "mobile": "9481469168"
+            }
+          ]
+        },
+        {
+          "code": "S-W-2",
+          "aee": {
+            "name": "Hussain Basha A N",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Dwarkanath Road, V.V.Puram, Opp. National College, Bengaluru-04",
+            "officePhone": "080-22945193",
+            "mobile": "9845444085",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "VV Puram / K.G.Nagar",
+              "contact": "Prahalad",
+              "address": "VV Puram / K.G.Nagar, Bengaluru",
+              "officePhone": "080-22945195",
+              "mobile": "9845444087"
+            },
+            {
+              "name": "JJ Nagar",
+              "contact": "Lakshmi Narayana Gowda",
+              "address": "JJ Nagar, Bengaluru",
+              "officePhone": "080-22945156",
+              "mobile": "9845444086"
+            },
+            {
+              "name": "Chamarajapete",
+              "contact": "Praveen G",
+              "address": "Chamarajapete, Bengaluru",
+              "officePhone": "080-22945156",
+              "mobile": "9845444048"
+            }
+          ]
+        },
+        {
+          "code": "S-W-3",
+          "aee": {
+            "name": "Sachin Patil",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "#3, M.N.K. Park, Basavanagudi, Bengaluru-560004",
+            "officePhone": "080-22945155",
+            "mobile": "9845444041",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "MNK / Basavanagudi",
+              "contact": "Karthik M",
+              "address": "MNK / Basavanagudi, Bengaluru",
+              "officePhone": "080-22945228",
+              "mobile": "9845444032"
+            },
+            {
+              "name": "Mount Joy",
+              "contact": "Sudarshan D N",
+              "address": "Mount Joy, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9845444105"
+            },
+            {
+              "name": "Nagendra Block / GIRINAGAR / BTR",
+              "contact": "Karthik M",
+              "address": "Nagendra Block / GIRINAGAR / BTR",
+              "officePhone": "—",
+              "mobile": "9845444032"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "south-west-2",
+      "name": "South West - 2 Zone",
+      "ee": {
+        "name": "Divyashree",
+        "title": "Executive Engineer (EE)",
+        "address": "11th main road, 35th cross, 4th T Block Jayanagar, Kapila Bhavan, Near Main Post Office, Bengaluru-560041",
+        "officePhone": "080-22945196",
+        "mobile": "9844440169",
+        "email": "eesw2@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "S-W-4",
+          "aee": {
+            "name": "Nandini K R",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Banagiri Nagara BSK 3rd Stage, Near Ganesh Temple, Bengaluru-85",
+            "officePhone": "—",
+            "mobile": "9845444113",
+            "email": "aeesw2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Katriguppe 1 & 2",
+              "contact": "Kumuda (JE)",
+              "address": "Katriguppe, Bengaluru",
+              "officePhone": "080-22945147",
+              "mobile": "9035903638"
+            },
+            {
+              "name": "Hosakerehalli",
+              "contact": "Sridhar S",
+              "address": "Hosakerehalli, Bengaluru",
+              "officePhone": "080-22945147",
+              "mobile": "9845444031"
+            },
+            {
+              "name": "GIRINAGAR",
+              "contact": "Usha C R",
+              "address": "GIRINAGAR, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9686566952"
+            },
+            {
+              "name": "Ittamadu / Devagiri 1 & 2",
+              "contact": "Lingaraju",
+              "address": "Ittamadu / Devagiri 1 & 2",
+              "officePhone": "080-22945147",
+              "mobile": "9901546377"
+            }
+          ]
+        },
+        {
+          "code": "S-W-5",
+          "aee": {
+            "name": "Srinivas",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "1st Floor, 1st Main, Banashankari 3rd Stage, Banagiri Nagar, near water tank, Bengaluru-85",
+            "officePhone": "080-22945198",
+            "mobile": "9845444036",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Poorna Pragna Layout",
+              "contact": "Dinesh",
+              "address": "Poorna Pragna Layout, Bengaluru",
+              "officePhone": "080-22945145",
+              "mobile": "9845444110"
+            },
+            {
+              "name": "Banashankari / Padmanabha nagara",
+              "contact": "Meghashree",
+              "address": "Banashankari / Padmanabha nagara",
+              "officePhone": "080-22945146",
+              "mobile": "9844440179"
+            },
+            {
+              "name": "Kumaraswamy Layout / Yelchenahalli",
+              "contact": "Khamruddhin",
+              "address": "Kumaraswamy Layout / Yelchenahalli",
+              "officePhone": "080-22945146",
+              "mobile": "9986736626"
+            }
+          ]
+        },
+        {
+          "code": "S-W-6",
+          "aee": {
+            "name": "Jayaprakash",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "4th Block, BSK 6th Stage, Pavanapura opp Ragavendra Swamy Temple, Lingadeeranahalli, Bengaluru-62",
+            "officePhone": "080-28611826",
+            "mobile": "9844441029",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Lingadeeranahalli",
+              "contact": "On-Duty Officer",
+              "address": "Lingadeeranahalli, Bengaluru",
+              "officePhone": "080-28611826",
+              "mobile": "9844441029"
+            },
+            {
+              "name": "Hemmigepura",
+              "contact": "On-Duty Officer",
+              "address": "Hemmigepura, Bengaluru",
+              "officePhone": "080-28611826",
+              "mobile": "9844441029"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "north-west-1",
+      "name": "North West - 1 Zone",
+      "ee": {
+        "name": "Harinath R",
+        "title": "Executive Engineer (EE)",
+        "address": "Behind Modhi Hospital, West of Chord road, 2nd stage, Bengaluru-10",
+        "officePhone": "080-23491123",
+        "mobile": "9845444043",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "N-W-1",
+          "aee": {
+            "name": "Harish Naik",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "1st ‘N’ Block, Rajajinagar, Bengaluru-10",
+            "officePhone": "080-22945176",
+            "mobile": "9980214906",
+            "email": "aeenw1@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Nandini Layout",
+              "contact": "Dushyanth",
+              "address": "Nandini Layout, Bengaluru",
+              "officePhone": "080-22945177",
+              "mobile": "8904778179"
+            },
+            {
+              "name": "Mahalakshmi Layout",
+              "contact": "Pushpa",
+              "address": "Mahalakshmi Layout, Bengaluru",
+              "officePhone": "080-22945177",
+              "mobile": "9611838985"
+            },
+            {
+              "name": "Rajajinagar-1 & 2",
+              "contact": "Pushpa",
+              "address": "Rajajinagar, Bengaluru",
+              "officePhone": "080-22945177",
+              "mobile": "9611838985"
+            },
+            {
+              "name": "Kethamaranahalli",
+              "contact": "Pushpa",
+              "address": "Kethamaranahalli, Bengaluru",
+              "officePhone": "080-22945178",
+              "mobile": "9611838985"
+            }
+          ]
+        },
+        {
+          "code": "N-W-2",
+          "aee": {
+            "name": "Gouse Inamdhar",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Peenya 2nd Stage, BMTC Bus Stop, Bengaluru-58",
+            "officePhone": "080-28372030",
+            "mobile": "9632349063",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Peenya",
+              "contact": "Ganesh",
+              "address": "TVS Cross, 1st Stage, Peenya, Opp Fourss Factory, Bengaluru-560058",
+              "officePhone": "080-22945213",
+              "mobile": "9845444068"
+            },
+            {
+              "name": "PEENYA DASARAHALLI 1 & 2",
+              "contact": "Sandeep",
+              "address": "TVS Cross, 1st Stage, Peenya, Opp Fourss Factory, Bengaluru-560058",
+              "officePhone": "080-22945213",
+              "mobile": "9980914310"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "north-west-2",
+      "name": "North West - 2 Zone",
+      "ee": {
+        "name": "Miraganje Manjunath",
+        "title": "Executive Engineer (EE)",
+        "address": "Suvarna Bhawan 1st floor, 18th cross Malleshwaram, Bengaluru",
+        "officePhone": "080-23311337",
+        "mobile": "9743371110",
+        "email": "eenw@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "N-W-3",
+          "aee": {
+            "name": "Nagaraj K B",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "MEI Layout, 7th Main Road, Bengaluru - 560073",
+            "officePhone": "080-28371048",
+            "mobile": "9686448013",
+            "email": "aeen1@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "BHAHUBALINAGAR",
+              "contact": "Karthik Manju",
+              "address": "Opp Jalahalli Village Bus stop, Bengaluru-560013",
+              "officePhone": "080-23452696",
+              "mobile": "7026328863"
+            },
+            {
+              "name": "MEI LAYOUT 1 & 2",
+              "contact": "Karthik Manju",
+              "address": "Bagalagunte, Bengaluru-560073",
+              "officePhone": "—",
+              "mobile": "7760963670"
+            }
+          ]
+        },
+        {
+          "code": "N-W-4",
+          "aee": {
+            "name": "Ram Kumar",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Pipe line road, Sunkadakatte, Bengaluru-91",
+            "officePhone": "080-29558007",
+            "mobile": "9964216530",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Hegganahalli / Sunkadakatte",
+              "contact": "Nadish",
+              "address": "Hegganahalli / Sunkadakatte, Bengaluru",
+              "officePhone": "080-29558007",
+              "mobile": "9632435522"
+            },
+            {
+              "name": "Herohalli",
+              "contact": "Sudha",
+              "address": "Herohalli, Bengaluru",
+              "officePhone": "080-29558007",
+              "mobile": "9535182299"
+            }
+          ]
+        },
+        {
+          "code": "N-W-5",
+          "aee": {
+            "name": "Aishwarya B A",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "1st floor, 7th Main, MEI Layout, Hesaragatta road, Bengaluru-73",
+            "officePhone": "—",
+            "mobile": "9845967847",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Shettihalli",
+              "contact": "Jyothi D",
+              "address": "MEI Layout, Hesaragatta Road, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9900934709"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "south-east-1",
+      "name": "South East - 1 Zone",
+      "ee": {
+        "name": "Nagaraj K",
+        "title": "Executive Engineer (EE)",
+        "address": "Swamy Vivekanada Road, opposite to Lido mall, Ulsoor, Banglore-560008",
+        "officePhone": "080-22945159",
+        "mobile": "9845444049",
+        "email": "aeese1@bwssb.gov.in"
+      },
+      "subDivisions": [
+        {
+          "code": "S-E-1",
+          "aee": {
+            "name": "Nayeemulla sharif",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Swami Vivekananda Road, Opp Lido Mall, Ulsoor, Bengaluru-08",
+            "officePhone": "080-22945159",
+            "mobile": "9845444052",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "JOHNSON MARKET",
+              "contact": "Murali C P",
+              "address": "Leonard Street, Hosur road, Behind Johnson Market, Richmond Town, Bengaluru-560025",
+              "officePhone": "080-22945160",
+              "mobile": "9845451382"
+            },
+            {
+              "name": "CLR",
+              "contact": "D S Rangaiah",
+              "address": "Cambell road, Hosur road, Behind Fathima Bakery, Bengaluru-560025",
+              "officePhone": "080-22945161",
+              "mobile": "8197988300"
+            }
+          ]
+        },
+        {
+          "code": "S-E-2",
+          "aee": {
+            "name": "Kanakaraj",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Swamy Vivekanada Road, opposite to Lido mall, Ulsoor, Banglore-560008",
+            "officePhone": "080-22945159",
+            "mobile": "9845444118",
+            "email": "aeese1@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Ulsoor",
+              "contact": "Ravi Kiran (i/c)",
+              "address": "Halasoor, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9945856623"
+            },
+            {
+              "name": "Domlur",
+              "contact": "Mamatha M H",
+              "address": "Domlur, Bengaluru",
+              "officePhone": "—",
+              "mobile": "8494985193"
+            },
+            {
+              "name": "Marathahalli",
+              "contact": "Ravi Kiran",
+              "address": "Marathahalli, Bengaluru",
+              "officePhone": "—",
+              "mobile": "9945856623"
+            }
+          ]
+        },
+        {
+          "code": "S-E-3",
+          "aee": {
+            "name": "Krishna kumar P",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "Central Jail road, Kudlu GLR kudlu, Araluru",
+            "officePhone": "—",
+            "mobile": "9448839868",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "Haraluru & Doddakkanahalli",
+              "contact": "Krishnegowda (JE)",
+              "address": "Haraluru & Doddakkanahalli",
+              "officePhone": "—",
+              "mobile": "9900774490"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "south-east-2",
+      "name": "South East - 2 Zone",
+      "ee": {
+        "name": "Basavaraj N",
+        "title": "Executive Engineer (EE)",
+        "address": "Kapila Bhavan, 2nd floor, 4th ‘T’ Block, Jayanagar, Bengaluru-41",
+        "officePhone": "080-22945389",
+        "mobile": "9113042980",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "S-E-4",
+          "aee": {
+            "name": "Danvanth",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "10th Main, 7th Cross, Behind Indiranagar Club, HAL 2nd Stage, Bengaluru - 560038",
+            "officePhone": "080-22945163",
+            "mobile": "7760963674",
+            "email": "aeese2@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "INDIRANAGAR",
+              "contact": "Shashi Kumar",
+              "address": "10th main, 1st cross, Indiranagar 2nd stage, Near SSB school, Bengaluru-560038",
+              "officePhone": "080-22945164",
+              "mobile": "6361028870"
+            },
+            {
+              "name": "Jeevan Bheema Nagar",
+              "contact": "Duty Officer",
+              "address": "10th main, HAL 3rd Stage, JBN, Bengaluru-560038",
+              "officePhone": "080-22945165",
+              "mobile": "9880814543"
+            },
+            {
+              "name": "HAL",
+              "contact": "Poornima",
+              "address": "10th main, HAL 3rd Stage, JBN, Bengaluru-560038",
+              "officePhone": "080-22945165",
+              "mobile": "7892388927"
+            },
+            {
+              "name": "BHUVANESHWARI NAGAR",
+              "contact": "Sahana M",
+              "address": "Kaggadasapura Main Road, Bhuvaneshwara Nagar, Bengaluru 560038",
+              "officePhone": "—",
+              "mobile": "9845444035"
+            },
+            {
+              "name": "Bayappanahalli",
+              "contact": "Poornima",
+              "address": "10th main, HAL 3rd Stage, JBN, Bengaluru-560038",
+              "officePhone": "080-22945165",
+              "mobile": "7892388927"
+            }
+          ]
+        },
+        {
+          "code": "S-E-5",
+          "aee": {
+            "name": "Santosh Prasad",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "#17, 3rd Cross, 3rd Block, Koramangala, Bengaluru-560034",
+            "officePhone": "080-22945243",
+            "mobile": "9972001265",
+            "email": "aeese3@bwssb.gov.in"
+          },
+          "stations": [
+            {
+              "name": "Bellandur & Koramangala-2",
+              "contact": "Duty Officer",
+              "address": "3rd Cross, Bellandur Main Road, Bengaluru-560034",
+              "officePhone": "—",
+              "mobile": "9686566948"
+            },
+            {
+              "name": "KORAMANGALA-1",
+              "contact": "Gajanana",
+              "address": "17th Main, 3rd Block, Koramangala, Near BDA Complex, Bengaluru - 560034",
+              "officePhone": "080-22945153",
+              "mobile": "9845444056"
+            }
+          ]
+        },
+        {
+          "code": "S-E-6",
+          "aee": {
+            "name": "Yashwanth B",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "9th Main road, BTM Water tank, BTM 2nd Stage, Bengaluru-76",
+            "officePhone": "080-22945392",
+            "mobile": "9845444042",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "BTM 1, 2 & 3",
+              "contact": "Hanumantharaju C P",
+              "address": "9th Main, BTM 2nd Stage, Near Water Tank, Bengaluru - 560076",
+              "officePhone": "080-22945151",
+              "mobile": "8660134057"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "north-east",
+      "name": "North East Zone",
+      "ee": {
+        "name": "Roopa Neelagunda",
+        "title": "Executive Engineer (EE)",
+        "address": "#026, Ground Floor, Suvarna Bhavan, Margosa Road, 18th Cross, Malleshwaram, Bengaluru",
+        "officePhone": "080-22945124",
+        "mobile": "9845444070",
+        "email": "—"
+      },
+      "subDivisions": [
+        {
+          "code": "N-E-1",
+          "aee": {
+            "name": "Harish H P",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "#115, 1st Floor, Suvarna Bhavan, Margosa Road, 18th Cross, Malleshwaram, Bengaluru",
+            "officePhone": "080-22945131",
+            "mobile": "9538897735",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "MALLESHWARAM",
+              "contact": "Suhana",
+              "address": "15th Cross, Malleshwaram, Sampige Road, Opp Kadu Malleshwara Temple, Bengaluru-560003",
+              "officePhone": "080-22945134",
+              "mobile": "8147583759"
+            },
+            {
+              "name": "YESHWANTHAPURA",
+              "contact": "Basawaraj",
+              "address": "Pipeline road, Near Market, BBMP Ward Office, Yeswanthapura, Bengaluru-560022",
+              "officePhone": "080-22945132",
+              "mobile": "7019565249"
+            },
+            {
+              "name": "SRIRAMPURA",
+              "contact": "Siddaraju",
+              "address": "Railway parallel Road, Near Malleshwaram Railway station, Bengaluru-560021",
+              "officePhone": "080-22945133",
+              "mobile": "9611445594"
+            },
+            {
+              "name": "BHASHYAM PARK",
+              "contact": "Basawaraj",
+              "address": "9th Main, Opp Subramanya Temple, Bhashyam Nagar, Srirampura, Bengaluru - 560021",
+              "officePhone": "080-22945189",
+              "mobile": "7019565249"
+            }
+          ]
+        },
+        {
+          "code": "N-E-2",
+          "aee": {
+            "name": "Shaik Mohammed",
+            "title": "Assistant Executive Engineer (AEE)",
+            "address": "BWSSB 18th Cross, Malleshwaram, Bengaluru – 560055",
+            "officePhone": "080-22945135",
+            "mobile": "9591987961",
+            "email": "—"
+          },
+          "stations": [
+            {
+              "name": "JAYAMAHAL",
+              "contact": "Jayashree",
+              "address": "2nd Cross, Nandhi Durga Extn Jayamahal, Bengaluru-560046",
+              "officePhone": "080-22945137",
+              "mobile": "6360288305"
+            },
+            {
+              "name": "Kempegowda Tower",
+              "contact": "Vijay",
+              "address": "2nd Cross, 10th Main Road, Near Ramanashree Park, Sadashivanagar, Bengaluru - 560072",
+              "officePhone": "080-22945136",
+              "mobile": "9945513568"
+            },
+            {
+              "name": "KUMARA PARK",
+              "contact": "Dastagiri Basha",
+              "address": "Reservoir street, Kumarapark West, Behind Sheshadripuram College, Bengaluru – 560020",
+              "officePhone": "080-22945138",
+              "mobile": "9108354491"
+            },
+            {
+              "name": "SANJAYNAGAR",
+              "contact": "Dastagiri Basha",
+              "address": "Sanjay Nagara Main Road, Opp Radhakrishna Temple, Sanjay Nagara, Bengaluru-560094",
+              "officePhone": "—",
+              "mobile": "9108354491"
+            },
+            {
+              "name": "NEW BEL ROAD",
+              "contact": "Dastagir Basha",
+              "address": "Near MS Ramaiah Hospital, Jaladarshini Layout, Bengaluru - 560054",
+              "officePhone": "080-22945245",
+              "mobile": "9108354491"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "technicalCommittee": {
+    "title": "BWSSB High-Level Technical Committee",
+    "members": [
+      {
+        "name": "Dr. M.S. Mohan Kumar",
+        "role": "Chairman",
+        "desig": "Professor, Civil Engg, IISc, Bengaluru"
+      },
+      {
+        "name": "Sri K. R. Narayana Iyengar",
+        "role": "Member",
+        "desig": "Chief Engineer (Retd), BWSSB"
+      },
+      {
+        "name": "Sri Bharadwaj Amrutur",
+        "role": "Member",
+        "desig": "Professor, IISc"
+      },
+      {
+        "name": "Dr. Hoysala Chanakya",
+        "role": "Member",
+        "desig": "Chief Research Scientist, IISc"
+      },
+      {
+        "name": "Sri S. Vishwanath",
+        "role": "Member",
+        "desig": "Civil Engineer, Biome Trust"
+      },
+      {
+        "name": "Sri Gurrala Gurunath",
+        "role": "Member",
+        "desig": "Asst. Professor, IISc"
+      },
+      {
+        "name": "FA, CAO, EIC & All Chief Engineers",
+        "role": "Ex-Officio Members",
+        "desig": "BWSSB Board Members"
+      }
+    ]
+  }
+}

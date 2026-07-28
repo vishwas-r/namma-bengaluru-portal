@@ -2,229 +2,486 @@ import deptData from '../data/departments.json';
 
 export function renderHomePage(lang) {
   const l = lang;
+
   return `
-  <!-- Elevate Inspired Hero -->
-  <section class="nb-hero">
-    <div class="container position-relative">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-7 text-start">
-            <div class="nb-hero-badge">
-              <i class="bi bi-lightning-fill text-warning"></i>
-              <span>Official Bengaluru Citizen Services Hub</span>
+  <div class="container-fluid px-lg-4 py-4 text-start">
+    <div class="row g-4">
+      
+      <!-- Top Row: Hero Search Banner (Col 8) + All Departments Sidebar (Col 4) -->
+      <div class="col-lg-8">
+        <div class="nb-card nb-home-hero p-4 p-md-5 h-100 position-relative overflow-hidden" style="border: 0;">
+
+          <div class="position-relative z-1" style="max-width: 540px;">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-body-tertiary text-primary border shadow-2xs mb-3 fw-bold" style="font-size:0.75rem; letter-spacing:0.04em;">
+              <i class="bi bi-shield-check text-primary"></i>
+              <span>BENGALURU CITIZEN PORTAL</span>
             </div>
 
-            <h1 class="nb-hero-title">${l.heroTitle}</h1>
+            <h1 class="fw-extrabold text-body mb-2" style="font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing:-0.03em; line-height:1.2;">
+              Information. Services. Solutions.<br/>
+              <span class="text-primary">All Government Departments, One Place.</span>
+            </h1>
 
-            <p class="nb-hero-desc">
-              ${l.heroSub} Access accurate BWSSB water bill estimates, BESCOM electricity bill calculations, official gazettes, and instant AI guidance.
+            <p class="text-secondary mb-4" style="font-size:0.95rem; line-height:1.6;">
+              Your one-stop open-source platform for everything about BWSSB, BESCOM, Namma Metro, BBMP, and Bengaluru public services.
             </p>
 
-            <div class="nb-feature-checklist mb-4">
-              <div class="check-item">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>Verified 2026-27 BWSSB & BESCOM Tariff Slabs</span>
-              </div>
-              <div class="check-item">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>Apartment Per-Flat Consumption Breakdown</span>
-              </div>
-              <div class="check-item">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>Official Gazette PDF Links & 24x7 Helplines</span>
-              </div>
+            <!-- Search Form Bar -->
+            <div class="input-group input-group-lg shadow-sm rounded-3 mb-3 border bg-body">
+              <span class="input-group-text bg-transparent border-0 ps-3 text-secondary">
+                <i class="bi bi-search fs-5"></i>
+              </span>
+              <input type="text" id="homeSearchInput" class="form-control border-0 bg-transparent py-3 fs-6" placeholder="Search for services, guides, calculators..." onkeyup="window.__handleHomeSearch(event)">
+              <button class="btn btn-primary px-4 fw-semibold rounded-3 m-1" onclick="window.__triggerHomeSearch()">
+                Search
+              </button>
             </div>
 
-            <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
-              <a href="#/dept/bwssb" class="btn btn-primary btn-lg">
-                <span>Calculate Water Bill</span>
-                <i class="bi bi-arrow-right ms-2"></i>
-              </a>
-              <a href="#/dept/bescom" class="btn btn-outline-primary btn-lg">
-                <span>BESCOM Electricity Hub</span>
-                <i class="bi bi-lightning-charge ms-2"></i>
-              </a>
-            </div>
-
-            <div class="d-flex align-items-center gap-3 flex-wrap pt-2">
-              ${[['6', 'Departments'], ['₹0', 'Cost to Use'], ['10 AM', 'Daily AI Sync']].map(([n, lbl]) => `
-              <div class="nb-stat-pill">
-                <div class="nb-stat-num">${n}</div>
-                <div class="nb-stat-label">${lbl}</div>
-              </div>`).join('')}
+            <!-- Popular Quick Pills -->
+            <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.8rem;">
+              <span class="text-secondary fw-semibold me-1">Popular:</span>
+              <a href="https://bescom.co.in/bescom/main/quick-payment" target="_blank" rel="noopener" class="badge text-decoration-none px-3 py-2 hover-shadow bg-success-subtle text-success border border-success-subtle" style="font-weight:600;"><i class="bi bi-lightning-charge-fill me-1"></i>BESCOM Quick Pay</a>
+              <a href="#/dept/bescom/planned-outages" class="badge text-decoration-none px-3 py-2 hover-shadow bg-primary-subtle text-primary border border-primary-subtle" style="font-weight:500;">Power Outages</a>
+              <a href="#/dept/bwssb/services" class="badge text-decoration-none px-3 py-2 hover-shadow bg-primary-subtle text-primary border border-primary-subtle" style="font-weight:500;">BWSSB Connection</a>
             </div>
           </div>
-
-          <div class="col-lg-5">
-            <div class="d-flex flex-column gap-3">
-              <div class="nb-floating-card">
-                <div class="nb-floating-card-icon" style="background:rgba(14,165,233,0.12); color:#0ea5e9;">
-                  <i class="bi bi-droplet-half fs-2"></i>
-                </div>
-                <div>
-                  <div class="fw-bold" style="font-size:0.92rem;">BWSSB Water Slabs</div>
-                  <div class="text-secondary" style="font-size:0.78rem;">Verified 2026-27 Slabs & Apartment Bulk Rates</div>
-                </div>
-              </div>
-
-              <div class="nb-floating-card">
-                <div class="nb-floating-card-icon" style="background:rgba(245,158,11,0.12); color:#f59e0b;">
-                  <i class="bi bi-lightning-charge-fill fs-2"></i>
-                </div>
-                <div>
-                  <div class="fw-bold" style="font-size:0.92rem;">BESCOM Electricity</div>
-                  <div class="text-secondary" style="font-size:0.78rem;">Bill Estimator & e-Katha Online Name Change</div>
-                </div>
-              </div>
-
-              <div class="nb-floating-card">
-                <div class="nb-floating-card-icon" style="background:rgba(124,58,237,0.12); color:#7c3aed;">
-                  <i class="bi bi-train-front fs-2"></i>
-                </div>
-                <div>
-                  <div class="fw-bold" style="font-size:0.92rem;">Namma Metro & Transit</div>
-                  <div class="text-secondary" style="font-size:0.78rem;">Route Maps, Fares & BMTC Pass Guides</div>
-                </div>
-              </div>
-
-              <div class="nb-floating-card">
-                <div class="nb-floating-card-icon" style="background:rgba(239,68,68,0.12); color:#ef4444;">
-                  <i class="bi bi-headset fs-2"></i>
-                </div>
-                <div>
-                  <div class="fw-bold" style="font-size:0.92rem;">24x7 Helpline Directory</div>
-                  <div class="text-secondary" style="font-size:0.78rem;">BWSSB 1916 · BESCOM 1912 · Metro 1800-425-12345</div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- Department Cards -->
-  <div class="container py-5">
-    <div class="mb-4 text-start">
-      <div class="nb-section-label">All Departments</div>
-      <h2 class="h3 fw-bold mb-1" style="letter-spacing:-0.015em;">Bengaluru Civic Services Hub</h2>
-      <p class="text-secondary mb-0" style="font-size:0.9rem;">
-        Click a department to access calculators, official notices, complaint guides, and AI assistance.
-      </p>
-    </div>
-
-    <div class="row g-4">
-      ${deptData.map(dept => `
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="nb-dept-card" style="--dept-color:${dept.color};"
-          onclick="window.__navDept('${dept.id}')"
-          role="button" tabindex="0"
-          onkeydown="if(event.key==='Enter')window.__navDept('${dept.id}')">
-          <div class="d-flex align-items-start justify-content-between gap-2 mb-3">
-            <div class="nb-dept-icon mb-0" style="background:${dept.color}18; color:${dept.color};">
-              <i class="bi ${dept.icon}"></i>
-            </div>
-            <span class="nb-live-badge ${dept.status === 'live' ? 'text-success' : 'text-secondary'}"
-              style="background:${dept.status === 'live' ? 'rgba(16,185,129,0.12)' : 'var(--bs-secondary-bg)'};">
-              ${dept.status === 'live' ? 'Live' : 'Coming Soon'}
-            </span>
-          </div>
-          <h3 class="nb-dept-name">${dept.name}</h3>
-          <div class="text-secondary mb-1" style="font-size:0.78rem; font-weight:500;">${dept.fullName}</div>
-          <p class="nb-dept-desc">${dept.description}</p>
-          <div class="d-flex align-items-center justify-content-between pt-3" style="border-top:1px solid var(--bs-border-color);">
-            <div class="d-flex gap-1 flex-wrap">
-              ${(dept.features || []).slice(0, 3).map(f => `
-              <span style="font-size:0.67rem; font-weight:600; padding:0.2rem 0.5rem; border-radius:6px; background:var(--bs-tertiary-bg); color:var(--bs-secondary-color);">${f}</span>`).join('')}
-            </div>
-            <div style="color:${dept.color}; font-size:1.1rem; opacity:${dept.status === 'live' ? '1' : '0.35'};">
-              <i class="bi bi-arrow-right-circle-fill"></i>
-            </div>
-          </div>
-        </div>
-      </div>`).join('')}
-    </div>
-
-    <!-- Info Strip -->
-    <div class="row g-3 mt-4 mb-4">
-      ${[
-      { icon: 'bi-robot', title: 'Daily Automated Sync', desc: 'Official circulars scraped daily at 10 AM IST, linking directly to official government portals and PDFs with SHA-256 verification.' },
-      { icon: 'bi-key', title: 'Crowd-Sourced AI Keys', desc: 'Bring your free Gemini API key. Auto-rotates across donated keys when quota is exhausted.' },
-      { icon: 'bi-github', title: 'Open Source on GitHub', desc: 'Anyone can contribute data updates, translations, or new department modules. MIT licensed.' },
-    ].map(item => `
-      <div class="col-md-4">
-        <div class="nb-card h-100 p-4" style="border-left:3.5px solid var(--nb-primary);">
-          <i class="bi ${item.icon} mb-2 d-block" style="font-size:1.5rem; color:var(--nb-primary);"></i>
-          <div class="fw-bold mb-1" style="font-size:0.92rem;">${item.title}</div>
-          <div class="text-secondary" style="font-size:0.82rem; line-height:1.65;">${item.desc}</div>
-        </div>
-      </div>`).join('')}
-    </div>
-
-    <!-- Essential Helplines Directory -->
-    <div class="nb-card">
-      <div class="nb-card-header"><i class="bi bi-telephone-fill text-danger me-2"></i>Bengaluru Essential & Emergency Helplines</div>
-      <div class="nb-card-body p-0">
-        <div class="table-responsive">
-          <table class="table align-middle mb-0" style="font-size:0.86rem;">
-            <thead class="table-light">
-              <tr style="border-bottom:2px solid var(--bs-border-color);">
-                <th class="ps-4 py-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Service / Department</th>
-                <th class="py-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Helpline Numbers</th>
-                <th class="py-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Mobile / Direct</th>
-                <th class="pe-4 text-end py-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Quick Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px solid var(--bs-border-color);">
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-shield-fill text-danger me-2"></i>Police Emergency Services</td>
-                <td class="py-3"><span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1 fs-6">100 / 112</span></td>
-                <td class="py-3 text-secondary font-mono" style="font-size:0.8rem;">080-27271100 · 080-27273456</td>
-                <td class="pe-4 text-end py-3"><a href="tel:112" class="btn btn-sm btn-danger nb-tbl-btn py-1 px-3" style="font-size:0.78rem;">Call 112</a></td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--bs-border-color);">
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-phone-fill text-primary me-2"></i>Police Mobile Helpline</td>
-                <td class="py-3 text-secondary">Direct Mobile Support</td>
-                <td class="py-3 font-mono fw-semibold" style="font-size:0.82rem;">9480802800</td>
-                <td class="pe-4 text-end py-3"><a href="tel:9480802800" class="btn btn-sm btn-outline-primary nb-tbl-btn py-1 px-3" style="font-size:0.78rem;">Call Mobile</a></td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--bs-border-color);">
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-heart-fill text-danger me-2"></i>Children Helpline (Childline)</td>
-                <td class="py-3"><span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2 py-1 fs-6">1098</span></td>
-                <td class="py-3 text-secondary" style="font-size:0.8rem;">24/7 Child Protection & Assistance</td>
-                <td class="pe-4 text-end py-3"><a href="tel:1098" class="btn btn-sm btn-warning nb-tbl-btn py-1 px-3 text-dark fw-semibold" style="font-size:0.78rem;">Call 1098</a></td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--bs-border-color);">
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-person-heart text-info me-2"></i>Senior Citizen Helpline</td>
-                <td class="py-3"><span class="badge bg-info-subtle text-info border border-info-subtle px-2 py-1 fs-6">1090</span></td>
-                <td class="py-3 text-secondary" style="font-size:0.8rem;">Assistance, Safety & Legal Guidance</td>
-                <td class="pe-4 text-end py-3"><a href="tel:1090" class="btn btn-sm btn-info nb-tbl-btn py-1 px-3 text-white" style="font-size:0.78rem;">Call 1090</a></td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--bs-border-color);">
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-droplet-fill text-primary me-2"></i>BWSSB Water Supply & Sewerage</td>
-                <td class="py-3"><span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 fs-6">1916</span></td>
-                <td class="py-3 text-secondary font-mono" style="font-size:0.8rem;">080-22238888 (WhatsApp)</td>
-                <td class="pe-4 text-end py-3"><a href="#/dept/bwssb" class="btn btn-sm btn-outline-primary nb-tbl-btn py-1 px-3" style="font-size:0.78rem;">BWSSB Hub →</a></td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--bs-border-color);">
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-lightning-charge-fill text-warning me-2"></i>BESCOM Electricity Supply</td>
-                <td class="py-3"><span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle px-2 py-1 fs-6">1912</span></td>
-                <td class="py-3 text-secondary" style="font-size:0.8rem;">Power Outages & Billing</td>
-                <td class="pe-4 text-end py-3"><a href="tel:1912" class="btn btn-sm btn-outline-secondary nb-tbl-btn py-1 px-3" style="font-size:0.78rem;">Call 1912</a></td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--bs-border-color);">
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-train-front-fill text-purple me-2" style="color:#7c3aed;"></i>Namma Metro (BMRCL) Rapid Transit</td>
-                <td class="py-3"><span class="badge bg-purple-subtle text-purple border px-2 py-1 fs-6" style="background:rgba(124,58,237,0.12); color:#7c3aed; border-color:rgba(124,58,237,0.25)!important;">1800-425-12345</span></td>
-                <td class="py-3 text-secondary font-mono" style="font-size:0.8rem;">080-25501234 (Metro Toll-Free)</td>
-                <td class="pe-4 text-end py-3"><a href="tel:180042512345" class="btn btn-sm btn-outline-primary nb-tbl-btn py-1 px-3" style="font-size:0.78rem; border-color:#7c3aed; color:#7c3aed;">Call Metro</a></td>
-              </tr>
-              <tr>
-                <td class="ps-4 py-3 fw-bold"><i class="bi bi-building-fill text-success me-2"></i>GBA / BBMP Civic Services</td>
-                <td class="py-3"><span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 fs-6">1533</span></td>
-                <td class="py-3 text-secondary" style="font-size:0.8rem;">Roads, Drainage, Property Tax & Potholes</td>
-                <td class="pe-4 text-end py-3"><a href="tel:1533" class="btn btn-sm btn-outline-secondary nb-tbl-btn py-1 px-3" style="font-size:0.78rem;">Call 1533</a></td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
+
+      <!-- Right Column: All Departments Sidebar Card (Col 4) -->
+      <div class="col-lg-4">
+        <div class="nb-card p-4 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+              <h5 class="fw-bold mb-0" style="font-size:1.05rem;">All Departments</h5>
+              <a href="#/departments" class="text-primary text-decoration-none fw-semibold" style="font-size:0.8rem;">View all <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+
+            <div class="d-flex flex-column gap-2">
+              <!-- BWSSB -->
+              <a href="#/dept/bwssb" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow transition-all">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-2 text-primary bg-primary-subtle d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px; height:40px; font-size:1.2rem;">
+                    <i class="bi bi-droplet-half"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold" style="font-size:0.88rem;">BWSSB</div>
+                    <div class="text-secondary" style="font-size:0.75rem;">Water supply, Sewerage, Connections, Tariff & more</div>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right text-secondary fs-6"></i>
+              </a>
+
+              <!-- BESCOM -->
+              <a href="#/dept/bescom" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow transition-all">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-2 text-warning bg-warning-subtle d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px; height:40px; font-size:1.2rem;">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold" style="font-size:0.88rem;">BESCOM</div>
+                    <div class="text-secondary" style="font-size:0.75rem;">Electricity, Billing, Tariff, Outages & more</div>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right text-secondary fs-6"></i>
+              </a>
+
+              <!-- Namma Metro -->
+              <a href="#/dept/bmtc" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow transition-all">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-2 text-danger bg-danger-subtle d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px; height:40px; font-size:1.2rem;">
+                    <i class="bi bi-train-front-fill"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold" style="font-size:0.88rem;">Namma Metro</div>
+                    <div class="text-secondary" style="font-size:0.75rem;">Routes, Fares, Passes, Timings & more</div>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right text-secondary fs-6"></i>
+              </a>
+
+              <!-- BBMP -->
+              <a href="#/dept/bbmp" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow transition-all">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="rounded-2 text-info bg-info-subtle d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px; height:40px; font-size:1.2rem;">
+                    <i class="bi bi-building"></i>
+                  </div>
+                  <div>
+                    <div class="fw-bold" style="font-size:0.88rem;">BBMP</div>
+                    <div class="text-secondary" style="font-size:0.75rem;">Property Tax, Khata, Trade License & Ward Works</div>
+                  </div>
+                </div>
+                <i class="bi bi-chevron-right text-secondary fs-6"></i>
+              </a>
+            </div>
+
+            <!-- More Departments button pointing to #/departments -->
+            <a href="#/departments" class="d-flex align-items-center justify-content-between p-2 rounded-2 text-decoration-none text-secondary hover-bg-tertiary mt-2" style="font-size:0.82rem;">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-grid-3x3-gap"></i>
+                <span class="fw-semibold">More Departments</span>
+              </div>
+              <i class="bi bi-chevron-right fs-6"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions 6 Grid Cards Row: BESCOM Quick Tools -->
+      <div class="col-12">
+        <div class="row g-3">
+          <!-- Card 1: BESCOM Bill Calculator -->
+          <div class="col-sm-6 col-md-4 col-xl-2">
+            <div class="nb-card p-3 h-100 text-start d-flex flex-column justify-content-between hover-shadow">
+              <div>
+                <div class="rounded-2 d-inline-flex align-items-center justify-content-center p-2 mb-3" style="width:40px; height:40px; background:#fef3c7; color:#d97706;">
+                  <i class="bi bi-calculator-fill fs-5"></i>
+                </div>
+                <h6 class="fw-bold mb-1" style="font-size:0.88rem; color:#1e293b;">BESCOM Bill Calculator</h6>
+                <p class="text-secondary mb-3" style="font-size:0.76rem; line-height:1.45;">Calculate your estimated electricity bill based on units consumed.</p>
+              </div>
+              <a href="#/dept/bescom/calculator" class="text-primary text-decoration-none fw-bold" style="font-size:0.78rem;">Calculate Now <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 2: BESCOM Tariff Rates -->
+          <div class="col-sm-6 col-md-4 col-xl-2">
+            <div class="nb-card p-3 h-100 text-start d-flex flex-column justify-content-between hover-shadow">
+              <div>
+                <div class="rounded-2 d-inline-flex align-items-center justify-content-center p-2 mb-3" style="width:40px; height:40px; background:#dcfce7; color:#059669;">
+                  <i class="bi bi-currency-rupee fs-5"></i>
+                </div>
+                <h6 class="fw-bold mb-1" style="font-size:0.88rem; color:#1e293b;">BESCOM Tariff Rates</h6>
+                <p class="text-secondary mb-3" style="font-size:0.76rem; line-height:1.45;">Check official BESCOM 2026-27 electricity slab rates & fixed charges.</p>
+              </div>
+              <a href="#/dept/bescom/tariff" class="text-primary text-decoration-none fw-bold" style="font-size:0.78rem;">View Tariff Rates <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 3: BESCOM Power Outages -->
+          <div class="col-sm-6 col-md-4 col-xl-2">
+            <div class="nb-card p-3 h-100 text-start d-flex flex-column justify-content-between hover-shadow">
+              <div>
+                <div class="rounded-2 d-inline-flex align-items-center justify-content-center p-2 mb-3" style="width:40px; height:40px; background:#fee2e2; color:#dc2626;">
+                  <i class="bi bi-calendar-event-fill fs-5"></i>
+                </div>
+                <h6 class="fw-bold mb-1" style="font-size:0.88rem; color:#1e293b;">BESCOM Power Outages</h6>
+                <p class="text-secondary mb-3" style="font-size:0.76rem; line-height:1.45;">Check announced power shutdowns & feeder maintenance.</p>
+              </div>
+              <a href="#/dept/bescom/planned-outages" class="text-primary text-decoration-none fw-bold" style="font-size:0.78rem;">View Power Outages <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 4: BESCOM Crowd Reports -->
+          <div class="col-sm-6 col-md-4 col-xl-2">
+            <div class="nb-card p-3 h-100 text-start d-flex flex-column justify-content-between hover-shadow">
+              <div>
+                <div class="rounded-2 d-inline-flex align-items-center justify-content-center p-2 mb-3" style="width:40px; height:40px; background:#cff4fc; color:#0284c7;">
+                  <i class="bi bi-people-fill fs-5"></i>
+                </div>
+                <h6 class="fw-bold mb-1" style="font-size:0.88rem; color:#1e293b;">BESCOM Crowd Reports</h6>
+                <p class="text-secondary mb-3" style="font-size:0.76rem; line-height:1.45;">Real-time citizen power outage crowd reports & status.</p>
+              </div>
+              <a href="#/dept/bescom/crowd-reports" class="text-primary text-decoration-none fw-bold" style="font-size:0.78rem;">Check Crowd <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 5: BESCOM Online Services -->
+          <div class="col-sm-6 col-md-4 col-xl-2">
+            <div class="nb-card p-3 h-100 text-start d-flex flex-column justify-content-between hover-shadow">
+              <div>
+                <div class="rounded-2 d-inline-flex align-items-center justify-content-center p-2 mb-3" style="width:40px; height:40px; background:#dbeafe; color:#2563eb;">
+                  <i class="bi bi-file-earmark-text-fill fs-5"></i>
+                </div>
+                <h6 class="fw-bold mb-1" style="font-size:0.88rem; color:#1e293b;">BESCOM Online Services</h6>
+                <p class="text-secondary mb-3" style="font-size:0.76rem; line-height:1.45;">Find name change, new connection, and LT applications.</p>
+              </div>
+              <a href="#/dept/bescom/services" class="text-primary text-decoration-none fw-bold" style="font-size:0.78rem;">Explore Services <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 6: BESCOM Grievance Guide -->
+          <div class="col-sm-6 col-md-4 col-xl-2">
+            <div class="nb-card p-3 h-100 text-start d-flex flex-column justify-content-between hover-shadow">
+              <div>
+                <div class="rounded-2 d-inline-flex align-items-center justify-content-center p-2 mb-3" style="width:40px; height:40px; background:#f3e8ff; color:#9333ea;">
+                  <i class="bi bi-headset fs-5"></i>
+                </div>
+                <h6 class="fw-bold mb-1" style="font-size:0.88rem; color:#1e293b;">BESCOM Grievance Guide</h6>
+                <p class="text-secondary mb-3" style="font-size:0.76rem; line-height:1.45;">Step-by-step guide to file 1912 power complaints & RTI.</p>
+              </div>
+              <a href="#/dept/bescom/complaint" class="text-primary text-decoration-none fw-bold" style="font-size:0.78rem;">File Power Complaint <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom 3-Column Feature Hub: Services & Applications (Col 4), Complaint Guide (Col 4), Social Feed (Col 4) -->
+      <div class="col-lg-4">
+        <div class="nb-card p-3 h-100 text-start">
+          <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+            <h6 class="fw-bold mb-0" style="font-size:0.95rem;">Services & Applications</h6>
+            <a href="#/dept/bescom/services" class="text-primary text-decoration-none fw-semibold" style="font-size:0.78rem;">View all <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-success-subtle text-success p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px;">
+                  <i class="bi bi-lightning-charge-fill fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">New BESCOM Connection</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Apply for a new electricity connection.</div>
+                </div>
+              </div>
+              <a href="#/dept/bescom/services" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe; font-size:0.73rem;">How to Apply &gt;</a>
+            </div>
+
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-info-subtle text-info p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px;">
+                  <i class="bi bi-pencil-square fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">Change of Name in BESCOM</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Update name in your electricity account.</div>
+                </div>
+              </div>
+              <a href="#/dept/bescom/services" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe; font-size:0.73rem;">How to Apply &gt;</a>
+            </div>
+
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-primary-subtle text-primary p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px;">
+                  <i class="bi bi-droplet-fill fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">BWSSB Water Connection</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Apply for new water connection.</div>
+                </div>
+              </div>
+              <a href="#/dept/bwssb/services" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe; font-size:0.73rem;">How to Apply &gt;</a>
+            </div>
+
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-purple-subtle p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px; background:rgba(124,58,237,0.12); color:#7c3aed;">
+                  <i class="bi bi-credit-card-2-front fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">Namma Metro Smart Card</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Apply for Smart Card / Recharge online.</div>
+                </div>
+              </div>
+              <a href="#/dept/bmtc" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#eff6ff; color:#2563eb; border:1px solid #bfdbfe; font-size:0.73rem;">How to Apply &gt;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="nb-card p-3 h-100 text-start">
+          <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+            <h6 class="fw-bold mb-0" style="font-size:0.95rem;">Complaint Guide</h6>
+            <a href="#/dept/bwssb/complaint" class="text-primary text-decoration-none fw-semibold" style="font-size:0.78rem;">View all <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-warning-subtle text-warning p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px;">
+                  <i class="bi bi-exclamation-triangle-fill fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">BESCOM Complaint</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Billing issues, power failure, meter problems</div>
+                </div>
+              </div>
+              <a href="#/dept/bescom/complaint" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#fef2f2; color:#dc2626; border:1px solid #fecaca; font-size:0.73rem;">File Complaint &gt;</a>
+            </div>
+
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-primary-subtle text-primary p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px;">
+                  <i class="bi bi-tools fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">BWSSB Complaint</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Water supply issues, leakage, no water</div>
+                </div>
+              </div>
+              <a href="#/dept/bwssb/complaint" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#fef2f2; color:#dc2626; border:1px solid #fecaca; font-size:0.73rem;">File Complaint &gt;</a>
+            </div>
+
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-danger-subtle text-danger p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px;">
+                  <i class="bi bi-chat-left-dots fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">Namma Metro Complaint</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Metro services, staff, facilities</div>
+                </div>
+              </div>
+              <a href="#/dept/bmtc" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#fef2f2; color:#dc2626; border:1px solid #fecaca; font-size:0.73rem;">File Complaint &gt;</a>
+            </div>
+
+            <div class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <div class="rounded-2 bg-success-subtle text-success p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:34px; height:34px;">
+                  <i class="bi bi-shield-exclamation fs-6"></i>
+                </div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.84rem;">BBMP Complaint</div>
+                  <div class="text-secondary" style="font-size:0.73rem;">Garbage, roads, streetlights, others</div>
+                </div>
+              </div>
+              <a href="#/dept/bbmp" class="badge rounded-pill text-decoration-none px-3 py-2 fw-semibold ms-2" style="background:#fef2f2; color:#dc2626; border:1px solid #fecaca; font-size:0.73rem;">File Complaint &gt;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="nb-card p-3 h-100 text-start">
+          <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+            <h6 class="fw-bold mb-0" style="font-size:0.95rem;">Social Feed Updates</h6>
+            <a href="#/dept/bescom" class="text-primary text-decoration-none fw-semibold" style="font-size:0.78rem;">View all <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+
+          <div class="d-flex flex-column gap-2">
+            <!-- BESCOM Tweet -->
+            <div class="p-3 rounded-3 border bg-body-tertiary">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width:26px; height:26px; font-size:0.75rem;">B</div>
+                <span class="fw-bold" style="font-size:0.83rem;">BESCOM</span>
+                <span class="text-secondary" style="font-size:0.72rem;">@NammaBESCOM</span>
+              </div>
+              <p class="text-body mb-0" style="font-size:0.78rem; line-height:1.45;">
+                Planned shutdown in parts of Rajajinagar for maintenance work. Helplines: 1912.
+              </p>
+            </div>
+
+            <!-- BWSSB Tweet -->
+            <div class="p-3 rounded-3 border bg-body-tertiary">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center fw-bold" style="width:26px; height:26px; font-size:0.75rem;">W</div>
+                <span class="fw-bold" style="font-size:0.83rem;">BWSSB</span>
+                <span class="text-secondary" style="font-size:0.72rem;">@chairmanbwssb</span>
+              </div>
+              <p class="text-body mb-0" style="font-size:0.78rem; line-height:1.45;">
+                Water supply maintenance update for South Bengaluru areas. 24x7 Support: 1916.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Documents Required Grid (Col 8) + Why This Project (Col 4) -->
+      <div class="col-lg-8">
+        <div class="nb-card p-3 h-100 text-start">
+          <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom">
+            <h6 class="fw-bold mb-0" style="font-size:0.95rem;">Documents Required Directory</h6>
+            <a href="#/dept/bescom/services" class="text-primary text-decoration-none fw-semibold" style="font-size:0.78rem;">View all <i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-sm-6 col-lg-3">
+              <div class="p-3 rounded-3 border bg-body-tertiary h-100 d-flex flex-column justify-content-between hover-shadow">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-file-earmark-check-fill text-success fs-5"></i>
+                    <span class="fw-bold" style="font-size:0.83rem;">BESCOM Connection</span>
+                  </div>
+                  <p class="text-secondary mb-3" style="font-size:0.73rem; line-height:1.45;">ID Proof, Address Proof, Passport Photo, Property Document</p>
+                </div>
+                <a href="#/dept/bescom/services" class="text-primary text-decoration-none fw-bold" style="font-size:0.76rem;">View Details <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="p-3 rounded-3 border bg-body-tertiary h-100 d-flex flex-column justify-content-between hover-shadow">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-file-earmark-text-fill text-primary fs-5"></i>
+                    <span class="fw-bold" style="font-size:0.83rem;">BWSSB Water</span>
+                  </div>
+                  <p class="text-secondary mb-3" style="font-size:0.73rem; line-height:1.45;">ID Proof, Photo, Address Proof, Property Document, Khata</p>
+                </div>
+                <a href="#/dept/bwssb/services" class="text-primary text-decoration-none fw-bold" style="font-size:0.76rem;">View Details <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="p-3 rounded-3 border bg-body-tertiary h-100 d-flex flex-column justify-content-between hover-shadow">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-credit-card-2-front-fill text-danger fs-5"></i>
+                    <span class="fw-bold" style="font-size:0.83rem;">Namma Metro Pass</span>
+                  </div>
+                  <p class="text-secondary mb-3" style="font-size:0.73rem; line-height:1.45;">ID Proof, Photo, Address Proof (for Concession Pass)</p>
+                </div>
+                <a href="#/dept/bmtc" class="text-primary text-decoration-none fw-bold" style="font-size:0.76rem;">View Details <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+              <div class="p-3 rounded-3 border bg-body-tertiary h-100 d-flex flex-column justify-content-between hover-shadow">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="bi bi-building-check text-info fs-5"></i>
+                    <span class="fw-bold" style="font-size:0.83rem;">BBMP Trade License</span>
+                  </div>
+                  <p class="text-secondary mb-3" style="font-size:0.73rem; line-height:1.45;">ID Proof, Address Proof, Property Document, Photo</p>
+                </div>
+                <a href="#/dept/bbmp" class="text-primary text-decoration-none fw-bold" style="font-size:0.76rem;">View Details <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="nb-card p-3 h-100 text-start d-flex flex-column justify-content-between">
+          <div class="row align-items-center">
+            <div class="col-7">
+              <h6 class="fw-bold mb-3 pb-2 border-bottom" style="font-size:0.95rem;">Why This Project?</h6>
+              <ul class="list-unstyled mb-3 d-flex flex-column gap-2" style="font-size:0.82rem;">
+                <li class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-lg text-success fw-bold fs-6"></i>
+                  <span>Open Source & Community Driven</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-lg text-success fw-bold fs-6"></i>
+                  <span>Unbiased & Transparent Information</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-lg text-success fw-bold fs-6"></i>
+                  <span>One Place for All Citizen Needs</span>
+                </li>
+                <li class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-lg text-success fw-bold fs-6"></i>
+                  <span>Built with ❤️ for Bengaluru</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Illustration Accent -->
+            <div class="col-5 text-center">
+              <div class="p-3 rounded-circle bg-primary-subtle text-primary d-inline-flex flex-column align-items-center justify-content-center shadow-2xs" style="width:88px; height:88px;">
+                <i class="bi bi-code-slash display-6"></i>
+                <div class="fw-bold mt-1" style="font-size:0.65rem;">Bengaluru</div>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener" class="btn btn-outline-dark w-100 rounded-3 d-flex align-items-center justify-content-center gap-2 py-2 mt-2" style="font-size:0.82rem;">
+            <i class="bi bi-github"></i>
+            <span>Star on GitHub</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>`;
 }

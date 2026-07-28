@@ -14,7 +14,7 @@ export function renderFooter() {
           <p class="text-secondary mb-3" style="font-size:0.84rem; line-height:1.65; max-width:320px;">
             Unofficial open-source citizen services portal for Bengaluru. Access utility calculators, official circulars, complaint guides, and emergency helplines across BWSSB, BESCOM, BBMP, BMTC, BDA, and more. Maintained by community volunteers.
           </p>
-          <div class="d-inline-flex align-items-center gap-1.5 px-3 py-1 rounded-pill bg-body-tertiary border" style="font-size:0.73rem; color:var(--bs-secondary-color); font-weight:600;">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-body-tertiary border" style="font-size:0.73rem; color:var(--bs-secondary-color); font-weight:600;">
             <i class="bi bi-code-slash text-primary me-1"></i>MIT License — Open Source
           </div>
         </div>
@@ -35,11 +35,11 @@ export function renderFooter() {
         <div class="col-lg-3 col-md-6 text-start">
           <div class="fw-bold mb-3 display-font" style="font-size:0.9rem; letter-spacing:0.02em;">Departments</div>
           <ul class="nb-footer-links">
-            <li><a href="#/dept/bwssb"><i class="bi bi-chevron-right text-primary me-1.5" style="font-size:0.7rem;"></i>BWSSB Water Board</a></li>
-            <li><a href="#/dept/bescom"><i class="bi bi-chevron-right text-primary me-1.5" style="font-size:0.7rem;"></i>BESCOM Electricity</a></li>
-            <li><a href="#/dept/bbmp"><i class="bi bi-chevron-right text-primary me-1.5" style="font-size:0.7rem;"></i>GBA / BBMP Civic</a></li>
-            <li><a href="#/dept/bmtc"><i class="bi bi-chevron-right text-primary me-1.5" style="font-size:0.7rem;"></i>BMTC City Transit</a></li>
-            <li><a href="#/dept/bda"><i class="bi bi-chevron-right text-primary me-1.5" style="font-size:0.7rem;"></i>BDA Development</a></li>
+            <li><a href="#/dept/bwssb"><i class="bi bi-chevron-right text-primary me-2" style="font-size:0.7rem;"></i>BWSSB Water Board</a></li>
+            <li><a href="#/dept/bescom"><i class="bi bi-chevron-right text-primary me-2" style="font-size:0.7rem;"></i>BESCOM Electricity</a></li>
+            <li><a href="#/dept/bbmp"><i class="bi bi-chevron-right text-primary me-2" style="font-size:0.7rem;"></i>GBA / BBMP Civic</a></li>
+            <li><a href="#/dept/bmtc"><i class="bi bi-chevron-right text-primary me-2" style="font-size:0.7rem;"></i>BMTC City Transit</a></li>
+            <li><a href="#/dept/bda"><i class="bi bi-chevron-right text-primary me-2" style="font-size:0.7rem;"></i>BDA Development</a></li>
           </ul>
         </div>
 
@@ -57,7 +57,7 @@ export function renderFooter() {
 
     <div class="nb-footer-bottom py-3">
       <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2 text-secondary" style="font-size:0.78rem;">
-        <div>© 2026 Namma Bengaluru. Built with <i class="bi bi-heart-fill text-danger mx-0.5" style="font-size:0.7rem;"></i> by the open-source community · Started by <a href="https://vishwas.me/" target="_blank" rel="noopener" class="text-primary fw-bold text-decoration-underline">VR</a>.</div>
+        <div>Made with <i class="bi bi-heart-fill text-danger mx-1" style="font-size:0.7rem;"></i> for Bengaluru · Designed & Built by <a href="https://vishwas.me/" target="_blank" rel="noopener" class="text-primary fw-bold text-decoration-underline">VR</a> · Maintained by the open-source community</div>
         <div class="d-flex gap-3">
           <a href="https://bwssb.karnataka.gov.in" target="_blank" rel="noopener" class="text-secondary text-decoration-none">BWSSB</a>
           <a href="https://bescom.karnataka.gov.in" target="_blank" rel="noopener" class="text-secondary text-decoration-none">BESCOM</a>
