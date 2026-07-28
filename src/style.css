@@ -225,6 +225,7 @@ body.is-dept-page::before {
     top: 80px;
     transform: translateX(-100%);
   }
+
   .nb-dept-sidebar.is-open {
     transform: translateX(0);
   }
@@ -235,6 +236,7 @@ body.is-dept-page::before {
   .nb-dept-sidebar {
     transform: translateX(0) !important;
   }
+
   body.is-dept-page .nb-app-main-content {
     margin-left: 240px;
   }
@@ -518,17 +520,19 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
   .nb-sos-bar {
     overflow-x: auto;
     white-space: nowrap;
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
     padding: 0.35rem 0.85rem;
     font-size: 0.72rem;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
+
   .nb-sos-bar::-webkit-scrollbar {
     display: none;
   }
-  .nb-sos-bar > * {
+
+  .nb-sos-bar>* {
     flex-shrink: 0;
   }
 }
