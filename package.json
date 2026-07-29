@@ -31,6 +31,8 @@
     "fuse.js": "^7.5.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^4.2.1",
+    "playwright": "^1.62.0",
+    "tom-select": "^2.6.2",
     "xlsx": "^0.18.5"
   }
 }

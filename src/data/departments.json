@@ -85,11 +85,12 @@
     "color": "#7c3aed",
     "helpline": "1800-425-12345",
     "website": "https://english.bmrc.co.in",
-    "status": "coming-soon",
+    "status": "live",
     "features": [
-      "Fare Calculator",
-      "Station Route Guide",
-      "Smart Card & QR Tickets"
+      "Fare & Route Calculator",
+      "Google Maps Live Transit",
+      "Smart Card & QR Tickets",
+      "Station Directory & Parking"
     ]
   },
   {

@@ -177,14 +177,60 @@ const SEARCH_INDEX = [
     icon: 'bi-bus-front',
     badge: 'BMTC'
   },
+  // ── NAMMA METRO (BMRCL) SECTION ────────────────────────────────
   {
-    title: 'Namma Metro Smart Card & Fares',
+    title: 'Namma Metro Fare & Route Pathfinder',
+    category: 'Calculators',
+    dept: 'Namma Metro',
+    desc: 'Calculate token vs smart card fares (5% discount), travel time, and Majestic interchange transfer for all 65+ stations.',
+    url: '#/dept/bmrcl/calculator',
+    icon: 'bi-calculator',
+    badge: 'Calculator'
+  },
+  {
+    title: 'Google Maps Live Transit & Station Directory',
     category: 'Transit',
-    dept: 'Metro',
-    desc: 'Bengaluru Metro Rail Corporation (BMRCL) smart card recharge, fare chart, and route map.',
-    url: '#/dept/bmtc/overview',
-    icon: 'bi-train-front',
-    badge: 'Metro'
+    dept: 'Namma Metro',
+    desc: 'Search Purple, Green, and Yellow line stations with embedded Google Maps live transit, parking availability, and feeder buses.',
+    url: '#/dept/bmrcl/live-stations',
+    icon: 'bi-geo-alt',
+    badge: 'Google Maps'
+  },
+  {
+    title: 'WhatsApp QR Ticket Booking & Smart Cards',
+    category: 'Ticketing',
+    dept: 'Namma Metro',
+    desc: 'Buy 5% discounted QR tickets on WhatsApp (+91 81055 56677), NCMC RuPay card guide, 120-min stay rules & baggage limits.',
+    url: '#/dept/bmrcl/smart-card',
+    icon: 'bi-qr-code-scan',
+    badge: 'Ticketing'
+  },
+  {
+    title: 'Namma Metro Tariff Slabs & Unlimited Tourist Passes',
+    category: 'Tariffs',
+    dept: 'Namma Metro',
+    desc: 'Official BMRCL distance-based fare slab table (₹10 to ₹60) and 1-Day & 3-Day Unlimited Tourist Passes.',
+    url: '#/dept/bmrcl/tariff',
+    icon: 'bi-table',
+    badge: 'Tariff'
+  },
+  {
+    title: 'BMRCL Press Releases, IPL Extended Timings & Notices',
+    category: 'Notices',
+    dept: 'Namma Metro',
+    desc: 'Latest announcements, IPL match day extended train operations, maintenance alerts, and Gazette notifications.',
+    url: '#/dept/bmrcl/notices',
+    icon: 'bi-newspaper',
+    badge: 'Notices'
+  },
+  {
+    title: 'Namma Metro Lost & Found Counter & Customer Helpline',
+    category: 'Helpline',
+    dept: 'Namma Metro',
+    desc: 'Majestic station Lost & Found counter hours, toll-free helpline 1800-425-12345, and grievance escalation matrix.',
+    url: '#/dept/bmrcl/complaint',
+    icon: 'bi-telephone-fill',
+    badge: 'Helpline'
   }
 ];
 

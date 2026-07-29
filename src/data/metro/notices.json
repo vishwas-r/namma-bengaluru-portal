@@ -1,0 +1,61 @@
+{
+  "helpline": {
+    "tollFree": "1800-425-12345",
+    "securityControlRoom": "080-22968600",
+    "whatsappBot": "+918105556677",
+    "email": "travelhelp@bmrc.co.in",
+    "lostAndFoundCounter": "Nadaprabhu Kempegowda Station Majestic (Platform 2 Level)",
+    "lostAndFoundHours": "10:00 AM - 06:00 PM (Monday to Saturday)",
+    "officialLostAndFoundUrl": "https://www.bmrc.co.in/lost-and-found/",
+    "officers": [
+      {
+        "line": "Line 1 (Purple Line)",
+        "color": "purple",
+        "officer": "Manish",
+        "phone": "(+91) 8277889988",
+        "tel": "tel:8277889988"
+      },
+      {
+        "line": "Line 2 (Green Line)",
+        "color": "green",
+        "officer": "Srinivasamurthy",
+        "phone": "080-25191232 / 080-22162232",
+        "tel": "tel:08025191232"
+      }
+    ]
+  },
+  "notices": [
+    {
+      "id": "notice-ipl-2026",
+      "title": "Extended Metro Timings During IPL Matches at Chinnaswamy Stadium",
+      "date": "2026-04-10",
+      "category": "Operational Alert",
+      "summary": "Last train departures from all terminal stations (Challaghatta, Whitefield, Nagasandra, Silk Institute) extended up to 11:30 PM on match days.",
+      "link": "https://english.bmrc.co.in/PressRelease"
+    },
+    {
+      "id": "notice-whatsapp-qr",
+      "title": "5% Discount on WhatsApp & Namma Metro App QR Tickets",
+      "date": "2026-03-01",
+      "category": "Ticketing",
+      "summary": "Commuters purchasing single journey QR tickets via WhatsApp (+91 81055 56677) or Namma Metro App enjoy a flat 5% discount on standard token fares.",
+      "link": "https://english.bmrc.co.in/QrTicketing"
+    },
+    {
+      "id": "notice-ncmc-rupay",
+      "title": "National Common Mobility Card (NCMC) Accepted Across All Turnstiles",
+      "date": "2026-01-15",
+      "category": "Smart Card",
+      "summary": "Any RuPay NCMC prepaid card issued by SBI, Canara Bank, HDFC, or ICICI can be tapped at automatic fare collection (AFC) gates across BMRCL network.",
+      "link": "https://english.bmrc.co.in/NCMC"
+    },
+    {
+      "id": "notice-baggage-limit",
+      "title": "Baggage Weight & Dimension Guidelines inside Namma Metro",
+      "date": "2025-11-20",
+      "category": "Passenger Safety",
+      "summary": "Maximum allowed baggage per passenger is 15 kg. Oversized luggage exceeding 60cm x 45cm x 25cm requires special clearance at security scanners.",
+      "link": "https://english.bmrc.co.in/PassengerGuidelines"
+    }
+  ]
+}

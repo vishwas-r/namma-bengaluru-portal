@@ -2,6 +2,8 @@ import './style.css';
 import * as bootstrap from 'bootstrap';
 window.bootstrap = bootstrap;
 import { subscribeToOutageReports } from './services/outageStore.js';
+import TomSelect from 'tom-select';
+import 'tom-select/dist/css/tom-select.bootstrap5.css';
 
 import deptData from './data/departments.json';
 import { renderSOSBar, renderHeader, renderGlobalSidebar } from './components/header.js';
@@ -13,6 +15,8 @@ import { renderAboutPage } from './pages/aboutPage.js';
 import { renderDepartmentsPage } from './pages/departmentsPage.js';
 import { renderBWSSBPage, renderTab as renderBWSSBTab, renderCalc as renderBWSSBCalc, recalcBill as recalcBWSSBBill, renderTariffChart as renderBWSSBTariffChart, renderNoticeCard as renderBWSSBNoticeCard, renderSteps as renderBWSSBSteps } from './pages/bwssbPage.js';
 import { renderBESCOMPage, renderTab as renderBESCOMTab, renderCalc as renderBESCOMCalc, recalcBill as recalcBESCOMBill, renderTariffChart as renderBESCOMTariffChart, renderNoticeCard as renderBESCOMNoticeCard, renderSteps as renderBESCOMSteps } from './pages/bescomPage.js';
+import { renderMetroPage } from './pages/metroPage.js';
+import { getAllStations, getStationById, fetchOfficialMetroFare } from './services/metroEngine.js';
 import { getKeyPool, addKey, removeKey, markKeyStatus, testKey, cleanKey, queryGemini } from './services/keyPool.js';
 import { downloadBillPDF } from './services/pdfExporter.js';
 import bwssbNoticesData from './data/bwssb/notices.json';
@@ -44,6 +48,34 @@ const state = {
   noticeFilter: 'all',
   selectedComplaintType: 'no-water',
   selectedServiceId: 'name-change',
+  metroCrowdReports: JSON.parse(localStorage.getItem('nb_metro_reports') || 'null') || [
+    {
+      id: 'report-101',
+      line: 'purple',
+      lineName: 'Purple Line',
+      station: 'Nadaprabhu Kempegowda Station Majestic',
+      category: 'delay',
+      categoryLabel: '⏱️ Train Delay (5-10 Mins)',
+      comment: 'Minor 5 to 7 minute delay on Purple Line platform towards Whitefield due to heavy peak hour boarding at Majestic.',
+      timeAgo: '12 mins ago',
+      upvotes: 24,
+      status: 'Active Alert',
+      badgeClass: 'bg-warning text-dark'
+    },
+    {
+      id: 'report-102',
+      line: 'green',
+      lineName: 'Green Line',
+      station: 'Nagasandra',
+      category: 'normal',
+      categoryLabel: '🟢 Normal Operations',
+      comment: 'Green Line operations running smoothly on schedule between Nagasandra and Silk Institute.',
+      timeAgo: '35 mins ago',
+      upvotes: 11,
+      status: 'Service Normal',
+      badgeClass: 'bg-success text-white'
+    }
+  ],
   chatHistory: [{
     role: 'bot',
     content: 'Namaskara! I am <strong>NammaBengaluru AI</strong>, your citizen assistant for Bengaluru. Ask me anything about BWSSB water tariffs, BESCOM electricity bill, owner name change online, filing complaints, or Gazette circulars.'
@@ -192,6 +224,7 @@ function renderDeptPage() {
   if (dept.status !== 'live') return renderComingSoonPage(dept);
   if (state.deptId === 'bwssb') return renderBWSSBPage(dept, state, getLang());
   if (state.deptId === 'bescom') return renderBESCOMPage(dept, state, getLang());
+  if (state.deptId === 'bmrcl' || state.deptId === 'metro') return renderMetroPage(dept, state, getLang());
   return renderComingSoonPage(dept);
 }
 
@@ -243,6 +276,39 @@ function renderApp(skipScroll = false) {
   if (!skipScroll && !state.modalOpen) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  if (state.deptId === 'bmrcl' || state.deptId === 'metro') {
+    initMetroSelects();
+  }
+}
+
+let tsSource, tsDest, tsLive;
+function initMetroSelects() {
+  const cfg = {
+    searchField: ['text'],
+    render: {
+      option: function(data, escape) {
+        const color = data.line === 'purple' ? '#9333ea' : data.line === 'green' ? '#16a34a' : '#eab308';
+        return `<div class="d-flex align-items-center gap-2 px-3 py-2">
+          <span style="width:12px;height:12px;border-radius:50%;background-color:${color};flex-shrink:0;"></span>
+          <span class="text-dark fw-medium" style="font-size:0.9rem;">${escape(data.text)}</span>
+        </div>`;
+      },
+      item: function(data, escape) {
+        const color = data.line === 'purple' ? '#9333ea' : data.line === 'green' ? '#16a34a' : '#eab308';
+        return `<div class="d-flex align-items-center gap-2">
+          <span style="width:12px;height:12px;border-radius:50%;background-color:${color};flex-shrink:0;"></span>
+          <span class="text-dark fw-medium" style="font-size:0.9rem;">${escape(data.text)}</span>
+        </div>`;
+      }
+    }
+  };
+
+  const sEl = document.getElementById('metroSourceSelect');
+  if (sEl) tsSource = new TomSelect(sEl, cfg);
+  const dEl = document.getElementById('metroDestSelect');
+  if (dEl) tsDest = new TomSelect(dEl, cfg);
+  const lEl = document.getElementById('metroLiveSelect');
+  if (lEl) tsLive = new TomSelect(lEl, cfg);
 }
 
 function reloadTwitterWidgets() {
@@ -345,6 +411,136 @@ function bindAll() {
     if (sidebar) sidebar.classList.toggle('is-open', state.deptSidebarOpen);
     if (backdrop) backdrop.classList.toggle('is-visible', state.deptSidebarOpen);
     document.body.classList.toggle('nb-sidebar-open', Boolean(state.route === 'dept' && state.deptSidebarOpen));
+  };
+
+  window.__swapMetroStations = () => {
+    const tmp = state.metroSource || 'majestic';
+    state.metroSource = state.metroDest || 'whitefield';
+    state.metroDest = tmp;
+    if (tsSource) tsSource.setValue(state.metroSource, true);
+    if (tsDest) tsDest.setValue(state.metroDest, true);
+  };
+
+  window.__onMetroStationChange = () => {
+    const src = document.getElementById('metroSourceSelect')?.value;
+    const dst = document.getElementById('metroDestSelect')?.value;
+    if (src) state.metroSource = src;
+    if (dst) state.metroDest = dst;
+  };
+
+
+
+  window.__calculateMetroFare = async () => {
+    window.__onMetroStationChange();
+    const srcObj = getStationById(state.metroSource);
+    const dstObj = getStationById(state.metroDest);
+
+    if (srcObj && dstObj) {
+      const liveFare = await fetchOfficialMetroFare(srcObj, dstObj);
+      if (liveFare) {
+        state.liveMetroFare = liveFare;
+      } else {
+        state.liveMetroFare = null;
+      }
+    }
+    renderApp(true);
+  };
+
+  window.__selectMetroStation = (id) => {
+    state.selectedMetroStationId = id;
+    renderApp(true);
+  };
+
+  window.__openMetroMapModal = () => {
+    const modal = document.getElementById('nbMetroMapModal');
+    if (modal) {
+      modal.classList.add('show');
+      modal.style.display = 'block';
+      document.body.classList.add('modal-open');
+    }
+  };
+
+  window.__closeMetroMapModal = () => {
+    const modal = document.getElementById('nbMetroMapModal');
+    if (modal) {
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+  };
+
+  window.__openMetroReportModal = () => {
+    const modal = document.getElementById('nbMetroReportModal');
+    if (modal) {
+      modal.classList.add('show');
+      modal.style.display = 'block';
+      document.body.classList.add('modal-open');
+    }
+  };
+
+  window.__closeMetroReportModal = () => {
+    const modal = document.getElementById('nbMetroReportModal');
+    if (modal) {
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+  };
+
+  window.__submitMetroCrowdReport = (e) => {
+    if (e) e.preventDefault();
+    const line = document.getElementById('reportLineSelect')?.value || 'purple';
+    const station = document.getElementById('reportStationInput')?.value || 'Majestic';
+    const category = document.getElementById('reportCategorySelect')?.value || 'delay';
+    const comment = document.getElementById('reportCommentInput')?.value || '';
+
+    if (!comment.trim()) return;
+
+    const categoryMap = {
+      delay: { label: '⏱️ Train Delay (5-15 Mins)', badge: 'bg-warning text-dark', status: 'Active Disruption' },
+      halted: { label: '🛑 Service Halted / Technical Snag', badge: 'bg-danger text-white', status: 'Service Halted' },
+      crowd: { label: '🚨 Overcrowding / Long Queue', badge: 'bg-warning text-dark', status: 'Heavy Crowd' },
+      outage: { label: '🚪 Lift / Escalator Outage', badge: 'bg-info text-white', status: 'Facility Outage' },
+      normal: { label: '🟢 Service Running Normal', badge: 'bg-success text-white', status: 'Service Normal' }
+    };
+
+    const catObj = categoryMap[category] || categoryMap.delay;
+
+    const newReport = {
+      id: 'report-' + Date.now(),
+      line: line,
+      lineName: line === 'purple' ? 'Purple Line' : line === 'green' ? 'Green Line' : 'Yellow Line',
+      station: station,
+      category: category,
+      categoryLabel: catObj.label,
+      comment: comment.trim(),
+      timeAgo: 'Just now',
+      upvotes: 1,
+      status: catObj.status,
+      badgeClass: catObj.badge
+    };
+
+    state.metroCrowdReports = [newReport, ...(state.metroCrowdReports || [])];
+    localStorage.setItem('nb_metro_reports', JSON.stringify(state.metroCrowdReports));
+
+    window.__closeMetroReportModal();
+    state.activeTab = 'notices';
+    if (state.route === 'dept' && state.deptId) {
+      window.location.hash = `#/dept/${state.deptId}/notices`;
+    }
+    renderApp(true);
+  };
+
+  window.__upvoteMetroReport = (reportId) => {
+    if (!state.metroCrowdReports) return;
+    state.metroCrowdReports = state.metroCrowdReports.map(r => {
+      if (r.id === reportId) {
+        return { ...r, upvotes: r.upvotes + 1 };
+      }
+      return r;
+    });
+    localStorage.setItem('nb_metro_reports', JSON.stringify(state.metroCrowdReports));
+    renderApp(true);
   };
 
   document.addEventListener('click', () => {

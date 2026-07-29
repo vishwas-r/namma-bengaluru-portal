@@ -171,6 +171,10 @@ body.is-dept-page::before {
   background-image: linear-gradient(to right, rgba(0, 147, 220, 0.70), rgba(15, 23, 42, 0.35)), url('/bescom-header.png');
 }
 
+.nb-dept-hero-metro {
+  background-image: linear-gradient(to right, rgba(124, 58, 237, 0.75), rgba(15, 23, 42, 0.40)), url('/namma-metro-header.png');
+}
+
 /* Homepage Hero Banner Theme Adaptive Styling */
 :root {
   --nb-hero-overlay: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.82) 40%, rgba(255, 255, 255, 0) 75%);

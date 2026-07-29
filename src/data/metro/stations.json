@@ -1,0 +1,2398 @@
+[
+  {
+    "id": "challaghatta",
+    "code": "CLGD",
+    "name": "Challaghatta",
+    "kannadaName": "ಚಲ್ಲಘಟ್ಟ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.909,
+    "lng": 77.4645,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 175,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-18",
+      "MF-19"
+    ],
+    "googleQuery": "Challaghatta Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "kengeri",
+    "code": "KGIT",
+    "name": "Kengeri",
+    "kannadaName": "ಕೆಂಗೇರಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9079,
+    "lng": 77.4764,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 58,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-12",
+      "MF-15"
+    ],
+    "googleQuery": "Kengeri Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "kengeri-bus-terminal",
+    "code": "MLSD",
+    "name": "Kengeri Bus Terminal",
+    "kannadaName": "ಕೆಂಗೇರಿ ಬಸ್ ಟರ್ಮಿನಲ್",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9126,
+    "lng": 77.4839,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 118,
+      "fourWheelerSlots": 280,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-14",
+      "226N",
+      "227"
+    ],
+    "googleQuery": "Kengeri Bus Terminal Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "pattanagere",
+    "code": "PATG",
+    "name": "Pattanagere",
+    "kannadaName": "ಪಟ್ಟಣಗೆರೆ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9238,
+    "lng": 77.4975,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 156,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-16"
+    ],
+    "googleQuery": "Pattanagere Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "jnanabharathi",
+    "code": "BGUC",
+    "name": "Jnanabharathi",
+    "kannadaName": "ಜ್ಞಾನಭಾರತಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9329,
+    "lng": 77.5054,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 600,
+      "fourWheelerSlots": 21,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-21"
+    ],
+    "googleQuery": "Jnanabharathi Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "rajarajeshwari-nagar",
+    "code": "RRRN",
+    "name": "Rajarajeshwari Nagar",
+    "kannadaName": "ರಾಜರಾಜೇಶ್ವರಿ ನಗರ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9427,
+    "lng": 77.5165,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 350,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-22",
+      "RR-1"
+    ],
+    "googleQuery": "Rajarajeshwari Nagar Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "nayandahalli",
+    "code": "NYHM",
+    "name": "Nayandahalli",
+    "kannadaName": "ನಾಯಂಡಹಳ್ಳಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9497,
+    "lng": 77.5252,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 470,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-23"
+    ],
+    "googleQuery": "Nayandahalli Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "mysore-road",
+    "code": "MYRD",
+    "name": "Mysore Road",
+    "kannadaName": "ಮೈಸೂರು ರಸ್ತೆ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9557,
+    "lng": 77.5342,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 1090,
+      "fourWheelerSlots": 512,
+      "cycles": 30,
+      "lcv": 10,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-1",
+      "MF-2",
+      "226"
+    ],
+    "googleQuery": "Mysore Road Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "deepanjali-nagar",
+    "code": "DJNR",
+    "name": "Deepanjali Nagar",
+    "kannadaName": "ದೀಪಾಂಜಲಿ ನಗರ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9575,
+    "lng": 77.5418,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 145,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-5"
+    ],
+    "googleQuery": "Deepanjali Nagar Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "attiguppe",
+    "code": "AGPP",
+    "name": "Attiguppe",
+    "kannadaName": "ಅತ್ತಿಗುಪ್ಪೆ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9587,
+    "lng": 77.5498,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 300,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-6"
+    ],
+    "googleQuery": "Attiguppe Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "vijayanagar",
+    "code": "VJN",
+    "name": "Vijayanagar",
+    "kannadaName": "ವಿಜಯನಗರ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9698,
+    "lng": 77.5375,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 160,
+      "fourWheelerSlots": 46,
+      "cycles": 20,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day (Opp TTMC)"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-7",
+      "MF-8"
+    ],
+    "googleQuery": "Vijayanagar Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "hosahalli",
+    "code": "HSLI",
+    "name": "Hosahalli",
+    "kannadaName": "ಹೊಸಹಳ್ಳಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9734,
+    "lng": 77.5471,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 186,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-9"
+    ],
+    "googleQuery": "Hosahalli Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "magadi-road",
+    "code": "MIRD",
+    "name": "Magadi Road",
+    "kannadaName": "ಮಾಗಡಿ ರಸ್ತೆ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9757,
+    "lng": 77.5552,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 140,
+      "fourWheelerSlots": 47,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-10"
+    ],
+    "googleQuery": "Magadi Road Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "kranthivira-sangolli-rayanna",
+    "code": "BRCS",
+    "name": "KSR City Railway Station",
+    "kannadaName": "ಕ್ರಾಂತಿಪಥ ಸಿಟಿ ರೈಲ್ವೆ ನಿಲ್ದಾಣ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9777,
+    "lng": 77.567,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 546,
+      "fourWheelerSlots": 105,
+      "cycles": 20,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "SBC Direct"
+    ],
+    "googleQuery": "KSR Bengaluru Railway Metro Station",
+    "lineId": 1
+  },
+  {
+    "id": "majestic",
+    "code": "KGWA",
+    "name": "Nadaprabhu Kempegowda Station Majestic",
+    "kannadaName": "ನಾಡಪ್ರಭು ಕೆಂಪೇಗೌಡ ನಿಲ್ದಾಣ ಮೆಜೆಸ್ಟಿಕ್",
+    "line": "purple",
+    "isInterchange": true,
+    "interchangeWith": [
+      "green"
+    ],
+    "lat": 12.9756,
+    "lng": 77.5728,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 260,
+      "fourWheelerSlots": 36,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "KBS Direct",
+      "All BMTC Routes"
+    ],
+    "googleQuery": "Nadaprabhu Kempegowda Station Majestic Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "sir-m-visvesvaraya",
+    "code": "VSWA",
+    "name": "Sir M. Visvesvaraya Station Central College",
+    "kannadaName": "ಸರ್ ಎಂ. ವಿಶ್ವೇಶ್ವರಯ್ಯ ನಿಲ್ದಾಣ ಸೆಂಟ್ರಲ್ ಕಾಲೇಜು",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.974,
+    "lng": 77.5832,
+    "parking": {
+      "hasParking": false,
+      "twoWheelerSlots": 0,
+      "fourWheelerSlots": 0,
+      "cycles": 0,
+      "lcv": 0,
+      "rate2W": "N/A",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-3"
+    ],
+    "googleQuery": "Sir M Visvesvaraya Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "dr-b-r-ambedkar-vidhana-soudha",
+    "code": "VDSA",
+    "name": "Dr. B.R. Ambedkar Station Vidhana Soudha",
+    "kannadaName": "ಡಾ. ಬಿ.ಆರ್. ಅಂಬೇಡ್ಕರ್ ನಿಲ್ದಾಣ ವಿಧಾನ ಸೌಧ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9796,
+    "lng": 77.5908,
+    "parking": {
+      "hasParking": false,
+      "twoWheelerSlots": 0,
+      "fourWheelerSlots": 0,
+      "cycles": 0,
+      "lcv": 0,
+      "rate2W": "N/A",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-4"
+    ],
+    "googleQuery": "Vidhana Soudha Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "cubbon-park",
+    "code": "CBPK",
+    "name": "Cubbon Park",
+    "kannadaName": "ಕಬ್ಬನ್ ಪಾರ್ಕ್",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.981,
+    "lng": 77.5975,
+    "parking": {
+      "hasParking": false,
+      "twoWheelerSlots": 0,
+      "fourWheelerSlots": 0,
+      "cycles": 0,
+      "lcv": 0,
+      "rate2W": "N/A",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-11"
+    ],
+    "googleQuery": "Cubbon Park Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "mahatma-gandhi-road",
+    "code": "MAGR",
+    "name": "MG Road",
+    "kannadaName": "ಎಂ.ಜಿ. ರಸ್ತೆ",
+    "line": "purple",
+    "isInterchange": true,
+    "interchangeWith": [
+      "pink"
+    ],
+    "lat": 12.9756,
+    "lng": 77.6067,
+    "parking": {
+      "hasParking": false,
+      "twoWheelerSlots": 0,
+      "fourWheelerSlots": 0,
+      "cycles": 0,
+      "lcv": 0,
+      "rate2W": "Use Utility Building Parking",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "G-3",
+      "335E"
+    ],
+    "googleQuery": "MG Road Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "trinity",
+    "code": "TTY",
+    "name": "Trinity",
+    "kannadaName": "ಟ್ರಿನಿಟಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.973,
+    "lng": 77.6171,
+    "parking": {
+      "hasParking": false,
+      "twoWheelerSlots": 0,
+      "fourWheelerSlots": 0,
+      "cycles": 0,
+      "lcv": 0,
+      "rate2W": "N/A",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-13"
+    ],
+    "googleQuery": "Trinity Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "halasuru",
+    "code": "HLRU",
+    "name": "Halasuru",
+    "kannadaName": "ಹಲಸೂರು",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.975,
+    "lng": 77.6264,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 34,
+      "fourWheelerSlots": 16,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-17"
+    ],
+    "googleQuery": "Halasuru Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "indiranagar",
+    "code": "IDN",
+    "name": "Indiranagar",
+    "kannadaName": "ಇಂದಿರಾನಗರ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9784,
+    "lng": 77.6386,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 110,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-20",
+      "201"
+    ],
+    "googleQuery": "Indiranagar Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "sv-road",
+    "code": "SVRD",
+    "name": "Swami Vivekananda Road",
+    "kannadaName": "ಸ್ವಾಮಿ ವಿವೇಕಾನಂದ ರಸ್ತೆ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9856,
+    "lng": 77.6449,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 230,
+      "fourWheelerSlots": 184,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-25"
+    ],
+    "googleQuery": "Swami Vivekananda Road Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "baiyappanahalli",
+    "code": "BYPH",
+    "name": "Baiyappanahalli",
+    "kannadaName": "ಬೈಯಪ್ಪನಹಳ್ಳಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9907,
+    "lng": 77.6525,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 715,
+      "fourWheelerSlots": 342,
+      "cycles": 20,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-1",
+      "MF-2",
+      "MF-3"
+    ],
+    "googleQuery": "Baiyappanahalli Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "benninganahalli",
+    "code": "JTPM",
+    "name": "Benniganahalli (Tin Factory)",
+    "kannadaName": "ಬೆನ್ನಿಗಾನಹಳ್ಳಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9961,
+    "lng": 77.6628,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 250,
+      "fourWheelerSlots": 40,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "500D",
+      "500C",
+      "MF-30"
+    ],
+    "googleQuery": "Benniganahalli Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "kr-pura",
+    "code": "KRAM",
+    "name": "Krishnarajapura (KR Puram)",
+    "kannadaName": "ಕೃಷ್ಣರಾಜಪುರ",
+    "line": "purple",
+    "isInterchange": true,
+    "interchangeWith": [
+      "blue"
+    ],
+    "lat": 12.9964,
+    "lng": 77.6766,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 740,
+      "fourWheelerSlots": 0,
+      "cycles": 20,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "500D",
+      "MF-31"
+    ],
+    "googleQuery": "KR Puram Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "singayyanapalya",
+    "code": "MDVP",
+    "name": "Singayyanapalya",
+    "kannadaName": "ಸಿಂಗಯ್ಯನಪಾಳ್ಯ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9932,
+    "lng": 77.6976,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 70,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-32"
+    ],
+    "googleQuery": "Singayyanapalya Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "garudacharpalya",
+    "code": "GDCP",
+    "name": "Garudacharpalya",
+    "kannadaName": "ಗರುಡಾಚಾರ್ಪಾಳ್ಯ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9904,
+    "lng": 77.7075,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 300,
+      "fourWheelerSlots": 50,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-33"
+    ],
+    "googleQuery": "Garudacharpalya Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "hoodi",
+    "code": "DKIA",
+    "name": "Hoodi",
+    "kannadaName": "ಹೂಡಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9897,
+    "lng": 77.7161,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 140,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-34"
+    ],
+    "googleQuery": "Hoodi Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "seetharampalya",
+    "code": "VWIA",
+    "name": "Seetharampalya",
+    "kannadaName": "ಸೀತಾರಾಮಪಾಳ್ಯ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9839,
+    "lng": 77.7198,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 112,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-35"
+    ],
+    "googleQuery": "Seetharampalya Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "kundualahalli",
+    "code": "KDNH",
+    "name": "Kundalahalli",
+    "kannadaName": "ಕುಂದಲಹಳ್ಳಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9737,
+    "lng": 77.7214,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 140,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-36"
+    ],
+    "googleQuery": "Kundalahalli Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "nallurhalli",
+    "code": "VDHP",
+    "name": "Nallurhalli",
+    "kannadaName": "ನಲ್ಲೂರುಹಳ್ಳಿ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9715,
+    "lng": 77.7317,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 82,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-37"
+    ],
+    "googleQuery": "Nallurhalli Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "sadaramangala",
+    "code": "SSHP",
+    "name": "Sadaramangala (Sri Sathya Sai Hospital)",
+    "kannadaName": "ಸತ್ಯಸಾಯಿ ಆಸ್ಪತ್ರೆ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9734,
+    "lng": 77.7402,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 200,
+      "fourWheelerSlots": 30,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-38"
+    ],
+    "googleQuery": "Sri Sathya Sai Hospital Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "pattandur-agrahara",
+    "code": "ITPL",
+    "name": "Pattandur Agrahara (ITPL)",
+    "kannadaName": "ಪಟ್ಟಂದೂರು ಅಗ್ರಹಾರ (ಐಟಿಪಿಎಲ್)",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9788,
+    "lng": 77.7441,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 90,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-39",
+      "V-335E"
+    ],
+    "googleQuery": "ITPL Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "kadugodi-tree-park",
+    "code": "KDGD",
+    "name": "Kadugodi Tree Park",
+    "kannadaName": "ಕಾಡುಗೋಡಿ ಟ್ರೀ ಪಾರ್ಕ್",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9863,
+    "lng": 77.7485,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 140,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-40"
+    ],
+    "googleQuery": "Kadugodi Tree Park Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "hopefarm-channasandra",
+    "code": "UWVL",
+    "name": "Hopefarm Channasandra",
+    "kannadaName": "ಹೋಪ್‌ಫಾರ್ಮ್ ಚನ್ನಸಂದ್ರ",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9912,
+    "lng": 77.7533,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 120,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-41"
+    ],
+    "googleQuery": "Hopefarm Channasandra Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "whitefield",
+    "code": "WHTM",
+    "name": "Whitefield (Kadugodi)",
+    "kannadaName": "ವೈಟ್‌ಫೀಲ್ಡ್ (ಕಾಡುಗೋಡಿ)",
+    "line": "purple",
+    "isInterchange": false,
+    "lat": 12.9972,
+    "lng": 77.7601,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 204,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-42",
+      "V-335E",
+      "500D"
+    ],
+    "googleQuery": "Whitefield Kadugodi Metro Station Bengaluru",
+    "lineId": 1
+  },
+  {
+    "id": "madavara",
+    "code": "BIET",
+    "name": "Madavara (BIEC)",
+    "kannadaName": "ಮಾದಾವರ (ಬಿಐಇಸಿ)",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0645,
+    "lng": 77.4721,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 280,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-251",
+      "258"
+    ],
+    "googleQuery": "Madavara BIEC Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "chikkabidarakallu",
+    "code": "JIDL",
+    "name": "Chikkabidarakallu",
+    "kannadaName": "ಚಿಕ್ಕಬಿದರಕಲ್ಲು",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0531,
+    "lng": 77.4842,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 355,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-252"
+    ],
+    "googleQuery": "Chikkabidarakallu Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "manjunathanagar",
+    "code": "MNJN",
+    "name": "Manjunathanagar",
+    "kannadaName": "ಮಂಜುನಾಥನಗರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0452,
+    "lng": 77.4941,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 75,
+      "fourWheelerSlots": 15,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-253"
+    ],
+    "googleQuery": "Manjunathanagar Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "nagasandra",
+    "code": "NGSA",
+    "name": "Nagasandra",
+    "kannadaName": "ನಾಗಸಂದ್ರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0378,
+    "lng": 77.5028,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 274,
+      "fourWheelerSlots": 125,
+      "cycles": 20,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-254",
+      "258C"
+    ],
+    "googleQuery": "Nagasandra Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "dasarahalli",
+    "code": "DSH",
+    "name": "Dasarahalli",
+    "kannadaName": "ದಾಸರಹಳ್ಳಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0326,
+    "lng": 77.5117,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 205,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-255"
+    ],
+    "googleQuery": "Dasarahalli Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "jalahalli",
+    "code": "JLHL",
+    "name": "Jalahalli",
+    "kannadaName": "ಜಾಲಹಳ್ಳಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0305,
+    "lng": 77.5188,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 120,
+      "fourWheelerSlots": 52,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-256"
+    ],
+    "googleQuery": "Jalahalli Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "peenya-industry",
+    "code": "PYID",
+    "name": "Peenya Industry",
+    "kannadaName": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0298,
+    "lng": 77.5255,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 380,
+      "fourWheelerSlots": 83,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-257"
+    ],
+    "googleQuery": "Peenya Industry Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "peenya",
+    "code": "PEYA",
+    "name": "Peenya",
+    "kannadaName": "ಪೀಣ್ಯ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0302,
+    "lng": 77.5332,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 225,
+      "fourWheelerSlots": 30,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-258"
+    ],
+    "googleQuery": "Peenya Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "goraguntepalya",
+    "code": "YPI",
+    "name": "Goraguntepalya",
+    "kannadaName": "ಗೊರಗುಂಟೆಪಾಳ್ಯ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0287,
+    "lng": 77.5457,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 350,
+      "fourWheelerSlots": 60,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-259",
+      "401K"
+    ],
+    "googleQuery": "Goraguntepalya Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "yeshwanthpur",
+    "code": "YPM",
+    "name": "Yeshwanthpur Railway Station",
+    "kannadaName": "ಯಶವಂತಪುರ ರೈಲ್ವೆ ನಿಲ್ದಾಣ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0235,
+    "lng": 77.5501,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 800,
+      "fourWheelerSlots": 200,
+      "cycles": 20,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "YPR Direct"
+    ],
+    "googleQuery": "Yeshwanthpur Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "sandal-soap-factory",
+    "code": "SSFY",
+    "name": "Sandal Soap Factory",
+    "kannadaName": "ಸ್ಯಾಂಡಲ್ ಸೋಪ್ ಫ್ಯಾಕ್ಟರಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0142,
+    "lng": 77.5542,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 311,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-260"
+    ],
+    "googleQuery": "Sandal Soap Factory Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "mahalakshmi",
+    "code": "MHLI",
+    "name": "Mahalakshmi",
+    "kannadaName": "ಮಹಾಲಕ್ಷ್ಮಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 13.0078,
+    "lng": 77.5558,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 225,
+      "fourWheelerSlots": 186,
+      "cycles": 20,
+      "lcv": 18,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-261"
+    ],
+    "googleQuery": "Mahalakshmi Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "rajajinagar",
+    "code": "RJNR",
+    "name": "Rajajinagar",
+    "kannadaName": "ರಾಜಾಜಿನಗರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9984,
+    "lng": 77.5552,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 165,
+      "fourWheelerSlots": 19,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-262"
+    ],
+    "googleQuery": "Rajajinagar Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "kuvempu-road",
+    "code": "KVPR",
+    "name": "Kuvempu Road",
+    "kannadaName": "ಕುವೆಂಪು ರಸ್ತೆ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9934,
+    "lng": 77.5574,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 60,
+      "fourWheelerSlots": 38,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-263"
+    ],
+    "googleQuery": "Kuvempu Road Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "srirampura",
+    "code": "SPRU",
+    "name": "Srirampura",
+    "kannadaName": "ಶ್ರೀರಾಮ್‌ಪುರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9902,
+    "lng": 77.5627,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 73,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-264"
+    ],
+    "googleQuery": "Srirampura Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "mantri-square-sampige-road",
+    "code": "SPGD",
+    "name": "Mantri Square Sampige Road",
+    "kannadaName": "ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್ ಸಂಪಿಗೆ ರಸ್ತೆ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9906,
+    "lng": 77.5714,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 750,
+      "fourWheelerSlots": 100,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day (Opp Apollo)"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-265"
+    ],
+    "googleQuery": "Mantri Square Sampige Road Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "chickpet",
+    "code": "CKPE",
+    "name": "Chickpet",
+    "kannadaName": "ಚಿಕ್ಕಪೇಟೆ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9664,
+    "lng": 77.5752,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 380,
+      "fourWheelerSlots": 100,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-266"
+    ],
+    "googleQuery": "Chickpet Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "kr-market",
+    "code": "KRMT",
+    "name": "Krishna Rajendra Market (KR Market)",
+    "kannadaName": "ಕೃಷ್ಣ ರಾಜೇಂದ್ರ ಮಾರುಕಟ್ಟೆ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9602,
+    "lng": 77.5754,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 450,
+      "fourWheelerSlots": 15,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day (Opp KIMS)"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "KRM Direct"
+    ],
+    "googleQuery": "KR Market Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "national-college",
+    "code": "NLC",
+    "name": "National College",
+    "kannadaName": "ನ್ಯಾಷನಲ್ ಕಾಲೇಜು",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9507,
+    "lng": 77.5739,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 205,
+      "fourWheelerSlots": 85,
+      "cycles": 20,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-267"
+    ],
+    "googleQuery": "National College Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "lalbagh",
+    "code": "LBGH",
+    "name": "Lalbagh",
+    "kannadaName": "ಲಾಲ್‌ಬಾಗ್",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9463,
+    "lng": 77.5801,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 200,
+      "fourWheelerSlots": 30,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-268"
+    ],
+    "googleQuery": "Lalbagh Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "south-end-circle",
+    "code": "SECE",
+    "name": "South End Circle",
+    "kannadaName": "ಸೌತ್ ಎಂಡ್ ಸರ್ಕಲ್",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9381,
+    "lng": 77.5802,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 120,
+      "fourWheelerSlots": 15,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-269"
+    ],
+    "googleQuery": "South End Circle Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "jayanagar",
+    "code": "JYN",
+    "name": "Jayanagar",
+    "kannadaName": "ಜಯನಗರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9298,
+    "lng": 77.5801,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 330,
+      "fourWheelerSlots": 10,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-270"
+    ],
+    "googleQuery": "Jayanagar Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "rv-road",
+    "code": "RVR",
+    "name": "Rashtriya Vidyalaya Road (RV Road)",
+    "kannadaName": "ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ (ಆರ್.ವಿ. ರಸ್ತೆ)",
+    "line": "green",
+    "isInterchange": true,
+    "interchangeWith": [
+      "yellow"
+    ],
+    "lat": 12.9213,
+    "lng": 77.5802,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 223,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-271"
+    ],
+    "googleQuery": "RV Road Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "banashankari",
+    "code": "BSNK",
+    "name": "Banashankari",
+    "kannadaName": "ಬನಶಂಕರಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9152,
+    "lng": 77.5736,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 290,
+      "fourWheelerSlots": 61,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "BSK Direct",
+      "MF-272"
+    ],
+    "googleQuery": "Banashankari Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "jp-nagar",
+    "code": "JPN",
+    "name": "Jaya Prakash Nagar (JP Nagar)",
+    "kannadaName": "ಜೆ.ಪಿ. ನಗರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.9073,
+    "lng": 77.5735,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 182,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-273"
+    ],
+    "googleQuery": "JP Nagar Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "yelachenahalli",
+    "code": "PUTH",
+    "name": "Yelachenahalli",
+    "kannadaName": "ಯಲಚೇನಹಳ್ಳಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.8958,
+    "lng": 77.5701,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 412,
+      "fourWheelerSlots": 61,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-274"
+    ],
+    "googleQuery": "Yelachenahalli Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "konanakunte-cross",
+    "code": "APRC",
+    "name": "Konanakunte Cross",
+    "kannadaName": "ಕೋಣನಕುಂಟೆ ಕ್ರಾಸ್",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.8876,
+    "lng": 77.5682,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 320,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-275"
+    ],
+    "googleQuery": "Konanakunte Cross Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "doddakallasandra",
+    "code": "KLPK",
+    "name": "Doddakallasandra",
+    "kannadaName": "ದೊಡ್ಡಕಲ್ಲಸಂದ್ರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.8805,
+    "lng": 77.5614,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 290,
+      "fourWheelerSlots": 27,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-276"
+    ],
+    "googleQuery": "Doddakallasandra Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "vajrahalli",
+    "code": "VJRH",
+    "name": "Vajrahalli",
+    "kannadaName": "ವಜ್ರಹಳ್ಳಿ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.8732,
+    "lng": 77.5524,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 83,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-277"
+    ],
+    "googleQuery": "Vajrahalli Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "thalaghattapura",
+    "code": "TGTP",
+    "name": "Thalaghattapura",
+    "kannadaName": "ತಲಘಟ್ಟಪುರ",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.8665,
+    "lng": 77.5451,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 83,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-278"
+    ],
+    "googleQuery": "Thalaghattapura Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "silk-institute",
+    "code": "APTS",
+    "name": "Silk Institute",
+    "kannadaName": "ಸಿಲ್ಕ್ ಇನ್‌ಸ್ಟಿಟ್ಯೂಟ್",
+    "line": "green",
+    "isInterchange": false,
+    "lat": 12.8596,
+    "lng": 77.5385,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 120,
+      "fourWheelerSlots": 23,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-279",
+      "215"
+    ],
+    "googleQuery": "Silk Institute Metro Station Bengaluru",
+    "lineId": 2
+  },
+  {
+    "id": "ragigudda",
+    "code": "RGDT",
+    "name": "Ragigudda",
+    "kannadaName": "ರಾಗಿಗುಡ್ಡ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.9192,
+    "lng": 77.5912,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 210,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-500"
+    ],
+    "googleQuery": "Ragigudda Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "jayadeva-hospital",
+    "code": "JDHP",
+    "name": "Jayadeva Hospital",
+    "kannadaName": "ಜಯದೇವ ಆಸ್ಪತ್ರೆ",
+    "line": "yellow",
+    "isInterchange": true,
+    "interchangeWith": [
+      "pink"
+    ],
+    "lat": 12.9174,
+    "lng": 77.5975,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 120,
+      "fourWheelerSlots": 20,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-501"
+    ],
+    "googleQuery": "Jayadeva Hospital Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "btm-layout",
+    "code": "BTML",
+    "name": "BTM Layout",
+    "kannadaName": "ಬಿ.ಟಿ.ಎಂ. ಲೇಔಟ್",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.9168,
+    "lng": 77.6102,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 216,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-501B"
+    ],
+    "googleQuery": "BTM Layout Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "central-silk-board",
+    "code": "SBJT",
+    "name": "Central Silk Board",
+    "kannadaName": "ಸೆಂಟ್ರಲ್ ಸಿಲ್ಕ್ ಬೋರ್ಡ್",
+    "line": "yellow",
+    "isInterchange": true,
+    "interchangeWith": [
+      "blue"
+    ],
+    "lat": 12.9172,
+    "lng": 77.6228,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 95,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "500D",
+      "KBS-3A",
+      "MF-502"
+    ],
+    "googleQuery": "Central Silk Board Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "bommanahalli",
+    "code": "HSRL",
+    "name": "Bommanahalli",
+    "kannadaName": "ಬೊಮ್ಮನಹಳ್ಳಿ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.9082,
+    "lng": 77.6241,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 85,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-503"
+    ],
+    "googleQuery": "Bommanahalli Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "hongasandra",
+    "code": "OFDC",
+    "name": "Hongasandra",
+    "kannadaName": "ಹೊಂಗಸಂದ್ರ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8984,
+    "lng": 77.6298,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 155,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-503B"
+    ],
+    "googleQuery": "Hongasandra Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "kudlu-gate",
+    "code": "MSRN",
+    "name": "Kudlu Gate",
+    "kannadaName": "ಕುಡ್ಲು ಗೇಟ್",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8872,
+    "lng": 77.6391,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 85,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-504"
+    ],
+    "googleQuery": "Kudlu Gate Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "singasandra",
+    "code": "CKBR",
+    "name": "Singasandra",
+    "kannadaName": "ಸಿಂಗಸಂದ್ರ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8795,
+    "lng": 77.6442,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 90,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-504B"
+    ],
+    "googleQuery": "Singasandra Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "hosa-road",
+    "code": "BSRD",
+    "name": "Hosa Road",
+    "kannadaName": "ಹೊಸ ರಸ್ತೆ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8701,
+    "lng": 77.6508,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 90,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-504C"
+    ],
+    "googleQuery": "Hosa Road Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "electronic-city",
+    "code": "ETCT",
+    "name": "Electronic City",
+    "kannadaName": "ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಿಟಿ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8452,
+    "lng": 77.6602,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 270,
+      "fourWheelerSlots": 36,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "₹30 (1st 4h), ₹60 max/day"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "EC-1",
+      "EC-2",
+      "500EB"
+    ],
+    "googleQuery": "Electronic City Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "konappana-agrahara",
+    "code": "ECTN",
+    "name": "Infosys Foundation Konappana Agrahara",
+    "kannadaName": "ಇನ್ಫೋಸಿಸ್ ಫೌಂಡೇಶನ್ ಕೊನಪ್ಪನ ಅಗ್ರಹಾರ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8361,
+    "lng": 77.6712,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 77,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-505A"
+    ],
+    "googleQuery": "Konappana Agrahara Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "hebbagodi",
+    "code": "HBGI",
+    "name": "Biocon Hebbagodi",
+    "kannadaName": "ಬಯೋಕಾನ್ ಹೆಬ್ಬಗೋಡಿ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8256,
+    "lng": 77.6804,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 150,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-505B"
+    ],
+    "googleQuery": "Hebbagodi Metro Station Bengaluru",
+    "lineId": 3
+  },
+  {
+    "id": "bommasandra",
+    "code": "BMSD",
+    "name": "Delta Electronics Bommasandra",
+    "kannadaName": "ಡೆಲ್ಟಾ ಎಲೆಕ್ಟ್ರಾನಿಕ್ಸ್ ಬೊಮ್ಮಸಂದ್ರ",
+    "line": "yellow",
+    "isInterchange": false,
+    "lat": 12.8164,
+    "lng": 77.6917,
+    "parking": {
+      "hasParking": true,
+      "twoWheelerSlots": 92,
+      "fourWheelerSlots": 0,
+      "cycles": 10,
+      "lcv": 0,
+      "rate2W": "₹15 (1st 4h), ₹30 max/day",
+      "rate4W": "N/A"
+    },
+    "accessibility": {
+      "lift": true,
+      "escalator": true,
+      "wheelchair": true
+    },
+    "feederBuses": [
+      "MF-505",
+      "378"
+    ],
+    "googleQuery": "Bommasandra Metro Station Bengaluru",
+    "lineId": 3
+  }
+]
