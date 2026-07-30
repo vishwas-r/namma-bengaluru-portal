@@ -55,6 +55,14 @@ export function updatePageMeta({ title, description, image, keywords, author, ur
 
   // Canonical Link
   setLink('canonical', metaUrl);
+
+  // GA4 SPA Pageview Event
+  if (typeof window.gtag === 'function') {
+    window.gtag('config', 'G-YV9P14T59L', {
+      page_title: title || document.title,
+      page_path: window.location.hash || '/'
+    });
+  }
 }
 
 export function updateMetaForRoute(route, deptId, state = {}) {
