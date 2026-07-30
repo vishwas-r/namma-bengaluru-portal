@@ -50,7 +50,7 @@ export function renderPlannedOutagesWidget(dept = 'bescom') {
 
       <!-- Informative Source Disclaimer Banner -->
       <div class="p-3 mb-4 rounded-3 border bg-body-tertiary d-flex align-items-start gap-3" style="border-left:4px solid #f59e0b !important;">
-        <i class="bi bi-info-circle-fill text-warning fs-5 flex-shrink-0 mt-0.5"></i>
+        <i class="bi bi-info-circle-fill text-warning fs-5 flex-shrink-0 mt-1"></i>
         <div style="font-size:0.83rem; line-height:1.5;">
           <strong>Data Source Transparency:</strong>
           ${isBescom ? 

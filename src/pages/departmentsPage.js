@@ -60,19 +60,19 @@ export function renderDepartmentsPage(lang) {
               <!-- Helpline & Website Info Pills -->
               <div class="d-flex flex-wrap gap-2 mb-3" style="font-size:0.75rem;">
                 ${dept.helpline ? `
-                <span class="px-2.5 py-1 rounded-2 bg-body-tertiary border text-body d-inline-flex align-items-center gap-1.5">
+                <span class="px-3 py-1 rounded-2 bg-body-tertiary border text-body d-inline-flex align-items-center gap-2">
                   <i class="bi bi-telephone-fill text-primary"></i>
                   <span>Helpline: <strong>${dept.helpline}</strong></span>
                 </span>` : ''}
                 ${dept.website ? `
-                <a href="${dept.website}" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-2 bg-body-tertiary border text-secondary text-decoration-none d-inline-flex align-items-center gap-1.5 hover-bg-tertiary">
+                <a href="${dept.website}" target="_blank" rel="noopener" class="px-3 py-1 rounded-2 bg-body-tertiary border text-secondary text-decoration-none d-inline-flex align-items-center gap-2 hover-bg-tertiary">
                   <i class="bi bi-globe"></i>
-                  <span>Official Site <i class="bi bi-box-arrow-up-right ms-0.5" style="font-size:0.65rem;"></i></span>
+                  <span>Official Site <i class="bi bi-box-arrow-up-right ms-1" style="font-size:0.65rem;"></i></span>
                 </a>` : ''}
               </div>
 
               <!-- Feature Tags -->
-              <div class="d-flex flex-wrap gap-1.5 mb-4">
+              <div class="d-flex flex-wrap gap-2 mb-4">
                 ${(dept.features || []).map(f => `
                   <span class="badge bg-body border text-body font-normal" style="font-size:0.7rem;">${f}</span>
                 `).join('')}

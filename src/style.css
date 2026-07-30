@@ -172,7 +172,9 @@ body.is-dept-page::before {
 }
 
 .nb-dept-hero-metro {
-  background-image: linear-gradient(to right, rgba(124, 58, 237, 0.75), rgba(15, 23, 42, 0.40)), url('/namma-metro-header.png');
+  background-image: linear-gradient(135deg, rgba(147, 51, 234, 0.85) 0%, rgba(22, 163, 74, 0.75) 50%, rgba(202, 138, 4, 0.85) 100%), url('/namma-metro-header.png');
+  border-bottom: 5px solid;
+  border-image: linear-gradient(to right, #9333ea 33%, #16a34a 66%, #ffc61a 100%) 1;
 }
 
 /* Homepage Hero Banner Theme Adaptive Styling */
@@ -1752,4 +1754,93 @@ button:not(.nb-step-num):not(.nb-dropdown-item):not(.input-group .btn) {
     transform: scale(3.5);
     opacity: 0;
   }
+}
+
+/* ── 23. Tom Select Dropdown Styling using Bootstrap CSS Variables ── */
+.nb-card, .metro-search-card, .hero-search-section {
+  overflow: visible !important;
+}
+
+.ts-wrapper {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+.ts-wrapper.dropdown-active {
+  z-index: 99999 !important;
+}
+
+.ts-wrapper .ts-control {
+  border-radius: 12px !important;
+  padding: 0.65rem 1rem !important;
+  border: 1.5px solid var(--bs-border-color) !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+}
+
+.ts-wrapper.focus .ts-control {
+  border-color: #6d28d9 !important;
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15) !important;
+}
+
+/* Opaque Background for Dropdown Container, Content, & Items using Bootstrap Variables */
+.ts-dropdown,
+body > .ts-dropdown,
+.ts-dropdown .ts-dropdown-content,
+body > .ts-dropdown .ts-dropdown-content,
+.ts-dropdown .option,
+body > .ts-dropdown .option {
+  background-color: var(--bs-body-bg) !important;
+  background: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+  opacity: 1 !important;
+}
+
+.ts-dropdown, body > .ts-dropdown {
+  position: absolute !important;
+  z-index: 999999 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid var(--bs-border-color) !important;
+  overflow: hidden !important;
+  margin-top: 6px !important;
+}
+
+.ts-dropdown .option:hover,
+.ts-dropdown .option.active,
+.ts-dropdown .option.highlight,
+body > .ts-dropdown .option:hover,
+body > .ts-dropdown .option.active,
+body > .ts-dropdown .option.highlight {
+  background-color: var(--bs-tertiary-bg) !important;
+  background: var(--bs-tertiary-bg) !important;
+  color: var(--bs-body-color) !important;
+}
+
+/* In-Dropdown Search Header Input Box */
+.ts-dropdown .dropdown-input-wrap,
+body > .ts-dropdown .dropdown-input-wrap {
+  padding: 10px 12px !important;
+  background: var(--bs-tertiary-bg) !important;
+  border-bottom: 1px solid var(--bs-border-color) !important;
+}
+
+.ts-dropdown .dropdown-input,
+body > .ts-dropdown .dropdown-input {
+  width: 100% !important;
+  padding: 8px 12px 8px 34px !important;
+  border-radius: 8px !important;
+  border: 1.5px solid var(--bs-border-color) !important;
+  font-size: 0.88rem !important;
+  background: var(--bs-body-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2364748b' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E") no-repeat 10px center !important;
+  color: var(--bs-body-color) !important;
+  outline: none !important;
+}
+
+.ts-dropdown .dropdown-input:focus,
+body > .ts-dropdown .dropdown-input:focus {
+  border-color: #6d28d9 !important;
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15) !important;
 }

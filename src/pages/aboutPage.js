@@ -14,10 +14,10 @@ export function renderAboutPage() {
           An open-source citizen utility platform built to empower the residents of Bengaluru with transparent bill calculators, official tariff breakdowns, step-by-step service guides, and direct escalation directories.
         </p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener" class="btn btn-light rounded-pill fw-bold px-4 py-2.5 shadow-sm" style="font-size:0.9rem;">
+          <a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener" class="btn btn-light rounded-pill fw-bold px-4 py-3 shadow-sm" style="font-size:0.9rem;">
             <i class="bi bi-github me-2"></i>Star on GitHub
           </a>
-          <a href="https://github.com/vishwas-r/namma-bengaluru-portal/fork" target="_blank" rel="noopener" class="btn btn-outline-light rounded-pill fw-semibold px-4 py-2.5" style="font-size:0.9rem;">
+          <a href="https://github.com/vishwas-r/namma-bengaluru-portal/fork" target="_blank" rel="noopener" class="btn btn-outline-light rounded-pill fw-semibold px-4 py-3" style="font-size:0.9rem;">
             <i class="bi bi-git me-2"></i>Fork & Contribute
           </a>
         </div>
@@ -46,7 +46,7 @@ export function renderAboutPage() {
         <div class="row g-3">
           <div class="col-md-6">
             <div class="nb-card p-4 h-100">
-              <div class="p-2.5 rounded-3 bg-primary-subtle text-primary d-inline-block mb-3" style="width:42px; height:42px; text-align:center;">
+              <div class="p-3 rounded-3 bg-primary-subtle text-primary d-inline-block mb-3" style="width:42px; height:42px; text-align:center;">
                 <i class="bi bi-calculator-fill fs-5"></i>
               </div>
               <h5 class="fw-bold mb-2">Transparent Calculators</h5>
@@ -57,7 +57,7 @@ export function renderAboutPage() {
           </div>
           <div class="col-md-6">
             <div class="nb-card p-4 h-100">
-              <div class="p-2.5 rounded-3 bg-success-subtle text-success d-inline-block mb-3" style="width:42px; height:42px; text-align:center;">
+              <div class="p-3 rounded-3 bg-success-subtle text-success d-inline-block mb-3" style="width:42px; height:42px; text-align:center;">
                 <i class="bi bi-diagram-3-fill fs-5"></i>
               </div>
               <h5 class="fw-bold mb-2">4-Level Escalation Directory</h5>
@@ -68,7 +68,7 @@ export function renderAboutPage() {
           </div>
           <div class="col-md-6">
             <div class="nb-card p-4 h-100">
-              <div class="p-2.5 rounded-3 bg-warning-subtle text-warning d-inline-block mb-3" style="width:42px; height:42px; text-align:center;">
+              <div class="p-3 rounded-3 bg-warning-subtle text-warning d-inline-block mb-3" style="width:42px; height:42px; text-align:center;">
                 <i class="bi bi-shield-check fs-5"></i>
               </div>
               <h5 class="fw-bold mb-2">100% Free & No Ads</h5>
@@ -79,7 +79,7 @@ export function renderAboutPage() {
           </div>
           <div class="col-md-6">
             <div class="nb-card p-4 h-100">
-              <div class="p-2.5 rounded-3 bg-purple-subtle text-purple d-inline-block mb-3" style="width:42px; height:42px; text-align:center; background:#f3e8ff; color:#7e22ce;">
+              <div class="p-3 rounded-3 bg-purple-subtle text-purple d-inline-block mb-3" style="width:42px; height:42px; text-align:center; background:#f3e8ff; color:#7e22ce;">
                 <i class="bi bi-translate fs-5"></i>
               </div>
               <h5 class="fw-bold mb-2">Bilingual (English & ಕನ್ನಡ)</h5>
@@ -136,7 +136,7 @@ export function renderAboutPage() {
           <div class="mt-4 pt-3 border-top d-flex align-items-center justify-content-between flex-wrap gap-2">
             <span class="text-secondary fw-medium" style="font-size:0.85rem;">Ready to start contributing?</span>
             <a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener" class="btn btn-primary rounded-pill px-4 py-2 fw-bold shadow-sm" style="font-size:0.85rem;">
-              <i class="bi bi-github me-1.5"></i>Visit GitHub Repository &rarr;
+              <i class="bi bi-github me-2"></i>Visit GitHub Repository &rarr;
             </a>
           </div>
         </div>
@@ -150,7 +150,7 @@ export function renderAboutPage() {
         <div class="nb-card p-4">
           <h5 class="fw-bold mb-3 border-bottom pb-2"><i class="bi bi-info-circle text-primary me-2"></i>Project Details</h5>
           
-          <div class="d-flex flex-column gap-2.5" style="font-size:0.85rem;">
+          <div class="d-flex flex-column gap-3" style="font-size:0.85rem;">
             <div class="d-flex justify-content-between border-bottom pb-2">
               <span class="text-secondary">Repository</span>
               <a href="https://github.com/vishwas-r/namma-bengaluru-portal" target="_blank" rel="noopener" class="fw-bold text-primary text-decoration-none">vishwas-r/namma-bengaluru-portal</a>

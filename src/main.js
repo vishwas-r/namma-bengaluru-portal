@@ -1,7 +1,6 @@
 import './style.css';
 import * as bootstrap from 'bootstrap';
 window.bootstrap = bootstrap;
-import { subscribeToOutageReports } from './services/outageStore.js';
 import TomSelect from 'tom-select';
 import 'tom-select/dist/css/tom-select.bootstrap5.css';
 
@@ -15,8 +14,11 @@ import { renderAboutPage } from './pages/aboutPage.js';
 import { renderDepartmentsPage } from './pages/departmentsPage.js';
 import { renderBWSSBPage, renderTab as renderBWSSBTab, renderCalc as renderBWSSBCalc, recalcBill as recalcBWSSBBill, renderTariffChart as renderBWSSBTariffChart, renderNoticeCard as renderBWSSBNoticeCard, renderSteps as renderBWSSBSteps } from './pages/bwssbPage.js';
 import { renderBESCOMPage, renderTab as renderBESCOMTab, renderCalc as renderBESCOMCalc, recalcBill as recalcBESCOMBill, renderTariffChart as renderBESCOMTariffChart, renderNoticeCard as renderBESCOMNoticeCard, renderSteps as renderBESCOMSteps } from './pages/bescomPage.js';
-import { renderMetroPage } from './pages/metroPage.js';
+import { renderMetroPage, renderTab as renderMetroTab } from './pages/metroPage.js';
 import { getAllStations, getStationById, fetchOfficialMetroFare } from './services/metroEngine.js';
+import { initMetroLeafletMap } from './components/metroMap.js';
+import { getCurrentUser, promptGoogleLogin } from './services/googleAuth.js';
+import { subscribeToOutageReports, submitMetroReport } from './services/outageStore.js';
 import { getKeyPool, addKey, removeKey, markKeyStatus, testKey, cleanKey, queryGemini } from './services/keyPool.js';
 import { downloadBillPDF } from './services/pdfExporter.js';
 import bwssbNoticesData from './data/bwssb/notices.json';
@@ -48,34 +50,7 @@ const state = {
   noticeFilter: 'all',
   selectedComplaintType: 'no-water',
   selectedServiceId: 'name-change',
-  metroCrowdReports: JSON.parse(localStorage.getItem('nb_metro_reports') || 'null') || [
-    {
-      id: 'report-101',
-      line: 'purple',
-      lineName: 'Purple Line',
-      station: 'Nadaprabhu Kempegowda Station Majestic',
-      category: 'delay',
-      categoryLabel: '⏱️ Train Delay (5-10 Mins)',
-      comment: 'Minor 5 to 7 minute delay on Purple Line platform towards Whitefield due to heavy peak hour boarding at Majestic.',
-      timeAgo: '12 mins ago',
-      upvotes: 24,
-      status: 'Active Alert',
-      badgeClass: 'bg-warning text-dark'
-    },
-    {
-      id: 'report-102',
-      line: 'green',
-      lineName: 'Green Line',
-      station: 'Nagasandra',
-      category: 'normal',
-      categoryLabel: '🟢 Normal Operations',
-      comment: 'Green Line operations running smoothly on schedule between Nagasandra and Silk Institute.',
-      timeAgo: '35 mins ago',
-      upvotes: 11,
-      status: 'Service Normal',
-      badgeClass: 'bg-success text-white'
-    }
-  ],
+  metroCrowdReports: JSON.parse(localStorage.getItem('nb_metro_reports') || '[]'),
   chatHistory: [{
     role: 'bot',
     content: 'Namaskara! I am <strong>NammaBengaluru AI</strong>, your citizen assistant for Bengaluru. Ask me anything about BWSSB water tariffs, BESCOM electricity bill, owner name change online, filing complaints, or Gazette circulars.'
@@ -276,28 +251,35 @@ function renderApp(skipScroll = false) {
   if (!skipScroll && !state.modalOpen) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
   if (state.deptId === 'bmrcl' || state.deptId === 'metro') {
     initMetroSelects();
+    setTimeout(initMetroLeafletMap, 120);
   }
 }
 
 let tsSource, tsDest, tsLive;
 function initMetroSelects() {
   const cfg = {
-    searchField: ['text'],
+    plugins: ['dropdown_input'],
+    dropdownParent: 'body',
+    searchField: ['text', 'neighborhood'],
     render: {
       option: function(data, escape) {
-        const color = data.line === 'purple' ? '#9333ea' : data.line === 'green' ? '#16a34a' : '#eab308';
-        return `<div class="d-flex align-items-center gap-2 px-3 py-2">
-          <span style="width:12px;height:12px;border-radius:50%;background-color:${color};flex-shrink:0;"></span>
-          <span class="text-dark fw-medium" style="font-size:0.9rem;">${escape(data.text)}</span>
+        const color = data.line === 'purple' ? '#a020f0' : data.line === 'green' ? '#4caf50' : '#ffc61a';
+        return `<div class="py-2 px-3 border-bottom border-light-subtle bg-body text-body">
+          <div class="fw-bold d-flex align-items-center gap-2" style="font-size: 0.92rem;">
+            <span style="color: ${color}; font-size: 1rem; line-height: 1;">◉</span>
+            <span>${escape(data.text)}</span>
+          </div>
+          ${data.neighborhood ? `<small class="text-secondary d-block text-truncate mt-1" style="font-size: 0.74rem; max-width: 100%;" title="${escape(data.neighborhood)}">${escape(data.neighborhood)}</small>` : ''}
         </div>`;
       },
       item: function(data, escape) {
-        const color = data.line === 'purple' ? '#9333ea' : data.line === 'green' ? '#16a34a' : '#eab308';
-        return `<div class="d-flex align-items-center gap-2">
-          <span style="width:12px;height:12px;border-radius:50%;background-color:${color};flex-shrink:0;"></span>
-          <span class="text-dark fw-medium" style="font-size:0.9rem;">${escape(data.text)}</span>
+        const color = data.line === 'purple' ? '#a020f0' : data.line === 'green' ? '#4caf50' : '#ffc61a';
+        return `<div class="d-flex align-items-center gap-2 text-body">
+          <span style="color: ${color}; font-size: 1rem; line-height: 1;">◉</span>
+          <span class="fw-semibold" style="font-size: 0.92rem;">${escape(data.text)}</span>
         </div>`;
       }
     }
@@ -469,6 +451,17 @@ function bindAll() {
     }
   };
 
+  window.__triggerGoogleLoginForReport = () => {
+    promptGoogleLogin(null, (loggedInUser) => {
+      if (loggedInUser) {
+        renderApp(true);
+        setTimeout(() => {
+          window.__openMetroReportModal();
+        }, 100);
+      }
+    });
+  };
+
   window.__openMetroReportModal = () => {
     const modal = document.getElementById('nbMetroReportModal');
     if (modal) {
@@ -487,8 +480,14 @@ function bindAll() {
     }
   };
 
-  window.__submitMetroCrowdReport = (e) => {
+  window.__submitMetroCrowdReport = async (e) => {
     if (e) e.preventDefault();
+    const user = getCurrentUser();
+    if (!user) {
+      promptGoogleLogin(null, () => {});
+      return;
+    }
+
     const line = document.getElementById('reportLineSelect')?.value || 'purple';
     const station = document.getElementById('reportStationInput')?.value || 'Majestic';
     const category = document.getElementById('reportCategorySelect')?.value || 'delay';
@@ -506,29 +505,27 @@ function bindAll() {
 
     const catObj = categoryMap[category] || categoryMap.delay;
 
-    const newReport = {
-      id: 'report-' + Date.now(),
-      line: line,
-      lineName: line === 'purple' ? 'Purple Line' : line === 'green' ? 'Green Line' : 'Yellow Line',
-      station: station,
-      category: category,
-      categoryLabel: catObj.label,
-      comment: comment.trim(),
-      timeAgo: 'Just now',
-      upvotes: 1,
-      status: catObj.status,
-      badgeClass: catObj.badge
-    };
+    try {
+      await submitMetroReport(user, {
+        line: line,
+        lineName: line === 'purple' ? 'Purple Line' : line === 'green' ? 'Green Line' : 'Yellow Line',
+        station: station,
+        category: category,
+        categoryLabel: catObj.label,
+        comment: comment.trim(),
+        status: catObj.status,
+        badgeClass: catObj.badge
+      });
 
-    state.metroCrowdReports = [newReport, ...(state.metroCrowdReports || [])];
-    localStorage.setItem('nb_metro_reports', JSON.stringify(state.metroCrowdReports));
-
-    window.__closeMetroReportModal();
-    state.activeTab = 'notices';
-    if (state.route === 'dept' && state.deptId) {
-      window.location.hash = `#/dept/${state.deptId}/notices`;
+      window.__closeMetroReportModal();
+      state.activeTab = 'crowd-reports';
+      if (state.route === 'dept' && state.deptId) {
+        window.location.hash = `#/dept/${state.deptId}/crowd-reports`;
+      }
+      renderApp(true);
+    } catch (err) {
+      alert(err.message || 'Failed to submit report. Please check your connection.');
     }
-    renderApp(true);
   };
 
   window.__upvoteMetroReport = (reportId) => {
@@ -627,6 +624,11 @@ function bindAll() {
     if (c) {
       if (state.deptId === 'bwssb') c.innerHTML = renderBWSSBTab(state, getLang());
       else if (state.deptId === 'bescom') c.innerHTML = renderBESCOMTab(state, getLang());
+      else if (state.deptId === 'bmrcl' || state.deptId === 'metro') {
+        const depts = Array.isArray(deptData) ? deptData : (deptData.departments || []);
+        const dept = depts.find(d => d.id === 'bmrcl' || d.id === 'metro') || { name: 'Namma Metro', fullName: 'Bengaluru Metro Rail Corporation Limited (BMRCL)' };
+        c.innerHTML = renderMetroTab(state, getLang(), dept);
+      }
     }
   };
 

@@ -1,9 +1,14 @@
 {
   "helpline": {
     "tollFree": "1800-425-12345",
+    "travelPhone": "080-25191091",
+    "projectPhone": "080-22969300 / 080-22969301",
     "securityControlRoom": "080-22968600",
     "whatsappBot": "+918105556677",
     "email": "travelhelp@bmrc.co.in",
+    "officialContactUrl": "https://english.bmrc.co.in/contact/",
+    "officialManageProfileUrl": "https://english.bmrc.co.in/manage-profile/",
+    "officialPoliciesUrl": "https://english.bmrc.co.in/bmrcl-policies/",
     "lostAndFoundCounter": "Nadaprabhu Kempegowda Station Majestic (Platform 2 Level)",
     "lostAndFoundHours": "10:00 AM - 06:00 PM (Monday to Saturday)",
     "officialLostAndFoundUrl": "https://www.bmrc.co.in/lost-and-found/",
@@ -24,6 +29,65 @@
       }
     ]
   },
+  "managementProfiles": [
+    {
+      "name": "Shri Srinivas Katikithala, IAS",
+      "title": "Chairman, BMRCL",
+      "role": "Secretary, Ministry of Housing & Urban Affairs, Government of India & Director & Ex-Officio Chairman, BMRCL"
+    },
+    {
+      "name": "Shri Dr J Ravishankar, IAS",
+      "title": "Managing Director, BMRCL",
+      "role": "Managing Director, Bangalore Metro Rail Corporation Ltd"
+    },
+    {
+      "name": "Shri Sumit Bhatnagar",
+      "title": "Director (Rolling Stock, Signalling & Electrical)",
+      "role": "Functional Director, BMRCL"
+    },
+    {
+      "name": "Shri S. Sivamathan",
+      "title": "Director (Finance) & CFO",
+      "role": "Chief Financial Officer, BMRCL"
+    },
+    {
+      "name": "Shri Subrahmanya Gudge",
+      "title": "Director (Project & Planning)",
+      "role": "Functional Director, BMRCL"
+    },
+    {
+      "name": "Shri Alok Sahay",
+      "title": "Director (Operation & Maintenance)",
+      "role": "Functional Director, BMRCL"
+    }
+  ],
+  "boardOfDirectors": [
+    { "slNo": 1, "name": "Shri Srinivas Katikithala, IAS", "designation": "Secretary, Ministry of Housing & Urban Affairs, BMRCL", "nominatedBy": "Govt of India", "address": "Room No. 919, 9th Floor, GPOA–2, Sankalp Bhawan, Kasturba Gandhi Marg, New Delhi – 110001." },
+    { "slNo": 2, "name": "Shri Jaideep", "designation": "Officer on Special Duty (UT), MoHUA & Director, BMRCL", "nominatedBy": "Govt of India", "address": "Room No. 421, 4th Floor, GPOA–2, Sankalp Bhawan, Kasturba Gandhi Marg, New Delhi – 110001." },
+    { "slNo": 3, "name": "Shri Ajit Sharma", "designation": "Director (Finance), DMRC & Director, BMRCL", "nominatedBy": "Govt of India", "address": "Metro Bhawan, 13, Fire Brigade Lane, Barakhamba Road, New Delhi-110001" },
+    { "slNo": 4, "name": "Shri Sanjeet", "designation": "Joint Secretary & Financial Advisor, MoHUA & Director, BMRCL", "nominatedBy": "Govt of India", "address": "Room No.419, 4th Floor, Sankalp Bhawan, GPOA-2, Pt. Ravi Shankar Shukla Lane, New Delhi-110 001" },
+    { "slNo": 5, "name": "Shri M. Nagaraj", "designation": "Director (Corporate Planning), HUDCO & Director, BMRCL", "nominatedBy": "Govt of India", "address": "HUDCO Bhawan, India Habitat Center, Lodhi Road, New Delhi - 110 003." },
+    { "slNo": 6, "name": "Shri Tushar Giri Nath, IAS", "designation": "Additional Chief Secretary to Govt, UDD & Director, BMRCL", "nominatedBy": "Govt of Karnataka", "address": "Room No.436, 4th Floor Vikasa Soudha, Bengaluru - 560 001." },
+    { "slNo": 7, "name": "Shri Ritesh Kumar Singh, IAS", "designation": "Principal Secretary to Govt, Finance Dept & Director, BMRCL", "nominatedBy": "Govt of Karnataka", "address": "Room No. 255, 2nd Floor, Vidhana Soudha, Bengaluru - 560 001." },
+    { "slNo": 8, "name": "Dr. Manjula N, IAS", "designation": "Chairperson, BWSSB & Director, BMRCL", "nominatedBy": "Govt of Karnataka", "address": "1st Floor, Cauvery Bhavan, Kempegowda Road, Bengaluru-560009" },
+    { "slNo": 9, "name": "Shri P. Rajendra Cholan, IAS", "designation": "Secretary to Hon’ble Chief Minister, GoK & Director, BMRCL", "nominatedBy": "Govt of Karnataka", "address": "Room No.239, 2nd Floor, Vidhana Soudha, Bengaluru–560001" },
+    { "slNo": 10, "name": "Shri Ravishankar J, IAS", "designation": "Managing Director, BMRCL", "nominatedBy": "Govt of Karnataka", "address": "BMRCL, 3rd Floor, BMTC Complex, K.H. Road, Shanthinagar, Bangalore 560 027." },
+    { "slNo": 11, "name": "Shri S Sivamathan", "designation": "Director (Finance) & CFO, BMRCL", "nominatedBy": "Functional Director", "address": "BMRCL, 3rd Floor, BMTC Complex, K.H. Road, Shanthinagar, Bangalore 560 027." },
+    { "slNo": 12, "name": "Shri Sumit Bhatnagar", "designation": "Director (Rolling Stock, Signalling & Electrical), BMRCL", "nominatedBy": "Functional Director", "address": "BMRCL, 3rd Floor, BMTC Complex, K.H. Road, Shanthinagar, Bangalore 560 027." },
+    { "slNo": 13, "name": "Shri Alok Sahay", "designation": "Director (Operation & Maintenance), BMRCL", "nominatedBy": "Functional Director", "address": "BMRCL, 3rd Floor, BMTC Complex, K.H. Road, Shanthinagar, Bangalore 560 027." },
+    { "slNo": 14, "name": "Shri Subrahmanya Gudge", "designation": "Director (Project & Planning), BMRCL", "nominatedBy": "Functional Director", "address": "BMRCL, 4th Floor, BMTC Complex, K.H. Road, Shanthinagar, Bangalore 560 027." }
+  ],
+  "grievanceOfficers": [
+    { "slNo": 1, "officer": "Director (Project & Planning)", "area": "Civil Construction, Underground & Tunneling, Utility shifting, Station constructions etc.", "contact": "080-22969206" },
+    { "slNo": 2, "officer": "Director (RSE)", "area": "Rolling Stock, Electrical, Signalling & Telecommunication.", "contact": "080-22969231" },
+    { "slNo": 3, "officer": "Chief Vigilance Officer", "area": "Vigilance matters related to BMRCL.", "contact": "080-22969387" },
+    { "slNo": 4, "officer": "General Manager (Land Acquisition)", "area": "Civil Land acquisition, Rehabilitation", "contact": "080-22969396 (Opp. Chinnaswamy Stadium Gate 10, MG Road)" },
+    { "slNo": 5, "officer": "Chief Public Relations Officer", "area": "Public Relations", "contact": "080-22969300" },
+    { "slNo": 6, "officer": "RTI Public Information Officer (Smt Nandini Sounderraj)", "area": "RTI Act Applications & Inquiries", "contact": "080-22969200 / 080-22969400" },
+    { "slNo": 7, "officer": "Property Development & Connectivity Division", "area": "Property Development, Commercial Space & Direct Connectivity", "contact": "080-22969280 / 080-22969274 (Deepanjalinagar Site Office)" },
+    { "slNo": 8, "officer": "Metro Travel Queries & O&M Division", "area": "Station Complaints, Security Issues, Travel, Smart Cards & Tokens", "contact": "080-25191091" },
+    { "slNo": 9, "officer": "Lost & Found Section (Manish & Srinivasamurthy)", "area": "Lost & Found Queries (Purple Line & Green Line)", "contact": "Manish: +91 8277889988 | Srinivasamurthy: 080-25191232" }
+  ],
   "notices": [
     {
       "id": "notice-ipl-2026",
@@ -31,7 +95,7 @@
       "date": "2026-04-10",
       "category": "Operational Alert",
       "summary": "Last train departures from all terminal stations (Challaghatta, Whitefield, Nagasandra, Silk Institute) extended up to 11:30 PM on match days.",
-      "link": "https://english.bmrc.co.in/PressRelease"
+      "link": "https://english.bmrc.co.in/bmrcl-policies/"
     },
     {
       "id": "notice-whatsapp-qr",
@@ -39,7 +103,7 @@
       "date": "2026-03-01",
       "category": "Ticketing",
       "summary": "Commuters purchasing single journey QR tickets via WhatsApp (+91 81055 56677) or Namma Metro App enjoy a flat 5% discount on standard token fares.",
-      "link": "https://english.bmrc.co.in/QrTicketing"
+      "link": "https://english.bmrc.co.in/bmrcl-policies/"
     },
     {
       "id": "notice-ncmc-rupay",
@@ -47,7 +111,7 @@
       "date": "2026-01-15",
       "category": "Smart Card",
       "summary": "Any RuPay NCMC prepaid card issued by SBI, Canara Bank, HDFC, or ICICI can be tapped at automatic fare collection (AFC) gates across BMRCL network.",
-      "link": "https://english.bmrc.co.in/NCMC"
+      "link": "https://english.bmrc.co.in/bmrcl-policies/"
     },
     {
       "id": "notice-baggage-limit",
@@ -55,7 +119,7 @@
       "date": "2025-11-20",
       "category": "Passenger Safety",
       "summary": "Maximum allowed baggage per passenger is 15 kg. Oversized luggage exceeding 60cm x 45cm x 25cm requires special clearance at security scanners.",
-      "link": "https://english.bmrc.co.in/PassengerGuidelines"
+      "link": "https://english.bmrc.co.in/bmrcl-policies/"
     }
   ]
 }

@@ -10,13 +10,17 @@ import bwssbOutages from '../data/bwssb/outages.json';
 
 const BASELINE_DATASETS = {
   bescom: bescomOutages || [],
-  bwssb: bwssbOutages || []
+  bwssb: bwssbOutages || [],
+  metro: [],
+  bmrcl: []
 };
 
 // In-memory cache for synchronous reads by the UI
 let cachedReports = {
   bescom: [],
-  bwssb: []
+  bwssb: [],
+  metro: [],
+  bmrcl: []
 };
 
 let unsubscribes = {};
@@ -157,4 +161,41 @@ export function getNeighborhoodStats(dept = 'bescom') {
   });
 
   return stats;
+}
+
+export async function submitMetroReport(user, reportData) {
+  if (!user || !user.sub) {
+    throw new Error('Please sign in with Google to report a Metro disruption.');
+  }
+
+  const newReport = {
+    dept: 'metro',
+    line: reportData.line || 'purple',
+    lineName: reportData.lineName || 'Purple Line',
+    station: reportData.station || 'Majestic',
+    category: reportData.category || 'delay',
+    categoryLabel: reportData.categoryLabel || '⏱️ Train Delay (5-15 Mins)',
+    comment: reportData.comment,
+    timeAgo: 'Just now',
+    upvotes: 1,
+    status: reportData.status || 'Active Disruption',
+    badgeClass: reportData.badgeClass || 'bg-warning text-dark',
+    user: {
+      sub: user.sub,
+      name: user.name,
+      givenName: user.givenName || user.name.split(' ')[0],
+      picture: user.picture || null,
+      email: user.email || null
+    },
+    timestamp: new Date().toISOString(),
+    verified: true
+  };
+
+  try {
+    const docRef = await addDoc(collection(db, 'outages_metro'), newReport);
+    return { id: docRef.id, ...newReport };
+  } catch (error) {
+    console.error("Error adding Metro report to Firestore: ", error);
+    throw new Error("Failed to submit Metro report. Please check your network connection.");
+  }
 }

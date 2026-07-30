@@ -16,7 +16,7 @@ export function renderGlobalSidebar(state, lang) {
       <div>
         <!-- Sidebar Header with Close Button (Mobile Only) -->
         <div class="d-lg-none d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
-          <div class="fw-bold text-primary d-flex align-items-center gap-1.5" style="font-size:0.88rem;">
+          <div class="fw-bold text-primary d-flex align-items-center gap-2" style="font-size:0.88rem;">
             <i class="bi ${dept.icon}"></i>
             <span>${dept.name} Navigation</span>
           </div>
@@ -52,23 +52,23 @@ export function renderGlobalSidebar(state, lang) {
           <div class="fw-bold text-uppercase text-secondary mb-2 px-2" style="font-size:0.68rem; letter-spacing:0.06em;">TOOLS & CALCULATORS</div>
           <div class="nav flex-column gap-1">
             <button onclick="window.__tab('calculator')" class="btn border-0 text-start px-3 py-2 rounded-2 d-flex align-items-center gap-2 ${activeTab === 'calculator' ? 'bg-primary-subtle text-primary fw-bold' : 'text-body hover-bg-tertiary'}" style="font-size:0.82rem;">
-              <i class="bi bi-calculator text-secondary"></i><span>Bill Calculator</span>
+              <i class="bi bi-calculator text-secondary"></i><span>${(dept.id === 'bmrcl' || dept.id === 'metro') ? 'Fare Calculator' : 'Bill Calculator'}</span>
             </button>
           </div>
         </div>
 
-        <!-- Section: OUTAGES -->
+        <!-- Section: REPORTS & ISSUES -->
         <div class="mb-3 text-start">
-          <div class="fw-bold text-uppercase text-secondary mb-2 px-2" style="font-size:0.68rem; letter-spacing:0.06em;">OUTAGES</div>
+          <div class="fw-bold text-uppercase text-secondary mb-2 px-2" style="font-size:0.68rem; letter-spacing:0.06em;">${(dept.id === 'bmrcl' || dept.id === 'metro') ? 'REPORTS & ISSUES' : 'OUTAGES & REPORTS'}</div>
           <div class="nav flex-column gap-1">
             <button onclick="window.__tab('planned-outages')" class="btn border-0 text-start px-3 py-2 rounded-2 d-flex align-items-center gap-2 ${activeTab === 'planned-outages' ? 'bg-primary-subtle text-primary fw-bold' : 'text-body hover-bg-tertiary'}" style="font-size:0.82rem;">
-              <i class="bi bi-calendar-event text-secondary"></i><span>Planned Outages</span>
+              <i class="bi bi-calendar-event text-secondary"></i><span>${(dept.id === 'bmrcl' || dept.id === 'metro') ? 'Official Announcements' : 'Planned Outages'}</span>
             </button>
             <button onclick="window.__tab('crowd-reports')" class="btn border-0 text-start px-3 py-2 rounded-2 d-flex align-items-center justify-content-between ${activeTab === 'crowd-reports' ? 'bg-primary-subtle text-primary fw-bold' : 'text-body hover-bg-tertiary'}" style="font-size:0.82rem;">
               <div class="d-flex align-items-center gap-2">
                 <i class="bi bi-people text-secondary"></i><span>Crowd Reports</span>
               </div>
-              <span class="badge bg-success-subtle text-success" style="font-size:0.65rem;">New</span>
+              <span class="badge bg-success-subtle text-success" style="font-size:0.65rem;">Live</span>
             </button>
           </div>
         </div>
@@ -78,7 +78,7 @@ export function renderGlobalSidebar(state, lang) {
           <div class="fw-bold text-uppercase text-secondary mb-2 px-2" style="font-size:0.68rem; letter-spacing:0.06em;">SERVICES & APPLICATIONS</div>
           <div class="nav flex-column gap-1">
             <button onclick="window.__tab('services')" class="btn border-0 text-start px-3 py-2 rounded-2 d-flex align-items-center gap-2 ${activeTab === 'services' ? 'bg-primary-subtle text-primary fw-bold' : 'text-body hover-bg-tertiary'}" style="font-size:0.82rem;">
-              <i class="bi bi-file-earmark-text text-secondary"></i><span>All Services</span>
+              <i class="bi bi-file-earmark-text text-secondary"></i><span>${(dept.id === 'bmrcl' || dept.id === 'metro') ? 'Services & Guides' : 'All Services'}</span>
             </button>
           </div>
         </div>
@@ -88,10 +88,7 @@ export function renderGlobalSidebar(state, lang) {
           <div class="fw-bold text-uppercase text-secondary mb-2 px-2" style="font-size:0.68rem; letter-spacing:0.06em;">COMPLAINT GUIDE</div>
           <div class="nav flex-column gap-1">
             <button onclick="window.__tab('complaint')" class="btn border-0 text-start px-3 py-2 rounded-2 d-flex align-items-center gap-2 ${activeTab === 'complaint' ? 'bg-primary-subtle text-primary fw-bold' : 'text-body hover-bg-tertiary'}" style="font-size:0.82rem;">
-              <i class="bi bi-journal-check text-secondary"></i><span>Complaint Steps</span>
-            </button>
-            <button onclick="window.__tab('escalation')" class="btn border-0 text-start px-3 py-2 rounded-2 d-flex align-items-center gap-2 ${activeTab === 'escalation' ? 'bg-primary-subtle text-primary fw-bold' : 'text-body hover-bg-tertiary'}" style="font-size:0.82rem;">
-              <i class="bi bi-shield-exclamation text-secondary"></i><span>Escalation Matrix</span>
+              <i class="bi bi-journal-check text-secondary"></i><span>Helpline & Directory</span>
             </button>
           </div>
         </div>
@@ -227,7 +224,7 @@ export function renderHeader(state, lang) {
       </div>
 
       <!-- Right: Navigation links -->
-      <div class="d-flex align-items-center gap-1.5 gap-sm-2 flex-shrink-0">
+      <div class="d-flex align-items-center gap-2 gap-sm-2 flex-shrink-0">
         <!-- Search Trigger Icon for Mobile -->
         <button class="btn btn-sm btn-outline-secondary rounded-circle d-md-none p-0 d-flex align-items-center justify-content-center" onclick="window.__modal()" title="Search" style="width:34px; height:34px;">
           <i class="bi bi-search" style="font-size:0.88rem;"></i>
@@ -243,7 +240,7 @@ export function renderHeader(state, lang) {
             <i class="bi bi-chevron-down nb-chevron"></i>
           </button>
           <div class="nb-dropdown-menu" id="deptMenu">
-            <a href="#/departments" onclick="window.__toggleDropdown(event)" class="nb-dropdown-item text-primary fw-bold border-bottom py-2.5 d-flex align-items-center justify-content-between" style="font-size:0.82rem;">
+            <a href="#/departments" onclick="window.__toggleDropdown(event)" class="nb-dropdown-item text-primary fw-bold border-bottom py-3 d-flex align-items-center justify-content-between" style="font-size:0.82rem;">
               <div class="d-flex align-items-center gap-2">
                 <i class="bi bi-grid-3x3-gap-fill"></i>
                 <span>All Departments Directory</span>

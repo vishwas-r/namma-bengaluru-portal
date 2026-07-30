@@ -99,7 +99,7 @@ export function renderSearchResultsHTML(query = '') {
     ${results.map(r => `
     <a href="${r.url}" onclick="window.__closeSearchModal()" class="p-3 border rounded-3 text-decoration-none bg-body hover-bg-tertiary d-flex align-items-center justify-content-between gap-3 transition-all">
       <div class="d-flex align-items-center gap-3">
-        <div class="p-2.5 rounded-3 bg-primary-subtle text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px; height:40px; font-size:1.1rem;">
+        <div class="p-3 rounded-3 bg-primary-subtle text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px; height:40px; font-size:1.1rem;">
           <i class="bi ${r.icon}"></i>
         </div>
         <div>
@@ -107,7 +107,7 @@ export function renderSearchResultsHTML(query = '') {
             <span class="fw-bold text-body" style="font-size:0.9rem;">${r.title}</span>
             <span class="badge bg-primary-subtle text-primary border border-primary-subtle" style="font-size:0.68rem;">${r.badge}</span>
           </div>
-          <div class="text-secondary mt-0.5" style="font-size:0.78rem;">${r.desc}</div>
+          <div class="text-secondary mt-1" style="font-size:0.78rem;">${r.desc}</div>
         </div>
       </div>
       <i class="bi bi-arrow-right text-primary fs-6 flex-shrink-0"></i>
@@ -146,7 +146,7 @@ export function renderSearchModal(state) {
       </div>
 
       <!-- Footer Keyboard Hints -->
-      <div class="p-2.5 bg-body-tertiary border-top d-flex align-items-center justify-content-between text-secondary" style="font-size:0.75rem;">
+      <div class="p-3 bg-body-tertiary border-top d-flex align-items-center justify-content-between text-secondary" style="font-size:0.75rem;">
         <div>
           <span class="me-3"><kbd class="bg-body border text-body me-1" style="font-size:0.65rem;">Ctrl + K</kbd> Quick Search</span>
           <span><kbd class="bg-body border text-body me-1" style="font-size:0.65rem;">ESC</kbd> Close</span>

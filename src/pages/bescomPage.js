@@ -73,11 +73,11 @@ export function renderBESCOMPage(dept, state, lang) {
   <!-- Sticky Mobile Department Bar (Visible on Mobile/Tablet only) -->
   <div class="d-lg-none bg-body border-bottom py-2 px-3 shadow-2xs sticky-top" style="top: 56px; z-index: 1010;">
     <div class="d-flex align-items-center justify-content-between gap-2">
-      <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary fw-semibold rounded-pill px-3 py-1.5 d-inline-flex align-items-center gap-2" style="font-size:0.82rem;">
+      <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary fw-semibold rounded-pill px-3 py-2 d-inline-flex align-items-center gap-2" style="font-size:0.82rem;">
         <i class="bi bi-list fs-5"></i>
         <span>${dept.name} Menu</span>
       </button>
-      <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5" style="font-size:0.75rem;">
+      <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2" style="font-size:0.75rem;">
         <i class="bi bi-folder2-open me-1"></i>${activeTabName}
       </span>
     </div>

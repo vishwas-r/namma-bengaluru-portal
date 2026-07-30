@@ -1,10 +1,14 @@
 import stationsData from '../data/metro/stations.json';
 import faresData from '../data/metro/fares.json';
 import noticesData from '../data/metro/notices.json';
+import metroServicesData from '../data/metro/services.json';
 import { calculateMetroJourney, getGoogleMapsTransitDirUrl, getGoogleMapsStationUrl, getGoogleMapsEmbedUrl } from '../services/metroEngine.js';
+import { renderMetroMapHTML } from '../components/metroMap.js';
+import { getCurrentUser } from '../services/googleAuth.js';
 
 export function renderMetroPage(dept, state, lang) {
   const activeTab = state.activeTab || 'calculator';
+  const user = getCurrentUser();
 
   const tabTitles = {
     overview: 'Overview & Network',
@@ -12,7 +16,8 @@ export function renderMetroPage(dept, state, lang) {
     'live-stations': 'Live Stations & Google Maps',
     'smart-card': 'Smart Card & QR Tickets',
     tariff: 'Tariff & Passes',
-    notices: 'Notices & Service Alerts',
+    'crowd-reports': 'Live Crowd & Delay Reports',
+    notices: 'Official Circulars & Notices',
     complaint: 'Helpline & Lost & Found'
   };
   const activeTabName = tabTitles[activeTab] || 'Overview';
@@ -26,42 +31,60 @@ export function renderMetroPage(dept, state, lang) {
         <span class="text-white fw-medium" style="font-size:0.8rem;">${dept.name}</span>
       </div>
       <div class="d-flex align-items-center gap-3 flex-wrap mb-3 mt-1">
-        <div class="nb-dept-hero-icon mb-0 d-flex align-items-center justify-content-center bg-white shadow-sm" style="width:64px; height:64px; border-radius:14px; color:#7c3aed;">
+        <div class="nb-dept-hero-icon mb-0 d-flex align-items-center justify-content-center text-white shadow-md" style="width:64px; height:64px; border-radius:16px; background: linear-gradient(135deg, #9333ea 0%, #16a34a 50%, #ffc61a 100%); border: 2px solid rgba(255,255,255,0.4);">
           <i class="bi bi-train-front" style="font-size:2.2rem;"></i>
         </div>
         <div>
           <div class="d-flex align-items-center gap-2">
-            <h1 class="fw-bold text-white mb-0" style="font-size:2rem; letter-spacing:-0.02em;">Namma Metro (BMRCL)</h1>
-            <i class="bi bi-patch-check-fill text-primary fs-4" title="Official Transit Source"></i>
+            <h1 class="nb-dept-hero-title mb-1 text-white">${dept.fullName}</h1>
+            <i class="bi bi-patch-check-fill text-warning fs-4" title="Verified Operational Network"></i>
           </div>
-          <p class="text-white-50 mb-0 mt-1" style="font-size:0.95rem;">Bengaluru Rapid Transit Rail Network — Fares, Google Maps Transit, Route Pathfinder & Station Guide.</p>
+          <p class="nb-dept-hero-sub text-white-50 mb-0">Bengaluru Rapid Transit Rail Network — Fares, Google Maps Transit, Route Pathfinder & Live Commuter Updates.</p>
         </div>
       </div>
-      <div class="d-flex align-items-center gap-2 flex-wrap mt-4">
-        <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary shadow-sm rounded-pill px-3 py-2 fw-medium d-inline-flex d-lg-none align-items-center gap-2" style="font-size:0.8rem; background:#7c3aed; border-color:#7c3aed;">
-          <i class="bi bi-list fs-5"></i> <span>Metro Menu</span>
-        </button>
-        <a href="https://english.bmrc.co.in" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
-          <i class="bi bi-globe me-1"></i> Official Website
+
+      <!-- Operational Corridors Tricolor Badges Strip -->
+      <div class="d-flex align-items-center gap-2 flex-wrap mt-3">
+        <span class="badge text-white px-3 py-2 rounded-pill shadow-2xs" style="background:#9333ea; font-size:0.78rem; border:1px solid rgba(255,255,255,0.3);">
+          <i class="bi bi-circle-fill me-1 text-white"></i> Purple Line (36 Stations)
+        </span>
+        <span class="badge text-white px-3 py-2 rounded-pill shadow-2xs" style="background:#16a34a; font-size:0.78rem; border:1px solid rgba(255,255,255,0.3);">
+          <i class="bi bi-circle-fill me-1 text-white"></i> Green Line (32 Stations)
+        </span>
+        <span class="badge text-dark fw-bold px-3 py-2 rounded-pill shadow-2xs" style="background:#ffc61a; font-size:0.78rem; border:1px solid rgba(0,0,0,0.2);">
+          <i class="bi bi-circle-fill me-1 text-dark"></i> Yellow Line (16 Stations)
+        </span>
+        <span class="badge text-white px-3 py-2 rounded-pill shadow-2xs" style="background: rgba(15, 23, 42, 0.85); font-size:0.78rem; backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
+          <i class="bi bi-check-circle-fill me-1 text-warning"></i>82 Operational Stations · 92.96 km
+        </span>
+      </div>
+
+      <!-- Quick Action Pills -->
+      <div class="d-flex align-items-center gap-2 flex-wrap mt-3 pt-2 border-top border-white border-opacity-10">
+        <a href="https://play.google.com/store/apps/details?id=com.aum.nammametro" target="_blank" rel="noopener" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
+          <i class="bi bi-google-play me-1 text-success"></i> Namma Metro Official App
         </a>
-        <a href="https://wa.me/918105556677?text=Hi" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
+        <a href="https://english.bmrc.co.in" target="_blank" rel="noopener" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
+          <i class="bi bi-globe me-1 text-info"></i> Official BMRCL Website
+        </a>
+        <a href="https://wa.me/918105556677?text=Hi" target="_blank" rel="noopener" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
           <i class="bi bi-whatsapp me-1 text-success"></i> WhatsApp Tickets (+91 81055 56677)
         </a>
-        <a href="tel:180042512345" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
-          <i class="bi bi-telephone me-1 text-warning"></i> Helpline (1800-425-12345)
+        <a href="tel:180042512345" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
+          <i class="bi bi-telephone me-1 text-warning"></i> Toll-Free Helpline (1800-425-12345)
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Sticky Mobile Department Bar (Visible on Mobile/Tablet only) -->
+  <!-- Mobile Quick Category Selector Strip (Visible on Mobile/Tablet only) -->
   <div class="d-lg-none bg-body border-bottom py-2 px-3 shadow-2xs sticky-top" style="top: 56px; z-index: 1010;">
     <div class="d-flex align-items-center justify-content-between gap-2">
-      <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary fw-semibold rounded-pill px-3 py-1.5 d-inline-flex align-items-center gap-2" style="font-size:0.82rem; background:#7c3aed; border-color:#7c3aed;">
+      <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary fw-semibold rounded-pill px-3 py-2 d-inline-flex align-items-center gap-2" style="font-size:0.82rem; background:#7c3aed; border-color:#7c3aed;">
         <i class="bi bi-list fs-5"></i>
         <span>Metro Menu</span>
       </button>
-      <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5" style="font-size:0.75rem;">
+      <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2" style="font-size:0.75rem;">
         <i class="bi bi-folder2-open me-1"></i>${activeTabName}
       </span>
     </div>
@@ -85,38 +108,58 @@ export function renderMetroPage(dept, state, lang) {
           <button type="button" class="btn-close" onclick="window.__closeMetroReportModal()"></button>
         </div>
         <div class="modal-body p-4">
-          <form onsubmit="window.__submitMetroCrowdReport(event)">
-            <div class="mb-3">
-              <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">AFFECTED METRO LINE</label>
-              <select id="reportLineSelect" class="form-select">
-                <option value="purple">🟣 Purple Line (Challaghatta ↔ Whitefield)</option>
-                <option value="green">🟢 Green Line (Madavara ↔ Silk Institute)</option>
-                <option value="yellow">🟡 Yellow Line (RV Road ↔ Bommasandra)</option>
-              </select>
+          ${!user ? `
+            <div class="text-center py-4 px-3 bg-body-tertiary rounded-3 border">
+              <div class="p-3 bg-primary-subtle text-primary rounded-circle d-inline-flex mb-3">
+                <i class="bi bi-shield-lock fs-1"></i>
+              </div>
+              <h5 class="fw-bold text-body mb-2">Google Sign-In Required</h5>
+              <p class="text-secondary mb-4" style="font-size:0.88rem;">To maintain high data quality and prevent spam across all departments, commuters must sign in with Google to report live Metro disruptions.</p>
+              <button type="button" class="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-bold shadow-sm w-100" onclick="window.__triggerGoogleLoginForReport()">
+                <i class="bi bi-google me-2"></i>Sign in with Google
+              </button>
             </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">AFFECTED STATION / LOCATION</label>
-              <input type="text" id="reportStationInput" class="form-control" placeholder="e.g. Majestic, MG Road, Whitefield, Indiranagar" required />
+          ` : `
+            <div class="d-flex align-items-center gap-2 mb-3 p-2 bg-primary-subtle rounded-3 border border-primary-subtle">
+              <img src="${user.picture || 'https://lh3.googleusercontent.com/a/default-user'}" alt="${user.name}" width="36" height="36" class="rounded-circle border border-white flex-shrink-0" />
+              <div style="font-size:0.83rem;">
+                <div class="fw-bold text-primary">${user.name}</div>
+                <div class="text-secondary" style="font-size:0.75rem;">${user.email} · Verified Citizen Account</div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">DISRUPTION TYPE</label>
-              <select id="reportCategorySelect" class="form-select">
-                <option value="delay">⏱️ Train Delay (5-15 Mins)</option>
-                <option value="halted">🛑 Service Halted / Technical Failure</option>
-                <option value="crowd">🚨 Heavy Overcrowding / Long AFC Gate Queue</option>
-                <option value="outage">🚪 Lift / Escalator Outage</option>
-                <option value="normal">🟢 Service Recovered to Normal</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">DESCRIPTION / COMMENTS</label>
-              <textarea id="reportCommentInput" class="form-control" rows="3" placeholder="Describe the current situation, delay length, or platform condition..." required></textarea>
-            </div>
-            <div class="d-flex justify-content-end gap-2 pt-2">
-              <button type="button" class="btn btn-secondary rounded-pill px-4" onclick="window.__closeMetroReportModal()">Cancel</button>
-              <button type="submit" class="btn btn-warning rounded-pill px-4 fw-bold text-dark">Submit Report</button>
-            </div>
-          </form>
+            <form onsubmit="window.__submitMetroCrowdReport(event)">
+              <div class="mb-3">
+                <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">AFFECTED METRO LINE</label>
+                <select id="reportLineSelect" class="form-select">
+                  <option value="purple"><i class="bi bi-circle-fill me-1"></i> Purple Line (Challaghatta ↔ Whitefield)</option>
+                  <option value="green"><i class="bi bi-circle-fill me-1"></i> Green Line (Madavara ↔ Silk Institute)</option>
+                  <option value="yellow"><i class="bi bi-circle-fill me-1"></i> Yellow Line (RV Road ↔ Bommasandra)</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">AFFECTED STATION / LOCATION</label>
+                <input type="text" id="reportStationInput" class="form-control" placeholder="e.g. Majestic, MG Road, Whitefield, Indiranagar" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">DISRUPTION TYPE</label>
+                <select id="reportCategorySelect" class="form-select">
+                  <option value="delay"><i class="bi bi-clock-history me-1 text-warning"></i> Train Delay (5-15 Mins)</option>
+                  <option value="halted"><i class="bi bi-exclamation-octagon-fill me-1 text-danger"></i> Service Halted / Technical Failure</option>
+                  <option value="crowd"><i class="bi bi-shield-exclamation me-1 text-danger"></i> Heavy Overcrowding / Long AFC Gate Queue</option>
+                  <option value="outage"><i class="bi bi-door-open-fill me-1 text-secondary"></i> Lift / Escalator Outage</option>
+                  <option value="normal"><i class="bi bi-circle-fill me-1" style="color: #16a34a;"></i> Service Recovered to Normal</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">DESCRIPTION / COMMENTS</label>
+                <textarea id="reportCommentInput" class="form-control" rows="3" placeholder="Describe the current situation, delay length, or platform condition..." required></textarea>
+              </div>
+              <div class="d-flex justify-content-end gap-2 pt-2">
+                <button type="button" class="btn btn-secondary rounded-pill px-4" onclick="window.__closeMetroReportModal()">Cancel</button>
+                <button type="submit" class="btn btn-warning rounded-pill px-4 fw-bold text-dark">Submit Report to Firebase</button>
+              </div>
+            </form>
+          `}
         </div>
       </div>
     </div>
@@ -136,6 +179,15 @@ export function renderTab(state, lang, dept) {
       return renderSmartCardTab(state, lang);
     case 'tariff':
       return renderTariffTab(state, lang);
+    case 'crowd-reports':
+      return renderCrowdReportsTab(state, lang);
+    case 'planned-outages':
+    case 'outages':
+      return renderAnnouncementsTab(state, lang);
+    case 'services':
+      return renderServicesTab(state, lang);
+    case 'social':
+      return renderSocialFeedTab(state, lang);
     case 'notices':
       return renderNoticesTab(state, lang);
     case 'complaint':
@@ -154,21 +206,21 @@ function renderOverviewTab(state, lang) {
       <div class="col-6 col-md-3">
         <div class="nb-card p-3 text-start h-100 border-start border-4 border-primary">
           <div class="text-secondary fw-semibold mb-1" style="font-size:0.75rem;">NETWORK LENGTH</div>
-          <div class="fs-4 fw-bold text-body">73.81 km</div>
+          <div class="fs-4 fw-bold text-body">92.96 km</div>
           <div class="text-secondary" style="font-size:0.72rem;">Operational Corridors</div>
         </div>
       </div>
       <div class="col-6 col-md-3">
         <div class="nb-card p-3 text-start h-100 border-start border-4 border-success">
           <div class="text-secondary fw-semibold mb-1" style="font-size:0.75rem;">ACTIVE STATIONS</div>
-          <div class="fs-4 fw-bold text-body">66 Stations</div>
-          <div class="text-secondary" style="font-size:0.72rem;">Purple & Green Lines</div>
+          <div class="fs-4 fw-bold text-body">82 Stations</div>
+          <div class="text-secondary" style="font-size:0.72rem;">Purple, Green & Yellow Lines</div>
         </div>
       </div>
       <div class="col-6 col-md-3">
         <div class="nb-card p-3 text-start h-100 border-start border-4 border-warning">
           <div class="text-secondary fw-semibold mb-1" style="font-size:0.75rem;">DAILY RIDERSHIP</div>
-          <div class="fs-4 fw-bold text-body">~7.5 Lakh</div>
+          <div class="fs-4 fw-bold text-body">~8.5 Lakh</div>
           <div class="text-secondary" style="font-size:0.72rem;">Commuters Daily</div>
         </div>
       </div>
@@ -202,11 +254,11 @@ function renderOverviewTab(state, lang) {
         <div class="col-md-6">
           <div class="nb-card p-4 text-start h-100 border-start border-4 border-purple" style="border-left-color: #9333ea !important;">
             <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="badge bg-purple text-white px-3 py-1" style="background:#9333ea;">🟣 Purple Line</span>
+              <span class="badge bg-purple text-white px-3 py-1" style="background:#9333ea;"><i class="bi bi-circle-fill me-1"></i> Purple Line</span>
               <span class="badge bg-success-subtle text-success">100% Operational</span>
             </div>
             <h6 class="fw-bold mb-1">Challaghatta ↔ Whitefield (Kadugodi)</h6>
-            <p class="text-secondary mb-3" style="font-size:0.83rem;">37 Stations · 43.49 km corridor connecting West Bengaluru to ITPL & East Tech Hubs.</p>
+            <p class="text-secondary mb-3" style="font-size:0.83rem;">36 Stations · 43.49 km corridor connecting West Bengaluru to ITPL & East Tech Hubs.</p>
             <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.78rem;">
               <span class="badge bg-body-tertiary text-body border">Major Hubs: Majestic, MG Road, Indiranagar, KR Puram, ITPL</span>
             </div>
@@ -216,11 +268,11 @@ function renderOverviewTab(state, lang) {
         <div class="col-md-6">
           <div class="nb-card p-4 text-start h-100 border-start border-4 border-success">
             <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="badge bg-success text-white px-3 py-1">🟢 Green Line</span>
+              <span class="badge bg-success text-white px-3 py-1"><i class="bi bi-circle-fill me-1"></i> Green Line</span>
               <span class="badge bg-success-subtle text-success">100% Operational</span>
             </div>
             <h6 class="fw-bold mb-1">Madavara (BIEC) ↔ Silk Institute</h6>
-            <p class="text-secondary mb-3" style="font-size:0.83rem;">31 Stations · 33.4 km North-South corridor connecting Tumakuru Road to Kanakapura Road.</p>
+            <p class="text-secondary mb-3" style="font-size:0.83rem;">32 Stations · 33.4 km North-South corridor connecting Tumakuru Road to Kanakapura Road.</p>
             <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.78rem;">
               <span class="badge bg-body-tertiary text-body border">Major Hubs: Yeshwanthpur, Rajajinagar, Majestic, Jayanagar, Banashankari</span>
             </div>
@@ -230,13 +282,13 @@ function renderOverviewTab(state, lang) {
         <div class="col-md-6">
           <div class="nb-card p-4 text-start h-100 border-start border-4 border-warning">
             <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="badge bg-warning text-dark px-3 py-1">🟡 Yellow Line</span>
-              <span class="badge bg-info-subtle text-info">Opening Soon</span>
+              <span class="badge bg-warning text-white px-3 py-1"><i class="bi bi-circle-fill me-1"></i> Yellow Line</span>
+              <span class="badge bg-success-subtle text-success">100% Operational</span>
             </div>
-            <h6 class="fw-bold mb-1">RV Road ↔ Bommasandra (Electronic City)</h6>
+            <h6 class="fw-bold mb-1">RV Road ↔ Delta Electronics Bommasandra</h6>
             <p class="text-secondary mb-3" style="font-size:0.83rem;">16 Stations · 19.15 km corridor serving Silk Board, BTM Layout, and Electronic City IT Hub.</p>
             <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.78rem;">
-              <span class="badge bg-body-tertiary text-body border">Interchanges: RV Road (Green), Jayadeva (Pink), Silk Board (Blue)</span>
+              <span class="badge bg-body-tertiary text-body border">Major Hubs: RV Road (Green Line), Jayadeva, Silk Board, Electronic City</span>
             </div>
           </div>
         </div>
@@ -244,7 +296,7 @@ function renderOverviewTab(state, lang) {
         <div class="col-md-6">
           <div class="nb-card p-4 text-start h-100 border-start border-4 border-info">
             <div class="d-flex align-items-center justify-content-between mb-2">
-              <span class="badge bg-info text-white px-3 py-1">🔵 Blue & 🔴 Pink Lines</span>
+              <span class="badge bg-info text-white px-3 py-1"><i class="bi bi-circle-fill me-1"></i> Blue and <i class="bi bi-circle-fill me-1"></i> Pink Lines</span>
               <span class="badge bg-secondary-subtle text-secondary">Under Construction</span>
             </div>
             <h6 class="fw-bold mb-1">Airport Line & Kalena Agrahara ↔ Nagawara</h6>
@@ -265,13 +317,13 @@ function renderOverviewTab(state, lang) {
           <p class="text-secondary mb-0" style="font-size:0.85rem;">Official BMRCL network sitemap showing operational & expansion corridors.</p>
         </div>
         <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.8rem;">
-          <button onclick="window.__openMetroMapModal()" class="btn btn-sm btn-primary rounded-pill px-3 py-1.5 fw-semibold" style="background:#7c3aed; border-color:#7c3aed;">
+          <button onclick="window.__openMetroMapModal()" class="btn btn-sm btn-primary rounded-pill px-3 py-2 fw-semibold" style="background:#7c3aed; border-color:#7c3aed;">
             <i class="bi bi-arrows-angle-expand me-1"></i> View Fullscreen Map
           </button>
-          <a href="/namma-metro-sitemap.jpg" download class="btn btn-sm btn-outline-success rounded-pill px-3 py-1.5 fw-semibold">
+          <a href="/namma-metro-sitemap.jpg" download class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 fw-semibold">
             <i class="bi bi-download me-1"></i> Download Local Map (JPG)
           </a>
-          <a href="https://www.bmrc.co.in/images/metro/travel-info/sitemapimg.jpg" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1.5 fw-semibold">
+          <a href="https://www.bmrc.co.in/images/metro/travel-info/sitemapimg.jpg" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-2 fw-semibold">
             <i class="bi bi-box-arrow-up-right me-1"></i> Official BMRCL URL
           </a>
         </div>
@@ -285,21 +337,8 @@ function renderOverviewTab(state, lang) {
       </div>
     </div>
 
-    <!-- Embedded Google Maps Interactive Network Map -->
-    <div class="nb-card p-4 text-start">
-      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
-        <div>
-          <h5 class="fw-bold mb-1"><i class="bi bi-geo-alt me-2 text-primary"></i>Google Maps Live Namma Metro Transit View</h5>
-          <p class="text-secondary mb-0" style="font-size:0.85rem;">Authentic live transit lines & station locations powered by Google Maps.</p>
-        </div>
-        <a href="https://www.google.com/maps/search/Namma+Metro+Stations+Bengaluru" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary rounded-pill px-3">
-          <i class="bi bi-box-arrow-up-right me-1"></i> Open Full Map on Google Maps
-        </a>
-      </div>
-      <div class="rounded-3 overflow-hidden border shadow-2xs" style="height:380px;">
-        <iframe src="https://maps.google.com/maps?q=Namma+Metro+Stations+Bengaluru&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
+    <!-- Interactive Namma Metro Network Map (Leaflet) -->
+    ${renderMetroMapHTML()}
 
     <!-- Fullscreen Metro Sitemap Lightbox Modal -->
     <div class="modal fade" id="nbMetroMapModal" tabindex="-1" aria-hidden="true" style="background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);">
@@ -335,123 +374,110 @@ function renderCalculatorTab(state, lang) {
   const liveFare = state.liveMetroFare;
   const tokenFare = liveFare?.tokenFare !== undefined ? liveFare.tokenFare : journey?.tokenFare;
   const smartCardFare = liveFare?.smartCardFare !== undefined ? liveFare.smartCardFare : journey?.smartCardFare;
+  const groupFare = liveFare?.groupFare !== undefined ? liveFare.groupFare : journey?.groupFare;
+
+  const totalTime = liveFare?.totalTime || (journey ? `${Math.floor(journey.estimatedTimeMins / 60)} hrs ${journey.estimatedTimeMins % 60} mins` : '0 mins');
+  const totalDistance = liveFare?.totalDistance || (journey ? `${(journey.stationCount * 1.15).toFixed(1)} Km` : '0 Km');
+  const stationCountDisplay = liveFare?.stationCount || journey?.stationCount || 0;
 
   return `
   <div class="d-flex flex-column gap-4">
-    <!-- Calculator Input Box -->
-    <div class="nb-card p-4 text-start shadow-sm">
-      <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom flex-wrap gap-2">
-        <div>
-          <h5 class="fw-bold mb-0 text-primary"><i class="bi bi-calculator me-2"></i>Namma Metro Official Fare & Route Pathfinder</h5>
-          <p class="text-secondary mb-0" style="font-size:0.83rem;">Select origin and destination stations to fetch live BMRCL official fares, travel time, and Google Maps directions.</p>
+    <!-- Calculator Hero Search Card -->
+    <div class="nb-card p-4 text-start shadow-md border-0" style="position: relative; z-index: 50; background:#ffffff; border-radius: 16px;">
+      <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom flex-wrap gap-2">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-send-fill text-primary fs-4" style="color: #6d28d9 !important;"></i>
+          <h5 class="fw-bold mb-0 text-dark" style="color: #1e1b4b !important; font-size: 1.2rem;">Bangalore Metro Fare Calculator</h5>
         </div>
-        <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1.5" style="font-size:0.75rem;">
-          <i class="bi bi-shield-check me-1"></i>Official BMRCL Tariff Structure Sourced from bmrc.co.in
+        <span class="badge bg-purple-subtle text-purple border border-purple-subtle px-3 py-2" style="font-size:0.78rem; background: #f3e8ff; color: #6d28d9;">
+          <i class="bi bi-shield-check me-1"></i>Official BMRCL Tariff & Live Route Pathfinder
         </span>
       </div>
 
-      <div class="row g-3 align-items-center">
+      <div class="row g-3 align-items-end">
         <!-- Source Selector -->
-        <div class="col-md-5">
-          <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">STARTING STATION (ORIGIN)</label>
+        <div class="col-12 col-md-4">
+          <label class="form-label fw-bold text-secondary text-uppercase mb-1" style="font-size:0.75rem; letter-spacing: 0.05em;">FROM STATION</label>
           <select id="metroSourceSelect" class="form-select form-select-lg border-2" onchange="window.__onMetroStationChange()">
             ${stationsData.map(s => {
-              const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
-              return `<option value="${s.id}" data-line="${s.line}" ${s.id === sourceId ? 'selected' : ''}>${stationName}</option>`;
-            }).join('')}
+    const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
+    return `<option value="${s.id}" data-line="${s.line}" data-neighborhood="${s.neighborhood || ''}" ${s.id === sourceId ? 'selected' : ''}>${stationName}</option>`;
+  }).join('')}
           </select>
         </div>
 
         <!-- Swap Button -->
-        <div class="col-md-2 text-center my-2 my-md-0">
-          <button onclick="window.__swapMetroStations()" class="btn btn-outline-primary rounded-circle p-2 d-inline-flex align-items-center justify-content-center hover-shadow" style="width:44px; height:44px;" title="Swap Origin & Destination">
-            <i class="bi bi-arrow-down-up fs-5"></i>
+        <div class="col-12 col-md-1 text-center my-2 my-md-0">
+          <button onclick="window.__swapMetroStations()" class="btn btn-light rounded-circle p-2 d-inline-flex align-items-center justify-content-center hover-shadow border" style="width:42px; height:42px; color: #64748b;" title="Swap Origin & Destination">
+            <i class="bi bi-arrow-left-right fs-5"></i>
           </button>
         </div>
 
         <!-- Destination Selector -->
-        <div class="col-md-5">
-          <label class="form-label fw-bold text-secondary" style="font-size:0.8rem;">DESTINATION STATION</label>
+        <div class="col-12 col-md-4">
+          <label class="form-label fw-bold text-secondary text-uppercase mb-1" style="font-size:0.75rem; letter-spacing: 0.05em;">TO STATION</label>
           <select id="metroDestSelect" class="form-select form-select-lg border-2" onchange="window.__onMetroStationChange()">
             ${stationsData.map(s => {
-              const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
-              return `<option value="${s.id}" data-line="${s.line}" ${s.id === destId ? 'selected' : ''}>${stationName}</option>`;
-            }).join('')}
+    const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
+    return `<option value="${s.id}" data-line="${s.line}" data-neighborhood="${s.neighborhood || ''}" ${s.id === destId ? 'selected' : ''}>${stationName}</option>`;
+  }).join('')}
           </select>
         </div>
-      </div>
 
-      <!-- Action Calculate Button -->
-      <div class="mt-4 text-center">
-        <button type="button" onclick="window.__calculateMetroFare()" class="btn btn-primary btn-lg rounded-pill px-5 py-2.5 fw-bold shadow" style="background:#7c3aed; border-color:#7c3aed;">
-          <i class="bi bi-calculator-fill me-2"></i>Calculate Fare & Route Pathfinder
-        </button>
+        <!-- Action Calculate Button -->
+        <div class="col-12 col-md-3">
+          <button type="button" onclick="window.__calculateMetroFare()" class="btn w-100 btn-lg rounded-pill px-4 py-3 fw-bold text-white shadow-sm" style="background:#6d28d9; border-color:#6d28d9; font-size: 1rem;">
+            Calculate &rarr;
+          </button>
+        </div>
       </div>
     </div>
 
     ${journey ? `
-    <!-- Journey Result Summary Cards -->
-    <div class="row g-3">
-      <!-- Token Fare -->
-      <div class="col-6 col-lg-3">
-        <div class="nb-card p-3 text-start h-100 border-start border-4 border-secondary">
-          <div class="text-secondary fw-semibold mb-1" style="font-size:0.75rem;">TOKEN / SINGLE FARE</div>
-          <div class="fs-3 fw-bold text-body">₹${journey.tokenFare}</div>
-          <div class="text-secondary" style="font-size:0.72rem;">Paper Token / Single Journey</div>
+    <!-- Main Fare Display Banner -->
+    <div class="nb-card p-4 text-start shadow-sm border-0" style="position: relative; z-index: 1; background:#ffffff; border-radius: 14px;">
+      <div class="row g-3 text-center align-items-center">
+        <!-- Normal Fare -->
+        <div class="col-4 border-end">
+          <div class="text-secondary fw-semibold mb-1" style="font-size:0.8rem;">Normal Fare</div>
+          <div class="fs-2 fw-bold text-dark">₹${tokenFare}</div>
         </div>
-      </div>
-      <!-- Peak Hour CSC -->
-      <div class="col-6 col-lg-3">
-        <div class="nb-card p-3 text-start h-100 border-start border-4 border-primary">
-          <div class="text-primary fw-semibold mb-1" style="font-size:0.75rem;">PEAK HOUR CSC (5% OFF)</div>
-          <div class="fs-3 fw-bold text-primary">₹${journey.peakCscFare}</div>
-          <div class="text-secondary" style="font-size:0.72rem;">Smart Card (Peak Hours)</div>
+        <!-- Smart Card -->
+        <div class="col-4 border-end">
+          <div class="text-secondary fw-semibold mb-1" style="font-size:0.8rem;">Smart Card</div>
+          <div class="fs-2 fw-bold text-success" style="color: #16a34a !important;">₹${smartCardFare}</div>
         </div>
-      </div>
-      <!-- Non-Peak Hour CSC -->
-      <div class="col-6 col-lg-3">
-        <div class="nb-card p-3 text-start h-100 border-start border-4 border-success bg-success-subtle bg-opacity-25">
-          <div class="text-success fw-bold mb-1" style="font-size:0.75rem;">NON-PEAK CSC (10% OFF)</div>
-          <div class="fs-3 fw-bold text-success">₹${journey.nonPeakCscFare}</div>
-          <div class="text-success fw-semibold" style="font-size:0.72rem;">Smart Card / WhatsApp QR</div>
-        </div>
-      </div>
-      <!-- Group Ticket -->
-      <div class="col-6 col-lg-3">
-        <div class="nb-card p-3 text-start h-100 border-start border-4 border-info">
-          <div class="text-info-emphasis fw-bold mb-1" style="font-size:0.75rem;">GROUP TICKET (15% OFF)</div>
-          <div class="fs-3 fw-bold text-info-emphasis">₹${journey.groupFare}</div>
-          <div class="text-secondary" style="font-size:0.72rem;">Group Travel (10+ Commuters)</div>
+        <!-- Special / Group -->
+        <div class="col-4">
+          <div class="text-secondary fw-semibold mb-1" style="font-size:0.8rem;">Special Day / Group</div>
+          <div class="fs-2 fw-bold text-dark">₹${groupFare}</div>
         </div>
       </div>
     </div>
 
-    <!-- Additional Route & Transfer Details -->
-    <div class="row g-3">
-      <!-- Travel Time -->
-      <div class="col-md-6">
-        <div class="nb-card p-3 text-start h-100 border-start border-4 border-dark d-flex align-items-center justify-content-between">
-          <div>
-            <div class="text-secondary fw-semibold mb-1" style="font-size:0.75rem;">ESTIMATED TRAVEL TIME</div>
-            <div class="fs-4 fw-bold text-body">~${journey.estimatedTimeMins} Mins</div>
-            <div class="text-secondary" style="font-size:0.75rem;">${journey.stationCount} Intermediate Stations</div>
-          </div>
-          <i class="bi bi-clock-history fs-1 text-secondary opacity-50"></i>
-        </div>
+    <!-- Journey Details Grid Card -->
+    <div class="nb-card p-4 text-start shadow-sm border-0" style="position: relative; z-index: 1; background:#ffffff; border-radius: 14px;">
+      <div class="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom">
+        <i class="bi bi-train-front text-secondary fs-5"></i>
+        <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.95rem;">Journey Details</h6>
       </div>
-      <!-- Transfer Info -->
-      <div class="col-md-6">
-        <div class="nb-card p-3 text-start h-100 border-start border-4 ${journey.requiresInterchange ? 'border-warning' : 'border-success'} d-flex align-items-center justify-content-between">
-          <div>
-            <div class="text-secondary fw-semibold mb-1" style="font-size:0.75rem;">METRO LINE TRANSFER</div>
-            <div class="fs-5 fw-bold ${journey.requiresInterchange ? 'text-warning' : 'text-success'}">
-              ${journey.requiresInterchange ? '1 Transfer Required' : 'Direct (No Transfer Needed)'}
-            </div>
-            <div class="text-secondary" style="font-size:0.75rem;">
-              ${journey.requiresInterchange ? 'Interchange at ' + journey.interchangeStationName : 'Same Metro Line Journey'}
-            </div>
-          </div>
-          <i class="bi ${journey.requiresInterchange ? 'bi-arrow-left-right text-warning' : 'bi-check-circle-fill text-success'} fs-1 opacity-75"></i>
+
+      <div class="row g-3 text-start">
+        <div class="col-6 col-md-3">
+          <div class="text-secondary fw-semibold mb-1" style="font-size: 0.78rem;">Stations</div>
+          <div class="fs-5 fw-bold text-dark">${stationCountDisplay}</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="text-secondary fw-semibold mb-1" style="font-size: 0.78rem;">Interchanges</div>
+          <div class="fs-5 fw-bold text-dark">${journey.requiresInterchange ? 1 : 0}</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="text-secondary fw-semibold mb-1" style="font-size: 0.78rem;">Travel Time</div>
+          <div class="fs-5 fw-bold text-dark">${totalTime}</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="text-secondary fw-semibold mb-1" style="font-size: 0.78rem;">Distance</div>
+          <div class="fs-5 fw-bold text-dark">${totalDistance}</div>
         </div>
       </div>
     </div>
@@ -461,13 +487,13 @@ function renderCalculatorTab(state, lang) {
       <div class="col-md-6">
         <div class="nb-card p-3 text-start bg-body-tertiary border">
           <div class="d-flex align-items-center justify-content-between mb-2">
-            <span class="fw-bold text-body" style="font-size:0.85rem;"><i class="bi bi-p-circle-fill text-primary me-1.5"></i>${journey.source.name} Parking</span>
+            <span class="fw-bold text-body" style="font-size:0.85rem;"><i class="bi bi-p-circle-fill text-primary me-2"></i>${journey.source.name} Parking</span>
             <span class="badge ${journey.source.parking?.hasParking ? 'bg-success-subtle text-success border border-success-subtle' : 'bg-secondary-subtle text-secondary border'}">${journey.source.parking?.hasParking ? 'Parking Available' : 'No Official Parking'}</span>
           </div>
           ${journey.source.parking?.hasParking ? `
             <div class="d-flex gap-3 text-secondary" style="font-size:0.8rem;">
-              <span><strong>🛵 2-Wheeler:</strong> ${journey.source.parking.twoWheelerSlots} Slots</span>
-              <span><strong>🚗 4-Wheeler:</strong> ${journey.source.parking.fourWheelerSlots ? journey.source.parking.fourWheelerSlots + ' Slots' : 'N/A'}</span>
+              <span><strong><i class="bi bi-scooter me-1"></i> 2-Wheeler:</strong> ${journey.source.parking.twoWheelerSlots} Slots</span>
+              <span><strong><i class="bi bi-car-front-fill me-1"></i> 4-Wheeler:</strong> ${journey.source.parking.fourWheelerSlots ? journey.source.parking.fourWheelerSlots + ' Slots' : 'N/A'}</span>
             </div>
           ` : '<span class="text-secondary" style="font-size:0.8rem;">No official BMRCL parking lot at this station.</span>'}
         </div>
@@ -475,13 +501,13 @@ function renderCalculatorTab(state, lang) {
       <div class="col-md-6">
         <div class="nb-card p-3 text-start bg-body-tertiary border">
           <div class="d-flex align-items-center justify-content-between mb-2">
-            <span class="fw-bold text-body" style="font-size:0.85rem;"><i class="bi bi-p-circle-fill text-primary me-1.5"></i>${journey.dest.name} Parking</span>
+            <span class="fw-bold text-body" style="font-size:0.85rem;"><i class="bi bi-p-circle-fill text-primary me-2"></i>${journey.dest.name} Parking</span>
             <span class="badge ${journey.dest.parking?.hasParking ? 'bg-success-subtle text-success border border-success-subtle' : 'bg-secondary-subtle text-secondary border'}">${journey.dest.parking?.hasParking ? 'Parking Available' : 'No Official Parking'}</span>
           </div>
           ${journey.dest.parking?.hasParking ? `
             <div class="d-flex gap-3 text-secondary" style="font-size:0.8rem;">
-              <span><strong>🛵 2-Wheeler:</strong> ${journey.dest.parking.twoWheelerSlots} Slots</span>
-              <span><strong>🚗 4-Wheeler:</strong> ${journey.dest.parking.fourWheelerSlots ? journey.dest.parking.fourWheelerSlots + ' Slots' : 'N/A'}</span>
+              <span><strong><i class="bi bi-scooter me-1"></i> 2-Wheeler:</strong> ${journey.dest.parking.twoWheelerSlots} Slots</span>
+              <span><strong><i class="bi bi-car-front-fill me-1"></i> 4-Wheeler:</strong> ${journey.dest.parking.fourWheelerSlots ? journey.dest.parking.fourWheelerSlots + ' Slots' : 'N/A'}</span>
             </div>
           ` : '<span class="text-secondary" style="font-size:0.8rem;">No official BMRCL parking lot at this station.</span>'}
         </div>
@@ -508,7 +534,7 @@ function renderCalculatorTab(state, lang) {
 
     ${journey.requiresInterchange ? `
     <!-- Interchange Guidance Box -->
-    <div class="nb-card p-3.5 text-start border-warning bg-warning-subtle bg-opacity-30">
+    <div class="nb-card p-3 text-start border-warning bg-warning-subtle bg-opacity-30">
       <div class="d-flex gap-3">
         <i class="bi bi-arrow-repeat text-warning fs-3 flex-shrink-0"></i>
         <div>
@@ -567,9 +593,9 @@ function renderLiveStationsTab(state, lang) {
           <label class="form-label fw-bold text-secondary" style="font-size:0.78rem;">SELECT METRO STATION</label>
           <select id="metroLiveSelect" class="form-select form-select-lg" onchange="window.__selectMetroStation(this.value)">
             ${stationsData.map(s => {
-              const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
-              return `<option value="${s.id}" data-line="${s.line}" ${s.id === selectedStationId ? 'selected' : ''}>${stationName}</option>`;
-            }).join('')}
+    const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
+    return `<option value="${s.id}" data-line="${s.line}" ${s.id === selectedStationId ? 'selected' : ''}>${stationName}</option>`;
+  }).join('')}
           </select>
         </div>
       </div>
@@ -603,17 +629,17 @@ function renderLiveStationsTab(state, lang) {
             </div>
             ${selectedStation.parking.hasParking ? `
               <div class="text-body fw-semibold" style="font-size:0.83rem;">
-                🛵 2-Wheeler: <strong>${selectedStation.parking.twoWheelerSlots} Slots</strong>
+                <i class="bi bi-scooter me-1"></i> 2-Wheeler: <strong>${selectedStation.parking.twoWheelerSlots} Slots</strong>
               </div>
               <div class="text-body fw-semibold mt-1" style="font-size:0.83rem;">
-                🚗 4-Wheeler: <strong>${selectedStation.parking.fourWheelerSlots > 0 ? selectedStation.parking.fourWheelerSlots + ' Slots' : 'No 4W Slots'}</strong>
+                <i class="bi bi-car-front-fill me-1"></i> 4-Wheeler: <strong>${selectedStation.parking.fourWheelerSlots > 0 ? selectedStation.parking.fourWheelerSlots + ' Slots' : 'No 4W Slots'}</strong>
               </div>
               <div class="text-body fw-semibold mt-1" style="font-size:0.83rem;">
-                🚲 Bicycle: <strong>${selectedStation.parking.cycles || 10} Slots (FREE)</strong>
+                <i class="bi bi-bicycle me-1"></i> Bicycle: <strong>${selectedStation.parking.cycles || 10} Slots (FREE)</strong>
               </div>
               ${selectedStation.parking.lcv > 0 ? `
               <div class="text-body fw-semibold mt-1" style="font-size:0.83rem;">
-                🚛 LCV: <strong>${selectedStation.parking.lcv} Slots</strong>
+                <i class="bi bi-truck me-1"></i> LCV: <strong>${selectedStation.parking.lcv} Slots</strong>
               </div>` : ''}` : `
               <div class="text-secondary" style="font-size:0.82rem;">No designated parking lot at this station</div>`}
           </div>
@@ -626,7 +652,7 @@ function renderLiveStationsTab(state, lang) {
               <i class="bi bi-person-wheelchair fs-5 text-primary"></i>
               <span class="fw-bold" style="font-size:0.88rem;">Accessibility & Lifts</span>
             </div>
-            <div class="d-flex flex-wrap gap-1.5">
+            <div class="d-flex flex-wrap gap-2">
               <span class="badge ${selectedStation.accessibility.lift ? 'bg-success-subtle text-success' : 'bg-secondary-subtle text-secondary'}">
                 <i class="bi bi-check-circle me-1"></i>Lifts Available
               </span>
@@ -655,7 +681,7 @@ function renderLiveStationsTab(state, lang) {
       </div>
 
       <!-- Official BMRCL Vehicle Parking Tariff Structure Card -->
-      <div class="p-3.5 rounded-3 bg-primary-subtle border border-primary-subtle mb-4 text-start">
+      <div class="p-3 rounded-3 bg-primary-subtle border border-primary-subtle mb-4 text-start">
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
           <h6 class="fw-bold text-primary mb-0" style="font-size:0.88rem;"><i class="bi bi-info-circle me-1"></i>Official BMRCL Vehicle Parking Tariff Rates</h6>
           <a href="${faresData.parkingPolicy.officialUrl}" target="_blank" rel="noopener" class="text-primary text-decoration-none fw-semibold" style="font-size:0.78rem;">
@@ -673,12 +699,12 @@ function renderLiveStationsTab(state, lang) {
               </tr>
             </thead>
             <tbody>
-              <tr><td class="fw-semibold text-start ps-2">🛵 Two Wheeler</td><td>₹15</td><td>₹5</td><td class="fw-bold text-success">₹30</td></tr>
+              <tr><td class="fw-semibold text-start ps-2"><i class="bi bi-scooter me-1"></i> Two Wheeler</td><td>₹15</td><td>₹5</td><td class="fw-bold text-success">₹30</td></tr>
               <tr><td class="fw-semibold text-start ps-2">🛺 Three Wheeler</td><td>₹20</td><td>₹5</td><td class="fw-bold text-success">₹45</td></tr>
-              <tr><td class="fw-semibold text-start ps-2">🚗 Car / 4 Wheeler</td><td>₹30</td><td>₹10</td><td class="fw-bold text-success">₹60</td></tr>
-              <tr><td class="fw-semibold text-start ps-2">🚛 Light Commercial (LCV)</td><td>₹50</td><td>₹15</td><td class="fw-bold text-success">₹150</td></tr>
-              <tr><td class="fw-semibold text-start ps-2">🚌 Heavy Passenger Bus</td><td>₹100</td><td>₹25</td><td class="fw-bold text-success">₹300</td></tr>
-              <tr class="table-success"><td class="fw-bold text-start ps-2">🚲 Bicycle</td><td colspan="3" class="fw-bold text-success">FREE</td></tr>
+              <tr><td class="fw-semibold text-start ps-2"><i class="bi bi-car-front-fill me-1"></i> Car / 4 Wheeler</td><td>₹30</td><td>₹10</td><td class="fw-bold text-success">₹60</td></tr>
+              <tr><td class="fw-semibold text-start ps-2"><i class="bi bi-truck me-1"></i> Light Commercial (LCV)</td><td>₹50</td><td>₹15</td><td class="fw-bold text-success">₹150</td></tr>
+              <tr><td class="fw-semibold text-start ps-2"><i class="bi bi-bus-front-fill me-1"></i> Heavy Passenger Bus</td><td>₹100</td><td>₹25</td><td class="fw-bold text-success">₹300</td></tr>
+              <tr class="table-success"><td class="fw-bold text-start ps-2"><i class="bi bi-bicycle me-1"></i> Bicycle</td><td colspan="3" class="fw-bold text-success">FREE</td></tr>
             </tbody>
           </table>
         </div>
@@ -686,12 +712,12 @@ function renderLiveStationsTab(state, lang) {
       </div>
 
       <!-- Official BMRCL Disclaimer & Policy PDF Links Card -->
-      <div class="p-3.5 rounded-3 bg-warning-subtle border border-warning mb-4 text-start">
-        <div class="d-flex align-items-start gap-2.5">
-          <i class="bi bi-shield-check text-warning fs-4 flex-shrink-0 mt-0.5"></i>
+      <div class="p-3 rounded-3 bg-warning-subtle border border-warning mb-4 text-start">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-shield-check text-warning fs-4 flex-shrink-0 mt-1"></i>
           <div>
             <div class="fw-bold text-dark mb-1" style="font-size:0.88rem;">Official Data Source Disclaimer & BMRCL Parking Policy Documents</div>
-            <p class="text-secondary mb-2.5" style="font-size:0.81rem;">
+            <p class="text-secondary mb-3" style="font-size:0.81rem;">
               ${faresData.parkingPolicy.disclaimer}
             </p>
             <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.78rem;">
@@ -785,7 +811,7 @@ function renderSmartCardTab(state, lang) {
         </div>
         <div class="col-md-3 col-6">
           <div class="p-3 bg-body-tertiary rounded-3 border h-100">
-            <div class="fw-bold mb-1 text-body" style="font-size:0.85rem;">⏱️ Max Stay Limit: 120 Mins</div>
+            <div class="fw-bold mb-1 text-body" style="font-size:0.85rem;"><i class="bi bi-clock-history me-1 text-warning"></i> Max Stay Limit: 120 Mins</div>
             <p class="text-secondary mb-0" style="font-size:0.78rem;">Maximum stay inside metro system is 2 hours. Penalty for overstay: <strong>₹50 + Max Fare</strong>.</p>
           </div>
         </div>
@@ -824,13 +850,18 @@ function renderTariffTab(state, lang) {
             </tr>
           </thead>
           <tbody>
-            ${faresData.fareSlabs.map(s => `
+            ${faresData.fareSlabs.map(s => {
+    const cardFare = s.nonPeakCscFare !== undefined ? s.nonPeakCscFare : s.peakCscFare;
+    const savings = (s.tokenFare - cardFare).toFixed(2);
+    const label = s.minStations === s.maxStations ? `${s.minStations} Station` : `${s.minStations} - ${s.maxStations > 50 ? '27+' : s.maxStations} Stations`;
+    return `
               <tr>
-                <td class="fw-bold">${s.minStations} - ${s.maxStations} Stations</td>
+                <td class="fw-bold">${label}</td>
                 <td>₹${s.tokenFare}</td>
-                <td class="text-success fw-bold">₹${s.smartCardFare}</td>
-                <td><span class="badge bg-success-subtle text-success">Save ₹${(s.tokenFare - s.smartCardFare).toFixed(2)}</span></td>
-              </tr>`).join('')}
+                <td class="text-success fw-bold">₹${cardFare.toFixed(2)}</td>
+                <td><span class="badge bg-success-subtle text-success">Save ₹${savings}</span></td>
+              </tr>`;
+  }).join('')}
           </tbody>
         </table>
       </div>
@@ -874,10 +905,10 @@ function renderTariffTab(state, lang) {
       <div class="row g-3">
         ${faresData.groupDiscounts.map(g => `
           <div class="col-md-4">
-            <div class="p-3.5 rounded-3 border bg-body-tertiary h-100">
-              <div class="fw-bold text-primary mb-1" style="font-size:0.88rem;">${g.type}</div>
+            <div class="p-3 rounded-3 border bg-body-tertiary h-100">
+              <div class="fw-bold text-primary mb-1" style="font-size:0.88rem;">${g.groupSize}</div>
               <div class="badge bg-success-subtle text-success border mb-2" style="font-size:0.78rem;">${g.discount}</div>
-              <p class="text-secondary mb-0" style="font-size:0.8rem;">${g.details}</p>
+              <p class="text-secondary mb-0" style="font-size:0.8rem;">${g.description}</p>
             </div>
           </div>`).join('')}
       </div>
@@ -888,8 +919,8 @@ function renderTariffTab(state, lang) {
   </div>`;
 }
 
-// ── TAB 6: NOTICES & LIVE DISRUPTION TRACKER ─────────────────────────
-function renderNoticesTab(state, lang) {
+// ── TAB 6: DEDICATED COMMUTER CROWD REPORTS ──────────────────
+function renderCrowdReportsTab(state, lang) {
   const reports = state.metroCrowdReports || [];
 
   return `
@@ -899,9 +930,9 @@ function renderNoticesTab(state, lang) {
       <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
         <div>
           <h5 class="fw-bold mb-1 text-primary"><i class="bi bi-broadcast me-2"></i>Live Metro Line Status & Commuter Alerts</h5>
-          <p class="text-secondary mb-0" style="font-size:0.83rem;">Real-time service status across Purple, Green, and Yellow lines with live commuter crowd reports.</p>
+          <p class="text-secondary mb-0" style="font-size:0.83rem;">Real-time service status across Purple, Green, and Yellow lines powered by live commuter reports.</p>
         </div>
-        <button onclick="window.__openMetroReportModal()" class="btn btn-warning rounded-pill px-3.5 py-2 fw-bold text-dark shadow-sm">
+        <button onclick="window.__openMetroReportModal()" class="btn btn-warning rounded-pill px-4 py-2 fw-bold text-dark shadow-sm">
           <i class="bi bi-exclamation-triangle-fill me-1"></i> Report Delay or Halted Service
         </button>
       </div>
@@ -909,35 +940,41 @@ function renderNoticesTab(state, lang) {
       <div class="row g-3">
         <!-- Purple Line -->
         <div class="col-md-4">
-          <div class="p-3 rounded-3 border bg-body-tertiary text-start border-start border-4" style="border-left-color: #9333ea !important;">
+          <div class="p-3 rounded-3 border text-start border-4 bg-body-tertiary" style="border-color: #9333ea !important;">
             <div class="d-flex align-items-center justify-content-between mb-1">
-              <span class="fw-bold text-body" style="font-size:0.88rem;">🟣 Purple Line</span>
-              <span class="badge bg-warning text-dark"><i class="bi bi-clock-history me-1"></i>Minor Delays</span>
+              <span class="fw-bold text-body" style="font-size:0.88rem;">
+                <i class="bi bi-circle-fill me-1"></i>Purple Line
+              </span>
+              <span class="badge text-white" style="background: #9333ea;"><i class="bi bi-check-circle-fill me-1"></i>Normal Operations</span>
             </div>
-            <div class="text-secondary" style="font-size:0.8rem;">Challaghatta ↔ Whitefield</div>
-            <div class="mt-2 text-dark fw-medium" style="font-size:0.78rem;">Commuters report ~5 min delay near Majestic.</div>
+            <div class="text-secondary" style="font-size:0.8rem;">Challaghatta ↔ Whitefield (Kadugodi)</div>
+            <div class="mt-2 fw-medium" style="font-size:0.78rem; color: #9333ea;">Operating smoothly on regular schedule.</div>
           </div>
         </div>
         <!-- Green Line -->
         <div class="col-md-4">
-          <div class="p-3 rounded-3 border bg-body-tertiary text-start border-start border-4 border-success">
+          <div class="p-3 rounded-3 border text-start border-4 bg-body-tertiary" style="border-color: #16a34a !important;">
             <div class="d-flex align-items-center justify-content-between mb-1">
-              <span class="fw-bold text-body" style="font-size:0.88rem;">🟢 Green Line</span>
-              <span class="badge bg-success text-white"><i class="bi bi-check-circle me-1"></i>Normal Service</span>
+              <span class="fw-bold text-body" style="font-size:0.88rem;">
+                <i class="bi bi-circle-fill me-1"></i>Green Line
+              </span>
+              <span class="badge text-white" style="background: #16a34a;"><i class="bi bi-check-circle-fill me-1"></i>Normal Operations</span>
             </div>
-            <div class="text-secondary" style="font-size:0.8rem;">Madavara ↔ Silk Institute</div>
+            <div class="text-secondary" style="font-size:0.8rem;">Madavara (BIEC) ↔ Silk Institute</div>
             <div class="mt-2 text-success fw-medium" style="font-size:0.78rem;">All trains operating on regular schedule.</div>
           </div>
         </div>
         <!-- Yellow Line -->
         <div class="col-md-4">
-          <div class="p-3 rounded-3 border bg-body-tertiary text-start border-start border-4 border-warning">
+          <div class="p-3 rounded-3 border text-start border-4 bg-body-tertiary" style="border-color: #ffc61a !important;">
             <div class="d-flex align-items-center justify-content-between mb-1">
-              <span class="fw-bold text-body" style="font-size:0.88rem;">🟡 Yellow Line</span>
-              <span class="badge bg-info text-white"><i class="bi bi-gear-wide-connected me-1"></i>Testing Phase</span>
+              <span class="fw-bold text-body" style="font-size:0.88rem;">
+                <i class="bi bi-circle-fill me-1"></i>Yellow Line
+              </span>
+              <span class="badge text-dark fw-bold" style="background: #ffc61a;"><i class="bi bi-check-circle-fill me-1"></i>Normal Operations</span>
             </div>
-            <div class="text-secondary" style="font-size:0.8rem;">RV Road ↔ Bommasandra</div>
-            <div class="mt-2 text-info fw-medium" style="font-size:0.78rem;">Trail runs ongoing for launch.</div>
+            <div class="text-secondary" style="font-size:0.8rem;">RV Road ↔ Delta Electronics Bommasandra</div>
+            <div class="mt-2 fw-medium" style="font-size:0.78rem; color: #b45309;">Operational corridor running on schedule.</div>
           </div>
         </div>
       </div>
@@ -950,9 +987,10 @@ function renderNoticesTab(state, lang) {
         <span class="text-secondary" style="font-size:0.8rem;"><i class="bi bi-shield-check me-1 text-success"></i>Verified by commuters</span>
       </div>
 
+      ${reports.length > 0 ? `
       <div class="d-flex flex-column gap-3">
         ${reports.map(r => `
-          <div class="p-3.5 rounded-3 border bg-body-tertiary text-start">
+          <div class="p-3 rounded-3 border bg-body-tertiary text-start">
             <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
               <div class="d-flex align-items-center gap-2">
                 <span class="badge ${r.badgeClass}">${r.categoryLabel}</span>
@@ -963,7 +1001,7 @@ function renderNoticesTab(state, lang) {
               </div>
               <span class="text-secondary" style="font-size:0.78rem;"><i class="bi bi-clock me-1"></i>${r.timeAgo}</span>
             </div>
-            <p class="text-body mb-2.5" style="font-size:0.88rem;">"${r.comment}"</p>
+            <p class="text-body mb-3" style="font-size:0.88rem;">"${r.comment}"</p>
             <div class="d-flex align-items-center justify-content-between pt-2 border-top border-secondary-subtle">
               <span class="text-secondary" style="font-size:0.78rem;">Status: <strong class="text-dark">${r.status}</strong></span>
               <button onclick="window.__upvoteMetroReport('${r.id}')" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 fw-semibold" style="font-size:0.78rem;">
@@ -971,15 +1009,38 @@ function renderNoticesTab(state, lang) {
               </button>
             </div>
           </div>`).join('')}
-      </div>
+      </div>` : `
+      <div class="p-5 text-center bg-body-tertiary rounded-3 border">
+        <i class="bi bi-shield-check text-success display-4 mb-2"></i>
+        <h5 class="fw-bold text-body mb-1">No Active Disruption Reports</h5>
+        <p class="text-secondary mb-3" style="font-size:0.88rem;">All Metro lines (Purple, Green & Yellow) are currently operating smoothly on regular schedule.</p>
+        <button onclick="window.__openMetroReportModal()" class="btn btn-warning rounded-pill px-4 py-2 fw-bold text-dark shadow-sm">
+          <i class="bi bi-exclamation-triangle-fill me-1"></i> Report Delay or Halted Service
+        </button>
+      </div>`}
     </div>
+  </div>`;
+}
 
+// ── TAB 7: OFFICIAL CIRCULARS & NOTICES ─────────────────────
+function renderNoticesTab(state, lang) {
+  return `
+  <div class="d-flex flex-column gap-4 text-start">
     <!-- Official BMRCL Press Releases & Circulars -->
     <div class="nb-card p-4">
-      <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-newspaper me-2"></i>Official BMRCL Announcements & Gazette Circulars</h5>
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <div>
+          <h5 class="fw-bold mb-1 text-primary"><i class="bi bi-newspaper me-2"></i>Official BMRCL Announcements & Gazette Circulars</h5>
+          <p class="text-secondary mb-0" style="font-size:0.85rem;">Official press releases, timetable updates, and gazette notifications published by BMRCL.</p>
+        </div>
+        <a href="https://english.bmrc.co.in" target="_blank" rel="noopener" class="btn btn-outline-primary rounded-pill px-4 py-2 fw-semibold" style="font-size:0.82rem;">
+          Official BMRCL Portal &rarr;
+        </a>
+      </div>
+
       <div class="d-flex flex-column gap-3">
         ${noticesData.notices.map(n => `
-          <div class="p-3.5 rounded-3 border bg-body-tertiary text-start border-start border-4 border-primary">
+          <div class="p-3 rounded-3 border bg-body-tertiary text-start border-start border-4 border-primary">
             <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
               <span class="badge bg-primary-subtle text-primary border">${n.category}</span>
               <span class="text-secondary" style="font-size:0.78rem;"><i class="bi bi-calendar3 me-1"></i>${n.date}</span>
@@ -995,7 +1056,7 @@ function renderNoticesTab(state, lang) {
   </div>`;
 }
 
-// ── TAB 7: COMPLAINTS & LOST AND FOUND ──────────────────────
+// ── TAB 7: COMPLAINTS, MANAGEMENT PROFILES & GRIEVANCES ─────────
 function renderComplaintTab(state, lang) {
   return `
   <div class="d-flex flex-column gap-4 text-start">
@@ -1020,7 +1081,7 @@ function renderComplaintTab(state, lang) {
       </div>
 
       <!-- Line-Specific Lost & Found Officers Grid -->
-      <h6 class="fw-bold text-dark mb-2.5" style="font-size:0.88rem;"><i class="bi bi-person-lines-fill me-1"></i>Official Line-Specific Lost & Found Contact Officers</h6>
+      <h6 class="fw-bold text-dark mb-3" style="font-size:0.88rem;"><i class="bi bi-person-lines-fill me-1"></i>Official Line-Specific Lost & Found Contact Officers</h6>
       <div class="row g-3">
         ${(noticesData.helpline.officers || []).map(o => `
           <div class="col-md-6">
@@ -1042,23 +1103,339 @@ function renderComplaintTab(state, lang) {
       </div>
     </div>
 
-    <!-- Helpline Numbers Grid -->
+    <!-- Helpline & Offices Grid -->
     <div class="nb-card p-4">
-      <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-telephone-outbound me-2"></i>BMRCL Emergency Helplines & Contacts</h5>
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <h5 class="fw-bold mb-0 text-primary"><i class="bi bi-telephone-outbound me-2"></i>BMRCL Official Contact Directory</h5>
+        <a href="${noticesData.helpline.officialContactUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-2 fw-semibold" style="font-size:0.82rem;">
+          <i class="bi bi-box-arrow-up-right me-1"></i> Official BMRCL Contact Page &rarr;
+        </a>
+      </div>
       <div class="row g-3">
         <div class="col-md-6">
-          <div class="p-3 rounded-3 border bg-body-tertiary">
-            <div class="text-secondary fw-bold mb-1" style="font-size:0.75rem;">TOLL-FREE CUSTOMER CARE</div>
-            <div class="fs-4 fw-bold text-primary mb-1">${noticesData.helpline.tollFree}</div>
-            <p class="text-secondary mb-0" style="font-size:0.8rem;">For queries on fares, smart cards, lost tokens, or train schedules.</p>
+          <div class="p-4 rounded-3 border bg-body-tertiary text-start h-100">
+            <div class="text-primary fw-bold mb-1" style="font-size:0.82rem;"><i class="bi bi-train-front me-1 text-primary"></i> TRAVEL & PASSENGER RELATED INQUIRIES</div>
+            <div class="fw-bold fs-5 text-body mb-1">Toll-Free: ${noticesData.helpline.tollFree}</div>
+            <div class="text-secondary mb-2" style="font-size:0.82rem;">
+              <i class="bi bi-telephone-fill me-1"></i> Phone: <strong>${noticesData.helpline.travelPhone}</strong><br>
+              <i class="bi bi-envelope-fill me-1"></i> Email: <strong>${noticesData.helpline.email}</strong>
+            </div>
+            <p class="text-secondary mb-0" style="font-size:0.78rem;">
+              <strong>Address:</strong> BMRCL, Baiyappanahalli Depot, Old Madras Road, NGEF Stop, Bangalore – 560 038.
+            </p>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="p-3 rounded-3 border bg-body-tertiary">
-            <div class="text-secondary fw-bold mb-1" style="font-size:0.75rem;">METRO SECURITY CONTROL ROOM</div>
-            <div class="fs-4 fw-bold text-danger mb-1">${noticesData.helpline.securityControlRoom}</div>
-            <p class="text-secondary mb-0" style="font-size:0.8rem;">For emergency assistance, medical help, or security concerns.</p>
+          <div class="p-4 rounded-3 border bg-body-tertiary text-start h-100">
+            <div class="text-primary fw-bold mb-1" style="font-size:0.82rem;"><i class="bi bi-building me-1"></i> PROJECT & CORPORATE HEADQUARTERS</div>
+            <div class="fw-bold fs-5 text-body mb-1">Phone: ${noticesData.helpline.projectPhone}</div>
+            <div class="text-secondary mb-2" style="font-size:0.82rem;">
+              <i class="bi bi-shield-exclamation me-1 text-danger"></i> Security Control Room: <strong>${noticesData.helpline.securityControlRoom}</strong>
+            </div>
+            <p class="text-secondary mb-0" style="font-size:0.78rem;">
+              <strong>Address:</strong> BMRCL, 3rd Floor, BMTC Complex, K.H. Road, Shanthinagar, Bangalore – 560 027.
+            </p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Management Profiles Section -->
+    <div class="nb-card p-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <div>
+          <h5 class="fw-bold mb-1 text-primary"><i class="bi bi-person-badge me-2"></i>BMRCL Management Profiles & Executive Leadership</h5>
+          <p class="text-secondary mb-0" style="font-size:0.83rem;">Official functional directors and board leaders overseeing Bengaluru Metro operations.</p>
+        </div>
+        <a href="${noticesData.helpline.officialManageProfileUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-2 fw-semibold" style="font-size:0.82rem;">
+          <i class="bi bi-box-arrow-up-right me-1"></i> BMRCL Management Page &rarr;
+        </a>
+      </div>
+
+      <div class="row g-3">
+        ${(noticesData.managementProfiles || []).map(m => `
+          <div class="col-md-4">
+            <div class="p-3 rounded-3 border bg-body-tertiary text-start h-100">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="p-2 rounded-circle bg-primary-subtle text-primary fw-bold">
+                  <i class="bi bi-person-fill fs-5"></i>
+                </div>
+                <div>
+                  <div class="fw-bold text-body" style="font-size:0.92rem;">${m.name}</div>
+                  <span class="badge bg-primary-subtle text-primary border" style="font-size:0.72rem;">${m.title}</span>
+                </div>
+              </div>
+              <p class="text-secondary mb-0" style="font-size:0.78rem;">${m.role}</p>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <!-- Full BMRCL Board of Directors Table -->
+    <div class="nb-card p-4">
+      <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-building me-2"></i>BMRCL Board of Directors</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle text-start mb-0" style="font-size:0.82rem;">
+          <thead class="table-dark">
+            <tr>
+              <th style="width:50px;">Sl. No</th>
+              <th>Name & Position</th>
+              <th>Nominated By</th>
+              <th>Official Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${(noticesData.boardOfDirectors || []).map(b => `
+              <tr>
+                <td class="fw-bold text-center">${b.slNo}</td>
+                <td>
+                  <div class="fw-bold text-body">${b.name}</div>
+                  <div class="text-secondary" style="font-size:0.78rem;">${b.designation}</div>
+                </td>
+                <td><span class="badge ${b.nominatedBy === 'Govt of India' ? 'bg-primary' : b.nominatedBy === 'Govt of Karnataka' ? 'bg-success' : 'bg-secondary'}">${b.nominatedBy}</span></td>
+                <td class="text-secondary" style="font-size:0.78rem;">${b.address}</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Grievance Redressal Officers Directory Table -->
+    <div class="nb-card p-4">
+      <h5 class="fw-bold mb-3 text-primary"><i class="bi bi-journal-check me-2"></i>BMRCL Grievance Redressal Officers Directory</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle text-start mb-0" style="font-size:0.83rem;">
+          <thead class="table-primary">
+            <tr>
+              <th style="width:50px;">Sl. No</th>
+              <th>Name / Designation of Officer</th>
+              <th>Functional Area / Responsibilities</th>
+              <th>Contact Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${(noticesData.grievanceOfficers || []).map(g => `
+              <tr>
+                <td class="fw-bold text-center">${g.slNo}</td>
+                <td class="fw-bold text-body">${g.officer}</td>
+                <td class="text-secondary">${g.area}</td>
+                <td class="fw-semibold text-primary">${g.contact}</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── TAB 8: OFFICIAL ANNOUNCEMENTS & SERVICE ALERTS ───────────
+function renderAnnouncementsTab(state, lang) {
+  return `
+  <div class="d-flex flex-column gap-4 text-start">
+    <div class="nb-card p-4 text-center">
+      <div class="p-3 rounded-circle bg-primary-subtle text-primary d-inline-flex align-items-center justify-content-center mb-3" style="width:64px; height:64px;">
+        <i class="bi bi-megaphone fs-2"></i>
+      </div>
+      <h5 class="fw-bold text-body mb-2">Official BMRCL Announcements & Service Maintenance</h5>
+      <p class="text-secondary mb-4 mx-auto" style="max-width:560px; font-size:0.88rem;">
+        There are currently no scheduled maintenance disruptions or corridor closures across Purple, Green, or Yellow lines. All trains are operating on normal timetables.
+      </p>
+      <div class="d-flex align-items-center justify-content-center gap-2 flex-wrap">
+        <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2">
+          <i class="bi bi-check-circle-fill me-1"></i>100% Operational Network
+        </span>
+        <a href="https://english.bmrc.co.in/PressRelease" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2">
+          <i class="bi bi-box-arrow-up-right me-1"></i> View Official BMRCL Press Releases &rarr;
+        </a>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── TAB 9: SERVICES & STEP-BY-STEP COMMUTER GUIDES ──────────
+function renderServicesTab(state, lang) {
+  const list = metroServicesData.services || [];
+  const selectedId = state.selectedServiceId || list[0]?.id || 'smart-card-ncmc';
+  const selected = list.find(s => s.id === selectedId) || list[0];
+
+  return `
+  <div class="row g-4 text-start">
+    <div class="col-lg-4">
+      <div class="nb-card h-100">
+        <div class="nb-card-header"><i class="bi bi-file-earmark-check text-primary me-2"></i>Select Service / Guide</div>
+        <div class="nb-card-body p-3 d-flex flex-column gap-2">
+          ${list.map(s => `
+          <button class="btn btn-outline-primary text-start p-3 ${s.id === selectedId ? 'is-selected' : ''} nb-complaint-btn"
+            onclick="window.__service('${s.id}')" style="font-size:0.86rem;">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="fw-bold text-body">${s.title}</span>
+              ${s.badge ? `<span class="badge bg-success-subtle text-success border border-success-subtle ms-2 flex-shrink-0" style="font-size:0.68rem;">${s.badge}</span>` : ''}
+            </div>
+            <div class="text-secondary" style="font-size:0.76rem;">SLA: <strong>${s.sla}</strong></div>
+          </button>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 d-flex flex-column gap-4">
+      <!-- Service Detail Card -->
+      <div class="nb-card">
+        <div class="nb-card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div class="fw-bold" style="font-size:1.05rem;"><i class="bi bi-shield-check text-primary me-2"></i>${selected.title}</div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle"><i class="bi bi-clock me-1"></i>SLA: ${selected.sla}</span>
+            ${selected.onlineLink ? `
+            <a href="${selected.onlineLink}" target="_blank" rel="noopener" class="btn btn-sm btn-primary fw-semibold px-3 py-2" style="font-size:0.8rem;">
+              <i class="bi bi-box-arrow-up-right me-2"></i>Open Direct Portal (${selected.officialPortalName || 'BMRCL Portal'})
+            </a>` : ''}
+          </div>
+        </div>
+        <div class="nb-card-body p-4">
+          <p class="text-secondary mb-4" style="font-size:0.9rem; line-height:1.6;">${selected.description}</p>
+
+          <!-- Interactive Document Checklist -->
+          <div class="mb-4">
+            <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
+              <i class="bi bi-card-checklist text-primary me-2"></i>Required Documents & Requirements Checklist (Check items ready)
+            </h6>
+            <div class="d-flex flex-column gap-2">
+              ${(selected.documents || []).map((doc, idx) => `
+              <div class="p-3 bg-body-tertiary border rounded-3 d-flex align-items-start justify-content-between gap-2">
+                <div class="form-check mb-0">
+                  <input class="form-check-input" type="checkbox" id="doc_metro_${idx}" onchange="window.__toggleDoc(this)" />
+                  <label class="form-check-label ms-2 fw-medium" for="doc_metro_${idx}" style="font-size:0.86rem; cursor:pointer;">
+                    ${doc.name} ${doc.required ? '<span class="text-danger">*</span>' : ''}
+                  </label>
+                  ${doc.note ? `<div class="text-secondary ms-2 mt-1" style="font-size:0.76rem;">${doc.note}</div>` : ''}
+                </div>
+                ${doc.required ? '<span class="badge bg-danger-subtle text-danger flex-shrink-0" style="font-size:0.68rem;">Mandatory</span>' : '<span class="badge bg-secondary-subtle text-secondary flex-shrink-0" style="font-size:0.68rem;">Optional</span>'}
+              </div>`).join('')}
+            </div>
+          </div>
+
+          <!-- Step-by-Step Procedure Timeline -->
+          <div class="mb-4">
+            <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
+              <i class="bi bi-diagram-3 text-primary me-2"></i>Step-by-Step Application & Booking Procedure Timeline
+            </h6>
+            <div class="nb-timeline pt-1">
+              ${(selected.steps || []).map((st, idx) => `
+              <div class="nb-timeline-item ${idx === selected.steps.length - 1 ? 'is-last' : ''}">
+                <div class="nb-timeline-badge">${st.step}</div>
+                <div class="nb-timeline-content text-start">
+                  <div class="fw-bold" style="font-size:0.92rem;">${st.title}</div>
+                  <div class="text-secondary mt-1" style="font-size:0.84rem; line-height:1.6;">${st.details}</div>
+                  ${st.link ? `<a href="${st.link}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary mt-2 py-1 px-3" style="font-size:0.76rem;"><i class="bi bi-box-arrow-up-right me-1"></i>Open Direct Portal / WhatsApp Chat</a>` : ''}
+                </div>
+              </div>`).join('')}
+            </div>
+          </div>
+
+          <!-- Fee Structure Table -->
+          ${selected.fees && selected.fees.length > 0 ? `
+          <div>
+            <h6 class="fw-bold text-uppercase text-secondary mb-3" style="font-size:0.78rem; letter-spacing:0.05em;">
+              <i class="bi bi-receipt text-primary me-2"></i>Official Tariff & Fee Schedule
+            </h6>
+            <div class="table-responsive border rounded-3">
+              <table class="table align-middle mb-0" style="font-size:0.85rem;">
+                <thead class="table-light">
+                  <tr>
+                    <th class="py-2 ps-3" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Fee Head</th>
+                    <th class="py-2 pe-3 text-end" style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em;">Amount / Tariff Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${selected.fees.map(f => `
+                  <tr style="border-bottom:1px solid var(--bs-border-color);">
+                    <td class="py-3 ps-3 fw-medium">${f.head}</td>
+                    <td class="py-3 pe-3 text-end fw-bold text-primary font-mono">${f.amount}</td>
+                  </tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>` : ''}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── TAB 10: NAMMA METRO SOCIAL MEDIA FEED ────────────────────
+function renderSocialFeedTab(state, lang) {
+  setTimeout(() => {
+    if (window.twttr?.widgets) window.twttr.widgets.load();
+  }, 120);
+
+  return `
+  <div class="row g-4 text-start">
+    <div class="col-lg-5">
+      <div class="d-flex flex-column gap-3">
+        <div class="nb-card p-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:48px; height:48px; font-size:1.4rem;">
+              <i class="bi bi-share-fill"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-0" style="font-size:1.05rem;">Namma Metro (BMRCL)</h5>
+              <div class="text-secondary" style="font-size:0.8rem;">Official Public Social Media Suite</div>
+            </div>
+          </div>
+          <p class="text-secondary mb-4" style="font-size:0.85rem; line-height:1.6;">
+            Connect directly with verified official social media accounts, emergency broadcasts, and direct helpdesk channels for Namma Metro.
+          </p>
+
+          <div class="d-flex flex-column gap-2">
+            <a href="https://x.com/OfficialBMRCL" target="_blank" rel="noopener" class="p-3 border rounded-3 text-decoration-none text-body hover-bg-tertiary d-flex align-items-center justify-content-between transition-all">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle bg-dark text-white d-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="bi bi-twitter-x"></i></div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.88rem;">Official X (Twitter) Feed</div>
+                  <div class="text-secondary" style="font-size:0.75rem;">@OfficialBMRCL</div>
+                </div>
+              </div>
+              <i class="bi bi-chevron-right text-secondary"></i>
+            </a>
+
+            <a href="https://wa.me/918105556677?text=Hi" target="_blank" rel="noopener" class="p-3 border rounded-3 text-decoration-none text-body hover-bg-tertiary d-flex align-items-center justify-content-between transition-all">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="bi bi-whatsapp"></i></div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.88rem;">Official WhatsApp Helpdesk</div>
+                  <div class="text-secondary" style="font-size:0.75rem;">+91 81055 56677</div>
+                </div>
+              </div>
+              <i class="bi bi-chevron-right text-secondary"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@BMRCL" target="_blank" rel="noopener" class="p-3 border rounded-3 text-decoration-none text-body hover-bg-tertiary d-flex align-items-center justify-content-between transition-all">
+              <div class="d-flex align-items-center gap-3">
+                <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="bi bi-youtube"></i></div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.88rem;">Official YouTube Channel</div>
+                  <div class="text-secondary" style="font-size:0.75rem;">@BMRCL Official</div>
+                </div>
+              </div>
+              <i class="bi bi-chevron-right text-secondary"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="nb-card p-4">
+        <div class="d-flex align-items-center justify-content-between border-bottom pb-3 mb-3">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-twitter-x text-primary fs-5"></i>
+            <h5 class="fw-bold mb-0" style="font-size:1rem;">Live Official X Feed (@OfficialBMRCL)</h5>
+          </div>
+          <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Verified Account</span>
+        </div>
+        <div class="overflow-y-auto pe-1" style="max-height: 600px;">
+          <a class="twitter-timeline" data-height="580" data-theme="${document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'dark' : 'light'}" href="https://twitter.com/OfficialBMRCL?ref_src=twsrc%5Etfw">
+            Loading official tweets from @OfficialBMRCL...
+          </a>
         </div>
       </div>
     </div>

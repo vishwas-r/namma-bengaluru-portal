@@ -70,8 +70,8 @@
     }
   ],
   "groupDiscounts": [
-    { "groupSize": "10 to 99 Passengers", "discount": "15% Off Token Fare" },
-    { "groupSize": "100 to 999 Passengers", "discount": "20% Off Token Fare" },
-    { "groupSize": "1000+ Passengers", "discount": "25% Off Token Fare" }
+    { "groupSize": "10 to 99 Passengers", "discount": "15% Off Token Fare", "description": "Discount applied on single paper/QR group ticket for groups of 10 to 99 commuters traveling together." },
+    { "groupSize": "100 to 999 Passengers", "discount": "20% Off Token Fare", "description": "Discount for medium-sized organized tours, school trips, and bulk event bookings." },
+    { "groupSize": "1000+ Passengers", "discount": "25% Off Token Fare", "description": "Maximum bulk discount tier for large corporate, convention, or event travel." }
   ]
 }

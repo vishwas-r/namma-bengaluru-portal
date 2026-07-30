@@ -73,11 +73,11 @@ export function renderBWSSBPage(dept, state, lang) {
   <!-- Sticky Mobile Department Bar (Visible on Mobile/Tablet only) -->
   <div class="d-lg-none bg-body border-bottom py-2 px-3 shadow-2xs sticky-top" style="top: 56px; z-index: 1010;">
     <div class="d-flex align-items-center justify-content-between gap-2">
-      <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary fw-semibold rounded-pill px-3 py-1.5 d-inline-flex align-items-center gap-2" style="font-size:0.82rem;">
+      <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary fw-semibold rounded-pill px-3 py-2 d-inline-flex align-items-center gap-2" style="font-size:0.82rem;">
         <i class="bi bi-list fs-5"></i>
         <span>${dept.name} Menu</span>
       </button>
-      <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1.5" style="font-size:0.75rem;">
+      <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2" style="font-size:0.75rem;">
         <i class="bi bi-folder2-open me-1"></i>${activeTabName}
       </span>
     </div>
@@ -1207,8 +1207,8 @@ export function renderEscalation(state) {
     <div class="nb-card">
       <div class="nb-card-header d-flex align-items-center justify-content-between flex-wrap gap-2">
         <div class="fw-bold display-font" style="font-size:1.05rem;"><i class="bi bi-geo-alt-fill text-primary me-2"></i>BWSSB Service Stations, Sub-Divisions & Division Directory</div>
-        <a href="${directoryData.serviceStationsOfficialUrl || 'https://bwssb.karnataka.gov.in/7/service-station/en'}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary fw-semibold px-3 py-1.5" style="font-size:0.78rem;">
-          <i class="bi bi-box-arrow-up-right me-1.5"></i>BWSSB Service Station Directory
+        <a href="${directoryData.serviceStationsOfficialUrl || 'https://bwssb.karnataka.gov.in/7/service-station/en'}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary fw-semibold px-3 py-2" style="font-size:0.78rem;">
+          <i class="bi bi-box-arrow-up-right me-2"></i>BWSSB Service Station Directory
         </a>
       </div>
       <div class="nb-card-body p-4">
@@ -1217,7 +1217,7 @@ export function renderEscalation(state) {
         <div class="mb-4">
           <div class="input-group">
             <span class="input-group-text bg-body-tertiary border-end-0 ps-3 text-secondary"><i class="bi bi-search"></i></span>
-            <input type="text" id="bwssbDirSearch" class="form-control border-start-0 py-2.5 ps-1" placeholder="Search by area, station name, AEE/EE name or phone number..." oninput="window.__filterBwssbDir()" style="font-size:0.88rem;" />
+            <input type="text" id="bwssbDirSearch" class="form-control border-start-0 py-3 ps-1" placeholder="Search by area, station name, AEE/EE name or phone number..." oninput="window.__filterBwssbDir()" style="font-size:0.88rem;" />
           </div>
         </div>
 
@@ -1231,7 +1231,7 @@ export function renderEscalation(state) {
               <div class="p-3 bg-body-tertiary border-bottom d-flex align-items-center justify-content-between">
                 <div>
                   <h6 class="fw-bold mb-0 text-primary" style="font-size:0.95rem;">${z.name}</h6>
-                  <div class="text-secondary mt-0.5" style="font-size:0.75rem;">${z.subDivisions.length} Sub-Divisions · ${z.subDivisions.reduce((acc, curr) => acc + curr.stations.length, 0)} Service Stations</div>
+                  <div class="text-secondary mt-1" style="font-size:0.75rem;">${z.subDivisions.length} Sub-Divisions · ${z.subDivisions.reduce((acc, curr) => acc + curr.stations.length, 0)} Service Stations</div>
                 </div>
                 <span class="badge bg-primary-subtle text-primary border border-primary-subtle" style="font-size:0.7rem;">Division EE Office</span>
               </div>
@@ -1241,7 +1241,7 @@ export function renderEscalation(state) {
                 ${z.ee ? `
                 <div class="p-3 mb-3 bg-primary-subtle bg-opacity-10 border border-primary-subtle rounded-3">
                   <div class="d-flex align-items-center justify-content-between mb-1">
-                    <span class="fw-bold text-body" style="font-size:0.85rem;"><i class="bi bi-person-badge text-primary me-1.5"></i>EE: ${z.ee.name}</span>
+                    <span class="fw-bold text-body" style="font-size:0.85rem;"><i class="bi bi-person-badge text-primary me-2"></i>EE: ${z.ee.name}</span>
                     <span class="badge bg-primary text-white" style="font-size:0.65rem;">Executive Engineer</span>
                   </div>
                   <div class="text-secondary mb-2" style="font-size:0.78rem;">${z.ee.address}</div>
@@ -1257,7 +1257,7 @@ export function renderEscalation(state) {
                   ${z.subDivisions.map(sd => `
                   <div class="p-3 border rounded-3 bg-body-tertiary">
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                      <span class="fw-bold text-dark" style="font-size:0.85rem;"><i class="bi bi-diagram-2 text-warning me-1.5"></i>Sub-Division: ${sd.code}</span>
+                      <span class="fw-bold text-dark" style="font-size:0.85rem;"><i class="bi bi-diagram-2 text-warning me-2"></i>Sub-Division: ${sd.code}</span>
                       <span class="badge bg-warning-subtle text-warning border border-warning-subtle" style="font-size:0.68rem;">AEE Office</span>
                     </div>
                     ${sd.aee ? `
@@ -1274,18 +1274,18 @@ export function renderEscalation(state) {
                       <table class="table table-sm align-middle mb-0" style="font-size:0.78rem;">
                         <thead class="table-light">
                           <tr>
-                            <th class="py-1.5 ps-2">Service Station</th>
-                            <th class="py-1.5">AE / JE Contact</th>
-                            <th class="py-1.5 pe-2 text-end">Phone / Mobile</th>
+                            <th class="py-2 ps-2">Service Station</th>
+                            <th class="py-2">AE / JE Contact</th>
+                            <th class="py-2 pe-2 text-end">Phone / Mobile</th>
                           </tr>
                         </thead>
                         <tbody>
                           ${sd.stations.map(st => `
                           <tr>
-                            <td class="ps-2 py-1.5 fw-semibold text-body">${st.name}</td>
-                            <td class="py-1.5 text-secondary">${st.contact || 'On-Duty Engineer'}</td>
-                            <td class="pe-2 py-1.5 text-end text-nowrap">
-                              ${st.mobile ? `<a href="tel:${st.mobile}" class="text-decoration-none fw-bold text-success me-1"><i class="bi bi-phone me-0.5"></i>${st.mobile}</a>` : ''}
+                            <td class="ps-2 py-2 fw-semibold text-body">${st.name}</td>
+                            <td class="py-2 text-secondary">${st.contact || 'On-Duty Engineer'}</td>
+                            <td class="pe-2 py-2 text-end text-nowrap">
+                              ${st.mobile ? `<a href="tel:${st.mobile}" class="text-decoration-none fw-bold text-success me-1"><i class="bi bi-phone me-1"></i>${st.mobile}</a>` : ''}
                               ${st.officePhone && st.officePhone !== '—' ? `<span class="text-secondary ms-1" style="font-size:0.72rem;">(${st.officePhone})</span>` : ''}
                             </td>
                           </tr>`).join('')}

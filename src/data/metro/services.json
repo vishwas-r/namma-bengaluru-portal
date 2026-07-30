@@ -1,0 +1,117 @@
+{
+  "services": [
+    {
+      "id": "smart-card-ncmc",
+      "title": "NCMC Smart Card Purchase & Top-Up",
+      "badge": "5% Fare Discount",
+      "sla": "Instant / Same Day",
+      "officialPortalName": "BMRCL Smart Card Portal",
+      "onlineLink": "https://www.bmrc.co.in/tickets/",
+      "description": "Get a National Common Mobility Card (NCMC) or Namma Metro Smart Card for seamless tap-and-go travel across all 3 operational metro lines and BMTC buses.",
+      "documents": [
+        { "name": "Govt Photo ID (Aadhaar / Voter ID / DL)", "required": false, "note": "Required only if purchasing personalized NCMC card at SBI / Canara Bank kiosks." },
+        { "name": "Initial Cash / Digital Payment (₹50 Deposit + Top-Up)", "required": true, "note": "₹50 refundable deposit + minimum ₹50 initial balance." }
+      ],
+      "steps": [
+        { "step": 1, "title": "Visit Customer Care Counter", "details": "Walk up to the Customer Care desk at any Namma Metro station across Purple, Green, or Yellow lines." },
+        { "step": 2, "title": "Pay Deposit & Initial Balance", "details": "Pay ₹50 refundable deposit plus desired initial balance (minimum ₹50, maximum ₹3,000)." },
+        { "step": 3, "title": "Top-Up Online", "details": "Recharge anytime via Namma Metro App, Paytm, PhonePe, Google Pay, or bmrc.co.in.", "link": "https://www.bmrc.co.in/tickets/" },
+        { "step": 4, "title": "Tap & Travel with 5% Discount", "details": "Tap card at AFC turnstile gates. 5% discount is automatically deducted from standard token fare." }
+      ],
+      "fees": [
+        { "head": "Refundable Security Deposit", "amount": "₹50 (Cash refundable on surrender)" },
+        { "head": "Minimum Top-Up", "amount": "₹50" },
+        { "head": "Maximum Stored Value", "amount": "₹3,000" }
+      ]
+    },
+    {
+      "id": "whatsapp-qr-ticket",
+      "title": "WhatsApp QR Ticket Booking (+91 81055 56677)",
+      "badge": "5% QR Discount",
+      "sla": "30 Seconds",
+      "officialPortalName": "BMRCL Official WhatsApp",
+      "onlineLink": "https://wa.me/918105556677?text=Hi",
+      "description": "Book single journey digital QR tickets directly inside WhatsApp without downloading any app or standing in station token queues.",
+      "documents": [
+        { "name": "Active WhatsApp Account", "required": true, "note": "Message official number +91 81055 56677." },
+        { "name": "UPI Payment App (PhonePe, GPay, Paytm)", "required": true, "note": "For instant 1-click payment." }
+      ],
+      "steps": [
+        { "step": 1, "title": "Save BMRCL WhatsApp Number", "details": "Save official BMRCL WhatsApp bot number +91 81055 56677 in your phone contacts." },
+        { "step": 2, "title": "Send 'Hi' in Chat", "details": "Open WhatsApp and send 'Hi' or 'Namaskara' to start instant booking process.", "link": "https://wa.me/918105556677?text=Hi" },
+        { "step": 3, "title": "Select Journey & Passengers", "details": "Choose 'QR Ticket', select your Origin and Destination stations, and passenger count." },
+        { "step": 4, "title": "Pay & Receive QR Ticket", "details": "Pay via UPI. Your valid QR ticket is delivered right in the chat to scan at AFC turnstiles." }
+      ],
+      "fees": [
+        { "head": "Booking Convenience Charge", "amount": "₹0 (FREE)" },
+        { "head": "Discount Offered", "amount": "5% off standard token fare" }
+      ]
+    },
+    {
+      "id": "mobile-app-ticket",
+      "title": "Paytm & Namma Metro App QR Tickets",
+      "badge": "Digital Ticket",
+      "sla": "1 Minute",
+      "officialPortalName": "Namma Metro Android App",
+      "onlineLink": "https://play.google.com/store/apps/details?id=com.aum.nammametro",
+      "description": "Book digital QR tickets for individual or group travel (up to 6 passengers) via Namma Metro Official App or Paytm.",
+      "documents": [
+        { "name": "Namma Metro App or Paytm App", "required": true, "note": "Available on Google Play Store." }
+      ],
+      "steps": [
+        { "step": 1, "title": "Download & Open App", "details": "Open Namma Metro Official App or Paytm App ➔ Navigate to Metro ➔ Bengaluru Metro.", "link": "https://play.google.com/store/apps/details?id=com.aum.nammametro" },
+        { "step": 2, "title": "Select Route & Tickets", "details": "Select Origin & Destination stations and number of passengers (1 to 6)." },
+        { "step": 3, "title": "Complete Online Payment", "details": "Pay securely using UPI, Paytm Wallet, Debit/Credit Card, or Net Banking." },
+        { "step": 4, "title": "Scan QR at AFC Gate", "details": "Display QR code on mobile screen and scan at turnstile optical scanner." }
+      ],
+      "fees": [
+        { "head": "Platform Fee", "amount": "₹0 (No extra charge)" }
+      ]
+    },
+    {
+      "id": "day-pass-refund",
+      "title": "Unlimited Travel Day Passes & Cash Deposit Refund",
+      "badge": "Pass Surrender",
+      "sla": "Immediate Cash Refund",
+      "officialPortalName": "BMRCL Policy Portal",
+      "onlineLink": "https://english.bmrc.co.in/bmrcl-policies/",
+      "description": "Purchase 1-Day, 3-Day, or 5-Day unlimited travel passes and return the pass after journey completion to claim ₹50 cash refund.",
+      "documents": [
+        { "name": "Physical Day Pass Smart Card", "required": true, "note": "Must be surrendered at Customer Care." }
+      ],
+      "steps": [
+        { "step": 1, "title": "Purchase Day Pass", "details": "Buy 1-Day (₹300), 3-Day (₹600), or 5-Day (₹900) pass at Customer Care." },
+        { "step": 2, "title": "Enjoy Unlimited Metro Trips", "details": "Travel unlimited times across Purple, Green, and Yellow lines during pass validity." },
+        { "step": 3, "title": "Surrender Card & Collect ₹50", "details": "Hand over the valid pass at any Customer Care counter to instantly receive ₹50 cash deposit refund." }
+      ],
+      "fees": [
+        { "head": "1-Day Pass (Smart Card)", "amount": "₹300 (₹250 fare + ₹50 deposit)" },
+        { "head": "3-Day Pass (Smart Card)", "amount": "₹600 (₹550 fare + ₹50 deposit)" },
+        { "head": "5-Day Pass (Smart Card)", "amount": "₹900 (₹850 fare + ₹50 deposit)" }
+      ]
+    },
+    {
+      "id": "group-booking",
+      "title": "Bulk Group Ticket Booking (10+ Passengers)",
+      "badge": "Up to 25% Off",
+      "sla": "7 Days Advance",
+      "officialPortalName": "BMRCL Contact Portal",
+      "onlineLink": "https://english.bmrc.co.in/contact/",
+      "description": "Organized school tours, corporate events, and large travel groups (10 to 1000+ commuters) can get bulk discounted group tickets.",
+      "documents": [
+        { "name": "Written Application / Request Letter", "required": true, "note": "Stating travel date, origin, destination, and passenger count." },
+        { "name": "Passenger Commuter List", "required": true, "note": "List of commuter names for security clearance." }
+      ],
+      "steps": [
+        { "step": 1, "title": "Submit Advance Application", "details": "Submit written request to BMRCL at least 7 days prior to travel date." },
+        { "step": 2, "title": "Get Bulk Discount Approval", "details": "Receive 15% discount (10-99 pax), 20% discount (100-999 pax), or 25% discount (1000+ pax)." },
+        { "step": 3, "title": "Collect Group Ticket", "details": "Pay approved bulk fare and collect consolidated single group ticket for easy gate passage." }
+      ],
+      "fees": [
+        { "head": "10 to 99 Passengers", "amount": "15% discount on token fare" },
+        { "head": "100 to 999 Passengers", "amount": "20% discount on token fare" },
+        { "head": "1000+ Passengers", "amount": "25% discount on token fare" }
+      ]
+    }
+  ]
+}

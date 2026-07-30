@@ -34,22 +34,36 @@ export function calculateMetroJourney(sourceId, destId) {
     };
   }
 
-  const purpleStations = stationsData.filter(s => s.line === 'purple');
-  const greenStations = stationsData.filter(s => s.line === 'green');
-  const yellowStations = stationsData.filter(s => s.line === 'yellow');
+  // Green line sequence with Majestic interchange inserted at correct station position
+  const greenLineSeq = [];
+  for (const s of stationsData) {
+    if (s.line === 'green') {
+      greenLineSeq.push(s);
+      if (s.id === 'mantri-square-sampige-road') {
+        const maj = stationsData.find(st => st.id === 'majestic');
+        if (maj && !greenLineSeq.some(st => st.id === 'majestic')) {
+          greenLineSeq.push(maj);
+        }
+      }
+    }
+  }
+  const purpleLineSeq = stationsData.filter(s => s.line === 'purple');
+  const yellowLineSeq = stationsData.filter(s => s.line === 'yellow');
 
   let requiresInterchange = false;
   let interchangeStationName = null;
   let stationsList = [];
 
+  const srcSeq = source.line === 'green' ? greenLineSeq : source.line === 'yellow' ? yellowLineSeq : purpleLineSeq;
+  const dstSeq = dest.line === 'green' ? greenLineSeq : dest.line === 'yellow' ? yellowLineSeq : purpleLineSeq;
+
   if (source.line === dest.line) {
     // Same Line Journey
-    const lineArr = stationsData.filter(s => s.line === source.line);
-    const idx1 = lineArr.findIndex(s => s.id === source.id);
-    const idx2 = lineArr.findIndex(s => s.id === dest.id);
+    const idx1 = srcSeq.findIndex(s => s.id === source.id);
+    const idx2 = srcSeq.findIndex(s => s.id === dest.id);
     const startIdx = Math.min(idx1, idx2);
     const endIdx = Math.max(idx1, idx2);
-    stationsList = lineArr.slice(startIdx, endIdx + 1);
+    stationsList = srcSeq.slice(startIdx, endIdx + 1);
     if (idx1 > idx2) stationsList.reverse();
   } else {
     // Cross Line Journey via Interchange
@@ -62,21 +76,19 @@ export function calculateMetroJourney(sourceId, destId) {
     interchangeStationName = interchangeStation ? interchangeStation.name : 'Nadaprabhu Kempegowda Station Majestic';
 
     // Path 1: Source to Interchange
-    const lineArr1 = stationsData.filter(s => s.line === source.line);
-    const idx1 = lineArr1.findIndex(s => s.id === source.id);
-    const idxInt1 = lineArr1.findIndex(s => s.id === interchangeId || s.isInterchange);
+    const idx1 = srcSeq.findIndex(s => s.id === source.id);
+    const idxInt1 = srcSeq.findIndex(s => s.id === interchangeId);
     const startIdx1 = Math.min(idx1, idxInt1 >= 0 ? idxInt1 : 0);
     const endIdx1 = Math.max(idx1, idxInt1 >= 0 ? idxInt1 : 0);
-    let path1 = lineArr1.slice(startIdx1, endIdx1 + 1);
+    let path1 = srcSeq.slice(startIdx1, endIdx1 + 1);
     if (idx1 > idxInt1) path1.reverse();
 
     // Path 2: Interchange to Destination
-    const lineArr2 = stationsData.filter(s => s.line === dest.line);
-    const idxInt2 = lineArr2.findIndex(s => s.id === interchangeId || s.isInterchange);
-    const idx2 = lineArr2.findIndex(s => s.id === dest.id);
+    const idxInt2 = dstSeq.findIndex(s => s.id === interchangeId);
+    const idx2 = dstSeq.findIndex(s => s.id === dest.id);
     const startIdx2 = Math.min(idxInt2 >= 0 ? idxInt2 : 0, idx2);
     const endIdx2 = Math.max(idxInt2 >= 0 ? idxInt2 : 0, idx2);
-    let path2 = lineArr2.slice(startIdx2, endIdx2 + 1);
+    let path2 = dstSeq.slice(startIdx2, endIdx2 + 1);
     if (idxInt2 > idx2) path2.reverse();
 
     // Combine paths avoiding duplicate interchange station
@@ -84,9 +96,8 @@ export function calculateMetroJourney(sourceId, destId) {
   }
 
   const stationCount = Math.max(1, stationsList.length - 1);
-  const effectiveCount = stationCount + (requiresInterchange ? Math.max(5, Math.round(stationCount * 0.5)) : 0);
-  const fareObj = getFareForStationCount(effectiveCount);
-  const travelTimeMins = Math.round(stationCount * 2.2 + (requiresInterchange ? 4 : 0));
+  const fareObj = getFareForStationCount(stationCount);
+  const travelTimeMins = Math.round(stationCount * 2.1 + (requiresInterchange ? 5 : 0));
 
   const tokenFare = fareObj.tokenFare;
   const peakCscFare = fareObj.peakCscFare || Number((tokenFare * 0.95).toFixed(2));
@@ -97,6 +108,7 @@ export function calculateMetroJourney(sourceId, destId) {
     source,
     dest,
     stationCount,
+    intermediateStations: stationCount - 1,
     tokenFare,
     peakCscFare,
     nonPeakCscFare,
@@ -110,16 +122,6 @@ export function calculateMetroJourney(sourceId, destId) {
     googleMapsDirUrl: getGoogleMapsTransitDirUrl(source.name, dest.name),
     googleMapsEmbedUrl: getGoogleMapsEmbedUrl(dest.googleQuery || dest.name + ' Metro Station Bengaluru')
   };
-}
-
-/**
- * Gets fare slab for a given station count
- */
-export function getFareForStationCount(count) {
-  const slab = faresData.fareSlabs.find(s => count >= s.minStations && count <= s.maxStations);
-  if (slab) return slab;
-  // Fallback to highest slab
-  return faresData.fareSlabs[faresData.fareSlabs.length - 1];
 }
 
 /**
@@ -140,53 +142,69 @@ export function getGoogleMapsStationUrl(stationQuery) {
 }
 
 /**
- * Direct Live API Fetch from Official BMRCL Fare Endpoint:
- * POST https://www.bmrc.co.in:8282/api/users/fare/get-fare-details
+ * Gets fare slab for a given station count
+ */
+export function getFareForStationCount(count) {
+  const slab = faresData.fareSlabs.find(s => count >= s.minStations && count <= s.maxStations);
+  if (slab) return slab;
+  return faresData.fareSlabs[faresData.fareSlabs.length - 1];
+}
+
+function getYoInfraSlug(name) {
+  let s = name.toLowerCase()
+    .replace(/station/gi, '')
+    .replace(/\(.*?\)/g, '')
+    .replace(/dr\.|sir m\.|kr /gi, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+  if (name.includes('Majestic')) s = 'nadaprabhu-kempegowda';
+  if (name.includes('Vidhana Soudha')) s = 'dr-br-ambedkar-vidhana-soudha';
+  if (name.includes('Central College')) s = 'sir-m-visveshwaraya-station';
+  if (name.includes('Indiranagar')) s = 'indiranagara';
+  if (name.includes('Halasuru')) s = 'halasuru';
+  if (name.includes('Yeshwanthpur')) s = 'yeshwanthpura';
+  if (name.includes('Rajajinagar')) s = 'rajajinagara';
+  if (name.includes('Market')) s = 'krishna-rajendra-market';
+  return `${s}-metro-station-bangalore`;
+}
+
+/**
+ * Live API Fetch from yoinfra.com (CORS enabled)
  */
 export async function fetchOfficialMetroFare(fromStationInput, toStationInput) {
   const fromStation = typeof fromStationInput === 'string' ? getStationById(fromStationInput) : fromStationInput;
   const toStation = typeof toStationInput === 'string' ? getStationById(toStationInput) : toStationInput;
 
-  if (!fromStation?.code || !toStation?.code) return null;
-
-  const fromGroupId = String(fromStation.lineId || (fromStation.line === 'purple' ? 1 : fromStation.line === 'green' ? 2 : 3));
-  const toGroupId = String(toStation.lineId || (toStation.line === 'purple' ? 1 : toStation.line === 'green' ? 2 : 3));
-
-  const payload = {
-    from: { value: fromStation.code, groupId: fromGroupId },
-    to: { value: toStation.code, groupId: toGroupId }
-  };
-
-  const defaultApiUrl = 'https://dev.csultimates.com/namma-bengaluru-api.php?endpoint=namma-metro-fare';
-  const customProxy = window.CUSTOM_PROXY_URL || (import.meta && import.meta.env && import.meta.env.VITE_CUSTOM_PROXY_URL);
-  const endpoint = customProxy
-    ? (customProxy.includes('?') ? `${customProxy}&endpoint=namma-metro-fare` : `${customProxy}?endpoint=namma-metro-fare`)
-    : defaultApiUrl;
+  if (!fromStation?.name || !toStation?.name) return null;
 
   try {
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
+    const slug = `from-${getYoInfraSlug(fromStation.name)}-to-${getYoInfraSlug(toStation.name)}`;
+    const url = `https://yoinfra.com/api/route?slug=${encodeURIComponent(slug)}`;
 
+    const res = await fetch(url);
     if (res.ok) {
       const data = await res.json();
-      if (data && (data.success === true || data.success === 'success') && data.results) {
+      if (data && data.status === 'success' && data.route_custom) {
+        const rc = data.route_custom;
+        const normalFare = Number(rc.normal_fare);
+        const smartCardFare = Number(rc.smart_card_fare);
+
         return {
-          tokenFare: data.results.TValue,
-          smartCardFare: data.results.CSCValue,
-          peakSmartCardFare: data.results.PeakCSCValue,
-          groupFare: data.results.GTValue,
-          fareZone: data.results.FareZone || 'F8',
-          twoWheelerSlots: data.results.vTwoWheeler,
-          fourWheelerSlots: data.results.vFourWheeler,
+          tokenFare: normalFare,
+          smartCardFare: smartCardFare,
+          peakSmartCardFare: Number((normalFare * 0.95).toFixed(2)),
+          nonPeakCscFare: smartCardFare,
+          groupFare: Number((normalFare * 0.85).toFixed(2)),
+          totalDistance: rc.total_distance || null,
+          totalTime: rc.total_time || null,
+          stationCount: rc.station_count || null,
           isOfficialApi: true
         };
       }
     }
   } catch (err) {
-    console.warn('Live fare API fetch failed, falling back to local engine:', err);
+    console.warn('Live yoinfra fare fetch failed, using local engine:', err);
   }
 
   return null;
