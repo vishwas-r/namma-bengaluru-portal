@@ -33,9 +33,9 @@
       "fourWheelerSlots": 30
     },
     "lat": 12.9079,
-    "lng": 77.4764,
+    "lng": 77.4765,
     "latitude": 12.9079,
-    "longitude": 77.4764
+    "longitude": 77.4765
   },
   {
     "id": "kengeri-bus-terminal",
@@ -284,10 +284,10 @@
       "twoWheelerSlots": 500,
       "fourWheelerSlots": 80
     },
-    "lat": 12.9781,
-    "lng": 77.5726,
-    "latitude": 12.9781,
-    "longitude": 77.5726
+    "lat": 12.975712,
+    "lng": 77.572352,
+    "latitude": 12.975712,
+    "longitude": 77.572352
   },
   {
     "id": "sir-m-visvesvaraya-station",
@@ -685,8 +685,8 @@
     "kannadaName": "ಮಾದಾವರ (ಬಿಐಇಸಿ)",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0619,
-    "lng": 77.4789,
+    "lat": 13.057505,
+    "lng": 77.47279,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 280,
@@ -708,8 +708,8 @@
     "googleQuery": "Madavara BIEC Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "BIEC Exhibition Centre, Madanayakahalli, Bengaluru International Exhibition Centre, Bengaluru 560073",
-    "latitude": 13.0619,
-    "longitude": 77.4789
+    "latitude": 13.057505,
+    "longitude": 77.47279
   },
   {
     "id": "chikkabidarakallu",
@@ -718,8 +718,8 @@
     "kannadaName": "ಚಿಕ್ಕಬಿದರಕಲ್ಲು",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0531,
-    "lng": 77.4912,
+    "lat": 13.052422,
+    "lng": 77.487856,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 355,
@@ -740,8 +740,8 @@
     "googleQuery": "Chikkabidarakallu Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Chikkabidarakallu Area, Bengaluru",
-    "latitude": 13.0531,
-    "longitude": 77.4912
+    "latitude": 13.052422,
+    "longitude": 77.487856
   },
   {
     "id": "manjunathanagar",
@@ -750,8 +750,8 @@
     "kannadaName": "ಮಂಜುನಾಥನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0422,
-    "lng": 77.5028,
+    "lat": 13.050325,
+    "lng": 77.494165,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 75,
@@ -772,8 +772,8 @@
     "googleQuery": "Manjunathanagar Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Manjunathanagar Area, Bengaluru",
-    "latitude": 13.0422,
-    "longitude": 77.5028
+    "latitude": 13.050325,
+    "longitude": 77.494165
   },
   {
     "id": "nagasandra",
@@ -782,8 +782,8 @@
     "kannadaName": "ನಾಗಸಂದ್ರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0319,
-    "lng": 77.5074,
+    "lat": 13.048085,
+    "lng": 77.499648,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 274,
@@ -805,8 +805,8 @@
     "googleQuery": "Nagasandra Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "MS Ramaiah Enclave, Havanur Layout, Rukmini Nagar, Bagalakunte, IKEA Bengaluru, Bengaluru 560073",
-    "latitude": 13.0319,
-    "longitude": 77.5074
+    "latitude": 13.048085,
+    "longitude": 77.499648
   },
   {
     "id": "dasarahalli",
@@ -815,8 +815,8 @@
     "kannadaName": "ದಾಸರಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0234,
-    "lng": 77.5146,
+    "lat": 13.043605,
+    "lng": 77.512208,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 205,
@@ -837,8 +837,8 @@
     "googleQuery": "Dasarahalli Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Kempegowdanagar, Kalahasti Nagar, Vidya Nagar, Raitha Market, T. Dasarahalli, Bengaluru 560058",
-    "latitude": 13.0234,
-    "longitude": 77.5146
+    "latitude": 13.043605,
+    "longitude": 77.512208
   },
   {
     "id": "jalahalli",
@@ -847,8 +847,8 @@
     "kannadaName": "ಜಾಲಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0161,
-    "lng": 77.5218,
+    "lat": 13.039727,
+    "lng": 77.518811,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 120,
@@ -869,8 +869,8 @@
     "googleQuery": "Jalahalli Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Chokkasandra, Rockline Cinemas, Phase 1 Peenya, Mangaluru Highway, Bengaluru 560058",
-    "latitude": 13.0161,
-    "longitude": 77.5218
+    "latitude": 13.039727,
+    "longitude": 77.518811
   },
   {
     "id": "peenya-industry",
@@ -879,8 +879,8 @@
     "kannadaName": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0078,
-    "lng": 77.5284,
+    "lat": 13.03648,
+    "lng": 77.525304,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 380,
@@ -901,8 +901,8 @@
     "googleQuery": "Peenya Industry Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Peenya Industrial Area, 2nd Stage, NTTF, Peenya, Bengaluru 560058",
-    "latitude": 13.0078,
-    "longitude": 77.5284
+    "latitude": 13.03648,
+    "longitude": 77.525304
   },
   {
     "id": "peenya",
@@ -911,8 +911,8 @@
     "kannadaName": "ಪೀಣ್ಯ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0016,
-    "lng": 77.5342,
+    "lat": 13.032893,
+    "lng": 77.533343,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 225,
@@ -933,8 +933,8 @@
     "googleQuery": "Peenya Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Peenya 1st Stage, TVS Cross, SRS Bus Stop, Peenya Industrial Estate, Bengaluru 560058",
-    "latitude": 13.0016,
-    "longitude": 77.5342
+    "latitude": 13.032893,
+    "longitude": 77.533343
   },
   {
     "id": "goraguntepalya",
@@ -943,8 +943,8 @@
     "kannadaName": "ಗೊರಗುಂಟೆಪಾಳ್ಯ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9972,
-    "lng": 77.5414,
+    "lat": 13.028528,
+    "lng": 77.540881,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 350,
@@ -966,8 +966,8 @@
     "googleQuery": "Goraguntepalya Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Peenya Industrial Area, Mohan Kumar Nagar, Yeshwanthpur, Goraguntepalya, Bengaluru 560022",
-    "latitude": 12.9972,
-    "longitude": 77.5414
+    "latitude": 13.028528,
+    "longitude": 77.540881
   },
   {
     "id": "yeshwanthpur",
@@ -976,8 +976,8 @@
     "kannadaName": "ಯಶವಂತಪುರ ರೈಲ್ವೆ ನಿಲ್ದಾಣ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9931,
-    "lng": 77.5492,
+    "lat": 13.023428,
+    "lng": 77.549873,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 800,
@@ -998,8 +998,8 @@
     "googleQuery": "Yeshwanthpur Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Yeshwanthpur Railway Station, APMC Market, Rajajinagar, Yeshwanthpur Industrial Area, Bengaluru 560022",
-    "latitude": 12.9931,
-    "longitude": 77.5492
+    "latitude": 13.023428,
+    "longitude": 77.549873
   },
   {
     "id": "sandal-soap-factory",
@@ -1008,8 +1008,8 @@
     "kannadaName": "ಸ್ಯಾಂಡಲ್ ಸೋಪ್ ಫ್ಯಾಕ್ಟರಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9896,
-    "lng": 77.5546,
+    "lat": 13.0076,
+    "lng": 77.5539,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 311,
@@ -1030,8 +1030,8 @@
     "googleQuery": "Sandal Soap Factory Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Karnataka Soaps & Detergents (KSDL), Yeshwanthpur TTMC, Orion Mall, Bengaluru 560055",
-    "latitude": 12.9896,
-    "longitude": 77.5546
+    "latitude": 13.0076,
+    "longitude": 77.5539
   },
   {
     "id": "mahalakshmi",
@@ -1040,8 +1040,8 @@
     "kannadaName": "ಮಹಾಲಕ್ಷ್ಮಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9858,
-    "lng": 77.5589,
+    "lat": 13.008331,
+    "lng": 77.548739,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 225,
@@ -1062,8 +1062,8 @@
     "googleQuery": "Mahalakshmi Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Orion Mall, Subramanyanagar, ISKCON Temple, Chord Road, Mahalakshmi Layout, Bengaluru 560086",
-    "latitude": 12.9858,
-    "longitude": 77.5589
+    "latitude": 13.008331,
+    "longitude": 77.548739
   },
   {
     "id": "rajajinagar",
@@ -1072,8 +1072,8 @@
     "kannadaName": "ರಾಜಾಜಿನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9812,
-    "lng": 77.5594,
+    "lat": 13.000414,
+    "lng": 77.54989,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 165,
@@ -1094,8 +1094,8 @@
     "googleQuery": "Rajajinagar Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Rajajinagar 1st Block, Navrang Theatre, ESI Hospital, Chord Road, Bengaluru 560010",
-    "latitude": 12.9812,
-    "longitude": 77.5594
+    "latitude": 13.000414,
+    "longitude": 77.54989
   },
   {
     "id": "kuvempu-road",
@@ -1104,8 +1104,8 @@
     "kannadaName": "ಕುವೆಂಪು ರಸ್ತೆ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9784,
-    "lng": 77.5601,
+    "lat": 12.998585,
+    "lng": 77.557178,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 60,
@@ -1126,8 +1126,8 @@
     "googleQuery": "Kuvempu Road Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Gayatrinagar, Rajajinagar 1st Block, Srirampura, Malleshwaram, Bengaluru 560021",
-    "latitude": 12.9784,
-    "longitude": 77.5601
+    "latitude": 12.998585,
+    "longitude": 77.557178
   },
   {
     "id": "srirampura",
@@ -1136,8 +1136,8 @@
     "kannadaName": "ಶ್ರೀರಾಮ್‌ಪುರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9761,
-    "lng": 77.5629,
+    "lat": 12.996476,
+    "lng": 77.563239,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 73,
@@ -1158,8 +1158,8 @@
     "googleQuery": "Srirampura Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Srirampura, Malleshwaram 8th Main, Harishchandra Ghat, Bengaluru 560021",
-    "latitude": 12.9761,
-    "longitude": 77.5629
+    "latitude": 12.996476,
+    "longitude": 77.563239
   },
   {
     "id": "mantri-square-sampige-road",
@@ -1168,8 +1168,8 @@
     "kannadaName": "ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್ ಸಂಪಿಗೆ ರಸ್ತೆ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9906,
-    "lng": 77.5714,
+    "lat": 12.990504,
+    "lng": 77.570432,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 750,
@@ -1189,7 +1189,9 @@
     ],
     "googleQuery": "Mantri Square Sampige Road Metro Station Bengaluru",
     "lineId": 2,
-    "neighborhood": "Mantri Square Sampige Road Area, Bengaluru"
+    "neighborhood": "Mantri Square Sampige Road Area, Bengaluru",
+    "latitude": 12.990504,
+    "longitude": 77.570432
   },
   {
     "id": "chickpet",
@@ -1198,8 +1200,8 @@
     "kannadaName": "ಚಿಕ್ಕಪೇಟೆ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9664,
-    "lng": 77.5746,
+    "lat": 12.967493,
+    "lng": 77.573912,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 380,
@@ -1220,8 +1222,8 @@
     "googleQuery": "Chickpet Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "KR Market, Sultanpete, Nagarathpete, Cubbonpete, Chickpet, Old Tharagupet, Bengaluru 560053",
-    "latitude": 12.9664,
-    "longitude": 77.5746
+    "latitude": 12.967493,
+    "longitude": 77.573912
   },
   {
     "id": "kr-market",
@@ -1294,8 +1296,8 @@
     "kannadaName": "ಲಾಲ್‌ಬಾಗ್",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9431,
-    "lng": 77.5802,
+    "lat": 12.946483,
+    "lng": 77.57985,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 200,
@@ -1316,8 +1318,8 @@
     "googleQuery": "Lalbagh Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Lalbagh Botanical Garden, West Gate, Mavalli, Basavanagudi, Bengaluru 560004",
-    "latitude": 12.9431,
-    "longitude": 77.5802
+    "latitude": 12.946483,
+    "longitude": 77.57985
   },
   {
     "id": "south-end-circle",
@@ -1326,8 +1328,8 @@
     "kannadaName": "ಸೌತ್ ಎಂಡ್ ಸರ್ಕಲ್",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9378,
-    "lng": 77.5806,
+    "lat": 12.938157,
+    "lng": 77.579796,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 120,
@@ -1348,8 +1350,8 @@
     "googleQuery": "South End Circle Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "South End Circle, Surana College, Basavanagudi, Jayanagar 1st Block, Bengaluru 560011",
-    "latitude": 12.9378,
-    "longitude": 77.5806
+    "latitude": 12.938157,
+    "longitude": 77.579796
   },
   {
     "id": "jayanagar",
@@ -1358,8 +1360,8 @@
     "kannadaName": "ಜಯನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9298,
-    "lng": 77.5801,
+    "lat": 12.929883,
+    "lng": 77.580066,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 330,
@@ -1380,8 +1382,8 @@
     "googleQuery": "Jayanagar Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Jayanagar 4th Block Shopping Complex, BDA Complex, Cool Joint, Bengaluru 560041",
-    "latitude": 12.9298,
-    "longitude": 77.5801
+    "latitude": 12.929883,
+    "longitude": 77.580066
   },
   {
     "id": "rv-road",
@@ -1393,8 +1395,8 @@
     "interchangeWith": [
       "yellow"
     ],
-    "lat": 12.9297,
-    "lng": 77.5627,
+    "lat": 12.921662,
+    "lng": 77.58012,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 223,
@@ -1415,8 +1417,8 @@
     "googleQuery": "RV Road Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "RV Teachers College, Lakshman Rau Boulevard, Jayanagar 2nd Block, Lalbagh South Gate, Bengaluru 560011",
-    "latitude": 12.9297,
-    "longitude": 77.5627
+    "latitude": 12.921662,
+    "longitude": 77.58012
   },
   {
     "id": "banashankari",
@@ -1425,8 +1427,8 @@
     "kannadaName": "ಬನಶಂಕರಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9248,
-    "lng": 77.5739,
+    "lat": 12.9154,
+    "lng": 77.5736,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 290,
@@ -1448,8 +1450,8 @@
     "googleQuery": "Banashankari Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Banashankari Amma Temple, TTMC Bus Station, Kanakapura Road, Sarakki Nagar, Bengaluru 560078",
-    "latitude": 12.9248,
-    "longitude": 77.5739
+    "latitude": 12.9154,
+    "longitude": 77.5736
   },
   {
     "id": "jp-nagar",
@@ -1458,8 +1460,8 @@
     "kannadaName": "ಜೆ.ಪಿ. ನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9073,
-    "lng": 77.5738,
+    "lat": 12.907466,
+    "lng": 77.573016,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 182,
@@ -1480,8 +1482,8 @@
     "googleQuery": "JP Nagar Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Ilyas Nagar, Kumaraswamy Layout, Kanakapura Road, Umarbagh Layout, J.P. Nagar, Bengaluru 560078",
-    "latitude": 12.9073,
-    "longitude": 77.5738
+    "latitude": 12.907466,
+    "longitude": 77.573016
   },
   {
     "id": "yelachenahalli",
@@ -1490,8 +1492,8 @@
     "kannadaName": "ಯಲಚೇನಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.8942,
-    "lng": 77.5735,
+    "lat": 12.895963,
+    "lng": 77.569905,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 412,
@@ -1512,8 +1514,8 @@
     "googleQuery": "Yelachenahalli Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Yelachenahalli Area, Bengaluru",
-    "latitude": 12.8942,
-    "longitude": 77.5735
+    "latitude": 12.895963,
+    "longitude": 77.569905
   },
   {
     "id": "konanakunte-cross",
@@ -1522,8 +1524,8 @@
     "kannadaName": "ಕೋಣನಕುಂಟೆ ಕ್ರಾಸ್",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.8809,
-    "lng": 77.5694,
+    "lat": 12.888916,
+    "lng": 77.562455,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 320,
@@ -1544,8 +1546,8 @@
     "googleQuery": "Konanakunte Cross Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Konanakunte Cross Area, Bengaluru",
-    "latitude": 12.8809,
-    "longitude": 77.5694
+    "latitude": 12.888916,
+    "longitude": 77.562455
   },
   {
     "id": "doddakallasandra",
@@ -1554,8 +1556,8 @@
     "kannadaName": "ದೊಡ್ಡಕಲ್ಲಸಂದ್ರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.8712,
-    "lng": 77.5649,
+    "lat": 12.884656,
+    "lng": 77.552345,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 290,
@@ -1576,8 +1578,8 @@
     "googleQuery": "Doddakallasandra Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Mantri Arena Mall, Navaratan Gardens, Bagegowda Layout, Kanakapura Road, Konanakunte, Bengaluru 560062",
-    "latitude": 12.8712,
-    "longitude": 77.5649
+    "latitude": 12.884656,
+    "longitude": 77.552345
   },
   {
     "id": "vajrahalli",
@@ -1586,8 +1588,8 @@
     "kannadaName": "ವಜ್ರಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.8624,
-    "lng": 77.5589,
+    "lat": 12.877494,
+    "lng": 77.544492,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 83,
@@ -1608,8 +1610,8 @@
     "googleQuery": "Vajrahalli Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Vajrahalli Area, Bengaluru",
-    "latitude": 12.8624,
-    "longitude": 77.5589
+    "latitude": 12.877494,
+    "longitude": 77.544492
   },
   {
     "id": "thalaghattapura",
@@ -1618,8 +1620,8 @@
     "kannadaName": "ತಲಘಟ್ಟಪುರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.8541,
-    "lng": 77.5496,
+    "lat": 12.871283,
+    "lng": 77.537658,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 83,
@@ -1640,8 +1642,8 @@
     "googleQuery": "Thalaghattapura Metro Station Bengaluru",
     "lineId": 2,
     "neighborhood": "Thalaghattapura Area, Bengaluru",
-    "latitude": 12.8541,
-    "longitude": 77.5496
+    "latitude": 12.871283,
+    "longitude": 77.537658
   },
   {
     "id": "silk-institute",
@@ -1695,10 +1697,10 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9297,
-    "lng": 77.5627,
-    "latitude": 12.9297,
-    "longitude": 77.5627
+    "lat": 12.921662,
+    "lng": 77.58012,
+    "latitude": 12.921662,
+    "longitude": 77.58012
   },
   {
     "id": "ragigudda",
@@ -1714,10 +1716,10 @@
       "twoWheelerSlots": 120,
       "fourWheelerSlots": 15
     },
-    "lat": 12.917,
-    "lng": 77.5835,
-    "latitude": 12.917,
-    "longitude": 77.5835
+    "lat": 12.9175,
+    "lng": 77.5898,
+    "latitude": 12.9175,
+    "longitude": 77.5898
   },
   {
     "id": "jayadeva-hospital",

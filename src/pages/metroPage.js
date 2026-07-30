@@ -31,47 +31,31 @@ export function renderMetroPage(dept, state, lang) {
         <span class="text-white fw-medium" style="font-size:0.8rem;">${dept.name}</span>
       </div>
       <div class="d-flex align-items-center gap-3 flex-wrap mb-3 mt-1">
-        <div class="nb-dept-hero-icon mb-0 d-flex align-items-center justify-content-center text-white shadow-md" style="width:64px; height:64px; border-radius:16px; background: linear-gradient(135deg, #9333ea 0%, #16a34a 50%, #ffc61a 100%); border: 2px solid rgba(255,255,255,0.4);">
-          <i class="bi bi-train-front" style="font-size:2.2rem;"></i>
+        <div class="nb-dept-hero-icon mb-0 d-flex align-items-center justify-content-center bg-white shadow-sm" style="width:64px; height:64px; border-radius:12px; color:#7c3aed;">
+          <i class="bi ${dept.icon}" style="font-size:2.2rem;"></i>
         </div>
         <div>
           <div class="d-flex align-items-center gap-2">
-            <h1 class="nb-dept-hero-title mb-1 text-white">${dept.fullName}</h1>
-            <i class="bi bi-patch-check-fill text-warning fs-4" title="Verified Operational Network"></i>
+            <h1 class="fw-bold text-white mb-0" style="font-size:2rem; letter-spacing:-0.02em;">${dept.fullName}</h1>
+            <i class="bi bi-patch-check-fill text-primary fs-4" title="Verified Official Source"></i>
           </div>
-          <p class="nb-dept-hero-sub text-white-50 mb-0">Bengaluru Rapid Transit Rail Network — Fares, Google Maps Transit, Route Pathfinder & Live Commuter Updates.</p>
+          <p class="text-white-50 mb-0 mt-1" style="font-size:0.95rem;">Official source for metro fares, routes, station directory, and commuter services in Bengaluru.</p>
         </div>
       </div>
 
-      <!-- Operational Corridors Tricolor Badges Strip -->
-      <div class="d-flex align-items-center gap-2 flex-wrap mt-3">
-        <span class="badge text-white px-3 py-2 rounded-pill shadow-2xs" style="background:#9333ea; font-size:0.78rem; border:1px solid rgba(255,255,255,0.3);">
-          <i class="bi bi-circle-fill me-1 text-white"></i> Purple Line (36 Stations)
-        </span>
-        <span class="badge text-white px-3 py-2 rounded-pill shadow-2xs" style="background:#16a34a; font-size:0.78rem; border:1px solid rgba(255,255,255,0.3);">
-          <i class="bi bi-circle-fill me-1 text-white"></i> Green Line (32 Stations)
-        </span>
-        <span class="badge text-dark fw-bold px-3 py-2 rounded-pill shadow-2xs" style="background:#ffc61a; font-size:0.78rem; border:1px solid rgba(0,0,0,0.2);">
-          <i class="bi bi-circle-fill me-1 text-dark"></i> Yellow Line (16 Stations)
-        </span>
-        <span class="badge text-white px-3 py-2 rounded-pill shadow-2xs" style="background: rgba(15, 23, 42, 0.85); font-size:0.78rem; backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
-          <i class="bi bi-check-circle-fill me-1 text-warning"></i>82 Operational Stations · 92.96 km
-        </span>
-      </div>
-
-      <!-- Quick Action Pills -->
-      <div class="d-flex align-items-center gap-2 flex-wrap mt-3 pt-2 border-top border-white border-opacity-10">
-        <a href="https://play.google.com/store/apps/details?id=com.aum.nammametro" target="_blank" rel="noopener" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
-          <i class="bi bi-google-play me-1 text-success"></i> Namma Metro Official App
+      <!-- Action Pill Buttons Row -->
+      <div class="d-flex align-items-center gap-2 flex-wrap mt-4">
+        <button onclick="window.__toggleSidebar()" class="btn btn-sm btn-primary shadow-sm rounded-pill px-3 py-2 fw-medium d-inline-flex d-lg-none align-items-center gap-2" style="font-size:0.8rem;" title="Toggle Sidebar Navigation">
+          <i class="bi bi-list fs-5"></i> <span>${dept.name} Menu</span>
+        </button>
+        <a href="https://english.bmrc.co.in" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
+          <i class="bi bi-globe me-1"></i> Official Website
         </a>
-        <a href="https://english.bmrc.co.in" target="_blank" rel="noopener" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
-          <i class="bi bi-globe me-1 text-info"></i> Official BMRCL Website
+        <a href="tel:180042512345" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
+          <i class="bi bi-telephone me-1 text-success"></i> Customer Care (1800-425-12345)
         </a>
-        <a href="https://wa.me/918105556677?text=Hi" target="_blank" rel="noopener" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
-          <i class="bi bi-whatsapp me-1 text-success"></i> WhatsApp Tickets (+91 81055 56677)
-        </a>
-        <a href="tel:180042512345" class="btn btn-sm text-white border-0 shadow-2xs rounded-pill px-3 py-2 fw-medium" style="font-size:0.8rem; background: rgba(15, 23, 42, 0.80); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.25);">
-          <i class="bi bi-telephone me-1 text-warning"></i> Toll-Free Helpline (1800-425-12345)
+        <a href="https://x.com/OfficialBMRCL" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+          <i class="bi bi-twitter-x"></i>
         </a>
       </div>
     </div>
@@ -252,7 +236,7 @@ function renderOverviewTab(state, lang) {
       <div class="row g-3">
         <!-- Purple Line -->
         <div class="col-md-6">
-          <div class="nb-card p-4 text-start h-100 border-start border-4 border-purple" style="border-left-color: #9333ea !important;">
+          <div class="nb-card p-4 text-start h-100 border-start border-4 border-purple" style="border-color: #9333ea !important;">
             <div class="d-flex align-items-center justify-content-between mb-2">
               <span class="badge bg-purple text-white px-3 py-1" style="background:#9333ea;"><i class="bi bi-circle-fill me-1"></i> Purple Line</span>
               <span class="badge bg-success-subtle text-success">100% Operational</span>
@@ -337,8 +321,8 @@ function renderOverviewTab(state, lang) {
       </div>
     </div>
 
-    <!-- Interactive Namma Metro Network Map (Leaflet) -->
-    ${renderMetroMapHTML()}
+    <!-- Interactive Namma Metro Network Map (Google Maps) -->
+    ${renderMetroMapHTML(state.selectedMetroStationId)}
 
     <!-- Fullscreen Metro Sitemap Lightbox Modal -->
     <div class="modal fade" id="nbMetroMapModal" tabindex="-1" aria-hidden="true" style="background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);">
@@ -1403,17 +1387,6 @@ function renderSocialFeedTab(state, lang) {
                 <div>
                   <div class="fw-bold" style="font-size:0.88rem;">Official WhatsApp Helpdesk</div>
                   <div class="text-secondary" style="font-size:0.75rem;">+91 81055 56677</div>
-                </div>
-              </div>
-              <i class="bi bi-chevron-right text-secondary"></i>
-            </a>
-
-            <a href="https://www.youtube.com/@BMRCL" target="_blank" rel="noopener" class="p-3 border rounded-3 text-decoration-none text-body hover-bg-tertiary d-flex align-items-center justify-content-between transition-all">
-              <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center" style="width:36px; height:36px;"><i class="bi bi-youtube"></i></div>
-                <div>
-                  <div class="fw-bold" style="font-size:0.88rem;">Official YouTube Channel</div>
-                  <div class="text-secondary" style="font-size:0.75rem;">@BMRCL Official</div>
                 </div>
               </div>
               <i class="bi bi-chevron-right text-secondary"></i>

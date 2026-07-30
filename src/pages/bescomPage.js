@@ -57,14 +57,11 @@ export function renderBESCOMPage(dept, state, lang) {
         <a href="tel:1912" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
           <i class="bi bi-telephone me-1 text-success"></i> Customer Care (1912)
         </a>
-        <a href="https://twitter.com/NammaBESCOM" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+        <a href="https://x.com/NammaBESCOM" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
           <i class="bi bi-twitter-x"></i>
         </a>
-        <a href="#" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+        <a href="https://www.facebook.com/bescomblr" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
           <i class="bi bi-facebook" style="color:#1877F2;"></i>
-        </a>
-        <a href="#" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
-          <i class="bi bi-youtube" style="color:#FF0000;"></i>
         </a>
       </div>
     </div>

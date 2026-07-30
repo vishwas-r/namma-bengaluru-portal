@@ -87,7 +87,7 @@ export function renderHomePage(lang) {
               </a>
 
               <!-- Namma Metro -->
-              <a href="#/dept/bmtc" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow transition-all">
+              <a href="#/dept/bmrcl" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow transition-all">
                 <div class="d-flex align-items-center gap-3">
                   <div class="rounded-2 text-danger bg-danger-subtle d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px; height:40px; font-size:1.2rem;">
                     <i class="bi bi-train-front-fill"></i>

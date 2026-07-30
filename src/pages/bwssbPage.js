@@ -57,14 +57,11 @@ export function renderBWSSBPage(dept, state, lang) {
         <a href="tel:1916" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-pill px-3 py-2 hover-bg-tertiary fw-medium" style="font-size:0.8rem; backdrop-filter:blur(4px);">
           <i class="bi bi-telephone me-1 text-success"></i> Customer Care (1916)
         </a>
-        <a href="https://twitter.com/BWSSB" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+        <a href="https://x.com/chairmanbwssb" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
           <i class="bi bi-twitter-x"></i>
         </a>
-        <a href="#" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
+        <a href="https://www.facebook.com/officialbwssb" target="_blank" rel="noopener" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
           <i class="bi bi-facebook" style="color:#1877F2;"></i>
-        </a>
-        <a href="#" class="btn btn-sm bg-white bg-opacity-10 text-white border-0 shadow-sm rounded-circle d-flex align-items-center justify-content-center hover-bg-tertiary" style="width:34px; height:34px; backdrop-filter:blur(4px);">
-          <i class="bi bi-youtube" style="color:#FF0000;"></i>
         </a>
       </div>
     </div>
@@ -736,9 +733,8 @@ export function renderSocialFeed(dept = 'bwssb') {
 
   const isBescom = dept === 'bescom';
   const handle = isBescom ? 'NammaBESCOM' : 'chairmanbwssb';
-  const fbPage = isBescom ? 'bescomblr' : 'BWSSB';
-  const instaHandle = isBescom ? 'nammabescom' : 'bwssbofficial';
-  const ytHandle = isBescom ? '@NammaBESCOM' : '@BWSSB';
+  const fbUrl = isBescom ? 'https://www.facebook.com/bescomblr' : 'https://www.facebook.com/officialbwssb';
+  const fbHandle = isBescom ? 'bescomblr' : 'officialbwssb';
   const deptTitle = isBescom ? 'BESCOM Electricity' : 'BWSSB Water Board';
 
   return `
@@ -758,7 +754,7 @@ export function renderSocialFeed(dept = 'bwssb') {
             </div>
           </div>
           <p class="text-secondary mb-4" style="font-size:0.85rem; line-height:1.6;">
-            Connect directly with verified official social media accounts, emergency broadcasts, and direct helpdesk channels for ${deptTitle}.
+            Connect directly with verified official social media accounts and emergency helpdesk channels for ${deptTitle}.
           </p>
 
           <!-- Channel Links Grid -->
@@ -776,39 +772,15 @@ export function renderSocialFeed(dept = 'bwssb') {
             </a>
 
             <!-- Facebook -->
-            <a href="https://www.facebook.com/${fbPage}" target="_blank" rel="noopener" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow">
+            <a href="${fbUrl}" target="_blank" rel="noopener" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow">
               <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-facebook fs-4 text-primary"></i>
                 <div>
                   <div class="fw-bold" style="font-size:0.88rem;">Official Facebook Page</div>
-                  <div class="text-secondary" style="font-size:0.75rem;">@${fbPage}</div>
+                  <div class="text-secondary" style="font-size:0.75rem;">@${fbHandle}</div>
                 </div>
               </div>
               <span class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1" style="font-size:0.75rem;">Like Page <i class="bi bi-box-arrow-up-right ms-1"></i></span>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/${instaHandle}/" target="_blank" rel="noopener" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow">
-              <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-instagram fs-4 text-danger"></i>
-                <div>
-                  <div class="fw-bold" style="font-size:0.88rem;">Official Instagram</div>
-                  <div class="text-secondary" style="font-size:0.75rem;">@${instaHandle}</div>
-                </div>
-              </div>
-              <span class="btn btn-sm btn-outline-danger rounded-pill px-3 py-1" style="font-size:0.75rem;">Follow <i class="bi bi-box-arrow-up-right ms-1"></i></span>
-            </a>
-
-            <!-- YouTube Search Link -->
-            <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(isBescom ? 'BESCOM Bengaluru' : 'BWSSB Bengaluru')}&sp=CAI%253D" target="_blank" rel="noopener" class="p-3 rounded-3 border bg-body-tertiary d-flex align-items-center justify-content-between text-decoration-none text-body hover-shadow">
-              <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-youtube fs-4 text-danger"></i>
-                <div>
-                  <div class="fw-bold" style="font-size:0.88rem;">YouTube Video Updates</div>
-                  <div class="text-secondary" style="font-size:0.75rem;">Recent news & broadcasts</div>
-                </div>
-              </div>
-              <span class="btn btn-sm btn-outline-danger rounded-pill px-3 py-1" style="font-size:0.75rem;">Watch <i class="bi bi-box-arrow-up-right ms-1"></i></span>
             </a>
 
             <!-- Official WhatsApp / Helpline -->

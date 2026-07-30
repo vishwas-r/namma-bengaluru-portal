@@ -48,9 +48,10 @@ export function renderDepartmentsPage(lang) {
                   </div>
                 </div>
 
-                <span class="badge ${isLive ? 'bg-success-subtle text-success border border-success-subtle' : 'bg-secondary-subtle text-secondary border'}" style="font-size:0.72rem;">
-                  ${isLive ? '<i class="bi bi-check-circle-fill me-1"></i> Live' : 'Under Integration'}
-                </span>
+                ${!isLive ? `
+                <span class="badge bg-secondary-subtle text-secondary border" style="font-size:0.72rem;">
+                  Soon
+                </span>` : ''}
               </div>
 
               <!-- Full Name & Description -->

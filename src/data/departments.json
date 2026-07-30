@@ -42,6 +42,24 @@
     ]
   },
   {
+    "id": "bmrcl",
+    "name": "Namma Metro",
+    "fullName": "Bengaluru Metro Rail Corporation (BMRCL)",
+    "kannada": "ನಮ್ಮ ಮೆಟ್ರೋ (ಬಿಎಮ್‌ಆರ್‌ಸಿಎಲ್)",
+    "description": "Rapid transit metro rail network serving major Bengaluru corridors",
+    "icon": "bi-train-front",
+    "color": "#7c3aed",
+    "helpline": "1800-425-12345",
+    "website": "https://english.bmrc.co.in",
+    "status": "live",
+    "features": [
+      "Fare & Route Calculator",
+      "Google Maps Live Transit",
+      "Smart Card & QR Tickets",
+      "Station Directory & Parking"
+    ]
+  },
+  {
     "id": "bbmp",
     "name": "BBMP / GBA",
     "fullName": "Greater Bengaluru Authority",
@@ -73,24 +91,6 @@
       "Route Finder",
       "Pass Guide",
       "Complaint Help"
-    ]
-  },
-  {
-    "id": "bmrcl",
-    "name": "Namma Metro",
-    "fullName": "Bengaluru Metro Rail Corporation (BMRCL)",
-    "kannada": "ನಮ್ಮ ಮೆಟ್ರೋ (ಬಿಎಮ್‌ಆರ್‌ಸಿಎಲ್)",
-    "description": "Rapid transit metro rail network serving major Bengaluru corridors",
-    "icon": "bi-train-front",
-    "color": "#7c3aed",
-    "helpline": "1800-425-12345",
-    "website": "https://english.bmrc.co.in",
-    "status": "live",
-    "features": [
-      "Fare & Route Calculator",
-      "Google Maps Live Transit",
-      "Smart Card & QR Tickets",
-      "Station Directory & Parking"
     ]
   },
   {

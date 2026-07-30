@@ -259,10 +259,10 @@ export function renderHeader(state, lang) {
                   <div class="nb-dropdown-item-name">${dept.fullName}</div>
                   <div class="nb-dropdown-item-desc">${dept.description}</div>
                 </div>
-                <span class="nb-dropdown-item-badge ${dept.status === 'live' ? 'text-success' : 'text-secondary'}"
-                  style="background:${dept.status === 'live' ? 'rgba(16,185,129,0.12)' : 'var(--bs-secondary-bg)'};">
-                  ${dept.status === 'live' ? 'Live' : 'Soon'}
-                </span>
+                ${dept.status !== 'live' ? `
+                <span class="nb-dropdown-item-badge text-secondary" style="background:var(--bs-secondary-bg);">
+                  Soon
+                </span>` : ''}
               </button>`).join('')}
           </div>
         </div>
@@ -332,7 +332,7 @@ export function renderHeader(state, lang) {
               </div>
               <span style="font-size:0.86rem; font-weight:600;">${dept.name}</span>
             </div>
-            <span class="badge ${dept.status === 'live' ? 'bg-success-subtle text-success border border-success-subtle' : 'bg-secondary-subtle text-secondary'}" style="font-size:0.65rem;">${dept.status === 'live' ? 'Live' : 'Soon'}</span>
+            ${dept.status !== 'live' ? '<span class="badge bg-secondary-subtle text-secondary" style="font-size:0.65rem;">Soon</span>' : ''}
           </button>`).join('')}
 
         <a href="#/about" class="btn border-0 text-start px-3 py-2 rounded-2 d-flex align-items-center gap-2 text-body hover-bg-tertiary mt-1" onclick="window.__hideMobileMenu()" style="font-size:0.88rem;">
