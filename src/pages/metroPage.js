@@ -304,8 +304,8 @@ function renderOverviewTab(state, lang) {
           <button onclick="window.__openMetroMapModal()" class="btn btn-sm btn-primary rounded-pill px-3 py-2 fw-semibold" style="background:#7c3aed; border-color:#7c3aed;">
             <i class="bi bi-arrows-angle-expand me-1"></i> View Fullscreen Map
           </button>
-          <a href="/namma-metro-sitemap.jpg" download class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 fw-semibold">
-            <i class="bi bi-download me-1"></i> Download Local Map (JPG)
+          <a href="/assets/images/namma-metro-sitemap.jpg" download class="btn btn-sm btn-outline-success rounded-pill px-3 py-2 fw-semibold">
+            <i class="bi bi-download me-1"></i> Download Sitemap
           </a>
           <a href="https://www.bmrc.co.in/images/metro/travel-info/sitemapimg.jpg" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-2 fw-semibold">
             <i class="bi bi-box-arrow-up-right me-1"></i> Official BMRCL URL
@@ -313,7 +313,7 @@ function renderOverviewTab(state, lang) {
         </div>
       </div>
       <div class="position-relative rounded-3 overflow-hidden border shadow-2xs bg-dark text-center cursor-pointer" onclick="window.__openMetroMapModal()" style="max-height:420px;">
-        <img src="/namma-metro-sitemap.jpg" alt="Namma Metro Complete System Sitemap Route Map" class="img-fluid w-100 object-fit-cover" style="max-height:420px; filter:brightness(0.95);" loading="lazy" />
+        <img src="/assets/images/namma-metro-sitemap.jpg" alt="Namma Metro Complete System Sitemap Route Map" class="img-fluid w-100 object-fit-cover" style="max-height:420px; filter:brightness(0.95);" loading="lazy" />
         <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white d-flex align-items-center justify-content-between">
           <span style="font-size:0.82rem;"><i class="bi bi-info-circle me-1 text-warning"></i> Click image or button to expand in Fullscreen high-resolution mode</span>
           <span class="badge bg-primary rounded-pill px-3 py-1" style="background:#7c3aed;"><i class="bi bi-search me-1"></i> Click to Zoom</span>
@@ -334,14 +334,14 @@ function renderOverviewTab(state, lang) {
               <h5 class="modal-title fw-bold text-white mb-0">Namma Metro Official Complete System Route Map</h5>
             </div>
             <div class="d-flex align-items-center gap-2">
-              <a href="/namma-metro-sitemap.jpg" download class="btn btn-sm btn-success rounded-pill px-3">
+              <a href="/assets/images/namma-metro-sitemap.jpg" download class="btn btn-sm btn-success rounded-pill px-3">
                 <i class="bi bi-download me-1"></i> Download Image
               </a>
               <button type="button" class="btn-close btn-close-white" onclick="window.__closeMetroMapModal()" aria-label="Close"></button>
             </div>
           </div>
           <div class="modal-body p-2 d-flex align-items-center justify-content-center bg-black overflow-auto" style="min-height: calc(100vh - 70px);">
-            <img src="/namma-metro-sitemap.jpg" alt="Namma Metro Fullscreen Map" class="img-fluid rounded shadow-lg" style="max-height: 92vh; object-fit: contain;" />
+            <img src="/assets/images/namma-metro-sitemap.jpg" alt="Namma Metro Fullscreen Map" class="img-fluid rounded shadow-lg" style="max-height: 92vh; object-fit: contain;" />
           </div>
         </div>
     </div>

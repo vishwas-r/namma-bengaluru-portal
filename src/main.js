@@ -25,6 +25,7 @@ import bwssbNoticesData from './data/bwssb/notices.json';
 import bwssbComplaintsData from './data/bwssb/complaints.json';
 import bescomNoticesData from './data/bescom/notices.json';
 import bescomComplaintsData from './data/bescom/complaints.json';
+import { updateMetaForRoute } from './services/seoEngine.js';
 
 // ── Application State ──────────────────────────────────────
 const state = {
@@ -139,7 +140,7 @@ function applyTheme(theme) {
   if (btn) btn.innerHTML = theme === 'dark'
     ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
   const logo = document.getElementById('nbAppLogo');
-  if (logo) logo.src = theme === 'dark' ? './logo.svg' : './logo-light.svg';
+  if (logo) logo.src = theme === 'dark' ? './assets/images/logo.svg' : './assets/images/logo-light.svg';
 }
 
 // ── Department Theme ───────────────────────────────────────
@@ -233,6 +234,7 @@ function renderApp(skipScroll = false) {
     <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" style="z-index:9999;"></div>
   `;
   bindAll();
+  updateMetaForRoute(state.route, state.deptId, state);
   applyTheme(state.theme);
   applyDeptTheme(state.route === 'dept' ? state.deptId : null);
   document.body.classList.toggle('nb-sidebar-open', Boolean(state.route === 'dept' && state.deptSidebarOpen));

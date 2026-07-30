@@ -203,7 +203,7 @@ export function renderHeader(state, lang) {
 
       <!-- Left: Logo -->
       <a href="#/" class="d-flex align-items-center text-decoration-none flex-shrink-0">
-        <img id="nbAppLogo" src="${state.theme === 'dark' ? './logo.svg' : './logo-light.svg'}" alt="Namma Bengaluru Logo" width="36" height="36" class="me-2 me-sm-3" style="border-radius:9px; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));" />
+        <img id="nbAppLogo" src="${state.theme === 'dark' ? './assets/images/logo.svg' : './assets/images/logo-light.svg'}" alt="Namma Bengaluru Logo" width="36" height="36" class="me-2 me-sm-3" style="border-radius:9px; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.12));" />
         <div class="lh-sm text-start">
           <div class="fw-bold display-font" style="font-size:0.98rem; color:var(--bs-body-color); letter-spacing:-0.01em;">Namma Bengaluru</div>
           <div class="nb-logo-subtitle d-none d-sm-block" style="font-size:0.66rem; color:var(--bs-secondary-color); font-weight:500;">Citizen Services Portal</div>
