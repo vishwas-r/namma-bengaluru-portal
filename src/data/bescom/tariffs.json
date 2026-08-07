@@ -1,60 +1,151 @@
 {
-  "domestic": {
-    "label": "Domestic (LT-2(a))",
-    "description": "Applicable to individual households for residential purposes.",
-    "fixedCharges": [
-      { "label": "Up to 1 kW", "charge": 110 },
-      { "label": "For every additional kW", "charge": 110 }
-    ],
-    "slabs": [
-      {
-        "label": "Lifeline Slab",
-        "from": 0,
-        "to": 50,
-        "rate": 4.75,
-        "color": "#10b981"
-      },
-      {
-        "label": "Standard Slab",
-        "from": 51,
-        "to": 100,
-        "rate": 6.25,
-        "color": "#f59e0b"
-      },
-      {
-        "label": "High Usage Slab",
-        "from": 100,
-        "to": null,
-        "rate": 7.80,
-        "color": "#ef4444"
-      }
-    ],
-    "fuelAdjustmentCharge": 1.15,
-    "electricityDutyPercent": 9.0
+  "orderInfo": {
+    "title": "KERC Tariff Order Dated 27th March 2025",
+    "effectiveYears": "FY 2025-26, FY 2026-27 & FY 2027-28",
+    "annexure": "ANNEXURE - 9 (Pages 522-543)",
+    "applicableEscoms": ["BESCOM", "MESCOM", "CESC", "HESCOM", "GESCOM"]
   },
-  "commercial": {
-    "label": "Commercial (LT-3)",
-    "description": "Applicable for shops, offices, clinics, and small businesses.",
-    "fixedCharges": [
-      { "label": "Per kW per month", "charge": 150 }
-    ],
-    "slabs": [
-      {
-        "label": "Base Slab",
-        "from": 0,
-        "to": 50,
-        "rate": 8.50,
-        "color": "#3b82f6"
-      },
-      {
-        "label": "High Slab",
-        "from": 50,
-        "to": null,
-        "rate": 9.50,
-        "color": "#8b5cf6"
-      }
-    ],
-    "fuelAdjustmentCharge": 1.15,
-    "electricityDutyPercent": 9.0
+  "lt1_domestic": {
+    "id": "lt1_domestic",
+    "code": "LT-2(a) / LT-1",
+    "label": "Domestic Residential (1LT2A1-N / LT-2A Urban & LT-1 Rural)",
+    "unitType": "kW",
+    "description": "Domestic residential connections (BESCOM Mithra code 1LT2A1-N / LT-2A). Includes apartments, flats, independent houses, farmhouses.",
+    "fixedCharges": 150.0,
+    "energyRate": 5.80,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": true,
+    "kercRef": "Annexure-9 Page 534 (BESCOM Mithra: 1LT2A1-N)"
+  },
+  "lt2_educational": {
+    "id": "lt2_educational",
+    "code": "LT-2",
+    "label": "LT-2: Private Educational Institutions & Hospitals",
+    "unitType": "kW",
+    "description": "Private schools, colleges, nursing homes, charitable hospitals, dispensaries.",
+    "fixedCharges": 195.0,
+    "energyRate": 6.55,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 535"
+  },
+  "lt3a_commercial": {
+    "id": "lt3a_commercial",
+    "code": "LT-3(a)",
+    "label": "LT-3(a): Commercial (Shops, Offices, Hotels, Clinics)",
+    "unitType": "kW",
+    "description": "Shops, stores, clinics, offices, banks, restaurants, commercial complexes, service stations.",
+    "fixedCharges": 215.0,
+    "energyRate": 6.80,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 536"
+  },
+  "lt3b_hoardings": {
+    "id": "lt3b_hoardings",
+    "code": "LT-3(b)",
+    "label": "LT-3(b): Hoardings & Advertising Boards",
+    "unitType": "kW",
+    "description": "Advertisement hoardings, bus shelters with signboards, sponsored agency posts.",
+    "fixedCharges": 200.0,
+    "energyRate": 9.50,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 537"
+  },
+  "lt4b_agri": {
+    "id": "lt4b_agri",
+    "code": "LT-4(b)",
+    "label": "LT-4(b): Agricultural IP Sets (> 10 HP)",
+    "unitType": "HP",
+    "description": "Agricultural irrigation pumpsets with sanctioned load above 10 HP.",
+    "fixedCharges": 145.0,
+    "energyRate": 4.00,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 0.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 538"
+  },
+  "lt4c_plantations": {
+    "id": "lt4c_plantations",
+    "code": "LT-4(c)",
+    "label": "LT-4(c): Nurseries & Plantations (Coffee, Tea, Rubber)",
+    "unitType": "HP",
+    "description": "Horticultural nurseries, coffee, tea, rubber plantations, mushroom raising units.",
+    "fixedCharges": 145.0,
+    "energyRate": 3.45,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 538"
+  },
+  "lt5_industrial": {
+    "id": "lt5_industrial",
+    "code": "LT-5",
+    "label": "LT-5: Industrial Units, MSME & Workshops",
+    "unitType": "HP",
+    "description": "Industrial manufacturing, MSME workshops, flour mills, cold storage, printing presses.",
+    "fixedCharges": 150.0,
+    "energyRate": 4.40,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 539"
+  },
+  "lt6a_watersupply": {
+    "id": "lt6a_watersupply",
+    "code": "LT-6(a)",
+    "label": "LT-6(a): Water Supply & Sewerage Pumping",
+    "unitType": "HP",
+    "description": "Government & municipal water supply pumping, drinking water purification plants.",
+    "fixedCharges": 180.0,
+    "energyRate": 5.50,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 541"
+  },
+  "lt6b_streetlights": {
+    "id": "lt6b_streetlights",
+    "code": "LT-6(b)",
+    "label": "LT-6(b): Public Street Lighting & LED Lights",
+    "unitType": "kW",
+    "description": "Public streetlights, traffic signals, park lighting, pedestrian escalators.",
+    "fixedCharges": 180.0,
+    "energyRate": 6.00,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 541"
+  },
+  "lt6c_evcharging": {
+    "id": "lt6c_evcharging",
+    "code": "LT-6(c)",
+    "label": "LT-6(c): EV Charging & Battery Swapping Stations",
+    "unitType": "kW",
+    "description": "Electric vehicle public charging stations & battery swapping hubs.",
+    "fixedCharges": 70.0,
+    "energyRate": 4.50,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 542"
+  },
+  "lt7_temporary": {
+    "id": "lt7_temporary",
+    "code": "LT-7",
+    "label": "LT-7: Temporary Power Supply (Events / Construction)",
+    "unitType": "kW",
+    "description": "Temporary power supply for marriages, exhibitions, construction, touring talkies.",
+    "fixedCharges": 200.0,
+    "energyRate": 10.50,
+    "fuelAdjustmentCharge": 0.32,
+    "electricityDutyPercent": 9.0,
+    "allowGruhaJyothi": false,
+    "kercRef": "Annexure-9 Page 542"
   }
 }

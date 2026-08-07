@@ -453,6 +453,24 @@ function bindAll() {
     }
   };
 
+  window.__openTariffGuideModal = () => {
+    const modal = document.getElementById('nbTariffGuideModal');
+    if (modal) {
+      modal.classList.add('show');
+      modal.style.display = 'block';
+      document.body.classList.add('modal-open');
+    }
+  };
+
+  window.__closeTariffGuideModal = () => {
+    const modal = document.getElementById('nbTariffGuideModal');
+    if (modal) {
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+  };
+
   window.__triggerGoogleLoginForReport = () => {
     promptGoogleLogin(null, (loggedInUser) => {
       if (loggedInUser) {
@@ -798,7 +816,33 @@ function appendMsg(role, content) {
 
 function scrollChat() { const c = document.getElementById('chatMsgs'); if (c) c.scrollTop = c.scrollHeight; }
 
-// ── Ctrl + K Keyboard Shortcut Listener ───────────────────────
+// ── Global Modal Close Handlers (ESC key & Backdrop / Outside Click) ──────
+function closeAllModals() {
+  let needsReRender = false;
+  if (state.searchModalOpen) {
+    state.searchModalOpen = false;
+    needsReRender = true;
+  }
+  if (state.modalOpen) {
+    state.modalOpen = false;
+    needsReRender = true;
+  }
+
+  document.querySelectorAll('.modal').forEach(modal => {
+    if (modal.classList.contains('show') || modal.style.display === 'block') {
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+    }
+  });
+
+  document.body.classList.remove('modal-open');
+  if (needsReRender) {
+    renderApp(true);
+  }
+}
+
+window.__closeAllModals = closeAllModals;
+
 window.addEventListener('keydown', (e) => {
   if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
     e.preventDefault();
@@ -807,8 +851,14 @@ window.addEventListener('keydown', (e) => {
     } else {
       window.__openSearchModal('');
     }
-  } else if (e.key === 'Escape' && state.searchModalOpen) {
-    window.__closeSearchModal();
+  } else if (e.key === 'Escape' || e.keyCode === 27) {
+    closeAllModals();
+  }
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target && e.target.classList && e.target.classList.contains('modal')) {
+    closeAllModals();
   }
 });
 

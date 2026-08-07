@@ -5,7 +5,7 @@ import noticesData from '../data/bescom/notices.json';
 import complaintsData from '../data/bescom/complaints.json';
 import servicesData from '../data/bescom/services.json';
 import bescomPlannedOutages from '../data/bescom/planned_outages.json';
-import { calcDomesticElectricityBill, calcCommercialElectricityBill } from '../services/bescomCalculator.js';
+import { calculateBESCOMUniversalBill, calcDomesticElectricityBill, calcCommercialElectricityBill } from '../services/bescomCalculator.js';
 import { queryGemini, getKeyPool } from '../services/keyPool.js';
 import { renderOutageWidget, renderPlannedOutagesWidget, renderCrowdReportsWidget } from '../components/outageWidget.js';
 import { getOutageReports } from '../services/outageStore.js';
@@ -332,20 +332,46 @@ export function renderCalc(state) {
         <div class="nb-card-body p-4">
 
           <div class="mb-4">
-            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="connType">Connection Type</label>
+            <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-1">
+              <label class="form-label fw-semibold text-secondary mb-0" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="connType">Connection Type</label>
+              <button type="button" onclick="window.__openTariffGuideModal()" class="btn btn-sm btn-link text-primary p-0 text-decoration-none fw-semibold d-inline-flex align-items-center gap-1" style="font-size:0.78rem;" title="View official KERC LT Tariff Schedule Guide">
+                <i class="bi bi-info-circle-fill text-primary"></i> <span>Tariff Guide & Rates</span>
+              </button>
+            </div>
             <select class="form-select py-2 px-3" id="connType" onchange="window.__calc('type', this.value)" style="border-radius:12px;">
-              <option value="domestic"   ${f.type === 'domestic' ? 'selected' : ''}>Domestic (LT-2(a))</option>
-              <option value="commercial" ${f.type === 'commercial' ? 'selected' : ''}>Commercial (LT-3)</option>
+              <option value="lt1_domestic"   ${!f.type || f.type === 'lt1_domestic' || f.type === 'domestic' ? 'selected' : ''}>LT-1 / LT-2A (Domestic Residential)</option>
+              <option value="lt2_educational" ${f.type === 'lt2_educational' ? 'selected' : ''}>LT-2 (Educational Institutions & Hospitals)</option>
+              <option value="lt3a_commercial" ${f.type === 'lt3a_commercial' || f.type === 'commercial' ? 'selected' : ''}>LT-3(a) (Commercial & Offices)</option>
+              <option value="lt3b_hoardings" ${f.type === 'lt3b_hoardings' ? 'selected' : ''}>LT-3(b) (Hoardings & Advertising Signboards)</option>
+              <option value="lt4b_agri"       ${f.type === 'lt4b_agri' ? 'selected' : ''}>LT-4(b) (Agricultural IP Sets > 10 HP)</option>
+              <option value="lt4c_plantations" ${f.type === 'lt4c_plantations' ? 'selected' : ''}>LT-4(c) (Nurseries & Plantations)</option>
+              <option value="lt5_industrial"   ${f.type === 'lt5_industrial' ? 'selected' : ''}>LT-5 (Industrial Units & MSME)</option>
+              <option value="lt6a_watersupply" ${f.type === 'lt6a_watersupply' ? 'selected' : ''}>LT-6(a) (Water Supply & Sewerage Pumping)</option>
+              <option value="lt6b_streetlights" ${f.type === 'lt6b_streetlights' ? 'selected' : ''}>LT-6(b) (Public Street Lighting & LED)</option>
+              <option value="lt6c_evcharging"  ${f.type === 'lt6c_evcharging' ? 'selected' : ''}>LT-6(c) (EV Charging Stations)</option>
+              <option value="lt7_temporary"    ${f.type === 'lt7_temporary' ? 'selected' : ''}>LT-7 (Temporary Power Supply)</option>
             </select>
           </div>
 
           <div class="mb-4">
-            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="loadInput">Sanctioned Load (kW)</label>
+            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="billingCycleSelect">Billing Period (Months)</label>
+            <select class="form-select py-2 px-3" id="billingCycleSelect" onchange="window.__calc('billingMonths', parseInt(this.value)||1)" style="border-radius:12px;">
+              <option value="1" ${!f.billingMonths || f.billingMonths === 1 ? 'selected' : ''}>1 Month (Standard Monthly Bill)</option>
+              <option value="2" ${f.billingMonths === 2 ? 'selected' : ''}>2 Months (Bi-Monthly / 60 Days)</option>
+              <option value="3" ${f.billingMonths === 3 ? 'selected' : ''}>3 Months (Quarterly / 90 Days)</option>
+              <option value="4" ${f.billingMonths === 4 ? 'selected' : ''}>4 Months (120 Days)</option>
+              <option value="5" ${f.billingMonths === 5 ? 'selected' : ''}>5 Months (150 Days)</option>
+              <option value="6" ${f.billingMonths === 6 ? 'selected' : ''}>6 Months (Half-Yearly / 180 Days)</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="loadInput">Sanctioned Load (${(f.type||'').includes('hp') || (f.type||'').includes('agri') || (f.type||'').includes('plantations') || (f.type||'').includes('industrial') || (f.type||'').includes('watersupply') ? 'HP' : 'kW'})</label>
             <div class="input-group mb-3">
               <input type="number" class="form-control py-2 px-3" id="loadInput"
                 min="1" max="100" step="1" value="${f.sanctionedLoad || 1}" style="border-top-left-radius:12px; border-bottom-left-radius:12px;"
                 oninput="window.__calc('sanctionedLoad', parseFloat(this.value)||1)" />
-              <span class="input-group-text fw-bold px-3 bg-body-tertiary" style="font-size:0.85rem; border-top-right-radius:12px; border-bottom-right-radius:12px;">kW</span>
+              <span class="input-group-text fw-bold px-3 bg-body-tertiary" style="font-size:0.85rem; border-top-right-radius:12px; border-bottom-right-radius:12px;">${(f.type||'').includes('hp') || (f.type||'').includes('agri') || (f.type||'').includes('plantations') || (f.type||'').includes('industrial') || (f.type||'').includes('watersupply') ? 'HP' : 'kW'}</span>
             </div>
           </div>
 
@@ -369,8 +395,16 @@ export function renderCalc(state) {
             </div>
           </div>
 
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-secondary" style="font-size:0.84rem; text-transform:uppercase; letter-spacing:0.04em;" for="othersInput">Others / Adjustments (₹)</label>
+            <input type="number" class="form-control py-2 px-3" id="othersInput"
+              step="0.01" value="${f.others !== undefined ? f.others : 0}" placeholder="e.g. 0, 25.70, or negative for credits" style="border-radius:12px;"
+              oninput="window.__calc('others', parseFloat(this.value)||0)" />
+            <div class="form-text text-secondary" style="font-size:0.75rem;">Meter rent, rebates, arrears, or bill adjustments (e.g. 0, 25.70)</div>
+          </div>
+
           <div class="d-flex flex-column gap-2 mb-4">
-            ${f.type === 'domestic' ? `
+            ${(!f.type || f.type === 'lt1_domestic' || f.type === 'domestic') ? `
             <div class="p-3 bg-body-tertiary border rounded-3 d-flex align-items-center justify-content-between">
               <div class="form-check form-switch mb-0">
                 <input class="form-check-input" type="checkbox" role="switch" id="gruhaJyothiChk"
@@ -411,6 +445,63 @@ export function renderCalc(state) {
         </div>
       </div>
     </div>
+
+    <!-- Official KERC Tariff Schedule Modal Guide -->
+    <div class="modal fade" id="nbTariffGuideModal" tabindex="-1" aria-hidden="true" style="background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content border-0 shadow-lg" style="border-radius:16px;">
+          <div class="modal-header border-bottom py-3 px-4 bg-primary text-white" style="border-top-left-radius:16px; border-top-right-radius:16px;">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-table fs-4"></i>
+              <div>
+                <h5 class="modal-title fw-bold mb-0 text-white" style="font-size:1.1rem;">Official KERC Low Tension (LT) Tariff Schedule</h5>
+                <div style="font-size:0.75rem; opacity:0.9;">KERC Tariff Order Dated 27th March 2025 (ANNEXURE - 9)</div>
+              </div>
+            </div>
+            <button type="button" class="btn-close btn-close-white" onclick="window.__closeTariffGuideModal()" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4 text-start">
+            <p class="text-secondary mb-3" style="font-size:0.85rem;">
+              The table below summarizes all Low Tension (LT) electricity tariff schedules, billing demand codes, fixed charges, and energy rates applicable across BESCOM, MESCOM, CESC, HESCOM & GESCOM:
+            </p>
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered align-middle mb-0" style="font-size:0.82rem;">
+                <thead class="table-light">
+                  <tr>
+                    <th>Tariff Schedule</th>
+                    <th>BESCOM Invoice Code</th>
+                    <th>Applicable Scope / Description</th>
+                    <th class="text-nowrap">Fixed Charge</th>
+                    <th class="text-nowrap">Energy Rate</th>
+                    <th>Ref Page</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${Object.values(tariffData).filter(item => item.code).map(item => `
+                  <tr>
+                    <td class="fw-bold text-primary">${item.code}</td>
+                    <td><span class="badge bg-secondary-subtle text-secondary border" style="font-size:0.75rem;">${item.code === 'LT-2(a) / LT-1' ? '1LT2A1-N / LT2A' : item.code}</span></td>
+                    <td style="font-size:0.78rem; line-height:1.3;">
+                      <div class="fw-semibold text-body">${item.label}</div>
+                      <div class="text-secondary mt-1">${item.description}</div>
+                    </td>
+                    <td class="fw-bold text-nowrap">₹${item.fixedCharges}/${item.unitType}/mo</td>
+                    <td class="fw-bold text-success text-nowrap">₹${item.energyRate.toFixed(2)}/unit</td>
+                    <td class="text-secondary" style="font-size:0.72rem;">${item.kercRef}</td>
+                  </tr>`).join('')}
+                </tbody>
+              </table>
+            </div>
+            <div class="p-3 rounded-3 bg-warning-subtle text-warning-emphasis border border-warning mt-3" style="font-size:0.78rem;">
+              <i class="bi bi-info-circle-fill me-1"></i> <strong>Note</strong>: Electricity Duty (9%) is levied on energy charges as per State Govt rules. FAC surcharge (~₹0.32/unit) applies quarterly.
+            </div>
+          </div>
+          <div class="modal-footer border-top py-2 px-4">
+            <button type="button" class="btn btn-sm btn-secondary rounded-pill px-4" onclick="window.__closeTariffGuideModal()">Close Guide</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>`;
 }
 
@@ -431,12 +522,15 @@ export function recalcBill(state) {
   }
 
   try {
-    let r;
-    if (f.type === 'commercial') {
-      r = calcCommercialElectricityBill({ consumption: f.consumption, sanctionedLoad: f.sanctionedLoad || 1 });
-    } else {
-      r = calcDomesticElectricityBill({ consumption: f.consumption, sanctionedLoad: f.sanctionedLoad || 1, gruhaJyothi: f.gruhaJyothi });
-    }
+    const r = calculateBESCOMUniversalBill({
+      tariffId: f.type || 'lt1_domestic',
+      consumption: f.consumption,
+      sanctionedLoad: f.sanctionedLoad || 1,
+      billingMonths: f.billingMonths || 1,
+      facRate: f.facRate !== undefined ? f.facRate : 0.32,
+      others: f.others !== undefined ? f.others : 0,
+      gruhaJyothi: f.gruhaJyothi
+    });
 
     amtEl.textContent = `₹${r.total.toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
     const effRate = r.effectiveRate || 0;
@@ -456,16 +550,23 @@ export function recalcBill(state) {
     }
 
     const items = [
-      { label: 'Fixed Charges', amount: r.fixedCharge, note: `${f.sanctionedLoad || 1} kW Sanctioned Load` },
+      {
+        label: 'Fixed Charges',
+        amount: r.fixedCharge,
+        note: r.billingMonths > 1
+          ? `${f.sanctionedLoad || 1} ${r.unitType} Load × ₹150/${r.unitType} × ${r.billingMonths} Months`
+          : `${f.sanctionedLoad || 1} ${r.unitType} Sanctioned Load`
+      },
       ...(slabs.filter(s => s.usage > 0).map(s => ({
         label: `Energy Charge (${s.label})`,
         amount: s.charge,
-        note: `${s.usage.toFixed(2)} Units × ₹${s.rate}/Unit`,
+        note: `${s.usage.toFixed(2)} Units × ₹${s.rate.toFixed(2)}/Unit`,
         color: s.color,
         isZeroed: r.isGruhaJyothiApplied
       }))),
-      r.facCharge > 0 && { label: 'Fuel Adjustment Charge (FAC)', amount: r.facCharge, note: 'Variable based on KERC' },
-      r.electricityDuty > 0 && { label: 'Electricity Duty (Tax)', amount: r.electricityDuty, note: '9% Tax' }
+      r.facCharge > 0 && { label: 'Fuel Adjustment Charge (FAC)', amount: r.facCharge, note: `${totalUnits.toFixed(2)} Units × ₹${r.facRate.toFixed(2)}/Unit` },
+      r.electricityDuty > 0 && { label: 'Electricity Duty (Tax)', amount: r.electricityDuty, note: '9% Govt Tax on Energy Charges' },
+      r.otherCharges !== 0 && { label: 'Others / Adjustments', amount: r.otherCharges, note: 'Meter rent, rebates or arrears' }
     ].filter(Boolean);
 
     if (bdEl) bdEl.innerHTML = `

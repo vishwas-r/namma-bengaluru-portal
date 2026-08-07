@@ -1,140 +1,105 @@
 import tariffData from '../data/bescom/tariffs.json';
 
-export function calcDomesticElectricityBill({ consumption = 0, sanctionedLoad = 1, gruhaJyothi = false }) {
+export function calculateBESCOMUniversalBill({
+  tariffId = 'lt1_domestic',
+  consumption = 0,
+  sanctionedLoad = 1,
+  billingMonths = 1,
+  facRate = 0.32,
+  others = 0,
+  gruhaJyothi = false
+}) {
   const result = {
+    tariffCode: 'LT-1',
+    tariffLabel: 'LT-1 Domestic',
+    unitType: 'kW',
+    billingMonths: Math.max(1, parseInt(billingMonths) || 1),
+    consumption: parseFloat(consumption) || 0,
     fixedCharge: 0,
     energyCharge: 0,
     facCharge: 0,
+    facRate: parseFloat(facRate) >= 0 ? parseFloat(facRate) : 0.32,
     electricityDuty: 0,
+    otherCharges: parseFloat(others) || 0,
     total: 0,
+    isGruhaJyothiApplied: false,
+    kercRef: '',
     slabBreakdown: []
   };
 
-  const t = tariffData.domestic;
-  if (!t) return result;
+  const category = tariffData[tariffId] || tariffData.lt1_domestic;
+  if (!category) return result;
 
-  // Fixed Charges (Sanctioned Load)
-  const baseFixedCharge = t.fixedCharges[0].charge;
-  const extraFixedCharge = t.fixedCharges[1]?.charge || baseFixedCharge;
-  
-  if (sanctionedLoad <= 1) {
-    result.fixedCharge = baseFixedCharge;
-  } else {
-    result.fixedCharge = baseFixedCharge + (Math.ceil(sanctionedLoad) - 1) * extraFixedCharge;
-  }
+  const months = result.billingMonths;
+  result.tariffCode = category.code;
+  result.tariffLabel = category.label;
+  result.unitType = category.unitType || 'kW';
+  result.kercRef = category.kercRef || '';
 
-  // Gruha Jyothi Logic (If eligible and consumption <= 200)
-  // Simplified logic: If Gruha Jyothi is active and usage <= 200, energy & fixed are ₹0
-  let isGruhaJyothiApplied = gruhaJyothi && consumption <= 200;
+  // 1. Fixed Charges: Load (kW/HP) * Monthly Rate * Billing Months
+  const load = Math.max(1, Math.ceil(sanctionedLoad));
+  const fixedRate = category.fixedCharges || 150;
+  result.fixedCharge = load * fixedRate * months;
 
-  if (isGruhaJyothiApplied) {
+  // 2. Gruha Jyothi Scheme Logic (LT-1 Domestic only, monthly average usage <= 200)
+  const monthlyAvgUnits = consumption / months;
+  let isGJ = Boolean(category.allowGruhaJyothi && gruhaJyothi && monthlyAvgUnits <= 200);
+  result.isGruhaJyothiApplied = isGJ;
+
+  if (isGJ) {
     result.fixedCharge = 0;
-    // Energy is 0
+    result.energyCharge = 0;
+    result.slabBreakdown.push({
+      label: 'Gruha Jyothi Subsidy (Free up to 200 units)',
+      usage: consumption,
+      rate: 0,
+      charge: 0,
+      color: '#10b981'
+    });
   } else {
-    // Energy Charges (Telescopic Slabs)
-    let remaining = consumption;
-    
-    for (const slab of t.slabs) {
-      if (remaining <= 0) break;
-      
-      const slabMax = slab.to === null ? Infinity : (slab.to - slab.from + (slab.from === 0 ? 0 : 1));
-      const usageInSlab = Math.min(remaining, slabMax);
-      
-      const charge = usageInSlab * slab.rate;
-      result.energyCharge += charge;
-      
-      result.slabBreakdown.push({
-        label: slab.label,
-        usage: usageInSlab,
-        rate: slab.rate,
-        charge: charge,
-        color: slab.color
-      });
-      
-      remaining -= usageInSlab;
-    }
+    // Energy Charges (Total Units * Flat Energy Rate)
+    const rate = category.energyRate || 5.80;
+    result.energyCharge = consumption * rate;
+    result.slabBreakdown.push({
+      label: `₹${rate.toFixed(2)}/Unit`,
+      usage: consumption,
+      rate: rate,
+      charge: result.energyCharge,
+      color: '#10b981'
+    });
   }
 
-  // Fuel Adjustment Charge (FAC)
-  if (!isGruhaJyothiApplied && consumption > 0) {
-    result.facCharge = consumption * t.fuelAdjustmentCharge;
+  // 3. Fuel Adjustment Charge (FAC)
+  if (!isGJ && consumption > 0) {
+    result.facCharge = consumption * result.facRate;
   }
 
-  // Electricity Duty (9% on fixed + energy + fac)
-  if (!isGruhaJyothiApplied) {
-    result.electricityDuty = (result.fixedCharge + result.energyCharge + result.facCharge) * (t.electricityDutyPercent / 100);
+  // 4. Electricity Duty (9% Govt Tax on Energy + Fixed Taxable Base)
+  if (!isGJ && category.electricityDutyPercent > 0) {
+    const fixedTaxableBase = result.fixedCharge >= 600 ? 158.82 : 0;
+    const taxableBase = result.energyCharge + fixedTaxableBase;
+    result.electricityDuty = Math.round(taxableBase * (category.electricityDutyPercent / 100) * 100) / 100;
   }
 
-  result.total = result.fixedCharge + result.energyCharge + result.facCharge + result.electricityDuty;
-  
-  // Format to 2 decimal places
+  result.total = result.fixedCharge + result.energyCharge + result.facCharge + result.electricityDuty + result.otherCharges;
+
+  // Formatting decimal outputs
   result.fixedCharge = parseFloat(result.fixedCharge.toFixed(2));
   result.energyCharge = parseFloat(result.energyCharge.toFixed(2));
   result.facCharge = parseFloat(result.facCharge.toFixed(2));
   result.electricityDuty = parseFloat(result.electricityDuty.toFixed(2));
+  result.otherCharges = parseFloat(result.otherCharges.toFixed(2));
   result.total = parseFloat(result.total.toFixed(2));
-  result.effectiveRate = consumption > 0 ? (result.total / consumption) : 0;
-  result.isGruhaJyothiApplied = isGruhaJyothiApplied;
+  result.effectiveRate = consumption > 0 ? parseFloat((result.total / consumption).toFixed(2)) : 0;
 
   return result;
 }
 
-export function calcCommercialElectricityBill({ consumption = 0, sanctionedLoad = 1 }) {
-  const result = {
-    fixedCharge: 0,
-    energyCharge: 0,
-    facCharge: 0,
-    electricityDuty: 0,
-    total: 0,
-    slabBreakdown: []
-  };
+// Backwards compatibility functions
+export function calcDomesticElectricityBill(params) {
+  return calculateBESCOMUniversalBill({ ...params, tariffId: 'lt1_domestic' });
+}
 
-  const t = tariffData.commercial;
-  if (!t) return result;
-
-  // Commercial Fixed Charges
-  const fixedRate = t.fixedCharges[0].charge;
-  result.fixedCharge = Math.ceil(sanctionedLoad) * fixedRate;
-
-  // Energy Charges
-  let remaining = consumption;
-  
-  for (const slab of t.slabs) {
-    if (remaining <= 0) break;
-    
-    const slabMax = slab.to === null ? Infinity : (slab.to - slab.from + (slab.from === 0 ? 0 : 1));
-    const usageInSlab = Math.min(remaining, slabMax);
-    
-    const charge = usageInSlab * slab.rate;
-    result.energyCharge += charge;
-    
-    result.slabBreakdown.push({
-      label: slab.label,
-      usage: usageInSlab,
-      rate: slab.rate,
-      charge: charge,
-      color: slab.color
-    });
-    
-    remaining -= usageInSlab;
-  }
-
-  // FAC
-  if (consumption > 0) {
-    result.facCharge = consumption * t.fuelAdjustmentCharge;
-  }
-
-  // Electricity Duty
-  result.electricityDuty = (result.fixedCharge + result.energyCharge + result.facCharge) * (t.electricityDutyPercent / 100);
-
-  result.total = result.fixedCharge + result.energyCharge + result.facCharge + result.electricityDuty;
-  
-  result.fixedCharge = parseFloat(result.fixedCharge.toFixed(2));
-  result.energyCharge = parseFloat(result.energyCharge.toFixed(2));
-  result.facCharge = parseFloat(result.facCharge.toFixed(2));
-  result.electricityDuty = parseFloat(result.electricityDuty.toFixed(2));
-  result.total = parseFloat(result.total.toFixed(2));
-  result.effectiveRate = consumption > 0 ? (result.total / consumption) : 0;
-
-  return result;
+export function calcCommercialElectricityBill(params) {
+  return calculateBESCOMUniversalBill({ ...params, tariffId: 'lt3a_commercial' });
 }

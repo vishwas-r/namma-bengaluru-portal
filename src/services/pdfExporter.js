@@ -1,8 +1,211 @@
 import { jsPDF } from 'jspdf';
 import { calcDomesticBill, calcApartmentBill, calcCommercialBill } from './bwssbCalculator.js';
+import { calculateBESCOMUniversalBill } from './bescomCalculator.js';
 
 export function downloadBillPDF(state) {
-  const f = state.calcForm;
+  const dept = state.deptId || 'bescom';
+  const f = state.calcForm || {};
+
+  if (dept === 'bescom') {
+    downloadBESCOMPDF(f);
+  } else {
+    downloadBWSSBPDF(f);
+  }
+}
+
+function downloadBESCOMPDF(f) {
+  const result = calculateBESCOMUniversalBill({
+    tariffId: f.type || 'lt1_domestic',
+    consumption: f.consumption || 0,
+    sanctionedLoad: f.sanctionedLoad || 1,
+    billingMonths: f.billingMonths || 1,
+    facRate: f.facRate !== undefined ? f.facRate : 0.35,
+    others: f.others !== undefined ? f.others : 0,
+    gruhaJyothi: f.gruhaJyothi
+  });
+
+  if (!result || result.total === undefined) {
+    console.error('BESCOM calculation result invalid:', result);
+    return;
+  }
+
+  const doc = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4'
+  });
+
+  // Header Banner
+  doc.setFillColor(16, 185, 129); // BESCOM Emerald Green
+  doc.rect(0, 0, 210, 26, 'F');
+
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(15);
+  doc.setFont('helvetica', 'bold');
+  doc.text('BANGALORE ELECTRICITY SUPPLY COMPANY (BESCOM)', 14, 12);
+  doc.setFontSize(9.5);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Official LT Electricity Bill Estimate (KERC Tariff Order 2025-26)', 14, 19);
+
+  // Metadata
+  const now = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  doc.setFontSize(8.5);
+  doc.text(`Generated: ${now}`, 196, 19, { align: 'right' });
+
+  // 1. Connection Details Card
+  doc.setFillColor(248, 250, 252);
+  doc.roundedRect(14, 32, 182, 38, 3, 3, 'F');
+  doc.setDrawColor(226, 232, 240);
+  doc.roundedRect(14, 32, 182, 38, 3, 3, 'D');
+
+  doc.setTextColor(15, 23, 42);
+  doc.setFontSize(10.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('1. Connection & Tariff Details', 20, 40);
+
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(71, 85, 105);
+
+  doc.text('Tariff Schedule:', 20, 48);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(15, 23, 42);
+  doc.text(`${result.tariffCode} (${result.tariffLabel})`, 52, 48);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(71, 85, 105);
+  doc.text('Sanctioned Load:', 20, 56);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(16, 185, 129);
+  doc.text(`${f.sanctionedLoad || 1} ${result.unitType}`, 52, 56);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(71, 85, 105);
+  doc.text('Billing Period:', 120, 48);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(15, 23, 42);
+  doc.text(`${result.billingMonths} Month(s)`, 152, 48);
+
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(71, 85, 105);
+  doc.text('Electricity Consumption:', 120, 56);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(16, 185, 129);
+  doc.text(`${f.consumption || 0} Units (kWh)`, 160, 56);
+
+  // 2. Total Monthly Bill Summary Banner
+  doc.setFillColor(240, 253, 244);
+  doc.roundedRect(14, 76, 182, 26, 3, 3, 'F');
+  doc.setDrawColor(16, 185, 129);
+  doc.setLineWidth(0.6);
+  doc.roundedRect(14, 76, 182, 26, 3, 3, 'D');
+
+  doc.setTextColor(16, 185, 129);
+  doc.setFontSize(9.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('ESTIMATED TOTAL ELECTRICITY BILL', 20, 84);
+
+  doc.setFontSize(18);
+  doc.text(`INR ${result.total.toFixed(2)}`, 20, 95);
+
+  doc.setFontSize(8.5);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(100, 116, 139);
+  const effRate = result.effectiveRate || 0;
+  doc.text(`Effective Rate: INR ${effRate.toFixed(2)} / Unit (kWh)`, 190, 95, { align: 'right' });
+
+  // 3. Itemized Breakdown Table
+  let y = 112;
+  doc.setTextColor(15, 23, 42);
+  doc.setFontSize(10.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('2. Itemized Charge Breakdown', 14, y);
+
+  y += 5;
+  // Table Header Bar
+  doc.setFillColor(16, 185, 129);
+  doc.rect(14, y, 182, 8, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(8.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('CHARGE ITEM', 18, y + 5.5);
+  doc.text('DETAILS / FORMULA', 90, y + 5.5);
+  doc.text('AMOUNT (INR)', 190, y + 5.5, { align: 'right' });
+
+  y += 8;
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(8.5);
+
+  const items = [
+    {
+      label: 'Fixed Charges',
+      amount: result.fixedCharge,
+      note: result.billingMonths > 1
+        ? `${f.sanctionedLoad || 1} ${result.unitType} Load x INR 150/${result.unitType} x ${result.billingMonths} Months`
+        : `${f.sanctionedLoad || 1} ${result.unitType} Sanctioned Load`
+    },
+    {
+      label: 'Energy Charges',
+      amount: result.energyCharge,
+      note: `${(f.consumption || 0).toFixed(2)} Units x INR 5.80 / Unit`,
+      isZeroed: result.isGruhaJyothiApplied
+    },
+    result.facCharge > 0 && {
+      label: 'Fuel Adjustment Charge (FAC)',
+      amount: result.facCharge,
+      note: `${(f.consumption || 0).toFixed(2)} Units x INR ${(result.facRate || 0.35).toFixed(2)} / Unit`
+    },
+    result.electricityDuty > 0 && {
+      label: 'Electricity Duty (Tax)',
+      amount: result.electricityDuty,
+      note: '9% Govt Tax on Energy Charges'
+    },
+    result.otherCharges !== 0 && {
+      label: 'Others / Adjustments',
+      amount: result.otherCharges,
+      note: 'Meter rent, rebates or arrears'
+    }
+  ].filter(Boolean);
+
+  items.forEach((item, idx) => {
+    doc.setFillColor(idx % 2 === 0 ? 255 : 248, idx % 2 === 0 ? 255 : 250, idx % 2 === 0 ? 255 : 252);
+    doc.rect(14, y, 182, 7.5, 'F');
+    doc.setTextColor(30, 41, 59);
+    doc.text(item.label, 18, y + 5);
+    doc.setTextColor(100, 116, 139);
+    doc.text(item.note, 90, y + 5);
+    doc.setTextColor(30, 41, 59);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`INR ${item.amount.toFixed(2)}`, 190, y + 5, { align: 'right' });
+    doc.setFont('helvetica', 'normal');
+    y += 7.5;
+  });
+
+  // Total Summary Footer Row
+  doc.setFillColor(241, 245, 249);
+  doc.rect(14, y, 182, 9, 'F');
+  doc.setDrawColor(203, 213, 225);
+  doc.line(14, y, 196, y);
+  doc.setTextColor(15, 23, 42);
+  doc.setFontSize(9.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('TOTAL ESTIMATED BILL', 18, y + 6);
+  doc.setTextColor(16, 185, 129);
+  doc.setFontSize(11);
+  doc.text(`INR ${result.total.toFixed(2)}`, 190, y + 6, { align: 'right' });
+
+  // Official Gazette Note Footer
+  doc.setTextColor(148, 163, 184);
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Verified against KERC Official Tariff Order (Annexure-9, Page 534).', 14, 280);
+  doc.text('Namma Bengaluru Citizen Portal — https://nammabengaluru.online', 196, 280, { align: 'right' });
+
+  // Save PDF
+  doc.save(`BESCOM_Electricity_Bill_Estimate_${f.consumption}Units.pdf`);
+}
+
+function downloadBWSSBPDF(f) {
   let result;
   if (f.type === 'domestic') {
     result = calcDomesticBill({
@@ -26,7 +229,7 @@ export function downloadBillPDF(state) {
   }
 
   if (!result || result.total === undefined) {
-    console.error('Calculation result invalid:', result);
+    console.error('BWSSB calculation result invalid:', result);
     return;
   }
 
