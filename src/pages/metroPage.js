@@ -2,7 +2,7 @@ import stationsData from '../data/metro/stations.json';
 import faresData from '../data/metro/fares.json';
 import noticesData from '../data/metro/notices.json';
 import metroServicesData from '../data/metro/services.json';
-import { calculateMetroJourney, getGoogleMapsTransitDirUrl, getGoogleMapsStationUrl, getGoogleMapsEmbedUrl } from '../services/metroEngine.js';
+import { calculateMetroJourney, getAllStations, getStationById, getGoogleMapsStationUrl, getGoogleMapsEmbedUrl, getGoogleMapsTransitEmbedUrl } from '../services/metroEngine.js';
 import { renderMetroMapHTML } from '../components/metroMap.js';
 import { getCurrentUser } from '../services/googleAuth.js';
 
@@ -466,6 +466,21 @@ function renderCalculatorTab(state, lang) {
       </div>
     </div>
 
+    ${journey.requiresInterchange ? `
+    <!-- Interchange Guidance Box -->
+    <div class="nb-card p-3 text-start border-warning bg-warning-subtle bg-opacity-30">
+      <div class="d-flex gap-3">
+        <i class="bi bi-arrow-repeat text-warning fs-3 flex-shrink-0"></i>
+        <div>
+          <h6 class="fw-bold text-dark mb-1">Interchange Transfer Required at ${journey.interchangeStationName}</h6>
+          <p class="text-secondary mb-0" style="font-size:0.83rem;">
+            You are traveling from <strong>${journey.source.name}</strong> (${journey.source.line.toUpperCase()} Line) to <strong>${journey.dest.name}</strong> (${journey.dest.line.toUpperCase()} Line).
+            De-board at <strong>${journey.interchangeStationName}</strong> and follow the color-coded floor signage to switch platforms. No extra ticket required!
+          </p>
+        </div>
+      </div>
+    </div>` : ''}
+
     <!-- Station Parking Availability Summary -->
     <div class="row g-3">
       <div class="col-md-6">
@@ -498,38 +513,26 @@ function renderCalculatorTab(state, lang) {
       </div>
     </div>
 
-    <!-- Google Maps Action Banner -->
+    <!-- Google Maps Action Banner with Embedded Map -->
     <div class="nb-card p-4 text-start bg-primary-subtle border border-primary-subtle">
-      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
         <div class="d-flex align-items-center gap-3">
           <div class="p-3 bg-white rounded-circle shadow-sm text-primary">
             <i class="bi bi-google fs-3"></i>
           </div>
           <div>
-            <h6 class="fw-bold mb-1 text-body">View Live Transit Directions on Google Maps</h6>
-            <p class="text-secondary mb-0" style="font-size:0.83rem;">Get live Google Maps transit route from <strong>${journey.source.name}</strong> to <strong>${journey.dest.name}</strong>.</p>
+            <h6 class="fw-bold mb-1 text-body">Live Transit Directions on Google Maps</h6>
+            <p class="text-secondary mb-0" style="font-size:0.83rem;">Route from <strong>${journey.source.name}</strong> to <strong>${journey.dest.name}</strong>.</p>
           </div>
         </div>
         <a href="${journey.googleMapsDirUrl}" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 fw-semibold rounded-pill shadow-sm" style="background:#7c3aed; border-color:#7c3aed;">
-          <i class="bi bi-box-arrow-up-right me-1"></i> Open Google Maps Transit &rarr;
+          <i class="bi bi-box-arrow-up-right me-1"></i> Open in Maps App &rarr;
         </a>
       </div>
-    </div>
-
-    ${journey.requiresInterchange ? `
-    <!-- Interchange Guidance Box -->
-    <div class="nb-card p-3 text-start border-warning bg-warning-subtle bg-opacity-30">
-      <div class="d-flex gap-3">
-        <i class="bi bi-arrow-repeat text-warning fs-3 flex-shrink-0"></i>
-        <div>
-          <h6 class="fw-bold text-dark mb-1">Interchange Transfer Required at ${journey.interchangeStationName}</h6>
-          <p class="text-secondary mb-0" style="font-size:0.83rem;">
-            You are traveling from <strong>${journey.source.name}</strong> (${journey.source.line.toUpperCase()} Line) to <strong>${journey.dest.name}</strong> (${journey.dest.line.toUpperCase()} Line).
-            De-board at <strong>${journey.interchangeStationName}</strong> and follow the color-coded floor signage to switch platforms. No extra ticket required!
-          </p>
-        </div>
+      <div class="ratio ratio-21x9 rounded overflow-hidden shadow-sm border border-secondary-subtle" style="min-height: 280px;">
+        <iframe src="${getGoogleMapsTransitEmbedUrl(journey.source.googleQuery || journey.source.name, journey.dest.googleQuery || journey.dest.name)}" allowfullscreen loading="lazy" style="border:0;"></iframe>
       </div>
-    </div>` : ''}
+    </div>
 
     <!-- Station By Station Route Pathfinder List -->
     <div class="nb-card p-4 text-start">

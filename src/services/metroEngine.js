@@ -186,3 +186,12 @@ export function getGoogleMapsEmbedUrl(stationQuery) {
   const query = encodeURIComponent(stationQuery || 'Namma Metro Station Bengaluru');
   return `https://maps.google.com/maps?q=${query}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 }
+
+/**
+ * Generates direct Google Maps Embed iframe URL for transit directions
+ */
+export function getGoogleMapsTransitEmbedUrl(sourceQuery, destQuery) {
+  const saddr = encodeURIComponent(sourceQuery || 'Namma Metro Station Bengaluru');
+  const daddr = encodeURIComponent(destQuery || 'Namma Metro Station Bengaluru');
+  return `https://maps.google.com/maps?saddr=${saddr}&daddr=${daddr}&dirflg=r&output=embed`;
+}
