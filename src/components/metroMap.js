@@ -47,11 +47,11 @@ export function initMetroLeafletMap() {
   });
   metroMapInstance = map;
 
-  // CartoDB Voyager Tile Layer
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
+  // Google Maps Tile Layer
+  L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+    attribution: '&copy; <a href="https://maps.google.com/">Google Maps</a>',
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    maxZoom: 20
   }).addTo(map);
 
   // Group stations by line
