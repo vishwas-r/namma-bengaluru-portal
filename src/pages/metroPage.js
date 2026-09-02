@@ -361,7 +361,7 @@ function renderCalculatorTab(state, lang) {
   const groupFare = liveFare?.groupFare !== undefined ? liveFare.groupFare : journey?.groupFare;
 
   const totalTime = liveFare?.totalTime || (journey ? `${Math.floor(journey.estimatedTimeMins / 60)} hrs ${journey.estimatedTimeMins % 60} mins` : '0 mins');
-  const totalDistance = liveFare?.totalDistance || (journey ? `${(journey.stationCount * 1.15).toFixed(1)} Km` : '0 Km');
+  const totalDistance = liveFare?.totalDistance || (journey && journey.totalDistanceKm ? `${journey.totalDistanceKm.toFixed(1)} Km` : '0 Km');
   const stationCountDisplay = liveFare?.stationCount || journey?.stationCount || 0;
 
   return `

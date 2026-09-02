@@ -30,21 +30,16 @@
     "disclaimer": "Parking details, slot allocations, and vehicle tariffs shown are sourced directly from the official Namma Metro (BMRCL) Parking Portal. All policies are subject to official BMRCL notifications."
   },
   "fareSlabs": [
-    { "minStations": 1, "maxStations": 2, "tokenFare": 10, "peakCscFare": 9.50, "nonPeakCscFare": 9.00, "groupFare": 8.50 },
-    { "minStations": 3, "maxStations": 4, "tokenFare": 15, "peakCscFare": 14.25, "nonPeakCscFare": 13.50, "groupFare": 12.75 },
-    { "minStations": 5, "maxStations": 6, "tokenFare": 20, "peakCscFare": 19.00, "nonPeakCscFare": 18.00, "groupFare": 17.00 },
-    { "minStations": 7, "maxStations": 8, "tokenFare": 25, "peakCscFare": 23.75, "nonPeakCscFare": 22.50, "groupFare": 21.25 },
-    { "minStations": 9, "maxStations": 10, "tokenFare": 30, "peakCscFare": 28.50, "nonPeakCscFare": 27.00, "groupFare": 25.50 },
-    { "minStations": 11, "maxStations": 11, "tokenFare": 35, "peakCscFare": 33.25, "nonPeakCscFare": 31.50, "groupFare": 29.75 },
-    { "minStations": 12, "maxStations": 13, "tokenFare": 40, "peakCscFare": 38.00, "nonPeakCscFare": 36.00, "groupFare": 34.00 },
-    { "minStations": 14, "maxStations": 15, "tokenFare": 45, "peakCscFare": 42.75, "nonPeakCscFare": 40.50, "groupFare": 38.25 },
-    { "minStations": 16, "maxStations": 17, "tokenFare": 50, "peakCscFare": 47.50, "nonPeakCscFare": 45.00, "groupFare": 42.50 },
-    { "minStations": 18, "maxStations": 18, "tokenFare": 55, "peakCscFare": 52.25, "nonPeakCscFare": 49.50, "groupFare": 46.75 },
-    { "minStations": 19, "maxStations": 19, "tokenFare": 60, "peakCscFare": 57.00, "nonPeakCscFare": 54.00, "groupFare": 51.00 },
-    { "minStations": 20, "maxStations": 21, "tokenFare": 70, "peakCscFare": 66.50, "nonPeakCscFare": 63.00, "groupFare": 59.50 },
-    { "minStations": 22, "maxStations": 23, "tokenFare": 80, "peakCscFare": 76.00, "nonPeakCscFare": 72.00, "groupFare": 68.00 },
-    { "minStations": 24, "maxStations": 26, "tokenFare": 90, "peakCscFare": 85.50, "nonPeakCscFare": 81.00, "groupFare": 76.50 },
-    { "minStations": 27, "maxStations": 100, "tokenFare": 100, "peakCscFare": 95.00, "nonPeakCscFare": 90.00, "groupFare": 85.00 }
+    { "minDist": 0, "maxDist": 2, "tokenFare": 10, "peakCscFare": 9.50, "nonPeakCscFare": 9.50, "groupFare": 9.00 },
+    { "minDist": 2, "maxDist": 4, "tokenFare": 20, "peakCscFare": 19.00, "nonPeakCscFare": 19.00, "groupFare": 18.00 },
+    { "minDist": 4, "maxDist": 6, "tokenFare": 30, "peakCscFare": 28.50, "nonPeakCscFare": 28.50, "groupFare": 27.00 },
+    { "minDist": 6, "maxDist": 8, "tokenFare": 40, "peakCscFare": 38.00, "nonPeakCscFare": 38.00, "groupFare": 36.00 },
+    { "minDist": 8, "maxDist": 10, "tokenFare": 50, "peakCscFare": 47.50, "nonPeakCscFare": 47.50, "groupFare": 45.00 },
+    { "minDist": 10, "maxDist": 15, "tokenFare": 60, "peakCscFare": 57.00, "nonPeakCscFare": 57.00, "groupFare": 54.00 },
+    { "minDist": 15, "maxDist": 20, "tokenFare": 70, "peakCscFare": 66.50, "nonPeakCscFare": 66.50, "groupFare": 63.00 },
+    { "minDist": 20, "maxDist": 25, "tokenFare": 80, "peakCscFare": 76.00, "nonPeakCscFare": 76.00, "groupFare": 72.00 },
+    { "minDist": 25, "maxDist": 30, "tokenFare": 90, "peakCscFare": 85.50, "nonPeakCscFare": 85.50, "groupFare": 81.00 },
+    { "minDist": 30, "maxDist": 100, "tokenFare": 90, "peakCscFare": 85.50, "nonPeakCscFare": 85.50, "groupFare": 81.00 }
   ],
   "dayPasses": [
     {

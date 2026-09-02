@@ -95,8 +95,21 @@ export function calculateMetroJourney(sourceId, destId) {
     stationsList = [...path1, ...path2.slice(1)];
   }
 
+  let totalDistanceKm = 0;
+  for (let i = 0; i < stationsList.length - 1; i++) {
+    const s1 = stationsList[i];
+    const s2 = stationsList[i + 1];
+    if (s1.lat && s1.lng && s2.lat && s2.lng) {
+      totalDistanceKm += getDistanceKm(s1.lat, s1.lng, s2.lat, s2.lng);
+    }
+  }
+
+  // To account for curves in actual track, BMRCL track distance is slightly longer than straight-line sum.
+  // Using 1.05x coefficient closely aligns Haversine sums with BMRCL's official chained distances.
+  const trackDistanceKm = totalDistanceKm * 1.05;
+
   const stationCount = Math.max(1, stationsList.length - 1);
-  const fareObj = getFareForStationCount(stationCount);
+  const fareObj = getFareForDistance(trackDistanceKm);
   const travelTimeMins = Math.round(stationCount * 2.1 + (requiresInterchange ? 5 : 0));
 
   const tokenFare = fareObj.tokenFare;
@@ -116,6 +129,7 @@ export function calculateMetroJourney(sourceId, destId) {
     smartCardFare: nonPeakCscFare,
     savings: (tokenFare - nonPeakCscFare).toFixed(2),
     estimatedTimeMins: travelTimeMins,
+    totalDistanceKm: trackDistanceKm,
     requiresInterchange,
     interchangeStationName,
     stationsList,
@@ -142,12 +156,25 @@ export function getGoogleMapsStationUrl(stationQuery) {
 }
 
 /**
- * Gets fare slab for a given station count
+ * Gets fare slab for a given distance
  */
-export function getFareForStationCount(count) {
-  const slab = faresData.fareSlabs.find(s => count >= s.minStations && count <= s.maxStations);
+export function getFareForDistance(distanceKm) {
+  const slab = faresData.fareSlabs.find(s => distanceKm > s.minDist && distanceKm <= s.maxDist);
   if (slab) return slab;
+  if (distanceKm === 0) return faresData.fareSlabs[0];
   return faresData.fareSlabs[faresData.fareSlabs.length - 1];
+}
+
+/**
+ * Calculates Haversine distance between two coordinates in km
+ */
+export function getDistanceKm(lat1, lon1, lat2, lon2) {
+  const p = 0.017453292519943295; // Math.PI / 180
+  const c = Math.cos;
+  const a = 0.5 - c((lat2 - lat1) * p)/2 + 
+          c(lat1 * p) * c(lat2 * p) * 
+          (1 - c((lon2 - lon1) * p))/2;
+  return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
 
 
