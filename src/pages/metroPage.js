@@ -846,7 +846,10 @@ function renderTariffTab(state, lang) {
             ${faresData.fareSlabs.map(s => {
     const cardFare = s.nonPeakCscFare !== undefined ? s.nonPeakCscFare : s.peakCscFare;
     const savings = (s.tokenFare - cardFare).toFixed(2);
-    const label = s.minStations === s.maxStations ? `${s.minStations} Station` : `${s.minStations} - ${s.maxStations > 50 ? '27+' : s.maxStations} Stations`;
+    let label = '';
+    if (s.minDist === 0) label = `Up to ${s.maxDist} km`;
+    else if (s.maxDist >= 100) label = `Above ${s.minDist} km`;
+    else label = `${s.minDist} - ${s.maxDist} km`;
     return `
               <tr>
                 <td class="fw-bold">${label}</td>
