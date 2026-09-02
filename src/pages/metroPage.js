@@ -391,7 +391,7 @@ function renderCalculatorTab(state, lang) {
           <label class="form-label fw-bold text-secondary text-uppercase mb-1" style="font-size:0.75rem; letter-spacing: 0.05em;">FROM STATION</label>
           <select id="metroSourceSelect" class="form-select form-select-lg border-2" onchange="window.__onMetroStationChange()">
             ${stationsData.map(s => {
-    const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
+    const stationName = s.name;
     return `<option value="${s.id}" data-line="${s.line}" data-neighborhood="${s.neighborhood || ''}" ${s.id === sourceId ? 'selected' : ''}>${stationName}</option>`;
   }).join('')}
           </select>
@@ -409,7 +409,7 @@ function renderCalculatorTab(state, lang) {
           <label class="form-label fw-bold text-secondary text-uppercase mb-1" style="font-size:0.75rem; letter-spacing: 0.05em;">TO STATION</label>
           <select id="metroDestSelect" class="form-select form-select-lg border-2" onchange="window.__onMetroStationChange()">
             ${stationsData.map(s => {
-    const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
+    const stationName = s.name;
     return `<option value="${s.id}" data-line="${s.line}" data-neighborhood="${s.neighborhood || ''}" ${s.id === destId ? 'selected' : ''}>${stationName}</option>`;
   }).join('')}
           </select>
@@ -557,7 +557,7 @@ function renderCalculatorTab(state, lang) {
                   </span>
                   <div>
                     <span class="text-body" style="font-size:0.88rem;">${st.name}</span>
-                    <span class="text-secondary ms-2" style="font-size:0.75rem;">${st.kannadaName}</span>
+                    
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-2">
@@ -593,7 +593,7 @@ function renderLiveStationsTab(state, lang) {
           <label class="form-label fw-bold text-secondary" style="font-size:0.78rem;">SELECT METRO STATION</label>
           <select id="metroLiveSelect" class="form-select form-select-lg" onchange="window.__selectMetroStation(this.value)">
             ${stationsData.map(s => {
-    const stationName = lang === 'kn' && s.kannadaName ? s.kannadaName : s.name;
+    const stationName = s.name;
     return `<option value="${s.id}" data-line="${s.line}" ${s.id === selectedStationId ? 'selected' : ''}>${stationName}</option>`;
   }).join('')}
           </select>
@@ -610,7 +610,7 @@ function renderLiveStationsTab(state, lang) {
           </div>
           <div>
             <h4 class="fw-bold mb-0 text-body">${selectedStation.name}</h4>
-            <div class="text-secondary" style="font-size:0.85rem;">${selectedStation.kannadaName} · <span class="text-uppercase fw-semibold text-primary">${selectedStation.line} Line</span></div>
+            <div class="text-secondary" style="font-size:0.85rem;"> <span class="text-uppercase fw-semibold text-primary">${selectedStation.line} Line</span></div>
           </div>
         </div>
         <a href="${getGoogleMapsStationUrl(selectedStation.googleQuery || selectedStation.name + ' Metro Station Bengaluru')}" target="_blank" rel="noopener" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold" style="background:#7c3aed; border-color:#7c3aed;">

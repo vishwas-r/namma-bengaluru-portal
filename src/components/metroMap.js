@@ -129,7 +129,7 @@ export function initMetroLeafletMap() {
     const popupHtml = `
       <div style="font-family: inherit; text-align: left; min-width: 180px;">
         <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">${s.name}</div>
-        <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 4px;">${s.kannadaName || ''}</div>
+        
         <span class="badge" style="background:${color}; color:${s.line === 'yellow' ? '#000' : '#fff'}; font-size:0.72rem;">${s.line.toUpperCase()} LINE</span>
         ${isInterchange ? `<span class="badge bg-dark text-white ms-1" style="font-size:0.72rem;"><i class="bi bi-arrow-counterclockwise me-1 text-warning"></i> INTERCHANGE</span>` : ''}
         ${s.neighborhood ? `<div style="font-size: 0.76rem; color: #475569; margin-top: 6px; line-height: 1.3;"><i class="bi bi-geo-alt-fill me-1 text-danger"></i> <strong>Area:</strong> ${s.neighborhood}</div>` : ''}

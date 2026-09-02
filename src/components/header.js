@@ -271,11 +271,21 @@ export function renderHeader(state, lang) {
           <i class="bi bi-code-slash"></i> Open Source
         </a>
 
-        <!-- Language toggle (Tablet & Desktop) -->
-        <button class="btn btn-sm btn-outline-secondary rounded-2 px-2 py-1 d-none d-sm-flex align-items-center gap-1" onclick="window.__lang()" title="Switch Language" style="font-size:0.78rem;">
-          <i class="bi bi-translate"></i>
-          <span>${state.lang === 'en' ? 'ಕನ್ನಡ' : 'English'}</span>
-        </button>
+        <!-- Language Dropdown (Tablet & Desktop) -->
+        <div class="dropdown d-none d-sm-flex">
+          <button class="btn btn-sm btn-outline-secondary rounded-2 px-2 py-1 d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Switch Language" style="font-size:0.78rem;">
+            <i class="bi bi-translate"></i>
+            <span>Language</span>
+            <i class="bi bi-chevron-down ms-1" style="font-size:0.55rem;"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" style="font-size: 0.85rem;">
+            <li><button class="dropdown-item" onclick="window.__changeLanguage('en')">English</button></li>
+            <li><button class="dropdown-item" onclick="window.__changeLanguage('kn')">ಕನ್ನಡ (Kannada)</button></li>
+            <li><button class="dropdown-item" onclick="window.__changeLanguage('te')">తెలుగు (Telugu)</button></li>
+            <li><button class="dropdown-item" onclick="window.__changeLanguage('ta')">தமிழ் (Tamil)</button></li>
+            <li><button class="dropdown-item" onclick="window.__changeLanguage('hi')">हिन्दी (Hindi)</button></li>
+          </ul>
+        </div>
 
         <!-- Theme toggle -->
         <button class="btn btn-sm btn-outline-secondary rounded-circle p-0 d-flex align-items-center justify-content-center" onclick="window.__theme()" title="Toggle Theme" style="width:34px; height:34px;">
@@ -315,9 +325,13 @@ export function renderHeader(state, lang) {
 
         <!-- Mobile Quick Settings Row -->
         <div class="d-flex gap-2 my-1">
-          <button class="btn btn-sm btn-outline-secondary flex-fill text-start py-2 px-3" onclick="window.__lang(); window.__hideMobileMenu();" style="font-size:0.82rem;">
-            <i class="bi bi-translate me-2 text-primary"></i>Language: <strong>${state.lang === 'en' ? 'ಕನ್ನಡ' : 'English'}</strong>
-          </button>
+          <select class="form-select form-select-sm border-secondary text-secondary flex-fill px-3 py-2" onchange="window.__changeLanguage(this.value); window.__hideMobileMenu();" style="font-size:0.82rem; height: auto; background-color: transparent;">
+            <option value="en" ${state.lang === 'en' ? 'selected' : ''}>English</option>
+            <option value="kn" ${state.lang === 'kn' ? 'selected' : ''}>ಕನ್ನಡ (Kannada)</option>
+            <option value="te" ${state.lang === 'te' ? 'selected' : ''}>తెలుగు (Telugu)</option>
+            <option value="ta" ${state.lang === 'ta' ? 'selected' : ''}>தமிழ் (Tamil)</option>
+            <option value="hi" ${state.lang === 'hi' ? 'selected' : ''}>हिन्दी (Hindi)</option>
+          </select>
           <button class="btn btn-sm btn-outline-secondary flex-fill text-start py-2 px-3" onclick="window.__modal(); window.__hideMobileMenu();" style="font-size:0.82rem;">
             <i class="bi bi-key-fill me-2 text-primary"></i>API Keys
           </button>

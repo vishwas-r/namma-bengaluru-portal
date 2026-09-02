@@ -1844,3 +1844,27 @@ body > .ts-dropdown .dropdown-input:focus {
   border-color: #6d28d9 !important;
   box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15) !important;
 }
+
+/* =======================================================================
+   Google Translate Overrides (Hides branding and tooltips)
+   ======================================================================= */
+body {
+  top: 0 !important;
+}
+.skiptranslate iframe.goog-te-banner-frame {
+  display: none !important;
+}
+.goog-tooltip {
+  display: none !important;
+}
+.goog-tooltip:hover {
+  display: none !important;
+}
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+#google_translate_element {
+  display: none !important;
+}

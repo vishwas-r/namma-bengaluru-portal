@@ -77,26 +77,20 @@ const I18N = {
     sync: 'AI-synced daily at 10 AM IST',
     langToggle: 'ಕನ್ನಡ',
   },
-  kn: {
-    heroTitle: 'ನಿಮ್ಮ ಹಕ್ಕುಗಳು. ನಿಮ್ಮ ನಗರ.<br>ಒಂದೇ ಜಾಗದಲ್ಲಿ.',
-    heroSub: 'ಬೆಂಗಳೂರಿನ ಎಲ್ಲಾ ಸರ್ಕಾರಿ ಇಲಾಖೆಗಳ ಬಿಲ್ ಕ್ಯಾಲ್ಕುಲೇಟರ್‌ಗಳು, ಸುತ್ತೋಲೆಗಳು, ದೂರು ಮಾರ್ಗದರ್ಶಿ ಮತ್ತು ತುರ್ತು ಸಹಾಯವಾಣಿಗಳು — 100% ಉಚಿತ.',
-    placeholder: 'ಹುಡುಕಿ: ಸುತ್ತೋಲೆಗಳು, ದರಗಳು, ಮಾರ್ಗದರ್ಶಿ...',
-    tabs: {
-      calculator: { icon: 'bi-calculator', label: 'ಬಿಲ್ ಕ್ಯಾಲ್ಕುಲೇಟರ್' },
-      tariff: { icon: 'bi-table', label: 'ದರ ಪಟ್ಟಿ' },
-      services: { icon: 'bi-file-earmark-check', label: 'ಸೇವೆಗಳು ಮತ್ತು ಅರ್ಜಿಗಳು' },
-      outages: { icon: 'bi-broadcast-pin', label: 'ಅಡಚಣೆ ಟ್ರ್ಯಾಕರ್' },
-      notices: { icon: 'bi-newspaper', label: 'ಸುತ್ತೋಲೆಗಳು' },
-      social: { icon: 'bi-share', label: 'ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮ' },
-      complaint: { icon: 'bi-life-preserver', label: 'ದೂರು ಮಾರ್ಗದರ್ಶಿ' },
-      ai: { icon: 'bi-robot', label: 'AI ಕೇಳಿ' },
-    },
-    sync: 'ಪ್ರತಿ ದಿನ ಬೆಳಗ್ಗೆ 10 ಗಂಟೆಗೆ AI ಮೂಲಕ ಅಪ್‌ಡೇಟ್',
-    langToggle: 'English',
-  },
 };
 
-const getLang = () => I18N[state.lang] || I18N.en;
+const getLang = () => I18N.en;
+
+
+// ── Google Translate Helper ────────────────────────────────
+window.__changeLanguage = (langCode) => {
+  const select = document.querySelector('select.goog-te-combo');
+  if (select) {
+    select.value = langCode;
+    select.dispatchEvent(new Event('change'));
+    localStorage.setItem('nb_lang', langCode);
+  }
+};
 
 // ── Router ─────────────────────────────────────────────────
 function router() {
