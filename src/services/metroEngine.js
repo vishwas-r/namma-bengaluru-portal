@@ -150,65 +150,7 @@ export function getFareForStationCount(count) {
   return faresData.fareSlabs[faresData.fareSlabs.length - 1];
 }
 
-function getYoInfraSlug(name) {
-  let s = name.toLowerCase()
-    .replace(/station/gi, '')
-    .replace(/\(.*?\)/g, '')
-    .replace(/dr\.|sir m\.|kr /gi, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-');
-  if (name.includes('Majestic')) s = 'nadaprabhu-kempegowda';
-  if (name.includes('Vidhana Soudha')) s = 'dr-br-ambedkar-vidhana-soudha';
-  if (name.includes('Central College')) s = 'sir-m-visveshwaraya-station';
-  if (name.includes('Indiranagar')) s = 'indiranagara';
-  if (name.includes('Halasuru')) s = 'halasuru';
-  if (name.includes('Yeshwanthpur')) s = 'yeshwanthpura';
-  if (name.includes('Rajajinagar')) s = 'rajajinagara';
-  if (name.includes('Market')) s = 'krishna-rajendra-market';
-  return `${s}-metro-station-bangalore`;
-}
 
-/**
- * Live API Fetch from yoinfra.com (CORS enabled)
- */
-export async function fetchOfficialMetroFare(fromStationInput, toStationInput) {
-  const fromStation = typeof fromStationInput === 'string' ? getStationById(fromStationInput) : fromStationInput;
-  const toStation = typeof toStationInput === 'string' ? getStationById(toStationInput) : toStationInput;
-
-  if (!fromStation?.name || !toStation?.name) return null;
-
-  try {
-    const slug = `from-${getYoInfraSlug(fromStation.name)}-to-${getYoInfraSlug(toStation.name)}`;
-    const url = `https://yoinfra.com/api/route?slug=${encodeURIComponent(slug)}`;
-
-    const res = await fetch(url);
-    if (res.ok) {
-      const data = await res.json();
-      if (data && data.status === 'success' && data.route_custom) {
-        const rc = data.route_custom;
-        const normalFare = Number(rc.normal_fare);
-        const smartCardFare = Number(rc.smart_card_fare);
-
-        return {
-          tokenFare: normalFare,
-          smartCardFare: smartCardFare,
-          peakSmartCardFare: Number((normalFare * 0.95).toFixed(2)),
-          nonPeakCscFare: smartCardFare,
-          groupFare: Number((normalFare * 0.85).toFixed(2)),
-          totalDistance: rc.total_distance || null,
-          totalTime: rc.total_time || null,
-          stationCount: rc.station_count || null,
-          isOfficialApi: true
-        };
-      }
-    }
-  } catch (err) {
-    console.warn('Live yoinfra fare fetch failed, using local engine:', err);
-  }
-
-  return null;
-}
 
 /**
  * Generates direct Google Maps Embed iframe URL for static hosting

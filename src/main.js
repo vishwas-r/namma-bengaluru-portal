@@ -15,7 +15,7 @@ import { renderDepartmentsPage } from './pages/departmentsPage.js';
 import { renderBWSSBPage, renderTab as renderBWSSBTab, renderCalc as renderBWSSBCalc, recalcBill as recalcBWSSBBill, renderTariffChart as renderBWSSBTariffChart, renderNoticeCard as renderBWSSBNoticeCard, renderSteps as renderBWSSBSteps } from './pages/bwssbPage.js';
 import { renderBESCOMPage, renderTab as renderBESCOMTab, renderCalc as renderBESCOMCalc, recalcBill as recalcBESCOMBill, renderTariffChart as renderBESCOMTariffChart, renderNoticeCard as renderBESCOMNoticeCard, renderSteps as renderBESCOMSteps } from './pages/bescomPage.js';
 import { renderMetroPage, renderTab as renderMetroTab } from './pages/metroPage.js';
-import { getAllStations, getStationById, fetchOfficialMetroFare } from './services/metroEngine.js';
+import { getAllStations, getStationById } from './services/metroEngine.js';
 import { initMetroLeafletMap } from './components/metroMap.js';
 import { getCurrentUser, promptGoogleLogin } from './services/googleAuth.js';
 import { subscribeToOutageReports, submitMetroReport } from './services/outageStore.js';
@@ -416,17 +416,7 @@ function bindAll() {
 
   window.__calculateMetroFare = async () => {
     window.__onMetroStationChange();
-    const srcObj = getStationById(state.metroSource);
-    const dstObj = getStationById(state.metroDest);
-
-    if (srcObj && dstObj) {
-      const liveFare = await fetchOfficialMetroFare(srcObj, dstObj);
-      if (liveFare) {
-        state.liveMetroFare = liveFare;
-      } else {
-        state.liveMetroFare = null;
-      }
-    }
+    state.liveMetroFare = null; // Rely on local engine
     renderApp(true);
   };
 
