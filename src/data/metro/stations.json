@@ -30,8 +30,8 @@
       "twoWheelerSlots": 200,
       "fourWheelerSlots": 30
     },
-    "lat": 12.9079,
-    "lng": 77.4765
+    "lat": 12.9079857,
+    "lng": 77.4759866
   },
   {
     "id": "kengeri-bus-terminal",
@@ -47,8 +47,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 25
     },
-    "lat": 12.9103,
-    "lng": 77.4839
+    "lat": 12.911277,
+    "lng": 77.4818453
   },
   {
     "id": "pattanagere",
@@ -64,8 +64,8 @@
       "twoWheelerSlots": 140,
       "fourWheelerSlots": 15
     },
-    "lat": 12.9142,
-    "lng": 77.4952
+    "lat": 12.924276,
+    "lng": 77.498305
   },
   {
     "id": "jnanabharathi",
@@ -81,8 +81,8 @@
       "twoWheelerSlots": 160,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9189,
-    "lng": 77.5059
+    "lat": 12.935446,
+    "lng": 77.512178
   },
   {
     "id": "rajarajeshwari-nagar",
@@ -98,8 +98,8 @@
       "twoWheelerSlots": 220,
       "fourWheelerSlots": 35
     },
-    "lat": 12.9254,
-    "lng": 77.5186
+    "lat": 12.936693,
+    "lng": 77.519556
   },
   {
     "id": "nayandahalli",
@@ -115,8 +115,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9372,
-    "lng": 77.5255
+    "lat": 12.9440285,
+    "lng": 77.527553
   },
   {
     "id": "mysore-road",
@@ -132,8 +132,8 @@
       "twoWheelerSlots": 300,
       "fourWheelerSlots": 50
     },
-    "lat": 12.9463,
-    "lng": 77.5307
+    "lat": 12.9466877,
+    "lng": 77.5300301
   },
   {
     "id": "deepanjali-nagar",
@@ -149,8 +149,8 @@
       "twoWheelerSlots": 150,
       "fourWheelerSlots": 15
     },
-    "lat": 12.9529,
-    "lng": 77.5362
+    "lat": 12.9519602,
+    "lng": 77.5369066
   },
   {
     "id": "attiguppe",
@@ -166,8 +166,8 @@
       "twoWheelerSlots": 140,
       "fourWheelerSlots": 10
     },
-    "lat": 12.9567,
-    "lng": 77.5441
+    "lat": 12.9621018,
+    "lng": 77.5337131
   },
   {
     "id": "vijayanagar",
@@ -183,8 +183,8 @@
       "twoWheelerSlots": 250,
       "fourWheelerSlots": 30
     },
-    "lat": 12.9613,
-    "lng": 77.5504
+    "lat": 12.9708197,
+    "lng": 77.5373638
   },
   {
     "id": "hosahalli",
@@ -200,8 +200,8 @@
       "twoWheelerSlots": 130,
       "fourWheelerSlots": 10
     },
-    "lat": 12.9658,
-    "lng": 77.5572
+    "lat": 12.9743102,
+    "lng": 77.5452696
   },
   {
     "id": "magadi-road",
@@ -217,8 +217,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9734,
-    "lng": 77.5614
+    "lat": 12.9744297,
+    "lng": 77.5558058
   },
   {
     "id": "ksr-city-railway-station",
@@ -256,8 +256,8 @@
       "twoWheelerSlots": 500,
       "fourWheelerSlots": 80
     },
-    "lat": 12.975712,
-    "lng": 77.572352
+    "lat": 12.9754929,
+    "lng": 77.5725125
   },
   {
     "id": "sir-m-visvesvaraya-station",
@@ -271,8 +271,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9765,
-    "lng": 77.5815
+    "lat": 12.9742805,
+    "lng": 77.5839458
   },
   {
     "id": "dr-br-ambedkar-vidhana-soudha",
@@ -286,8 +286,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9794,
-    "lng": 77.5906
+    "lat": 12.9785801,
+    "lng": 77.5913507
   },
   {
     "id": "cubbon-park",
@@ -301,8 +301,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9809,
-    "lng": 77.5978
+    "lat": 12.9807477,
+    "lng": 77.5976254
   },
   {
     "id": "mg-road",
@@ -316,8 +316,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9756,
-    "lng": 77.6068
+    "lat": 12.9759617,
+    "lng": 77.6067047
   },
   {
     "id": "trinity",
@@ -331,8 +331,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9731,
-    "lng": 77.6171
+    "lat": 12.9731619,
+    "lng": 77.6163068
   },
   {
     "id": "halasuru",
@@ -348,8 +348,8 @@
       "twoWheelerSlots": 100,
       "fourWheelerSlots": 10
     },
-    "lat": 12.9754,
-    "lng": 77.6263
+    "lat": 12.9763635,
+    "lng": 77.626715
   },
   {
     "id": "indiranagar",
@@ -365,8 +365,8 @@
       "twoWheelerSlots": 150,
       "fourWheelerSlots": 15
     },
-    "lat": 12.9783,
-    "lng": 77.6386
+    "lat": 12.9782619,
+    "lng": 77.6385257
   },
   {
     "id": "sv-road",
@@ -382,8 +382,8 @@
       "twoWheelerSlots": 300,
       "fourWheelerSlots": 40
     },
-    "lat": 12.9856,
-    "lng": 77.6449
+    "lat": 12.9859106,
+    "lng": 77.645004
   },
   {
     "id": "baiyappanahalli",
@@ -399,8 +399,8 @@
       "twoWheelerSlots": 450,
       "fourWheelerSlots": 70
     },
-    "lat": 12.9907,
-    "lng": 77.6524
+    "lat": 12.9909273,
+    "lng": 77.6535057
   },
   {
     "id": "benniganahalli",
@@ -416,8 +416,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9961,
-    "lng": 77.6631
+    "lat": 12.9963737,
+    "lng": 77.6682628
   },
   {
     "id": "krishnarajapura",
@@ -433,8 +433,8 @@
       "twoWheelerSlots": 350,
       "fourWheelerSlots": 50
     },
-    "lat": 12.9984,
-    "lng": 77.6748
+    "lat": 12.999922,
+    "lng": 77.677607
   },
   {
     "id": "singayyanapalya",
@@ -450,8 +450,8 @@
       "twoWheelerSlots": 160,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9967,
-    "lng": 77.6892
+    "lat": 12.996557,
+    "lng": 77.692708
   },
   {
     "id": "garudacharpalya",
@@ -467,8 +467,8 @@
       "twoWheelerSlots": 140,
       "fourWheelerSlots": 15
     },
-    "lat": 12.9934,
-    "lng": 77.7011
+    "lat": 12.9934865,
+    "lng": 77.7036972
   },
   {
     "id": "hoodi",
@@ -484,8 +484,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9892,
-    "lng": 77.7126
+    "lat": 12.988782,
+    "lng": 77.711364
   },
   {
     "id": "seetharampalya",
@@ -501,8 +501,8 @@
       "twoWheelerSlots": 150,
       "fourWheelerSlots": 15
     },
-    "lat": 12.9851,
-    "lng": 77.7214
+    "lat": 12.980966,
+    "lng": 77.708713
   },
   {
     "id": "kundalahalli",
@@ -518,8 +518,8 @@
       "twoWheelerSlots": 200,
       "fourWheelerSlots": 25
     },
-    "lat": 12.9796,
-    "lng": 77.7279
+    "lat": 12.977607,
+    "lng": 77.715523
   },
   {
     "id": "nallurhalli",
@@ -535,8 +535,8 @@
       "twoWheelerSlots": 160,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9741,
-    "lng": 77.7348
+    "lat": 12.976632,
+    "lng": 77.724752
   },
   {
     "id": "sri-sathya-sai-hospital",
@@ -552,8 +552,8 @@
       "twoWheelerSlots": 220,
       "fourWheelerSlots": 30
     },
-    "lat": 12.9708,
-    "lng": 77.7421
+    "lat": 12.9810264,
+    "lng": 77.7276147
   },
   {
     "id": "pattandur-agrahara",
@@ -569,8 +569,8 @@
       "twoWheelerSlots": 400,
       "fourWheelerSlots": 60
     },
-    "lat": 12.9806,
-    "lng": 77.7491
+    "lat": 12.987622,
+    "lng": 77.737737
   },
   {
     "id": "kadugodi-tree-park",
@@ -584,8 +584,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9818,
-    "lng": 77.7471
+    "lat": 12.9875606,
+    "lng": 77.747851
   },
   {
     "id": "hopefarm-channasandra",
@@ -601,8 +601,8 @@
       "twoWheelerSlots": 200,
       "fourWheelerSlots": 25
     },
-    "lat": 12.9851,
-    "lng": 77.7584
+    "lat": 12.987348,
+    "lng": 77.753796
   },
   {
     "id": "whitefield",
@@ -618,8 +618,8 @@
       "twoWheelerSlots": 350,
       "fourWheelerSlots": 50
     },
-    "lat": 12.9962,
-    "lng": 77.7612
+    "lat": 12.9883831,
+    "lng": 77.7427896
   },
   {
     "id": "madavara",
@@ -628,8 +628,8 @@
     "kannadaName": "ಮಾದಾವರ (ಬಿಐಇಸಿ)",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.057505,
-    "lng": 77.47279,
+    "lat": 13.0574088,
+    "lng": 77.4729323,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 280,
@@ -659,8 +659,8 @@
     "kannadaName": "ಚಿಕ್ಕಬಿದರಕಲ್ಲು",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.052422,
-    "lng": 77.487856,
+    "lat": 13.052417,
+    "lng": 77.487894,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 355,
@@ -689,8 +689,8 @@
     "kannadaName": "ಮಂಜುನಾಥನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.050325,
-    "lng": 77.494165,
+    "lat": 13.0501525,
+    "lng": 77.4943813,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 75,
@@ -719,8 +719,8 @@
     "kannadaName": "ನಾಗಸಂದ್ರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.048085,
-    "lng": 77.499648,
+    "lat": 13.0441273,
+    "lng": 77.5001366,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 274,
@@ -750,8 +750,8 @@
     "kannadaName": "ದಾಸರಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.043605,
-    "lng": 77.512208,
+    "lat": 13.0435419,
+    "lng": 77.5123791,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 205,
@@ -780,8 +780,8 @@
     "kannadaName": "ಜಾಲಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.039727,
-    "lng": 77.518811,
+    "lat": 13.0395795,
+    "lng": 77.5198439,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 120,
@@ -810,8 +810,8 @@
     "kannadaName": "ಪೀಣ್ಯ ಇಂಡಸ್ಟ್ರಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.03648,
-    "lng": 77.525304,
+    "lat": 13.0363672,
+    "lng": 77.5255204,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 380,
@@ -840,8 +840,8 @@
     "kannadaName": "ಪೀಣ್ಯ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.032893,
-    "lng": 77.533343,
+    "lat": 13.0347174,
+    "lng": 77.5296025,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 225,
@@ -870,8 +870,8 @@
     "kannadaName": "ಗೊರಗುಂಟೆಪಾಳ್ಯ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.028528,
-    "lng": 77.540881,
+    "lat": 13.028486,
+    "lng": 77.5408673,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 350,
@@ -901,8 +901,8 @@
     "kannadaName": "ಯಶವಂತಪುರ ರೈಲ್ವೆ ನಿಲ್ದಾಣ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.023428,
-    "lng": 77.549873,
+    "lat": 13.0233093,
+    "lng": 77.5498636,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 800,
@@ -931,8 +931,8 @@
     "kannadaName": "ಸ್ಯಾಂಡಲ್ ಸೋಪ್ ಫ್ಯಾಕ್ಟರಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0076,
-    "lng": 77.5539,
+    "lat": 13.0148546,
+    "lng": 77.5545643,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 311,
@@ -961,8 +961,8 @@
     "kannadaName": "ಮಹಾಲಕ್ಷ್ಮಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.008331,
-    "lng": 77.548739,
+    "lat": 13.0083376,
+    "lng": 77.5488342,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 225,
@@ -991,8 +991,8 @@
     "kannadaName": "ರಾಜಾಜಿನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.000414,
-    "lng": 77.54989,
+    "lat": 13.0004263,
+    "lng": 77.5497122,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 165,
@@ -1021,8 +1021,8 @@
     "kannadaName": "ಕುವೆಂಪು ರಸ್ತೆ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.998585,
-    "lng": 77.557178,
+    "lat": 12.9985023,
+    "lng": 77.5569472,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 60,
@@ -1051,8 +1051,8 @@
     "kannadaName": "ಶ್ರೀರಾಮ್‌ಪುರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.996476,
-    "lng": 77.563239,
+    "lat": 12.9965258,
+    "lng": 77.5633563,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 73,
@@ -1081,8 +1081,8 @@
     "kannadaName": "ಮಂತ್ರಿ ಸ್ಕ್ವೇರ್ ಸಂಪಿಗೆ ರಸ್ತೆ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.990504,
-    "lng": 77.570432,
+    "lat": 12.9905452,
+    "lng": 77.5708049,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 750,
@@ -1111,8 +1111,8 @@
     "kannadaName": "ಚಿಕ್ಕಪೇಟೆ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.967493,
-    "lng": 77.573912,
+    "lat": 12.9675461,
+    "lng": 77.5747925,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 380,
@@ -1141,8 +1141,8 @@
     "kannadaName": "ಕೃಷ್ಣ ರಾಜೇಂದ್ರ ಮಾರುಕಟ್ಟೆ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9602,
-    "lng": 77.5759,
+    "lat": 12.960161,
+    "lng": 77.574479,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 450,
@@ -1171,8 +1171,8 @@
     "kannadaName": "ನ್ಯಾಷನಲ್ ಕಾಲೇಜು",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9508,
-    "lng": 77.5741,
+    "lat": 12.9506135,
+    "lng": 77.5737362,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 205,
@@ -1201,8 +1201,8 @@
     "kannadaName": "ಲಾಲ್‌ಬಾಗ್",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.946483,
-    "lng": 77.57985,
+    "lat": 12.9465898,
+    "lng": 77.5799373,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 200,
@@ -1231,8 +1231,8 @@
     "kannadaName": "ಸೌತ್ ಎಂಡ್ ಸರ್ಕಲ್",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.938157,
-    "lng": 77.579796,
+    "lat": 12.9383179,
+    "lng": 77.5799523,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 120,
@@ -1261,8 +1261,8 @@
     "kannadaName": "ಜಯನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.929883,
-    "lng": 77.580066,
+    "lat": 12.9295922,
+    "lng": 77.5801481,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 330,
@@ -1294,8 +1294,8 @@
     "interchangeWith": [
       "yellow"
     ],
-    "lat": 12.921662,
-    "lng": 77.58012,
+    "lat": 12.9215877,
+    "lng": 77.5802611,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 223,
@@ -1324,8 +1324,8 @@
     "kannadaName": "ಬನಶಂಕರಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.9154,
-    "lng": 77.5736,
+    "lat": 12.9155385,
+    "lng": 77.5736288,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 290,
@@ -1355,8 +1355,8 @@
     "kannadaName": "ಜೆ.ಪಿ. ನಗರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.907466,
-    "lng": 77.573016,
+    "lat": 12.9075563,
+    "lng": 77.573061,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 182,
@@ -1385,8 +1385,8 @@
     "kannadaName": "ಯಲಚೇನಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.895963,
-    "lng": 77.569905,
+    "lat": 12.8960529,
+    "lng": 77.5701606,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 412,
@@ -1415,8 +1415,8 @@
     "kannadaName": "ಕೋಣನಕುಂಟೆ ಕ್ರಾಸ್",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.888916,
-    "lng": 77.562455,
+    "lat": 12.888909,
+    "lng": 77.56278,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 320,
@@ -1445,8 +1445,8 @@
     "kannadaName": "ದೊಡ್ಡಕಲ್ಲಸಂದ್ರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.884656,
-    "lng": 77.552345,
+    "lat": 12.884636,
+    "lng": 77.552824,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 290,
@@ -1475,8 +1475,8 @@
     "kannadaName": "ವಜ್ರಹಳ್ಳಿ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.877494,
-    "lng": 77.544492,
+    "lat": 12.877485,
+    "lng": 77.544817,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 83,
@@ -1505,8 +1505,8 @@
     "kannadaName": "ತಲಘಟ್ಟಪುರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.871283,
-    "lng": 77.537658,
+    "lat": 12.871366,
+    "lng": 77.538439,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 83,
@@ -1535,8 +1535,8 @@
     "kannadaName": "ಸಿಲ್ಕ್ ಇನ್‌ಸ್ಟಿಟ್ಯೂಟ್",
     "line": "green",
     "isInterchange": false,
-    "lat": 12.8456,
-    "lng": 77.5418,
+    "lat": 12.861672,
+    "lng": 77.529981,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 120,
@@ -1578,8 +1578,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 20
     },
-    "lat": 12.921662,
-    "lng": 77.58012
+    "lat": 12.9215877,
+    "lng": 77.5802611
   },
   {
     "id": "ragigudda",
@@ -1613,8 +1613,8 @@
       "twoWheelerSlots": 250,
       "fourWheelerSlots": 30
     },
-    "lat": 12.9167,
-    "lng": 77.5975
+    "lat": 12.9167331,
+    "lng": 77.6000931
   },
   {
     "id": "btm-layout",
@@ -1630,8 +1630,8 @@
       "twoWheelerSlots": 200,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9169,
-    "lng": 77.6055
+    "lat": 12.916488,
+    "lng": 77.608061
   },
   {
     "id": "central-silk-board",
@@ -1648,8 +1648,8 @@
       "twoWheelerSlots": 350,
       "fourWheelerSlots": 50
     },
-    "lat": 12.9166,
-    "lng": 77.6192
+    "lat": 12.9164939,
+    "lng": 77.6204681
   },
   {
     "id": "bommanahalli",
@@ -1665,8 +1665,8 @@
       "twoWheelerSlots": 150,
       "fourWheelerSlots": 10
     },
-    "lat": 12.9107,
-    "lng": 77.6238
+    "lat": 12.910648,
+    "lng": 77.626405
   },
   {
     "id": "hongasandra",
@@ -1680,8 +1680,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9017,
-    "lng": 77.6294
+    "lat": 12.901616,
+    "lng": 77.63195
   },
   {
     "id": "kudlu-gate",
@@ -1697,8 +1697,8 @@
       "twoWheelerSlots": 140,
       "fourWheelerSlots": 15
     },
-    "lat": 12.89,
-    "lng": 77.6343
+    "lat": 12.8899138,
+    "lng": 77.6391869
   },
   {
     "id": "singasandra",
@@ -1714,8 +1714,8 @@
       "twoWheelerSlots": 120,
       "fourWheelerSlots": 10
     },
-    "lat": 12.8809,
-    "lng": 77.6422
+    "lat": 12.880665,
+    "lng": 77.644824
   },
   {
     "id": "hosa-road",
@@ -1731,8 +1731,8 @@
       "twoWheelerSlots": 160,
       "fourWheelerSlots": 20
     },
-    "lat": 12.8702,
-    "lng": 77.6502
+    "lat": 12.8704259,
+    "lng": 77.652553
   },
   {
     "id": "beratena-agrahara",
@@ -1748,8 +1748,8 @@
       "twoWheelerSlots": 100,
       "fourWheelerSlots": 10
     },
-    "lat": 12.8638,
-    "lng": 77.6554
+    "lat": 12.863676,
+    "lng": 77.657897
   },
   {
     "id": "electronic-city",
@@ -1765,8 +1765,8 @@
       "twoWheelerSlots": 400,
       "fourWheelerSlots": 60
     },
-    "lat": 12.8562,
-    "lng": 77.6612
+    "lat": 12.8562351,
+    "lng": 77.6637798
   },
   {
     "id": "konappana-agrahara",
@@ -1782,8 +1782,8 @@
       "twoWheelerSlots": 250,
       "fourWheelerSlots": 30
     },
-    "lat": 12.8464,
-    "lng": 77.6687
+    "lat": 12.8582094,
+    "lng": 77.6619509
   },
   {
     "id": "huskur-road",
@@ -1799,8 +1799,8 @@
       "twoWheelerSlots": 150,
       "fourWheelerSlots": 15
     },
-    "lat": 12.8391,
-    "lng": 77.6749
+    "lat": 12.838885,
+    "lng": 77.677433
   },
   {
     "id": "hebbagodi",
@@ -1816,8 +1816,8 @@
       "twoWheelerSlots": 200,
       "fourWheelerSlots": 25
     },
-    "lat": 12.829,
-    "lng": 77.6788
+    "lat": 12.828967,
+    "lng": 77.681405
   },
   {
     "id": "bommasandra",
@@ -1833,7 +1833,7 @@
       "twoWheelerSlots": 300,
       "fourWheelerSlots": 40
     },
-    "lat": 12.8193,
-    "lng": 77.6858
+    "lat": 12.8193088,
+    "lng": 77.6883321
   }
 ]

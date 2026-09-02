@@ -183,6 +183,12 @@ export function renderTab(state, lang, dept) {
 
 // ── TAB 1: OVERVIEW ─────────────────────────────────────────
 function renderOverviewTab(state, lang) {
+  const allStations = getAllStations().filter(s => s.lat);
+  const totalCount = allStations.length;
+  const purpleCount = allStations.filter(s => s.line === 'purple').length;
+  const greenCount = allStations.filter(s => s.line === 'green').length;
+  const yellowCount = allStations.filter(s => s.line === 'yellow').length;
+
   return `
   <div class="d-flex flex-column gap-4">
     <!-- Hero Stats Row -->
@@ -197,7 +203,7 @@ function renderOverviewTab(state, lang) {
       <div class="col-6 col-md-3">
         <div class="nb-card p-3 text-start h-100 border-start border-4 border-success">
           <div class="text-secondary fw-semibold mb-1" style="font-size:0.75rem;">ACTIVE STATIONS</div>
-          <div class="fs-4 fw-bold text-body">82 Stations</div>
+          <div class="fs-4 fw-bold text-body">${totalCount} Stations</div>
           <div class="text-secondary" style="font-size:0.72rem;">Purple, Green & Yellow Lines</div>
         </div>
       </div>
@@ -242,7 +248,7 @@ function renderOverviewTab(state, lang) {
               <span class="badge bg-success-subtle text-success">100% Operational</span>
             </div>
             <h6 class="fw-bold mb-1">Challaghatta ↔ Whitefield (Kadugodi)</h6>
-            <p class="text-secondary mb-3" style="font-size:0.83rem;">36 Stations · 43.49 km corridor connecting West Bengaluru to ITPL & East Tech Hubs.</p>
+            <p class="text-secondary mb-3" style="font-size:0.83rem;">${purpleCount} Stations · 43.49 km corridor connecting West Bengaluru to ITPL & East Tech Hubs.</p>
             <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.78rem;">
               <span class="badge bg-body-tertiary text-body border">Major Hubs: Majestic, MG Road, Indiranagar, KR Puram, ITPL</span>
             </div>
@@ -256,7 +262,7 @@ function renderOverviewTab(state, lang) {
               <span class="badge bg-success-subtle text-success">100% Operational</span>
             </div>
             <h6 class="fw-bold mb-1">Madavara (BIEC) ↔ Silk Institute</h6>
-            <p class="text-secondary mb-3" style="font-size:0.83rem;">32 Stations · 33.4 km North-South corridor connecting Tumakuru Road to Kanakapura Road.</p>
+            <p class="text-secondary mb-3" style="font-size:0.83rem;">${greenCount} Stations · 33.4 km North-South corridor connecting Tumakuru Road to Kanakapura Road.</p>
             <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.78rem;">
               <span class="badge bg-body-tertiary text-body border">Major Hubs: Yeshwanthpur, Rajajinagar, Majestic, Jayanagar, Banashankari</span>
             </div>
@@ -270,7 +276,7 @@ function renderOverviewTab(state, lang) {
               <span class="badge bg-success-subtle text-success">100% Operational</span>
             </div>
             <h6 class="fw-bold mb-1">RV Road ↔ Delta Electronics Bommasandra</h6>
-            <p class="text-secondary mb-3" style="font-size:0.83rem;">16 Stations · 19.15 km corridor serving Silk Board, BTM Layout, and Electronic City IT Hub.</p>
+            <p class="text-secondary mb-3" style="font-size:0.83rem;">${yellowCount} Stations · 19.15 km corridor serving Silk Board, BTM Layout, and Electronic City IT Hub.</p>
             <div class="d-flex align-items-center gap-2 flex-wrap" style="font-size:0.78rem;">
               <span class="badge bg-body-tertiary text-body border">Major Hubs: RV Road (Green Line), Jayadeva, Silk Board, Electronic City</span>
             </div>
