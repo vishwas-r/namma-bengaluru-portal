@@ -517,18 +517,18 @@ function renderCalculatorTab(state, lang) {
       <!-- Google Maps Action Banner with Embedded Map -->
       <div class="col-12 col-lg-6">
         <div class="nb-card p-4 text-start bg-primary-subtle border border-primary-subtle h-100">
-          <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
-            <div class="d-flex align-items-center gap-3">
-              <div class="p-3 bg-white rounded-circle shadow-sm text-primary">
-                <i class="bi bi-google fs-3"></i>
+          <div class="d-flex align-items-center justify-content-between gap-2 mb-3 flex-nowrap">
+            <div class="d-flex align-items-center gap-2 text-truncate">
+              <div class="p-2 bg-white rounded-circle shadow-sm text-primary d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px; height:36px;">
+                <i class="bi bi-google fs-5"></i>
               </div>
-              <div>
-                <h6 class="fw-bold mb-1 text-body">Live Transit Directions</h6>
-                <p class="text-secondary mb-0" style="font-size:0.83rem;">Route from <strong>${journey.source.name}</strong> to <strong>${journey.dest.name}</strong>.</p>
+              <div class="text-truncate">
+                <h6 class="fw-bold mb-0 text-body" style="font-size:0.9rem;">Live Directions</h6>
+                <p class="text-secondary mb-0 text-truncate" style="font-size:0.75rem;">${journey.source.name} to ${journey.dest.name}</p>
               </div>
             </div>
-            <a href="${journey.googleMapsDirUrl}" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 fw-semibold rounded-pill shadow-sm" style="background:#7c3aed; border-color:#7c3aed;">
-              <i class="bi bi-box-arrow-up-right me-1"></i> Open in Maps App &rarr;
+            <a href="${journey.googleMapsDirUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm px-3 py-1 fw-semibold rounded-pill shadow-sm text-nowrap flex-shrink-0" style="background:#7c3aed; border-color:#7c3aed;">
+              <i class="bi bi-box-arrow-up-right d-none d-sm-inline me-1"></i> Maps App
             </a>
           </div>
           <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm border border-secondary-subtle">
@@ -539,9 +539,9 @@ function renderCalculatorTab(state, lang) {
 
       <!-- Station By Station Route Pathfinder List -->
       <div class="col-12 col-lg-6">
-        <div class="nb-card p-4 text-start h-100">
-          <h6 class="fw-bold mb-3"><i class="bi bi-geo me-2 text-primary"></i>Station-by-Station Route List (${journey.stationsList.length} Stations)</h6>
-          <div class="d-flex flex-column gap-2 position-relative ms-2 ps-3 border-start border-3 border-primary overflow-auto" style="max-height: 400px;">
+        <div class="nb-card p-4 text-start h-100 d-flex flex-column">
+          <h6 class="fw-bold mb-3 flex-shrink-0"><i class="bi bi-geo me-2 text-primary"></i>Station-by-Station Route List (${journey.stationsList.length} Stations)</h6>
+          <div class="d-flex flex-column gap-2 position-relative ms-2 ps-3 border-start border-3 border-primary overflow-auto flex-grow-1" style="height: 0; min-height: 200px;">
             ${journey.stationsList.map((st, idx) => `
               <div class="d-flex align-items-center justify-content-between p-2 rounded-2 ${idx === 0 || idx === journey.stationsList.length - 1 ? 'bg-primary-subtle fw-bold' : 'hover-bg-tertiary'}">
                 <div class="d-flex align-items-center gap-3">
