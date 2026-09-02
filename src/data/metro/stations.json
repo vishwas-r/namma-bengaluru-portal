@@ -573,6 +573,21 @@
     "lng": 77.7491
   },
   {
+    "id": "kadugodi-tree-park",
+    "name": "Kadugodi Tree Park",
+    "kannadaName": "ಕಾಡುಗೋಡಿ ಟ್ರೀ ಪಾರ್ಕ್",
+    "code": "KDTP",
+    "line": "purple",
+    "lineId": 1,
+    "neighborhood": "Kadugodi, Whitefield",
+    "googleQuery": "Kadugodi Tree Park Metro Station Bengaluru",
+    "parking": {
+      "hasParking": false
+    },
+    "lat": 12.9818,
+    "lng": 77.7471
+  },
+  {
     "id": "hopefarm-channasandra",
     "name": "Hopefarm Channasandra",
     "kannadaName": "ಹೋಪ್ ಫಾರ್ಮ್ ಚನ್ನಸಂದ್ರ",
