@@ -513,49 +513,55 @@ function renderCalculatorTab(state, lang) {
       </div>
     </div>
 
-    <!-- Google Maps Action Banner with Embedded Map -->
-    <div class="nb-card p-4 text-start bg-primary-subtle border border-primary-subtle">
-      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
-        <div class="d-flex align-items-center gap-3">
-          <div class="p-3 bg-white rounded-circle shadow-sm text-primary">
-            <i class="bi bi-google fs-3"></i>
-          </div>
-          <div>
-            <h6 class="fw-bold mb-1 text-body">Live Transit Directions on Google Maps</h6>
-            <p class="text-secondary mb-0" style="font-size:0.83rem;">Route from <strong>${journey.source.name}</strong> to <strong>${journey.dest.name}</strong>.</p>
-          </div>
-        </div>
-        <a href="${journey.googleMapsDirUrl}" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 fw-semibold rounded-pill shadow-sm" style="background:#7c3aed; border-color:#7c3aed;">
-          <i class="bi bi-box-arrow-up-right me-1"></i> Open in Maps App &rarr;
-        </a>
-      </div>
-      <div class="ratio ratio-21x9 rounded overflow-hidden shadow-sm border border-secondary-subtle" style="min-height: 280px;">
-        <iframe src="${getGoogleMapsTransitEmbedUrl(journey.source.googleQuery || journey.source.name, journey.dest.googleQuery || journey.dest.name)}" allowfullscreen loading="lazy" style="border:0;"></iframe>
-      </div>
-    </div>
-
-    <!-- Station By Station Route Pathfinder List -->
-    <div class="nb-card p-4 text-start">
-      <h6 class="fw-bold mb-3"><i class="bi bi-geo me-2 text-primary"></i>Station-by-Station Route List (${journey.stationsList.length} Stations)</h6>
-      <div class="d-flex flex-column gap-2 position-relative ms-2 ps-3 border-start border-3 border-primary">
-        ${journey.stationsList.map((st, idx) => `
-          <div class="d-flex align-items-center justify-content-between p-2 rounded-2 ${idx === 0 || idx === journey.stationsList.length - 1 ? 'bg-primary-subtle fw-bold' : 'hover-bg-tertiary'}">
+    <div class="row g-3">
+      <!-- Google Maps Action Banner with Embedded Map -->
+      <div class="col-12 col-lg-6">
+        <div class="nb-card p-4 text-start bg-primary-subtle border border-primary-subtle h-100">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
             <div class="d-flex align-items-center gap-3">
-              <span class="badge ${st.line === 'purple' ? 'bg-purple' : st.line === 'green' ? 'bg-success' : 'bg-warning text-dark'}" style="${st.line === 'purple' ? 'background:#9333ea;' : ''}">
-                ${idx + 1}
-              </span>
+              <div class="p-3 bg-white rounded-circle shadow-sm text-primary">
+                <i class="bi bi-google fs-3"></i>
+              </div>
               <div>
-                <span class="text-body" style="font-size:0.88rem;">${st.name}</span>
-                <span class="text-secondary ms-2" style="font-size:0.75rem;">${st.kannadaName}</span>
+                <h6 class="fw-bold mb-1 text-body">Live Transit Directions</h6>
+                <p class="text-secondary mb-0" style="font-size:0.83rem;">Route from <strong>${journey.source.name}</strong> to <strong>${journey.dest.name}</strong>.</p>
               </div>
             </div>
-            <div class="d-flex align-items-center gap-2">
-              ${st.isInterchange ? '<span class="badge bg-warning text-dark" style="font-size:0.68rem;"><i class="bi bi-arrow-repeat me-1"></i>Interchange Node</span>' : ''}
-              <a href="${getGoogleMapsStationUrl(st.googleQuery || st.name + ' Metro Station Bengaluru')}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary py-1 px-2" style="font-size:0.72rem;" title="View on Google Maps">
-                <i class="bi bi-geo-alt me-1 text-primary"></i>Maps
-              </a>
-            </div>
-          </div>`).join('')}
+            <a href="${journey.googleMapsDirUrl}" target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 fw-semibold rounded-pill shadow-sm" style="background:#7c3aed; border-color:#7c3aed;">
+              <i class="bi bi-box-arrow-up-right me-1"></i> Open in Maps App &rarr;
+            </a>
+          </div>
+          <div class="ratio ratio-4x3 rounded overflow-hidden shadow-sm border border-secondary-subtle">
+            <iframe src="${getGoogleMapsTransitEmbedUrl(journey.source.googleQuery || journey.source.name, journey.dest.googleQuery || journey.dest.name)}" allowfullscreen loading="lazy" style="border:0;"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Station By Station Route Pathfinder List -->
+      <div class="col-12 col-lg-6">
+        <div class="nb-card p-4 text-start h-100">
+          <h6 class="fw-bold mb-3"><i class="bi bi-geo me-2 text-primary"></i>Station-by-Station Route List (${journey.stationsList.length} Stations)</h6>
+          <div class="d-flex flex-column gap-2 position-relative ms-2 ps-3 border-start border-3 border-primary overflow-auto" style="max-height: 400px;">
+            ${journey.stationsList.map((st, idx) => `
+              <div class="d-flex align-items-center justify-content-between p-2 rounded-2 ${idx === 0 || idx === journey.stationsList.length - 1 ? 'bg-primary-subtle fw-bold' : 'hover-bg-tertiary'}">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="badge ${st.line === 'purple' ? 'bg-purple' : st.line === 'green' ? 'bg-success' : 'bg-warning text-dark'}" style="${st.line === 'purple' ? 'background:#9333ea;' : ''}">
+                    ${idx + 1}
+                  </span>
+                  <div>
+                    <span class="text-body" style="font-size:0.88rem;">${st.name}</span>
+                    <span class="text-secondary ms-2" style="font-size:0.75rem;">${st.kannadaName}</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  ${st.isInterchange ? '<span class="badge bg-warning text-dark" style="font-size:0.68rem;"><i class="bi bi-arrow-repeat me-1"></i>Interchange Node</span>' : ''}
+                  <a href="${getGoogleMapsStationUrl(st.googleQuery || st.name + ' Metro Station Bengaluru')}" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary py-1 px-2" style="font-size:0.72rem;" title="View on Google Maps">
+                    <i class="bi bi-geo-alt me-1 text-primary"></i>Maps
+                  </a>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>
       </div>
     </div>` : ''}
   </div>`;
