@@ -4,8 +4,7 @@
  * Ensures officialLink ALWAYS points to the specific direct document/webpage URL.
  */
 
-import https from 'https';
-import http from 'http';
+
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
@@ -62,35 +61,39 @@ function getOriginalFilenameFromUrl(url) {
   }
 }
 
-function fetchBuffer(url, maxRedirects = 5) {
-  return new Promise((resolve, reject) => {
-    const mod = url.startsWith('https') ? https : http;
-    const req = mod.get(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf;q=0.9,*/*;q=0.8',
-      },
-      timeout: 20000
-    }, res => {
-      if ((res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307 || res.statusCode === 308) && res.headers.location && maxRedirects > 0) {
-        const redirectUrl = new URL(res.headers.location, url).toString();
-        return resolve(fetchBuffer(redirectUrl, maxRedirects - 1));
-      }
-      const chunks = [];
-      res.on('data', chunk => chunks.push(chunk));
-      res.on('end', () => {
-        const buffer = Buffer.concat(chunks);
-        resolve({
-          buffer,
-          status: res.statusCode,
-          contentType: res.headers['content-type'] || '',
-          finalUrl: url
-        });
-      });
-    });
-    req.on('error', reject);
-    req.on('timeout', () => { req.destroy(); reject(new Error(`Timeout fetching ${url}`)); });
-  });
+async function fetchBuffer(url, retries = 3) {
+  const defaultHeaders = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf;q=0.9,image/avif,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Cache-Control': 'max-age=0'
+  };
+
+  for (let i = 0; i < retries; i++) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 20000);
+      
+      const res = await fetch(url, { headers: defaultHeaders, signal: controller.signal, redirect: 'follow' });
+      clearTimeout(timeoutId);
+      
+      const arrayBuffer = await res.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      
+      return {
+        buffer,
+        status: res.status,
+        contentType: res.headers.get('content-type') || '',
+        finalUrl: res.url
+      };
+    } catch (err) {
+      log(`⚠️ Attempt ${i + 1} failed for ${url}: ${err.message}`);
+      if (i === retries - 1) throw err;
+      await new Promise(resolve => setTimeout(resolve, 2000 * Math.pow(2, i)));
+    }
+  }
 }
 
 async function downloadPDF(url, docsDir, deptId, preferredFilename) {
