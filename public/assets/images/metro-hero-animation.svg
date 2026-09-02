@@ -1,0 +1,219 @@
+<svg class="hero-svg-bg" viewBox="0 0 1400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="heroBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#26152F" />
+      <stop offset="52%" stop-color="#211529" />
+      <stop offset="100%" stop-color="#17121D" />
+    </linearGradient>
+    <radialGradient id="purpleAtmosphere">
+      <stop offset="0%" stop-color="#73348A" stop-opacity="0.20" />
+      <stop offset="100%" stop-color="#73348A" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="greenAtmosphere">
+      <stop offset="0%" stop-color="#43A047" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#43A047" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="trainBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F5F5" />
+      <stop offset="45%" stop-color="#E4E4E7" />
+      <stop offset="100%" stop-color="#B9B9BE" />
+    </linearGradient>
+    <linearGradient id="trainPurpleBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#51205F" />
+      <stop offset="50%" stop-color="#73368A" />
+      <stop offset="100%" stop-color="#51205F" />
+    </linearGradient>
+    <linearGradient id="trainWindows" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#34313A" />
+      <stop offset="100%" stop-color="#15141A" />
+    </linearGradient>
+    <pattern id="heroDots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.85" fill="#FFFFFF" opacity="0.065" />
+    </pattern>
+    <pattern id="mapTexture" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M-20 80L80-20M0 100L100 0M20 120L120 20" stroke="#FFFFFF" stroke-width="0.7" opacity="0.018" />
+    </pattern>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="tinyGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <clipPath id="heroClip">
+      <rect x="0" y="0" width="1400" height="220" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#heroClip)">
+    <rect width="1400" height="220" fill="url(#heroBg)" />
+    <circle cx="530" cy="110" r="260" fill="url(#purpleAtmosphere)" />
+    <circle cx="430" cy="90" r="220" fill="url(#greenAtmosphere)" />
+    <rect width="1400" height="220" fill="url(#heroDots)" />
+    <rect width="1400" height="220" fill="url(#mapTexture)" />
+    <g stroke="#FFFFFF" stroke-width="1" opacity="0.022">
+      <line x1="100" y1="0" x2="100" y2="220" />
+      <line x1="300" y1="0" x2="300" y2="220" />
+      <line x1="500" y1="0" x2="500" y2="220" />
+      <line x1="700" y1="0" x2="700" y2="220" />
+      <line x1="900" y1="0" x2="900" y2="220" />
+      <line x1="1100" y1="0" x2="1100" y2="220" />
+      <line x1="1300" y1="0" x2="1300" y2="220" />
+      <line x1="0" y1="55" x2="1400" y2="55" />
+      <line x1="0" y1="110" x2="1400" y2="110" />
+      <line x1="0" y1="165" x2="1400" y2="165" />
+    </g>
+    <path d="M -80 125 C 120 125 240 119 360 110 C 405 107 445 105 500 105 C 700 105 930 105 1480 105" fill="none" stroke="#783A8E" stroke-width="9" stroke-linecap="round" opacity="0.07" />
+    <path id="purpleRoute" d="M -80 125 C 120 125 240 119 360 110 C 405 107 445 105 500 105 C 700 105 930 105 1480 105" fill="none" stroke="#8A459F" stroke-width="3" stroke-linecap="round" opacity="0.72" />
+    <path d="M 420 -40 C 420 12 420 35 418 52 C 415 70 405 79 394 88 C 380 99 370 106 370 116 C 370 128 382 139 397 148 C 413 157 428 165 438 177 C 448 190 449 207 448 250" fill="none" stroke="#43A047" stroke-width="9" stroke-linecap="round" opacity="0.055" />
+    <path id="greenRoute" d="M 420 -40 C 420 12 420 35 418 52 C 415 70 405 79 394 88 C 380 99 370 106 370 116 C 370 128 382 139 397 148 C 413 157 428 165 438 177 C 448 190 449 207 448 250" fill="none" stroke="#43A047" stroke-width="3" stroke-linecap="round" opacity="0.76" />
+    <path d="M 397 148 C 445 151 480 157 520 168 C 570 182 620 200 665 235" fill="none" stroke="#E4C83A" stroke-width="9" stroke-linecap="round" opacity="0.055" />
+    <path id="yellowRoute" d="M 397 148 C 445 151 480 157 520 168 C 570 182 620 200 665 235" fill="none" stroke="#E4C83A" stroke-width="3" stroke-linecap="round" opacity="0.76" />
+    <path d="M -20 125 C 50 125 105 126 160 123" fill="none" stroke="#8A459F" stroke-width="2" opacity="0.30" />
+    <path d="M 420 -20 C 420 0 420 12 420 28" fill="none" stroke="#43A047" stroke-width="2" opacity="0.32" />
+    <path d="M 570 198 C 605 210 635 225 660 245" fill="none" stroke="#E4C83A" stroke-width="2" opacity="0.30" />
+    <g fill="#FFFFFF" opacity="0.38">
+      <circle cx="145" cy="124" r="2.4" />
+      <circle cx="235" cy="119" r="2.4" />
+      <circle cx="310" cy="114" r="2.4" />
+      <circle cx="575" cy="105" r="2.4" />
+      <circle cx="710" cy="105" r="2.4" />
+      <circle cx="850" cy="105" r="2.4" />
+      <circle cx="1030" cy="105" r="2.4" />
+      <circle cx="1190" cy="105" r="2.4" />
+      <circle cx="1330" cy="105" r="2.4" />
+    </g>
+    <g fill="#FFFFFF" opacity="0.36">
+      <circle cx="420" cy="22" r="2.4" />
+      <circle cx="414" cy="62" r="2.4" />
+      <circle cx="394" cy="88" r="2.4" />
+      <circle cx="370" cy="116" r="2.4" />
+      <circle cx="397" cy="148" r="2.4" />
+      <circle cx="438" cy="177" r="2.4" />
+    </g>
+    <g fill="#FFFFFF" opacity="0.36">
+      <circle cx="455" cy="154" r="2.3" />
+      <circle cx="510" cy="165" r="2.3" />
+      <circle cx="560" cy="181" r="2.3" />
+      <circle cx="610" cy="202" r="2.3" />
+    </g>
+    <g transform="translate(370 116)" filter="url(#tinyGlow)">
+      <circle r="19" fill="#FFFFFF" opacity="0.025" />
+      <circle r="10" fill="#21142A" stroke="#FFFFFF" stroke-width="1.4" opacity="0.96" />
+      <circle r="3.8" fill="#FFFFFF" opacity="0.95" />
+      <circle r="10" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.32">
+        <animate attributeName="r" values="10;22;10" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.32;0;0.32" dur="4s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="translate(397 148)" filter="url(#tinyGlow)">
+      <circle r="18" fill="#FFFFFF" opacity="0.022" />
+      <circle r="9" fill="#21142A" stroke="#FFFFFF" stroke-width="1.4" opacity="0.96" />
+      <circle r="3.5" fill="#FFFFFF" opacity="0.95" />
+      <circle r="9" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.28">
+        <animate attributeName="r" values="9;20;9" dur="4.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.28;0;0.28" dur="4.5s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#FFFFFF" opacity="0.16" letter-spacing="0.7">
+      <text x="345" y="101">MAJESTIC</text>
+      <text x="402" y="161">RV ROAD</text>
+    </g>
+    <g opacity="0.30" filter="url(#softGlow)">
+      <g>
+        <rect x="0" y="87" width="348" height="37" rx="7" fill="url(#trainBody)" />
+        <rect x="0" y="112" width="348" height="7" fill="url(#trainPurpleBand)" />
+        <rect x="8" y="92" width="323" height="17" rx="3" fill="url(#trainWindows)" />
+        <path d="M14 94H73L67 97H14Z" fill="#FFFFFF" opacity="0.10" />
+        <path d="M94 94H150L144 97H94Z" fill="#FFFFFF" opacity="0.075" />
+        <path d="M174 94H230L224 97H174Z" fill="#FFFFFF" opacity="0.075" />
+        <path d="M254 94H312L306 97H254Z" fill="#FFFFFF" opacity="0.075" />
+        <g stroke="#77777C" stroke-width="1.5" opacity="0.78">
+          <line x1="87" y1="89" x2="87" y2="123" />
+          <line x1="174" y1="89" x2="174" y2="123" />
+          <line x1="261" y1="89" x2="261" y2="123" />
+        </g>
+        <g stroke="#77777C" stroke-width="0.9" opacity="0.68">
+          <line x1="28" y1="91" x2="28" y2="112" />
+          <line x1="58" y1="91" x2="58" y2="112" />
+          <line x1="115" y1="91" x2="115" y2="112" />
+          <line x1="145" y1="91" x2="145" y2="112" />
+          <line x1="202" y1="91" x2="202" y2="112" />
+          <line x1="232" y1="91" x2="232" y2="112" />
+          <line x1="289" y1="91" x2="289" y2="112" />
+          <line x1="319" y1="91" x2="319" y2="112" />
+        </g>
+        <line x1="8" y1="121" x2="329" y2="121" stroke="#FFFFFF" stroke-width="1" opacity="0.18" />
+        <g fill="#17151A" opacity="0.95">
+          <rect x="26" y="121" width="34" height="5" rx="2" />
+          <circle cx="34" cy="129" r="4" />
+          <circle cx="53" cy="129" r="4" />
+          <rect x="112" y="121" width="34" height="5" rx="2" />
+          <circle cx="120" cy="129" r="4" />
+          <circle cx="139" cy="129" r="4" />
+          <rect x="199" y="121" width="34" height="5" rx="2" />
+          <circle cx="207" cy="129" r="4" />
+          <circle cx="226" cy="129" r="4" />
+          <rect x="286" y="121" width="34" height="5" rx="2" />
+          <circle cx="294" cy="129" r="4" />
+          <circle cx="313" cy="129" r="4" />
+        </g>
+        <g fill="#77727A" opacity="0.75">
+          <circle cx="34" cy="129" r="1.5" />
+          <circle cx="53" cy="129" r="1.5" />
+          <circle cx="120" cy="129" r="1.5" />
+          <circle cx="139" cy="129" r="1.5" />
+          <circle cx="207" cy="129" r="1.5" />
+          <circle cx="226" cy="129" r="1.5" />
+          <circle cx="294" cy="129" r="1.5" />
+          <circle cx="313" cy="129" r="1.5" />
+        </g>
+        <path d="M330 87 Q342 87 348 98 V113 Q342 124 330 124 Z" fill="#683078" />
+        <path d="M330 93 H337 Q342 94 343 100 V107 H330 Z" fill="#29262E" />
+        <circle cx="343" cy="99" r="2.2" fill="#FFFFFF" opacity="0.95" />
+        <circle cx="343" cy="115" r="2.2" fill="#FFFFFF" opacity="0.95" />
+        <path d="M0 87 Q-8 90 -8 98 V114 Q-8 122 0 124 Z" fill="#603070" />
+        <rect x="10" y="88" width="318" height="1.5" rx="1" fill="#FFFFFF" opacity="0.30" />
+        <animateTransform attributeName="transform" type="translate" values="-390 0; 1510 0" dur="16s" repeatCount="indefinite" calcMode="linear" />
+      </g>
+    </g>
+    <rect x="0" y="103" width="250" height="1" rx="1" fill="#FFFFFF" opacity="0.025">
+      <animate attributeName="x" values="-250;1400" dur="16s" repeatCount="indefinite" />
+    </rect>
+    <g transform="translate(80 22)" opacity="0.10" filter="url(#tinyGlow)">
+      <path d="M15 0 C7 0 0 7 0 15 C0 27 15 42 15 42 C15 42 30 27 30 15 C30 7 23 0 15 0Z" fill="none" stroke="#FFFFFF" stroke-width="1.3" />
+      <circle cx="15" cy="15" r="5" fill="#FFFFFF" />
+      <animateTransform attributeName="transform" type="translate" values="80 22;80 18;80 22" dur="5s" repeatCount="indefinite" />
+    </g>
+    <g transform="translate(1080 24)" opacity="0.085" filter="url(#tinyGlow)">
+      <rect width="42" height="42" rx="9" fill="#FFFFFF" opacity="0.05" stroke="#FFFFFF" stroke-width="1" />
+      <path d="M10 30 V11 L21 21 L32 11 V30" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+    <circle cx="90" cy="178" r="2" fill="#43A047" opacity="0.16">
+      <animate attributeName="opacity" values="0.06;0.35;0.06" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="750" cy="38" r="2" fill="#8A459F" opacity="0.16">
+      <animate attributeName="opacity" values="0.06;0.35;0.06" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1260" cy="180" r="2" fill="#E4C83A" opacity="0.16">
+      <animate attributeName="opacity" values="0.06;0.35;0.06" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1160" cy="45" r="1.5" fill="#FFFFFF" opacity="0.12">
+      <animate attributeName="opacity" values="0.04;0.25;0.04" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <g transform="translate(1310 14)" fill="none" stroke="#FFFFFF" stroke-linecap="round" opacity="0.075">
+      <path d="M0 21Q13-2 26 21" stroke-width="1.5" />
+      <path d="M-6 27Q13-10 32 27" stroke-width="1" />
+      <path d="M-12 33Q13-18 38 33" stroke-width="0.7" />
+      <circle cx="13" cy="24" r="2" fill="#FFFFFF" />
+      <animate attributeName="opacity" values="0.035;0.14;0.035" dur="3s" repeatCount="indefinite" />
+    </g>
+    <rect x="0" y="0" width="1400" height="220" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.025" />
+  </g>
+</svg>

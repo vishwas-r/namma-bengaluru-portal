@@ -30,8 +30,8 @@
       "twoWheelerSlots": 200,
       "fourWheelerSlots": 30
     },
-    "lat": 12.9079857,
-    "lng": 77.4759866
+    "lat": 12.9079,
+    "lng": 77.4765
   },
   {
     "id": "kengeri-bus-terminal",
@@ -47,8 +47,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 25
     },
-    "lat": 12.911277,
-    "lng": 77.4818453
+    "lat": 12.914639,
+    "lng": 77.487704
   },
   {
     "id": "pattanagere",
@@ -115,8 +115,8 @@
       "twoWheelerSlots": 180,
       "fourWheelerSlots": 20
     },
-    "lat": 12.9440285,
-    "lng": 77.527553
+    "lat": 12.941826,
+    "lng": 77.525164
   },
   {
     "id": "mysore-road",
@@ -132,8 +132,8 @@
       "twoWheelerSlots": 300,
       "fourWheelerSlots": 50
     },
-    "lat": 12.9466877,
-    "lng": 77.5300301
+    "lat": 12.9463,
+    "lng": 77.5307
   },
   {
     "id": "deepanjali-nagar",
@@ -256,8 +256,8 @@
       "twoWheelerSlots": 500,
       "fourWheelerSlots": 80
     },
-    "lat": 12.9754929,
-    "lng": 77.5725125
+    "lat": 12.975712,
+    "lng": 77.572352
   },
   {
     "id": "sir-m-visvesvaraya-station",
@@ -301,8 +301,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9807477,
-    "lng": 77.5976254
+    "lat": 12.9809,
+    "lng": 77.5978
   },
   {
     "id": "mg-road",
@@ -316,8 +316,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9759617,
-    "lng": 77.6067047
+    "lat": 12.9756,
+    "lng": 77.6068
   },
   {
     "id": "trinity",
@@ -569,8 +569,8 @@
       "twoWheelerSlots": 400,
       "fourWheelerSlots": 60
     },
-    "lat": 12.987622,
-    "lng": 77.737737
+    "lat": 12.987753836379651,
+    "lng": 77.73771920245746
   },
   {
     "id": "kadugodi-tree-park",
@@ -584,8 +584,8 @@
     "parking": {
       "hasParking": false
     },
-    "lat": 12.9875606,
-    "lng": 77.747851
+    "lat": 12.98568261171408,
+    "lng": 77.74688084796577
   },
   {
     "id": "hopefarm-channasandra",
@@ -601,8 +601,8 @@
       "twoWheelerSlots": 200,
       "fourWheelerSlots": 25
     },
-    "lat": 12.987348,
-    "lng": 77.753796
+    "lat": 12.987344023265134,
+    "lng": 77.75378049918713
   },
   {
     "id": "whitefield",
@@ -618,8 +618,8 @@
       "twoWheelerSlots": 350,
       "fourWheelerSlots": 50
     },
-    "lat": 12.9883831,
-    "lng": 77.7427896
+    "lat": 12.995606611585004,
+    "lng": 77.75781571533999
   },
   {
     "id": "madavara",
@@ -719,8 +719,8 @@
     "kannadaName": "ನಾಗಸಂದ್ರ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0441273,
-    "lng": 77.5001366,
+    "lat": 13.048307,
+    "lng": 77.500123,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 274,
@@ -840,8 +840,8 @@
     "kannadaName": "ಪೀಣ್ಯ",
     "line": "green",
     "isInterchange": false,
-    "lat": 13.0347174,
-    "lng": 77.5296025,
+    "lat": 13.033167,
+    "lng": 77.53336,
     "parking": {
       "hasParking": true,
       "twoWheelerSlots": 225,
@@ -1595,8 +1595,8 @@
       "twoWheelerSlots": 120,
       "fourWheelerSlots": 15
     },
-    "lat": 12.9175,
-    "lng": 77.5898
+    "lat": 12.919576411628455,
+    "lng": 77.58397752522404
   },
   {
     "id": "jayadeva-hospital",
@@ -1782,8 +1782,8 @@
       "twoWheelerSlots": 250,
       "fourWheelerSlots": 30
     },
-    "lat": 12.8582094,
-    "lng": 77.6619509
+    "lat": 12.846454,
+    "lng": 77.671147
   },
   {
     "id": "huskur-road",

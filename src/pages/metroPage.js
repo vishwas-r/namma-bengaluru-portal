@@ -23,7 +23,8 @@ export function renderMetroPage(dept, state, lang) {
   const activeTabName = tabTitles[activeTab] || 'Overview';
 
   return `
-  <div class="nb-dept-hero nb-dept-hero-metro">
+  <div class="nb-dept-hero nb-dept-hero-metro position-relative">
+    <img src="/assets/images/metro-hero-animation.svg" class="hero-svg-bg position-absolute top-0 start-0 w-100 h-100" style="z-index: 0; pointer-events: none; opacity: 0.2; object-fit: cover;" aria-hidden="true" />
     <div class="container nb-dept-hero-content text-start position-relative z-1">
       <div class="mb-2">
         <a href="#/" class="text-white-50 text-decoration-none" style="font-size:0.8rem;"><i class="bi bi-house me-1"></i>Home</a>
