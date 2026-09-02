@@ -8,10 +8,45 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_DIR = path.join(__dirname, '../src/data/bescom');
 
+async function fetchWithRetry(url, options = {}, retries = 3) {
+  const defaultHeaders = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Cache-Control': 'max-age=0'
+  };
+
+  const finalOptions = {
+    ...options,
+    headers: { ...defaultHeaders, ...(options.headers || {}) }
+  };
+
+  for (let i = 0; i < retries; i++) {
+    try {
+      const controller = new AbortController();
+      // 15 seconds timeout
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+      
+      const res = await fetch(url, { ...finalOptions, signal: controller.signal });
+      clearTimeout(timeoutId);
+      
+      if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
+      return res;
+    } catch (err) {
+      console.warn(`⚠️ Attempt ${i + 1} failed for ${url}: ${err.message}`);
+      if (i === retries - 1) throw err;
+      // Exponential backoff
+      await new Promise(resolve => setTimeout(resolve, 2000 * Math.pow(2, i)));
+    }
+  }
+}
+
 async function syncOutages() {
   console.log('🔄 Fetching BESCOM Planned Outages...');
   try {
-    const res = await fetch('https://bescom.karnataka.gov.in/319/planned-outages/en');
+    const res = await fetchWithRetry('https://bescom.karnataka.gov.in/319/planned-outages/en');
     if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
     const html = await res.text();
     
@@ -45,7 +80,7 @@ async function syncOutages() {
         xlsxLink = 'https://bescom.karnataka.gov.in' + xlsxLink;
     }
 
-    const fileRes = await fetch(xlsxLink);
+    const fileRes = await fetchWithRetry(xlsxLink);
     if (!fileRes.ok) throw new Error(`Failed to download file: ${fileRes.status}`);
     
     const arrayBuffer = await fileRes.arrayBuffer();

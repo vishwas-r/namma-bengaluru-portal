@@ -5,7 +5,9 @@
     "fromTime": "10:00 AM",
     "toTime": "1:00 PM",
     "feeder": "220k BIAL-Hoody Line and 220kV Devanahalli-Haralur Muddenahalli Line 1 and 2",
-    "reason": "Capex works"
+    "reason": "Capex works",
+    "lat": 12.9044856,
+    "lon": 77.6654434
   },
   {
     "date": "08 Jul 2026",
@@ -13,7 +15,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "220/66/11kV Haralur Muddenahalli Receiving Station",
-    "reason": "Capex works"
+    "reason": "Capex works",
+    "lat": 12.9044856,
+    "lon": 77.6654434
   },
   {
     "date": "11 Jul 2026",
@@ -21,7 +25,9 @@
     "fromTime": "9:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220 kV R/S Kolar",
-    "reason": "First quarterly maintenance works for FY 2026-27 \n LC Required for \n1) Carrying out 1st quarterly maintanencve works at 220kV Kolar R/S & downstream stations.\n2) Strengthening of existing 220kV Kolar HVDC (PGCIL) - Kolar D/ C line using HPC conductor- present status is stub concreting completed for 05 no's of towers & tower erection need to be takenup. Hence LC required.\n3) 220kv Railway traction line tower erection work need to be taken up.\n4) To attend the observations made during condition monitoring of 2nd cycle."
+    "reason": "First quarterly maintenance works for FY 2026-27 \n LC Required for \n1) Carrying out 1st quarterly maintanencve works at 220kV Kolar R/S & downstream stations.\n2) Strengthening of existing 220kV Kolar HVDC (PGCIL) - Kolar D/ C line using HPC conductor- present status is stub concreting completed for 05 no's of towers & tower erection need to be takenup. Hence LC required.\n3) 220kv Railway traction line tower erection work need to be taken up.\n4) To attend the observations made during condition monitoring of 2nd cycle.",
+    "lat": 13.0776614,
+    "lon": 77.8016763
   },
   {
     "date": "18 Jul 2026",
@@ -29,7 +35,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV REMCO GIS station",
-    "reason": "Quarterly maintenance"
+    "reason": "Quarterly maintenance",
+    "lat": 12.9413253,
+    "lon": 77.5212118
   },
   {
     "date": "18 Jul 2026",
@@ -37,7 +45,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV K & C Valley MUSS",
-    "reason": "1st Quarterly Maintenance of 66kV Bus,Isolators,11kV Banks & Related Feeders."
+    "reason": "1st Quarterly Maintenance of 66kV Bus,Isolators,11kV Banks & Related Feeders.",
+    "lat": 12.8973303,
+    "lon": 77.4612175
   },
   {
     "date": "18 Jul 2026",
@@ -45,7 +55,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11KV HAL R/S",
-    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer"
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -53,7 +65,9 @@
     "fromTime": "9:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220KV RS Chintamani",
-    "reason": "220KV PGCIL Kolar-Chintamani Line-1 & 220KV PGCIL Kolar-Chintamani Line-2 To carryout 1st quarterly maintenance work in  2026-27"
+    "reason": "220KV PGCIL Kolar-Chintamani Line-1 & 220KV PGCIL Kolar-Chintamani Line-2 To carryout 1st quarterly maintenance work in  2026-27",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "25 Jul 2026",
@@ -61,7 +75,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV Kengeri satellite Town station",
-    "reason": "Quarterly maintenance"
+    "reason": "Quarterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -69,7 +85,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV Srigandhakaval MUSS",
-    "reason": "Quarterly maintenance work of 66kV Lines,Bus and 11kV Bus bar  isolator at 66/11kV Srigandhakaval station."
+    "reason": "Quarterly maintenance work of 66kV Lines,Bus and 11kV Bus bar  isolator at 66/11kV Srigandhakaval station.",
+    "lat": 12.995024,
+    "lon": 77.5065272
   },
   {
     "date": "18 Jul 2026",
@@ -77,7 +95,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV REMCO GIS station",
-    "reason": "Quarterly maintenance"
+    "reason": "Quarterly maintenance",
+    "lat": 12.9413253,
+    "lon": 77.5212118
   },
   {
     "date": "25 Jul 2026",
@@ -85,7 +105,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "66/11 kV Victoria Station",
-    "reason": "Quarterly maintenance work of 66kV Line, Bus and 11kV Bus bar and to attend hot spot in 66kV Transformer 2 isolator at 66/11kV Victoria Station."
+    "reason": "Quarterly maintenance work of 66kV Line, Bus and 11kV Bus bar and to attend hot spot in 66kV Transformer 2 isolator at 66/11kV Victoria Station.",
+    "lat": 12.965718,
+    "lon": 77.5762705
   },
   {
     "date": "26 Jul 2026",
@@ -93,7 +115,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kv Byadarahalli",
-    "reason": "Quarterly Maintenance work and attending hotspots"
+    "reason": "Quarterly Maintenance work and attending hotspots",
+    "lat": 13.0160478,
+    "lon": 77.5045057
   },
   {
     "date": "19 Jul 2026",
@@ -101,7 +125,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Bagmane Tech Muss",
-    "reason": "Quarterly maintenance of 31.5MVA T-1&2 & I/c Bay,  Bus GOS, 11KV Switchgears  maintenance."
+    "reason": "Quarterly maintenance of 31.5MVA T-1&2 & I/c Bay,  Bus GOS, 11KV Switchgears  maintenance.",
+    "lat": 12.974779,
+    "lon": 77.6654084
   },
   {
     "date": "18 Jul 2026",
@@ -109,7 +135,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV K & C Valley MUSS",
-    "reason": "1st Quarterly Maintenance of 66kV Bus,Isolators,11kV Banks & Related Feeders."
+    "reason": "1st Quarterly Maintenance of 66kV Bus,Isolators,11kV Banks & Related Feeders.",
+    "lat": 12.8973303,
+    "lon": 77.4612175
   },
   {
     "date": "25 Jul 2026",
@@ -117,7 +145,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV Kadubisanahalli MUSS",
-    "reason": "1st Quarterly Maintenance of 66kV Bus, Isolators,11kV Bus,11kV Banks & Related Feeders."
+    "reason": "1st Quarterly Maintenance of 66kV Bus, Isolators,11kV Bus,11kV Banks & Related Feeders.",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "18 Jul 2026",
@@ -125,7 +155,9 @@
     "fromTime": "9:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11KV HAL R/S",
-    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer"
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "25 Jul 2026",
@@ -133,7 +165,9 @@
     "fromTime": "9:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11KV HAL R/S",
-    "reason": "Quarterly maintenance of 31.5MVA Transformer-2 & related feeders and painting of transformer"
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-2 & related feeders and painting of transformer",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -141,7 +175,9 @@
     "fromTime": "9:30 AM",
     "toTime": "5:00 PM",
     "feeder": "66kV Adu-Line 1 & Adu-Line 2, 2x20MVA power transformers at 66/11kV Leelaventure station",
-    "reason": "Station 1st quarterly maintenance for the FY 26-27,CMR Test on all 66kV CB  & to Attend hotspot, 66kV Bus maintemance and 11kV switchgear maintenance."
+    "reason": "Station 1st quarterly maintenance for the FY 26-27,CMR Test on all 66kV CB  & to Attend hotspot, 66kV Bus maintemance and 11kV switchgear maintenance.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "21 Jul 2026",
@@ -149,7 +185,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV Prestige Falcon City Substation",
-    "reason": "Periodical  maintenance work"
+    "reason": "Periodical  maintenance work",
+    "lat": 12.8858163,
+    "lon": 77.5634669
   },
   {
     "date": "22 Jul 2026",
@@ -157,7 +195,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "16:00 Hrs",
     "feeder": "66/11kV DLF(Annabel)",
-    "reason": "Periodical  maintenance work"
+    "reason": "Periodical  maintenance work",
+    "lat": 12.7828091,
+    "lon": 77.6581822
   },
   {
     "date": "28 Jul 2026",
@@ -165,7 +205,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11KV BTM",
-    "reason": "Periodical  maintenance work"
+    "reason": "Periodical  maintenance work",
+    "lat": 13.0326126,
+    "lon": 77.6096168
   },
   {
     "date": "24 Jul 2026",
@@ -173,7 +215,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "16:00 Hrs",
     "feeder": "66/11kV Provident",
-    "reason": "Periodical  maintenance work"
+    "reason": "Periodical  maintenance work",
+    "lat": 12.8824672,
+    "lon": 77.4718418
   },
   {
     "date": "21 Jul 2026",
@@ -181,7 +225,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kv Elita Promonade muss",
-    "reason": "Periodical maintenance work"
+    "reason": "Periodical maintenance work",
+    "lat": 12.8937583,
+    "lon": 77.5795807
   },
   {
     "date": "22 Jul 2026",
@@ -189,7 +235,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV ISKCON",
-    "reason": "Periodical maintenance work"
+    "reason": "Periodical maintenance work",
+    "lat": 12.9542581,
+    "lon": 77.5279393
   },
   {
     "date": "22 Jul 2026",
@@ -197,7 +245,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "16:00 Hrs",
     "feeder": "66/11kV Kumbalagodu",
-    "reason": "Periodical  maintenance work"
+    "reason": "Periodical  maintenance work",
+    "lat": 12.9194369,
+    "lon": 77.4559033
   },
   {
     "date": "21 Jul 2026",
@@ -205,7 +255,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "220 Khodays glass factory station",
-    "reason": "Periodical  maintenance work"
+    "reason": "Periodical  maintenance work",
+    "lat": 12.8792861,
+    "lon": 77.5697529
   },
   {
     "date": "19 Jul 2026",
@@ -213,7 +265,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "15:00 Hrs",
     "feeder": "220kV Somanahalli-Khodays line bay at 220/66/11kV R/S Somanahalli",
-    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. Load of 220kV Subramanyapura & 220kV Khodays may be changed over to 220kV Peenya. No load will be affected."
+    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. Load of 220kV Subramanyapura & 220kV Khodays may be changed over to 220kV Peenya. No load will be affected.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "20 Jul 2026",
@@ -221,7 +275,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "15:00 Hrs",
     "feeder": "220kV Somanahalli-Bidadi line 2 bay at 220/66/11kV R/S Somanahalli",
-    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. No load will be affected as 220kV Somanahalli- Bidadi line-1&2 are in parallel."
+    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. No load will be affected as 220kV Somanahalli- Bidadi line-1&2 are in parallel.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "22 Jul 2026",
@@ -229,7 +285,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "15:00 Hrs",
     "feeder": "220kV Somanahalli-Mylasandra line 2 bay at 220/66/11kV R/S  Somanahalli",
-    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. No load will be affected as both are source end stations."
+    "reason": "For carrying out periodical maintenance works as per maintenance schedule for 2nd quarter of FY 2026-27. No load will be affected as both are source end stations.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "18 Jul 2026",
@@ -237,7 +295,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "17:00 Hrs",
     "feeder": "220/66/11kV HSR Layout R/s\n (66/11kV side only)",
-    "reason": "2th Quarterly  maintenance work of 31.5MVA Transformer-2\nPower Transformer"
+    "reason": "2th Quarterly  maintenance work of 31.5MVA Transformer-2\nPower Transformer",
+    "lat": 13.1273532,
+    "lon": 77.359826
   },
   {
     "date": "25 Jul 2026",
@@ -245,7 +305,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "15:00 Hrs",
     "feeder": "220/66/11kV HSR Layout R/s\n (66/11kV side only)",
-    "reason": "2th Quarterly  maintenance work of \n220kV Mylasandra Line 1"
+    "reason": "2th Quarterly  maintenance work of \n220kV Mylasandra Line 1",
+    "lat": 13.1273532,
+    "lon": 77.359826
   },
   {
     "date": "31 Jul 2026",
@@ -253,7 +315,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "15:00 Hrs",
     "feeder": "66/11kV GTP S/s",
-    "reason": "1st Quarterely Maintenance work of 66/11kV Transformers, 66kV Breakers,66kV CT's & PT's.\n2)11kV Breaker Switch Gear maintenance"
+    "reason": "1st Quarterely Maintenance work of 66/11kV Transformers, 66kV Breakers,66kV CT's & PT's.\n2)11kV Breaker Switch Gear maintenance",
+    "lat": 12.9236532,
+    "lon": 77.6914948
   },
   {
     "date": "18 Jul 2026",
@@ -261,7 +325,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "17:00 Hrs",
     "feeder": "66/11kV Devarabisanahalli S/s",
-    "reason": "1st Quarterely Maintenance work of 66/11kV Transformers, 66kV Breakers,66kV CT's & PT's.\n2)11kV Breaker Switch Gear maintenance  \n2.31.5MVA Y & B 11kV Bushing replacement work.\n3.Tr-2 NCT Replacement work"
+    "reason": "1st Quarterely Maintenance work of 66/11kV Transformers, 66kV Breakers,66kV CT's & PT's.\n2)11kV Breaker Switch Gear maintenance  \n2.31.5MVA Y & B 11kV Bushing replacement work.\n3.Tr-2 NCT Replacement work",
+    "lat": 12.9371445,
+    "lon": 77.6720227
   },
   {
     "date": "18 Jul 2026",
@@ -269,7 +335,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "17:00 Hrs",
     "feeder": "220/66/11KV RS Naganathapura",
-    "reason": "For carrying out testing on CT and busbar protection relays by RT wing on 220KV lines, 220KV Bus and 150MVA transformers.\nQuarterly Maintenance of 220KV Bus, 66KV Bus & Bus Isolators."
+    "reason": "For carrying out testing on CT and busbar protection relays by RT wing on 220KV lines, 220KV Bus and 150MVA transformers.\nQuarterly Maintenance of 220KV Bus, 66KV Bus & Bus Isolators.",
+    "lat": 13.0203022,
+    "lon": 77.5673368
   },
   {
     "date": "21 Jul 2026",
@@ -277,7 +345,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV Sarakki Sub-Station",
-    "reason": "1st Quarterly maintenance work of 66kV Bays, 66kV PT, 66kV Main BUS,31.5MVA Transformer-1 & 3, 20MVA Transformer-2 and Maintenance of 11kV Switchgears"
+    "reason": "1st Quarterly maintenance work of 66kV Bays, 66kV PT, 66kV Main BUS,31.5MVA Transformer-1 & 3, 20MVA Transformer-2 and Maintenance of 11kV Switchgears",
+    "lat": 12.9113707,
+    "lon": 77.5743342
   },
   {
     "date": "18 Jul 2026",
@@ -285,7 +355,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "13:00 Hrs",
     "feeder": "220/66/kV Keonics Out door GIS stations",
-    "reason": "2th Quarterly  maintenance work of \n220kV Mylasandra to Keonics line\n\n220 Keoncis- Yarandanahalli Line"
+    "reason": "2th Quarterly  maintenance work of \n220kV Mylasandra to Keonics line\n\n220 Keoncis- Yarandanahalli Line",
+    "lat": 13.0625632,
+    "lon": 77.5871948
   },
   {
     "date": "18 Jul 2026",
@@ -293,7 +365,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "13:00 Hrs",
     "feeder": "220/66/kV Keonics Out door GIS stations",
-    "reason": "2th Quarterly  maintenance work of \n 220kV Somanahalli - Keonics Line\n 220kV Keonics - Shobha dreams line"
+    "reason": "2th Quarterly  maintenance work of \n 220kV Somanahalli - Keonics Line\n 220kV Keonics - Shobha dreams line",
+    "lat": 13.0625632,
+    "lon": 77.5871948
   },
   {
     "date": "25 Jul 2026",
@@ -301,7 +375,9 @@
     "fromTime": "10:00 Hrs",
     "toTime": "16:00 Hrs",
     "feeder": "66/11kV Electronic City Ph-2 Sec-1 (Velankani) S/s",
-    "reason": "* Attending Hotline Observations of 66kV Bus\n* Quarterly Maintenance of Bus Isolators \n* Quarterly maintenance of 66kV Velankani, Keonics Bay & Transformer Bays"
+    "reason": "* Attending Hotline Observations of 66kV Bus\n* Quarterly Maintenance of Bus Isolators \n* Quarterly maintenance of 66kV Velankani, Keonics Bay & Transformer Bays",
+    "lat": 12.8457019,
+    "lon": 77.6679507
   },
   {
     "date": "26 Jul 2026",
@@ -309,7 +385,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV Austin Town S/s",
-    "reason": "1. Periodical Maintenance work( 2nd Quarterly) of 66kV lines, 3x20MVA Tr's, Bus GOS, line GOS, 66kV Breakers, 66kV CT's and 66kV PT's.\n2. Periodical Maintenance work of 11kV switchgears\n3. Attending hot line observations"
+    "reason": "1. Periodical Maintenance work( 2nd Quarterly) of 66kV lines, 3x20MVA Tr's, Bus GOS, line GOS, 66kV Breakers, 66kV CT's and 66kV PT's.\n2. Periodical Maintenance work of 11kV switchgears\n3. Attending hot line observations",
+    "lat": 12.9781739,
+    "lon": 77.5695603
   },
   {
     "date": "26 Jul 2026",
@@ -317,7 +395,9 @@
     "fromTime": "9:00 AM",
     "toTime": "1:00 PM",
     "feeder": "220/66/11kV NIMHANS R/s",
-    "reason": "1.66kV Jayadeva line CT replacement work\n2. Quarterly-2 maintenance work of 220kV lines, 150MVA Transformers, 66kV Lines and 20MVA Transformers 66kV PT, 66kV Main BUS and 66kV Isolators and 11kV Bus & 11kV Switchgear.\n3. Attending Hot line observations\nPeriodical 2nd Quarterly maintenance work."
+    "reason": "1.66kV Jayadeva line CT replacement work\n2. Quarterly-2 maintenance work of 220kV lines, 150MVA Transformers, 66kV Lines and 20MVA Transformers 66kV PT, 66kV Main BUS and 66kV Isolators and 11kV Bus & 11kV Switchgear.\n3. Attending Hot line observations\nPeriodical 2nd Quarterly maintenance work.",
+    "lat": 12.941207,
+    "lon": 77.5975095
   },
   {
     "date": "26 Jul 2026",
@@ -325,7 +405,9 @@
     "fromTime": "9:00 AM",
     "toTime": "1:00 PM",
     "feeder": "66/11kV Jayadeva S/s",
-    "reason": "1. 66kV NIMHANS line CT replacement work \nQuarterely Maintenance work of 66/11kV Transformers, 66kV I/C and O/G lines ,66kV CT's & PT's."
+    "reason": "1. 66kV NIMHANS line CT replacement work \nQuarterely Maintenance work of 66/11kV Transformers, 66kV I/C and O/G lines ,66kV CT's & PT's.",
+    "lat": 12.9115924,
+    "lon": 77.611496
   },
   {
     "date": "22 Jul 2026",
@@ -333,7 +415,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV National College GIS",
-    "reason": "1.Connecting Fish plates for new switchgear\n2.Periodical Maintenance work (2nd Quarterly)  2x31.5MVA Tr's and 11kV switchgear"
+    "reason": "1.Connecting Fish plates for new switchgear\n2.Periodical Maintenance work (2nd Quarterly)  2x31.5MVA Tr's and 11kV switchgear",
+    "lat": 13.0005461,
+    "lon": 77.6754561
   },
   {
     "date": "23 Jul 2026",
@@ -341,7 +425,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV Shoba Indra prastha Station",
-    "reason": "Quarterly Maintenance works of  station equipments at 66/11kV Sobha Indraprastha Substation"
+    "reason": "Quarterly Maintenance works of  station equipments at 66/11kV Sobha Indraprastha Substation",
+    "lat": 12.9811885,
+    "lon": 77.5631185
   },
   {
     "date": "26 Jul 2026",
@@ -349,7 +435,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV 'A' Station",
-    "reason": "To carry out quarterly maintenance  work of attending hotspots at 66/11kV A Station"
+    "reason": "To carry out quarterly maintenance  work of attending hotspots at 66/11kV A Station",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "25 Jul 2026",
@@ -357,7 +445,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "66/11 kV Victoria Station",
-    "reason": "Quarterly maintenance work of 66kV Line, Bus and 11kV Bus bar and to attend hot spot in 66kV Transformer 2 isolator at 66/11kV Victoria Station."
+    "reason": "Quarterly maintenance work of 66kV Line, Bus and 11kV Bus bar and to attend hot spot in 66kV Transformer 2 isolator at 66/11kV Victoria Station.",
+    "lat": 12.965718,
+    "lon": 77.5762705
   },
   {
     "date": "20 Jul 2026",
@@ -365,7 +455,9 @@
     "fromTime": "11:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11kV Byatarayanapura",
-    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance.\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance.\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence.",
+    "lat": 13.0684952,
+    "lon": 77.5918257
   },
   {
     "date": "18 Jul 2026",
@@ -373,7 +465,9 @@
     "fromTime": "10:00 AM",
     "toTime": "6:00 PM",
     "feeder": "220/66/11kV Manyatha Tech Park GIS Station. (220kV bus Shutdown for condition monitoring work.)",
-    "reason": "1. To carry out Maintenance work of 220kV module condition monitoring work, ( 220kV Incoming line, Outgoing line, Transformer Bays, and 220kV bus 1&2), 11kV bus and breaker maintenance. \n2. To carryout Condition monitoring work of all 66kV Modules. \n3. To carryout CRM Test \n4. To carryout Breaker Timing test. 5. To carryout SF6 Purity test. \n6. For carrying out IR test of all equipments like CT's, PT's, LA's, Transformers, 66kV Breakers, 11kV Breakers and 11kV Bus."
+    "reason": "1. To carry out Maintenance work of 220kV module condition monitoring work, ( 220kV Incoming line, Outgoing line, Transformer Bays, and 220kV bus 1&2), 11kV bus and breaker maintenance. \n2. To carryout Condition monitoring work of all 66kV Modules. \n3. To carryout CRM Test \n4. To carryout Breaker Timing test. 5. To carryout SF6 Purity test. \n6. For carrying out IR test of all equipments like CT's, PT's, LA's, Transformers, 66kV Breakers, 11kV Breakers and 11kV Bus.",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -381,7 +475,9 @@
     "fromTime": "10:00 AM",
     "toTime": "6:00 PM",
     "feeder": "66/11kV C station",
-    "reason": "1. Oil leakage arresting of transformer -2\n  2. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. \n  2. To attend Hotspots"
+    "reason": "1. Oil leakage arresting of transformer -2\n  2. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. \n  2. To attend Hotspots",
+    "lat": 12.9802701,
+    "lon": 77.5929782
   },
   {
     "date": "21 Jul 2026",
@@ -389,7 +485,9 @@
     "fromTime": "11:00 AM",
     "toTime": "3:00 PM",
     "feeder": "220/66/11kv Hebbal",
-    "reason": "1. To carry out quaterely maintenance work and Attending hot spot of 2*20mva tr and 1*31.5mva Transformers\n2. Carry out the work of replacement of flashed over 66kV ITI-1 Line breaker"
+    "reason": "1. To carry out quaterely maintenance work and Attending hot spot of 2*20mva tr and 1*31.5mva Transformers\n2. Carry out the work of replacement of flashed over 66kV ITI-1 Line breaker",
+    "lat": 12.9566493,
+    "lon": 77.656194
   },
   {
     "date": "22 Jul 2026",
@@ -397,7 +495,9 @@
     "fromTime": "11:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV Pottery Road MUSS",
-    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence.",
+    "lat": 13.0027048,
+    "lon": 77.6346165
   },
   {
     "date": "23 Jul 2026",
@@ -405,7 +505,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11kV Bharathiyacity",
-    "reason": "To carry out Maintenance work of  Transformer Bays,11kV bus and breaker maintenance."
+    "reason": "To carry out Maintenance work of  Transformer Bays,11kV bus and breaker maintenance.",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "24 Jul 2026",
@@ -413,7 +515,9 @@
     "fromTime": "11:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11kV Attur Yelahanka sub station",
-    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. 2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. 2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence.",
+    "lat": 13.0473354,
+    "lon": 77.557179
   },
   {
     "date": "27 Jul 2026",
@@ -421,7 +525,9 @@
     "fromTime": "11:00 AM",
     "toTime": "4:30 PM",
     "feeder": "66/11Kv KHB Colony s/s",
-    "reason": "1. To carry out Maintenance work of incoming line, outgoing line, Transformer Bays, 66kV bus Gos,11kV bus and breaker maintenance. \n  2. For attending Hotspot works. \n  3. For carrying out IR test of all equipements like CT's, PT's, LA's, Transformers, 66kV Breakers, 11kV Breakers, Wall entry bushings and 11kV Bus."
+    "reason": "1. To carry out Maintenance work of incoming line, outgoing line, Transformer Bays, 66kV bus Gos,11kV bus and breaker maintenance. \n  2. For attending Hotspot works. \n  3. For carrying out IR test of all equipements like CT's, PT's, LA's, Transformers, 66kV Breakers, 11kV Breakers, Wall entry bushings and 11kV Bus.",
+    "lat": 13.0954569,
+    "lon": 77.5981153
   },
   {
     "date": "28 Jul 2026",
@@ -429,7 +535,9 @@
     "fromTime": "11:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV PURVANKARA MUSS",
-    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence.",
+    "lat": 12.9749455,
+    "lon": 77.6197537
   },
   {
     "date": "29 Jul 2026",
@@ -437,7 +545,9 @@
     "fromTime": "11:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV KATIGENAHALLI GIS",
-    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence."
+    "reason": "1. To carry out periodic maintenance work of Incoming line, outgoing line, Transformer Bays, 66kV bus Gos, 11kV bus and breaker maintenance. .\n  2. To attend Hotspots. \n  3. To carry out 66kV PT maintainence.",
+    "lat": 13.1098093,
+    "lon": 77.6026238
   },
   {
     "date": "26 Jul 2026",
@@ -445,7 +555,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV Platinumcity",
-    "reason": "66kV Tr2 breaker overhauling work and second quarterly/Half/Yearly maintenance work"
+    "reason": "66kV Tr2 breaker overhauling work and second quarterly/Half/Yearly maintenance work",
+    "lat": 12.7809136,
+    "lon": 77.7378733
   },
   {
     "date": "19 Jul 2026",
@@ -453,7 +565,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "66/11KV Gokula",
-    "reason": "Second quarter/Half year/yearly maintenance work , attending of Hot spot"
+    "reason": "Second quarter/Half year/yearly maintenance work , attending of Hot spot",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "26 Jul 2026",
@@ -461,7 +575,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "220/66/11kV \n SRS Peenya",
-    "reason": "LC request for 31.5MAV Tr-4 ,Bank-4 and respective feeders. WTI Meter replacement, for carry out 2nd Quaterly/Half yearly and general maintenace and attend the HOT Spot in Bank-4. (Related Feeders F4,11,16,18,19,20,21,&31)"
+    "reason": "LC request for 31.5MAV Tr-4 ,Bank-4 and respective feeders. WTI Meter replacement, for carry out 2nd Quaterly/Half yearly and general maintenace and attend the HOT Spot in Bank-4. (Related Feeders F4,11,16,18,19,20,21,&31)",
+    "lat": 12.8740589,
+    "lon": 77.6441562
   },
   {
     "date": "19 Jul 2026",
@@ -469,7 +585,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "220/66/11kV \n SRS Peenya",
-    "reason": "LC request for 31.5MAV Tr-2 ,Bank-2 and \n  respective feeders. 66kV CTs replacement work ,\n  2nd Quaterly/Half yearly and general maintenace and attend the HOT Spot maintenance works for \n  attending maintenance\n (Related Feedar F14,8,10,13,6,26,25,29)"
+    "reason": "LC request for 31.5MAV Tr-2 ,Bank-2 and \n  respective feeders. 66kV CTs replacement work ,\n  2nd Quaterly/Half yearly and general maintenace and attend the HOT Spot maintenance works for \n  attending maintenance\n (Related Feedar F14,8,10,13,6,26,25,29)",
+    "lat": 13.0322675,
+    "lon": 77.5247521
   },
   {
     "date": "25 Jul 2026",
@@ -477,7 +595,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kv Abbigere",
-    "reason": "2th quarterly maintennace work"
+    "reason": "2th quarterly maintennace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "20 Jul 2026",
@@ -485,7 +605,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV \n MUSS Welcast",
-    "reason": "LC request for quarterly maintenance work"
+    "reason": "LC request for quarterly maintenance work",
+    "lat": 12.8740589,
+    "lon": 77.6441562
   },
   {
     "date": "22 Jul 2026",
@@ -493,7 +615,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV \n MUSS Nelagedaranahalli",
-    "reason": "LC request for quarterly maintenance work"
+    "reason": "LC request for quarterly maintenance work",
+    "lat": 12.9945673,
+    "lon": 77.5112021
   },
   {
     "date": "18 Jul 2026",
@@ -501,7 +625,9 @@
     "fromTime": "10:00 AM",
     "toTime": "1:00 PM",
     "feeder": "31.5MVA power transformer -01 of 220/66/11kV ITI GIS station",
-    "reason": "For carrying quarterly maintenance work."
+    "reason": "For carrying quarterly maintenance work.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "18 Jul 2026",
@@ -509,7 +635,9 @@
     "fromTime": "1:00 PM",
     "toTime": "5:00 PM",
     "feeder": "31.5MVA power transformer -02 of 220/66/11kV ITI GIS station",
-    "reason": "For carrying quarterly maintenance work."
+    "reason": "For carrying quarterly maintenance work.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "19 Jul 2026",
@@ -517,7 +645,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "31.5MVA power transformer -03 of 220/66/11kV ITI GIS station",
-    "reason": "For carrying quarterly maintenance work."
+    "reason": "For carrying quarterly maintenance work.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "19 Jul 2026",
@@ -525,7 +655,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Bagmane Tech Muss",
-    "reason": "Quarterly maintenance of 31.5MVA T-1&2 & I/c Bay,  Bus GOS, 11KV Switchgears  maintenance."
+    "reason": "Quarterly maintenance of 31.5MVA T-1&2 & I/c Bay,  Bus GOS, 11KV Switchgears  maintenance.",
+    "lat": 12.974779,
+    "lon": 77.6654084
   },
   {
     "date": "18 Jul 2026",
@@ -533,7 +665,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11KV HAL R/S",
-    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer"
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-1 & related feeders and painting of transformer",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "25 Jul 2026",
@@ -541,7 +675,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11KV HAL R/S",
-    "reason": "Quarterly maintenance of 31.5MVA Transformer-2 & related feeders and painting of transformer"
+    "reason": "Quarterly maintenance of 31.5MVA Transformer-2 & related feeders and painting of transformer",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -549,7 +685,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "66kV Adu-Line 1 & Adu-Line 2, 2x20MVA power transformers at 66/11kV Leelaventure station",
-    "reason": "Station 1st quarterly maintenance for the FY 26-27,CMR Test on all 66kV CB  & to Attend hotspot, 66kV Bus maintemance and 11kV switchgear maintenance."
+    "reason": "Station 1st quarterly maintenance for the FY 26-27,CMR Test on all 66kV CB  & to Attend hotspot, 66kV Bus maintemance and 11kV switchgear maintenance.",
+    "lat": 13.0545809,
+    "lon": 77.4779184
   },
   {
     "date": "26 Jul 2026",
@@ -557,7 +695,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "66/11kV Austin Town S/s",
-    "reason": "1. Periodical Maintenance work( 2nd Quarterly) of 66kV lines, 3x20MVA Tr's, Bus GOS, line GOS, 66kV Breakers, 66kV CT's and 66kV PT's.\n2. Periodical Maintenance work of 11kV switchgears\n3. Attending hot line observations"
+    "reason": "1. Periodical Maintenance work( 2nd Quarterly) of 66kV lines, 3x20MVA Tr's, Bus GOS, line GOS, 66kV Breakers, 66kV CT's and 66kV PT's.\n2. Periodical Maintenance work of 11kV switchgears\n3. Attending hot line observations",
+    "lat": 12.9781739,
+    "lon": 77.5695603
   },
   {
     "date": "26 Jul 2026",
@@ -565,7 +705,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11kV R/s Gowribidanur",
-    "reason": "For 1st Quarterly Maintenance"
+    "reason": "For 1st Quarterly Maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "26 Jul 2026",
@@ -573,7 +715,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11kV R/s Mittemari",
-    "reason": "For 1st Quarterly Maintenance"
+    "reason": "For 1st Quarterly Maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "22 Jul 2026",
@@ -581,7 +725,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "Line : 66kV Kanakapura-Kunuru Line\nSubstations: 66/11kV Kunuru, 66/11kV Harobele, 66/11kV Hukunda, 66/11kV Kodihalli, 66/11kV Bijjahalli, 66/11kV Hunasanahalli",
-    "reason": "2nd Quarterly Maintenance"
+    "reason": "2nd Quarterly Maintenance",
+    "lat": 12.6599119,
+    "lon": 77.3474563
   },
   {
     "date": "26 Jul 2026",
@@ -589,7 +735,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "Line : 66kV Somanahalli - Sanjeevayyanadoddi \nLine : 66kV Somanahalli- Orchid-2 - KIADB Harohalli Line\nSubstations: 66/11kV Sanjeevayyanadoddi \nEHT Consumer : \n1. Orchid Laminates Pvt Limited-1 & 2\n2. AO Smith\n3. Bhoruka Gas\n4. Saint Gobin\n5. Stove Kraft",
-    "reason": "2nd Quarterly Maintenance"
+    "reason": "2nd Quarterly Maintenance",
+    "lat": 12.682966,
+    "lon": 77.4483012
   },
   {
     "date": "28 Jul 2026",
@@ -597,7 +745,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "Line : 66kV Kanakapura - Chikkenahalli  Line\nSubstations: 66/11kV Chikkenahalli & 66/11kV Allimaranahalli",
-    "reason": "2nd Quarterly Maintenance"
+    "reason": "2nd Quarterly Maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "25 Jul 2026",
@@ -605,7 +755,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "Substations: 66/11kV Kanakapura",
-    "reason": "2nd Quarterly Maintenance"
+    "reason": "2nd Quarterly Maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "26 Jul 2026",
@@ -613,7 +765,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:30 PM",
     "feeder": "Line: 66kV KIADB Harohalli - Sanjeevayyanadoddi \nSubstations: Ranganadoddi 66/11kV",
-    "reason": "2nd Quarterly Maintenance"
+    "reason": "2nd Quarterly Maintenance",
+    "lat": 12.9779249,
+    "lon": 77.6406538
   },
   {
     "date": "19 Jul 2026",
@@ -621,7 +775,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11kV Dabaspete",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -629,7 +785,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV T.Begur",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -637,7 +795,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV Thyamagondlu",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -645,7 +805,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV Averahalli",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": 13.1717911,
+    "lon": 77.2231277
   },
   {
     "date": "26 Jul 2026",
@@ -653,7 +815,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "66/11kV Alur",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "31 Jul 2026",
@@ -661,7 +825,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Kudur",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "31 Jul 2026",
@@ -669,7 +835,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Srigiripura",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "25 Jul 2026",
@@ -677,7 +845,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11KV Mathikere(Yeligehalli) substation",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -685,7 +855,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11KV Dodderi substation",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -693,7 +865,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11KV Chandrappa circle",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -701,7 +875,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Magadi substation",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -709,7 +885,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11KV Tobinakere (Magadi) R/s",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "26 Jul 2026",
@@ -717,7 +895,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV T G Halli",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -725,7 +905,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Gudemaranahalli",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "26 Jul 2026",
@@ -733,7 +915,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Tavarekere",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": 13.0096828,
+    "lon": 77.419034
   },
   {
     "date": "26 Jul 2026",
@@ -741,7 +925,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV kodigehalli",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -749,7 +935,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV VG Doddi",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -757,7 +945,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV Hosapalya circle",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "18 Jul 2026",
@@ -765,7 +955,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11KV Agalkote",
-    "reason": "To carry out 2nd Quartely maintenace work"
+    "reason": "To carry out 2nd Quartely maintenace work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "22 Jul 2026",
@@ -773,7 +965,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66KV Ramanagara",
-    "reason": "To carry out 2nd quarterly maintenance works"
+    "reason": "To carry out 2nd quarterly maintenance works",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "24 Jul 2026",
@@ -781,7 +975,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66kV Melehalli",
-    "reason": "To carry out 2nd quarterly maintenance works"
+    "reason": "To carry out 2nd quarterly maintenance works",
+    "lat": 12.7867738,
+    "lon": 77.3040265
   },
   {
     "date": "19 Jul 2026",
@@ -789,7 +985,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66kV Hejjala",
-    "reason": "To carry out 2nd quarterly maintenance works"
+    "reason": "To carry out 2nd quarterly maintenance works",
+    "lat": 12.8647174,
+    "lon": 77.7755146
   },
   {
     "date": "25 Jul 2026",
@@ -797,7 +995,9 @@
     "fromTime": "10:00 AM",
     "toTime": "6:00 PM",
     "feeder": "220kV Bidadi\n(2X31.5MVA+1X20MVA and related 11kV Feeders)",
-    "reason": "To carry out 2nd quarterly maintenance works"
+    "reason": "To carry out 2nd quarterly maintenance works",
+    "lat": 12.7935898,
+    "lon": 77.4316733
   },
   {
     "date": "19 Jul 2026",
@@ -805,7 +1005,9 @@
     "fromTime": "10:00 AM",
     "toTime": "2:00 PM",
     "feeder": "220kV Kothipura\n(12.5MVA Power Transformer and Related 11kV feeders)",
-    "reason": "To carry out 2nd quarterly maintenance works"
+    "reason": "To carry out 2nd quarterly maintenance works",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -813,7 +1015,9 @@
     "fromTime": "9:00 AM",
     "toTime": "16:.00",
     "feeder": "220/66/11KV R/s Sarjapura",
-    "reason": "1. Quarterly mainteance works on all power Transformers.\n2. Attending hotline observations.\n3.General maintanance of Power transfomers and other equipments.\n4. maintenance of 11KV switchgears\n5. alignment of 220KV Bus 1 GOS of 100MVA Tr-1\n6. Fixing of WTI meter OTI instrument meters to 100MVA Tr-1"
+    "reason": "1. Quarterly mainteance works on all power Transformers.\n2. Attending hotline observations.\n3.General maintanance of Power transfomers and other equipments.\n4. maintenance of 11KV switchgears\n5. alignment of 220KV Bus 1 GOS of 100MVA Tr-1\n6. Fixing of WTI meter OTI instrument meters to 100MVA Tr-1",
+    "lat": 12.8777098,
+    "lon": 77.7534769
   },
   {
     "date": "19 Jul 2026",
@@ -821,7 +1025,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "66/11 kV S/S Attibele",
-    "reason": "For carrying out 1st  quarterly maintenance work in 66/11 kV Attibele sattion."
+    "reason": "For carrying out 1st  quarterly maintenance work in 66/11 kV Attibele sattion.",
+    "lat": 12.7782588,
+    "lon": 77.7712834
   },
   {
     "date": "19 Jul 2026",
@@ -829,7 +1035,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "Bommasandra I/A",
-    "reason": "Quarterly Maintenance works"
+    "reason": "Quarterly Maintenance works",
+    "lat": 12.8160161,
+    "lon": 77.6892217
   },
   {
     "date": "18 Jul 2026",
@@ -837,7 +1045,9 @@
     "fromTime": "9:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV S/s Dommasandra",
-    "reason": "1.  To carryout quarterly maintenance works of all 66KV Bays  and Equipments at Dommasandra                                                           2. To carryout maintenance works of 11KV switchgears                                                             3. 66kV GOS overhauling"
+    "reason": "1.  To carryout quarterly maintenance works of all 66KV Bays  and Equipments at Dommasandra                                                           2. To carryout maintenance works of 11KV switchgears                                                             3. 66kV GOS overhauling",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "22 Jul 2026",
@@ -845,7 +1055,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "66/11 kV Samanduru",
-    "reason": "for Periodical maintenance work."
+    "reason": "for Periodical maintenance work.",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "25 Jul 2026",
@@ -853,7 +1065,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "66/11kVChandapura",
-    "reason": "For Periodical Maintenance work"
+    "reason": "For Periodical Maintenance work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -861,7 +1075,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "66/11kV Suryanagar",
-    "reason": "For Periodical Maintenance work"
+    "reason": "For Periodical Maintenance work",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "22 Jul 2026",
@@ -869,7 +1085,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "66/11 kV S/S Anekal",
-    "reason": "For station 1st quarterly maintenance works,  and other scheduled works"
+    "reason": "For station 1st quarterly maintenance works,  and other scheduled works",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "26 Jul 2026",
@@ -877,7 +1095,9 @@
     "fromTime": "10:00 AM",
     "toTime": "4:00 PM",
     "feeder": "220/66/11KV R/s Yarandanahalli",
-    "reason": "For station 1st quarterly maintenance works,  and other scheduled works"
+    "reason": "For station 1st quarterly maintenance works,  and other scheduled works",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -885,7 +1105,9 @@
     "fromTime": "10:00 AM",
     "toTime": "3:00 PM",
     "feeder": "66/11 kV S/S Bagganadoddi",
-    "reason": "For station 1st quarterly maintenance works,  and other scheduled works"
+    "reason": "For station 1st quarterly maintenance works,  and other scheduled works",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -893,7 +1115,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kv S/S Ankasandra",
-    "reason": "Quarterly Maintenance"
+    "reason": "Quarterly Maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "24 Jul 2026",
@@ -901,7 +1125,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "110/11kV Somalapura",
-    "reason": "Quarterly Maintenance"
+    "reason": "Quarterly Maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -909,7 +1135,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV MUSS Y N Hosakote",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -917,7 +1145,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV MUSS Nagalamadike",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -925,7 +1155,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66/11 KV MUSS Pavagada",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -933,7 +1165,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV MUSS Shylapura",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -941,7 +1175,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 KV MUSS Pavagada",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -949,7 +1185,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 KV MUSS Mangalwada",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -957,7 +1195,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 kV MUSS Lingadahalli",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -965,7 +1205,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 KV MUSS Venkatapura",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -973,7 +1215,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11 KV MUSS Kilarlahalli",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -981,7 +1225,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11KV MUSS CB Gere",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "26 Jul 2026",
@@ -989,7 +1235,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV Thippuru",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -997,7 +1245,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV Yedeyuru",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -1005,7 +1255,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV Yadavani",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -1013,7 +1265,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/66kV R/S ANCHEPALYA",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9966543,
+    "lon": 76.9097713
   },
   {
     "date": "19 Jul 2026",
@@ -1021,7 +1275,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV JIDDIGERE",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9876942,
+    "lon": 77.5948863
   },
   {
     "date": "19 Jul 2026",
@@ -1029,7 +1285,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV KUNIGAL",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9876942,
+    "lon": 77.5948863
   },
   {
     "date": "31 Jul 2026",
@@ -1037,7 +1295,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV BHAKTHARAHALI",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -1045,7 +1305,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV HEBBURU",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9876942,
+    "lon": 77.5948863
   },
   {
     "date": "23 Jul 2026",
@@ -1053,7 +1315,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV THIMMASANDRA",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "30 Jul 2026",
@@ -1061,7 +1325,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV HONNENAHALLI",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": null,
+    "lon": null
   },
   {
     "date": "19 Jul 2026",
@@ -1069,7 +1335,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV ANCHEPALYA",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9961279,
+    "lon": 78.3569843
   },
   {
     "date": "26 Jul 2026",
@@ -1077,7 +1345,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV SANABAGHATTA",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9876942,
+    "lon": 77.5948863
   },
   {
     "date": "19 Jul 2026",
@@ -1085,7 +1355,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV HULIYURUDURGA",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9756527,
+    "lon": 77.5553548
   },
   {
     "date": "19 Jul 2026",
@@ -1093,7 +1365,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV SANTHEMAVATTUR",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9876942,
+    "lon": 77.5948863
   },
   {
     "date": "19 Jul 2026",
@@ -1101,7 +1375,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "66/11kV CHOWDANAKUPPE",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9521793,
+    "lon": 77.6140918
   },
   {
     "date": "23 Jul 2026",
@@ -1109,7 +1385,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "110/ 11kv, HARIDASANAHALLI",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.8839153,
+    "lon": 77.47028
   },
   {
     "date": "21 Jul 2026",
@@ -1117,7 +1395,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "110/ 11kv, Ammasandra",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9464207,
+    "lon": 77.5920877
   },
   {
     "date": "27 Jul 2026",
@@ -1125,7 +1405,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "110/11 KV Mayasandra",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9876942,
+    "lon": 77.5948863
   },
   {
     "date": "29 Jul 2026",
@@ -1133,7 +1415,9 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "110/11 KV Thalakere",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 12.9876942,
+    "lon": 77.5948863
   },
   {
     "date": "21 Jul 2026",
@@ -1141,6 +1425,8 @@
     "fromTime": "10:00 AM",
     "toTime": "5:00 PM",
     "feeder": "220/110/11 kV R/s KB Cross",
-    "reason": "Quaterly maintenance"
+    "reason": "Quaterly maintenance",
+    "lat": 13.2607039,
+    "lon": 76.4675934
   }
 ]
